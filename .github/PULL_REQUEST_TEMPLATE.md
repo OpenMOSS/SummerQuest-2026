@@ -23,6 +23,14 @@
 - [ ] `README.md` 提供可公开、已脱敏的作业报告。
 - [ ] `README.md` 已填写飞书补充文档链接。
 
+## A1 额外检查
+
+若本 PR 不是 A1，请将本节标记为不适用。
+
+- [ ] 已提交 `README.md`、`submission/cs336_basics/`、`submission/tests/adapters.py`、
+      `submission/scripts/` 和 `logs/`。
+- [ ] 报告文件为 `README.md`（Markdown）。
+
 ## A0 额外检查
 
 若本 PR 不是 A0，请将本节标记为不适用。

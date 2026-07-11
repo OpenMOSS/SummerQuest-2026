@@ -40,15 +40,46 @@ def create_assignment(root: Path, name: str, assignment: str) -> Path:
             f"student directory does not exist or has no PROFILE.md: {student}"
         )
 
-    template = root / "students" / "_assignment_template"
-    if not (template / "README.md").is_file():
-        raise FileNotFoundError(f"assignment template is missing: {template / 'README.md'}")
+    generic_template = root / "students" / "_assignment_template"
+    template = (
+        root / "students" / "_assignment_templates" / "A1"
+        if assignment == "A1"
+        else generic_template
+    )
+    template_report = template / "README.md"
+    if not template_report.is_file():
+        raise FileNotFoundError(f"assignment template is missing: {template_report}")
+
+    starter_package: Path | None = None
+    starter_adapter: Path | None = None
+    if assignment == "A1":
+        starter = root / "starter" / "A1"
+        starter_package = starter / "cs336_basics"
+        starter_adapter = starter / "tests" / "adapters.py"
+        if not starter_package.is_dir() or not starter_adapter.is_file():
+            raise FileNotFoundError(
+                "A1 starter is incomplete; expected starter/A1/cs336_basics and "
+                "starter/A1/tests/adapters.py"
+            )
 
     destination = student / "assignments" / assignment
     if destination.exists():
         raise FileExistsError(f"assignment directory already exists: {destination}")
 
     shutil.copytree(template, destination)
+
+    if assignment == "A1":
+        assert starter_package is not None and starter_adapter is not None
+        submission = destination / "submission"
+        shutil.copytree(starter_package, submission / "cs336_basics")
+        adapter_destination = submission / "tests" / "adapters.py"
+        adapter_destination.parent.mkdir(parents=True)
+        shutil.copy2(starter_adapter, adapter_destination)
+        (submission / "scripts").mkdir()
+        (submission / "configs").mkdir()
+        (destination / "logs").mkdir()
+        (destination / "assets").mkdir()
+
     replacements = {
         "<姓名>": name,
         "<同学真名>": name,

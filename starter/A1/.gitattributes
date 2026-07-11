@@ -1,0 +1,3 @@
+# Preserve upstream fixtures byte-for-byte and suppress text whitespace normalization.
+tests/fixtures/special_token_trailing_newlines.txt binary
+tests/fixtures/tinystories_sample_5M.txt binary

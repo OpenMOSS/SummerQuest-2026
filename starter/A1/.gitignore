@@ -1,0 +1,18 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+data/
+checkpoints/
+wandb/
+*.ckpt
+*.log
+*.npy
+*.npz
+*.pt
+*.pth
+*.safetensors
+
+# Public fixtures and snapshots shipped with the starter.
+!tests/_snapshots/*.npz
+!tests/fixtures/ts_tests/model.pt

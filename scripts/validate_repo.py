@@ -89,7 +89,8 @@ def validate_assignment(student: Path, assignment: Path, errors: list[str]) -> N
         return
 
     report = read_text(readme)
-    if PLACEHOLDER.search(report):
+    placeholder_text = report.replace("<|endoftext|>", "") if assignment.name == "A1" else report
+    if PLACEHOLDER.search(placeholder_text):
         errors.append(f"unfilled placeholder: {relative}/README.md")
     if not FEISHU_URL.search(report):
         errors.append(f"missing Feishu supplement URL: {relative}/README.md")
@@ -135,10 +136,15 @@ def validate_student(student: Path, errors: list[str]) -> None:
                 continue
             validate_assignment(student, assignment, errors)
 
+    a1_submission = student / "assignments" / "A1"
     for path in student.rglob("*"):
         if path.is_symlink():
             errors.append(f"symbolic links are not allowed in student submissions: {path.relative_to(ROOT)}")
-        elif path.is_file() and path.stat().st_size > MAX_STUDENT_FILE_BYTES:
+        elif (
+            path.is_file()
+            and not path.is_relative_to(a1_submission)
+            and path.stat().st_size > MAX_STUDENT_FILE_BYTES
+        ):
             errors.append(
                 f"student file exceeds 5 MiB; use an approved external artifact location: "
                 f"{path.relative_to(ROOT)}"

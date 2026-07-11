@@ -11,7 +11,7 @@
    python scripts/create_student.py --name '<同学真名>' --github '<GitHub ID>'
    ```
 
-3. A1-A6 在正式题面发布后使用作业脚手架创建对应目录：
+3. A1 使用作业脚手架创建提交目录：
 
    ```bash
    python scripts/create_assignment.py --name '<同学真名>' --assignment A1
@@ -19,10 +19,11 @@
 
 4. 从最新 `upstream/main` 创建 `a0/<GitHub ID>` 或 `a1/<GitHub ID>` 分支。
 5. 一个 PR 只修改一个同学的一次作业。
-6. GitHub `README.md` 是公开主报告，并在其中填写组织内公开的飞书补充文档链接。
+6. GitHub `README.md` 是公开主报告，并在其中填写组织内公开的飞书补充文档链接；代码、
+   日志等其他文件按对应正式题面提交。
 7. 运行 `python scripts/validate_repo.py`，检查 `git diff --cached`，再 push 并创建 PR。
 
-A1-A6 只能在实验室正式题面发布后提交，具体提交物以各作业正式题面为准。
+A1 的目录和必交文件见 [A1 正式题面](assignments/A1/README.md)。
 
 ## Profile PR
 
