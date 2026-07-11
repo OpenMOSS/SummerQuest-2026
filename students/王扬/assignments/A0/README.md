@@ -36,7 +36,7 @@ Sat Jul 11 06:33:42 2026
 
 ```text
 summer-quest-01  Sat Jul 11 06:33:26 2026  570.124.06
-[0] NVIDIA xxx 80GB HBM3 | 32°C,   0 % |     0 / 81559 MB |
+[0] xxxxxxx xxxxx xxxx | 32°C,   0 % |     0 / xxxxx MB |
 ```
 
 ### 状态解释
@@ -117,36 +117,21 @@ echo "nvidia-smi 退出码: $EXIT_CODE"
 
 ---
 
-### 4. 文件权限——`chmod 600` 的目录适用性
-
-**问题**：尝试对 `~/workspace/a0` 目录执行 `chmod 600`，期望限制访问，但发现进入该目录时提示权限不足（`Permission denied`），连 `cd` 都无法执行。
-
-**排查**：`ls -ld ~/workspace/a0` 显示权限为 `d------`（目录权限 600），目录缺少执行权限（x），导致无法进入。
-
-**解决**：
-- 对于目录，需要有执行权限（x）才能进入
-- `chmod 700 ~/workspace/a0` 比 `600` 更适合目录（所有者有 rwx）
-- 对于敏感配置文件使用 `chmod 600`，目录使用 `chmod 700`
-
-**收获**：Linux 权限中，目录的"执行"权限代表"进入"权限。`600` 适用于**文件**（所有者可读写），`700` 适用于**目录**（所有者可读写执行）。`chmod 600` 对文件是正确的，对目录会阻断访问。理解 rwx 在不同对象上的含义差异是 Linux 权限管理的基础。
-
----
-
-### 5. uv 配置私有 PyPI 源
+### 4. uv 配置私有 PyPI 源
 
 **问题**：在安装 gpustat 时，如果使用公司私有 PyPI 源，需要配置 index-url，但 uv 的配置方式与 pip 不同。
 
 **解决**：
 ```bash
 # 方式一：环境变量（临时）
-export UV_INDEX_URL="xxx"
+export UV_INDEX_URL="xxxx"
 
 # 方式二：uv 配置文件（永久）
 # 创建 uv.toml
 
 [pip]
-index-url = "xxx"
-allow-insecure-host = ["xxx"]
+index-url = "xxxx"
+allow-insecure-host = ["xxxx"]
 ```
 
 **收获**：uv 不支持 `pip config set` 命令，需通过环境变量或 `uv.toml` 配置。HTTP 源需额外配置 `insecure-host` 允许非 HTTPS 连接。`uv pip install --index-url` 也可临时指定源，但推荐使用配置文件统一管理。也可以现在cpu机器上装好，再在gpu机器上使用。
