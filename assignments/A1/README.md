@@ -271,11 +271,11 @@ Token Embedding
 每个 block：
 
 $$
-z=x+\operatorname{MHA}(\operatorname{RMSNorm}(x)),
+z=x+\mathrm{MHA}(\mathrm{RMSNorm}(x)),
 $$
 
 $$
-y=z+\operatorname{FFN}(\operatorname{RMSNorm}(z)).
+y=z+\mathrm{FFN}(\mathrm{RMSNorm}(z)).
 $$
 
 residual connection 让输入可以绕过主分支直接传到后面。Pre-Norm 通常比把 norm 放在残差之后的 Post-Norm 更稳定。
@@ -293,8 +293,8 @@ residual connection 让输入可以绕过主分支直接传到后面。Pre-Norm 
 RMSNorm 根据最后一维的均方根缩放激活，不减均值：
 
 $$
-\operatorname{RMSNorm}(x)
-=\frac{x}{\sqrt{\operatorname{mean}(x^2)+\epsilon}}\odot g.
+\mathrm{RMSNorm}(x)
+=\frac{x}{\sqrt{\mathrm{mean}(x^2)+\epsilon}}\odot g.
 $$
 
 平方和归一化前先转成 float32，避免低精度溢出，最后再转回原 dtype。
@@ -302,8 +302,8 @@ $$
 #### SwiGLU FFN
 
 $$
-\operatorname{FFN}(x)
-=W_2\left(\operatorname{SiLU}(W_1x)\odot W_3x\right).
+\mathrm{FFN}(x)
+=W_2\left(\mathrm{SiLU}(W_1x)\odot W_3x\right).
 $$
 
 其中 `SiLU(x) = x * sigmoid(x)`，其中$ \sigma(x)=\frac{1}{1+e^{-x}}$，推荐 `d_ff` 约为 `(8/3) * d_model`，并取附近的 64 倍数。
@@ -322,8 +322,8 @@ RoPE 根据 token position 成对旋转每个 attention head 的 `Q` 和 `K`：
 Scaled dot-product attention：
 
 $$
-\operatorname{Attention}(Q,K,V)
-=\operatorname{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V.
+\mathrm{Attention}(Q,K,V)
+=\mathrm{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V.
 $$
 
 直觉：query 与所有 key 计算相似度，softmax 变成权重，再对 values 加权求和。
@@ -382,13 +382,13 @@ Causal mask 是包含主对角线的下三角矩阵：位置 `i` 只能看到 `j
 对正确 token `y`，单位置 loss 为：
 
 $$
-\ell=-\log\operatorname{softmax}(logits)[y].
+\ell=-\log\mathrm{softmax}(logits)[y].
 $$
 
 Perplexity 是平均 cross-entropy 的指数：
 
 $$
-\operatorname{PPL}=\exp(\operatorname{mean\ loss}).
+\mathrm{PPL}=\exp(\mathrm{mean\ loss}).
 $$
 
 越低通常越好，但不同 tokenizer 或数据集的 per-token loss 不宜直接比较。
