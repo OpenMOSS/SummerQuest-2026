@@ -5,15 +5,15 @@
 ## GitHub 与 PR
 
 - 分支：`a0/lalalalulu2`
-- Git 操作总结：<说明 fork、upstream、branch、commit、push、PR 的完成情况>
+- Git 操作总结：已全部完成
 
 ## Linux 环境摘要
 
-- 操作系统：<公开、脱敏摘要>
-- Python：<版本>
-- Virtual environment：<已创建/未完成>
-- 模拟密钥文件权限：<应为 600>
-- 常驻进程方式：<systemd --user/tmux/supervisord/其他>
+- 操作系统：Ubuntu 22.04.5 LTS
+- Python：Python 3.12.13
+- Virtual environment：已创建
+- 模拟密钥文件权限：-rw------- 1 root root 0 Jul 11 07:27 mock_secret.env
+- 常驻进程方式：学了 tmux
 
 不要填写用户名、主机名、IP、内部路径、SSH 配置或完整进程参数。
 
@@ -21,8 +21,8 @@
 
 ### `nvidia-smi`
 
-- Exit code：<整数>
-- 状态类别：<成功/命令不存在/未检测到设备/NVML或驱动不可用>
+- Exit code：0
+- 状态类别：成功
 
 ```text
 <可选：粘贴已删除主机名、用户名、进程、内部路径等信息的关键输出>
@@ -30,17 +30,18 @@
 
 ### `gpustat`
 
-- 安装版本：<版本>
-- Exit code：<整数>
-- 状态类别：<成功/命令不存在/未检测到设备/NVML或驱动不可用>
+- 安装版本：26.1.2
+- Exit code：1
+- 状态类别：NVML或驱动不可用
 
 ```text
-<可选：粘贴已脱敏的关键输出>
+Error on querying NVIDIA devices. Use --debug flag to see more details.
+NVML Shared Library Not Found
 ```
 
 ### 状态解释
 
-<用自己的话解释两个命令为什么成功或失败，以及它们分别依赖什么。>
+我启动的是 CPU 资源空间的实例。nvidia-smi 能够成功，代表了查询成功，但是没有任何输出，状态是成功；gpustat 由于当前环境没有可用 gpu，退出码为 1，并且输出了相应报错。
 
 ## 飞书补充文档
 
@@ -50,12 +51,13 @@
 
 ## 问题与收获
 
-<总结 2-5 个实际遇到的问题、排查方法和学到的内容。只写可公开信息。>
+1. 之前经常使用GitHub，但是对于很多 git 的操作不熟悉，以及对于团队协作的流程更加熟悉了
+2. 启智上的 /root 目录是每个容器特有的
 
 ## 自检
 
-- [ ] 我实际运行了 `nvidia-smi` 和 `gpustat`，并记录了退出码。
-- [ ] 我没有为了 GPU 检查使用 `sudo` 安装驱动或修改系统环境。
-- [ ] 公开内容已删除用户名、主机名、IP、内部路径、进程参数和组内数据。
-- [ ] GitHub 和飞书正文都没有任何 Secret、Token、Cookie、密码或私钥。
-- [ ] 飞书补充文档已设置为组织内公开，且没有开启互联网公开访问。
+- [x] 我实际运行了 `nvidia-smi` 和 `gpustat`，并记录了退出码。
+- [x] 我没有为了 GPU 检查使用 `sudo` 安装驱动或修改系统环境。
+- [x] 公开内容已删除用户名、主机名、IP、内部路径、进程参数和组内数据。
+- [x] GitHub 和飞书正文都没有任何 Secret、Token、Cookie、密码或私钥。
+- [x] 飞书补充文档已设置为组织内公开，且没有开启互联网公开访问。
