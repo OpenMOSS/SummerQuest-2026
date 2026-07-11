@@ -306,7 +306,8 @@ $$
 =W_2\left(\mathrm{SiLU}(W_1x)\odot W_3x\right).
 $$
 
-其中 `SiLU(x) = x * sigmoid(x)`，其中$ \sigma(x)=\frac{1}{1+e^{-x}}$，推荐 `d_ff` 约为 `(8/3) * d_model`，并取附近的 64 倍数。
+其中 `SiLU(x) = x * sigmoid(x)`，且 $\sigma(x)=\frac{1}{1+e^{-x}}$。推荐 `d_ff`
+约为 `(8/3) * d_model`，并取附近的 64 倍数。
 
 #### RoPE
 
@@ -402,28 +403,29 @@ AdamW 为每个参数保存：
 - step `t`，用于 bias correction。
 
 $$
-  m_t=\beta_1m_{t-1}+(1-\beta_1)g_t
-\\
-  v_t=\beta_2v_{t-1}+(1-\beta_2)g_t^2
+m_t=\beta_1m_{t-1}+(1-\beta_1)g_t
 $$
 
- 因为初始值为 0，需要进行 bias correction：
+$$
+v_t=\beta_2v_{t-1}+(1-\beta_2)g_t^2
+$$
+
+因为初始值为 0，需要进行 bias correction：
 
 $$
-  \hat m_t=\frac{m_t}{1-\beta_1^t}
-
-\\
-
-  \hat v_t=\frac{v_t}{1-\beta_2^t}
+\hat m_t=\frac{m_t}{1-\beta_1^t}
 $$
+
+$$
+\hat v_t=\frac{v_t}{1-\beta_2^t}
+$$
+
 最终参数更新：
+
 $$
-\theta_t
-  =
-  (1-\eta\lambda)\theta_{t-1}
-  -
-  \eta\frac{\hat m_t}{\sqrt{\hat v_t}+\epsilon}
+\theta_t=(1-\eta\lambda)\theta_{t-1}-\eta\frac{\hat m_t}{\sqrt{\hat v_t}+\epsilon}.
 $$
+
 它会把参数按 weight decay 向 0 收缩。关键点是 **decoupled weight decay**：decay 单独应用，而不是简单把 `lambda * parameter` 加进梯度，也就是等号右侧的第一项。
 
 ### 4.3 稳定训练的两个辅助机制
