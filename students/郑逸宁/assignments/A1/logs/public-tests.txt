@@ -3,7 +3,8 @@ A1 non-full submission public test log
 
 Environment
 -----------
-Python: 3.12.8
+Machine: test991
+Python: 3.12.12
 Runner: uv
 Device: CPU
 Starter commit: a158843b20107949f1a8d7df1b05cd33b9166712
@@ -14,7 +15,7 @@ Command:
 uv run pytest -q tests/test_model.py::test_linear tests/test_model.py::test_embedding tests/test_model.py::test_silu_matches_pytorch tests/test_nn_utils.py
 
 Result:
-6 passed in 0.07s
+6 passed, 1 warning in 0.19s
 
 Full public suite
 -----------------
@@ -22,10 +23,15 @@ Command:
 uv run pytest -q --tb=no
 
 Result:
-40 failed, 6 passed, 2 skipped in 65.45s
+41 failed, 6 passed, 1 xfailed, 1 warning in 21.31s
 
 Expected failures
 -----------------
-The 40 failures are caused by starter adapters that intentionally retain
+The 41 failures are caused by starter adapters that intentionally retain
 NotImplementedError. They cover data sampling, Transformer components,
 optimizer and schedule, checkpointing, tokenizer, and BPE training.
+
+The warning reports that the installed NVIDIA driver is older than the CUDA
+version expected by the PyTorch wheel. These tests ran on CPU and the six
+completed targets still passed. The xfailed memory-usage case is marked as an
+expected failure by the upstream test suite.

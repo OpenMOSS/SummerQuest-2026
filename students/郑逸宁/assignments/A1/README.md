@@ -14,11 +14,11 @@
 
 本提交有意只完成六个基础接口，用于测试评分系统能否区分已完成与未完成项目。已完成接口统一在 `partial_submission.py` 中实现，由 `tests/adapters.py` 做参数转接；其他 adapter 保持 starter 中的 `NotImplementedError`，因此失败项是确定且可解释的。
 
-完整公开测试共收集 48 项：6 项通过、40 项失败、2 项因平台资源限制跳过。失败均来自明确未实现的 adapter，不依赖随机制造的错误答案。
+完整公开测试共收集 48 项：6 项通过、41 项失败、1 项预期失败。失败均来自明确未实现的 adapter，不依赖随机制造的错误答案。
 
 ## 复现说明
 
-- 环境与依赖：Python 3.12.8、uv、CPU 环境
+- 环境与依赖：test991、Python 3.12.12、uv、CPU 环境
 - 数据准备：公开测试 fixtures 由原始仓库自带，无额外数据
 - 目标测试命令：`uv run pytest -q tests/test_model.py::test_linear tests/test_model.py::test_embedding tests/test_model.py::test_silu_matches_pytorch tests/test_nn_utils.py`
 - 完整测试命令：`uv run pytest -q --tb=no`
