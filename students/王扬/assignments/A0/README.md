@@ -35,7 +35,7 @@ Sat Jul 11 06:33:42 2026
 - 状态类别：成功
 
 ```text
-summer-quest-01  Sat Jul 11 06:33:26 2026  570.124.06
+xxxxxxx Sat Jul 11 06:33:26 2026  570.124.06
 [0] xxxxxxx xxxxx xxxx | 32°C,   0 % |     0 / xxxxx MB |
 ```
 
