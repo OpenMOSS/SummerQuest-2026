@@ -1,4 +1,4 @@
-# A0 公开提交：chenyitong
+# A0 公开提交：谌奕同
 
 > 本文件公开可见。只写脱敏结果；不能公开但确有审核必要的材料放在下方链接的飞书补充文档中。
 
@@ -9,9 +9,9 @@
   1. Fork `OpenMOSS/SummerQuest-2026` 到个人 GitHub 账号 `bondtesty`。
   2. 添加 upstream：`git remote add upstream https://github.com/OpenMOSS/SummerQuest-2026.git`。
   3. 从最新 `main` 创建分支 `a0/bondtesty`。
-  4. 使用 `scripts/create_student.py --name chenyitong --github bondtesty` 创建学生目录。
+  4. 使用 `scripts/create_student.py --name 谌奕同 --github bondtesty` 创建学生目录。
   5. 将学生目录和 A0 README 提交并 push 到 fork。
-  6. 向 upstream 发起 PR：`[A0] chenyitong - 完成基础环境与 Profile`。
+  6. 向 upstream 发起 PR：`[A0] 谌奕同 - 完成基础环境与 Profile`。
 
 ## Linux 环境摘要
 

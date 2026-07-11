@@ -1,10 +1,10 @@
-# chenyitong Profile
+# 谌奕同 Profile
 
 > 本文件会公开在 GitHub。只填写愿意长期公开的信息；内部项目、服务器信息、组内数据和未公开结果不要写在这里。
 
 ## 基本信息
 
-- 姓名：chenyitong
+- 姓名：谌奕同
 - GitHub ID：`bondtesty`
 - 常用语言：中文、英语（可阅读论文和技术文档）
 - 公开身份：OpenMOSS 暑期集训 2026 学员
