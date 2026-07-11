@@ -69,16 +69,6 @@
 
 - 公开链接：https://github.com/YangW796/meta-harness-evolver
 
-#### Agent Workflow 工程设计
-
-- **时间：** 2026.06 - 至今
-- **背景与问题：** 希望为 Agent 构建可维护、可扩展的 Workflow 管理能力，支持复杂任务自动化执行。
-- **个人工作：** 设计 Workflow、Step、Input/Output Interface、Tool、Skill 等抽象结构，并探索 MCP 集成方案。
-- **方法与结果：** 持续优化 Agent Tool 与 Workflow 管理流程，完善工程组织方式，提高系统可维护性与可扩展性。
-- **局限与反思：** 当前重点仍在工程实现，后续希望进一步完善自动评测、自动测试与工程规范。
-
-- 公开链接：https://github.com/YangW796/workflow_skill
-
 
 #### Embodied AI 与机器人论文调研
 
