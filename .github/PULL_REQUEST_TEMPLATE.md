@@ -23,6 +23,16 @@
 - [ ] `README.md` 提供可公开、已脱敏的作业报告。
 - [ ] `README.md` 已填写飞书补充文档链接。
 
+## A1 额外检查
+
+若本 PR 不是 A1，请将本节标记为不适用。
+
+- [ ] 已提交 `README.md`、`submission/cs336_basics/`、`submission/tests/adapters.py`、
+      `submission/scripts/` 和 `logs/`。
+- [ ] 报告文件为 `README.md`（Markdown）。
+- [ ] `assignment1-basics` 工作仓库位于 SummerQuest 的兄弟目录，且没有被提交到本 PR。
+- [ ] 已在 `../assignment1-basics` 运行官方测试，并使用同步脚本更新个人提交目录。
+
 ## A0 额外检查
 
 若本 PR 不是 A0，请将本节标记为不适用。
