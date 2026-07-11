@@ -134,7 +134,7 @@ index-url = "xxxx"
 allow-insecure-host = ["xxxx"]
 ```
 
-**收获**：uv 不支持 `pip config set` 命令，需通过环境变量或 `uv.toml` 配置。HTTP 源需额外配置 `insecure-host` 允许非 HTTPS 连接。`uv pip install --index-url` 也可临时指定源，但推荐使用配置文件统一管理。也可以现在cpu机器上装好，再在gpu机器上使用。
+**收获**：uv 不支持 `pip config set` 命令，需通过环境变量或 `uv.toml` 配置。HTTP 源需额外配置 `allow-insecure-host` 允许非 HTTPS 连接。`uv pip install --index-url` 也可临时指定源，但推荐使用配置文件统一管理。也可以现在cpu机器上装好，再在gpu机器上使用。
 
 
 
