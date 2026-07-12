@@ -3,8 +3,9 @@
 > 本文件和同目录代码公开可见。只提交允许公开且已经脱敏的内容；组织内材料放在下方
 > 登记的飞书补充文档中，密钥和访问凭据不进入任何提交材料。
 
-> **TODO（作业批改助教）**：完善本报告各部分的具体内容要求、实验日志要求和评分标准。
-> 当前模板先固定 Markdown 报告、代码、脚本、日志和图表的提交位置。
+> 报告分节要求见 [`assignments/A1/README.md` 第 9 节](../../../assignments/A1/README.md#9-readme-报告内容要求)；
+> 日志格式见[第 8 节](../../../assignments/A1/README.md#8-实验日志格式-logs)；
+> 评分标准见[第 10 节](../../../assignments/A1/README.md#10-评分标准100-分)。把下面各占位处填好即可。
 
 ## 基本信息
 
@@ -16,7 +17,65 @@
 
 ## Markdown 报告
 
-<按作业批改助教后续完善的内容要求，填写书面题、实现说明、实验结果、图表和分析。>
+> 以下小节标题请照抄，批改会按标题定位。曲线图放 `assets/` 并在正文引用。
+
+### 书面题
+
+- `unicode1`、`unicode2`：<简答>
+- `adamw_accounting`：<AdamW 显存 / 最大 batch size / 单步 FLOPs / 训练时间核算>
+
+数值答案同时填入下面的 `answers` 块（供自动核对）：
+
+```json answers
+{
+  "unicode1_chr0": "<填写>",
+  "unicode2_utf8_reason": "<填写>",
+  "adamw_peak_memory_gpt2xl_bytes": null,
+  "adamw_max_batch_size_80gb": null,
+  "adamw_step_flops": "<填写>",
+  "gpt2xl_train_hours_h100": null
+}
+```
+
+### Tokenizer 实验
+
+<最长 token、compression ratio、throughput，TinyStories 与 OWT 对比，交叉编码结论。>
+
+### TinyStories 训练
+
+<最终 val loss；贴 step 轴与 wall-clock 轴两张 loss 曲线。>
+
+### 学习率扫
+
+<多条学习率曲线，说明哪个 run 发散。>
+
+### batch size 实验
+
+<不同 batch size 的曲线与结论。>
+
+### 消融：删除 RMSNorm
+
+<曲线 + 分析。>
+
+### 消融：Post-Norm
+
+<曲线 + 分析。>
+
+### 消融：NoPE
+
+<曲线 + 分析。>
+
+### 消融：SiLU
+
+<曲线 + 分析。>
+
+### OWT 实验
+
+<曲线 + 与 TinyStories 的差异分析。>
+
+### 文本生成
+
+<至少 256 token 的样本 + 流畅度评价 + 至少两个影响因素。>
 
 ## 复现说明
 
@@ -39,7 +98,7 @@
 ## 实验日志
 
 - 日志目录：`logs/`
-- 文件与格式：<按作业批改助教后续完善的要求填写>
+- 文件与格式：见 [`assignments/A1/README.md` 第 8 节](../../../assignments/A1/README.md#8-实验日志格式-logs)（固定文件名 + JSONL 字段 + `summary.json`）
 - 与报告中实验的对应说明：<填写>
 
 ## 飞书补充文档
