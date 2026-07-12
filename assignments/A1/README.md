@@ -71,7 +71,7 @@ students/<同学真名>/assignments/A1/
 │   │   └── *.py                 # 训练、编码、生成入口
 │   └── configs/
 │       └── *.{json,toml,yaml}   # 可选：公开且可复现的轻量配置
-├── logs/                         # 必交：推荐提交格式见 EVALUATION.md
+├── logs/                         # 必交：格式见下文《实验日志格式》
 └── assets/
     └── *.{png,jpg,jpeg,webp,svg} # 可选：README.md 引用的压缩图表
 ```
@@ -87,17 +87,32 @@ students/<同学真名>/assignments/A1/
 - `submission/configs/`：可选，保存轻量、公开且可复现的配置。
 - `assets/`：可选，保存 `README.md` 引用的压缩图表。
 
-> 评分标准与评估说明（含 `logs/` 与报告的提交建议）见 [`EVALUATION.md`](EVALUATION.md)。
-> 这些属于评估要求的补充，均为建议，不改变本页作业要求。
+> `logs/` 的格式见下文《实验日志格式》；评分标准与评测方式见 [`EVALUATION.md`](EVALUATION.md)。
 
 书面题、公式、表格和实验分析统一使用 Markdown；不提交 PDF、Office 文档或 notebook
 导出文件。依赖由 `../assignment1-basics/uv.lock` 固定，个人提交中不添加 `pyproject.toml`、
 `requirements.txt` 或 lock file。
 
+## 实验日志格式
+
+`logs/` 须按下面的格式组织，便于统一核验：
+
+- 训练类 run 使用 JSONL（每行一个 JSON 对象），每个记录点至少包含：`step`、
+  `wall_clock_sec`（墙钟秒）、`train_loss`、`lr`，并定期记录 `val_loss`。
+- 另交一个 `summary.json`：至少包含最终 val loss、总训练时间，以及关键配置
+  （`d_model`、层数、头数、context length、batch size、总步数）。
+- 主训练、学习率扫、batch size、四个消融、OWT 各自保留日志或曲线数据；文件名使用：
+  `train_tinystories.jsonl`、`lr_sweep/`、`batch_size/`、`ablation_*.jsonl`、`train_owt.jsonl`。
+
+JSONL 行示例：
+
+```json
+{"step": 1000, "wall_clock_sec": 121.3, "train_loss": 2.11, "val_loss": 2.03, "lr": 5e-4}
+```
+
 ## 文件规则
 
-- 沿用仓库现有规则：学生目录内单个文件不得超过 5 MiB；日志的推荐提交格式见
-  [`EVALUATION.md`](EVALUATION.md)。
+- 沿用仓库现有规则：学生目录内单个文件不得超过 5 MiB；日志格式见上文《实验日志格式》。
 - GitHub 与飞书的公开范围继续遵循仓库统一的
   [公开性与提交规则](../../docs/submission-rules.md)。
 
