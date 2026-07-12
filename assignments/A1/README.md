@@ -71,7 +71,7 @@ students/<同学真名>/assignments/A1/
 │   │   └── *.py                 # 训练、编码、生成入口
 │   └── configs/
 │       └── *.{json,toml,yaml}   # 可选：公开且可复现的轻量配置
-├── logs/                         # 必交：格式自便，提交建议见 EVALUATION.md
+├── logs/                         # 必交：推荐提交格式见 EVALUATION.md
 └── assets/
     └── *.{png,jpg,jpeg,webp,svg} # 可选：README.md 引用的压缩图表
 ```
@@ -96,7 +96,7 @@ students/<同学真名>/assignments/A1/
 
 ## 文件规则
 
-- 沿用仓库现有规则：学生目录内单个文件不得超过 5 MiB；日志格式自便，提交建议见
+- 沿用仓库现有规则：学生目录内单个文件不得超过 5 MiB；日志的推荐提交格式见
   [`EVALUATION.md`](EVALUATION.md)。
 - GitHub 与飞书的公开范围继续遵循仓库统一的
   [公开性与提交规则](../../docs/submission-rules.md)。

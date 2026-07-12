@@ -39,7 +39,7 @@
 ## 实验日志
 
 - 日志目录：`logs/`
-- 文件与格式：格式自便，提交建议见 [`EVALUATION.md`](../../../assignments/A1/EVALUATION.md)
+- 文件与格式：见 [`EVALUATION.md`](../../../assignments/A1/EVALUATION.md) 的推荐提交格式
 - 与报告中实验的对应说明：<填写>
 
 ## 飞书补充文档
