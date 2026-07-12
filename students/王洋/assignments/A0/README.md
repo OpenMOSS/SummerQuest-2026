@@ -5,7 +5,7 @@
 ## GitHub 与 PR
 
 - 分支：`a0/piacesy`
-- Git 操作总结：已完成课程仓库 Fork，并配置个人 Fork 为 `origin`、课程仓库为 `upstream`；从最新 `upstream/main` 创建 `a0/piacesy` 分支，使用 Conventional Commit 提交并推送到个人 Fork。A0 内容已完成，准备向上游 `main` 创建 PR。
+- Git 操作总结：已完成课程仓库 Fork，并配置个人 Fork 为 `origin`、课程仓库为 `upstream`；从最新 `upstream/main` 创建 `a0/piacesy` 分支，使用 Conventional Commit 提交并推送到个人 Fork，并已向上游 `main` 创建 [PR #38](https://github.com/OpenMOSS/SummerQuest-2026/pull/38)。
 
 ## Linux 环境摘要
 
