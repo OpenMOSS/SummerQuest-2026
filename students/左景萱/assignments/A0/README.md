@@ -5,7 +5,7 @@
 ## GitHub 与 PR
 
 - 分支：`a0/for4WARD`
-- Git 操作总结：已完成个人 Fork，将其配置为 `origin`，并将课程仓库配置为 `upstream`；已从最新 `upstream/main` 创建本地作业分支。Fork 与远程配置已核验，push 和 PR 待本人授权执行。
+- Git 操作总结：已完成个人 Fork，将其配置为 `origin`，并将课程仓库配置为 `upstream`；已从最新 `upstream/main` 创建 `a0/for4WARD` 分支，使用 Conventional Commits 提交并 push 到个人 Fork，随后向课程仓库 `main` 创建 Pull Request。本次仅修改个人学生目录。
 
 ## Linux 环境摘要
 
