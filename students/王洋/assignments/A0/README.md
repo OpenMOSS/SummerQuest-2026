@@ -5,7 +5,7 @@
 ## GitHub 与 PR
 
 - 分支：`a0/piacesy`
-- Git 操作总结：已完成课程仓库 Fork，并配置个人 Fork 为 `origin`、课程仓库为 `upstream`；从最新 `upstream/main` 创建 `a0/piacesy` 分支，使用 Conventional Commit 提交并推送到个人 Fork。待 A0 其余内容完成后向上游 `main` 创建 PR。
+- Git 操作总结：已完成课程仓库 Fork，并配置个人 Fork 为 `origin`、课程仓库为 `upstream`；从最新 `upstream/main` 创建 `a0/piacesy` 分支，使用 Conventional Commit 提交并推送到个人 Fork。A0 内容已完成，准备向上游 `main` 创建 PR。
 
 ## Linux 环境摘要
 
@@ -36,7 +36,7 @@
 
 ## 飞书补充文档
 
-- 链接：<粘贴飞书 Doc 或 Wiki 链接>
+- 链接：https://fudan-nlp.feishu.cn/wiki/NTTgwkLoiiult0kh0WucE58Bn6d
 
 该文档设置为组织内公开，用于保存 A0 的组内验收材料。
 
@@ -52,5 +52,5 @@
 - [x] 我实际运行了 `nvidia-smi` 和 `gpustat`，并记录了退出码。
 - [x] 我没有为了 GPU 检查使用 `sudo` 安装驱动或修改系统环境。
 - [x] 公开内容已删除用户名、主机名、IP、内部路径、进程参数和组内数据。
-- [ ] GitHub 和飞书正文都没有任何 Secret、Token、Cookie、密码或私钥。
-- [ ] 飞书补充文档已设置为组织内公开，且没有开启互联网公开访问。
+- [x] GitHub 和飞书正文都没有任何 Secret、Token、Cookie、密码或私钥。
+- [x] 飞书补充文档已设置为组织内公开，且没有开启互联网公开访问。
