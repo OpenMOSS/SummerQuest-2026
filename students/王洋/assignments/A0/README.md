@@ -5,7 +5,7 @@
 ## GitHub 与 PR
 
 - 分支：`a0/piacesy`
-- Git 操作总结：<说明 fork、upstream、branch、commit、push、PR 的完成情况>
+- Git 操作总结：已完成课程仓库 Fork，并配置个人 Fork 为 `origin`、课程仓库为 `upstream`；从最新 `upstream/main` 创建 `a0/piacesy` 分支，使用 Conventional Commit 提交并推送到个人 Fork。待 A0 其余内容完成后向上游 `main` 创建 PR。
 
 ## Linux 环境摘要
 
