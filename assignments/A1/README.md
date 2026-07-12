@@ -19,8 +19,7 @@
   `../assignment1-basics`。
 - 本作业沿用上游 21 个 adapter 函数作为稳定代码接口；真实实现必须放在
   `cs336_basics/`，不能写进 adapter，也不能修改公共测试。
-- 本作业满分为 100 分。`README.md` 报告内容要求、`logs/` 日志格式与评分标准见下文
-  [第 8 节](#8-实验日志格式-logs)、[第 9 节](#9-readme-报告内容要求)、[第 10 节](#10-评分标准100-分)。
+- 本作业满分为 100 分。`README.md` 和日志的具体内容要求及评分标准由作业批改助教完善。
 
 开始前请阅读[公开性与提交规则](../../docs/submission-rules.md)。本仓库公开可见，内部
 服务器、数据、路径、凭据和未公开实验信息不得进入 GitHub 或 Git 历史。
@@ -72,7 +71,7 @@ students/<同学真名>/assignments/A1/
 │   │   └── *.py                 # 训练、编码、生成入口
 │   └── configs/
 │       └── *.{json,toml,yaml}   # 可选：公开且可复现的轻量配置
-├── logs/                         # 必交：文件名与字段格式见第 8 节
+├── logs/                         # 必交：具体文件与格式待作业批改助教补充
 └── assets/
     └── *.{png,jpg,jpeg,webp,svg} # 可选：README.md 引用的压缩图表
 ```
@@ -88,8 +87,8 @@ students/<同学真名>/assignments/A1/
 - `submission/configs/`：可选，保存轻量、公开且可复现的配置。
 - `assets/`：可选，保存 `README.md` 引用的压缩图表。
 
-> `README.md` 报告的分节要求见[第 9 节](#9-readme-报告内容要求)；`logs/` 的文件名、格式与
-> 字段见[第 8 节](#8-实验日志格式-logs)；满分 100 分的评分标准见[第 10 节](#10-评分标准100-分)。
+> **TODO（作业批改助教）**：完善 `README.md` 和 `logs/` 的具体内容、文件名、格式、字段，
+> 以及满分 100 分的评分标准。
 
 书面题、公式、表格和实验分析统一使用 Markdown；不提交 PDF、Office 文档或 notebook
 导出文件。依赖由 `../assignment1-basics/uv.lock` 固定，个人提交中不添加 `pyproject.toml`、
@@ -97,7 +96,8 @@ students/<同学真名>/assignments/A1/
 
 ## 文件规则
 
-- 沿用仓库现有规则：学生目录内单个文件不得超过 5 MiB；日志格式见[第 8 节](#8-实验日志格式-logs)。
+- 沿用仓库现有规则：学生目录内单个文件不得超过 5 MiB；日志的具体格式由作业批改
+  助教决定并补充。
 - GitHub 与飞书的公开范围继续遵循仓库统一的
   [公开性与提交规则](../../docs/submission-rules.md)。
 
@@ -592,191 +592,3 @@ get batch
 10. AdamW 没保存 optimizer state，checkpoint 无法正确续训。
 11. gradient clipping 对每层单独做，而不是全局 norm。
 12. 实验预算和 tokenizer 不同，却直接比较 loss 数值。
-
----
-
-## 8. 实验日志格式 logs
-
-本节规定 `logs/` 的固定目录、文件名和字段。**批改会用脚本直接解析这些文件**，格式不符
-的日志无法得分，请严格按此产出。所有日志为纯文本，单文件不超过 5 MiB。
-
-### 8.1 目录与文件
-
-```text
-logs/
-├── train_tinystories.jsonl        # 必交：TinyStories 主训练 run
-├── lr_sweep/                       # 必交：学习率扫，>=3 个 run，至少 1 个发散
-│   ├── lr_1e-3.jsonl
-│   ├── lr_3e-3.jsonl
-│   └── lr_1e-2.jsonl
-├── batch_size/                     # 必交：>=3 个 run，必须含 batch size 64 和 128
-│   ├── bs_64.jsonl
-│   ├── bs_128.jsonl
-│   └── bs_256.jsonl
-├── ablation_no_rmsnorm.jsonl       # 必交：删除 RMSNorm
-├── ablation_post_norm.jsonl        # 必交：Pre-Norm 改 Post-Norm
-├── ablation_nope.jsonl             # 必交：RoPE 改 NoPE
-├── ablation_silu.jsonl             # 必交：SwiGLU 对比 SiLU
-├── train_owt.jsonl                 # 必交：OpenWebText 训练 run
-└── summary.json                    # 必交：汇总指标，见 8.3
-```
-
-低资源方案（CPU/MPS）仍需交齐上述文件，但可以缩小 token 数，并在 `summary.json` 里把
-`low_resource` 设为 `true`（评分阈值会相应放宽，见第 10 节）。
-
-### 8.2 训练日志行格式（所有 `*.jsonl`）
-
-每行一个 JSON 对象，一行代表一次记录点。字段：
-
-| 字段 | 类型 | 必填 | 说明 |
-|---|---|---|---|
-| `step` | int | 是 | 梯度步，从小到大 |
-| `wall_clock_sec` | float | 是 | 自训练开始的墙钟秒数，单调不减 |
-| `train_loss` | float | 是 | 该步的 per-token 训练 loss |
-| `lr` | float | 是 | 该步学习率 |
-| `val_loss` | float\|null | 否 | 验证时填数值，否则 `null`；每个 run 至少 2 行非 null |
-| `grad_norm` | float | 否 | 裁剪前的全局梯度 L2 norm |
-| `tokens` | int | 否 | 累计已处理 token 数 |
-
-示例（`train_tinystories.jsonl` 节选）：
-
-```json
-{"step": 0,    "wall_clock_sec": 0.0,   "train_loss": 9.21, "val_loss": null, "lr": 0.0,     "grad_norm": 3.1}
-{"step": 200,  "wall_clock_sec": 24.7,  "train_loss": 4.05, "val_loss": null, "lr": 0.0006,  "grad_norm": 1.4}
-{"step": 1000, "wall_clock_sec": 121.3, "train_loss": 2.11, "val_loss": 2.03, "lr": 0.0005,  "grad_norm": 0.9}
-{"step": 10000,"wall_clock_sec": 1487.0,"train_loss": 1.33, "val_loss": 1.42, "lr": 1e-05,   "grad_norm": 0.6}
-```
-
-发散 run（LR 扫里至少要有一个）：`train_loss` 明显上升或出现 `NaN`/`Inf`，如实记录即可，
-不要删掉发散的行。
-
-### 8.3 `summary.json` 字段
-
-一个 JSON 对象，供批改直接读取关键指标。`null` 表示未做/未测：
-
-```json
-{
-  "student": "张三",
-  "low_resource": false,
-  "config": {
-    "vocab_size": 10000, "context_length": 256, "d_model": 512, "d_ff": 1344,
-    "num_layers": 4, "num_heads": 16, "rope_theta": 10000,
-    "batch_size": 128, "total_steps": 10000
-  },
-  "tinystories": {
-    "final_val_loss": 1.42, "total_wall_clock_sec": 1487.0, "total_tokens": 327680000
-  },
-  "tokenizer": {
-    "ts_longest_token_bytes": 12,
-    "owt_longest_token_bytes": 20,
-    "ts_compression_ratio": 4.10,
-    "owt_compression_ratio": 4.35,
-    "throughput_bytes_per_sec": 2500000,
-    "cross_tokenizer_comment": "用 TinyStories tokenizer 编码 OWT 时压缩率下降到约 ..."
-  },
-  "ablations": {
-    "no_rmsnorm": {"final_val_loss": 5.20},
-    "post_norm":  {"final_val_loss": 1.90},
-    "nope":       {"final_val_loss": 1.71},
-    "silu":       {"final_val_loss": 1.55}
-  },
-  "owt": {"final_val_loss": 3.80},
-  "generation": {
-    "tinystories_sample_tokens": 300,
-    "sample_text": "Once upon a time ...",
-    "fluency_comment": "整体通顺，但偶尔重复；影响因素：temperature 与训练步数。"
-  }
-}
-```
-
-### 8.4 建议：用统一 logger 产出日志
-
-为保证格式一致，建议在自己的训练脚本里用下面这个极简 logger（复制到
-`submission/scripts/` 即可，无需额外依赖）：
-
-```python
-# a1_logging.py —— 产出符合第 8 节规范的日志
-import json, time, pathlib
-
-class RunLogger:
-    def __init__(self, path):
-        self.path = pathlib.Path(path)
-        self.path.parent.mkdir(parents=True, exist_ok=True)
-        self.f = open(self.path, "w", encoding="utf-8")
-        self.t0 = time.time()
-
-    def log(self, step, train_loss, lr, val_loss=None, grad_norm=None, tokens=None):
-        row = {"step": int(step), "wall_clock_sec": round(time.time() - self.t0, 3),
-               "train_loss": float(train_loss), "lr": float(lr), "val_loss": val_loss}
-        if grad_norm is not None: row["grad_norm"] = float(grad_norm)
-        if tokens is not None: row["tokens"] = int(tokens)
-        self.f.write(json.dumps(row) + "\n"); self.f.flush()
-
-    def close(self):
-        self.f.close()
-```
-
----
-
-## 9. README 报告内容要求
-
-`students/<姓名>/assignments/A1/README.md` 是公开 Markdown 报告，替代原作业的
-`writeup.pdf`。除模板已有的“基本信息/复现说明/代码与脚本/实验日志/飞书补充文档”外，
-报告正文必须包含下列小节（标题请照抄，便于批改定位）：
-
-1. **书面题**：`unicode1`、`unicode2` 的简答，以及 AdamW 显存/最大 batch size/单步
-   FLOPs/训练时间核算（`adamw_accounting`）。
-2. **Tokenizer 实验**：TinyStories 与 OWT tokenizer 的最长 token、compression ratio、
-   throughput，以及交叉编码对比。
-3. **TinyStories 训练**：贴出 loss 曲线（横轴分别按 step 和 wall-clock 各一张，放
-   `assets/` 引用），报告最终 val loss。
-4. **学习率扫**、**batch size 实验**：曲线 + 结论，学习率扫需说明哪个 run 发散。
-5. 四个消融，各用**下列固定标题**（批改按标题匹配）：
-   - `### 消融：删除 RMSNorm`
-   - `### 消融：Post-Norm`
-   - `### 消融：NoPE`
-   - `### 消融：SiLU`
-6. **OWT 实验**：曲线 + 与 TinyStories 的对比分析。
-7. **文本生成**：至少 256 token 的生成样本 + 流畅度评价 + 至少两个影响因素。
-
-书面题的数值答案除写进正文外，**还要在报告中放一个 ```json 代码块**，字段如下，供批改
-自动核对（无需额外文件）：
-
-````markdown
-```json answers
-{
-  "unicode1_chr0": "空字符 NUL (U+0000)",
-  "unicode2_utf8_reason": "UTF-8 变长、兼容 ASCII、词表仅 256，...",
-  "adamw_peak_memory_gpt2xl_bytes": 1.2e11,
-  "adamw_max_batch_size_80gb": 3,
-  "adamw_step_flops": "约 2 * 参数量 的更新 FLOPs + ...",
-  "gpt2xl_train_hours_h100": 120
-}
-```
-````
-
----
-
-## 10. 评分标准100 分
-
-总分固定 100。**代码分与指标分由脚本自动判定**；带“人工确认”的分析类小项由批改助教
-在自动初评基础上快速复核。
-
-| 板块 | 分值 | 判定方式 |
-|---|---:|---|
-| **代码正确性**（21 个 adapter，`uv run pytest`） | 40 | 自动：按 JUnit 结果分组计分。BPE 训练 8、Tokenizer 8、Transformer 14、训练工具 10；组内按通过测试比例给分。两个 memory-usage 测试不计分。 |
-| **书面题**（`unicode`、`adamw_accounting`） | 6 | 自动：核对报告 `answers` 块的存在与数值（含容差）；推导过程人工确认 |
-| **Tokenizer 实验** | 7 | 自动：核对 `summary.json.tokenizer` 各字段存在且在合理范围；交叉对比结论人工确认 |
-| **TinyStories 训练** | 18 | 自动：日志完整（含 step 与 wall-clock）+ 最终 val loss 达标。达标阈值 ≤1.45 满分，≤1.60 部分分，≤2.00 少量分；低资源模式阈值放宽到 ≤2.00 满分 |
-| **学习率扫**（含 ≥1 发散 run） | 5 | 自动：run 数 ≥3 且存在发散 run |
-| **batch size 实验** | 3 | 自动：run 数 ≥3 且覆盖 64、128 |
-| **四个消融** | 12 | 每个 3 分：日志有效 + 记录最终指标（自动 2 分）+ README 分析小节（人工确认 1 分） |
-| **OWT 实验 + 文本生成** | 5 | 自动：OWT 日志有效 + 生成样本 ≥256 token；流畅度评价人工确认 |
-| **日志完整性/一致性** | 4 | 自动：step 与 wall-clock 单调、loss 明显下降且非恒定（异常仅触发人工抽查，不等于判定作弊） |
-
-说明：
-
-- 达不到 val loss 阈值不代表零分，日志与实验完整仍按上表给分；只有相应达标项拿不到。
-- 各板块的具体阈值、字段范围与 tokenizer 数值答案的参考值，最终以批改助教发布的
-  评分脚本配置为准；本表用于让同学了解得分点与目标。
-- 不同 tokenizer / 训练预算下的 per-token loss 不能横向比较，报告分析时请注意。
