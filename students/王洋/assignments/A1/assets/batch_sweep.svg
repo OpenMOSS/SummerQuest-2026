@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="760" viewBox="0 0 1000 760">
+<style>
+text { font-family: ui-sans-serif, system-ui, sans-serif; fill: #172033; }
+.grid { stroke: #d8dee9; stroke-width: 1; }
+.axis { stroke: #475569; stroke-width: 1.4; }
+.series { fill: none; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+</style>
+<defs><clipPath id="plot-area"><rect x="90.0" y="65.0" width="880.0" height="437.0"/></clipPath></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="500.00" y="32.00" text-anchor="middle" font-size="20" font-weight="600">TinyStories batch-size sweep and LR retuning</text>
+<line class="grid" x1="90.00" y1="65.0" x2="90.00" y2="502.0"/>
+<text x="90.00" y="526.00" text-anchor="middle" font-size="12">66K</text>
+<line class="grid" x1="90.0" y1="502.00" x2="970.0" y2="502.00"/>
+<text x="78.00" y="506.00" text-anchor="end" font-size="12">1.5</text>
+<line class="grid" x1="266.00" y1="65.0" x2="266.00" y2="502.0"/>
+<text x="266.00" y="526.00" text-anchor="middle" font-size="12">1.7M</text>
+<line class="grid" x1="90.0" y1="414.60" x2="970.0" y2="414.60"/>
+<text x="78.00" y="418.60" text-anchor="end" font-size="12">3.2</text>
+<line class="grid" x1="442.00" y1="65.0" x2="442.00" y2="502.0"/>
+<text x="442.00" y="526.00" text-anchor="middle" font-size="12">3.4M</text>
+<line class="grid" x1="90.0" y1="327.20" x2="970.0" y2="327.20"/>
+<text x="78.00" y="331.20" text-anchor="end" font-size="12">4.9</text>
+<line class="grid" x1="618.00" y1="65.0" x2="618.00" y2="502.0"/>
+<text x="618.00" y="526.00" text-anchor="middle" font-size="12">5.1M</text>
+<line class="grid" x1="90.0" y1="239.80" x2="970.0" y2="239.80"/>
+<text x="78.00" y="243.80" text-anchor="end" font-size="12">6.6</text>
+<line class="grid" x1="794.00" y1="65.0" x2="794.00" y2="502.0"/>
+<text x="794.00" y="526.00" text-anchor="middle" font-size="12">6.7M</text>
+<line class="grid" x1="90.0" y1="152.40" x2="970.0" y2="152.40"/>
+<text x="78.00" y="156.40" text-anchor="end" font-size="12">8.3</text>
+<line class="grid" x1="970.00" y1="65.0" x2="970.00" y2="502.0"/>
+<text x="970.00" y="526.00" text-anchor="middle" font-size="12">8.4M</text>
+<line class="grid" x1="90.0" y1="65.00" x2="970.0" y2="65.00"/>
+<text x="78.00" y="69.00" text-anchor="end" font-size="12">10</text>
+<line class="axis" x1="90.0" y1="65.0" x2="90.0" y2="502.0"/>
+<line class="axis" x1="90.0" y1="502.0" x2="970.0" y2="502.0"/>
+<text x="530.00" y="553.00" text-anchor="middle" font-size="14">processed tokens</text>
+<text x="20" y="283.50" text-anchor="middle" font-size="14" transform="rotate(-90 20 283.50)">loss</text>
+<polyline class="series" stroke="#2563eb" points="90.00,126.37 96.92,192.83 103.83,269.57 110.75,297.74 117.66,346.33 124.58,366.92 131.49,390.33 138.41,376.42 145.32,378.13 152.24,367.87 159.16,392.92 166.07,401.24 172.99,408.14 179.90,403.14 186.82,402.52 193.73,416.90 200.65,384.98 207.56,330.78 214.48,389.61 221.39,413.70 228.31,388.82 235.23,427.35 242.14,421.22 249.06,438.17 255.97,379.96 262.89,405.67 269.80,409.96 276.72,420.05 283.63,424.79 290.55,394.31 297.47,404.63 304.38,368.13 311.30,418.96 318.21,424.76 325.13,435.14 332.04,389.13 338.96,412.30 345.87,437.36 352.79,357.15 359.71,421.53 366.62,418.29 373.54,416.90 380.45,420.71 387.37,433.93 394.28,437.72 401.20,427.37 408.11,381.12 415.03,439.86 421.94,413.36 428.86,387.98 435.78,358.96 442.69,449.93 449.61,440.00 456.52,429.45 463.44,453.43 470.35,438.14 477.27,434.29 484.18,426.09 491.10,433.42 498.02,425.34 504.93,430.86 511.85,435.88 518.76,426.37 525.68,362.03 532.59,406.71 539.51,405.85 546.42,427.25 553.34,392.56 560.26,399.10 567.17,439.73 574.09,396.14 581.00,436.03 587.92,417.85 594.83,420.07 601.75,406.25 608.66,424.66 615.58,415.77 622.50,409.30 629.41,379.14 636.33,390.42 643.24,446.43 650.16,442.05 657.07,424.33 663.99,424.40 670.90,392.86 677.82,417.50 684.73,386.87 691.65,431.01 698.57,440.97 705.48,387.35 712.40,440.45 719.31,445.09 726.23,422.18 733.14,429.42 740.06,409.22 746.97,444.11 753.89,368.02 760.81,467.19 767.72,446.29 774.64,455.41 781.55,448.46 788.47,444.12 795.38,446.90 802.30,444.72 809.21,413.52 816.13,430.89 823.05,424.78 829.96,454.68 836.88,447.59 843.79,435.19 850.71,439.98 857.62,415.91 864.54,412.41 871.45,455.76 878.37,378.96 885.28,395.15 892.20,383.12 899.12,442.72 906.03,449.88 912.95,382.65 919.86,464.19 926.78,478.29 933.69,423.49 940.61,431.56 947.52,395.16 954.44,409.83 961.36,414.68 968.27,413.51" clip-path="url(#plot-area)"/>
+<polyline class="series" stroke="#2563eb" stroke-dasharray="7 5" points="193.73,386.98 304.38,404.65 415.03,413.33 525.68,419.84 636.33,424.74 746.97,426.16 857.62,426.35 968.27,428.38" clip-path="url(#plot-area)"/>
+<circle cx="193.73" cy="386.98" r="2.8" fill="#2563eb" clip-path="url(#plot-area)"><title>batch=1, lr=3e-5 validation: 3.7372</title></circle>
+<circle cx="304.38" cy="404.65" r="2.8" fill="#2563eb" clip-path="url(#plot-area)"><title>batch=1, lr=3e-5 validation: 3.39348</title></circle>
+<circle cx="415.03" cy="413.33" r="2.8" fill="#2563eb" clip-path="url(#plot-area)"><title>batch=1, lr=3e-5 validation: 3.22478</title></circle>
+<circle cx="525.68" cy="419.84" r="2.8" fill="#2563eb" clip-path="url(#plot-area)"><title>batch=1, lr=3e-5 validation: 3.09811</title></circle>
+<circle cx="636.33" cy="424.74" r="2.8" fill="#2563eb" clip-path="url(#plot-area)"><title>batch=1, lr=3e-5 validation: 3.00273</title></circle>
+<circle cx="746.97" cy="426.16" r="2.8" fill="#2563eb" clip-path="url(#plot-area)"><title>batch=1, lr=3e-5 validation: 2.97512</title></circle>
+<circle cx="857.62" cy="426.35" r="2.8" fill="#2563eb" clip-path="url(#plot-area)"><title>batch=1, lr=3e-5 validation: 2.97139</title></circle>
+<circle cx="968.27" cy="428.38" r="2.8" fill="#2563eb" clip-path="url(#plot-area)"><title>batch=1, lr=3e-5 validation: 2.93191</title></circle>
+<line x1="90.0" y1="577.0" x2="117.0" y2="577.0" stroke="#2563eb" stroke-width="2"/>
+<line x1="127.0" y1="577.0" x2="154.0" y2="577.0" stroke="#2563eb" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="165.00" y="581.00" font-size="12">batch=1, lr=3e-5 (solid: train, dashed: validation)</text>
+<polyline class="series" stroke="#dc2626" points="96.92,195.56 110.75,320.33 124.58,334.32 138.41,365.44 152.24,371.78 166.07,383.92 179.90,391.10 193.73,394.29 207.56,397.29 221.39,404.54 235.23,408.48 249.06,414.21 262.89,414.38 276.72,419.08 290.55,424.60 304.38,426.63 318.21,425.79 332.04,433.01 345.87,428.44 359.71,432.81 373.54,437.44 387.37,436.69 401.20,442.24 415.03,438.33 428.86,443.70 442.69,443.71 456.52,442.67 470.35,447.05 484.18,443.58 498.02,448.85 511.85,450.34 525.68,448.59 539.51,453.50 553.34,452.90 567.17,450.58 581.00,457.13 594.83,454.03 608.66,455.62 622.50,454.59 636.33,458.61 650.16,456.49 663.99,460.56 677.82,458.92 691.65,455.50 705.48,458.82 719.31,459.88 733.14,460.13 746.97,463.65 760.81,461.18 774.64,462.69 788.47,464.73 802.30,462.79 816.13,463.36 829.96,467.40 843.79,465.82 857.62,468.17 871.45,465.31 885.28,463.11 899.12,467.58 912.95,467.79 926.78,465.67 940.61,468.87 954.44,470.11 968.27,465.64" clip-path="url(#plot-area)"/>
+<polyline class="series" stroke="#dc2626" stroke-dasharray="7 5" points="193.73,396.57 304.38,428.99 415.03,441.37 525.68,450.95 636.33,456.63 746.97,463.02 857.62,465.94 968.27,466.68" clip-path="url(#plot-area)"/>
+<circle cx="193.73" cy="396.57" r="2.8" fill="#dc2626" clip-path="url(#plot-area)"><title>batch=64, lr=3e-3 (retuned) validation: 3.55075</title></circle>
+<circle cx="304.38" cy="428.99" r="2.8" fill="#dc2626" clip-path="url(#plot-area)"><title>batch=64, lr=3e-3 (retuned) validation: 2.92006</title></circle>
+<circle cx="415.03" cy="441.37" r="2.8" fill="#dc2626" clip-path="url(#plot-area)"><title>batch=64, lr=3e-3 (retuned) validation: 2.67923</title></circle>
+<circle cx="525.68" cy="450.95" r="2.8" fill="#dc2626" clip-path="url(#plot-area)"><title>batch=64, lr=3e-3 (retuned) validation: 2.49297</title></circle>
+<circle cx="636.33" cy="456.63" r="2.8" fill="#dc2626" clip-path="url(#plot-area)"><title>batch=64, lr=3e-3 (retuned) validation: 2.38242</title></circle>
+<circle cx="746.97" cy="463.02" r="2.8" fill="#dc2626" clip-path="url(#plot-area)"><title>batch=64, lr=3e-3 (retuned) validation: 2.25813</title></circle>
+<circle cx="857.62" cy="465.94" r="2.8" fill="#dc2626" clip-path="url(#plot-area)"><title>batch=64, lr=3e-3 (retuned) validation: 2.20147</title></circle>
+<circle cx="968.27" cy="466.68" r="2.8" fill="#dc2626" clip-path="url(#plot-area)"><title>batch=64, lr=3e-3 (retuned) validation: 2.18708</title></circle>
+<line x1="90.0" y1="605.0" x2="117.0" y2="605.0" stroke="#dc2626" stroke-width="2"/>
+<line x1="127.0" y1="605.0" x2="154.0" y2="605.0" stroke="#dc2626" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="165.00" y="609.00" font-size="12">batch=64, lr=3e-3 (retuned) (solid: train, dashed: validation)</text>
+<polyline class="series" stroke="#059669" points="96.92,139.65 110.75,250.05 124.58,309.26 138.41,329.94 152.24,333.29 166.07,347.33 179.90,360.29 193.73,365.16 207.56,371.36 221.39,379.79 235.23,380.16 249.06,384.40 262.89,388.53 276.72,392.14 290.55,399.98 304.38,398.87 318.21,399.83 332.04,406.31 345.87,407.19 359.71,409.04 373.54,413.63 387.37,413.00 401.20,417.60 415.03,419.88 428.86,423.34 442.69,423.74 456.52,425.70 470.35,430.12 484.18,427.62 498.02,430.65 511.85,432.35 525.68,431.63 539.51,434.61 553.34,432.99 567.17,436.96 581.00,439.35 594.83,441.72 608.66,441.78 622.50,439.51 636.33,439.35 650.16,441.52 663.99,444.82 677.82,446.28 691.65,443.58 705.48,447.88 719.31,446.55 733.14,447.15 746.97,447.99 760.81,447.92 774.64,448.62 788.47,448.75 802.30,449.37 816.13,449.93 829.96,452.44 843.79,450.75 857.62,454.32 871.45,453.89 885.28,452.96 899.12,452.35 912.95,454.96 926.78,454.07 940.61,454.06 954.44,455.83 968.27,453.89" clip-path="url(#plot-area)"/>
+<polyline class="series" stroke="#059669" stroke-dasharray="7 5" points="193.73,369.17 304.38,400.82 415.03,421.27 525.68,435.77 636.33,443.69 746.97,449.30 857.62,451.79 968.27,455.80" clip-path="url(#plot-area)"/>
+<circle cx="193.73" cy="369.17" r="2.8" fill="#059669" clip-path="url(#plot-area)"><title>batch=128, lr=3e-3 validation: 4.0837</title></circle>
+<circle cx="304.38" cy="400.82" r="2.8" fill="#059669" clip-path="url(#plot-area)"><title>batch=128, lr=3e-3 validation: 3.46797</title></circle>
+<circle cx="415.03" cy="421.27" r="2.8" fill="#059669" clip-path="url(#plot-area)"><title>batch=128, lr=3e-3 validation: 3.07024</title></circle>
+<circle cx="525.68" cy="435.77" r="2.8" fill="#059669" clip-path="url(#plot-area)"><title>batch=128, lr=3e-3 validation: 2.78822</title></circle>
+<circle cx="636.33" cy="443.69" r="2.8" fill="#059669" clip-path="url(#plot-area)"><title>batch=128, lr=3e-3 validation: 2.63419</title></circle>
+<circle cx="746.97" cy="449.30" r="2.8" fill="#059669" clip-path="url(#plot-area)"><title>batch=128, lr=3e-3 validation: 2.52506</title></circle>
+<circle cx="857.62" cy="451.79" r="2.8" fill="#059669" clip-path="url(#plot-area)"><title>batch=128, lr=3e-3 validation: 2.47666</title></circle>
+<circle cx="968.27" cy="455.80" r="2.8" fill="#059669" clip-path="url(#plot-area)"><title>batch=128, lr=3e-3 validation: 2.39856</title></circle>
+<line x1="90.0" y1="633.0" x2="117.0" y2="633.0" stroke="#059669" stroke-width="2"/>
+<line x1="127.0" y1="633.0" x2="154.0" y2="633.0" stroke="#059669" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="165.00" y="637.00" font-size="12">batch=128, lr=3e-3 (solid: train, dashed: validation)</text>
+<polyline class="series" stroke="#9333ea" points="106.42,102.33 129.76,183.60 153.10,278.25 176.44,299.18 199.78,312.45 223.12,311.85 246.46,327.85 269.80,331.44 293.14,340.70 316.48,348.13 339.82,349.86 363.16,350.91 386.50,356.44 409.84,360.67 433.18,364.40 456.52,364.98 479.86,368.64 503.20,371.53 526.54,374.49 549.88,377.25 573.22,378.03 596.56,380.99 619.90,383.67 643.24,383.37 666.58,387.26 689.92,387.04 713.26,390.52 736.60,390.73 759.94,390.04 783.28,392.51 806.62,393.00 829.96,394.47 853.30,395.51 876.64,397.91 899.98,396.64 923.32,396.00 946.66,398.34 970.00,399.75" clip-path="url(#plot-area)"/>
+<polyline class="series" stroke="#9333ea" stroke-dasharray="7 5" points="176.44,298.74 269.80,336.74 363.16,352.98 456.52,369.54 549.88,377.20 643.24,384.63 736.60,389.13 829.96,395.75 923.32,399.73" clip-path="url(#plot-area)"/>
+<circle cx="176.44" cy="298.74" r="2.8" fill="#9333ea" clip-path="url(#plot-area)"><title>batch=432, lr=3e-3 (retuned) validation: 5.45352</title></circle>
+<circle cx="269.80" cy="336.74" r="2.8" fill="#9333ea" clip-path="url(#plot-area)"><title>batch=432, lr=3e-3 (retuned) validation: 4.71445</title></circle>
+<circle cx="363.16" cy="352.98" r="2.8" fill="#9333ea" clip-path="url(#plot-area)"><title>batch=432, lr=3e-3 (retuned) validation: 4.39851</title></circle>
+<circle cx="456.52" cy="369.54" r="2.8" fill="#9333ea" clip-path="url(#plot-area)"><title>batch=432, lr=3e-3 (retuned) validation: 4.07653</title></circle>
+<circle cx="549.88" cy="377.20" r="2.8" fill="#9333ea" clip-path="url(#plot-area)"><title>batch=432, lr=3e-3 (retuned) validation: 3.92743</title></circle>
+<circle cx="643.24" cy="384.63" r="2.8" fill="#9333ea" clip-path="url(#plot-area)"><title>batch=432, lr=3e-3 (retuned) validation: 3.78288</title></circle>
+<circle cx="736.60" cy="389.13" r="2.8" fill="#9333ea" clip-path="url(#plot-area)"><title>batch=432, lr=3e-3 (retuned) validation: 3.69538</title></circle>
+<circle cx="829.96" cy="395.75" r="2.8" fill="#9333ea" clip-path="url(#plot-area)"><title>batch=432, lr=3e-3 (retuned) validation: 3.56672</title></circle>
+<circle cx="923.32" cy="399.73" r="2.8" fill="#9333ea" clip-path="url(#plot-area)"><title>batch=432, lr=3e-3 (retuned) validation: 3.48929</title></circle>
+<line x1="90.0" y1="661.0" x2="117.0" y2="661.0" stroke="#9333ea" stroke-width="2"/>
+<line x1="127.0" y1="661.0" x2="154.0" y2="661.0" stroke="#9333ea" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="165.00" y="665.00" font-size="12">batch=432, lr=3e-3 (retuned) (solid: train, dashed: validation)</text>
+<polyline class="series" stroke="#ea580c" points="96.92,112.30 110.75,147.69 124.58,190.88 138.41,236.41 152.24,271.52 166.07,301.79 179.90,320.74 193.73,332.72 207.56,342.03 221.39,353.39 235.23,360.70 249.06,368.47 262.89,369.23 276.72,377.21 290.55,382.35 304.38,384.44 318.21,384.45 332.04,392.33 345.87,388.47 359.71,392.98 373.54,398.69 387.37,397.37 401.20,404.16 415.03,401.32 428.86,406.47 442.69,407.73 456.52,405.32 470.35,409.72 484.18,406.50 498.02,411.50 511.85,412.47 525.68,412.27 539.51,415.65 553.34,416.17 567.17,412.80 581.00,420.31 594.83,416.78 608.66,418.50 622.50,417.79 636.33,419.12 650.16,417.83 663.99,420.62 677.82,420.76 691.65,417.15 705.48,420.49 719.31,418.59 733.14,419.84 746.97,422.50 760.81,421.73 774.64,422.42 788.47,423.08 802.30,422.69 816.13,422.70 829.96,426.59 843.79,425.33 857.62,427.06 871.45,423.45 885.28,421.58 899.12,425.36 912.95,424.84 926.78,424.33 940.61,427.28 954.44,426.85 968.27,424.10" clip-path="url(#plot-area)"/>
+<polyline class="series" stroke="#ea580c" stroke-dasharray="7 5" points="193.73,335.35 304.38,387.48 415.03,403.27 525.68,413.65 636.33,417.73 746.97,422.21 857.62,424.29 968.27,424.31" clip-path="url(#plot-area)"/>
+<circle cx="193.73" cy="335.35" r="2.8" fill="#ea580c" clip-path="url(#plot-area)"><title>batch=64, lr=2e-4 (original) validation: 4.74144</title></circle>
+<circle cx="304.38" cy="387.48" r="2.8" fill="#ea580c" clip-path="url(#plot-area)"><title>batch=64, lr=2e-4 (original) validation: 3.72742</title></circle>
+<circle cx="415.03" cy="403.27" r="2.8" fill="#ea580c" clip-path="url(#plot-area)"><title>batch=64, lr=2e-4 (original) validation: 3.42029</title></circle>
+<circle cx="525.68" cy="413.65" r="2.8" fill="#ea580c" clip-path="url(#plot-area)"><title>batch=64, lr=2e-4 (original) validation: 3.21853</title></circle>
+<circle cx="636.33" cy="417.73" r="2.8" fill="#ea580c" clip-path="url(#plot-area)"><title>batch=64, lr=2e-4 (original) validation: 3.13908</title></circle>
+<circle cx="746.97" cy="422.21" r="2.8" fill="#ea580c" clip-path="url(#plot-area)"><title>batch=64, lr=2e-4 (original) validation: 3.05203</title></circle>
+<circle cx="857.62" cy="424.29" r="2.8" fill="#ea580c" clip-path="url(#plot-area)"><title>batch=64, lr=2e-4 (original) validation: 3.01147</title></circle>
+<circle cx="968.27" cy="424.31" r="2.8" fill="#ea580c" clip-path="url(#plot-area)"><title>batch=64, lr=2e-4 (original) validation: 3.01114</title></circle>
+<line x1="90.0" y1="689.0" x2="117.0" y2="689.0" stroke="#ea580c" stroke-width="2"/>
+<line x1="127.0" y1="689.0" x2="154.0" y2="689.0" stroke="#ea580c" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="165.00" y="693.00" font-size="12">batch=64, lr=2e-4 (original) (solid: train, dashed: validation)</text>
+<polyline class="series" stroke="#0891b2" points="106.42,102.33 129.76,129.12 153.10,171.24 176.44,205.63 199.78,236.50 223.12,262.88 246.46,284.08 269.80,299.88 293.14,315.34 316.48,324.67 339.82,333.04 363.16,339.53 386.50,346.18 409.84,351.89 433.18,357.32 456.52,359.08 479.86,363.60 503.20,367.08 526.54,370.44 549.88,373.15 573.22,374.12 596.56,376.80 619.90,379.09 643.24,378.55 666.58,381.93 689.92,381.36 713.26,384.58 736.60,384.32 759.94,383.24 783.28,385.74 806.62,385.77 829.96,387.16 853.30,387.65 876.64,389.87 899.98,388.41 923.32,387.49 946.66,389.77 970.00,390.97" clip-path="url(#plot-area)"/>
+<polyline class="series" stroke="#0891b2" stroke-dasharray="7 5" points="176.44,221.57 269.80,308.01 363.16,342.29 456.52,364.20 549.88,373.31 643.24,379.45 736.60,382.83 829.96,388.07 923.32,390.92" clip-path="url(#plot-area)"/>
+<circle cx="176.44" cy="221.57" r="2.8" fill="#0891b2" clip-path="url(#plot-area)"><title>batch=432, lr=6e-4 (original) validation: 6.95461</title></circle>
+<circle cx="269.80" cy="308.01" r="2.8" fill="#0891b2" clip-path="url(#plot-area)"><title>batch=432, lr=6e-4 (original) validation: 5.27322</title></circle>
+<circle cx="363.16" cy="342.29" r="2.8" fill="#0891b2" clip-path="url(#plot-area)"><title>batch=432, lr=6e-4 (original) validation: 4.60652</title></circle>
+<circle cx="456.52" cy="364.20" r="2.8" fill="#0891b2" clip-path="url(#plot-area)"><title>batch=432, lr=6e-4 (original) validation: 4.18036</title></circle>
+<circle cx="549.88" cy="373.31" r="2.8" fill="#0891b2" clip-path="url(#plot-area)"><title>batch=432, lr=6e-4 (original) validation: 4.00309</title></circle>
+<circle cx="643.24" cy="379.45" r="2.8" fill="#0891b2" clip-path="url(#plot-area)"><title>batch=432, lr=6e-4 (original) validation: 3.8836</title></circle>
+<circle cx="736.60" cy="382.83" r="2.8" fill="#0891b2" clip-path="url(#plot-area)"><title>batch=432, lr=6e-4 (original) validation: 3.81804</title></circle>
+<circle cx="829.96" cy="388.07" r="2.8" fill="#0891b2" clip-path="url(#plot-area)"><title>batch=432, lr=6e-4 (original) validation: 3.71608</title></circle>
+<circle cx="923.32" cy="390.92" r="2.8" fill="#0891b2" clip-path="url(#plot-area)"><title>batch=432, lr=6e-4 (original) validation: 3.66061</title></circle>
+<line x1="90.0" y1="717.0" x2="117.0" y2="717.0" stroke="#0891b2" stroke-width="2"/>
+<line x1="127.0" y1="717.0" x2="154.0" y2="717.0" stroke="#0891b2" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="165.00" y="721.00" font-size="12">batch=432, lr=6e-4 (original) (solid: train, dashed: validation)</text>
+</svg>

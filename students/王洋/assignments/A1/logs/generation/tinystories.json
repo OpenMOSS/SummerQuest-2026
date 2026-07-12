@@ -1,0 +1,40 @@
+{
+  "format": "summerquest-a1-public-generation-log-v1",
+  "scope": "tinystories-selected-generation",
+  "selected_candidate": "best_lr3e-3_seed1337_t0.7_p0.9",
+  "source_text_basename": "best_lr3e-3_seed1337_t0.7_p0.9.txt",
+  "source_metadata_basename": "best_lr3e-3_seed1337_t0.7_p0.9.json",
+  "metadata": {
+    "checkpoint_file": "latest.pt",
+    "checkpoint_processed_tokens": 327680000,
+    "checkpoint_step": 10000,
+    "config_file": "config.resolved.json",
+    "created_at_utc": "2026-07-12T12:01:10Z",
+    "elapsed_seconds": 1.2218255028128624,
+    "format": "cs336-generation-summary-v1",
+    "generated_tokens": 170,
+    "max_new_tokens": 256,
+    "prompt": "Once upon a time",
+    "prompt_tokens": 4,
+    "seed": 1337,
+    "stop_reason": "special_token",
+    "stop_token": "<|endoftext|>",
+    "stopped_on_special_token": true,
+    "temperature": 0.7,
+    "tokenizer_sha256": {
+      "merges_file": "81ba9ce433937d23f5446f1e34e8afc3423c48641b8e8be734227fc31e360aac",
+      "vocab_file": "95a84e44dc8b6f1b27ff3661c28a493e7520146e266ec6a36abd2205d9bb9702"
+    },
+    "tokens_per_second": 139.13607107449417,
+    "top_p": 0.9,
+    "total_tokens": 174
+  },
+  "termination_annotation": {
+    "valid_early_stop": true,
+    "generated_tokens_before_stop": 170,
+    "maximum_new_tokens": 256,
+    "stop_token": "<|endoftext|>",
+    "explanation": "Generation legally stopped after 170 new tokens because the model emitted the configured end-of-text special token before the 256-token maximum."
+  },
+  "text": "Once upon a time, there was a little girl named Amy. She had a toy that she loved very much. It was a small, round ball. The ball was her favorite toy. She played with it every day.\nOne day, Amy's friend Tom came to play. Tom saw the ball and wanted to play with it too. Amy said, \"No, Tom! This is my ball. I will give it back.\" Tom was sad and said, \"But I want to play with it too.\" Amy thought for a moment and then said, \"Okay, Tom. We can share the ball.\"\nAmy and Tom played with the ball together. They had so much fun. Amy learned that sharing can be fun. From that day on, Amy and Tom always shared their toys and played together. They were happy and never fought again.\n<|endoftext|>"
+}
