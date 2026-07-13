@@ -72,41 +72,43 @@
     }
   },
   "openwebtext_32k": {
-    "status": "deferred_cpu_memory",
+    "status": "completed_gpu_host_2tb_ram",
     "training": {
-      "workers": 16,
-      "stage_reached": "parallel pre-tokenization",
-      "outcome": "memory limit reached and process terminated",
-      "exit_code": 143,
-      "vocabulary_created": false
+      "elapsed_seconds": 970.1761483252048,
+      "vocab_size": 32000,
+      "merge_count": 31743,
+      "peak_parent_rss_bytes": 11645120512,
+      "peak_process_tree_rss_bytes": 84190535680,
+      "memory_sampling_interval_seconds": 0.05,
+      "memory_measurement": "maximum sampled aggregate RSS of parent and all recursive children",
+      "longest_token_bytes": 64
+    },
+    "full_validation_benchmark": {
+      "bytes": 289998753,
+      "tokens": 66401098,
+      "bytes_per_token": 4.367378879789006,
+      "bytes_per_second": 696874.7430187647
     },
     "sample_10_documents_with_tinystories_10k": {
       "split": "validation",
-      "sampling": "uniform reservoir sample over end-of-text-delimited documents",
       "seed": 1337,
-      "population_documents": 59059,
-      "sampled_document_indices": [
-        9675,
-        13827,
-        21372,
-        25684,
-        28419,
-        28555,
-        42279,
-        46797,
-        50635,
-        51595
-      ],
       "bytes": 51393,
       "tokens": 19178,
-      "bytes_per_token": 2.6797893419543226
+      "bytes_per_token": 2.6797893419543226,
+      "note": "out-of-domain TinyStories tokenizer fragments OWT text"
     },
     "sample_10_documents_with_openwebtext_32k": {
-      "status": "deferred_cpu_memory"
+      "split": "validation",
+      "seed": 1337,
+      "bytes": 51393,
+      "tokens": 13010,
+      "bytes_per_token": 3.9502690238278246,
+      "note": "domain-matched 32K tokenizer compresses OWT better"
     },
     "corpus_encoding": {
-      "train": "deferred_cpu_memory",
-      "validation": "deferred_cpu_memory"
+      "train_tokens_uint16": 2727120452,
+      "validation_tokens_uint16": 66401098,
+      "method": "sharded parallel encode at <|endoftext|> boundaries (96 workers)"
     }
   }
 }

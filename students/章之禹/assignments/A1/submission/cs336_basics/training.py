@@ -341,18 +341,25 @@ def _rng_state(train_generator: torch.Generator, validation_generator: torch.Gen
 def _restore_rng_state(
     state: Mapping[str, Any], train_generator: torch.Generator, validation_generator: torch.Generator
 ) -> None:
+    def _as_cpu_byte(value: Any) -> torch.Tensor:
+        # ``torch.load`` with a CUDA ``map_location`` moves the saved RNG state
+        # tensors onto the GPU, but ``set_rng_state`` / ``Generator.set_state``
+        # require a CPU ByteTensor.  Coerce back so resume works across devices.
+        tensor = value if isinstance(value, torch.Tensor) else torch.as_tensor(value)
+        return tensor.detach().to(device="cpu", dtype=torch.uint8)
+
     if "python" in state:
         random.setstate(state["python"])
     if "numpy" in state:
         np.random.set_state(state["numpy"])
     if "torch" in state:
-        torch.set_rng_state(state["torch"])
+        torch.set_rng_state(_as_cpu_byte(state["torch"]))
     if "cuda" in state and torch.cuda.is_available():
-        torch.cuda.set_rng_state_all(state["cuda"])
+        torch.cuda.set_rng_state_all([_as_cpu_byte(s) for s in state["cuda"]])
     if "train_generator" in state:
-        train_generator.set_state(state["train_generator"])
+        train_generator.set_state(_as_cpu_byte(state["train_generator"]))
     if "validation_generator" in state:
-        validation_generator.set_state(state["validation_generator"])
+        validation_generator.set_state(_as_cpu_byte(state["validation_generator"]))
 
 
 @torch.no_grad()
