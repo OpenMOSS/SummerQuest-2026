@@ -496,9 +496,30 @@ $\Theta=10000$，`batch_size=128`、`max_iters=10000`，共 **327,680,000 proces
 | no-RMSNorm（降低 LR 3e-4） | 1.5274 | +0.1623 |
 | NoPE（去 RoPE） | 1.4170 | +0.0519（**位置编码贡献最大**） |
 
-结论：本规模/预算下，**RoPE 的贡献最大**（去掉后退化 +0.052），RMSNorm 次之（去掉后不仅
-变差、初始还极不稳定，需要更小 LR 才勉强训练）；post-norm 与 pre-norm 基本持平；参数近似
-匹配的 ungated SiLU FFN 略逊于 gated SwiGLU。曲线（step≥250）见 `assets/ablations.png`。
+逐项分析：
+
+- **post-norm（−0.0006）**：把两个 RMSNorm 从子层输入侧移到残差相加之后，最终 val loss
+  与 pre-norm 基本持平、甚至略优 0.0006。在本规模（4 层、10K steps）下残差路径很浅，pre/post
+  的梯度传播差异尚不足以体现——post-norm 在深层模型才更容易出现训练早期不稳定，这里的“基本
+  持平”正符合浅模型的预期，不能据此推断深层也无差别。
+- **SiLU-FFN（+0.0127）**：把 gated SwiGLU 换成参数近似匹配（$d_{\mathrm{ff}}=2048$）的
+  ungated SiLU FFN 后 val loss 上升 0.0127。两者参数量对齐，差距来自 gating 机制本身：SwiGLU
+  的 $\operatorname{SiLU}(W_1x)\odot W_3x$ 用一路乘性门控调制另一路，比单路 $\operatorname{SiLU}(W_1x)$
+  表达力更强，这一小而稳定的增益与社区经验一致。
+- **no-RMSNorm（best LR，+0.0175）**：完全移除归一化后即便用 baseline 的最佳 LR 仍能收敛，
+  但 val loss 升到 1.3826，且 **eval-at-start 初始 loss 高达 17.5**——去掉归一化使初始激活
+  尺度失控、logits 爆炸。它能训起来主要靠全局梯度裁剪兜底，属于“勉强可训”而非“健康”。
+- **no-RMSNorm（降低 LR 到 3e-4，+0.1623）**：为压住上面的激活爆炸而调低 LR，虽然稳定了初始
+  阶段，却因学习率过小欠拟合，val loss 反而恶化到 1.5274。这说明去归一化的代价是把可用 LR
+  窗口大幅压窄——要么冒不稳定风险用大 LR，要么换来欠拟合，印证 RMSNorm 对“可训练 LR 范围”的
+  关键作用（与 §6.2 中 5e-1 去 RMSNorm 第 1 步即 NaN 相互印证）。
+- **NoPE（+0.0519）**：去掉 RoPE 后模型仅靠 causal mask 的隐式顺序信息，val loss 退化 0.0519，
+  是四项里降幅**最大**的，说明在本任务中显式相对位置编码贡献最大——TinyStories 的叙事强依赖
+  词序与相对距离，缺少位置信号时注意力难以稳定对齐。
+
+综合来看，本规模/预算下 **RoPE 的贡献最大**（去掉退化 +0.052），RMSNorm 次之（去掉后不仅变差，
+初始还极不稳定、可用 LR 窗口被压窄）；gated SwiGLU 稳定优于参数匹配的 ungated SiLU FFN；
+post-norm 与 pre-norm 在浅模型上基本持平。曲线（step≥250）见 `assets/ablations.png`。
 
 ![Ablations](assets/ablations.png)
 
