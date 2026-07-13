@@ -36,6 +36,8 @@ App Secret、Verification Token、Encrypt Key、Webhook Secret、Access Token、
 每次作业：
 
 - `assignments/<A编号>/README.md`：公开、脱敏的报告和公开代码说明，并在“飞书补充文档”一节填写组内文档链接。
+- 代码、日志、图表等其他提交文件：仅在对应正式题面规定的个人作业目录内提交。A1 的
+  固定目录和必交文件见 [A1 题面](../assignments/A1/README.md)。
 
 公开 README 应该让评审者理解你完成了什么，但不要求通过公开仓库重建实验室内部环境。组内飞书文档只保存不能公开且审核必要的差量证据，不要机械复制公开报告，也不要把组内正文复制回 GitHub。仓库不维护额外的飞书索引文件。
 
@@ -60,13 +62,23 @@ git push origin main
 git switch -c a0/<你的 GitHub ID>
 ```
 
-A1-A6 在正式题面发布后，切换到对应分支并创建作业目录：
+A1 切换到对应分支并创建作业目录：
 
 ```bash
 python scripts/create_assignment.py --name '<同学真名>' --assignment A1
 ```
 
-完成后只暂存自己的作业目录，检查差异再提交。A0 使用第一条 `git add`；A1-A6 使用第二条并替换作业编号：
+A1 的官方工作仓库必须位于固定兄弟目录 `../assignment1-basics`。在该目录完成实现和
+`uv run pytest` 后，回到 SummerQuest 仓库同步允许提交的文件：
+
+```bash
+python3 scripts/sync_a1_submission.py --name '<同学真名>'
+```
+
+不要把整个 `assignment1-basics/`、公共 tests/fixtures、数据、模型权重或依赖环境放进
+SummerQuest 仓库。
+
+完成后只暂存自己的作业目录，检查差异再提交。A0 使用第一条 `git add`；A1 使用第二条：
 
 ```bash
 git add "students/<同学真名>"
@@ -84,7 +96,7 @@ git push -u origin a0/<你的 GitHub ID>
 [A0] <同学真名> - 完成基础环境与 Profile
 ```
 
-A1-A6 将分支名、commit scope 和标题中的编号改为对应作业编号。
+A1 将分支名、commit scope 和标题中的编号改为 `a1` 和 `[A1]`。
 
 ## 4. PR 范围
 

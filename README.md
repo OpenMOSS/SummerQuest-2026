@@ -26,7 +26,7 @@ students/<同学真名>/
 └── assignments/
     ├── A0/
     │   └── README.md           # 公开报告，并在其中填写组内飞书补充文档链接
-    └── A1...A6/                # 发布后按同样结构提交
+    └── A1...A6/                # 发布后按各作业题面规定的结构提交
 ```
 
 个人资料和每次作业都采用“双层提交”：GitHub Markdown 负责可公开、可评审、可检索的摘要；飞书文档负责组织内公开的补充材料。个人飞书主页链接写入 `PROFILE.md`，每次作业的飞书补充文档链接写入该作业的 `README.md`；仓库不使用额外的飞书索引文件。
@@ -48,27 +48,32 @@ students/<同学真名>/
 
 完整命令流程与审核要求见 [公开性与提交规则](docs/submission-rules.md)。
 
-A0 可直接用脚手架开始；A1-A6 在正式题面发布后使用对应的作业脚手架：
+A0 继续使用原有脚手架；A1 已发布，已有个人目录的同学使用 A1 脚手架：
 
 ```bash
 python scripts/create_student.py --name '<同学真名>' --github '<GitHub ID>'
-# python scripts/create_assignment.py --name '<同学真名>' --assignment A1
+python scripts/create_assignment.py --name '<同学真名>' --assignment A1
 python scripts/validate_repo.py
 ```
+
+A1 还要求把 Stanford 原版仓库下载到固定兄弟目录 `../assignment1-basics`；实现和测试在
+该仓库中进行，再用 `python3 scripts/sync_a1_submission.py --name '<同学真名>'` 同步
+个人提交文件。完整流程见 [A1 题面](assignments/A1/README.md)。
 
 ## 作业预告
 
 | 作业 | 主题 | 状态 | 参考资料 |
 | --- | --- | --- | --- |
 | [A0](assignments/A0/README.md) | Linux、GitHub、服务器环境与双层 Profile | 已发布 | 实验室原创入口作业 |
-| [A1](assignments/A1/README.md) | Basics | 预告 | [Stanford 原版 assignment1-basics](https://github.com/stanford-cs336/assignment1-basics) |
+| [A1](assignments/A1/README.md) | 从零实现 tokenizer、Transformer 与训练流程 | 已发布 | [实验室题面](assignments/A1/README.md) · [Stanford 原版](https://github.com/stanford-cs336/assignment1-basics) |
 | [A2](assignments/A2/README.md) | Systems | 预告 | [Stanford 原版 assignment2-systems](https://github.com/stanford-cs336/assignment2-systems) |
 | [A3](assignments/A3/README.md) | Scaling | 预告 | [Stanford 原版 assignment3-scaling](https://github.com/stanford-cs336/assignment3-scaling) |
 | [A4](assignments/A4/README.md) | Data | 预告 | [Stanford 原版 assignment4-data](https://github.com/stanford-cs336/assignment4-data) |
 | [A5](assignments/A5/README.md) | Alignment | 预告 | [Stanford 原版 assignment5-alignment](https://github.com/stanford-cs336/assignment5-alignment) |
 | [A6](assignments/A6/README.md) | 内容待公布 | 预告 | 具体题目后续发布 |
 
-A1-A5 的链接用于提前了解原版内容，不代表 2026 实验室版最终题面。实验室版本可能调整数据、测试、算力预算、提交物和评分标准；作答时以本仓库发布的题面及组织内公开的飞书补充文档为准。
+A2-A5 的链接用于提前了解原版内容，不代表 2026 实验室版最终题面。A1 已正式发布；
+技术细节可参考原 PDF，提交目录、文件格式和 PR 要求以本仓库 A1 题面为准。
 
 ## 入口
 

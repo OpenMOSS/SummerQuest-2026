@@ -8,6 +8,8 @@ import re
 import shutil
 from pathlib import Path
 
+from a1_source import copy_submission, validate_source
+
 
 ROOT = Path(__file__).resolve().parents[1]
 ASSIGNMENT = re.compile(r"A[1-6]")
@@ -22,7 +24,9 @@ def parse_args() -> argparse.Namespace:
 
 def validate_name(name: str) -> None:
     if not name or name.startswith("_") or any(char.isspace() for char in name):
-        raise ValueError("--name must be a real name without spaces and cannot start with '_'")
+        raise ValueError(
+            "--name must be a real name without spaces and cannot start with '_'"
+        )
     if any(char in name for char in ("/", "\\")):
         raise ValueError("--name cannot contain path separators")
 
@@ -32,7 +36,9 @@ def create_assignment(root: Path, name: str, assignment: str) -> Path:
     assignment = assignment.strip().upper()
     validate_name(name)
     if not ASSIGNMENT.fullmatch(assignment):
-        raise ValueError("--assignment must be one of A1-A6; A0 is created by create_student.py")
+        raise ValueError(
+            "--assignment must be one of A1-A6; A0 is created by create_student.py"
+        )
 
     student = root / "students" / name
     if not (student / "PROFILE.md").is_file():
@@ -40,15 +46,33 @@ def create_assignment(root: Path, name: str, assignment: str) -> Path:
             f"student directory does not exist or has no PROFILE.md: {student}"
         )
 
-    template = root / "students" / "_assignment_template"
-    if not (template / "README.md").is_file():
-        raise FileNotFoundError(f"assignment template is missing: {template / 'README.md'}")
+    generic_template = root / "students" / "_assignment_template"
+    template = (
+        root / "students" / "_assignment_templates" / "A1"
+        if assignment == "A1"
+        else generic_template
+    )
+    template_report = template / "README.md"
+    if not template_report.is_file():
+        raise FileNotFoundError(f"assignment template is missing: {template_report}")
+
+    a1_source: Path | None = None
+    if assignment == "A1":
+        a1_source = validate_source(root)
 
     destination = student / "assignments" / assignment
     if destination.exists():
         raise FileExistsError(f"assignment directory already exists: {destination}")
 
     shutil.copytree(template, destination)
+
+    if assignment == "A1":
+        assert a1_source is not None
+        submission = destination / "submission"
+        copy_submission(a1_source, submission)
+        (destination / "logs").mkdir()
+        (destination / "assets").mkdir()
+
     replacements = {
         "<姓名>": name,
         "<同学真名>": name,
@@ -70,6 +94,11 @@ def main() -> int:
         "Next: follow the formal assignment handout, fill every remaining "
         "<...> placeholder, and run python scripts/validate_repo.py."
     )
+    if args.assignment.strip().upper() == "A1":
+        print(
+            "A1 workspace: ../assignment1-basics. Work and test there, then run "
+            "python3 scripts/sync_a1_submission.py --name '<同学真名>'."
+        )
     return 0
 
 

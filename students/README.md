@@ -12,7 +12,14 @@ students/<同学真名>/
 
 模板在每个栏目都提供了 `[填写参考]`，包括初学者、工程背景和已有研究经历的写法，以及技能、特长、爱好、游戏和饮食的候选示例。填写完成后必须删除所有 `[填写参考]` 引用块；校验器会检查这一点。
 
-A1-A6 正式发布后，使用 `python scripts/create_assignment.py --name '<同学真名>' --assignment A1` 创建对应作业目录，不要直接复制或修改 `_assignment_template`。
+A1 先把官方仓库下载到固定兄弟目录 `../assignment1-basics`，再使用
+`python scripts/create_assignment.py --name '<同学真名>' --assignment A1` 创建提交目录。
+实现和测试在兄弟仓库完成，随后使用
+`python3 scripts/sync_a1_submission.py --name '<同学真名>'` 同步允许提交的文件。不要直接
+复制或修改 `_assignment_template`，也不要提交整个原版仓库。
+
+A1 已发布并提供专用提交模板；创建 A1 时也不要修改 `_assignment_templates`。A1 的固定
+文件清单见 [A1 正式题面](../assignments/A1/README.md)。
 
 ## 目录职责
 
@@ -20,7 +27,8 @@ A1-A6 正式发布后，使用 `python scripts/create_assignment.py --name '<同
 students/<同学真名>/
 ├── PROFILE.md                  # 公开个人 profile，并登记组内个人主页链接
 └── assignments/<A编号>/
-    └── README.md               # 公开报告，并填写组内飞书补充文档链接
+    ├── README.md               # 公开报告，并填写组内飞书补充文档链接
+    └── ...                     # 代码、日志等按对应正式题面提交
 ```
 
 - GitHub 中的所有文件默认可被全网访问，只能包含公开材料。
@@ -31,7 +39,7 @@ students/<同学真名>/
 ## PR 单位
 
 - A0：创建完整个人目录，完成公开 profile、组内飞书 profile 和 A0 报告。
-- A1-A6：每次只提交自己的一个作业目录，每个作业单独一个 PR。
+- A1：只提交自己的 A1 目录，并单独创建一个 PR。
 - Profile 更新：不和作业混合，单独创建 `[PROFILE]` PR。
 
 完整要求见 [公开性与提交规则](../docs/submission-rules.md)。

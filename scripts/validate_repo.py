@@ -18,9 +18,7 @@ TEMPLATE_FILES = (
     "assignments/A0/README.md",
 )
 
-ASSIGNMENT_TEMPLATE_FILES = (
-    "README.md",
-)
+ASSIGNMENT_TEMPLATE_FILES = ("README.md",)
 
 STUDENT_FILES = (
     "PROFILE.md",
@@ -79,6 +77,17 @@ def validate_template(errors: list[str]) -> None:
         path = assignment_template / relative
         if not path.is_file():
             errors.append(f"missing assignment template file: {path.relative_to(ROOT)}")
+    a1_template = STUDENTS / "_assignment_templates" / "A1" / "README.md"
+    if not a1_template.is_file():
+        errors.append(
+            f"missing A1 assignment template: {a1_template.relative_to(ROOT)}"
+        )
+    vendored_a1 = ROOT / "starter" / "A1"
+    if vendored_a1.exists():
+        errors.append(
+            "A1 upstream repository must remain external at ../assignment1-basics; "
+            "do not vendor starter/A1"
+        )
 
 
 def validate_assignment(student: Path, assignment: Path, errors: list[str]) -> None:
@@ -89,7 +98,10 @@ def validate_assignment(student: Path, assignment: Path, errors: list[str]) -> N
         return
 
     report = read_text(readme)
-    if PLACEHOLDER.search(report):
+    placeholder_text = (
+        report.replace("<|endoftext|>", "") if assignment.name == "A1" else report
+    )
+    if PLACEHOLDER.search(placeholder_text):
         errors.append(f"unfilled placeholder: {relative}/README.md")
     if not FEISHU_URL.search(report):
         errors.append(f"missing Feishu supplement URL: {relative}/README.md")
@@ -105,7 +117,9 @@ def validate_student(student: Path, errors: list[str]) -> None:
     name = student.name
     relative = student.relative_to(ROOT)
     if name.startswith(".") or any(char.isspace() for char in name):
-        errors.append(f"student directory must use a real name without spaces: {relative}")
+        errors.append(
+            f"student directory must use a real name without spaces: {relative}"
+        )
 
     for required in STUDENT_FILES:
         path = student / required
@@ -127,7 +141,9 @@ def validate_student(student: Path, errors: list[str]) -> None:
 
     assignments = student / "assignments"
     if assignments.is_dir():
-        for assignment in sorted(path for path in assignments.iterdir() if path.is_dir()):
+        for assignment in sorted(
+            path for path in assignments.iterdir() if path.is_dir()
+        ):
             if not re.fullmatch(r"A[0-6]", assignment.name):
                 errors.append(
                     f"unknown assignment directory; expected A0-A6: {assignment.relative_to(ROOT)}"
@@ -137,7 +153,9 @@ def validate_student(student: Path, errors: list[str]) -> None:
 
     for path in student.rglob("*"):
         if path.is_symlink():
-            errors.append(f"symbolic links are not allowed in student submissions: {path.relative_to(ROOT)}")
+            errors.append(
+                f"symbolic links are not allowed in student submissions: {path.relative_to(ROOT)}"
+            )
         elif path.is_file() and path.stat().st_size > MAX_STUDENT_FILE_BYTES:
             errors.append(
                 f"student file exceeds 5 MiB; use an approved external artifact location: "
@@ -161,7 +179,9 @@ def validate_secrets(errors: list[str]) -> None:
         if PRIVATE_KEY.search(text):
             errors.append(f"private key material detected: {path.relative_to(ROOT)}")
         if SECRET_VALUE.search(text):
-            errors.append(f"possible credential value detected: {path.relative_to(ROOT)}")
+            errors.append(
+                f"possible credential value detected: {path.relative_to(ROOT)}"
+            )
         if KNOWN_TOKEN.search(text):
             errors.append(f"known token format detected: {path.relative_to(ROOT)}")
 
@@ -172,7 +192,9 @@ def main() -> int:
     validate_secrets(errors)
 
     student_dirs = sorted(
-        path for path in STUDENTS.iterdir() if path.is_dir() and not path.name.startswith("_")
+        path
+        for path in STUDENTS.iterdir()
+        if path.is_dir() and not path.name.startswith("_")
     )
     for student in student_dirs:
         validate_student(student, errors)
@@ -186,7 +208,9 @@ def main() -> int:
     if student_dirs:
         print(f"Repository validation passed for {len(student_dirs)} student(s).")
     else:
-        print("Repository validation passed. No student submissions yet; templates are present.")
+        print(
+            "Repository validation passed. No student submissions yet; templates are present."
+        )
     return 0
 
 
