@@ -3,12 +3,12 @@
 > 本文件和同目录代码公开可见。只提交允许公开且已经脱敏的内容；组织内材料放在下方
 > 登记的飞书补充文档中，密钥和访问凭据不进入任何提交材料。
 
-> 评分标准与评估说明见 [`assignments/A1/EVALUATION.md`](../../../assignments/A1/EVALUATION.md)（评估要求的补充，均为建议）。
+> 评分标准与评测方式见 [`assignments/A1/EVALUATION.md`](../../../assignments/A1/EVALUATION.md)；日志格式见 [`assignments/A1/README.md` 的《实验日志格式》](../../../assignments/A1/README.md#实验日志格式)。
 > 本模板固定报告、代码、脚本、日志和图表的提交位置；各部分照下方占位填写即可。
 
 ## 基本信息
 
-- 作业题面版本：26.0.3
+- 作业题面版本：26.0.4
 - 完成范围：<填写>
 - 未完成项：<填写；没有则写“无”>
 - 上游 starter commit：`a158843b20107949f1a8d7df1b05cd33b9166712`
@@ -39,7 +39,7 @@
 ## 实验日志
 
 - 日志目录：`logs/`
-- 文件与格式：见 [`EVALUATION.md`](../../../assignments/A1/EVALUATION.md) 的推荐提交格式
+- 文件与格式：见 [`assignments/A1/README.md` 的《实验日志格式》](../../../assignments/A1/README.md#实验日志格式)
 - 与报告中实验的对应说明：<填写>
 
 ## 飞书补充文档

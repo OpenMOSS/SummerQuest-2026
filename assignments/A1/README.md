@@ -1,6 +1,9 @@
 # A1：Basics——从零实现语言模型
 
-> 状态：已发布。题面版本 26.0.3，适用于 OpenMOSS 暑期集训 2026。
+> 状态：已发布。题面版本 26.0.4，适用于 OpenMOSS 暑期集训 2026。
+>
+> 更新（2026-07-13）：补充实验日志的统一格式与评估说明；不新增实验任务。此前已按旧格式
+> 开始记录的日志，只要包含等价信息即可接受。
 >
 > 本页提供中文精简讲解和实验室提交规范。公式、逐题要求与实现细节请参考
 > [Version 26.0.3 原 PDF](https://github.com/stanford-cs336/assignment1-basics/blob/a158843b20107949f1a8d7df1b05cd33b9166712/cs336_assignment1_basics.pdf)；
@@ -95,14 +98,17 @@ students/<同学真名>/assignments/A1/
 
 ## 实验日志格式
 
-`logs/` 须按下面的格式组织，便于统一核验：
+为便于统一核验，`logs/` 的**核心信息为要求，文件名与组织方式为推荐**：
 
-- 训练类 run 使用 JSONL（每行一个 JSON 对象），每个记录点至少包含：`step`、
-  `wall_clock_sec`（墙钟秒）、`train_loss`、`lr`，并定期记录 `val_loss`。
-- 另交一个 `summary.json`：至少包含最终 val loss、总训练时间，以及关键配置
-  （`d_model`、层数、头数、context length、batch size、总步数）。
-- 主训练、学习率扫、batch size、四个消融、OWT 各自保留日志或曲线数据；文件名使用：
-  `train_tinystories.jsonl`、`lr_sweep/`、`batch_size/`、`ablation_*.jsonl`、`train_owt.jsonl`。
+- **要求（核心信息）**：训练类 run 逐点记录 `step`、`wall_clock_sec`（墙钟秒）、`train_loss`、
+  `lr`，并定期记录 `val_loss`；另外给出最终 val loss、总训练时间和关键配置（`d_model`、
+  层数、头数、context length、batch size、总步数）。推荐用 JSONL（每行一个 JSON 对象）
+  承载逐点信息，用 `summary.json` 承载汇总。
+- **推荐（组织方式）**：文件名与目录用 `train_tinystories.jsonl`、`lr_sweep/`、`batch_size/`、
+  `ablation_*.jsonl`、`train_owt.jsonl`、`summary.json`，分别对应主训练、学习率扫、batch
+  size、四个消融与 OWT。
+- 能提供**等价信息**的其他格式（如 CSV、单一汇总文件）同样接受；**不因纯粹的文件名或
+  组织差异扣分**。
 
 JSONL 行示例：
 
