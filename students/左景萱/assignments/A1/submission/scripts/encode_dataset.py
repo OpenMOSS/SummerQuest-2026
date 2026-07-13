@@ -11,6 +11,7 @@ import shutil
 import sys
 import tempfile
 import time
+from collections.abc import Iterable, Iterator
 from concurrent.futures import FIRST_COMPLETED, Future, ProcessPoolExecutor, wait
 from pathlib import Path
 from typing import BinaryIO
@@ -95,8 +96,36 @@ def _append_part(
     return copied
 
 
+def _parallel_safe_chunks(stream: Iterable[str], document_delimiter: str) -> Iterator[str]:
+    """Require every non-final worker chunk to end at a document boundary."""
+
+    def ends_at_delimiter_match(text: str) -> bool:
+        last_match_end = -1
+        search_start = 0
+        while (position := text.find(document_delimiter, search_start)) >= 0:
+            last_match_end = position + len(document_delimiter)
+            search_start = last_match_end
+        return last_match_end == len(text)
+
+    chunks = iter(stream)
+    try:
+        previous = next(chunks)
+    except StopIteration:
+        return
+
+    for current in chunks:
+        if not ends_at_delimiter_match(previous):
+            raise ValueError(
+                "parallel encoding encountered a non-final chunk without the document delimiter; "
+                "rerun with --num-processes 1"
+            )
+        yield previous
+        previous = current
+    yield previous
+
+
 def _encode_parallel(
-    stream: CorpusTextStream,
+    stream: Iterable[str],
     output_file: BinaryIO,
     digest: hashlib._Hash,
     *,
@@ -197,7 +226,7 @@ def parse_args() -> argparse.Namespace:
         "--num-processes",
         type=int,
         default=1,
-        help="Encoding workers. Parallel encoding requires at least one special token.",
+        help="Encoding workers. Parallel encoding requires exactly one document-boundary token.",
     )
     parser.add_argument("--max-bytes", type=int, default=None, help="Encode at most this many source bytes.")
     parser.add_argument("--overwrite", action="store_true")
@@ -222,8 +251,8 @@ def main() -> None:
     if args.num_processes < 1:
         raise ValueError("--num-processes must be positive")
     special_tokens = resolve_special_tokens(args.special_tokens, args.no_special_tokens)
-    if args.num_processes > 1 and not special_tokens:
-        raise ValueError("parallel encoding requires a special token that provides document boundaries")
+    if args.num_processes > 1 and len(special_tokens) != 1:
+        raise ValueError("parallel encoding requires exactly one unambiguous document-boundary token")
     corpus = args.corpus.expanduser()
     vocab_path = args.vocab.expanduser()
     merges_path = args.merges.expanduser()
@@ -270,6 +299,8 @@ def main() -> None:
     try:
         with temporary.open("wb") as output_file:
             if args.num_processes > 1:
+                if delimiter is None:
+                    raise RuntimeError("parallel delimiter validation was not initialized")
                 part_directory = Path(
                     tempfile.mkdtemp(
                         dir=output_path.parent,
@@ -277,7 +308,7 @@ def main() -> None:
                     )
                 )
                 token_count, num_parts = _encode_parallel(
-                    stream,
+                    _parallel_safe_chunks(stream, delimiter),
                     output_file,
                     digest,
                     vocab_path=vocab_path,

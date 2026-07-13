@@ -11,7 +11,7 @@ import json
 import heapq
 import multiprocessing as mp
 import os
-from collections import Counter, defaultdict
+from collections import Counter, defaultdict, deque
 from collections.abc import Iterable, Iterator
 from pathlib import Path
 from typing import BinaryIO
@@ -323,6 +323,7 @@ class Tokenizer:
         self.vocab = dict(vocab)
         self.merges = list(merges)
         self.special_tokens = _unique_in_order(special_tokens or [])
+        self._max_special_token_length = max((len(token) for token in self.special_tokens), default=1)
 
         next_id = max(self.vocab, default=-1) + 1
         existing_tokens = set(self.vocab.values())
@@ -423,23 +424,30 @@ class Tokenizer:
             except KeyError as error:
                 raise ValueError(f"vocabulary has no entry for byte token {symbol!r}") from error
 
-    def _encode_ordinary_text(self, text: str) -> Iterator[int]:
-        for match in GPT2_PRETOKEN_PATTERN.finditer(text):
-            yield from self._encode_pretoken(match.group(0).encode("utf-8"))
-
-    def _encode_text(self, text: str) -> Iterator[int]:
-        if self._special_regex is None:
-            yield from self._encode_ordinary_text(text)
-            return
+    def _iter_token_units(self, text: str) -> Iterator[tuple[int, int, int | None]]:
+        """Yield ordinary pre-token spans and indivisible special-token spans."""
 
         cursor = 0
-        for match in self._special_regex.finditer(text):
-            if match.start() > cursor:
-                yield from self._encode_ordinary_text(text[cursor : match.start()])
-            yield self._special_to_id[match.group(0)]
-            cursor = match.end()
-        if cursor < len(text):
-            yield from self._encode_ordinary_text(text[cursor:])
+        if self._special_regex is not None:
+            for special_match in self._special_regex.finditer(text):
+                for ordinary_match in GPT2_PRETOKEN_PATTERN.finditer(text, cursor, special_match.start()):
+                    yield ordinary_match.start(), ordinary_match.end(), None
+                yield (
+                    special_match.start(),
+                    special_match.end(),
+                    self._special_to_id[special_match.group(0)],
+                )
+                cursor = special_match.end()
+
+        for ordinary_match in GPT2_PRETOKEN_PATTERN.finditer(text, cursor):
+            yield ordinary_match.start(), ordinary_match.end(), None
+
+    def _encode_text(self, text: str) -> Iterator[int]:
+        for start, end, special_id in self._iter_token_units(text):
+            if special_id is None:
+                yield from self._encode_pretoken(text[start:end].encode("utf-8"))
+            else:
+                yield special_id
 
     def encode(self, text: str) -> list[int]:
         """Encode a string to token IDs."""
@@ -447,10 +455,39 @@ class Tokenizer:
         return list(self._encode_text(text))
 
     def encode_iterable(self, iterable: Iterable[str]) -> Iterator[int]:
-        """Lazily encode chunks while retaining only one input chunk at a time."""
+        """Lazily encode chunks without making chunk boundaries token boundaries."""
 
+        pending = ""
         for text in iterable:
-            yield from self._encode_text(text)
+            if text == "":
+                continue
+            pending = pending + text if pending else text
+            special_safe_end = max(0, len(pending) - self._max_special_token_length + 1)
+            ready_units: deque[tuple[int, int, int | None]] = deque()
+            emitted_end = 0
+
+            # Future text can complete a special token in the guarded suffix
+            # and can regroup the final two GPT-2 regex units (for example a
+            # contraction or trailing whitespace), so retain both units.
+            for start, end, special_id in self._iter_token_units(pending):
+                if end > special_safe_end:
+                    break
+                ready_units.append((start, end, special_id))
+                if len(ready_units) <= 2:
+                    continue
+
+                ready_start, ready_end, ready_special_id = ready_units.popleft()
+                if ready_special_id is None:
+                    yield from self._encode_pretoken(pending[ready_start:ready_end].encode("utf-8"))
+                else:
+                    yield ready_special_id
+                emitted_end = ready_end
+
+            if emitted_end:
+                pending = pending[emitted_end:]
+
+        if pending:
+            yield from self._encode_text(pending)
 
     def decode(self, ids: Iterable[int]) -> str:
         """Decode token IDs, replacing malformed UTF-8 with U+FFFD."""
