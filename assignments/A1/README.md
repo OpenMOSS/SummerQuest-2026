@@ -96,6 +96,17 @@ students/<同学真名>/assignments/A1/
 导出文件。依赖由 `../assignment1-basics/uv.lock` 固定，个人提交中不添加 `pyproject.toml`、
 `requirements.txt` 或 lock file。
 
+## 报告内容
+
+报告（`README.md`）应覆盖下列内容，不限定小节标题与顺序：
+
+- 书面题：`unicode1`、`unicode2`，以及 AdamW 显存、FLOPs 与训练时间核算；
+- Tokenizer 实验：compression ratio、最长 token、throughput，以及 TinyStories 与 OWT 的对比；
+- TinyStories 训练：loss 曲线与最终 validation loss；
+- 学习率扫、batch size，以及四个消融（删除 RMSNorm、Post-Norm、NoPE、SiLU）的结果与分析；
+- OWT 训练结果与分析；
+- 文本生成样本及简评。
+
 ## 实验日志格式
 
 为便于统一核验，`logs/` 的**核心信息为要求，文件名与组织方式为推荐**：
