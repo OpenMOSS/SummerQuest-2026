@@ -1,0 +1,12 @@
+{
+  "text": "owt_valid.txt",
+  "documents": 10,
+  "bytes": 50590,
+  "tokens": 14831,
+  "compression_bytes_per_token": 3.411098375025285,
+  "throughput_bytes_per_sec": 941979.9283520485,
+  "throughput_tokens_per_sec": 276151.4986635547,
+  "longest_token_id": 7160,
+  "longest_token_num_bytes": 15,
+  "longest_token_repr": " accomplishment"
+}

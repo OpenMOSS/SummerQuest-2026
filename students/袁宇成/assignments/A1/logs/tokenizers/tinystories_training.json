@@ -1,0 +1,9 @@
+{
+  "input": "TinyStoriesV2-GPT4-train.txt",
+  "vocab_size": 10000,
+  "num_merges": 9743,
+  "special_tokens": [
+    "<|endoftext|>"
+  ],
+  "training_time_sec": 59.13430502451956
+}
