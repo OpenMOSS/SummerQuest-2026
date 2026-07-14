@@ -1,0 +1,13 @@
+{
+  "best_validation_iteration": 5000,
+  "best_validation_loss": 1.3978030681610107,
+  "final_iteration": 5000,
+  "final_train_loss": 1.3896942138671875,
+  "final_validation_loss": 1.3978030681610107,
+  "has_non_finite_metric": false,
+  "process_elapsed_seconds": 1506.8398927850649,
+  "processed_tokens": 327680000,
+  "run_name": "ablation_nope",
+  "status": "completed",
+  "training_elapsed_seconds": 1503.7983688330278
+}

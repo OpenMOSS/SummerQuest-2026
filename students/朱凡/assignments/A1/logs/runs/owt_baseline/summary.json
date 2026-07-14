@@ -1,0 +1,13 @@
+{
+  "best_validation_iteration": 4500,
+  "best_validation_loss": 3.9476497173309326,
+  "final_iteration": 5000,
+  "final_train_loss": 3.9752185344696045,
+  "final_validation_loss": 3.956106662750244,
+  "has_non_finite_metric": false,
+  "process_elapsed_seconds": 2099.6519916364923,
+  "processed_tokens": 327680000,
+  "run_name": "owt_baseline",
+  "status": "completed",
+  "training_elapsed_seconds": 2091.779768398963
+}
