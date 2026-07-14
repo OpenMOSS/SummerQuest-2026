@@ -1,7 +1,7 @@
 {
   "name": "owt",
-  "final_val_loss": 9.763387203216553,
-  "total_train_time_sec": 329.4451858997345,
+  "final_val_loss": 9.679968118667603,
+  "total_train_time_sec": 333.52998661994934,
   "processed_tokens": 49152000,
   "config": {
     "vocab_size": 32000,
@@ -21,5 +21,6 @@
     "ffn_variant": "swiglu",
     "device": "cuda"
   },
-  "peak_memory_gb": 26.312691688537598
+  "peak_memory_gb": 26.311470985412598,
+  "generation_sample_path": "runs/a1_formal/generation_sample_owt.json"
 }

@@ -123,6 +123,8 @@ def train_run(
     ffn_variant: str = "swiglu",
     sample_tokenizer: BPETokenizer | None = None,
     sample_path: Path | None = None,
+    sample_prompt: str = "Once upon a time",
+    sample_note: str = "Sample generated from the trained checkpoint kept in memory during this script run.",
 ) -> dict:
     torch.manual_seed(20260713)
     if device.startswith("cuda") and torch.cuda.is_available():
@@ -195,9 +197,9 @@ def train_run(
         summary["peak_memory_gb"] = torch.cuda.max_memory_allocated() / 1024**3
     if sample_tokenizer is not None and sample_path is not None:
         sample = {
-            "prompt": "Once upon a time",
-            "sample": generate_sample(sample_tokenizer, model, "Once upon a time", device),
-            "note": "Sample generated from the trained TinyStories checkpoint kept in memory during this script run.",
+            "prompt": sample_prompt,
+            "sample": generate_sample(sample_tokenizer, model, sample_prompt, device),
+            "note": sample_note,
         }
         write_json(sample_path, sample)
         summary["generation_sample_path"] = str(sample_path)
@@ -338,6 +340,8 @@ def main() -> None:
         summary_path=output / "summary_tinystories.json",
         sample_tokenizer=tiny_tokenizer,
         sample_path=output / "generation_sample.json",
+        sample_prompt="Once upon a time",
+        sample_note="Sample generated from the trained TinyStories checkpoint kept in memory during this script run.",
         **base,
     )
     lr_values = [float(value) for value in args.lr_values.split(",") if value.strip()]
@@ -443,10 +447,15 @@ def main() -> None:
         val_data=owt_val,
         log_path=output / "train_owt.jsonl",
         summary_path=output / "summary_owt.json",
+        sample_tokenizer=owt_tokenizer,
+        sample_path=output / "generation_sample_owt.json",
+        sample_prompt="The",
+        sample_note="Sample generated from the trained OWT checkpoint kept in memory during this script run.",
         **owt_cfg,
     )
     sample = json.loads((output / "generation_sample.json").read_text(encoding="utf-8"))
-    write_json(output / "summary.json", {"tokenizer_stats": stats, "runs": summaries, "generation": sample})
+    owt_sample = json.loads((output / "generation_sample_owt.json").read_text(encoding="utf-8"))
+    write_json(output / "summary.json", {"tokenizer_stats": stats, "runs": summaries, "generation": sample, "generation_owt": owt_sample})
 
 
 if __name__ == "__main__":
