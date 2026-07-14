@@ -1,0 +1,24 @@
+{
+  "name": "tinystories",
+  "final_val_loss": 3.5880359411239624,
+  "total_train_time_sec": 5.048723459243774,
+  "config": {
+    "vocab_size": 1000,
+    "context_length": 64,
+    "d_model": 128,
+    "d_ff": 320,
+    "num_layers": 2,
+    "num_heads": 4,
+    "batch_size": 64,
+    "total_steps": 120,
+    "max_lr": 0.003,
+    "min_lr": 0.0003,
+    "warmup_steps": 10,
+    "use_rmsnorm": true,
+    "norm_position": "pre",
+    "use_rope": true,
+    "ffn_variant": "swiglu",
+    "device": "cuda"
+  },
+  "generation_sample_path": "runs/a1_public_valid/generation_sample.json"
+}

@@ -1,0 +1,23 @@
+{
+  "name": "lr_1",
+  "final_val_loss": 5.851741433143616,
+  "total_train_time_sec": 0.3221592903137207,
+  "config": {
+    "vocab_size": 1000,
+    "context_length": 64,
+    "d_model": 128,
+    "d_ff": 320,
+    "num_layers": 2,
+    "num_heads": 4,
+    "batch_size": 32,
+    "total_steps": 40,
+    "max_lr": 1.0,
+    "min_lr": 0.1,
+    "warmup_steps": 10,
+    "use_rmsnorm": true,
+    "norm_position": "pre",
+    "use_rope": true,
+    "ffn_variant": "swiglu",
+    "device": "cuda"
+  }
+}

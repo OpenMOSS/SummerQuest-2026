@@ -1,0 +1,23 @@
+{
+  "name": "batch_1",
+  "final_val_loss": 5.7275550365448,
+  "total_train_time_sec": 0.24352526664733887,
+  "config": {
+    "vocab_size": 1000,
+    "context_length": 64,
+    "d_model": 128,
+    "d_ff": 320,
+    "num_layers": 2,
+    "num_heads": 4,
+    "batch_size": 1,
+    "total_steps": 30,
+    "max_lr": 0.003,
+    "min_lr": 0.0003,
+    "warmup_steps": 10,
+    "use_rmsnorm": true,
+    "norm_position": "pre",
+    "use_rope": true,
+    "ffn_variant": "swiglu",
+    "device": "cuda"
+  }
+}

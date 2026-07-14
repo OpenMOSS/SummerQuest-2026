@@ -1,0 +1,329 @@
+{
+  "tokenizer_stats": {
+    "tinystories": {
+      "num_bytes": 500170,
+      "num_tokens": 157181,
+      "compression_ratio_bytes_per_token": 3.18212761084355,
+      "longest_token_bytes": 13,
+      "throughput_bytes_per_sec": 537693.6562881013
+    },
+    "owt": {
+      "num_bytes": 503943,
+      "num_tokens": 213107,
+      "compression_ratio_bytes_per_token": 2.3647416556002385,
+      "longest_token_bytes": 13,
+      "throughput_bytes_per_sec": 518302.9296186605
+    },
+    "slice_chars": {
+      "tinystories": 5000000,
+      "owt": 5000000
+    }
+  },
+  "runs": {
+    "tinystories": {
+      "name": "tinystories",
+      "final_val_loss": 3.5880359411239624,
+      "total_train_time_sec": 5.048723459243774,
+      "config": {
+        "vocab_size": 1000,
+        "context_length": 64,
+        "d_model": 128,
+        "d_ff": 320,
+        "num_layers": 2,
+        "num_heads": 4,
+        "batch_size": 64,
+        "total_steps": 120,
+        "max_lr": 0.003,
+        "min_lr": 0.0003,
+        "warmup_steps": 10,
+        "use_rmsnorm": true,
+        "norm_position": "pre",
+        "use_rope": true,
+        "ffn_variant": "swiglu",
+        "device": "cuda"
+      },
+      "generation_sample_path": "runs/a1_public_valid/generation_sample.json"
+    },
+    "lr_0.001": {
+      "name": "lr_0.001",
+      "final_val_loss": 5.634440660476685,
+      "total_train_time_sec": 0.32290148735046387,
+      "config": {
+        "vocab_size": 1000,
+        "context_length": 64,
+        "d_model": 128,
+        "d_ff": 320,
+        "num_layers": 2,
+        "num_heads": 4,
+        "batch_size": 32,
+        "total_steps": 40,
+        "max_lr": 0.001,
+        "min_lr": 0.0001,
+        "warmup_steps": 10,
+        "use_rmsnorm": true,
+        "norm_position": "pre",
+        "use_rope": true,
+        "ffn_variant": "swiglu",
+        "device": "cuda"
+      }
+    },
+    "lr_0.01": {
+      "name": "lr_0.01",
+      "final_val_loss": 5.398617148399353,
+      "total_train_time_sec": 0.31913232803344727,
+      "config": {
+        "vocab_size": 1000,
+        "context_length": 64,
+        "d_model": 128,
+        "d_ff": 320,
+        "num_layers": 2,
+        "num_heads": 4,
+        "batch_size": 32,
+        "total_steps": 40,
+        "max_lr": 0.01,
+        "min_lr": 0.001,
+        "warmup_steps": 10,
+        "use_rmsnorm": true,
+        "norm_position": "pre",
+        "use_rope": true,
+        "ffn_variant": "swiglu",
+        "device": "cuda"
+      }
+    },
+    "lr_0.1": {
+      "name": "lr_0.1",
+      "final_val_loss": 5.661673426628113,
+      "total_train_time_sec": 0.31867098808288574,
+      "config": {
+        "vocab_size": 1000,
+        "context_length": 64,
+        "d_model": 128,
+        "d_ff": 320,
+        "num_layers": 2,
+        "num_heads": 4,
+        "batch_size": 32,
+        "total_steps": 40,
+        "max_lr": 0.1,
+        "min_lr": 0.010000000000000002,
+        "warmup_steps": 10,
+        "use_rmsnorm": true,
+        "norm_position": "pre",
+        "use_rope": true,
+        "ffn_variant": "swiglu",
+        "device": "cuda"
+      }
+    },
+    "lr_1": {
+      "name": "lr_1",
+      "final_val_loss": 5.851741433143616,
+      "total_train_time_sec": 0.3221592903137207,
+      "config": {
+        "vocab_size": 1000,
+        "context_length": 64,
+        "d_model": 128,
+        "d_ff": 320,
+        "num_layers": 2,
+        "num_heads": 4,
+        "batch_size": 32,
+        "total_steps": 40,
+        "max_lr": 1.0,
+        "min_lr": 0.1,
+        "warmup_steps": 10,
+        "use_rmsnorm": true,
+        "norm_position": "pre",
+        "use_rope": true,
+        "ffn_variant": "swiglu",
+        "device": "cuda"
+      }
+    },
+    "batch_1": {
+      "name": "batch_1",
+      "final_val_loss": 5.7275550365448,
+      "total_train_time_sec": 0.24352526664733887,
+      "config": {
+        "vocab_size": 1000,
+        "context_length": 64,
+        "d_model": 128,
+        "d_ff": 320,
+        "num_layers": 2,
+        "num_heads": 4,
+        "batch_size": 1,
+        "total_steps": 30,
+        "max_lr": 0.003,
+        "min_lr": 0.0003,
+        "warmup_steps": 10,
+        "use_rmsnorm": true,
+        "norm_position": "pre",
+        "use_rope": true,
+        "ffn_variant": "swiglu",
+        "device": "cuda"
+      }
+    },
+    "batch_64": {
+      "name": "batch_64",
+      "final_val_loss": 5.22119414806366,
+      "total_train_time_sec": 0.24890923500061035,
+      "config": {
+        "vocab_size": 1000,
+        "context_length": 64,
+        "d_model": 128,
+        "d_ff": 320,
+        "num_layers": 2,
+        "num_heads": 4,
+        "batch_size": 64,
+        "total_steps": 30,
+        "max_lr": 0.003,
+        "min_lr": 0.0003,
+        "warmup_steps": 10,
+        "use_rmsnorm": true,
+        "norm_position": "pre",
+        "use_rope": true,
+        "ffn_variant": "swiglu",
+        "device": "cuda"
+      }
+    },
+    "batch_128": {
+      "name": "batch_128",
+      "final_val_loss": 5.137856960296631,
+      "total_train_time_sec": 0.2568087577819824,
+      "config": {
+        "vocab_size": 1000,
+        "context_length": 64,
+        "d_model": 128,
+        "d_ff": 320,
+        "num_layers": 2,
+        "num_heads": 4,
+        "batch_size": 128,
+        "total_steps": 30,
+        "max_lr": 0.003,
+        "min_lr": 0.0003,
+        "warmup_steps": 10,
+        "use_rmsnorm": true,
+        "norm_position": "pre",
+        "use_rope": true,
+        "ffn_variant": "swiglu",
+        "device": "cuda"
+      }
+    },
+    "no_rmsnorm": {
+      "name": "no_rmsnorm",
+      "final_val_loss": 5.742712497711182,
+      "total_train_time_sec": 0.32566142082214355,
+      "config": {
+        "vocab_size": 1000,
+        "context_length": 64,
+        "d_model": 128,
+        "d_ff": 320,
+        "num_layers": 2,
+        "num_heads": 4,
+        "batch_size": 32,
+        "total_steps": 50,
+        "max_lr": 0.003,
+        "min_lr": 0.0003,
+        "warmup_steps": 10,
+        "use_rmsnorm": false,
+        "norm_position": "pre",
+        "use_rope": true,
+        "ffn_variant": "swiglu",
+        "device": "cuda"
+      }
+    },
+    "post_norm": {
+      "name": "post_norm",
+      "final_val_loss": 4.10014533996582,
+      "total_train_time_sec": 0.39093017578125,
+      "config": {
+        "vocab_size": 1000,
+        "context_length": 64,
+        "d_model": 128,
+        "d_ff": 320,
+        "num_layers": 2,
+        "num_heads": 4,
+        "batch_size": 32,
+        "total_steps": 50,
+        "max_lr": 0.003,
+        "min_lr": 0.0003,
+        "warmup_steps": 10,
+        "use_rmsnorm": true,
+        "norm_position": "post",
+        "use_rope": true,
+        "ffn_variant": "swiglu",
+        "device": "cuda"
+      }
+    },
+    "nope": {
+      "name": "nope",
+      "final_val_loss": 4.730743765830994,
+      "total_train_time_sec": 0.3046078681945801,
+      "config": {
+        "vocab_size": 1000,
+        "context_length": 64,
+        "d_model": 128,
+        "d_ff": 320,
+        "num_layers": 2,
+        "num_heads": 4,
+        "batch_size": 32,
+        "total_steps": 50,
+        "max_lr": 0.003,
+        "min_lr": 0.0003,
+        "warmup_steps": 10,
+        "use_rmsnorm": true,
+        "norm_position": "pre",
+        "use_rope": false,
+        "ffn_variant": "swiglu",
+        "device": "cuda"
+      }
+    },
+    "silu_ffn": {
+      "name": "silu_ffn",
+      "final_val_loss": 4.6471863985061646,
+      "total_train_time_sec": 0.3789067268371582,
+      "config": {
+        "vocab_size": 1000,
+        "context_length": 64,
+        "d_model": 128,
+        "d_ff": 320,
+        "num_layers": 2,
+        "num_heads": 4,
+        "batch_size": 32,
+        "total_steps": 50,
+        "max_lr": 0.003,
+        "min_lr": 0.0003,
+        "warmup_steps": 10,
+        "use_rmsnorm": true,
+        "norm_position": "pre",
+        "use_rope": true,
+        "ffn_variant": "silu",
+        "device": "cuda"
+      }
+    },
+    "owt": {
+      "name": "owt",
+      "final_val_loss": 5.722465634346008,
+      "total_train_time_sec": 0.468017578125,
+      "config": {
+        "vocab_size": 800,
+        "context_length": 64,
+        "d_model": 128,
+        "d_ff": 320,
+        "num_layers": 2,
+        "num_heads": 4,
+        "batch_size": 32,
+        "total_steps": 60,
+        "max_lr": 0.003,
+        "min_lr": 0.0003,
+        "warmup_steps": 10,
+        "use_rmsnorm": true,
+        "norm_position": "pre",
+        "use_rope": true,
+        "ffn_variant": "swiglu",
+        "device": "cuda"
+      }
+    }
+  },
+  "generation": {
+    "prompt": "Once upon a time",
+    "sample": "Once upon a time, there was a popy plime. She took a big ball, and her and soft tellove used for a big a big box. The little boy named Max.\nThe girl was very happy to the bird.\n<|endoftext|>",
+    "note": "Sample generated from the trained TinyStories smoke-run checkpoint kept in memory during this script run."
+  }
+}
