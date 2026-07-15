@@ -1,0 +1,22 @@
+{
+  "run_name": "lr_1em02_steps2000",
+  "config": "<local-path-omitted>/lr_1em02_steps2000.json",
+  "output_dir": "<local-path-omitted>/lr_1em02_steps2000",
+  "console_log": "<local-path-omitted>/lr_1em02_steps2000.log",
+  "gpu_telemetry": "<local-path-omitted>/lr_1em02_steps2000_gpu.csv",
+  "peak_gpu_memory_mib": 16486.0,
+  "started_at_utc": "2026-07-14T12:00:09.475354+00:00",
+  "ended_at_utc": "2026-07-14T12:10:29.053132+00:00",
+  "wall_clock_sec": 619.577830075752,
+  "return_code": 0,
+  "summary_exists": true,
+  "checkpoint_exists": true,
+  "last_train_record": {
+    "step": 1999,
+    "wall_clock_sec": 613.8457287270576,
+    "processed_tokens": 65536000,
+    "train_loss": 2.0189833641052246,
+    "lr": 0.0010000068538902054,
+    "val_loss": 2.004975461959839
+  }
+}

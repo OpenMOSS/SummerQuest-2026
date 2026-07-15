@@ -1,0 +1,22 @@
+{
+  "run_name": "ablation_silu_ffn_steps10000",
+  "config": "<local-path-omitted>/ablation_silu_ffn_steps10000.json",
+  "output_dir": "<local-path-omitted>/ablation_silu_ffn_steps10000",
+  "console_log": "<local-path-omitted>/ablation_silu_ffn_steps10000.log",
+  "gpu_telemetry": "<local-path-omitted>/ablation_silu_ffn_steps10000_gpu.csv",
+  "peak_gpu_memory_mib": 16866.0,
+  "started_at_utc": "2026-07-14T13:57:10.200344+00:00",
+  "ended_at_utc": "2026-07-14T14:48:24.142007+00:00",
+  "wall_clock_sec": 3073.9418712686747,
+  "return_code": 0,
+  "summary_exists": true,
+  "checkpoint_exists": true,
+  "last_train_record": {
+    "step": 9999,
+    "wall_clock_sec": 3061.5342064909637,
+    "processed_tokens": 327680000,
+    "train_loss": 1.3614587783813477,
+    "lr": 5.0000012302830855e-05,
+    "val_loss": 1.4057465970516205
+  }
+}
