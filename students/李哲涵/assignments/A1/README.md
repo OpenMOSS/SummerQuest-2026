@@ -23,6 +23,10 @@
 
 说明：最终 OWT 实验使用完整 OpenWebText train 文本训练 32k tokenizer，并使用该 tokenizer 编码完整 OWT train/valid 文本后训练 10k steps。作为对照，我也保留了早期 20MB-tokenizer、2GB-train-subset 的 OWT run。所有实验日志见 `logs/`，曲线图见 `assets/`。
 
+## 飞书补充文档
+
+- 链接：https://fudan-nlp.feishu.cn/wiki/EwzWwa40fi1vJ2kpjXXc5FofnIe?from=from_copylink
+
 ## 实验日志与复现信息
 
 日志采用 JSONL 和 `summary.json`：
