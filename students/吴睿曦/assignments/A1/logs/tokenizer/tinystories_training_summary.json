@@ -1,0 +1,25 @@
+{
+  "input_bytes": 2227753162,
+  "vocab_size": 10000,
+  "num_merges": 9743,
+  "wall_clock_sec": 939.7712006159127,
+  "peak_rss_mb": 10928.125,
+  "longest_token_bytes": [
+    32,
+    97,
+    99,
+    99,
+    111,
+    109,
+    112,
+    108,
+    105,
+    115,
+    104,
+    109,
+    101,
+    110,
+    116
+  ],
+  "longest_token_length": 15
+}

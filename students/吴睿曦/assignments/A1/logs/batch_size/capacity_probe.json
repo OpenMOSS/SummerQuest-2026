@@ -1,0 +1,17 @@
+{
+  "purpose": "capacity-only probe with synthetic token IDs; losses are not experiment results",
+  "context_length": 256,
+  "precision": "BF16 autocast with FP32 parameters and optimizer states",
+  "results": [
+    {"batch_size": 128, "status": "success"},
+    {"batch_size": 256, "status": "success"},
+    {"batch_size": 512, "status": "success"},
+    {"batch_size": 640, "status": "success"},
+    {"batch_size": 768, "status": "success"},
+    {"batch_size": 896, "status": "cuda_oom"},
+    {"batch_size": 1024, "status": "cuda_oom"}
+  ],
+  "largest_tested_success": 768,
+  "smallest_tested_failure": 896,
+  "redaction": "raw OOM output and hardware capacity details intentionally omitted"
+}
