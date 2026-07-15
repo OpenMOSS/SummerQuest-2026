@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="500" viewBox="0 0 880 500">
+<rect width="100%" height="100%" fill="#fff"/>
+<text x="82" y="30" font-family="Arial" font-size="20" font-weight="700">TinyStories learning rates at step 2k</text>
+<line x1="82" y1="50.0" x2="810" y2="50.0" stroke="#e5e7eb"/>
+<text x="72" y="54.0" text-anchor="end" font-family="Arial" font-size="12" fill="#4b5563">2.75</text>
+<line x1="82" y1="119.0" x2="810" y2="119.0" stroke="#e5e7eb"/>
+<text x="72" y="123.0" text-anchor="end" font-family="Arial" font-size="12" fill="#4b5563">2.49</text>
+<line x1="82" y1="188.0" x2="810" y2="188.0" stroke="#e5e7eb"/>
+<text x="72" y="192.0" text-anchor="end" font-family="Arial" font-size="12" fill="#4b5563">2.23</text>
+<line x1="82" y1="257.0" x2="810" y2="257.0" stroke="#e5e7eb"/>
+<text x="72" y="261.0" text-anchor="end" font-family="Arial" font-size="12" fill="#4b5563">1.97</text>
+<line x1="82" y1="326.0" x2="810" y2="326.0" stroke="#e5e7eb"/>
+<text x="72" y="330.0" text-anchor="end" font-family="Arial" font-size="12" fill="#4b5563">1.71</text>
+<line x1="82" y1="395.0" x2="810" y2="395.0" stroke="#e5e7eb"/>
+<text x="72" y="399.0" text-anchor="end" font-family="Arial" font-size="12" fill="#4b5563">1.45</text>
+<rect x="100.0" y="128.2" width="218.7" height="266.8" fill="#64748b" rx="3"/>
+<text x="209.3" y="120.2" text-anchor="middle" font-family="Arial" font-size="12" fill="#111827">2.4558</text>
+<text x="209.3" y="419" text-anchor="middle" font-family="Arial" font-size="12" fill="#111827">1e-4</text>
+<rect x="336.7" y="272.2" width="218.7" height="122.8" fill="#2563eb" rx="3"/>
+<text x="446.0" y="264.2" text-anchor="middle" font-family="Arial" font-size="12" fill="#111827">1.9130</text>
+<text x="446.0" y="419" text-anchor="middle" font-family="Arial" font-size="12" fill="#111827">3e-4</text>
+<rect x="573.3" y="323.5" width="218.7" height="71.5" fill="#dc2626" rx="3"/>
+<text x="682.7" y="315.5" text-anchor="middle" font-family="Arial" font-size="12" fill="#111827">1.7194</text>
+<text x="682.7" y="419" text-anchor="middle" font-family="Arial" font-size="12" fill="#111827">1e-3</text>
+<line x1="82" y1="395" x2="810" y2="395" stroke="#111827"/>
+<line x1="82" y1="50" x2="82" y2="395" stroke="#111827"/>
+<text transform="translate(24 222.5) rotate(-90)" text-anchor="middle" font-family="Arial" font-size="14">validation loss</text>
+</svg>

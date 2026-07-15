@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="520" viewBox="0 0 880 520">
+<rect width="100%" height="100%" fill="#fff"/>
+<text x="82" y="30" font-family="Arial" font-size="20" font-weight="700">TinyStories architecture ablations: matched 2k validation loss</text>
+<line x1="82" y1="50.0" x2="670" y2="50.0" stroke="#e5e7eb"/>
+<text x="72" y="54.0" text-anchor="end" font-family="Arial" font-size="12" fill="#4b5563">5.95</text>
+<line x1="82" y1="129.6" x2="670" y2="129.6" stroke="#e5e7eb"/>
+<text x="72" y="133.6" text-anchor="end" font-family="Arial" font-size="12" fill="#4b5563">5.11</text>
+<line x1="82" y1="209.2" x2="670" y2="209.2" stroke="#e5e7eb"/>
+<text x="72" y="213.2" text-anchor="end" font-family="Arial" font-size="12" fill="#4b5563">4.27</text>
+<line x1="82" y1="288.8" x2="670" y2="288.8" stroke="#e5e7eb"/>
+<text x="72" y="292.8" text-anchor="end" font-family="Arial" font-size="12" fill="#4b5563">3.43</text>
+<line x1="82" y1="368.4" x2="670" y2="368.4" stroke="#e5e7eb"/>
+<text x="72" y="372.4" text-anchor="end" font-family="Arial" font-size="12" fill="#4b5563">2.59</text>
+<line x1="82" y1="448.0" x2="670" y2="448.0" stroke="#e5e7eb"/>
+<text x="72" y="452.0" text-anchor="end" font-family="Arial" font-size="12" fill="#4b5563">1.75</text>
+<text x="82.0" y="472" text-anchor="middle" font-family="Arial" font-size="12" fill="#4b5563">500</text>
+<text x="229.0" y="472" text-anchor="middle" font-family="Arial" font-size="12" fill="#4b5563">875</text>
+<text x="376.0" y="472" text-anchor="middle" font-family="Arial" font-size="12" fill="#4b5563">1250</text>
+<text x="523.0" y="472" text-anchor="middle" font-family="Arial" font-size="12" fill="#4b5563">1625</text>
+<text x="670.0" y="472" text-anchor="middle" font-family="Arial" font-size="12" fill="#4b5563">2000</text>
+<line x1="82" y1="448" x2="670" y2="448" stroke="#111827"/>
+<line x1="82" y1="50" x2="82" y2="448" stroke="#111827"/>
+<text x="376.0" y="502" text-anchor="middle" font-family="Arial" font-size="14">gradient step</text>
+<text transform="translate(24 249.0) rotate(-90)" text-anchor="middle" font-family="Arial" font-size="14">validation loss</text>
+<polyline points="82.0,321.1 278.0,389.7 474.0,418.4 670.0,432.6" fill="none" stroke="#2563eb" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="82.0" cy="321.1" r="3.0" fill="#2563eb"/>
+<circle cx="278.0" cy="389.7" r="3.0" fill="#2563eb"/>
+<circle cx="474.0" cy="418.4" r="3.0" fill="#2563eb"/>
+<circle cx="670.0" cy="432.6" r="3.0" fill="#2563eb"/>
+<line x1="698" y1="68" x2="728" y2="68" stroke="#2563eb" stroke-width="3"/>
+<text x="734" y="72" font-family="Arial" font-size="13" fill="#111827">baseline @ &lt;=2k</text>
+<polyline points="82.0,313.1 278.0,375.6 474.0,407.2 670.0,419.0" fill="none" stroke="#9333ea" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="82.0" cy="313.1" r="3.0" fill="#9333ea"/>
+<circle cx="278.0" cy="375.6" r="3.0" fill="#9333ea"/>
+<circle cx="474.0" cy="407.2" r="3.0" fill="#9333ea"/>
+<circle cx="670.0" cy="419.0" r="3.0" fill="#9333ea"/>
+<line x1="698" y1="92" x2="728" y2="92" stroke="#9333ea" stroke-width="3"/>
+<text x="734" y="96" font-family="Arial" font-size="13" fill="#111827">no RMSNorm</text>
+<polyline points="82.0,322.5 278.0,387.5 474.0,414.5 670.0,423.7" fill="none" stroke="#f59e0b" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="82.0" cy="322.5" r="3.0" fill="#f59e0b"/>
+<circle cx="278.0" cy="387.5" r="3.0" fill="#f59e0b"/>
+<circle cx="474.0" cy="414.5" r="3.0" fill="#f59e0b"/>
+<circle cx="670.0" cy="423.7" r="3.0" fill="#f59e0b"/>
+<line x1="698" y1="116" x2="728" y2="116" stroke="#f59e0b" stroke-width="3"/>
+<text x="734" y="120" font-family="Arial" font-size="13" fill="#111827">post-norm</text>
+<polyline points="82.0,282.6 278.0,366.6 474.0,400.2 670.0,410.8" fill="none" stroke="#dc2626" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="82.0" cy="282.6" r="3.0" fill="#dc2626"/>
+<circle cx="278.0" cy="366.6" r="3.0" fill="#dc2626"/>
+<circle cx="474.0" cy="400.2" r="3.0" fill="#dc2626"/>
+<circle cx="670.0" cy="410.8" r="3.0" fill="#dc2626"/>
+<line x1="698" y1="140" x2="728" y2="140" stroke="#dc2626" stroke-width="3"/>
+<text x="734" y="144" font-family="Arial" font-size="13" fill="#111827">NoPE</text>
+<polyline points="82.0,312.5 278.0,379.7 474.0,408.1 670.0,417.3" fill="none" stroke="#059669" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="82.0" cy="312.5" r="3.0" fill="#059669"/>
+<circle cx="278.0" cy="379.7" r="3.0" fill="#059669"/>
+<circle cx="474.0" cy="408.1" r="3.0" fill="#059669"/>
+<circle cx="670.0" cy="417.3" r="3.0" fill="#059669"/>
+<line x1="698" y1="164" x2="728" y2="164" stroke="#059669" stroke-width="3"/>
+<text x="734" y="168" font-family="Arial" font-size="13" fill="#111827">SiLU FFN</text>
+</svg>

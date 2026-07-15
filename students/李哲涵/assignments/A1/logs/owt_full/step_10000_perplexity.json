@@ -1,0 +1,9 @@
+{
+  "checkpoint": "runs/owt_32k_full_10k/step_10000.pt",
+  "checkpoint_step": 10000,
+  "valid_data": "data/owt_32k_valid.npy",
+  "batch_size": 128,
+  "num_batches": 100,
+  "average_loss": 4.241176085472107,
+  "perplexity": 69.48952942544992
+}
