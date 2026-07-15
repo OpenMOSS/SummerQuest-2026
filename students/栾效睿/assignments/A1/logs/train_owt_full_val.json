@@ -1,0 +1,16 @@
+{
+  "batch_size": 128,
+  "batches": 1015,
+  "checkpoint": "checkpoint/owt/final.pt",
+  "checkpoint_iteration": 22822,
+  "checkpoint_sha256": "21e8749e94f526502d7b98ad00f68bb7d0529433396aa00bb30b9699491fee5e",
+  "context_length": 512,
+  "device": "cuda",
+  "evaluated_tokens": 66401097,
+  "is_full_validation": true,
+  "run_name": "train_owt",
+  "timestamp_utc": "2026-07-15T06:44:33.503789+00:00",
+  "val_loss": 3.361793761375365,
+  "validation_tokens_total": 66401098,
+  "wall_clock_sec": 482.6620766296983
+}

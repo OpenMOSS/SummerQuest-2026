@@ -1,0 +1,34 @@
+{
+  "suite_name": "tinystories_ablations",
+  "base_config": "configs/train_tinystories.json",
+  "log_dir": "logs/ablations",
+  "checkpoint_dir": "checkpoint/ablations",
+  "common_set": {},
+  "runs": [
+    {
+      "name": "remove_rmsnorm",
+      "set": {
+        "model.norm_mode": "none"
+      }
+    },
+    {
+      "name": "post_norm",
+      "set": {
+        "model.norm_mode": "post"
+      }
+    },
+    {
+      "name": "nope",
+      "set": {
+        "model.use_rope": false
+      }
+    },
+    {
+      "name": "silu_ffn",
+      "set": {
+        "model.ffn_type": "silu",
+        "model.d_ff": 2048
+      }
+    }
+  ]
+}

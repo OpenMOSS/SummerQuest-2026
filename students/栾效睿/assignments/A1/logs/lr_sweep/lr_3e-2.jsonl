@@ -1,0 +1,13 @@
+{"lr": 0.004999999999999999, "processed_tokens": 32768, "step": 1, "train_loss": 9.26175594329834, "val_loss": 7.81232488155365, "wall_clock_sec": 1.054058731533587}
+{"lr": 0.029250604588579424, "processed_tokens": 1048576, "step": 32, "train_loss": 6.37004280090332, "val_loss": 6.234663128852844, "wall_clock_sec": 4.804626096971333}
+{"lr": 0.027890970057613002, "processed_tokens": 1638400, "step": 50, "train_loss": 5.426774024963379, "wall_clock_sec": 6.6772997146472335}
+{"lr": 0.026524697669463252, "processed_tokens": 2064384, "step": 63, "train_loss": 5.217931747436523, "val_loss": 5.1768603920936584, "wall_clock_sec": 8.475021296180785}
+{"lr": 0.02222284427458312, "processed_tokens": 3080192, "step": 94, "train_loss": 4.919088363647461, "val_loss": 4.847187578678131, "wall_clock_sec": 12.136937050148845}
+{"lr": 0.02126215316841278, "processed_tokens": 3276800, "step": 100, "train_loss": 4.774691104888916, "wall_clock_sec": 12.758747627027333}
+{"lr": 0.017021323222557762, "processed_tokens": 4096000, "step": 125, "train_loss": 4.698912620544434, "val_loss": 4.654576241970062, "wall_clock_sec": 15.800028037279844}
+{"lr": 0.012726943929503274, "processed_tokens": 4915200, "step": 150, "train_loss": 4.474472999572754, "wall_clock_sec": 18.393502896651626}
+{"lr": 0.01157560196736029, "processed_tokens": 5144576, "step": 157, "train_loss": 4.54714298248291, "val_loss": 4.50879031419754, "wall_clock_sec": 19.572706481441855}
+{"lr": 0.0070777539106543635, "processed_tokens": 6160384, "step": 188, "train_loss": 4.327137470245361, "val_loss": 4.380588591098785, "wall_clock_sec": 23.23931131605059}
+{"lr": 0.005702170196013789, "processed_tokens": 6553600, "step": 200, "train_loss": 4.335866451263428, "wall_clock_sec": 24.483407301828265}
+{"lr": 0.004061143094999322, "processed_tokens": 7176192, "step": 219, "train_loss": 4.32110595703125, "val_loss": 4.304005205631256, "wall_clock_sec": 27.058814528398216}
+{"lr": 0.003, "processed_tokens": 8192000, "step": 250, "train_loss": 4.306448459625244, "val_loss": 4.2590243220329285, "wall_clock_sec": 30.723974673077464}

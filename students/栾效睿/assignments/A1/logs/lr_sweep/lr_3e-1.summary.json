@@ -1,0 +1,27 @@
+{
+  "best_val_loss": 6.964531362056732,
+  "checkpoint_dir": "checkpoint/lr_sweep/lr_3e-1",
+  "final_step": 2,
+  "final_train_loss": 25.784385681152344,
+  "final_val_loss": 6.964531362056732,
+  "key_config": {
+    "batch_size": 128,
+    "context_length": 256,
+    "d_ff": 1344,
+    "d_model": 512,
+    "ffn_type": "swiglu",
+    "lr_max": 0.3,
+    "max_wall_clock_sec": null,
+    "norm_mode": "pre",
+    "num_heads": 16,
+    "num_layers": 4,
+    "use_rope": true,
+    "vocab_size": 10000
+  },
+  "log_path": "logs/lr_sweep/lr_3e-1.jsonl",
+  "processed_tokens": 65536,
+  "run_name": "lr_3e-1",
+  "status": "diverged",
+  "stop_reason": "nonfinite_or_large_train_loss",
+  "wall_clock_sec": 1.0737387333065271
+}

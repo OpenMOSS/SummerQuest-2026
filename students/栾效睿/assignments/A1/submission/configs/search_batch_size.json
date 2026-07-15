@@ -1,0 +1,23 @@
+{
+  "suite_name": "search_batch_size_tinystories",
+  "base_config": "configs/train_tinystories.json",
+  "log_dir": "logs/batch_size_sweep",
+  "checkpoint_dir": "checkpoint/batch_size_sweep",
+  "common_set": {
+    "training.target_tokens": 8192000,
+    "validation.every_tokens": 2048000,
+    "validation.max_tokens": 1048576,
+    "checkpoint.save_best": true
+  },
+  "runs": [
+    {"name": "bs_1", "set": {"training.batch_size": 1}},
+    {"name": "bs_2", "set": {"training.batch_size": 2}},
+    {"name": "bs_4", "set": {"training.batch_size": 4}},
+    {"name": "bs_8", "set": {"training.batch_size": 8}},
+    {"name": "bs_16", "set": {"training.batch_size": 16}},
+    {"name": "bs_32", "set": {"training.batch_size": 32}},
+    {"name": "bs_64", "set": {"training.batch_size": 64}},
+    {"name": "bs_128", "set": {"training.batch_size": 128}},
+    {"name": "bs_256", "set": {"training.batch_size": 256}}
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "special_tokens": ["<|endoftext|>"],
+  "workers": 10,
+  "target_batch_bytes": 67108864,
+  "log_dir": "logs/train_bpe",
+  "runs": [
+    {
+      "name": "tinystories",
+      "dataset": "TinyStories",
+      "input_path": "data/TinyStoriesV2-GPT4-train.txt",
+      "vocab_size": 10000,
+      "output_dir": "artifacts/TinyStories_train_bpe"
+    },
+    {
+      "name": "owt",
+      "dataset": "OpenWebText",
+      "input_path": "data/owt_train.txt",
+      "vocab_size": 32000,
+      "output_dir": "artifacts/owt_train_bpe"
+    }
+  ]
+}
