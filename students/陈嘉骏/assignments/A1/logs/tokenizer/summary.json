@@ -1,0 +1,32 @@
+{
+  "experiment_name": "tokenizer_comparison",
+  "compression_ratio_definition": "utf8_bytes_per_token",
+  "tinystories": {
+    "vocab_size": 10000,
+    "num_merges": 9743,
+    "train_token_count": 541229347,
+    "validation_num_bytes": 22502601,
+    "validation_token_count": 5465883,
+    "validation_compression_ratio": 4.1169196267,
+    "validation_elapsed_seconds": 15.4439,
+    "validation_bytes_per_second": 1457052,
+    "validation_tokens_per_second": 353918,
+    "longest_token_num_bytes": 15,
+    "training_elapsed_seconds": 172.46777664497495,
+    "outer_training_wall_clock_seconds": 172.973,
+    "training_num_processes": 8
+  },
+  "openwebtext": {
+    "vocab_size": 32000,
+    "num_merges": 31743,
+    "train_token_count": 2727120452,
+    "validation_num_bytes": 289998753,
+    "validation_token_count": 66401098,
+    "validation_compression_ratio": 4.367378879789006,
+    "validation_elapsed_seconds": 440.1553291808814,
+    "validation_bytes_per_second": 658855.48526626,
+    "validation_tokens_per_second": 150858.3302253113,
+    "longest_token_num_bytes": 64,
+    "training_elapsed_seconds": 15890.627890881151
+  }
+}

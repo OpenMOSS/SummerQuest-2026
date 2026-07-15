@@ -1,0 +1,42 @@
+{
+  "run_name": "train_tinystories_ablation_nope",
+  "experiment": "architecture_ablation",
+  "ablation": "nope",
+  "seed": 336,
+  "model": {
+    "vocab_size": 10000,
+    "context_length": 256,
+    "d_model": 512,
+    "num_layers": 4,
+    "num_heads": 16,
+    "d_ff": 1344,
+    "rope_theta": 10000.0,
+    "remove_rope": true
+  },
+  "data": {
+    "train": "tokenized/tinystories_train.bin",
+    "validation": "tokenized/tinystories_valid.bin"
+  },
+  "training": {
+    "batch_size": 128,
+    "context_length": 256,
+    "max_steps": 10000,
+    "max_learning_rate": 0.0012,
+    "min_learning_rate": 0.00012,
+    "warmup_steps": 500,
+    "cosine_cycle_steps": 10000,
+    "device": "cuda:0",
+    "weight_decay": 0.1,
+    "beta1": 0.9,
+    "beta2": 0.95,
+    "eps": 1e-08,
+    "max_grad_norm": 1.0,
+    "log_interval": 10,
+    "eval_interval": 250,
+    "eval_batches": 20,
+    "checkpoint_interval": 1000,
+    "output_dir": "runs/ablation/nope",
+    "log_path": "logs/ablation/train_tinystories_ablation_nope.jsonl",
+    "summary_path": "logs/ablation/train_tinystories_ablation_nope.summary.json"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "experiment_name": "tinystories_10k_tokenizer_retime",
+  "input": "data/TinyStoriesV2-GPT4-train.txt",
+  "input_num_bytes": 2227753162,
+  "vocab_size": 10000,
+  "num_merges": 9743,
+  "special_tokens": [
+    "<|endoftext|>"
+  ],
+  "num_processes": 8,
+  "elapsed_seconds": 172.46777664497495,
+  "outer_wall_clock_seconds": 172.973,
+  "user_cpu_seconds": 697.928,
+  "system_cpu_seconds": 11.44,
+  "system_logical_cpus": 128,
+  "system_load_average_at_start": [
+    97.25,
+    95.36,
+    94.84
+  ],
+  "artifact_matches_original": true,
+  "artifact_sha256": "f431ade070cb78725236c357857f2099512e83bc2ad2f82ffd9ee6af80f5956e",
+  "vocab_sha256": "7b14191b653bd10f13d5014e9a0c3dfe98c64b28b7d31ddfdf20993f5335a796",
+  "merges_sha256": "04a45674869008c6ccb7ec70ea333110cf81052f692954530d3fa8904c454aac"
+}
