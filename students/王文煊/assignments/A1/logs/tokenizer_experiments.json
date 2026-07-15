@@ -1,0 +1,46 @@
+{
+  "tinystories_compression_ratio": 4.0112,
+  "owt_compression_ratio": 4.505,
+  "owt_with_tinystories_tokenizer_ratio": 3.4046,
+  "per_doc_ratios": {
+    "tinystories": [
+      4.102,
+      3.844,
+      4.127,
+      4.389,
+      4.219,
+      4.083,
+      4.242,
+      3.591,
+      3.924,
+      4.051
+    ],
+    "owt": [
+      4.568,
+      4.15,
+      4.779,
+      3.836,
+      4.697,
+      4.294,
+      4.606,
+      4.544,
+      4.716,
+      4.591
+    ],
+    "owt_cross": [
+      3.351,
+      3.857,
+      3.443,
+      2.78,
+      3.319,
+      3.657,
+      3.535,
+      3.144,
+      3.278,
+      3.576
+    ]
+  },
+  "throughput_bytes_per_sec": 242687.2,
+  "throughput_tokens_per_sec": 53871.2,
+  "pile_825GB_estimate_hours": 1013.9
+}

@@ -1,0 +1,37 @@
+######## prompt='Once upon a time' temp=0.8 top_p=0.95 ########
+  state = torch.load(args.ckpt, map_location=device)
+=== PROMPT ===
+Once upon a time
+=== SAMPLE ===
+, there was a little girl named Sue. Sue loved to eat rice. One day, she saw a very big bowl of rice on the table. She wanted to eat it all by herself.
+Sue tried to get the big bowl of rice, but it was too heavy. She called her friend Tom to help her. "Tom, can you help me get the big bowl of rice?" Sue asked. Tom said, "Yes, I can help you."
+Tom and Sue worked together to get the big bowl of rice. They were very happy. They shared the big bowl of rice with their friends. Everyone loved the yummy rice. Sue and Tom learned that working together can solve problems.
+
+
+######## prompt='Once upon a time' temp=1.0 top_p=1.0 ########
+  state = torch.load(args.ckpt, map_location=device)
+=== PROMPT ===
+Once upon a time
+=== SAMPLE ===
+, there was a little girl named Sue. Sue loved to eat rice. One day, she saw a very yummy rice and wanted to eat it. But her mom said, "No, don't steal food from the town's neighbors!"
+Sue felt sad and confused. She wanted to make her mom happy. So, she put the rice in a jar and gave it to the neighbors.
+The neighbors saw the rice was dirty and not happy. They said, "Good job, Sue!" Sue felt happy again and picked up more rice. Every day, she tried to be helpful and never stole anything again.
+
+
+######## prompt='Once upon a time' temp=0.6 top_p=0.9 ########
+  state = torch.load(args.ckpt, map_location=device)
+=== PROMPT ===
+Once upon a time
+=== SAMPLE ===
+, there was a little girl named Sue. Sue loved to eat rice. One day, she saw a big bowl of rice on the table. Sue wanted to eat it all by herself.
+Sue's mom saw her and said, "Sue, you can have the rice if you eat it all by yourself." Sue was happy and started to eat the rice. But she was a little careless. She did not see the rice on the floor.
+Sue's mom came back and saw the mess. She said, "Sue, you need to be more careful. Now, you must clean up the rice." Sue felt sad, but she knew she had to listen to her mom.
+Sue cleaned up the rice and put it back on the table. She learned to be more careful with her things. Sue and her mom ate the rice together and had a fun time.
+
+
+######## prompt='The little robot' temp=0.8 top_p=0.95 ########
+  state = torch.load(args.ckpt, map_location=device)
+=== PROMPT ===
+The little robot
+=== SAMPLE ===
+'s friends were happy to see him get better. They all hugged the robot and said thank you. From that day on, the robot and the little robot were the best of friends.
