@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="540" viewBox="0 0 900 540">
+<rect width="100%" height="100%" fill="white"/>
+<style>text { font-family: sans-serif; fill: #1f2937; } .tick { font-size: 13px; }</style>
+<text x="450.0" y="30" text-anchor="middle" font-size="20" font-weight="bold">SGD loss under different learning rates</text>
+<line x1="95" y1="455" x2="865" y2="455" stroke="#374151"/>
+<line x1="95" y1="55" x2="95" y2="455" stroke="#374151"/>
+<line x1="95" y1="455.0" x2="865" y2="455.0" stroke="#d1d5db" stroke-dasharray="4 4"/>
+<text class="tick" x="85" y="460.0" text-anchor="end">1e-23</text>
+<line x1="95" y1="445.4761904761905" x2="865" y2="445.4761904761905" stroke="#d1d5db" stroke-dasharray="4 4"/>
+<text class="tick" x="85" y="450.4761904761905" text-anchor="end">1e-22</text>
+<line x1="95" y1="435.9523809523809" x2="865" y2="435.9523809523809" stroke="#d1d5db" stroke-dasharray="4 4"/>
+<text class="tick" x="85" y="440.9523809523809" text-anchor="end">1e-21</text>
+<line x1="95" y1="426.42857142857144" x2="865" y2="426.42857142857144" stroke="#d1d5db" stroke-dasharray="4 4"/>
+<text class="tick" x="85" y="431.42857142857144" text-anchor="end">1e-20</text>
+<line x1="95" y1="416.9047619047619" x2="865" y2="416.9047619047619" stroke="#d1d5db" stroke-dasharray="4 4"/>
+<text class="tick" x="85" y="421.9047619047619" text-anchor="end">1e-19</text>
+<line x1="95" y1="407.38095238095235" x2="865" y2="407.38095238095235" stroke="#d1d5db" stroke-dasharray="4 4"/>
+<text class="tick" x="85" y="412.38095238095235" text-anchor="end">1e-18</text>
+<line x1="95" y1="397.85714285714283" x2="865" y2="397.85714285714283" stroke="#d1d5db" stroke-dasharray="4 4"/>
+<text class="tick" x="85" y="402.85714285714283" text-anchor="end">1e-17</text>
+<line x1="95" y1="388.33333333333337" x2="865" y2="388.33333333333337" stroke="#d1d5db" stroke-dasharray="4 4"/>
+<text class="tick" x="85" y="393.33333333333337" text-anchor="end">1e-16</text>
+<line x1="95" y1="378.8095238095238" x2="865" y2="378.8095238095238" stroke="#d1d5db" stroke-dasharray="4 4"/>
+<text class="tick" x="85" y="383.8095238095238" text-anchor="end">1e-15</text>
+<line x1="95" y1="369.2857142857143" x2="865" y2="369.2857142857143" stroke="#d1d5db" stroke-dasharray="4 4"/>
+<text class="tick" x="85" y="374.2857142857143" text-anchor="end">1e-14</text>
+<line x1="95" y1="359.76190476190476" x2="865" y2="359.76190476190476" stroke="#d1d5db" stroke-dasharray="4 4"/>
+<text class="tick" x="85" y="364.76190476190476" text-anchor="end">1e-13</text>
+<line x1="95" y1="350.23809523809524" x2="865" y2="350.23809523809524" stroke="#d1d5db" stroke-dasharray="4 4"/>
+<text class="tick" x="85" y="355.23809523809524" text-anchor="end">1e-12</text>
+<line x1="95" y1="340.7142857142857" x2="865" y2="340.7142857142857" stroke="#d1d5db" stroke-dasharray="4 4"/>
+<text class="tick" x="85" y="345.7142857142857" text-anchor="end">1e-11</text>
+<line x1="95" y1="331.1904761904762" x2="865" y2="331.1904761904762" stroke="#d1d5db" stroke-dasharray="4 4"/>
+<text class="tick" x="85" y="336.1904761904762" text-anchor="end">1e-10</text>
+<line x1="95" y1="321.66666666666663" x2="865" y2="321.66666666666663" stroke="#d1d5db" stroke-dasharray="4 4"/>
+<text class="tick" x="85" y="326.66666666666663" text-anchor="end">1e-9</text>
+<line x1="95" y1="312.14285714285717" x2="865" y2="312.14285714285717" stroke="#d1d5db" stroke-dasharray="4 4"/>
+<text class="tick" x="85" y="317.14285714285717" text-anchor="end">1e-8</text>
+<line x1="95" y1="302.6190476190476" x2="865" y2="302.6190476190476" stroke="#d1d5db" stroke-dasharray="4 4"/>
+<text class="tick" x="85" y="307.6190476190476" text-anchor="end">1e-7</text>
+<line x1="95" y1="293.0952380952381" x2="865" y2="293.0952380952381" stroke="#d1d5db" stroke-dasharray="4 4"/>
+<text class="tick" x="85" y="298.0952380952381" text-anchor="end">1e-6</text>
+<line x1="95" y1="283.57142857142856" x2="865" y2="283.57142857142856" stroke="#d1d5db" stroke-dasharray="4 4"/>
+<text class="tick" x="85" y="288.57142857142856" text-anchor="end">1e-5</text>
+<line x1="95" y1="274.04761904761904" x2="865" y2="274.04761904761904" stroke="#d1d5db" stroke-dasharray="4 4"/>
+<text class="tick" x="85" y="279.04761904761904" text-anchor="end">1e-4</text>
+<line x1="95" y1="264.5238095238095" x2="865" y2="264.5238095238095" stroke="#d1d5db" stroke-dasharray="4 4"/>
+<text class="tick" x="85" y="269.5238095238095" text-anchor="end">1e-3</text>
+<line x1="95" y1="255.0" x2="865" y2="255.0" stroke="#d1d5db" stroke-dasharray="4 4"/>
+<text class="tick" x="85" y="260.0" text-anchor="end">1e-2</text>
+<line x1="95" y1="245.47619047619045" x2="865" y2="245.47619047619045" stroke="#d1d5db" stroke-dasharray="4 4"/>
+<text class="tick" x="85" y="250.47619047619045" text-anchor="end">1e-1</text>
+<line x1="95" y1="235.95238095238096" x2="865" y2="235.95238095238096" stroke="#d1d5db" stroke-dasharray="4 4"/>
+<text class="tick" x="85" y="240.95238095238096" text-anchor="end">1e0</text>
+<line x1="95" y1="226.42857142857142" x2="865" y2="226.42857142857142" stroke="#d1d5db" stroke-dasharray="4 4"/>
+<text class="tick" x="85" y="231.42857142857142" text-anchor="end">1e1</text>
+<line x1="95" y1="216.9047619047619" x2="865" y2="216.9047619047619" stroke="#d1d5db" stroke-dasharray="4 4"/>
+<text class="tick" x="85" y="221.9047619047619" text-anchor="end">1e2</text>
+<line x1="95" y1="207.38095238095238" x2="865" y2="207.38095238095238" stroke="#d1d5db" stroke-dasharray="4 4"/>
+<text class="tick" x="85" y="212.38095238095238" text-anchor="end">1e3</text>
+<line x1="95" y1="197.85714285714286" x2="865" y2="197.85714285714286" stroke="#d1d5db" stroke-dasharray="4 4"/>
+<text class="tick" x="85" y="202.85714285714286" text-anchor="end">1e4</text>
+<line x1="95" y1="188.33333333333331" x2="865" y2="188.33333333333331" stroke="#d1d5db" stroke-dasharray="4 4"/>
+<text class="tick" x="85" y="193.33333333333331" text-anchor="end">1e5</text>
+<line x1="95" y1="178.8095238095238" x2="865" y2="178.8095238095238" stroke="#d1d5db" stroke-dasharray="4 4"/>
+<text class="tick" x="85" y="183.8095238095238" text-anchor="end">1e6</text>
+<line x1="95" y1="169.28571428571428" x2="865" y2="169.28571428571428" stroke="#d1d5db" stroke-dasharray="4 4"/>
+<text class="tick" x="85" y="174.28571428571428" text-anchor="end">1e7</text>
+<line x1="95" y1="159.76190476190476" x2="865" y2="159.76190476190476" stroke="#d1d5db" stroke-dasharray="4 4"/>
+<text class="tick" x="85" y="164.76190476190476" text-anchor="end">1e8</text>
+<line x1="95" y1="150.23809523809524" x2="865" y2="150.23809523809524" stroke="#d1d5db" stroke-dasharray="4 4"/>
+<text class="tick" x="85" y="155.23809523809524" text-anchor="end">1e9</text>
+<line x1="95" y1="140.71428571428572" x2="865" y2="140.71428571428572" stroke="#d1d5db" stroke-dasharray="4 4"/>
+<text class="tick" x="85" y="145.71428571428572" text-anchor="end">1e10</text>
+<line x1="95" y1="131.1904761904762" x2="865" y2="131.1904761904762" stroke="#d1d5db" stroke-dasharray="4 4"/>
+<text class="tick" x="85" y="136.1904761904762" text-anchor="end">1e11</text>
+<line x1="95" y1="121.66666666666666" x2="865" y2="121.66666666666666" stroke="#d1d5db" stroke-dasharray="4 4"/>
+<text class="tick" x="85" y="126.66666666666666" text-anchor="end">1e12</text>
+<line x1="95" y1="112.14285714285714" x2="865" y2="112.14285714285714" stroke="#d1d5db" stroke-dasharray="4 4"/>
+<text class="tick" x="85" y="117.14285714285714" text-anchor="end">1e13</text>
+<line x1="95" y1="102.61904761904762" x2="865" y2="102.61904761904762" stroke="#d1d5db" stroke-dasharray="4 4"/>
+<text class="tick" x="85" y="107.61904761904762" text-anchor="end">1e14</text>
+<line x1="95" y1="93.0952380952381" x2="865" y2="93.0952380952381" stroke="#d1d5db" stroke-dasharray="4 4"/>
+<text class="tick" x="85" y="98.0952380952381" text-anchor="end">1e15</text>
+<line x1="95" y1="83.57142857142857" x2="865" y2="83.57142857142857" stroke="#d1d5db" stroke-dasharray="4 4"/>
+<text class="tick" x="85" y="88.57142857142857" text-anchor="end">1e16</text>
+<line x1="95" y1="74.04761904761905" x2="865" y2="74.04761904761905" stroke="#d1d5db" stroke-dasharray="4 4"/>
+<text class="tick" x="85" y="79.04761904761905" text-anchor="end">1e17</text>
+<line x1="95" y1="64.52380952380952" x2="865" y2="64.52380952380952" stroke="#d1d5db" stroke-dasharray="4 4"/>
+<text class="tick" x="85" y="69.52380952380952" text-anchor="end">1e18</text>
+<line x1="95" y1="55.0" x2="865" y2="55.0" stroke="#d1d5db" stroke-dasharray="4 4"/>
+<text class="tick" x="85" y="60.0" text-anchor="end">1e19</text>
+<line x1="95.0" y1="455" x2="95.0" y2="460" stroke="#374151"/>
+<text class="tick" x="95.0" y="480" text-anchor="middle">0</text>
+<line x1="180.55555555555554" y1="455" x2="180.55555555555554" y2="460" stroke="#374151"/>
+<text class="tick" x="180.55555555555554" y="480" text-anchor="middle">1</text>
+<line x1="266.1111111111111" y1="455" x2="266.1111111111111" y2="460" stroke="#374151"/>
+<text class="tick" x="266.1111111111111" y="480" text-anchor="middle">2</text>
+<line x1="351.66666666666663" y1="455" x2="351.66666666666663" y2="460" stroke="#374151"/>
+<text class="tick" x="351.66666666666663" y="480" text-anchor="middle">3</text>
+<line x1="437.22222222222223" y1="455" x2="437.22222222222223" y2="460" stroke="#374151"/>
+<text class="tick" x="437.22222222222223" y="480" text-anchor="middle">4</text>
+<line x1="522.7777777777778" y1="455" x2="522.7777777777778" y2="460" stroke="#374151"/>
+<text class="tick" x="522.7777777777778" y="480" text-anchor="middle">5</text>
+<line x1="608.3333333333333" y1="455" x2="608.3333333333333" y2="460" stroke="#374151"/>
+<text class="tick" x="608.3333333333333" y="480" text-anchor="middle">6</text>
+<line x1="693.8888888888889" y1="455" x2="693.8888888888889" y2="460" stroke="#374151"/>
+<text class="tick" x="693.8888888888889" y="480" text-anchor="middle">7</text>
+<line x1="779.4444444444445" y1="455" x2="779.4444444444445" y2="460" stroke="#374151"/>
+<text class="tick" x="779.4444444444445" y="480" text-anchor="middle">8</text>
+<line x1="865.0" y1="455" x2="865.0" y2="460" stroke="#374151"/>
+<text class="tick" x="865.0" y="480" text-anchor="middle">9</text>
+<polyline points="95.00,222.65 180.56,224.50 266.11,225.76 351.67,226.77 437.22,227.64 522.78,228.42 608.33,229.12 693.89,229.77 779.44,230.38 865.00,230.95" fill="none" stroke="#2563eb" stroke-width="3"/>
+<circle cx="95.00" cy="222.65" r="3.5" fill="#2563eb"/>
+<circle cx="180.56" cy="224.50" r="3.5" fill="#2563eb"/>
+<circle cx="266.11" cy="225.76" r="3.5" fill="#2563eb"/>
+<circle cx="351.67" cy="226.77" r="3.5" fill="#2563eb"/>
+<circle cx="437.22" cy="227.64" r="3.5" fill="#2563eb"/>
+<circle cx="522.78" cy="228.42" r="3.5" fill="#2563eb"/>
+<circle cx="608.33" cy="229.12" r="3.5" fill="#2563eb"/>
+<circle cx="693.89" cy="229.77" r="3.5" fill="#2563eb"/>
+<circle cx="779.44" cy="230.38" r="3.5" fill="#2563eb"/>
+<circle cx="865.00" cy="230.95" r="3.5" fill="#2563eb"/>
+<line x1="110" y1="37" x2="134" y2="37" stroke="#2563eb" stroke-width="3"/>
+<text class="tick" x="140" y="42">lr=1e+01</text>
+<polyline points="95.00,222.65 180.56,222.65 266.11,229.94 351.67,245.38 437.22,385.00 522.78,403.60 608.33,417.63 693.89,429.30 779.44,439.45 865.00,448.54" fill="none" stroke="#16a34a" stroke-width="3"/>
+<circle cx="95.00" cy="222.65" r="3.5" fill="#16a34a"/>
+<circle cx="180.56" cy="222.65" r="3.5" fill="#16a34a"/>
+<circle cx="266.11" cy="229.94" r="3.5" fill="#16a34a"/>
+<circle cx="351.67" cy="245.38" r="3.5" fill="#16a34a"/>
+<circle cx="437.22" cy="385.00" r="3.5" fill="#16a34a"/>
+<circle cx="522.78" cy="403.60" r="3.5" fill="#16a34a"/>
+<circle cx="608.33" cy="417.63" r="3.5" fill="#16a34a"/>
+<circle cx="693.89" cy="429.30" r="3.5" fill="#16a34a"/>
+<circle cx="779.44" cy="439.45" r="3.5" fill="#16a34a"/>
+<circle cx="865.00" cy="448.54" r="3.5" fill="#16a34a"/>
+<line x1="260" y1="37" x2="284" y2="37" stroke="#16a34a" stroke-width="3"/>
+<text class="tick" x="290" y="42">lr=1e+02</text>
+<polyline points="95.00,222.65 180.56,198.29 266.11,176.98 351.67,157.50 437.22,139.32 522.78,122.18 608.33,105.89 693.89,90.33 779.44,75.41 865.00,61.06" fill="none" stroke="#dc2626" stroke-width="3"/>
+<circle cx="95.00" cy="222.65" r="3.5" fill="#dc2626"/>
+<circle cx="180.56" cy="198.29" r="3.5" fill="#dc2626"/>
+<circle cx="266.11" cy="176.98" r="3.5" fill="#dc2626"/>
+<circle cx="351.67" cy="157.50" r="3.5" fill="#dc2626"/>
+<circle cx="437.22" cy="139.32" r="3.5" fill="#dc2626"/>
+<circle cx="522.78" cy="122.18" r="3.5" fill="#dc2626"/>
+<circle cx="608.33" cy="105.89" r="3.5" fill="#dc2626"/>
+<circle cx="693.89" cy="90.33" r="3.5" fill="#dc2626"/>
+<circle cx="779.44" cy="75.41" r="3.5" fill="#dc2626"/>
+<circle cx="865.00" cy="61.06" r="3.5" fill="#dc2626"/>
+<line x1="410" y1="37" x2="434" y2="37" stroke="#dc2626" stroke-width="3"/>
+<text class="tick" x="440" y="42">lr=1e+03</text>
+<text x="450.0" y="520" text-anchor="middle" font-size="15">Training iteration</text>
+<text x="22" y="270.0" text-anchor="middle" font-size="15" transform="rotate(-90 22 270.0)">Loss (log scale)</text>
+</svg>

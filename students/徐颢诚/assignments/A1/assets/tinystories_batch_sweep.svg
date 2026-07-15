@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="580" viewBox="0 0 980 580">
+<rect width="100%" height="100%" fill="white"/>
+<style>text{font-family:sans-serif;fill:#1f2937}.tick{font-size:13px}</style>
+<text x="490.0" y="32" text-anchor="middle" font-size="20" font-weight="bold">TinyStories batch-size sweep</text>
+<line x1="88" y1="502" x2="938" y2="502" stroke="#374151"/>
+<line x1="88" y1="74" x2="88" y2="502" stroke="#374151"/>
+<line x1="88" y1="502.00" x2="938" y2="502.00" stroke="#e5e7eb"/>
+<text class="tick" x="78" y="506.00" text-anchor="end">1.42</text>
+<line x1="88" y1="416.40" x2="938" y2="416.40" stroke="#e5e7eb"/>
+<text class="tick" x="78" y="420.40" text-anchor="end">2.23</text>
+<line x1="88" y1="330.80" x2="938" y2="330.80" stroke="#e5e7eb"/>
+<text class="tick" x="78" y="334.80" text-anchor="end">3.04</text>
+<line x1="88" y1="245.20" x2="938" y2="245.20" stroke="#e5e7eb"/>
+<text class="tick" x="78" y="249.20" text-anchor="end">3.85</text>
+<line x1="88" y1="159.60" x2="938" y2="159.60" stroke="#e5e7eb"/>
+<text class="tick" x="78" y="163.60" text-anchor="end">4.66</text>
+<line x1="88" y1="74.00" x2="938" y2="74.00" stroke="#e5e7eb"/>
+<text class="tick" x="78" y="78.00" text-anchor="end">5.47</text>
+<line x1="88.00" y1="502" x2="88.00" y2="507" stroke="#374151"/>
+<text class="tick" x="88.00" y="528" text-anchor="middle">0M</text>
+<line x1="258.00" y1="502" x2="258.00" y2="507" stroke="#374151"/>
+<text class="tick" x="258.00" y="528" text-anchor="middle">13M</text>
+<line x1="428.00" y1="502" x2="428.00" y2="507" stroke="#374151"/>
+<text class="tick" x="428.00" y="528" text-anchor="middle">26M</text>
+<line x1="598.00" y1="502" x2="598.00" y2="507" stroke="#374151"/>
+<text class="tick" x="598.00" y="528" text-anchor="middle">39M</text>
+<line x1="768.00" y1="502" x2="768.00" y2="507" stroke="#374151"/>
+<text class="tick" x="768.00" y="528" text-anchor="middle">52M</text>
+<line x1="938.00" y1="502" x2="938.00" y2="507" stroke="#374151"/>
+<text class="tick" x="938.00" y="528" text-anchor="middle">66M</text>
+<polyline points="130.50,327.84 173.00,358.96 215.50,406.47 258.00,375.37 300.50,425.19 343.00,423.29 385.50,431.89 428.00,437.39 470.50,441.63 513.00,443.82 555.50,452.17 598.00,449.80 640.50,440.52 683.00,453.22 725.50,449.43 768.00,446.20 810.50,451.89 853.00,446.55 895.50,446.15 938.00,458.82" fill="none" stroke="#2563eb" stroke-width="2.8"/>
+<line x1="100" y1="69" x2="124" y2="69" stroke="#2563eb" stroke-width="3"/>
+<text class="tick" x="130" y="74">per-GPU batch=1, peak LR=0.00013</text>
+<polyline points="130.50,315.81 173.00,375.89 215.50,402.12 258.00,422.26 300.50,426.82 343.00,438.37 385.50,445.83 428.00,449.94 470.50,455.33 513.00,453.90 555.50,461.20 598.00,460.52 640.50,465.01 683.00,469.93 725.50,469.67 768.00,469.25 810.50,468.14 853.00,472.48 895.50,470.24 938.00,469.41" fill="none" stroke="#16a34a" stroke-width="2.8"/>
+<line x1="100" y1="89" x2="124" y2="89" stroke="#16a34a" stroke-width="3"/>
+<text class="tick" x="130" y="94">per-GPU batch=16, peak LR=0.0005</text>
+<polyline points="130.50,243.41 173.00,335.79 215.50,377.17 258.00,397.52 300.50,412.79 343.00,426.58 385.50,434.28 428.00,437.77 470.50,444.66 513.00,449.53 555.50,453.01 598.00,458.43 640.50,458.62 683.00,458.96 725.50,461.18 768.00,465.27 810.50,465.52 853.00,464.69 895.50,465.84 938.00,466.58" fill="none" stroke="#dc2626" stroke-width="2.8"/>
+<line x1="100" y1="109" x2="124" y2="109" stroke="#dc2626" stroke-width="3"/>
+<text class="tick" x="130" y="114">per-GPU batch=64, peak LR=0.001</text>
+<polyline points="130.50,188.39 173.00,282.02 215.50,331.31 258.00,363.25 300.50,385.03 343.00,401.63 385.50,412.51 428.00,421.63 470.50,428.68 513.00,433.66 555.50,437.68 598.00,443.38 640.50,446.79 683.00,448.86 725.50,451.66 768.00,453.45 810.50,455.87 853.00,456.26 895.50,455.74 938.00,457.56" fill="none" stroke="#9333ea" stroke-width="2.8"/>
+<line x1="100" y1="129" x2="124" y2="129" stroke="#9333ea" stroke-width="3"/>
+<text class="tick" x="130" y="134">per-GPU batch=128, peak LR=0.0014</text>
+<polyline points="128.80,103.52 169.60,201.49 210.40,249.48 251.20,279.20 292.00,303.54 332.80,325.30 373.60,343.44 414.40,359.90 455.20,373.96 496.00,385.31 536.80,393.66 577.60,401.21 618.40,406.92 659.20,412.85 700.00,417.17 740.80,419.44 781.60,422.64 822.40,424.09 863.20,425.35 904.00,427.47 938.00,428.01" fill="none" stroke="#ea580c" stroke-width="2.8"/>
+<line x1="100" y1="149" x2="124" y2="149" stroke="#ea580c" stroke-width="3"/>
+<text class="tick" x="130" y="154">per-GPU batch=256, peak LR=0.002</text>
+<text x="490.0" y="560" text-anchor="middle" font-size="15">processed training tokens</text>
+<text x="22" y="290.0" text-anchor="middle" font-size="15" transform="rotate(-90 22 290.0)">validation loss (per token)</text>
+</svg>

@@ -1,0 +1,55 @@
+# TinyStories batch-size sweep 的共同基线。具体 batch、steps、LR 由
+# scripts/run_batch_sweep.py 覆盖，保证模型、数据和其他优化器参数一致。
+run_name: batch_sweep/placeholder
+
+data:
+  train_path: artifacts/token_ids/tinystories_train_uint16.npy
+  valid_path: artifacts/token_ids/tinystories_valid_uint16.npy
+  vocab_size: 10000
+
+model:
+  context_length: 256
+  d_model: 512
+  d_ff: 1344
+  num_layers: 4
+  num_heads: 16
+  rope_theta: 10000.0
+  dtype: float32
+
+optimizer:
+  max_lr: 0.001
+  min_lr: 0.00006
+  beta1: 0.9
+  beta2: 0.95
+  eps: 1.0e-8
+  weight_decay: 0.01
+  grad_clip_norm: 1.0
+
+scheduler:
+  warmup_steps: 50
+  cosine_cycle_steps: 1000
+  restart_on_resume: false
+
+training:
+  # 每卡 batch；启动脚本会覆盖它以及 steps 和各种 interval。
+  batch_size: 64
+  steps: 1000
+  eval_interval: 50
+  eval_batches: 20
+  log_interval: 50
+  checkpoint_interval: 1000
+  checkpoint_name: latest.pt
+  resume: null
+  device: cuda
+  seed: 42
+
+logging:
+  backends:
+    - name: jsonl
+    - name: tensorboard
+
+hydra:
+  run:
+    dir: logs/${run_name}/${now:%Y-%m-%d}/${now:%H-%M-%S}
+  job:
+    chdir: false
