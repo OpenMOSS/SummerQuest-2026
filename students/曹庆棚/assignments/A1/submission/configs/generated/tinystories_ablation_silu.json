@@ -1,0 +1,12 @@
+{
+  "base": "tinystories_final.json",
+  "run_name": "tinystories_ablation_silu",
+  "output_dir": "runs/tinystories_ablation_silu",
+  "training": {
+    "save_checkpoints": false,
+    "save_best": false
+  },
+  "ablation": {
+    "ffn_type": "silu"
+  }
+}

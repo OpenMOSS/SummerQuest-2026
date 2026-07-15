@@ -1,0 +1,1379 @@
+{
+  "schema_version": 1,
+  "description": "Public, privacy-reviewed experiment summary. Detailed trajectories are stored in adjacent JSONL files.",
+  "verification": {
+    "pytest": "47 passed, 1 xfailed, 1 warning",
+    "ruff_check": "passed",
+    "ruff_format_check": "passed"
+  },
+  "selected_configuration": {
+    "max_lr": 0.003,
+    "min_lr": 0.0003,
+    "batch_size": 128,
+    "warmup_iters": 1000,
+    "total_steps": 10000,
+    "context_length": 256,
+    "seed": 42
+  },
+  "batch_throughput_note": {
+    "successful_batch_sizes": [
+      1,
+      32,
+      64,
+      128,
+      192,
+      256,
+      384,
+      512
+    ],
+    "oom_batch_sizes": [
+      768
+    ],
+    "comparison_purpose": "single-device throughput and memory-capacity probe"
+  },
+  "artifact_index": {
+    "tokenizer_metrics": "tokenizer_summary.json",
+    "tinystories_generation": "generations/tinystories_t08_p09.json",
+    "owt_generation": "generations/owt_t08_p09.json"
+  },
+  "runs": {
+    "tinystories_final": {
+      "run_name": "tinystories_final",
+      "status": "completed",
+      "steps": 10000,
+      "batch_size": 128,
+      "context_length": 256,
+      "processed_tokens": 327680000,
+      "wall_clock_sec": 1618.5008294750005,
+      "tokens_per_sec": 202458.96327794337,
+      "peak_gpu_memory_bytes": 13884693504,
+      "final_train_loss": 1.365290641784668,
+      "final_val_loss": 1.3428842186927796,
+      "best_val_loss": 1.3344351589679717,
+      "best_step": 9000,
+      "model": {
+        "vocab_size": 10000,
+        "context_length": 256,
+        "d_model": 512,
+        "num_layers": 4,
+        "num_heads": 16,
+        "d_ff": 1344,
+        "rope_theta": 10000
+      },
+      "optimizer": {
+        "max_lr": 0.003,
+        "min_lr": 0.00030000000000000003,
+        "warmup_iters": 1000,
+        "cosine_cycle_iters": 10000,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "eps": 1e-08,
+        "weight_decay": 0.01
+      },
+      "ablation": {
+        "remove_rmsnorm": false,
+        "use_post_norm": false,
+        "remove_rope": false,
+        "ffn_type": null
+      }
+    },
+    "owt_final": {
+      "run_name": "owt_final",
+      "status": "completed",
+      "steps": 10000,
+      "batch_size": 128,
+      "context_length": 256,
+      "processed_tokens": 327680000,
+      "wall_clock_sec": 1999.9495445517823,
+      "tokens_per_sec": 163844.13341459463,
+      "peak_gpu_memory_bytes": 22824934400,
+      "final_train_loss": 3.9422411918640137,
+      "final_val_loss": 3.9268721461296083,
+      "best_val_loss": 3.9268721461296083,
+      "best_step": 10000,
+      "model": {
+        "vocab_size": 32000,
+        "context_length": 256,
+        "d_model": 512,
+        "num_layers": 4,
+        "num_heads": 16,
+        "d_ff": 1344,
+        "rope_theta": 10000
+      },
+      "optimizer": {
+        "max_lr": 0.003,
+        "min_lr": 0.00030000000000000003,
+        "warmup_iters": 1000,
+        "cosine_cycle_iters": 10000,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "eps": 1e-08,
+        "weight_decay": 0.01
+      },
+      "ablation": {
+        "remove_rmsnorm": false,
+        "use_post_norm": false,
+        "remove_rope": false,
+        "ffn_type": null
+      }
+    },
+    "lr_short_3e-5": {
+      "run_name": "lr_short_3e-5",
+      "status": "completed",
+      "steps": 1000,
+      "batch_size": 128,
+      "context_length": 256,
+      "processed_tokens": 32768000,
+      "wall_clock_sec": 181.73884404357523,
+      "final_train_loss": 3.6239161491394043,
+      "final_val_loss": 3.680236804485321,
+      "best_val_loss": 3.680236804485321,
+      "best_step": 1000,
+      "model": {
+        "vocab_size": 10000,
+        "context_length": 256,
+        "d_model": 512,
+        "num_layers": 4,
+        "num_heads": 16,
+        "d_ff": 1344,
+        "rope_theta": 10000
+      },
+      "optimizer": {
+        "max_lr": 3e-05,
+        "min_lr": 3e-06,
+        "warmup_iters": 50,
+        "cosine_cycle_iters": 1000,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "eps": 1e-08,
+        "weight_decay": 0.01
+      },
+      "ablation": {
+        "remove_rmsnorm": false,
+        "use_post_norm": false,
+        "remove_rope": false,
+        "ffn_type": null
+      }
+    },
+    "lr_short_1e-4": {
+      "run_name": "lr_short_1e-4",
+      "status": "completed",
+      "steps": 1000,
+      "batch_size": 128,
+      "context_length": 256,
+      "processed_tokens": 32768000,
+      "wall_clock_sec": 181.62483074050397,
+      "final_train_loss": 2.7649264335632324,
+      "final_val_loss": 2.8138396739959717,
+      "best_val_loss": 2.8138396739959717,
+      "best_step": 1000,
+      "model": {
+        "vocab_size": 10000,
+        "context_length": 256,
+        "d_model": 512,
+        "num_layers": 4,
+        "num_heads": 16,
+        "d_ff": 1344,
+        "rope_theta": 10000
+      },
+      "optimizer": {
+        "max_lr": 0.0001,
+        "min_lr": 1e-05,
+        "warmup_iters": 50,
+        "cosine_cycle_iters": 1000,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "eps": 1e-08,
+        "weight_decay": 0.01
+      },
+      "ablation": {
+        "remove_rmsnorm": false,
+        "use_post_norm": false,
+        "remove_rope": false,
+        "ffn_type": null
+      }
+    },
+    "lr_short_3e-4": {
+      "run_name": "lr_short_3e-4",
+      "status": "completed",
+      "steps": 1000,
+      "batch_size": 128,
+      "context_length": 256,
+      "processed_tokens": 32768000,
+      "wall_clock_sec": 181.94719033595175,
+      "tokens_per_sec": 180096.21329956435,
+      "peak_gpu_memory_bytes": 13884693504,
+      "final_train_loss": 2.222982883453369,
+      "final_val_loss": 2.2709383368492126,
+      "best_val_loss": 2.2709383368492126,
+      "best_step": 1000,
+      "model": {
+        "vocab_size": 10000,
+        "context_length": 256,
+        "d_model": 512,
+        "num_layers": 4,
+        "num_heads": 16,
+        "d_ff": 1344,
+        "rope_theta": 10000
+      },
+      "optimizer": {
+        "max_lr": 0.0003,
+        "min_lr": 2.9999999999999997e-05,
+        "warmup_iters": 50,
+        "cosine_cycle_iters": 1000,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "eps": 1e-08,
+        "weight_decay": 0.01
+      },
+      "ablation": {
+        "remove_rmsnorm": false,
+        "use_post_norm": false,
+        "remove_rope": false,
+        "ffn_type": null
+      }
+    },
+    "lr_short_1e-3": {
+      "run_name": "lr_short_1e-3",
+      "status": "completed",
+      "steps": 1000,
+      "batch_size": 128,
+      "context_length": 256,
+      "processed_tokens": 32768000,
+      "wall_clock_sec": 182.10804391093552,
+      "tokens_per_sec": 179937.13674738063,
+      "peak_gpu_memory_bytes": 13884693504,
+      "final_train_loss": 1.7935128211975098,
+      "final_val_loss": 1.8423586308956146,
+      "best_val_loss": 1.8423586308956146,
+      "best_step": 1000,
+      "model": {
+        "vocab_size": 10000,
+        "context_length": 256,
+        "d_model": 512,
+        "num_layers": 4,
+        "num_heads": 16,
+        "d_ff": 1344,
+        "rope_theta": 10000
+      },
+      "optimizer": {
+        "max_lr": 0.001,
+        "min_lr": 0.0001,
+        "warmup_iters": 50,
+        "cosine_cycle_iters": 1000,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "eps": 1e-08,
+        "weight_decay": 0.01
+      },
+      "ablation": {
+        "remove_rmsnorm": false,
+        "use_post_norm": false,
+        "remove_rope": false,
+        "ffn_type": null
+      }
+    },
+    "lr_short_3e-3": {
+      "run_name": "lr_short_3e-3",
+      "status": "completed",
+      "steps": 1000,
+      "batch_size": 128,
+      "context_length": 256,
+      "processed_tokens": 32768000,
+      "wall_clock_sec": 182.2688225908205,
+      "tokens_per_sec": 179778.41483928188,
+      "peak_gpu_memory_bytes": 13884693504,
+      "final_train_loss": 1.6942307949066162,
+      "final_val_loss": 1.7403021454811096,
+      "best_val_loss": 1.7403021454811096,
+      "best_step": 1000,
+      "model": {
+        "vocab_size": 10000,
+        "context_length": 256,
+        "d_model": 512,
+        "num_layers": 4,
+        "num_heads": 16,
+        "d_ff": 1344,
+        "rope_theta": 10000
+      },
+      "optimizer": {
+        "max_lr": 0.003,
+        "min_lr": 0.00030000000000000003,
+        "warmup_iters": 50,
+        "cosine_cycle_iters": 1000,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "eps": 1e-08,
+        "weight_decay": 0.01
+      },
+      "ablation": {
+        "remove_rmsnorm": false,
+        "use_post_norm": false,
+        "remove_rope": false,
+        "ffn_type": null
+      }
+    },
+    "lr_long_1e-3": {
+      "run_name": "lr_long_1e-3",
+      "status": "completed",
+      "steps": 5000,
+      "batch_size": 128,
+      "context_length": 256,
+      "processed_tokens": 163840000,
+      "wall_clock_sec": 850.8763125902042,
+      "tokens_per_sec": 192554.4260378394,
+      "peak_gpu_memory_bytes": 13884693504,
+      "final_train_loss": 1.4618991613388062,
+      "final_val_loss": 1.4768483638763428,
+      "best_val_loss": 1.4646772027015686,
+      "best_step": 4800,
+      "model": {
+        "vocab_size": 10000,
+        "context_length": 256,
+        "d_model": 512,
+        "num_layers": 4,
+        "num_heads": 16,
+        "d_ff": 1344,
+        "rope_theta": 10000
+      },
+      "optimizer": {
+        "max_lr": 0.001,
+        "min_lr": 0.0001,
+        "warmup_iters": 100,
+        "cosine_cycle_iters": 5000,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "eps": 1e-08,
+        "weight_decay": 0.01
+      },
+      "ablation": {
+        "remove_rmsnorm": false,
+        "use_post_norm": false,
+        "remove_rope": false,
+        "ffn_type": null
+      }
+    },
+    "lr_long_3e-3": {
+      "run_name": "lr_long_3e-3",
+      "status": "completed",
+      "steps": 5000,
+      "batch_size": 128,
+      "context_length": 256,
+      "processed_tokens": 163840000,
+      "wall_clock_sec": 850.3193157007918,
+      "tokens_per_sec": 192680.55773256315,
+      "peak_gpu_memory_bytes": 13884693504,
+      "final_train_loss": 1.398733377456665,
+      "final_val_loss": 1.4223228752613069,
+      "best_val_loss": 1.408626800775528,
+      "best_step": 4800,
+      "model": {
+        "vocab_size": 10000,
+        "context_length": 256,
+        "d_model": 512,
+        "num_layers": 4,
+        "num_heads": 16,
+        "d_ff": 1344,
+        "rope_theta": 10000
+      },
+      "optimizer": {
+        "max_lr": 0.003,
+        "min_lr": 0.00030000000000000003,
+        "warmup_iters": 100,
+        "cosine_cycle_iters": 5000,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "eps": 1e-08,
+        "weight_decay": 0.01
+      },
+      "ablation": {
+        "remove_rmsnorm": false,
+        "use_post_norm": false,
+        "remove_rope": false,
+        "ffn_type": null
+      }
+    },
+    "lr_divergent": {
+      "run_name": "lr_divergent",
+      "status": "completed",
+      "steps": 500,
+      "batch_size": 128,
+      "context_length": 256,
+      "processed_tokens": 16384000,
+      "wall_clock_sec": 104.09445134364069,
+      "final_train_loss": 4.234194278717041,
+      "final_val_loss": 4.268107891082764,
+      "model": {
+        "vocab_size": 10000,
+        "context_length": 256,
+        "d_model": 512,
+        "num_layers": 4,
+        "num_heads": 16,
+        "d_ff": 1344,
+        "rope_theta": 10000
+      },
+      "optimizer": {
+        "max_lr": 0.1,
+        "min_lr": 0.01,
+        "warmup_iters": 100,
+        "cosine_cycle_iters": 10000,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "eps": 1e-08,
+        "weight_decay": 0.01
+      },
+      "ablation": {
+        "remove_rmsnorm": false,
+        "use_post_norm": false,
+        "remove_rope": false,
+        "ffn_type": null
+      }
+    },
+    "batch_equal_tokens_16": {
+      "run_name": "batch_equal_tokens_16",
+      "status": "completed",
+      "steps": 8000,
+      "batch_size": 16,
+      "context_length": 256,
+      "processed_tokens": 32768000,
+      "wall_clock_sec": 282.80056068021804,
+      "tokens_per_sec": 115869.64297801736,
+      "peak_gpu_memory_bytes": 2025634816,
+      "final_train_loss": 2.302171230316162,
+      "final_val_loss": 2.4122501730918886,
+      "best_val_loss": 2.4122501730918886,
+      "best_step": 8000,
+      "model": {
+        "vocab_size": 10000,
+        "context_length": 256,
+        "d_model": 512,
+        "num_layers": 4,
+        "num_heads": 16,
+        "d_ff": 1344,
+        "rope_theta": 10000
+      },
+      "optimizer": {
+        "max_lr": 0.003,
+        "min_lr": 0.00030000000000000003,
+        "warmup_iters": 400,
+        "cosine_cycle_iters": 8000,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "eps": 1e-08,
+        "weight_decay": 0.01
+      },
+      "ablation": {
+        "remove_rmsnorm": false,
+        "use_post_norm": false,
+        "remove_rope": false,
+        "ffn_type": null
+      }
+    },
+    "batch_equal_tokens_32": {
+      "run_name": "batch_equal_tokens_32",
+      "status": "completed",
+      "steps": 4000,
+      "batch_size": 32,
+      "context_length": 256,
+      "processed_tokens": 32768000,
+      "wall_clock_sec": 227.63016740698367,
+      "tokens_per_sec": 143952.80016384454,
+      "peak_gpu_memory_bytes": 3720338432,
+      "final_train_loss": 2.216308355331421,
+      "final_val_loss": 2.2210279941558837,
+      "best_val_loss": 2.1720911622047425,
+      "best_step": 3800,
+      "model": {
+        "vocab_size": 10000,
+        "context_length": 256,
+        "d_model": 512,
+        "num_layers": 4,
+        "num_heads": 16,
+        "d_ff": 1344,
+        "rope_theta": 10000
+      },
+      "optimizer": {
+        "max_lr": 0.003,
+        "min_lr": 0.00030000000000000003,
+        "warmup_iters": 200,
+        "cosine_cycle_iters": 4000,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "eps": 1e-08,
+        "weight_decay": 0.01
+      },
+      "ablation": {
+        "remove_rmsnorm": false,
+        "use_post_norm": false,
+        "remove_rope": false,
+        "ffn_type": null
+      }
+    },
+    "batch_equal_tokens_64": {
+      "run_name": "batch_equal_tokens_64",
+      "status": "completed",
+      "steps": 2000,
+      "batch_size": 64,
+      "context_length": 256,
+      "processed_tokens": 32768000,
+      "wall_clock_sec": 180.9068789575249,
+      "tokens_per_sec": 181131.86291657595,
+      "peak_gpu_memory_bytes": 7110302720,
+      "final_train_loss": 1.743943214416504,
+      "final_val_loss": 1.7822392284870148,
+      "best_val_loss": 1.7773675560951232,
+      "best_step": 1900,
+      "model": {
+        "vocab_size": 10000,
+        "context_length": 256,
+        "d_model": 512,
+        "num_layers": 4,
+        "num_heads": 16,
+        "d_ff": 1344,
+        "rope_theta": 10000
+      },
+      "optimizer": {
+        "max_lr": 0.003,
+        "min_lr": 0.00030000000000000003,
+        "warmup_iters": 100,
+        "cosine_cycle_iters": 2000,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "eps": 1e-08,
+        "weight_decay": 0.01
+      },
+      "ablation": {
+        "remove_rmsnorm": false,
+        "use_post_norm": false,
+        "remove_rope": false,
+        "ffn_type": null
+      }
+    },
+    "batch_equal_tokens_128": {
+      "run_name": "batch_equal_tokens_128",
+      "status": "completed",
+      "steps": 1000,
+      "batch_size": 128,
+      "context_length": 256,
+      "processed_tokens": 32768000,
+      "wall_clock_sec": 182.013813062571,
+      "tokens_per_sec": 180030.29247420537,
+      "peak_gpu_memory_bytes": 13884693504,
+      "final_train_loss": 1.6942307949066162,
+      "final_val_loss": 1.7403021454811096,
+      "best_val_loss": 1.7403021454811096,
+      "best_step": 1000,
+      "model": {
+        "vocab_size": 10000,
+        "context_length": 256,
+        "d_model": 512,
+        "num_layers": 4,
+        "num_heads": 16,
+        "d_ff": 1344,
+        "rope_theta": 10000
+      },
+      "optimizer": {
+        "max_lr": 0.003,
+        "min_lr": 0.00030000000000000003,
+        "warmup_iters": 50,
+        "cosine_cycle_iters": 1000,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "eps": 1e-08,
+        "weight_decay": 0.01
+      },
+      "ablation": {
+        "remove_rmsnorm": false,
+        "use_post_norm": false,
+        "remove_rope": false,
+        "ffn_type": null
+      }
+    },
+    "batch_equal_tokens_256": {
+      "run_name": "batch_equal_tokens_256",
+      "status": "completed",
+      "steps": 500,
+      "batch_size": 256,
+      "context_length": 256,
+      "processed_tokens": 32768000,
+      "wall_clock_sec": 203.14280565548688,
+      "tokens_per_sec": 161305.2448215753,
+      "peak_gpu_memory_bytes": 27435703296,
+      "final_train_loss": 1.815633773803711,
+      "final_val_loss": 1.8448967635631561,
+      "best_val_loss": 1.8448967635631561,
+      "best_step": 500,
+      "model": {
+        "vocab_size": 10000,
+        "context_length": 256,
+        "d_model": 512,
+        "num_layers": 4,
+        "num_heads": 16,
+        "d_ff": 1344,
+        "rope_theta": 10000
+      },
+      "optimizer": {
+        "max_lr": 0.003,
+        "min_lr": 0.00030000000000000003,
+        "warmup_iters": 25,
+        "cosine_cycle_iters": 500,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "eps": 1e-08,
+        "weight_decay": 0.01
+      },
+      "ablation": {
+        "remove_rmsnorm": false,
+        "use_post_norm": false,
+        "remove_rope": false,
+        "ffn_type": null
+      }
+    },
+    "batch_throughput_1": {
+      "run_name": "batch_throughput_1",
+      "status": "completed",
+      "steps": 50,
+      "batch_size": 1,
+      "context_length": 256,
+      "processed_tokens": 12800,
+      "wall_clock_sec": 3.0873757069930434,
+      "tokens_per_sec": 4145.915889344931,
+      "peak_gpu_memory_bytes": 445122560,
+      "final_train_loss": 5.493402481079102,
+      "final_val_loss": 5.108109951019287,
+      "best_val_loss": 5.108109951019287,
+      "best_step": 50,
+      "model": {
+        "vocab_size": 10000,
+        "context_length": 256,
+        "d_model": 512,
+        "num_layers": 4,
+        "num_heads": 16,
+        "d_ff": 1344,
+        "rope_theta": 10000
+      },
+      "optimizer": {
+        "max_lr": 0.003,
+        "min_lr": 0.00030000000000000003,
+        "warmup_iters": 5,
+        "cosine_cycle_iters": 50,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "eps": 1e-08,
+        "weight_decay": 0.01
+      },
+      "ablation": {
+        "remove_rmsnorm": false,
+        "use_post_norm": false,
+        "remove_rope": false,
+        "ffn_type": null
+      }
+    },
+    "batch_throughput_32": {
+      "run_name": "batch_throughput_32",
+      "status": "completed",
+      "steps": 50,
+      "batch_size": 32,
+      "context_length": 256,
+      "processed_tokens": 409600,
+      "wall_clock_sec": 3.180930701084435,
+      "tokens_per_sec": 128767.34468322752,
+      "peak_gpu_memory_bytes": 3720338432,
+      "final_train_loss": 4.064474105834961,
+      "final_val_loss": 4.094719648361206,
+      "best_val_loss": 4.094719648361206,
+      "best_step": 50,
+      "model": {
+        "vocab_size": 10000,
+        "context_length": 256,
+        "d_model": 512,
+        "num_layers": 4,
+        "num_heads": 16,
+        "d_ff": 1344,
+        "rope_theta": 10000
+      },
+      "optimizer": {
+        "max_lr": 0.003,
+        "min_lr": 0.00030000000000000003,
+        "warmup_iters": 5,
+        "cosine_cycle_iters": 50,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "eps": 1e-08,
+        "weight_decay": 0.01
+      },
+      "ablation": {
+        "remove_rmsnorm": false,
+        "use_post_norm": false,
+        "remove_rope": false,
+        "ffn_type": null
+      }
+    },
+    "batch_throughput_64": {
+      "run_name": "batch_throughput_64",
+      "status": "completed",
+      "steps": 50,
+      "batch_size": 64,
+      "context_length": 256,
+      "processed_tokens": 819200,
+      "wall_clock_sec": 4.875238621607423,
+      "tokens_per_sec": 168032.800767791,
+      "peak_gpu_memory_bytes": 7110302720,
+      "final_train_loss": 3.983886241912842,
+      "final_val_loss": 3.9774314165115356,
+      "best_val_loss": 3.9774314165115356,
+      "best_step": 50,
+      "model": {
+        "vocab_size": 10000,
+        "context_length": 256,
+        "d_model": 512,
+        "num_layers": 4,
+        "num_heads": 16,
+        "d_ff": 1344,
+        "rope_theta": 10000
+      },
+      "optimizer": {
+        "max_lr": 0.003,
+        "min_lr": 0.00030000000000000003,
+        "warmup_iters": 5,
+        "cosine_cycle_iters": 50,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "eps": 1e-08,
+        "weight_decay": 0.01
+      },
+      "ablation": {
+        "remove_rmsnorm": false,
+        "use_post_norm": false,
+        "remove_rope": false,
+        "ffn_type": null
+      }
+    },
+    "batch_throughput_128": {
+      "run_name": "batch_throughput_128",
+      "status": "completed",
+      "steps": 50,
+      "batch_size": 128,
+      "context_length": 256,
+      "processed_tokens": 1638400,
+      "wall_clock_sec": 8.427327687852085,
+      "tokens_per_sec": 194415.12905232562,
+      "peak_gpu_memory_bytes": 13884693504,
+      "final_train_loss": 3.9606404304504395,
+      "final_val_loss": 3.9322314262390137,
+      "best_val_loss": 3.9322314262390137,
+      "best_step": 50,
+      "model": {
+        "vocab_size": 10000,
+        "context_length": 256,
+        "d_model": 512,
+        "num_layers": 4,
+        "num_heads": 16,
+        "d_ff": 1344,
+        "rope_theta": 10000
+      },
+      "optimizer": {
+        "max_lr": 0.003,
+        "min_lr": 0.00030000000000000003,
+        "warmup_iters": 5,
+        "cosine_cycle_iters": 50,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "eps": 1e-08,
+        "weight_decay": 0.01
+      },
+      "ablation": {
+        "remove_rmsnorm": false,
+        "use_post_norm": false,
+        "remove_rope": false,
+        "ffn_type": null
+      }
+    },
+    "batch_throughput_192": {
+      "run_name": "batch_throughput_192",
+      "status": "completed",
+      "steps": 50,
+      "batch_size": 192,
+      "context_length": 256,
+      "processed_tokens": 2457600,
+      "wall_clock_sec": 12.445897728204727,
+      "tokens_per_sec": 197462.65425519444,
+      "peak_gpu_memory_bytes": 20661279744,
+      "final_train_loss": 3.8856749534606934,
+      "final_val_loss": 3.893683671951294,
+      "best_val_loss": 3.893683671951294,
+      "best_step": 50,
+      "model": {
+        "vocab_size": 10000,
+        "context_length": 256,
+        "d_model": 512,
+        "num_layers": 4,
+        "num_heads": 16,
+        "d_ff": 1344,
+        "rope_theta": 10000
+      },
+      "optimizer": {
+        "max_lr": 0.003,
+        "min_lr": 0.00030000000000000003,
+        "warmup_iters": 5,
+        "cosine_cycle_iters": 50,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "eps": 1e-08,
+        "weight_decay": 0.01
+      },
+      "ablation": {
+        "remove_rmsnorm": false,
+        "use_post_norm": false,
+        "remove_rope": false,
+        "ffn_type": null
+      }
+    },
+    "batch_throughput_256": {
+      "run_name": "batch_throughput_256",
+      "status": "completed",
+      "steps": 50,
+      "batch_size": 256,
+      "context_length": 256,
+      "processed_tokens": 3276800,
+      "wall_clock_sec": 16.08677144628018,
+      "tokens_per_sec": 203695.31642458373,
+      "peak_gpu_memory_bytes": 27435703296,
+      "final_train_loss": 3.891984462738037,
+      "final_val_loss": 3.885800838470459,
+      "best_val_loss": 3.885800838470459,
+      "best_step": 50,
+      "model": {
+        "vocab_size": 10000,
+        "context_length": 256,
+        "d_model": 512,
+        "num_layers": 4,
+        "num_heads": 16,
+        "d_ff": 1344,
+        "rope_theta": 10000
+      },
+      "optimizer": {
+        "max_lr": 0.003,
+        "min_lr": 0.00030000000000000003,
+        "warmup_iters": 5,
+        "cosine_cycle_iters": 50,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "eps": 1e-08,
+        "weight_decay": 0.01
+      },
+      "ablation": {
+        "remove_rmsnorm": false,
+        "use_post_norm": false,
+        "remove_rope": false,
+        "ffn_type": null
+      }
+    },
+    "batch_throughput_384": {
+      "run_name": "batch_throughput_384",
+      "status": "completed",
+      "steps": 50,
+      "batch_size": 384,
+      "context_length": 256,
+      "processed_tokens": 4915200,
+      "wall_clock_sec": 23.717938223853707,
+      "tokens_per_sec": 207235.5511516032,
+      "peak_gpu_memory_bytes": 40989678592,
+      "final_train_loss": 3.9229483604431152,
+      "final_val_loss": 3.8978625535964966,
+      "best_val_loss": 3.8978625535964966,
+      "best_step": 50,
+      "model": {
+        "vocab_size": 10000,
+        "context_length": 256,
+        "d_model": 512,
+        "num_layers": 4,
+        "num_heads": 16,
+        "d_ff": 1344,
+        "rope_theta": 10000
+      },
+      "optimizer": {
+        "max_lr": 0.003,
+        "min_lr": 0.00030000000000000003,
+        "warmup_iters": 5,
+        "cosine_cycle_iters": 50,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "eps": 1e-08,
+        "weight_decay": 0.01
+      },
+      "ablation": {
+        "remove_rmsnorm": false,
+        "use_post_norm": false,
+        "remove_rope": false,
+        "ffn_type": null
+      }
+    },
+    "batch_throughput_512": {
+      "run_name": "batch_throughput_512",
+      "status": "completed",
+      "steps": 50,
+      "batch_size": 512,
+      "context_length": 256,
+      "processed_tokens": 6553600,
+      "wall_clock_sec": 31.75661559589207,
+      "tokens_per_sec": 206369.59817745036,
+      "peak_gpu_memory_bytes": 54539410432,
+      "final_train_loss": 3.823713779449463,
+      "final_val_loss": 3.8146419525146484,
+      "best_val_loss": 3.8146419525146484,
+      "best_step": 50,
+      "model": {
+        "vocab_size": 10000,
+        "context_length": 256,
+        "d_model": 512,
+        "num_layers": 4,
+        "num_heads": 16,
+        "d_ff": 1344,
+        "rope_theta": 10000
+      },
+      "optimizer": {
+        "max_lr": 0.003,
+        "min_lr": 0.00030000000000000003,
+        "warmup_iters": 5,
+        "cosine_cycle_iters": 50,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "eps": 1e-08,
+        "weight_decay": 0.01
+      },
+      "ablation": {
+        "remove_rmsnorm": false,
+        "use_post_norm": false,
+        "remove_rope": false,
+        "ffn_type": null
+      }
+    },
+    "warmup_00pct": {
+      "run_name": "warmup_00pct",
+      "status": "completed",
+      "steps": 1000,
+      "batch_size": 128,
+      "context_length": 256,
+      "processed_tokens": 32768000,
+      "wall_clock_sec": 183.80618900433183,
+      "tokens_per_sec": 178274.73697976375,
+      "peak_gpu_memory_bytes": 13884693504,
+      "final_train_loss": 1.8325437307357788,
+      "final_val_loss": 1.8846709191799165,
+      "best_val_loss": 1.8846709191799165,
+      "best_step": 1000,
+      "model": {
+        "vocab_size": 10000,
+        "context_length": 256,
+        "d_model": 512,
+        "num_layers": 4,
+        "num_heads": 16,
+        "d_ff": 1344,
+        "rope_theta": 10000
+      },
+      "optimizer": {
+        "max_lr": 0.003,
+        "min_lr": 0.00030000000000000003,
+        "warmup_iters": 0,
+        "cosine_cycle_iters": 1000,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "eps": 1e-08,
+        "weight_decay": 0.01
+      },
+      "ablation": {
+        "remove_rmsnorm": false,
+        "use_post_norm": false,
+        "remove_rope": false,
+        "ffn_type": null
+      }
+    },
+    "warmup_01pct": {
+      "run_name": "warmup_01pct",
+      "status": "completed",
+      "steps": 1000,
+      "batch_size": 128,
+      "context_length": 256,
+      "processed_tokens": 32768000,
+      "wall_clock_sec": 183.22283328697085,
+      "tokens_per_sec": 178842.3386547978,
+      "peak_gpu_memory_bytes": 13884693504,
+      "final_train_loss": 1.790454626083374,
+      "final_val_loss": 1.8347002506256103,
+      "best_val_loss": 1.8347002506256103,
+      "best_step": 1000,
+      "model": {
+        "vocab_size": 10000,
+        "context_length": 256,
+        "d_model": 512,
+        "num_layers": 4,
+        "num_heads": 16,
+        "d_ff": 1344,
+        "rope_theta": 10000
+      },
+      "optimizer": {
+        "max_lr": 0.003,
+        "min_lr": 0.00030000000000000003,
+        "warmup_iters": 10,
+        "cosine_cycle_iters": 1000,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "eps": 1e-08,
+        "weight_decay": 0.01
+      },
+      "ablation": {
+        "remove_rmsnorm": false,
+        "use_post_norm": false,
+        "remove_rope": false,
+        "ffn_type": null
+      }
+    },
+    "warmup_05pct": {
+      "run_name": "warmup_05pct",
+      "status": "completed",
+      "steps": 1000,
+      "batch_size": 128,
+      "context_length": 256,
+      "processed_tokens": 32768000,
+      "wall_clock_sec": 181.79331206902862,
+      "tokens_per_sec": 180248.65506360147,
+      "peak_gpu_memory_bytes": 13884693504,
+      "final_train_loss": 1.6942307949066162,
+      "final_val_loss": 1.7403021454811096,
+      "best_val_loss": 1.7403021454811096,
+      "best_step": 1000,
+      "model": {
+        "vocab_size": 10000,
+        "context_length": 256,
+        "d_model": 512,
+        "num_layers": 4,
+        "num_heads": 16,
+        "d_ff": 1344,
+        "rope_theta": 10000
+      },
+      "optimizer": {
+        "max_lr": 0.003,
+        "min_lr": 0.00030000000000000003,
+        "warmup_iters": 50,
+        "cosine_cycle_iters": 1000,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "eps": 1e-08,
+        "weight_decay": 0.01
+      },
+      "ablation": {
+        "remove_rmsnorm": false,
+        "use_post_norm": false,
+        "remove_rope": false,
+        "ffn_type": null
+      }
+    },
+    "warmup_10pct": {
+      "run_name": "warmup_10pct",
+      "status": "completed",
+      "steps": 1000,
+      "batch_size": 128,
+      "context_length": 256,
+      "processed_tokens": 32768000,
+      "wall_clock_sec": 182.00165243353695,
+      "tokens_per_sec": 180042.32138478063,
+      "peak_gpu_memory_bytes": 13884693504,
+      "final_train_loss": 1.679084300994873,
+      "final_val_loss": 1.725248098373413,
+      "best_val_loss": 1.725248098373413,
+      "best_step": 1000,
+      "model": {
+        "vocab_size": 10000,
+        "context_length": 256,
+        "d_model": 512,
+        "num_layers": 4,
+        "num_heads": 16,
+        "d_ff": 1344,
+        "rope_theta": 10000
+      },
+      "optimizer": {
+        "max_lr": 0.003,
+        "min_lr": 0.00030000000000000003,
+        "warmup_iters": 100,
+        "cosine_cycle_iters": 1000,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "eps": 1e-08,
+        "weight_decay": 0.01
+      },
+      "ablation": {
+        "remove_rmsnorm": false,
+        "use_post_norm": false,
+        "remove_rope": false,
+        "ffn_type": null
+      }
+    },
+    "tinystories_ablation_no_rmsnorm": {
+      "run_name": "tinystories_ablation_no_rmsnorm",
+      "status": "diverged",
+      "configured_steps": 10000,
+      "steps": 1250,
+      "diverged_at_step": 730,
+      "batch_size": 128,
+      "context_length": 256,
+      "processed_tokens": 40960000,
+      "wall_clock_sec": 183.6008234973997,
+      "tokens_per_sec": 223092.6812840799,
+      "peak_gpu_memory_bytes": null,
+      "final_train_loss": null,
+      "final_val_loss": null,
+      "best_val_loss": 2.2996513485908507,
+      "best_step": 500,
+      "model": {
+        "vocab_size": 10000,
+        "context_length": 256,
+        "d_model": 512,
+        "num_layers": 4,
+        "num_heads": 16,
+        "d_ff": 1344,
+        "rope_theta": 10000
+      },
+      "optimizer": {
+        "max_lr": 0.003,
+        "min_lr": 0.00030000000000000003,
+        "warmup_iters": 1000,
+        "cosine_cycle_iters": 10000,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "eps": 1e-08,
+        "weight_decay": 0.01
+      },
+      "ablation": {
+        "remove_rmsnorm": true,
+        "use_post_norm": false,
+        "remove_rope": false,
+        "ffn_type": null
+      }
+    },
+    "tinystories_ablation_no_rmsnorm_low_lr": {
+      "run_name": "tinystories_ablation_no_rmsnorm_low_lr",
+      "status": "completed",
+      "steps": 10000,
+      "batch_size": 128,
+      "context_length": 256,
+      "processed_tokens": 327680000,
+      "wall_clock_sec": 1480.4941158667207,
+      "tokens_per_sec": 221331.51120845042,
+      "peak_gpu_memory_bytes": 12675499008,
+      "final_train_loss": 1.591325283050537,
+      "final_val_loss": 1.562752550840378,
+      "best_val_loss": 1.552009779214859,
+      "best_step": 9000,
+      "model": {
+        "vocab_size": 10000,
+        "context_length": 256,
+        "d_model": 512,
+        "num_layers": 4,
+        "num_heads": 16,
+        "d_ff": 1344,
+        "rope_theta": 10000
+      },
+      "optimizer": {
+        "max_lr": 0.00030000000000000003,
+        "min_lr": 3.0000000000000004e-05,
+        "warmup_iters": 1000,
+        "cosine_cycle_iters": 10000,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "eps": 1e-08,
+        "weight_decay": 0.01
+      },
+      "ablation": {
+        "remove_rmsnorm": true,
+        "use_post_norm": false,
+        "remove_rope": false,
+        "ffn_type": null
+      }
+    },
+    "tinystories_ablation_postnorm": {
+      "run_name": "tinystories_ablation_postnorm",
+      "status": "completed",
+      "steps": 10000,
+      "batch_size": 128,
+      "context_length": 256,
+      "processed_tokens": 327680000,
+      "wall_clock_sec": 1606.9773198049515,
+      "tokens_per_sec": 203910.78079420092,
+      "peak_gpu_memory_bytes": 13883481088,
+      "final_train_loss": 1.3900203704833984,
+      "final_val_loss": 1.364980047941208,
+      "best_val_loss": 1.3590786337852478,
+      "best_step": 9000,
+      "model": {
+        "vocab_size": 10000,
+        "context_length": 256,
+        "d_model": 512,
+        "num_layers": 4,
+        "num_heads": 16,
+        "d_ff": 1344,
+        "rope_theta": 10000
+      },
+      "optimizer": {
+        "max_lr": 0.003,
+        "min_lr": 0.00030000000000000003,
+        "warmup_iters": 1000,
+        "cosine_cycle_iters": 10000,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "eps": 1e-08,
+        "weight_decay": 0.01
+      },
+      "ablation": {
+        "remove_rmsnorm": false,
+        "use_post_norm": true,
+        "remove_rope": false,
+        "ffn_type": null
+      }
+    },
+    "tinystories_ablation_nope": {
+      "run_name": "tinystories_ablation_nope",
+      "status": "completed",
+      "steps": 10000,
+      "batch_size": 128,
+      "context_length": 256,
+      "processed_tokens": 327680000,
+      "wall_clock_sec": 1520.9381897421554,
+      "tokens_per_sec": 215445.96763366932,
+      "peak_gpu_memory_bytes": 13884349440,
+      "final_train_loss": 1.4279215335845947,
+      "final_val_loss": 1.396737241744995,
+      "best_val_loss": 1.3899565160274505,
+      "best_step": 9000,
+      "model": {
+        "vocab_size": 10000,
+        "context_length": 256,
+        "d_model": 512,
+        "num_layers": 4,
+        "num_heads": 16,
+        "d_ff": 1344,
+        "rope_theta": 10000
+      },
+      "optimizer": {
+        "max_lr": 0.003,
+        "min_lr": 0.00030000000000000003,
+        "warmup_iters": 1000,
+        "cosine_cycle_iters": 10000,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "eps": 1e-08,
+        "weight_decay": 0.01
+      },
+      "ablation": {
+        "remove_rmsnorm": false,
+        "use_post_norm": false,
+        "remove_rope": true,
+        "ffn_type": null
+      }
+    },
+    "tinystories_ablation_silu": {
+      "run_name": "tinystories_ablation_silu",
+      "status": "completed",
+      "steps": 10000,
+      "batch_size": 128,
+      "context_length": 256,
+      "processed_tokens": 327680000,
+      "wall_clock_sec": 1598.8790979161859,
+      "tokens_per_sec": 204943.57605091238,
+      "peak_gpu_memory_bytes": 13598858240,
+      "final_train_loss": 1.3763160705566406,
+      "final_val_loss": 1.3491449773311615,
+      "best_val_loss": 1.3417166769504547,
+      "best_step": 9000,
+      "model": {
+        "vocab_size": 10000,
+        "context_length": 256,
+        "d_model": 512,
+        "num_layers": 4,
+        "num_heads": 16,
+        "d_ff": 1344,
+        "rope_theta": 10000
+      },
+      "optimizer": {
+        "max_lr": 0.003,
+        "min_lr": 0.00030000000000000003,
+        "warmup_iters": 1000,
+        "cosine_cycle_iters": 10000,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "eps": 1e-08,
+        "weight_decay": 0.01
+      },
+      "ablation": {
+        "remove_rmsnorm": false,
+        "use_post_norm": false,
+        "remove_rope": false,
+        "ffn_type": "silu"
+      }
+    }
+  }
+}
