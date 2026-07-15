@@ -703,6 +703,6 @@ uv run python scripts/generate.py --help
 
 ## 飞书补充文档
 
-- 链接：**待提交前手动填写 A1 组织内飞书文档链接**
+- 链接：https://fudan-nlp.feishu.cn/wiki/Q1FBw7avuiKB9gks6M1cv5SJnZf?from=from_copylink
 
 该文档应设置为组织内公开且关闭互联网公开访问，只保存公开报告之外确有审核必要的最小差量材料。

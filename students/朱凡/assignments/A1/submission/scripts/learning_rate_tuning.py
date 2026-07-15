@@ -8,12 +8,13 @@ from __future__ import annotations
 
 import torch
 
+from cs336_basics.model import Linear
 from cs336_basics.optimizer import SGD
 
 
 def run_single(lr: float, steps: int = 10, seed: int = 0) -> list[float]:
     torch.manual_seed(seed)
-    model = torch.nn.Linear(3, 2, bias=False)
+    model = Linear(3, 2)
     opt = SGD(model.parameters(), lr=lr)
 
     losses: list[float] = []
