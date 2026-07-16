@@ -1,0 +1,16 @@
+{
+  "vocab_size": 10000,
+  "context_length": 256,
+  "d_model": 512,
+  "num_layers": 4,
+  "num_heads": 16,
+  "d_ff": 2016,
+  "rope_theta": 10000.0,
+  "ffn_type": "silu",
+  "batch_size": 128,
+  "total_steps": 10000,
+  "processed_tokens": 327680000,
+  "final_val_loss": 1.4853964388370513,
+  "total_training_time_sec": 2929.348343934864,
+  "device": "cuda"
+}

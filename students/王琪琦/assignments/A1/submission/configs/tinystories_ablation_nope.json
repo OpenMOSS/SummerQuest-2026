@@ -1,0 +1,29 @@
+{
+  "model": {
+    "vocab_size": 10000,
+    "context_length": 256,
+    "d_model": 512,
+    "num_layers": 4,
+    "num_heads": 16,
+    "d_ff": 1344,
+    "rope_theta": 10000.0,
+    "use_rope": false
+  },
+  "training": {
+    "batch_size": 128,
+    "steps": 10000,
+    "max_learning_rate": 0.0005,
+    "min_learning_rate": 0.00005,
+    "warmup_iters": 500,
+    "cosine_cycle_iters": 10000,
+    "weight_decay": 0.1,
+    "betas": [0.9, 0.95],
+    "eps": 1e-8,
+    "max_grad_norm": 1.0,
+    "log_interval": 10,
+    "validation_interval": 250,
+    "validation_batches": 20,
+    "checkpoint_interval": 1000,
+    "seed": 42
+  }
+}
