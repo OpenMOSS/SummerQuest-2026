@@ -1,0 +1,11 @@
+{
+    "extends": "tinystories_baseline.json",
+    "experiment_name": "tinystories_nope",
+    "model": {
+        "use_rope": false
+    },
+    "training": {
+        "log_dir": "logs/ablations/tinystories_nope",
+        "checkpoint_dir": "artifacts/checkpoints/ablations/tinystories_nope"
+    }
+}

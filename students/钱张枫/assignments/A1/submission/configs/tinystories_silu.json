@@ -1,0 +1,11 @@
+{
+    "extends": "tinystories_baseline.json",
+    "experiment_name": "tinystories_silu",
+    "model": {
+        "ffn_type": "silu"
+    },
+    "training": {
+        "log_dir": "logs/ablations/tinystories_silu",
+        "checkpoint_dir": "artifacts/checkpoints/ablations/tinystories_silu"
+    }
+}
