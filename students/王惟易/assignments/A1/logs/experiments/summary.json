@@ -1,0 +1,309 @@
+{
+  "schema_version": 1,
+  "date": "2026-07-16",
+  "artifact_status": {
+    "raw_metrics_jsonl": "ready_17_runs",
+    "portable_run_configs": "ready_17_configs",
+    "loss_curve_assets": "ready_4_svg_files"
+  },
+  "environment": {
+    "training_gpu": "NVIDIA RTX 4060 Ti 16GB",
+    "python": "3.13.11",
+    "pytorch": "2.11.0+cu130"
+  },
+  "model": {
+    "vocab_size": 10000,
+    "context_length": 256,
+    "d_model": 512,
+    "d_ff": 1344,
+    "num_layers": 4,
+    "num_heads": 16,
+    "rope_theta": 10000
+  },
+  "ablation_suite": {
+    "status": "completed",
+    "started_at": "2026-07-16T15:53:24+08:00",
+    "completed_at": "2026-07-16T17:37:56+08:00",
+    "common_budget": {
+      "batch_size": 64,
+      "context_length": 256,
+      "max_steps": 2000,
+      "processed_tokens": 32768000,
+      "warmup_iters": 100,
+      "cosine_cycle_iters": 2000
+    },
+    "configs": [
+      "tinystories_ablation_control.json",
+      "tinystories_ablation_no_norm.json",
+      "tinystories_ablation_no_norm_low_lr.json",
+      "tinystories_ablation_post_norm.json",
+      "tinystories_ablation_nope.json",
+      "tinystories_ablation_silu.json"
+    ],
+    "optimizer": {
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08,
+      "weight_decay": 0.01,
+      "comparison_boundary": "Compare ablations only against this suite control; historical runs used different AdamW settings."
+    },
+    "results": [
+      {
+        "run": "tinystories_ablation_control",
+        "change": "matched_control_pre_norm_rope_swiglu",
+        "max_learning_rate": 0.003,
+        "wall_clock_seconds": 1079.911,
+        "final_train_loss": 1.763753,
+        "final_validation_loss": 1.762212,
+        "best_validation_loss": 1.75805,
+        "status": "finite"
+      },
+      {
+        "run": "tinystories_ablation_no_norm",
+        "change": "remove_all_rmsnorm",
+        "max_learning_rate": 0.003,
+        "wall_clock_seconds": 1005.896,
+        "final_train_loss": null,
+        "final_validation_loss": null,
+        "best_finite_validation_loss": 3.208766,
+        "first_nonfinite_train_step": 180,
+        "status": "diverged"
+      },
+      {
+        "run": "tinystories_ablation_no_norm_low_lr",
+        "change": "remove_all_rmsnorm_lower_learning_rate",
+        "max_learning_rate": 0.001,
+        "wall_clock_seconds": 1007.047,
+        "final_train_loss": 1.793884,
+        "final_validation_loss": 1.791714,
+        "best_validation_loss": 1.786389,
+        "status": "finite"
+      },
+      {
+        "run": "tinystories_ablation_post_norm",
+        "change": "post_norm_blocks",
+        "max_learning_rate": 0.003,
+        "wall_clock_seconds": 1080.102,
+        "final_train_loss": 1.722937,
+        "final_validation_loss": 1.722657,
+        "best_validation_loss": 1.718559,
+        "status": "best_validation_loss"
+      },
+      {
+        "run": "tinystories_ablation_nope",
+        "change": "remove_rope",
+        "max_learning_rate": 0.003,
+        "wall_clock_seconds": 1014.047,
+        "final_train_loss": 2.035836,
+        "final_validation_loss": 2.032531,
+        "best_validation_loss": 2.031106,
+        "status": "finite"
+      },
+      {
+        "run": "tinystories_ablation_silu",
+        "change": "parameter_matched_silu_ffn_d_ff_2048",
+        "max_learning_rate": 0.003,
+        "wall_clock_seconds": 1075.549,
+        "final_train_loss": 1.744851,
+        "final_validation_loss": 1.74114,
+        "best_validation_loss": 1.735889,
+        "status": "finite"
+      }
+    ]
+  },
+  "tokenization": {
+    "tinystories_bpe": {
+      "vocab_size": 10000,
+      "special_tokens": [
+        "<|endoftext|>"
+      ],
+      "elapsed_seconds": 355.968,
+      "peak_rss_mib": 10850.37,
+      "longest_learned_token_repr": "b' accomplishment'",
+      "longest_learned_token_bytes": 15
+    },
+    "tinystories_encoding": {
+      "training": {
+        "tokens": 540796778,
+        "elapsed_seconds": 1204.044,
+        "throughput_mib_per_second": 1.76451,
+        "bytes_per_token": 4.11939,
+        "serialized_size_mib": 1031.488
+      },
+      "validation": {
+        "tokens": 5461210,
+        "elapsed_seconds": 12.7848,
+        "throughput_mib_per_second": 1.67856,
+        "bytes_per_token": 4.12044,
+        "serialized_size_mib": 10.416
+      }
+    }
+  },
+  "gpu_probe": {
+    "context_length": 256,
+    "measurements": [
+      {
+        "batch_size": 1,
+        "seconds_per_step": 0.0116277,
+        "tokens_per_second": 22016,
+        "peak_allocated_gib": 0.4178,
+        "status": "ok"
+      },
+      {
+        "batch_size": 16,
+        "seconds_per_step": 0.122843,
+        "tokens_per_second": 33343,
+        "peak_allocated_gib": 2.432,
+        "status": "ok"
+      },
+      {
+        "batch_size": 32,
+        "seconds_per_step": 0.254329,
+        "tokens_per_second": 32210,
+        "peak_allocated_gib": 4.567,
+        "status": "ok"
+      },
+      {
+        "batch_size": 64,
+        "seconds_per_step": 0.511027,
+        "tokens_per_second": 32061,
+        "peak_allocated_gib": 8.86,
+        "status": "ok"
+      },
+      {
+        "batch_size": 96,
+        "status": "fits_with_expandable_segments_but_slower"
+      },
+      {
+        "batch_size": 128,
+        "status": "oom"
+      }
+    ]
+  },
+  "runs": {
+    "tinystories_baseline": {
+      "batch_size": 64,
+      "max_learning_rate": 0.003,
+      "steps": 20000,
+      "processed_tokens": 327680000,
+      "wall_clock_seconds": 10501.408,
+      "final_train_loss": 1.35258,
+      "final_validation_loss": 1.355541,
+      "target_validation_loss": 1.45,
+      "met_target": true
+    },
+    "learning_rate_sweep": [
+      {
+        "max_learning_rate": 0.0003,
+        "batch_size": 64,
+        "steps": 610,
+        "processed_tokens": 9994240,
+        "wall_clock_seconds": 331.327,
+        "final_validation_loss": 2.6784928,
+        "status": "completed_budget"
+      },
+      {
+        "max_learning_rate": 0.001,
+        "batch_size": 64,
+        "steps": 610,
+        "processed_tokens": 9994240,
+        "wall_clock_seconds": 331.858,
+        "final_validation_loss": 2.20757365,
+        "status": "completed_budget"
+      },
+      {
+        "max_learning_rate": 0.003,
+        "batch_size": 64,
+        "steps": 610,
+        "processed_tokens": 9994240,
+        "wall_clock_seconds": 331.81,
+        "final_validation_loss": 2.02002072,
+        "status": "best_completed_budget"
+      },
+      {
+        "max_learning_rate": 0.01,
+        "batch_size": 64,
+        "steps": 610,
+        "processed_tokens": 9994240,
+        "wall_clock_seconds": 331.802,
+        "final_validation_loss": 2.55228233,
+        "status": "completed_budget"
+      },
+      {
+        "max_learning_rate": 0.03,
+        "batch_size": 64,
+        "steps": 200,
+        "processed_tokens": 3276800,
+        "wall_clock_seconds": 108.409,
+        "final_validation_loss": 3.62407088,
+        "status": "stopped_early_poor"
+      },
+      {
+        "max_learning_rate": 0.1,
+        "batch_size": 64,
+        "steps": 100,
+        "processed_tokens": 1638400,
+        "wall_clock_seconds": 57.238,
+        "final_validation_loss": 4.512198,
+        "status": "stopped_early_unstable"
+      }
+    ],
+    "batch_size_sweep": {
+      "fixed_processed_tokens": 2097152,
+      "measurements": [
+        {
+          "batch_size": 1,
+          "steps": 8192,
+          "max_learning_rate": 0.000375,
+          "wall_clock_seconds": 94.989,
+          "final_validation_loss": 2.776371,
+          "status": "ok"
+        },
+        {
+          "batch_size": 16,
+          "steps": 512,
+          "max_learning_rate": 0.0015,
+          "wall_clock_seconds": 66.963,
+          "final_validation_loss": 2.595449,
+          "status": "best_validation_loss"
+        },
+        {
+          "batch_size": 32,
+          "steps": 256,
+          "max_learning_rate": 0.00212132,
+          "wall_clock_seconds": 69.688,
+          "final_validation_loss": 2.693691,
+          "status": "ok"
+        },
+        {
+          "batch_size": 64,
+          "steps": 128,
+          "max_learning_rate": 0.003,
+          "wall_clock_seconds": 71.995,
+          "final_validation_loss": 3.265839,
+          "status": "ok"
+        },
+        {
+          "batch_size": 128,
+          "status": "oom"
+        }
+      ]
+    }
+  },
+  "generation": {
+    "seed": 42,
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "prompt": "Once upon a time, there was a little girl named Lily.",
+    "termination": "endoftext_before_max_new_tokens",
+    "text_path": "generation_tinystories.txt"
+  },
+  "remaining_required_work": [
+    "Train and evaluate a 32K OpenWebText tokenizer",
+    "Run cross-corpus tokenizer compression experiments",
+    "Encode OpenWebText train and validation data",
+    "Train and generate from the OpenWebText language model"
+  ]
+}
