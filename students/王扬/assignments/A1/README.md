@@ -261,7 +261,7 @@ bash scripts/tasks/all.sh
 
 ## 飞书补充文档
 
-- 链接：待补充
+- 链接：https://fudan-nlp.feishu.cn/docx/WgCDdzATZoI1bqxhnpGcuLssn8f?from=from_copylink
 
 该文档设置为组织内公开，不得开启互联网公开访问，只保存不能公开到 GitHub 但确有
 审核必要的最小差量材料。
