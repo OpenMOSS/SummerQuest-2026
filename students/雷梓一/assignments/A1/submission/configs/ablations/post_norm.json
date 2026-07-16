@@ -1,0 +1,5 @@
+{
+  "description": "TinyStories architecture ablation: use post-norm Transformer blocks.",
+  "base_config": "../tinystories_baseline.json",
+  "model_overrides": {"norm_style": "post"}
+}

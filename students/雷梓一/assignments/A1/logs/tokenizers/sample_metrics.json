@@ -1,0 +1,58 @@
+{
+  "num_sampled_documents": 10,
+  "seed": 42,
+  "compression": {
+    "tinystories_tokenizer_on_tinystories": {
+      "documents": 10,
+      "bytes": 8142,
+      "tokens": 1988,
+      "bytes_per_token": 4.0955734406438635
+    },
+    "tinystories_tokenizer_on_owt": {
+      "documents": 10,
+      "bytes": 88949,
+      "tokens": 26601,
+      "bytes_per_token": 3.343821660839818
+    },
+    "owt_tokenizer_on_tinystories": {
+      "documents": 10,
+      "bytes": 8142,
+      "tokens": 2058,
+      "bytes_per_token": 3.956268221574344
+    },
+    "owt_tokenizer_on_owt": {
+      "documents": 10,
+      "bytes": 88949,
+      "tokens": 19611,
+      "bytes_per_token": 4.53566875733007
+    }
+  },
+  "throughput": {
+    "tinystories": {
+      "benchmark_bytes": 3115232,
+      "benchmark_tokens": 915488,
+      "wall_clock_sec": 5.381664509885013,
+      "bytes_per_second": 578860.3125070243,
+      "estimated_pile_hours": 425.0867253292317
+    },
+    "owt": {
+      "benchmark_bytes": 3115232,
+      "benchmark_tokens": 694048,
+      "wall_clock_sec": 5.818442050367594,
+      "bytes_per_second": 535406.5526532464,
+      "estimated_pile_hours": 459.58689419707207
+    }
+  },
+  "longest_tokens": {
+    "tinystories": {
+      "bytes": 15,
+      "hex": "206163636f6d706c6973686d656e74",
+      "text": " accomplishment"
+    },
+    "owt": {
+      "bytes": 64,
+      "hex": "c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382",
+      "text": "ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ"
+    }
+  }
+}

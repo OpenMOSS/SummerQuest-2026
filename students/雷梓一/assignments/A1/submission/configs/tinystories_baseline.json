@@ -1,0 +1,32 @@
+{
+  "seed": 42,
+  "device": "auto",
+  "precision": "bf16",
+  "compile": true,
+  "train_path": "data/encoded/tinystories_train.bin",
+  "val_path": "data/encoded/tinystories_valid.bin",
+  "data_dtype": "uint16",
+  "model": {
+    "vocab_size": 10000,
+    "context_length": 256,
+    "d_model": 512,
+    "num_layers": 4,
+    "num_heads": 16,
+    "d_ff": 1344,
+    "rope_theta": 10000.0,
+    "norm_style": "pre",
+    "use_rope": true,
+    "ffn_type": "swiglu"
+  },
+  "optimizer": {"lr": 0.003, "betas": [0.9, 0.95], "eps": 1e-8, "weight_decay": 0.1},
+  "training": {
+    "batch_size": 256,
+    "max_steps": 5000,
+    "warmup_steps": 100,
+    "min_lr": 0.0003,
+    "max_grad_norm": 1.0,
+    "eval_interval": 100,
+    "eval_batches": 20,
+    "checkpoint_interval": 5000
+  }
+}

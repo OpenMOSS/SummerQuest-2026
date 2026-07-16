@@ -1,0 +1,13 @@
+{
+  "input": "data/raw/TinyStoriesV2-GPT4-train.txt",
+  "output": "data/encoded/tinystories_train.bin",
+  "dtype": "uint16",
+  "token_count": 541229347,
+  "source_bytes": 2227753162,
+  "compression_ratio_bytes_per_token": 4.116098238848826,
+  "wall_clock_sec": 261.7876285929233,
+  "throughput_bytes_per_sec": 8509772.475726718,
+  "num_processes": 32,
+  "output_sha256": "9ef3250b31cf6ab174cd42d2cf31fc70d451012e913b417faaa47a5b9f1e150b",
+  "peak_rss_mb": 527.4609375
+}
