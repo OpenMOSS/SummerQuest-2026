@@ -61,8 +61,16 @@ def save_figure(figure: plt.Figure, output_path: Path) -> None:
     plt.close(figure)
 
 
-def plot_baseline(logs_root: Path, output_dir: Path) -> None:
-    rows = read_metrics(logs_root, "tinystories_baseline_full")
+def plot_baseline(
+    logs_root: Path,
+    output_dir: Path,
+    *,
+    run_name: str,
+    title: str,
+    subtitle: str,
+    output_name: str,
+) -> None:
+    rows = read_metrics(logs_root, run_name)
     train_steps, train_losses = finite_points(rows, "train_loss")
     val_steps, val_losses = finite_points(rows, "val_loss")
     val_times, val_losses_by_time = finite_points(rows, "val_loss", "wall_clock_sec")
@@ -70,7 +78,7 @@ def plot_baseline(logs_root: Path, output_dir: Path) -> None:
     figure, axes = plt.subplots(1, 2, figsize=(11, 4.2))
     axes[0].plot(train_steps, train_losses, color=COLORS["sky"], alpha=0.55, linewidth=1, label="Train")
     axes[0].plot(val_steps, val_losses, color=COLORS["blue"], linewidth=2, label="Validation")
-    axes[0].set(title="TinyStories baseline", xlabel="Optimizer step", ylabel="Cross-entropy loss")
+    axes[0].set(title=title, xlabel="Optimizer step", ylabel="Cross-entropy loss")
     axes[0].legend()
 
     axes[1].plot(
@@ -80,8 +88,8 @@ def plot_baseline(logs_root: Path, output_dir: Path) -> None:
         linewidth=2,
     )
     axes[1].set(title="Validation loss by wall clock", xlabel="Wall-clock minutes", ylabel="Validation loss")
-    figure.suptitle("TinyStories full baseline: 327.68M training tokens")
-    save_figure(figure, output_dir / "tinystories_baseline_loss.svg")
+    figure.suptitle(subtitle)
+    save_figure(figure, output_dir / output_name)
 
 
 def plot_learning_rates(logs_root: Path, output_dir: Path) -> None:
@@ -172,7 +180,22 @@ def main() -> None:
     args = parse_args()
     args.output_dir.mkdir(parents=True, exist_ok=True)
     configure_style()
-    plot_baseline(args.logs_root, args.output_dir)
+    plot_baseline(
+        args.logs_root,
+        args.output_dir,
+        run_name="tinystories_baseline_full",
+        title="TinyStories baseline",
+        subtitle="TinyStories full baseline: 327.68M training tokens",
+        output_name="tinystories_baseline_loss.svg",
+    )
+    plot_baseline(
+        args.logs_root,
+        args.output_dir,
+        run_name="owt_baseline_full",
+        title="OpenWebText baseline",
+        subtitle="OpenWebText full baseline: 327.68M training tokens",
+        output_name="owt_baseline_loss.svg",
+    )
     plot_learning_rates(args.logs_root, args.output_dir)
     plot_batch_sizes(args.logs_root, args.output_dir)
     plot_ablations(args.logs_root, args.output_dir)
