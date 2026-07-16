@@ -4,8 +4,7 @@
 ## 基本信息
 
 - 作业题面版本：26.0.4
-- 完成范围：完成 `submission/cs336_basics/` 中全部 21 个公共 ABI 对应实现；通过公共测试；补齐 tokenizer 训练、语料编码、训练、生成脚本；完成 TinyStories baseline、learning rate sweep、batch size sweep、四个 ablation、OWT baseline 的日志产出与生成样例。
-- 未完成项：高学习率 sweep 虽保留了 `ts_lr_3e-3_diverge` 配置，但本次 2000 steps 日志未出现严格意义上的数值发散（NaN/Inf），因此“至少一个发散 run”仍建议补做更激进配置或更长训练确认。
+- 完成范围：完成 `submission/cs336_basics/` 中全部 21 个公共 ABI 对应实现；通过公共测试；补齐 tokenizer 训练、语料编码、训练、生成脚本；完成 TinyStories baseline、learning rate sweep、batch size sweep、四个 ablation、OWT baseline 的日志产出与生成样例；补充 `ts_lr_1e-2_diverge`、`ts_lr_1e-1_diverge`、`ts_lr_1e0_diverge`、`ts_lr_1e1_diverge` 等高学习率实验，其中 `ts_lr_1e0_diverge` 与 `ts_lr_1e1_diverge` 可作为“至少一个发散 run”已完成的证据。
 - 上游 starter commit：`a158843b20107949f1a8d7df1b05cd33b9166712`
 - 本地工作仓库：`../assignment1-basics`（必须与 `SummerQuest-2026` 同级）
 
@@ -124,6 +123,8 @@ TinyStories baseline 参数量可按下式拆开：
 
 这个结果已经达到题面中 TinyStories baseline `val_loss <= 1.45` 的目标。
 
+对应 loss 曲线见 [tinystories_loss.svg](assets/tinystories_loss.svg)。从曲线看，train loss 与定期评估的 val loss 都整体平稳下降，训练后期没有明显震荡或退化。
+
 对应生成样例位于 `logs/generation_tinystories.txt`。从样例文本看，模型已经能生成较完整的儿童故事结构，叙事连贯性基本成立，但局部指代和角色关系仍有混乱。
 
 ### Learning Rate Sweep
@@ -135,9 +136,13 @@ learning rate sweep 统一训练 2000 steps，结果如下：
 | `ts_lr_1e-4` | 2.4423 | 明显欠训练 |
 | `ts_lr_5e-4` | 1.7745 | 可稳定收敛 |
 | `ts_lr_1e-3` | 1.6371 | 本组最优 |
-| `ts_lr_3e-3_diverge` | 1.5471 | 本次未出现 NaN/Inf，但属于高学习率压力测试 |
+| `ts_lr_3e-3_diverge` | 1.5471 | 高学习率压力测试，但在 2000 steps 内仍可训练 |
+| `ts_lr_1e-2_diverge` | 2.5022 | 已明显退化，但未完全失稳 |
+| `ts_lr_1e-1_diverge` | 3.6936 | 明显失稳，验证损失大幅升高 |
+| `ts_lr_1e0_diverge` | 5.8546 | 发散，训练后期 loss 长时间处于异常高位 |
+| `ts_lr_1e1_diverge` | 16.2465 | 强发散，前几步 train loss 即飙升到万级 |
 
-从当前日志看，`1e-4` 学习太慢；`5e-4` 到 `1e-3` 区间表现较好；名为 `diverge` 的高学习率实验在 2000 steps 内尚未真正数值发散，因此后续若要严格满足“包含至少一个发散 run”，需要单独补做更激进配置。
+从当前日志看，`1e-4` 学习太慢；`5e-4` 到 `1e-3` 区间表现较好；当学习率提高到 `1e-2` 及以上时，验证损失开始明显恶化，而 `1e0` / `1e1` 两组已经表现出清晰的发散特征。虽然日志中未出现 `NaN/Inf`，但其 loss 在训练早期急剧放大且最终验证损失远高于正常收敛区间，足以作为“至少一个发散 run”的提交证据。
 
 ### Batch Size Sweep
 
@@ -178,6 +183,8 @@ OWT baseline 使用与 TinyStories 相同的模型骨架，但：
 | 实验 | steps | wall_clock_sec | final train_loss | final val_loss |
 | --- | ---: | ---: | ---: | ---: |
 | OWT baseline | 10000 | 1145.90 | 4.1390 | 4.2103 |
+
+对应 loss 曲线见 [owt_loss.svg](assets/owt_loss.svg)。从曲线看，训练过程本身是稳定的，但收敛到的 loss 明显高于 TinyStories，说明主要问题更像是欠拟合而不是训练直接跑坏。
 
 对应生成样例位于 `logs/generation_owt.txt`，质量明显差于 TinyStories，当前结果可以视为“训练流程跑通，但模型尚未学到足够强的 OWT 语言建模能力”。
 
@@ -243,15 +250,17 @@ bash scripts/tasks/all.sh
 ## 实验日志
 
 - 日志目录：`logs/`
+- 曲线图目录：`assets/`
 - 文件与格式：见 [`assignments/A1/README.md` 的《实验日志格式》](../../../assignments/A1/README.md#实验日志格式)
 - 与报告中实验的对应说明：
   - `logs/train_tinystories.jsonl`：TinyStories baseline 10000-step 训练日志
   - `logs/train_owt.jsonl`：OWT baseline 10000-step 训练日志
-  - `logs/lr_sweep/*.jsonl`：learning rate sweep 对应的 4 组实验
+  - `logs/lr_sweep/*.jsonl`：learning rate sweep 对应的 8 组实验
   - `logs/batch_size/*.jsonl`：batch size sweep 对应的 3 组实验
   - `logs/ablations/*.jsonl`：四个 ablation 实验
   - `logs/generation_tinystories.txt`：TinyStories 生成样例
   - `logs/generation_owt.txt`：OWT 生成样例
+  - `assets/tinystories_loss.svg` / `assets/owt_loss.svg`：TinyStories 与 OWT 的 loss 曲线
   - 所有训练日志均按 step 记录 `wall_clock_sec`、`train_loss`、`lr`，并定期记录 `val_loss`；本 README 中的数值均直接从这些日志末行提取。
 
 ## 飞书补充文档
