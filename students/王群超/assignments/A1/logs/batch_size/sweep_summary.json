@@ -1,0 +1,26 @@
+[
+  {
+    "batch_size": 1,
+    "final_val_loss": 2.9041553497314454,
+    "total_time_sec": 360.856600522995,
+    "tokens_per_step": 256
+  },
+  {
+    "batch_size": 8,
+    "final_val_loss": 1.812913417816162,
+    "total_time_sec": 437.7744691371918,
+    "tokens_per_step": 2048
+  },
+  {
+    "batch_size": 32,
+    "final_val_loss": 1.5126464128494264,
+    "total_time_sec": 717.9739682674408,
+    "tokens_per_step": 8192
+  },
+  {
+    "batch_size": 64,
+    "final_val_loss": 1.4667557239532472,
+    "total_time_sec": 1394.1887896060944,
+    "tokens_per_step": 16384
+  }
+]
