@@ -114,17 +114,29 @@
     ]
   },
   "tokenization": {
-    "tinystories_bpe": {
-      "vocab_size": 10000,
+        "tinystories_bpe": {
+            "vocab_size": 10000,
       "special_tokens": [
         "<|endoftext|>"
       ],
       "elapsed_seconds": 355.968,
       "peak_rss_mib": 10850.37,
-      "longest_learned_token_repr": "b' accomplishment'",
-      "longest_learned_token_bytes": 15
-    },
-    "tinystories_encoding": {
+            "longest_learned_token_repr": "b' accomplishment'",
+            "longest_learned_token_bytes": 15
+        },
+        "owt_bpe": {
+            "vocab_size": 32000,
+            "special_tokens": [
+                "<|endoftext|>"
+            ],
+            "number_of_merges": 31743,
+            "elapsed_seconds": 4905.077,
+            "peak_rss_mib": 9979.38,
+            "longest_learned_token_pattern": "b'\\xc3\\x83\\xc3\\x82' repeated 16 times",
+            "longest_learned_token_bytes": 64,
+            "status": "completed"
+        },
+        "tinystories_encoding": {
       "training": {
         "tokens": 540796778,
         "elapsed_seconds": 1204.044,
@@ -299,10 +311,9 @@
     "prompt": "Once upon a time, there was a little girl named Lily.",
     "termination": "endoftext_before_max_new_tokens",
     "text_path": "generation_tinystories.txt"
-  },
-  "remaining_required_work": [
-    "Train and evaluate a 32K OpenWebText tokenizer",
-    "Run cross-corpus tokenizer compression experiments",
+    },
+    "remaining_required_work": [
+        "Run cross-corpus tokenizer compression experiments",
     "Encode OpenWebText train and validation data",
     "Train and generate from the OpenWebText language model"
   ]
