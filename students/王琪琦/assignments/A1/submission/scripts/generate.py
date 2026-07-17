@@ -22,6 +22,7 @@ def main() -> None:
     parser.add_argument("--top-p", type=float, default=0.9)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
+    parser.add_argument("--output", help="Optional path for saving the decoded sample.")
     args = parser.parse_args()
 
     device = torch.device(args.device)
@@ -44,7 +45,12 @@ def main() -> None:
         end_token_id=end_token_id,
         device=device,
     )
-    print(tokenizer.decode(output_ids))
+    text = tokenizer.decode(output_ids)
+    print(text)
+    if args.output:
+        output_path = Path(args.output)
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        output_path.write_text(text + "\n", encoding="utf-8")
 
 
 if __name__ == "__main__":
