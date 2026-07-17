@@ -10,7 +10,7 @@
   "sampling": {
     "prompts": ["", "", ""],
     "seeds": [101, 202, 303],
-    "max_new_tokens": 160,
+    "max_new_tokens": 256,
     "temperature": 0.8,
     "top_k": 50
   },

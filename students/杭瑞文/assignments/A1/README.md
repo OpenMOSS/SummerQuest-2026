@@ -231,6 +231,15 @@ OpenWebText 和 TinyStories 的运行使用了相同的 4 层、16 头、带有 
 在相同的模型和token预算下，OWT 的验证损失相对于 TinyStories 高出 2.4183 nats/token。这种较高的损失是符合预期的：网络文本在主题、风格、词汇、事实和文档结构方面具有大得多的多样性，此外还包含爬取噪声。一个仅具有 1700 万非嵌入参数的模型，在只见过 4096 万个 token 的情况下，无法像在刻意简化的 TinyStories 语料库上那样，频繁地重复和巩固那些长尾模式。
 
 #### 生成文本与流畅度
+| 数据集 | 样本 | 新 tokens | 终止原因 |
+|---|---:|---:|---|
+| OWT | 1 | 256 | 达到 `max_new_tokens` |
+| OWT | 2 | 256 | 达到 `max_new_tokens` |
+| OWT | 3 | 72 | `<\|endoftext\|>` |
+| TinyStories | 1 | 194 | `<\|endoftext\|>` |
+| TinyStories | 2 | 199 | `<\|endoftext\|>` |
+| TinyStories | 3 | 153 | `<\|endoftext\|>` |
+
 
 三个无条件生成的 OWT 样本以及相匹配的 TinyStories 样本保存在 logs/trainowt/owt_generated_samples.md 和 logs/trainowt/tinystories_generated_samples.md 文件中。它们均使用 0.8 的温度和 top-k 50 的设定，并采用相同的随机种子。
 
