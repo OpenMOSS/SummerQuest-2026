@@ -1,0 +1,9 @@
+{
+  "status": "failed_nan",
+  "reason": "Removing RMSNorm made training diverge under the original hyperparameters; repeated run also produced NaN.",
+  "steps_configured": 10000,
+  "first_nan_step": 3400,
+  "last_finite_step": 3300,
+  "last_finite_train_loss": 1.1072551581850389e+29,
+  "last_finite_val_loss": 1.4336269444256082e+29
+}

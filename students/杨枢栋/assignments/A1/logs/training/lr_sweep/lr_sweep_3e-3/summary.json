@@ -1,0 +1,17 @@
+{
+  "final_val_loss": 1.3401565432548523,
+  "total_training_time_sec": 1620.7728943824768,
+  "d_model": 512,
+  "num_layers": 4,
+  "num_heads": 16,
+  "context_length": 256,
+  "batch_size": 128,
+  "steps": 10000,
+  "vocab_size": 10000,
+  "norm_mode": "pre",
+  "use_rmsnorm": true,
+  "use_rope": true,
+  "ffn_type": "swiglu",
+  "checkpoint": "runs/lr_sweep_3e-3/checkpoint.pt",
+  "sample": "Once upon a time, there was a little boy named Tim. Tim was very hungry. He wanted to eat something yummy. He looked around his house and saw a big red apple on the table. Tim wanted to eat the apple, but he could not reach it.\nTim asked his mom, \"Mom, can you help me get the apple?\" His mom said, \"Yes, Tim. I will help you.\" She went to the kitchen and got a chair. She put the chair next to the table. Tim was so happy.\nBut then, Tim's big sister, Sue, came into the room. She saw the chair and wanted to play. Sue tried to push the chair away from Tim. Tim was sad. He wanted the apple so much. He said, \"Sue, I am sorry. I will not do it again.\" Sue said, \"It's okay, Tim. We can share the apple.\" Tim and Sue ate the apple together. They were both happy and full.\n<|endoftext|>"
+}

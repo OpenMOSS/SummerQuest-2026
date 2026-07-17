@@ -1,0 +1,17 @@
+{
+  "final_val_loss": 1.3780315041542053,
+  "total_training_time_sec": 1637.3095824718475,
+  "d_model": 512,
+  "num_layers": 4,
+  "num_heads": 16,
+  "context_length": 256,
+  "batch_size": 128,
+  "steps": 10000,
+  "vocab_size": 10000,
+  "norm_mode": "post",
+  "use_rmsnorm": true,
+  "use_rope": true,
+  "ffn_type": "swiglu",
+  "checkpoint": "runs/ablation_post_norm/checkpoint.pt",
+  "sample": "Once upon a time, there was a little boy named Tim. Tim was very enthusiastic about playing with his toys. He loved to make up stories and pretend to be a brave knight. One day, Tim was playing with his toy car when he heard a strange noise. He was very curious and wanted to know what it was.\nTim walked up to the noise and saw a little bird stuck in a tree. The bird was scared and couldn't fly away. Tim wanted to help the bird, so he tried to climb the tree to save it. But he was too small and didn't know how to reach the bird.\nJust then, a big wind came and blew the bird out of the tree. The bird was free and happy. Tim was surprised and said, \"Thank you, bird!\" The bird was not a real dragon, but a magic friend. They played together all day and became best friends.\n<|endoftext|>"
+}
