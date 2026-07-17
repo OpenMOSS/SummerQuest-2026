@@ -5,7 +5,7 @@
 
 ## 提交内容
 
-本报告记录 A1 要求的书面题、代码实现、实验结果和日志。所有结果均以实际运行记录为准；完整 OWT tokenizer 因超时未产出，因此不填写完整 OWT 的 tokenizer、训练或生成指标。
+本报告记录 A1 要求的书面题、代码实现、实验结果和日志。所有结果均以实际运行记录为准；完整 OWT tokenizer 已完成，但 OWT 编码、LM 训练和生成仍需单独运行后才能填写。
 
 ## 书面题
 
@@ -73,7 +73,7 @@ TinyStories 10K tokenizer 的正式结果如下；结构化记录见 [`logs/toke
 | Valid compression | 4.120442 bytes/token |
 | Valid 编码 | 39.36 秒，138,755 tokens/s，1 worker |
 
-Train/valid 编码均使用 `uint16`，抽样 round-trip 通过，所有 token ID 均小于 10,000。完整 OWT 32K tokenizer 在约 4 小时 CPU 截止点前未产出文件。作为补充实验，使用 2 GiB 的 OWT fallback 数据完成了 32K tokenizer：词表 32,000、merge rules 31,743、训练耗时 11,054.03 秒；该结果仅代表 fallback 数据上的 tokenizer，不等同于完整 OWT 结果，也未继续进行 OWT 编码、LM 训练或生成。结构化记录见 [`logs/tokenizer_owt_2g.json`](logs/tokenizer_owt_2g.json)。
+Train/valid 编码均使用 `uint16`，抽样 round-trip 通过，所有 token ID 均小于 10,000。完整 OWT 训练文本上的 32K tokenizer 已完成：输入 11,920,511,059 bytes，词表 32,000、merge rules 31,743，训练耗时 26,450.18 秒（约 7 小时 21 分钟）。结构化记录见 [`logs/tokenizer_owt_full.json`](logs/tokenizer_owt_full.json)。此前使用 2 GiB fallback 数据完成的 tokenizer 仅作为补充记录，见 [`logs/tokenizer_owt_2g.json`](logs/tokenizer_owt_2g.json)；它不替代完整 OWT 结果。
 
 ## 训练实验
 
@@ -94,7 +94,7 @@ Train/valid 编码均使用 `uint16`，抽样 round-trip 通过，所有 token I
 | Batch 64 | batch size 64 | 已完成 | 1.519705 | 1,427.20 秒 |
 | Batch 256 | batch size 256 | 已完成 | 1.387823 | 5,890.13 秒 |
 | Batch 512 | batch size 512 | OOM，step 0 | 不适用 | 不适用 |
-| OWT baseline | dataset/tokenizer | 待预处理完成 | 待完成 | 待完成 |
+| OWT baseline | dataset/tokenizer | 待编码与训练 | 待完成 | 待完成 |
 
 Baseline 共处理 327,680,000 tokens，平均吞吐约 111,008 tokens/s，最终 perplexity 为 `exp(1.450302) = 4.2644`。Validation loss 从 step 250 的 3.291832 降到 step 10,000 的 1.450302；最终结果仅比严格的 `1.45` 目标高 0.000302，因此应表述为非常接近但未严格达到阈值，而不能向下取整后宣称达标。完整日志与 summary 分别见 [`logs/train_tinystories.jsonl`](logs/train_tinystories.jsonl) 和 [`logs/summaries/tinystories_baseline.json`](logs/summaries/tinystories_baseline.json)。
 
