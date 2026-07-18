@@ -1,0 +1,17 @@
+{
+  "dataset": "TinyStories",
+  "ablation": "two-layer SiLU FFN without gating",
+  "d_model": 512,
+  "d_ff": 2048,
+  "batch_size": 32,
+  "total_steps": 40000,
+  "max_lr": 0.003,
+  "model_parameters": 22835712,
+  "baseline_swiglu_parameters": 22704640,
+  "parameter_difference": 131072,
+  "parameter_difference_percent": 0.5772890273362629,
+  "best_validation_step": 39000,
+  "best_validation_loss": 0.7505832839012146,
+  "last_validation_loss": 0.7505832839012146,
+  "last_perplexity": 2.118235188839006
+}
