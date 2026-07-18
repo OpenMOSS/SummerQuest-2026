@@ -1,0 +1,91 @@
+{
+  "os":  "Linux-5.15.0-119-generic-x86_64-with-glibc2.35",
+  "python":  "CPython 3.11.9",
+  "startedAt":  "2026-07-17T16:48:56.079236Z",
+  "args":  [
+    "--train_data",
+    "/inspire/ssd/project/cq-scientific-cooperation-zone/tongjingqi-CZXS25110029/zjp_code/summerQuest/assignment1-basics/data/tinystories/tinystories_train.npy",
+    "--val_data",
+    "/inspire/ssd/project/cq-scientific-cooperation-zone/tongjingqi-CZXS25110029/zjp_code/summerQuest/assignment1-basics/data/tinystories/tinystories_val.npy",
+    "--vocab_size",
+    "10000",
+    "--context_length",
+    "256",
+    "--d_model",
+    "512",
+    "--d_ff",
+    "1344",
+    "--num_layers",
+    "4",
+    "--num_heads",
+    "16",
+    "--theta",
+    "10000.0",
+    "--batch_size",
+    "32",
+    "--total_steps",
+    "40000",
+    "--eval_every",
+    "500",
+    "--log_every",
+    "10",
+    "--checkpoint_every",
+    "2000",
+    "--max_lr",
+    "3e-4",
+    "--min_lr",
+    "3e-5",
+    "--warmup_iters",
+    "100",
+    "--weight_decay",
+    "0.1",
+    "--beta1",
+    "0.9",
+    "--beta2",
+    "0.95",
+    "--eps",
+    "1e-8",
+    "--exp_name",
+    "owt_baseline_full",
+    "--exp_dir",
+    "experiments",
+    "--checkpoint_dir",
+    "checkpoints/owt_baseline_full",
+    "--device",
+    "cuda",
+    "--compile",
+    "--wandb"
+  ],
+  "program":  "-m scripts.train",
+  "git":  {
+    "remote":  "https://github.com/stanford-cs336/assignment1-basics.git",
+    "commit":  "a158843b20107949f1a8d7df1b05cd33b9166712"
+  },
+  "root":  "experiments/owt_baseline_full",
+  "host":  "zjp-gpu-cq-w--22ab5295cf7d-w6pr4oucsl",
+  "executable":  "/opt/conda/bin/python",
+  "cpu_count":  96,
+  "cpu_count_logical":  192,
+  "gpu":  "NVIDIA H100 80GB HBM3",
+  "gpu_count":  1,
+  "disk":  {
+    "/":  {
+      "total":  "3838880616448",
+      "used":  "2543686221824"
+    }
+  },
+  "memory":  {
+    "total":  "2163859685376"
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "NVIDIA H100 80GB HBM3",
+      "memoryTotal":  "85520809984",
+      "cudaCores":  16896,
+      "architecture":  "Hopper",
+      "uuid":  "GPU-dcf41a90-1111-e31c-37ca-92f5434d41e8"
+    }
+  ],
+  "cudaVersion":  "12.8",
+  "writerId":  "zbp56c5fefw6igch4cra3brhyx24zejn"
+}
