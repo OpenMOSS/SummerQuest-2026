@@ -12,6 +12,8 @@ EXPERIMENTS = [
     ("tinystories_small", "configs/tinystories_small.json"),
     ("lr_sweep_3e-4", "configs/lr_sweep_3e-4.json"),
     ("lr_sweep_3e-3", "configs/lr_sweep_3e-3.json"),
+    ("lr_sweep_1e1_diverge", "configs/lr_sweep_1e1_diverge.json"),
+    ("batch_size_1", "configs/batch_size_1.json"),
     ("batch_size_32", "configs/batch_size_32.json"),
     ("batch_size_64", "configs/batch_size_64.json"),
     ("batch_size_256", "configs/batch_size_256.json"),

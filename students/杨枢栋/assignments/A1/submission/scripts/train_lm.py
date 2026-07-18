@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import pickle
 import sys
 import time
@@ -112,6 +113,8 @@ def main() -> None:
     log_path = output_dir / config.get("log_name", "train.jsonl")
     start = time.time()
     final_val_loss = None
+    status = "completed"
+    divergence_step = None
     with open(log_path, "w", encoding="utf-8") as log_file:
         for step in range(config["steps"] + 1):
             lr = get_lr_cosine_schedule(
@@ -143,18 +146,38 @@ def main() -> None:
                 log_file.write(json.dumps(record) + "\n")
                 log_file.flush()
                 print(json.dumps(record))
+                if not math.isfinite(record["train_loss"]) or not math.isfinite(record["val_loss"]):
+                    status = "diverged_nonfinite_loss"
+                    divergence_step = step
+                    break
+                divergence_threshold = config.get("divergence_val_loss_threshold")
+                if (
+                    divergence_threshold is not None
+                    and step > 0
+                    and record["val_loss"] >= divergence_threshold
+                ):
+                    status = "diverged_loss_explosion"
+                    divergence_step = step
+                    break
     checkpoint_path = output_dir / config.get("checkpoint_name", "checkpoint.pt")
-    save_checkpoint(model, optimizer, config["steps"], checkpoint_path)
-    sample = sample_text(
-        model,
-        tokenizer,
-        config.get("prompt", "Once upon a time"),
-        config.get("max_new_tokens", 128),
-        config.get("temperature", 0.8),
-        config.get("top_p", 0.9),
-        device,
-    )
+    if status == "completed":
+        save_checkpoint(model, optimizer, config["steps"], checkpoint_path)
+        sample = sample_text(
+            model,
+            tokenizer,
+            config.get("prompt", "Once upon a time"),
+            config.get("max_new_tokens", 128),
+            config.get("temperature", 0.8),
+            config.get("top_p", 0.9),
+            device,
+        )
+        checkpoint = str(checkpoint_path)
+    else:
+        sample = ""
+        checkpoint = None
     summary = {
+        "status": status,
+        "divergence_step": divergence_step,
         "final_val_loss": final_val_loss,
         "total_training_time_sec": time.time() - start,
         "d_model": config["d_model"],
@@ -168,7 +191,7 @@ def main() -> None:
         "use_rmsnorm": config.get("use_rmsnorm", True),
         "use_rope": config.get("use_rope", True),
         "ffn_type": config.get("ffn_type", "swiglu"),
-        "checkpoint": str(checkpoint_path),
+        "checkpoint": checkpoint,
         "sample": sample,
     }
     with open(output_dir / config.get("summary_name", "summary.json"), "w", encoding="utf-8") as file:

@@ -1,0 +1,19 @@
+{
+  "status": "completed",
+  "divergence_step": null,
+  "final_val_loss": 2.7051913261413576,
+  "total_training_time_sec": 186.49145126342773,
+  "d_model": 512,
+  "num_layers": 4,
+  "num_heads": 16,
+  "context_length": 256,
+  "batch_size": 1,
+  "steps": 10000,
+  "vocab_size": 10000,
+  "norm_mode": "pre",
+  "use_rmsnorm": true,
+  "use_rope": true,
+  "ffn_type": "swiglu",
+  "checkpoint": "runs/batch_size_1/checkpoint.pt",
+  "sample": "Once upon a time, there was a little girl named Lily. Lily loved to play outside with her toy cars and write. One day, Lily saw a boy named Tim. Sue was very happy. She wanted to make the scissors feel better. So, she put the car on her head.\nWhen she was sleeping, the toy. It was a big, red ball. Sue was very happy. They played with the ball and the red ball. They had so much fun together.\nBut then, something unexpected happened. The big tree started to rain! Tim and Sue were surprised. They were happy. The next day, Tim and the ball went back to the tree.\n<|endoftext|>"
+}
