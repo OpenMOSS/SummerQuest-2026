@@ -1,0 +1,2 @@
+{"step": 1, "wall_clock_sec": 1.663671538233757, "train_loss": 16.837249755859375, "lr": 0.0, "processed_tokens": 32768}
+{"step": 2, "wall_clock_sec": 1.915774367749691, "train_loss": null, "lr": 2.4e-06, "processed_tokens": 65536, "status": "diverged", "divergence_reason": "non_finite_loss"}

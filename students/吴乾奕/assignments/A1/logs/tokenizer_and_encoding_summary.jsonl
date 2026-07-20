@@ -1,0 +1,6 @@
+{"kind":"tokenizer","name":"tinystories_10k","vocab_size":10000,"train_seconds":453.749211,"peak_rss_bytes":267788288,"longest_token_num_bytes":15,"in_domain_bytes_per_token":4.044493882,"cross_domain_bytes_per_token":3.411098375,"validation_throughput_bytes_per_second":{"tinystories":678926.356,"owt":865077.063}}
+{"kind":"tokenizer","name":"owt_32k","vocab_size":32000,"train_seconds":2783.274459,"peak_rss_bytes":7823036416,"longest_token_num_bytes":64,"in_domain_bytes_per_token":4.512532334,"cross_domain_bytes_per_token":3.899892742,"validation_throughput_bytes_per_second":{"owt":777875.100,"tinystories":672038.893}}
+{"kind":"encode","dataset":"tinystories_train","token_count":541229347,"elapsed_seconds":97.283331,"dtype":"uint16","workers":18,"exact_document_boundaries":true}
+{"kind":"encode","dataset":"tinystories_valid","token_count":5465883,"elapsed_seconds":1.130149,"dtype":"uint16","workers":18,"exact_document_boundaries":true}
+{"kind":"encode","dataset":"owt_train","token_count":2727241853,"elapsed_seconds":719.643237,"dtype":"uint16","workers":18,"exact_document_boundaries":true}
+{"kind":"encode","dataset":"owt_valid","token_count":66402215,"elapsed_seconds":18.343076,"dtype":"uint16","workers":18,"exact_document_boundaries":true}

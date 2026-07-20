@@ -1,0 +1,66 @@
+[metadata]
+status = "deferred_gpu"
+purpose = "Formal OpenWebText baseline and generation using the TinyStories architecture and the same 10,000 iterations."
+deferred_reason = "The current host has no usable GPU; this remains an executable CUDA training and generation config."
+
+[model]
+vocab_size = 32000
+context_length = 256
+d_model = 512
+num_layers = 4
+num_heads = 16
+d_ff = 1344
+rope_theta = 10000.0
+
+[data]
+train_path = "data/encoded/owt_train.npy"
+validation_path = "data/encoded/owt_valid.npy"
+dtype = "uint16"
+validate_token_range = true
+strict_token_range = false
+
+[tokenizer]
+vocab_path = "artifacts/tokenizers/owt_32k/vocab.json"
+merges_path = "artifacts/tokenizers/owt_32k/merges.json"
+special_tokens = ["<|endoftext|>"]
+
+[optimizer]
+lr = 0.001
+betas = [0.9, 0.95]
+eps = 1e-8
+weight_decay = 0.1
+separate_weight_decay = true
+
+[schedule]
+max_learning_rate = 0.001
+min_learning_rate = 0.0001
+warmup_iters = 200
+cosine_cycle_iters = 10000
+
+[training]
+device = "cuda"
+seed = 1337
+batch_size = 128
+max_iters = 10000
+max_grad_norm = 1.0
+compile = true
+log_interval = 10
+eval_interval = 250
+eval_iters = 20
+checkpoint_interval = 1000
+eval_at_start = true
+
+[run]
+output_dir = "runs/owt/baseline"
+log_file = "metrics.jsonl"
+checkpoint_file = "latest.pt"
+keep_step_checkpoints = false
+
+[generation]
+checkpoint = "runs/owt/baseline/latest.pt"
+prompt = "The"
+max_new_tokens = 256
+temperature = 0.8
+top_p = 0.95
+seed = 1337
+eos_token = "<|endoftext|>"

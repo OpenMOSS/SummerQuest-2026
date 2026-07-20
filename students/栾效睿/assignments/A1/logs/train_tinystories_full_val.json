@@ -1,0 +1,16 @@
+{
+  "batch_size": 128,
+  "batches": 168,
+  "checkpoint": "checkpoint/tinystories/final.pt",
+  "checkpoint_iteration": 10000,
+  "checkpoint_sha256": "f90f7d95b6819e76cd99233f21960188d763c1ca70fdff5a6d81088098fd1b2e",
+  "context_length": 256,
+  "device": "cuda",
+  "evaluated_tokens": 5465882,
+  "is_full_validation": true,
+  "run_name": "train_tinystories",
+  "timestamp_utc": "2026-07-14T14:17:32.262430+00:00",
+  "val_loss": 1.3379817273858048,
+  "validation_tokens_total": 5465883,
+  "wall_clock_sec": 6.238763607107103
+}

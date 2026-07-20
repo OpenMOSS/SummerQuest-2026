@@ -1,0 +1,33 @@
+{
+  "status": "completed",
+  "completed_steps": 10000,
+  "requested_max_iters": 10000,
+  "final_val_loss": 1.5972096621990204,
+  "total_training_sec": 834.0062810592353,
+  "total_processed_tokens": 327680000,
+  "average_tokens_per_sec": 392898.71964013006,
+  "parameter_count": 22696448,
+  "config": {
+    "vocab_size": 10000,
+    "d_model": 512,
+    "num_layers": 4,
+    "num_heads": 16,
+    "d_ff": 1344,
+    "context_length": 256,
+    "batch_size": 128,
+    "max_iters": 10000,
+    "warmup_iters": 1000,
+    "max_lr": 0.0003,
+    "min_lr": 3e-05,
+    "weight_decay": 0.1,
+    "max_grad_norm": 1.0,
+    "eval_interval": 100,
+    "eval_batches": 20
+  },
+  "variant": {
+    "norm_style": "pre",
+    "use_rope": false,
+    "ffn_variant": "swiglu",
+    "amp_dtype": "bfloat16"
+  }
+}

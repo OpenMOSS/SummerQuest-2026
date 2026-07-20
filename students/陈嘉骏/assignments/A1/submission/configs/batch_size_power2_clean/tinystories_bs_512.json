@@ -1,0 +1,39 @@
+{
+  "run_name": "train_tinystories_bs_512",
+  "seed": 336,
+  "model": {
+    "vocab_size": 10000,
+    "context_length": 256,
+    "d_model": 512,
+    "num_layers": 4,
+    "num_heads": 16,
+    "d_ff": 1344,
+    "rope_theta": 10000.0
+  },
+  "data": {
+    "train": "tokenized/tinystories_train.bin",
+    "validation": "tokenized/tinystories_valid.bin"
+  },
+  "training": {
+    "batch_size": 512,
+    "context_length": 256,
+    "max_steps": 2500,
+    "max_learning_rate": 0.0012,
+    "min_learning_rate": 0.00012,
+    "warmup_steps": 125,
+    "cosine_cycle_steps": 2500,
+    "device": "cuda:0",
+    "weight_decay": 0.1,
+    "beta1": 0.9,
+    "beta2": 0.95,
+    "eps": 1e-08,
+    "max_grad_norm": 1.0,
+    "log_interval": 2,
+    "eval_interval": 62,
+    "eval_batches": 5,
+    "checkpoint_interval": 250,
+    "output_dir": "runs/batch_size_power2_clean/bs_512",
+    "log_path": "logs/batch_size_power2_clean/train_tinystories_bs_512.jsonl",
+    "summary_path": "logs/batch_size_power2_clean/train_tinystories_bs_512.summary.json"
+  }
+}

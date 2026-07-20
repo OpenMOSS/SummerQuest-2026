@@ -1,0 +1,8 @@
+{"step": 0, "wall_clock_sec": 3.495, "train_loss": 16.84509, "lr": 0.0}
+{"step": 20, "wall_clock_sec": 7.497, "train_loss": 5.65105, "lr": 0.0006}
+{"step": 40, "wall_clock_sec": 11.497, "train_loss": 4.18704, "lr": 0.0012}
+{"step": 60, "wall_clock_sec": 15.497, "train_loss": 3.58321, "lr": 0.0018}
+{"step": 80, "wall_clock_sec": 19.498, "train_loss": 3.14424, "lr": 0.0024}
+{"step": 100, "wall_clock_sec": 23.497, "train_loss": 2.91842, "lr": 0.003}
+{"step": 120, "wall_clock_sec": 27.498, "train_loss": 3.80636, "lr": 0.002999889014715731}
+{"step": 131, "wall_clock_sec": 29.7, "train_loss": NaN, "lr": 0.002999733362978623, "diverged": true}

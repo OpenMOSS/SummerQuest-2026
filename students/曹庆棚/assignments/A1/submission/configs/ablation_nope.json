@@ -1,0 +1,8 @@
+{
+  "base": "tinystories_baseline.json",
+  "run_name": "ablation_nope",
+  "output_dir": "runs/ablation_nope",
+  "ablation": {
+    "remove_rope": true
+  }
+}

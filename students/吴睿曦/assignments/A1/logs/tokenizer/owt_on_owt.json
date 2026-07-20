@@ -1,0 +1,9 @@
+{
+  "source": "owt_valid.txt",
+  "sample_documents": 1000,
+  "input_bytes": 5210502,
+  "tokens": 1209489,
+  "compression_bytes_per_token": 4.308019337091945,
+  "elapsed_sec": 26.49008104763925,
+  "throughput_bytes_per_sec": 196696.34043888102
+}

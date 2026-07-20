@@ -1,0 +1,99 @@
+{
+  "schema_version": 2,
+  "host": "8xH200 (de-identified)",
+  "framework": "torch 2.8.0+cu128, device=cuda, compile=true, seed=1337",
+  "note": "All formerly deferred_gpu / deferred_cpu_memory items are now completed. Values are de-identified summaries; full JSONL logs, checkpoints and data stay out of Git.",
+  "experiments": [
+    {
+      "name": "openwebtext_32k_tokenizer",
+      "status": "completed_gpu_host_2tb_ram",
+      "elapsed_seconds": 970.18,
+      "merge_count": 31743,
+      "longest_token_bytes": 64,
+      "peak_process_tree_rss_bytes": 84190535680,
+      "full_valid_bytes_per_token": 4.367378879789006,
+      "sample10_seed1337_bytes_per_token": 3.9502690238278246
+    },
+    {
+      "name": "openwebtext_encoding",
+      "status": "completed",
+      "train_tokens_uint16": 2727120452,
+      "valid_tokens_uint16": 66401098,
+      "method": "sharded parallel encode at <|endoftext|> boundaries (96 workers), identical result to single-stream"
+    },
+    {
+      "name": "tinystories_baseline",
+      "status": "completed",
+      "processed_tokens": 327680000,
+      "final_validation_loss": 1.365137267112732,
+      "target": "<= 1.45 (met)",
+      "wall_time_seconds": 1016.4
+    },
+    {
+      "name": "tinystories_generation",
+      "status": "completed",
+      "samples": [
+        "temperature 0.8/top_p 0.95 (203 tok, EOS)",
+        "greedy (162 tok)",
+        "temperature 1.2/top_p 0.95 (206 tok)"
+      ]
+    },
+    {
+      "name": "learning_rate_sweep",
+      "status": "completed_with_divergent_run",
+      "final_val_loss_by_max_lr": {
+        "1e-4": 1.7983,
+        "3e-4": 1.5291,
+        "1e-3": 1.3912,
+        "3e-3": 1.3607,
+        "1e-2": 2.0288,
+        "3e-2": 3.0589,
+        "1e-1_constant": 4.6559,
+        "5e-1_no_rmsnorm": "NaN@step1 (FloatingPointError)"
+      },
+      "best_max_lr": "3e-3"
+    },
+    {
+      "name": "batch_size_sweep",
+      "status": "completed",
+      "final_val_loss_by_batch": {
+        "1": 3.6907,
+        "8": 2.5755,
+        "32": 2.1738,
+        "64": 1.9827,
+        "128": 1.8499,
+        "256": 1.7397,
+        "512": 1.6706,
+        "1024": 1.6164
+      },
+      "note": "fixed 1000 steps; larger batch sees more tokens -> lower loss"
+    },
+    {
+      "name": "architecture_ablations",
+      "status": "completed",
+      "final_val_loss": {
+        "baseline_swiglu_rope_prenorm": 1.3651,
+        "post_norm": 1.3645,
+        "silu_ffn_dff2048": 1.3778,
+        "no_rmsnorm_baseline_lr": 1.3826,
+        "no_rmsnorm_lower_lr_3e-4": 1.5274,
+        "no_rope": 1.417
+      },
+      "note": "RoPE contributes most; removing RMSNorm also destabilizes init (eval-at-start loss ~17.5)"
+    },
+    {
+      "name": "openwebtext_language_model",
+      "status": "completed",
+      "final_validation_loss": 4.034444522857666,
+      "train_loss": 4.0113935470581055,
+      "processed_tokens": 327680000,
+      "note": "resumed once from latest.pt after an external interruption at ~step 6240",
+      "generation_sample_tokens": 257
+    },
+    {
+      "name": "stanford_leaderboard",
+      "status": "not_applicable_lab_override",
+      "reason": "The OpenMOSS laboratory assignment explicitly replaces Stanford external submission requirements."
+    }
+  ]
+}

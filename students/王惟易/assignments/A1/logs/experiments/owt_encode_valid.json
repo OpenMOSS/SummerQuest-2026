@@ -1,0 +1,10 @@
+{
+  "input_path": "data/owt_valid.txt",
+  "output_path": "data/owt_valid_uint16.bin",
+  "input_bytes": 289998753,
+  "tokens": 66401098,
+  "elapsed_seconds": 566.8551797568798,
+  "throughput_mib_per_second": 0.48789245013965726,
+  "bytes_per_token": 4.367378879789006,
+  "dtype": "uint16"
+}

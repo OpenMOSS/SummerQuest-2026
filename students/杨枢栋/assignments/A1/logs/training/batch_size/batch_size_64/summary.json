@@ -1,0 +1,17 @@
+{
+  "final_val_loss": 1.4255950808525086,
+  "total_training_time_sec": 854.4617080688477,
+  "d_model": 512,
+  "num_layers": 4,
+  "num_heads": 16,
+  "context_length": 256,
+  "batch_size": 64,
+  "steps": 10000,
+  "vocab_size": 10000,
+  "norm_mode": "pre",
+  "use_rmsnorm": true,
+  "use_rope": true,
+  "ffn_type": "swiglu",
+  "checkpoint": "runs/batch_size_64/checkpoint.pt",
+  "sample": "Once upon a time, there was a little boy named Tim. Tim loved to play with his toy cars. One day, he went to the park with his mom. At the park, he saw a big tree with a door at the end of the tree. Tim wanted to see what was behind the door.\nTim's mom said, \"Tim, be careful! The door is open, and the door is locked.\" Tim was scared, but he listened to his mom. He went to the door and turned it. The door opened, and Tim saw a big room with lots of toys.\nTim was so happy that he found the key. He ran to the door and said, \"I found the key! Let's play with the toys!\" His mom smiled and said, \"That's great, Tim! Let's go play with the toys.\" They played with the toys and had a lot of fun.\n<|endoftext|>"
+}

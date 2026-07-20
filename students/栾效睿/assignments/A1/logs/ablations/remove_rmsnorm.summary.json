@@ -1,0 +1,30 @@
+{
+  "best_val_loss": 37.30817675590515,
+  "checkpoint_dir": "checkpoint/ablations/remove_rmsnorm",
+  "final_step": 242,
+  "final_train_loss": 1634.303955078125,
+  "final_val_loss": 37.30817675590515,
+  "key_config": {
+    "autocast_dtype": null,
+    "batch_size": 128,
+    "context_length": 256,
+    "d_ff": 1344,
+    "d_model": 512,
+    "ffn_type": "swiglu",
+    "lr_max": 0.003,
+    "max_wall_clock_sec": null,
+    "norm_mode": "none",
+    "num_heads": 16,
+    "num_layers": 4,
+    "torch_compile": false,
+    "torch_compile_enabled": false,
+    "use_rope": true,
+    "vocab_size": 10000
+  },
+  "log_path": "logs/ablations/remove_rmsnorm.jsonl",
+  "processed_tokens": 7929856,
+  "run_name": "remove_rmsnorm",
+  "status": "diverged",
+  "stop_reason": "nonfinite_or_large_train_loss",
+  "wall_clock_sec": 35.805313715711236
+}

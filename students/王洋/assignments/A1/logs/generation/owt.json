@@ -1,0 +1,53 @@
+{
+  "format": "summerquest-a1-public-generation-log-v1",
+  "scope": "owt-selected-generation",
+  "selected_candidate": "baseline_lr3e-3_seed4096_t0.8_p0.95",
+  "source_text_basename": "baseline_lr3e-3_seed4096_t0.8_p0.95.txt",
+  "source_metadata_basename": "baseline_lr3e-3_seed4096_t0.8_p0.95.json",
+  "metadata": {
+    "checkpoint_file": "latest.pt",
+    "checkpoint_processed_tokens": 327680000,
+    "checkpoint_step": 10000,
+    "config_file": "config.resolved.json",
+    "created_at_utc": "2026-07-12T12:53:25Z",
+    "elapsed_seconds": 1.7196021489799023,
+    "format": "cs336-generation-summary-v1",
+    "generated_tokens": 256,
+    "max_new_tokens": 256,
+    "prompt": "In a recent report,",
+    "prompt_tokens": 5,
+    "seed": 4096,
+    "stop_reason": "max_new_tokens",
+    "stop_token": "<|endoftext|>",
+    "stopped_on_special_token": false,
+    "temperature": 0.8,
+    "tokenizer_sha256": {
+      "merges_file": "181a47c159d45d99894e3f1d3c9eb6c258d13a48e5f9998d0abfc468861b90d9",
+      "vocab_file": "9179737a5b6ffc6da73df35850cc80c991548ca6c57ba1d825bf6d8f28d7130a"
+    },
+    "tokens_per_second": 148.8716446137635,
+    "top_p": 0.95,
+    "total_tokens": 261
+  },
+  "termination_annotation": {
+    "valid_early_stop": false,
+    "generated_tokens_before_stop": 256,
+    "maximum_new_tokens": 256,
+    "stop_token": "<|endoftext|>",
+    "explanation": "Generation stopped at the configured 256-token maximum without emitting the end-of-text token; the final sentence is therefore visibly truncated."
+  },
+  "candidate_screening": {
+    "candidates_reviewed": 3,
+    "selected_reason": "This candidate contains no email address, URL, phone number, account identifier, quoted real person, or uniquely identifying individual, and its longer science-news form is more representative of the OWT model than the short EOT candidate.",
+    "rejected_candidate_notes": [
+      "One candidate mixed real public figures with invented political claims and ended mid-sentence.",
+      "One candidate reached a valid end-of-text token but attached incoherent claims to real places, a police force, a date, and a name-like entity."
+    ],
+    "exact_training_text_match_check": "An exact search for the distinctive phrase 'Alteran Archubanks' returned no match in the train or validation corpus. This is a targeted check rather than exhaustive deduplication."
+  },
+  "quality_annotation": {
+    "strengths": "The sample sustains a science-news register across several paragraphs and avoids assigning quotations or claims to an identifiable person.",
+    "limitations": "It heavily repeats events, evidence, and the fabricated phrase 'Alteran Archubanks'; the scientific and institutional relationships are not credible, and the last sentence is cut off at the token limit."
+  },
+  "text": "In a recent report, there was no evidence of a possible connection between the events and these events, with a study in the field asking whether the real events had occurred. There was no evidence for this in the case, but there was a picture of a person in that field indicating that a person was not involved in the event of a possible involvement in the events.\n\nStreams in the groups were taken from the backgrounds of the deceased, but a report was published in the Journal of Preventive Medicine. After the discovery of the events of the event, the scientists collected data and analyzed the DNA of individuals at the annual events on the Alteran Archubanks on the Alteran Peninsula. After the sample was taken to the National Museum, the scientists then came to the conclusion that the event was not a missed opportunity.\n\nThe discovery of DNA samples from the Alteran Archubanks identified in the excavation of the Alteran Archubanks, in response to the “The Alteran Archubanks” task conducted by the National Museum of Natural History from the Southern region of North America. It was used to determine how genetic signatures could be used to understand the gathering.\n\nIn response to the ongoing events, the FBI researchers of the Alteran Arch"
+}

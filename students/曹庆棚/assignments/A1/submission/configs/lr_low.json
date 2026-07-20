@@ -1,0 +1,14 @@
+{
+  "base": "tinystories_baseline.json",
+  "run_name": "lr_low",
+  "output_dir": "runs/lr_low",
+  "optimizer": {
+    "max_lr": 0.00003,
+    "min_lr": 0.000003
+  },
+  "training": {
+    "steps": 1000,
+    "eval_interval": 50,
+    "checkpoint_interval": 1000
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "d_model": 512,
+  "num_layers": 4,
+  "num_heads": 16,
+  "d_ff": 1344,
+  "context_length": 256,
+  "batch_size": 64,
+  "num_steps": 10000,
+  "vocab_size": 32000,
+  "rope_theta": 10000.0,
+  "lr": 0.001,
+  "warmup_iters": 200,
+  "cosine_cycle_iters": 10000,
+  "weight_decay": 0.01,
+  "ablation": "none",
+  "n_params": 45224448,
+  "final_val_loss": 4.151580715179444,
+  "total_train_time_sec": 1773.0726945400238,
+  "total_steps": 10000,
+  "total_tokens_processed": 163840000
+}

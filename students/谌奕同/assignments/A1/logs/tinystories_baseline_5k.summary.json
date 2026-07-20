@@ -1,0 +1,5 @@
+{
+  "experiment": "tinystories_baseline_5k",
+  "best_val_loss": 1.4698,
+  "total_time_sec": 980.0
+}

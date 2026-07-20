@@ -1,0 +1,39 @@
+{
+  "run_name": "tinystories_baseline",
+  "seed": 42,
+  "data": {
+    "train_path": "data/tinystories_train.bin",
+    "val_path": "data/tinystories_valid.bin",
+    "dtype": "uint16"
+  },
+  "model": {
+    "vocab_size": 10000,
+    "context_length": 256,
+    "d_model": 512,
+    "num_layers": 4,
+    "num_heads": 16,
+    "d_ff": 1344,
+    "rope_theta": 10000.0,
+    "norm_mode": "pre",
+    "use_rope": true,
+    "ffn_type": "swiglu"
+  },
+  "training": {
+    "batch_size": 128,
+    "max_steps": 10000,
+    "max_lr": 0.001,
+    "min_lr": 0.00003,
+    "warmup_steps": 500,
+    "weight_decay": 0.1,
+    "betas": [0.9, 0.95],
+    "eps": 1e-8,
+    "grad_clip": 1.0,
+    "log_every": 10,
+    "val_every": 250,
+    "val_batches": 20,
+    "checkpoint_every": 1000,
+    "precision": "bf16",
+    "compile": false
+  },
+  "output_dir": "runs/tinystories_baseline"
+}

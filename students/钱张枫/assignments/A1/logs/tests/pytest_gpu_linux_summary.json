@@ -1,0 +1,24 @@
+{
+  "command": "uv run pytest -q --junitxml=test_results.xml",
+  "environment": {
+    "execution_environment": "Linux GPU compute node",
+    "gpu_model": "NVIDIA A800-SXM4-80GB",
+    "torch_version": "2.11.0+cu130",
+    "pytorch_cuda_build": "13.0",
+    "cuda_available": true
+  },
+  "pytest": {
+    "passed": 47,
+    "failed": 0,
+    "xfailed": 1,
+    "duration_seconds": 22.22
+  },
+  "expected_xfail": {
+    "test": "tests/test_tokenizer.py::test_encode_memory_usage",
+    "reason": "Tokenizer.encode is expected to take more memory than the allotted 1 MiB."
+  },
+  "required_memory_check": {
+    "test": "tests/test_tokenizer.py::test_encode_iterable_memory_usage",
+    "status": "passed"
+  }
+}

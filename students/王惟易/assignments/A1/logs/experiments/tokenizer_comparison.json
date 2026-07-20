@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "sample_design": {
+    "tinystories_bytes": 5242880,
+    "openwebtext_bytes": 5242780,
+    "description": "Approximately 5 MiB from each corpus, encoded by both tokenizers with identical special-token handling."
+  },
+  "measurements": [
+    {
+      "corpus": "tinystories",
+      "tokenizer": "tinystories_10k",
+      "tokens": 1272986,
+      "elapsed_seconds": 8.418558824807405,
+      "throughput_mib_per_second": 0.5939258849467488,
+      "bytes_per_token": 4.118568468152831
+    },
+    {
+      "corpus": "tinystories",
+      "tokenizer": "openwebtext_32k",
+      "tokens": 1309466,
+      "elapsed_seconds": 8.410253416746855,
+      "throughput_mib_per_second": 0.5945124067300739,
+      "bytes_per_token": 4.003830569102214
+    },
+    {
+      "corpus": "openwebtext",
+      "tokenizer": "tinystories_10k",
+      "tokens": 1627708,
+      "elapsed_seconds": 9.631940562278032,
+      "throughput_mib_per_second": 0.5190962921999013,
+      "bytes_per_token": 3.2209585503050917
+    },
+    {
+      "corpus": "openwebtext",
+      "tokenizer": "openwebtext_32k",
+      "tokens": 1184144,
+      "elapsed_seconds": 9.96726417914033,
+      "throughput_mib_per_second": 0.5016325987458273,
+      "bytes_per_token": 4.42748517072248
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "encoded_datasets": [
+    {
+      "input_path": "data/TinyStoriesV2-GPT4-train.txt",
+      "output_path": "artifacts/tokenizer_experiments/tinystories_train_uint16.npy",
+      "tokens": 541229345,
+      "max_token_id": 9999,
+      "dtype": "uint16",
+      "seconds": 2418.824074227363
+    },
+    {
+      "input_path": "data/TinyStoriesV2-GPT4-valid.txt",
+      "output_path": "artifacts/tokenizer_experiments/tinystories_dev_uint16.npy",
+      "tokens": 5465883,
+      "max_token_id": 9999,
+      "dtype": "uint16",
+      "seconds": 24.605324187316
+    },
+    {
+      "input_path": "data/owt_train.txt",
+      "output_path": "artifacts/tokenizer_experiments/owt_train_uint16.npy",
+      "tokens": 2727120457,
+      "max_token_id": 31999,
+      "dtype": "uint16",
+      "seconds": 15826.51572899893
+    },
+    {
+      "input_path": "data/owt_valid.txt",
+      "output_path": "artifacts/tokenizer_experiments/owt_dev_uint16.npy",
+      "tokens": 66401098,
+      "max_token_id": 31999,
+      "dtype": "uint16",
+      "seconds": 370.51711888145655
+    }
+  ]
+}

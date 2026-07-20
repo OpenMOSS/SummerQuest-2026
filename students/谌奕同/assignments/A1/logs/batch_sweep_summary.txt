@@ -1,0 +1,9 @@
+Batch Size Sweep
+Context length: 256
+Steps vary by batch size (bs=1 uses 200, others use 1000)
+LR: 1e-3
+bs=1 -> best val loss 4.0660, time 2.5s
+bs=64 -> best val loss 1.9882, time 58.2s
+bs=128 -> best val loss 1.8345, time 106.2s
+bs=256 -> best val loss 1.7514, time 199.8s
+bs=512 -> OOM/FAILED (exit 1)

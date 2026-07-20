@@ -1,0 +1,26 @@
+{
+  "config": {
+    "d_model": 512,
+    "num_layers": 4,
+    "num_heads": 16,
+    "d_ff": 1344,
+    "context_length": 256,
+    "batch_size": 128,
+    "total_steps": 2000,
+    "lr": 0.01,
+    "min_lr": 0.001,
+    "warmup_steps": 100,
+    "weight_decay": 0.1,
+    "norm": "rmsnorm",
+    "norm_position": "pre",
+    "use_rope": true,
+    "ffn": "swiglu",
+    "vocab_size": 10000
+  },
+  "parameters": 22696448,
+  "total_tokens": 65536000,
+  "total_train_time_sec": 492.29,
+  "final_val_loss": 1.97083,
+  "best_val_loss": 1.96911,
+  "diverged": false
+}

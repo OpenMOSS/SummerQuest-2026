@@ -1,0 +1,1 @@
+{"base_config":"../../tinystories_baseline.json","optimizer_overrides":{"lr":0.03},"training_overrides":{"max_steps":1000,"warmup_steps":50,"min_lr":0.003,"eval_interval":50,"eval_batches":10,"checkpoint_interval":1000}}

@@ -1,0 +1,55 @@
+{
+  "run_name": "smoke_test",
+  "output_dir": "runs/smoke_test",
+  "seed": 7,
+  "device": "cpu",
+  "precision": "float32",
+  "deterministic": true,
+  "allow_tf32": false,
+  "data": {
+    "train": "data/tokenized/smoke_train.npy",
+    "validation": "data/tokenized/smoke_valid.npy"
+  },
+  "model": {
+    "vocab_size": 300,
+    "context_length": 16,
+    "d_model": 32,
+    "num_layers": 1,
+    "num_heads": 4,
+    "d_ff": 64,
+    "rope_theta": 10000.0,
+    "remove_rmsnorm": false,
+    "use_post_norm": false,
+    "remove_rope": false,
+    "ffn_type": "swiglu"
+  },
+  "optimizer": {
+    "learning_rate": 0.001,
+    "betas": [0.9, 0.95],
+    "eps": 1e-8,
+    "weight_decay": 0.01
+  },
+  "schedule": {
+    "min_learning_rate": 0.0001,
+    "warmup_iters": 1,
+    "cosine_cycle_iters": 2
+  },
+  "training": {
+    "max_steps": 2,
+    "micro_batch_size": 2,
+    "gradient_accumulation_steps": 1,
+    "gradient_clip_norm": 1.0
+  },
+  "evaluation": {
+    "interval": 1,
+    "batches": 1,
+    "batch_size": 2,
+    "at_start": true
+  },
+  "logging": {
+    "interval": 1
+  },
+  "checkpoint": {
+    "interval": 1
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "best_validation_iteration": 1000,
+  "best_validation_loss": 2.9164974689483643,
+  "final_iteration": 1000,
+  "final_train_loss": 2.8901476860046387,
+  "final_validation_loss": 2.9164974689483643,
+  "has_non_finite_metric": false,
+  "process_elapsed_seconds": 333.8437879756093,
+  "processed_tokens": 65536000,
+  "run_name": "divergence_lr_3e-2",
+  "status": "completed",
+  "training_elapsed_seconds": 331.17590990755707
+}

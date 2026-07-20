@@ -1,0 +1,62 @@
+{
+  "sample": {
+    "source_split": "validation",
+    "sample_size_per_dataset": 10,
+    "seed": 20260714,
+    "tinystories_document_count": 27630,
+    "owt_document_count": 59059,
+    "document_text_saved": false
+  },
+  "compression": {
+    "tinystories_with_tinystories_tokenizer": {
+      "byte_count": 9311,
+      "token_count": 2313,
+      "bytes_per_token": 4.025507998270644
+    },
+    "owt_with_owt_tokenizer": {
+      "byte_count": 102150,
+      "token_count": 25640,
+      "bytes_per_token": 3.984009360374415
+    },
+    "owt_with_tinystories_tokenizer": {
+      "byte_count": 102150,
+      "token_count": 30641,
+      "bytes_per_token": 3.3337684801409875
+    }
+  },
+  "sample_single_process_throughput": {
+    "tinystories_tokenizer": {
+      "repeats": 64,
+      "elapsed_seconds": 0.667066621594131,
+      "byte_count": 595904,
+      "token_count": 148032,
+      "bytes_per_second": 893320.0683552878
+    },
+    "owt_tokenizer": {
+      "repeats": 8,
+      "elapsed_seconds": 1.0246856641024351,
+      "byte_count": 817200,
+      "token_count": 205120,
+      "bytes_per_second": 797512.8652900786
+    }
+  },
+  "full_corpus_measured_throughput": {
+    "tinystories_bytes_per_second": 26441622.861351218,
+    "owt_bytes_per_second": 36683562.41167017
+  },
+  "pile_825gb_estimate": {
+    "using_tinystories_full_corpus_throughput": {
+      "dataset_bytes": 825000000000,
+      "seconds": 31200.80807165105,
+      "hours": 8.66689113101418,
+      "days": 0.3611204637922575
+    },
+    "using_owt_full_corpus_throughput": {
+      "dataset_bytes": 825000000000,
+      "seconds": 22489.636931704925,
+      "hours": 6.247121369918035,
+      "days": 0.2602967237465848
+    }
+  },
+  "uint16_explanation": "两套词表最多分别为 10000 和 32000，token ID 均小于 uint16 可表示的 65536；因此每个 token 只需 2 字节，比 int32 节省一半存储。"
+}

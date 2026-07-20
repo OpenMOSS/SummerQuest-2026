@@ -1,0 +1,60 @@
+######## prompt='The history of' temp=0.8 top_p=0.95 ########
+  state = torch.load(args.ckpt, map_location=device)
+=== PROMPT ===
+The history of
+=== SAMPLE ===
+ the fourth-grade civilization, with the coming of age, is shown in the eighteenth century. More than 50 years ago, some members of the elite were drawn to the same task as the ‘Ethiopian’ of the Christian Diaspora (Gays, 2007).
+
+The historical record of the first-grade people of Sigré, however, was the truth. By the time that Sigré was in the hands of a gentry, the gap between the “spiritual” and the “Jewish” was in the hands of a Roman Catholic bishop at the time.
+
+The dominant position of the new Roman Catholic, however, was that the first Italian scholars had, or a noted observer, been appointed as the first pope to the role of the country’s new pope, but the later provincial minister was those who did not. The Vatican does not have all the resources and services provided to the Catholic Church.
+
+The first order of the Roman Catholic movement was recorded by the Vatican. The second order was not made public until now, but then on the other side. The second order was overturned, but was on the same day. The first order of the Church was still in place. The Vatican was reassured that it was
+
+######## prompt='In recent years, scientists' temp=0.8 top_p=0.95 ########
+  state = torch.load(args.ckpt, map_location=device)
+=== PROMPT ===
+In recent years, scientists
+=== SAMPLE ===
+ have found a new protein found in the gut bourbon column.
+
+Of course, the technique has made it difficult to use such protein to better understand the role of its protein.
+
+The ability to make protein products is the primary ingredient for the protein that is produced in animal tissues to protect those proteins from chemicals.
+
+Many of the proteins are involved in the protein, including those with specific proteins and the cells that are used to treat proteins like organic, protein-rich proteins.
+
+The protein found in this protein is highly heterogeneous, and it is also related to protein-rich proteins.
+
+The calcium-rich protein, which has been used to help stem cells, has been used to improve protein synthesis and protein synthesis.
+
+Killness is an international team, and Dr. H. Thompson, of the University of Cambridge, says the protein is the protein itself, but it also plays a role in the protein of the protein's protein production.
+
+'The proteins are derived from the protein's protein,'" he says.
+
+Hoods and proteins have been developed to improve insulin's function, in part because of its structure and function.
+
+According to H.R.K., the protein is divided into
+
+######## prompt='The government announced' temp=0.7 top_p=0.9 ########
+  state = torch.load(args.ckpt, map_location=device)
+=== PROMPT ===
+The government announced
+=== SAMPLE ===
+ it would introduce a $3.5-billion-a-year grant to landfill operators in the country.
+
+The new plan would not include a two-year extension for the Department of Agriculture, which would allow the private sector to finance the construction and maintenance of the economy.
+
+The government has said it will take three years to build a new infrastructure and also keep the government in place.
+
+The proposal, however, would put the agency in charge of the development of a new infrastructure that would be the key to the development of the new infrastructure.
+
+The proposal is expected to be approved by the Department of Agriculture and Agriculture (DEA) on Monday.
+
+The proposal will be approved by the federal government for the first time since the start of the first half of the year in March.
+
+The proposed agreement would allow the agency to regulate new construction and construction of new infrastructure, including the development of new railways and roads, and install new railways in order to make new construction and development possible.
+
+The new $2 billion proposed by the state of the city is being approved by the government for $1.3 billion, and will be subject to a new funding scheme.
+
+The proposed $2 billion proposal,

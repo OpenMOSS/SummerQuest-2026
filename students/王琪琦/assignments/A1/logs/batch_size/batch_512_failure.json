@@ -1,0 +1,12 @@
+{
+  "batch_size": 512,
+  "context_length": 256,
+  "status": "failed_before_step_1",
+  "failure": "CUDA out of memory during scaled dot-product attention",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "total_memory_gib": 47.4993,
+  "allocated_gib": 45.09,
+  "reserved_unallocated_mib": 210.92,
+  "failed_allocation_gib": 2.0,
+  "log_retention": "The raw console log is retained only in the local run directory because it contains internal paths. This public record is the sanitized failure summary."
+}

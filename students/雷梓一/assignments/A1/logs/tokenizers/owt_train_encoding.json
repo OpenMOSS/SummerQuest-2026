@@ -1,0 +1,13 @@
+{
+  "input": "data/raw/owt_train.txt",
+  "output": "data/encoded/owt_train.bin",
+  "dtype": "uint16",
+  "token_count": 2727120452,
+  "source_bytes": 11920511059,
+  "compression_ratio_bytes_per_token": 4.37109811202428,
+  "wall_clock_sec": 1429.0221443474293,
+  "throughput_bytes_per_sec": 8341725.913694397,
+  "num_processes": 32,
+  "output_sha256": "e736315eb244aa6adbbceea6ab0651cc544bc094adc4071763c97e99c241ca6c",
+  "peak_rss_mb": 923.640625
+}

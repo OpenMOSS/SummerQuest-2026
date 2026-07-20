@@ -1,0 +1,8 @@
+{
+  "base": "tinystories_baseline.json",
+  "run_name": "batch_64",
+  "output_dir": "runs/batch_64",
+  "training": {
+    "batch_size": 64
+  }
+}

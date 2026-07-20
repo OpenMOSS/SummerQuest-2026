@@ -1,0 +1,7 @@
+run=tinystories_baseline
+prompt=Once upon a time
+temperature=0.8 top_p=0.9 seed=1337
+Once upon a time, there was a little boy named Tim. Tim loved to play in the kitchen. One day, Tim saw a big, expensive cake on the table. He wanted to eat it, but he knew it was not for him. Tim was sad.
+Tim's mom saw him looking at the cake. She said, "Tim, you can't eat the cake, but I will help you." Tim's mom smiled and said, "Thank you, Tim. You are a good boy."
+Tim's mom washed the cake and it was as good as new. Tim was happy and shared the cake with his friends. They all ate the cake and had a great time. The cake was a success, and they all had a great day.
+<|endoftext|>

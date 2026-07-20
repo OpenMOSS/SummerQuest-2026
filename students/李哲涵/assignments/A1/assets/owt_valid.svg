@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="500" viewBox="0 0 820 500">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="80" y="28" font-family="Arial" font-size="20" font-weight="700">OpenWebText full-tokenizer run: validation loss</text>
+<line x1="80" y1="48.0" x2="660" y2="48.0" stroke="#e5e7eb"/>
+<text x="70" y="52.0" text-anchor="end" font-family="Arial" font-size="12" fill="#4b5563">6.49</text>
+<line x1="80" y1="124.4" x2="660" y2="124.4" stroke="#e5e7eb"/>
+<text x="70" y="128.4" text-anchor="end" font-family="Arial" font-size="12" fill="#4b5563">6.01</text>
+<line x1="80" y1="200.8" x2="660" y2="200.8" stroke="#e5e7eb"/>
+<text x="70" y="204.8" text-anchor="end" font-family="Arial" font-size="12" fill="#4b5563">5.52</text>
+<line x1="80" y1="277.2" x2="660" y2="277.2" stroke="#e5e7eb"/>
+<text x="70" y="281.2" text-anchor="end" font-family="Arial" font-size="12" fill="#4b5563">5.04</text>
+<line x1="80" y1="353.6" x2="660" y2="353.6" stroke="#e5e7eb"/>
+<text x="70" y="357.6" text-anchor="end" font-family="Arial" font-size="12" fill="#4b5563">4.56</text>
+<line x1="80" y1="430.0" x2="660" y2="430.0" stroke="#e5e7eb"/>
+<text x="70" y="434.0" text-anchor="end" font-family="Arial" font-size="12" fill="#4b5563">4.08</text>
+<text x="80.0" y="454" text-anchor="middle" font-family="Arial" font-size="12" fill="#4b5563">500</text>
+<text x="196.0" y="454" text-anchor="middle" font-family="Arial" font-size="12" fill="#4b5563">2400</text>
+<text x="312.0" y="454" text-anchor="middle" font-family="Arial" font-size="12" fill="#4b5563">4300</text>
+<text x="428.0" y="454" text-anchor="middle" font-family="Arial" font-size="12" fill="#4b5563">6200</text>
+<text x="544.0" y="454" text-anchor="middle" font-family="Arial" font-size="12" fill="#4b5563">8100</text>
+<text x="660.0" y="454" text-anchor="middle" font-family="Arial" font-size="12" fill="#4b5563">10000</text>
+<line x1="80" y1="430" x2="660" y2="430" stroke="#111827"/>
+<line x1="80" y1="48" x2="80" y2="430" stroke="#111827"/>
+<text x="370.0" y="482" text-anchor="middle" font-family="Arial" font-size="14">gradient step</text>
+<text transform="translate(22 239.0) rotate(-90)" text-anchor="middle" font-family="Arial" font-size="14">loss</text>
+<polyline points="80.0,74.3 110.5,198.3 141.1,260.5 171.6,297.6 202.1,317.1 232.6,333.1 263.2,346.0 293.7,356.2 324.2,365.3 354.7,374.8 385.3,379.6 415.8,383.1 446.3,390.3 476.8,393.8 507.4,395.9 537.9,399.2 568.4,401.0 598.9,401.4 629.5,403.6 660.0,403.7" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="660.0" cy="403.7" r="3.5" fill="#2563eb"/>
+<line x1="660" y1="68" x2="690" y2="68" stroke="#2563eb" stroke-width="3"/>
+<text x="696" y="72" font-family="Arial" font-size="13" fill="#111827">OWT full tokenizer, full train</text>
+</svg>

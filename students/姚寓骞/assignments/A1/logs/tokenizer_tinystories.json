@@ -1,0 +1,12 @@
+{
+  "name": "TinyStories-10K",
+  "sample_bytes": 10485760,
+  "encoded_tokens": 2546641,
+  "elapsed_sec": 23.679391105659306,
+  "bytes_per_token": 4.117486524406071,
+  "bytes_per_sec": 442822.1972943356,
+  "tokens_per_sec": 107546.72654531899,
+  "vocab_size": 10000,
+  "longest_token_bytes": 15,
+  "longest_token_repr": "b' accomplishment'"
+}

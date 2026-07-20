@@ -1,0 +1,14 @@
+{
+  "input_path": "data/TinyStoriesV2-GPT4-train.txt",
+  "output_path": "artifacts/token_ids/tinystories_train.npy",
+  "tokenizer": "TinyStories 10K",
+  "vocab_path": "artifacts/TinyStories_train_bpe/vocab.json",
+  "merges_path": "artifacts/TinyStories_train_bpe/merges.json",
+  "dtype": "uint16",
+  "tokens": 541229347,
+  "bytes": 2227753162,
+  "bytes_per_token": 4.116098238848826,
+  "include_delimiter": true,
+  "workers": 10,
+  "batch_bytes": 8388608
+}

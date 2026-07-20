@@ -1,0 +1,2 @@
+{"run":"tinystories_baseline","checkpoint_step":9600,"evaluation_batches":100,"validation_loss":1.384960251,"perplexity":3.994667117,"prompt":"Once upon a time","seed":42,"temperature":0.8,"top_p":0.95,"total_tokens":159,"eos":true}
+{"run":"owt_baseline","checkpoint_step":9700,"evaluation_batches":100,"validation_loss":4.491182833,"perplexity":89.226924010,"prompt":"The development of modern technology","seed":42,"temperature":0.8,"top_p":0.95,"total_tokens":261,"eos":false}

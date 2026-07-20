@@ -1,0 +1,9 @@
+{
+  "command": "python -m pytest -q tests",
+  "passed": 46,
+  "xfailed": 1,
+  "failed": 1,
+  "failure": "test_encode_iterable_memory_usage could not inspect the container PID because psutil raised NoSuchProcess",
+  "functional_assertion_failure": false,
+  "independent_regular_linux_streaming_memory_check": "passed"
+}

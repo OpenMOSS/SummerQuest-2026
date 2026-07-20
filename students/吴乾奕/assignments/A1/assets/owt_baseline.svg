@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="640" viewBox="0 0 1000 640">
+<rect width="100%" height="100%" fill="white"/>
+<text x="500.0" y="34" text-anchor="middle" font-family="sans-serif" font-size="22">OWT baseline</text>
+<line x1="90.00" y1="70" x2="90.00" y2="560" stroke="#e5e7eb"/>
+<text x="90.00" y="588" text-anchor="middle" font-family="sans-serif" font-size="12">3.3M</text>
+<line x1="220.00" y1="70" x2="220.00" y2="560" stroke="#e5e7eb"/>
+<text x="220.00" y="588" text-anchor="middle" font-family="sans-serif" font-size="12">68M</text>
+<line x1="350.00" y1="70" x2="350.00" y2="560" stroke="#e5e7eb"/>
+<text x="350.00" y="588" text-anchor="middle" font-family="sans-serif" font-size="12">1.3e+02M</text>
+<line x1="480.00" y1="70" x2="480.00" y2="560" stroke="#e5e7eb"/>
+<text x="480.00" y="588" text-anchor="middle" font-family="sans-serif" font-size="12">2e+02M</text>
+<line x1="610.00" y1="70" x2="610.00" y2="560" stroke="#e5e7eb"/>
+<text x="610.00" y="588" text-anchor="middle" font-family="sans-serif" font-size="12">2.6e+02M</text>
+<line x1="740.00" y1="70" x2="740.00" y2="560" stroke="#e5e7eb"/>
+<text x="740.00" y="588" text-anchor="middle" font-family="sans-serif" font-size="12">3.3e+02M</text>
+<line x1="90" y1="560.00" x2="740" y2="560.00" stroke="#e5e7eb"/>
+<text x="78" y="564.00" text-anchor="end" font-family="sans-serif" font-size="12">4.236</text>
+<line x1="90" y1="462.00" x2="740" y2="462.00" stroke="#e5e7eb"/>
+<text x="78" y="466.00" text-anchor="end" font-family="sans-serif" font-size="12">5.291</text>
+<line x1="90" y1="364.00" x2="740" y2="364.00" stroke="#e5e7eb"/>
+<text x="78" y="368.00" text-anchor="end" font-family="sans-serif" font-size="12">6.345</text>
+<line x1="90" y1="266.00" x2="740" y2="266.00" stroke="#e5e7eb"/>
+<text x="78" y="270.00" text-anchor="end" font-family="sans-serif" font-size="12">7.4</text>
+<line x1="90" y1="168.00" x2="740" y2="168.00" stroke="#e5e7eb"/>
+<text x="78" y="172.00" text-anchor="end" font-family="sans-serif" font-size="12">8.454</text>
+<line x1="90" y1="70.00" x2="740" y2="70.00" stroke="#e5e7eb"/>
+<text x="78" y="74.00" text-anchor="end" font-family="sans-serif" font-size="12">9.509</text>
+<line x1="90" y1="560" x2="740" y2="560" stroke="#111827"/>
+<line x1="90" y1="70" x2="90" y2="560" stroke="#111827"/>
+<text x="415.0" y="618" text-anchor="middle" font-family="sans-serif" font-size="15">processed_tokens</text>
+<text x="22" y="315.0" text-anchor="middle" transform="rotate(-90 22 315.0)" font-family="sans-serif" font-size="15">validation_loss</text>
+<polyline points="90.00,92.27 96.57,258.31 103.13,320.19 109.70,357.04 116.26,382.42 122.83,396.41 129.39,408.00 135.96,418.08 142.53,426.67 149.09,434.78 155.66,438.46 162.22,448.68 168.79,451.30 175.35,453.95 181.92,461.61 188.48,464.06 195.05,470.04 201.62,471.33 208.18,475.66 214.75,477.69 221.31,481.81 227.88,482.40 234.44,485.83 241.01,489.54 247.58,493.20 254.14,492.17 260.71,495.18 267.27,498.52 273.84,498.91 280.40,497.85 286.97,501.07 293.54,501.86 300.10,504.14 306.67,504.27 313.23,505.71 319.80,507.57 326.36,507.35 332.93,510.97 339.49,511.37 346.06,514.46 352.63,513.00 359.19,514.27 365.76,512.73 372.32,517.00 378.89,517.38 385.45,515.46 392.02,518.74 398.59,516.79 405.15,519.98 411.72,520.55 418.28,520.52 424.85,522.84 431.41,521.04 437.98,520.56 444.55,523.94 451.11,523.58 457.68,526.18 464.24,524.49 470.81,526.41 477.37,524.83 483.94,525.97 490.51,526.78 497.07,527.54 503.64,527.20 510.20,529.89 516.77,528.93 523.33,528.42 529.90,529.81 536.46,529.15 543.03,529.24 549.60,532.28 556.16,529.79 562.73,530.47 569.29,532.01 575.86,530.64 582.42,532.62 588.99,532.38 595.56,531.76 602.12,532.26 608.69,533.77 615.25,532.58 621.82,531.45 628.38,535.44 634.95,533.80 641.52,534.45 648.08,536.37 654.65,532.93 661.21,535.49 667.78,535.79 674.34,535.89 680.91,534.43 687.47,536.01 694.04,536.95 700.61,535.37 707.17,536.70 713.74,536.12 720.30,537.73 726.87,535.33 733.43,534.58 740.00,535.58" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+<line x1="765" y1="70" x2="795" y2="70" stroke="#2563eb" stroke-width="3"/>
+<text x="805" y="74" font-family="sans-serif" font-size="13">owt_baseline</text>
+</svg>

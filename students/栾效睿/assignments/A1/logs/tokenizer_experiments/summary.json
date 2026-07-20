@@ -1,0 +1,122 @@
+{
+  "config_path": "configs/tokenizer_experiments.json",
+  "output_dir": "logs/tokenizer_experiments",
+  "compression": [
+    {
+      "dataset": "TinyStories train",
+      "input_path": "data/TinyStoriesV2-GPT4-train.txt",
+      "tokenizer": "TinyStories 10K",
+      "sample_docs": 10,
+      "seed": 2026,
+      "bytes": 10994,
+      "tokens": 2602,
+      "bytes_per_token": 4.22521137586472
+    },
+    {
+      "dataset": "OpenWebText train",
+      "input_path": "data/owt_train.txt",
+      "tokenizer": "OWT 32K",
+      "sample_docs": 10,
+      "seed": 2026,
+      "bytes": 32864,
+      "tokens": 6919,
+      "bytes_per_token": 4.749819338054632
+    },
+    {
+      "dataset": "OpenWebText train",
+      "input_path": "data/owt_train.txt",
+      "tokenizer": "TinyStories 10K",
+      "sample_docs": 10,
+      "seed": 2026,
+      "bytes": 32864,
+      "tokens": 10225,
+      "bytes_per_token": 3.214083129584352
+    }
+  ],
+  "throughput": [
+    {
+      "name": "TinyStories 10K",
+      "input_path": "data/TinyStoriesV2-GPT4-train.txt",
+      "tokenizer": "TinyStories 10K",
+      "target_bytes": 4194304,
+      "bytes": 4193638,
+      "tokens": 1020262,
+      "warmup": 1,
+      "repeats": 3,
+      "times_sec": [
+        2.1636125830118544,
+        2.1379152919980697,
+        2.1558982910355553
+      ],
+      "median_sec": 2.1558982910355553,
+      "mb_per_sec": 1.9451928773437848,
+      "pile_bytes": 825000000000,
+      "pile_serial_hours": 117.81179611329863
+    },
+    {
+      "name": "OWT 32K",
+      "input_path": "data/owt_train.txt",
+      "tokenizer": "OWT 32K",
+      "target_bytes": 4194304,
+      "bytes": 4180848,
+      "tokens": 956125,
+      "warmup": 1,
+      "repeats": 3,
+      "times_sec": [
+        2.5738853749935515,
+        2.5744711669976823,
+        2.6061976670171134
+      ],
+      "median_sec": 2.5744711669976823,
+      "mb_per_sec": 1.6239638080218453,
+      "pile_bytes": 825000000000,
+      "pile_serial_hours": 141.1156243351354
+    }
+  ],
+  "encoded_arrays": [
+    {
+      "name": "TinyStories train",
+      "input_path": "data/TinyStoriesV2-GPT4-train.txt",
+      "output_path": "artifacts/token_ids/tinystories_train.npy",
+      "tokenizer": "TinyStories 10K",
+      "status": "ok",
+      "dtype": "uint16",
+      "tokens": 541229347,
+      "bytes": 2227753162,
+      "bytes_per_token": 4.116098238848826
+    },
+    {
+      "name": "TinyStories valid",
+      "input_path": "data/TinyStoriesV2-GPT4-valid.txt",
+      "output_path": "artifacts/token_ids/tinystories_valid.npy",
+      "tokenizer": "TinyStories 10K",
+      "status": "ok",
+      "dtype": "uint16",
+      "tokens": 5465883,
+      "bytes": 22502601,
+      "bytes_per_token": 4.116919626709902
+    },
+    {
+      "name": "OWT train",
+      "input_path": "data/owt_train.txt",
+      "output_path": "artifacts/token_ids/owt_train.npy",
+      "tokenizer": "OWT 32K",
+      "status": "ok",
+      "dtype": "uint16",
+      "tokens": 2727120452,
+      "bytes": 11920511059,
+      "bytes_per_token": 4.37109811202428
+    },
+    {
+      "name": "OWT valid",
+      "input_path": "data/owt_valid.txt",
+      "output_path": "artifacts/token_ids/owt_valid.npy",
+      "tokenizer": "OWT 32K",
+      "status": "ok",
+      "dtype": "uint16",
+      "tokens": 66401098,
+      "bytes": 289998753,
+      "bytes_per_token": 4.367378879789006
+    }
+  ]
+}

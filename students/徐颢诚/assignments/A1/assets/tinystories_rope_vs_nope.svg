@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="570" viewBox="0 0 960 570">
+<rect width="100%" height="100%" fill="white"/>
+<style>text{font-family:sans-serif;fill:#1f2937}.tick{font-size:13px}</style>
+<text x="480.0" y="32" text-anchor="middle" font-size="20" font-weight="bold">TinyStories position-encoding ablation</text>
+<line x1="88" y1="492" x2="920" y2="492" stroke="#374151"/>
+<line x1="88" y1="72" x2="88" y2="492" stroke="#374151"/>
+<line x1="88" y1="492.00" x2="920" y2="492.00" stroke="#e5e7eb"/>
+<text class="tick" x="78" y="496.00" text-anchor="end">1.20</text>
+<line x1="88" y1="408.00" x2="920" y2="408.00" stroke="#e5e7eb"/>
+<text class="tick" x="78" y="412.00" text-anchor="end">1.79</text>
+<line x1="88" y1="324.00" x2="920" y2="324.00" stroke="#e5e7eb"/>
+<text class="tick" x="78" y="328.00" text-anchor="end">2.38</text>
+<line x1="88" y1="240.00" x2="920" y2="240.00" stroke="#e5e7eb"/>
+<text class="tick" x="78" y="244.00" text-anchor="end">2.97</text>
+<line x1="88" y1="156.00" x2="920" y2="156.00" stroke="#e5e7eb"/>
+<text class="tick" x="78" y="160.00" text-anchor="end">3.57</text>
+<line x1="88" y1="72.00" x2="920" y2="72.00" stroke="#e5e7eb"/>
+<text class="tick" x="78" y="76.00" text-anchor="end">4.16</text>
+<line x1="88.00" y1="492" x2="88.00" y2="497" stroke="#374151"/>
+<text class="tick" x="88.00" y="518" text-anchor="middle">0M</text>
+<line x1="254.40" y1="492" x2="254.40" y2="497" stroke="#374151"/>
+<text class="tick" x="254.40" y="518" text-anchor="middle">66M</text>
+<line x1="420.80" y1="492" x2="420.80" y2="497" stroke="#374151"/>
+<text class="tick" x="420.80" y="518" text-anchor="middle">131M</text>
+<line x1="587.20" y1="492" x2="587.20" y2="497" stroke="#374151"/>
+<text class="tick" x="587.20" y="518" text-anchor="middle">197M</text>
+<line x1="753.60" y1="492" x2="753.60" y2="497" stroke="#374151"/>
+<text class="tick" x="753.60" y="518" text-anchor="middle">262M</text>
+<line x1="920.00" y1="492" x2="920.00" y2="497" stroke="#374151"/>
+<text class="tick" x="920.00" y="518" text-anchor="middle">328M</text>
+<polyline points="104.64,124.08 121.28,272.00 137.92,330.16 154.56,359.91 171.20,381.06 187.84,389.92 204.48,402.36 221.12,402.45 237.76,411.05 254.40,414.87 271.04,418.66 287.68,424.04 304.32,424.25 320.96,426.78 337.60,432.66 354.24,432.73 370.88,434.33 387.52,437.68 404.16,437.52 420.80,437.92 437.44,442.84 454.08,442.72 470.72,441.83 487.36,444.61 504.00,448.60 520.64,447.57 537.28,448.91 553.92,449.71 570.56,451.05 587.20,451.41 603.84,447.09 620.48,456.25 637.12,451.65 653.76,453.40 670.40,455.75 687.04,458.09 703.68,457.67 720.32,459.53 736.96,457.80 753.60,459.62 770.24,456.24 786.88,458.99 803.52,459.36 820.16,460.50 836.80,458.71 853.44,463.03 870.08,460.66 886.72,460.98 903.36,461.70 920.00,459.00" fill="none" stroke="#2563eb" stroke-width="3"/>
+<line x1="104" y1="80" x2="128" y2="80" stroke="#2563eb" stroke-width="3"/>
+<text class="tick" x="134" y="85">RoPE</text>
+<polyline points="104.64,100.97 121.28,204.30 137.92,280.31 154.56,323.32 171.20,351.15 187.84,364.29 204.48,380.55 221.12,382.74 237.76,393.18 254.40,396.74 271.04,402.27 287.68,408.44 304.32,408.74 320.96,411.51 337.60,418.29 354.24,418.86 370.88,420.38 387.52,424.63 404.16,424.46 420.80,425.21 437.44,430.29 454.08,430.79 470.72,429.89 487.36,432.64 504.00,437.16 520.64,435.84 537.28,437.88 553.92,438.43 570.56,440.28 587.20,440.30 603.84,436.11 620.48,445.92 637.12,441.22 653.76,442.98 670.40,445.16 687.04,448.17 703.68,447.48 720.32,449.57 736.96,447.60 753.60,449.98 770.24,446.26 786.88,448.85 803.52,449.73 820.16,450.70 836.80,448.83 853.44,453.20 870.08,450.62 886.72,451.47 903.36,452.34 920.00,449.27" fill="none" stroke="#dc2626" stroke-width="3"/>
+<line x1="222" y1="80" x2="246" y2="80" stroke="#dc2626" stroke-width="3"/>
+<text class="tick" x="252" y="85">NoPE</text>
+<text x="480.0" y="550" text-anchor="middle" font-size="15">processed training tokens</text>
+<text x="22" y="285.0" text-anchor="middle" font-size="15" transform="rotate(-90 22 285.0)">validation cross-entropy loss (per token)</text>
+</svg>

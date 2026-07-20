@@ -1,0 +1,18 @@
+{
+  "base": "tinystories_final.json",
+  "run_name": "tinystories_ablation_no_rmsnorm_low_lr",
+  "output_dir": "runs/tinystories_ablation_no_rmsnorm_low_lr",
+  "optimizer": {
+    "max_lr": 0.00030000000000000003,
+    "min_lr": 3.0000000000000004e-05,
+    "warmup_iters": 1000,
+    "cosine_cycle_iters": 10000
+  },
+  "training": {
+    "save_checkpoints": false,
+    "save_best": false
+  },
+  "ablation": {
+    "remove_rmsnorm": true
+  }
+}

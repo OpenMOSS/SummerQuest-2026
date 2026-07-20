@@ -1,0 +1,13 @@
+{
+  "input": "data/raw/owt_valid.txt",
+  "output": "data/encoded/cross/owt_valid_with_tinystories.bin",
+  "dtype": "uint16",
+  "token_count": 91369966,
+  "source_bytes": 289998753,
+  "compression_ratio_bytes_per_token": 3.1738958182385666,
+  "wall_clock_sec": 32.66473405994475,
+  "throughput_bytes_per_sec": 8878037.83681184,
+  "num_processes": 32,
+  "output_sha256": "2d9c06c8f9076cb13856e3fa7e889943a3b7ef60c28d286a082eb7ff6bff43bf",
+  "peak_rss_mb": 444.35546875
+}

@@ -1,0 +1,11 @@
+{
+    "extends": "tinystories_baseline.json",
+    "experiment_name": "tinystories_no_rmsnorm",
+    "model": {
+        "norm_mode": "none"
+    },
+    "training": {
+        "log_dir": "logs/ablations/tinystories_no_rmsnorm",
+        "checkpoint_dir": "artifacts/checkpoints/ablations/tinystories_no_rmsnorm"
+    }
+}

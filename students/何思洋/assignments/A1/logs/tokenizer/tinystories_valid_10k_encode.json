@@ -1,0 +1,12 @@
+{
+  "tokenizer_path": "artifacts/tokenizers/tinystories_train_10k.json",
+  "input_path": "data/TinyStoriesV2-GPT4-valid.txt",
+  "output_path": "artifacts/encoded/tinystories_valid_10k.npy",
+  "dtype": "uint16",
+  "tokens": 5461210,
+  "bytes": 22502601,
+  "compression_ratio_bytes_per_token": 4.120442356181139,
+  "encode_wall_clock_sec": 36.05200497619808,
+  "throughput_tokens_per_sec": 151481.4502995201,
+  "throughput_bytes_per_sec": 624170.5839898908
+}

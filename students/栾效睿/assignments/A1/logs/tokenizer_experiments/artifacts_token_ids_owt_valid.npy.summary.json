@@ -1,0 +1,14 @@
+{
+  "input_path": "data/owt_valid.txt",
+  "output_path": "artifacts/token_ids/owt_valid.npy",
+  "tokenizer": "OWT 32K",
+  "vocab_path": "artifacts/owt_train_bpe/vocab.json",
+  "merges_path": "artifacts/owt_train_bpe/merges.json",
+  "dtype": "uint16",
+  "tokens": 66401098,
+  "bytes": 289998753,
+  "bytes_per_token": 4.367378879789006,
+  "include_delimiter": true,
+  "workers": 10,
+  "batch_bytes": 8388608
+}

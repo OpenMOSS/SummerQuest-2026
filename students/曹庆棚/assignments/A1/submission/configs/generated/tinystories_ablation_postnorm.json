@@ -1,0 +1,12 @@
+{
+  "base": "tinystories_final.json",
+  "run_name": "tinystories_ablation_postnorm",
+  "output_dir": "runs/tinystories_ablation_postnorm",
+  "training": {
+    "save_checkpoints": false,
+    "save_best": false
+  },
+  "ablation": {
+    "use_post_norm": true
+  }
+}

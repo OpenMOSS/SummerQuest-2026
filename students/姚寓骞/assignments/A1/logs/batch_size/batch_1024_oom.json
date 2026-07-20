@@ -1,0 +1,5 @@
+{
+  "batch_size": 1024,
+  "status": "out_of_memory",
+  "maximum_successful_batch_size": 512
+}

@@ -1,0 +1,29 @@
+{
+    "groups": {
+        "lr_sweep": [
+            "tinystories_lr_1e-4.json",
+            "tinystories_lr_3e-4.json",
+            "tinystories_lr_1e-3.json",
+            "tinystories_lr_high.json"
+        ],
+        "batch_size": [
+            "tinystories_batch_1.json",
+            "tinystories_batch_64.json",
+            "tinystories_batch_128.json"
+        ],
+        "ablations": [
+            "tinystories_no_rmsnorm.json",
+            "tinystories_no_rmsnorm_low_lr.json",
+            "tinystories_post_norm.json",
+            "tinystories_nope.json",
+            "tinystories_silu.json"
+        ],
+        "main": [
+            "tinystories_baseline.json",
+            "owt_baseline.json"
+        ],
+        "leaderboard": [
+            "owt_leaderboard.json"
+        ]
+    }
+}

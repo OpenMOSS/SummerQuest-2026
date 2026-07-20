@@ -1,0 +1,95 @@
+{
+  "output_dir": "artifacts/architecture_ablations",
+  "baseline_run_dir": "artifacts/batch_size_sweep_mps/bs_64",
+  "report_target_loss": 2.0,
+  "base_config": {
+    "train_data": "artifacts/tinystories_10k/train.bin",
+    "valid_data": "artifacts/tinystories_10k/valid.bin",
+    "vocab_size": 10000,
+    "token_dtype": "auto",
+    "context_length": 256,
+    "d_model": 512,
+    "d_ff": 1344,
+    "num_layers": 4,
+    "num_heads": 16,
+    "rope_theta": 10000.0,
+    "norm_position": "pre",
+    "position_encoding": "rope",
+    "ffn_type": "swiglu",
+    "batch_size": 64,
+    "total_tokens": 40960000,
+    "learning_rate": 0.003,
+    "min_lr_ratio": 0.1,
+    "warmup_steps": 250,
+    "beta1": 0.9,
+    "beta2": 0.95,
+    "adam_eps": 1e-8,
+    "weight_decay": 0.1,
+    "grad_clip": 1.0,
+    "eval_interval": 250,
+    "eval_batches": 20,
+    "eval_batch_size": 32,
+    "log_interval": 12,
+    "seed": 42,
+    "device": "mps",
+    "amp_dtype": "none",
+    "compile_model": true,
+    "checkpoint": "none",
+    "divergence_threshold": 100.0,
+    "divergence_factor": 3.0
+  },
+  "variants": [
+    {
+      "name": "no_norm_lr_0p003",
+      "label": "No RMSNorm (lr=0.003)",
+      "category": "layer_norm",
+      "overrides": {
+        "norm_position": "none",
+        "learning_rate": 0.003
+      }
+    },
+    {
+      "name": "no_norm_lr_0p001",
+      "label": "No RMSNorm (lr=0.001)",
+      "category": "layer_norm",
+      "overrides": {
+        "norm_position": "none",
+        "learning_rate": 0.001
+      }
+    },
+    {
+      "name": "no_norm_lr_0p0003",
+      "label": "No RMSNorm (lr=0.0003)",
+      "category": "layer_norm",
+      "overrides": {
+        "norm_position": "none",
+        "learning_rate": 0.0003
+      }
+    },
+    {
+      "name": "post_norm_lr_0p003",
+      "label": "Post-norm (lr=0.003)",
+      "category": "post_norm",
+      "overrides": {
+        "norm_position": "post"
+      }
+    },
+    {
+      "name": "nope_lr_0p003",
+      "label": "NoPE (lr=0.003)",
+      "category": "position",
+      "overrides": {
+        "position_encoding": "none"
+      }
+    },
+    {
+      "name": "silu_lr_0p003",
+      "label": "SiLU d_ff=2048 (lr=0.003)",
+      "category": "ffn",
+      "overrides": {
+        "ffn_type": "silu",
+        "d_ff": 2048
+      }
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "dataset": "tinystories",
+  "created_at_utc": "2026-07-14T11:28:54.627578+00:00",
+  "checkpoint_omitted_from_public_submission": true,
+  "samples": [
+    {
+      "name": "once_upon_temp04",
+      "prompt": "Once upon a time",
+      "temperature": 0.4,
+      "top_p": 0.95,
+      "seed": 0,
+      "max_new_tokens": 256,
+      "output": "once_upon_temp04.txt",
+      "return_code": 0
+    },
+    {
+      "name": "once_upon_temp08",
+      "prompt": "Once upon a time",
+      "temperature": 0.8,
+      "top_p": 0.95,
+      "seed": 0,
+      "max_new_tokens": 256,
+      "output": "once_upon_temp08.txt",
+      "return_code": 0
+    },
+    {
+      "name": "once_upon_temp11",
+      "prompt": "Once upon a time",
+      "temperature": 1.1,
+      "top_p": 0.95,
+      "seed": 0,
+      "max_new_tokens": 256,
+      "output": "once_upon_temp11.txt",
+      "return_code": 0
+    },
+    {
+      "name": "little_dragon_seed7",
+      "prompt": "There was a little dragon who",
+      "temperature": 0.8,
+      "top_p": 0.95,
+      "seed": 7,
+      "max_new_tokens": 256,
+      "output": "little_dragon_seed7.txt",
+      "return_code": 0
+    }
+  ]
+}

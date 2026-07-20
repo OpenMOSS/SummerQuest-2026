@@ -1,0 +1,9 @@
+{
+  "run_name": "lr_divergent_3e-2",
+  "seed": 42,
+  "device": "cuda",
+  "output_dir": "runs/lr_sweep/lr_divergent_3e-2",
+  "data": {"train": "data/tinystories_train.bin", "validation": "data/tinystories_valid.bin"},
+  "model": {"vocab_size": 10000, "context_length": 256, "d_model": 512, "d_ff": 1344, "num_layers": 4, "num_heads": 16, "rope_theta": 10000.0},
+  "training": {"batch_size": 128, "steps": 500, "max_lr": 0.03, "min_lr": 0.003, "warmup_steps": 10, "cosine_steps": 500, "betas": [0.9, 0.95], "eps": 1e-8, "weight_decay": 0.1, "grad_clip": 1.0, "amp_dtype": "bfloat16", "compile": false, "log_interval": 10, "val_interval": 100, "val_batches": 10, "checkpoint_interval": 500}
+}

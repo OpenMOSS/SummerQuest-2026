@@ -1,0 +1,18 @@
+{
+  "run_name": "tinystories_baseline",
+  "dataset": "TinyStories",
+  "final_val_loss": 1.3826433837413787,
+  "total_training_time_sec": 3114.889231013134,
+  "config": {
+    "vocab_size": 10000,
+    "context_length": 256,
+    "d_model": 512,
+    "d_ff": 1344,
+    "num_layers": 4,
+    "num_heads": 16,
+    "batch_size": 128,
+    "total_steps": 10000
+  },
+  "checkpoint_included": false,
+  "log": "logs/tinystories_baseline/train.jsonl"
+}

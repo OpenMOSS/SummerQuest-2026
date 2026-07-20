@@ -1,0 +1,43 @@
+{
+  "seed": 42,
+  "device": "cuda",
+  "data": {
+    "train_path": "../data/tinystories_train_uint16.bin",
+    "val_path": "../data/tinystories_valid_uint16.bin",
+    "dtype": "uint16"
+  },
+  "model": {
+    "vocab_size": 10000,
+    "context_length": 256,
+    "d_model": 512,
+    "num_layers": 4,
+    "num_heads": 16,
+    "d_ff": 1344,
+    "rope_theta": 10000,
+    "norm_mode": "pre",
+    "position_mode": "rope",
+    "ffn_mode": "swiglu"
+  },
+  "optimizer": {
+    "betas": [0.9, 0.999],
+    "eps": 1e-8,
+    "weight_decay": 0.01
+  },
+  "training": {
+    "batch_size": 64,
+    "max_steps": 2000,
+    "max_learning_rate": 0.003,
+    "min_learning_rate": 0.0003,
+    "warmup_iters": 100,
+    "cosine_cycle_iters": 2000,
+    "max_l2_norm": 1.0,
+    "log_interval": 20,
+    "eval_interval": 100,
+    "eval_batches": 20,
+    "checkpoint_interval": null
+  },
+  "output": {
+    "log_path": "../runs/tinystories_ablation_control/metrics.jsonl",
+    "checkpoint_path": "../runs/tinystories_ablation_control/checkpoint.pt"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "run_name": "tinystories",
+  "dataset": "TinyStories",
+  "status": "completed",
+  "started_at_utc": "2026-07-15T08:29:23.533682+00:00",
+  "ended_at_utc": "2026-07-15T08:29:55.937178+00:00",
+  "wall_clock_sec": 32.40336404100526,
+  "input_path": "data/TinyStoriesV2-GPT4-train.txt",
+  "input_bytes": 2227753162,
+  "vocab_size_requested": 10000,
+  "vocab_size_actual": 10000,
+  "merge_count": 9743,
+  "special_tokens": [
+    "<|endoftext|>"
+  ],
+  "workers": 10,
+  "target_batch_bytes": 67108864,
+  "output_dir": "artifacts/TinyStories_train_bpe",
+  "vocab_path": "artifacts/TinyStories_train_bpe/vocab.json",
+  "merges_path": "artifacts/TinyStories_train_bpe/merges.json",
+  "vocab_sha256": "6baa539da6d7313cbdc3f9d818d6ddc5e5a802f37edd18319d91c6ef91f2749c",
+  "merges_sha256": "68b7f84159e868b61be6fbf948a34f4e4659e9e4c35833741b9809418ad1efa0",
+  "max_rss_bytes": 1519353856,
+  "longest_tokens": [
+    {
+      "id": 7160,
+      "byte_length": 15,
+      "text": " accomplishment",
+      "hex": "206163636f6d706c6973686d656e74"
+    },
+    {
+      "id": 9143,
+      "byte_length": 15,
+      "text": " disappointment",
+      "hex": "206469736170706f696e746d656e74"
+    },
+    {
+      "id": 9379,
+      "byte_length": 15,
+      "text": " responsibility",
+      "hex": "20726573706f6e736962696c697479"
+    }
+  ]
+}

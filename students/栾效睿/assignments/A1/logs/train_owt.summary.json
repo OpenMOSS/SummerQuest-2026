@@ -1,0 +1,30 @@
+{
+  "best_val_loss": 3.3907001316547394,
+  "checkpoint_dir": "checkpoint/owt",
+  "final_step": 22822,
+  "final_train_loss": 3.3315012454986572,
+  "final_val_loss": 3.3907001316547394,
+  "key_config": {
+    "autocast_dtype": "bfloat16",
+    "batch_size": 128,
+    "context_length": 512,
+    "d_ff": 2048,
+    "d_model": 768,
+    "ffn_type": "swiglu",
+    "lr_max": 0.003,
+    "max_wall_clock_sec": 5400.0,
+    "norm_mode": "pre",
+    "num_heads": 8,
+    "num_layers": 8,
+    "torch_compile": true,
+    "torch_compile_enabled": true,
+    "use_rope": true,
+    "vocab_size": 32000
+  },
+  "log_path": "logs/train_owt.jsonl",
+  "processed_tokens": 1495662592,
+  "run_name": "train_owt",
+  "status": "time_limit",
+  "stop_reason": "max_wall_clock_sec",
+  "wall_clock_sec": 5401.612870124169
+}
