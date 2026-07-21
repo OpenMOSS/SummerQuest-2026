@@ -11,11 +11,12 @@
    python scripts/create_student.py --name '<同学真名>' --github '<GitHub ID>'
    ```
 
-3. A1 和正式开放后的 A2-P 使用作业脚手架创建提交目录：
+3. A1 和正式开放后的 A2-P、A2-K 使用作业脚手架创建提交目录：
 
    ```bash
    python scripts/create_assignment.py --name '<同学真名>' --assignment A1
    # A2-P 正式开放后：--assignment A2-P
+   # A2-K 正式开放后：--assignment A2-K
    ```
 
    A1 开始前先把官方仓库下载到固定兄弟目录 `../assignment1-basics`。实现和测试在该目录
@@ -26,7 +27,7 @@
    ```
 
 4. 从最新 `upstream/main` 创建 `a0/<GitHub ID>`、`a1/<GitHub ID>` 或正式开放后的
-   `a2-p/<GitHub ID>` 分支。
+   `a2-p/<GitHub ID>`、`a2-k/<GitHub ID>` 分支。
 5. 一个 PR 只修改一个同学的一次作业。
 6. GitHub `README.md` 是公开主报告，并在其中填写组织内公开的飞书补充文档链接；代码、
    日志等其他文件按对应正式题面提交。
@@ -37,6 +38,10 @@ A1 的目录和必交文件见 [A1 正式题面](assignments/A1/README.md)。
 A2-P 当前是发布候选稿，不接收学生 PR。维护者可使用固定兄弟目录
 `../assignment2-systems` 测试 A2-P 脚手架和校验器；正式开放时间以
 [A2-P 题面状态](assignments/A2-P/README.md)和课程通知为准。
+
+A2-K 当前也是发布候选稿，不接收学生 PR。它与 A2-P 共用 `../assignment2-systems`，但使用
+独立同步脚本、个人目录和 PR；正式开放时间以
+[A2-K 题面状态](assignments/A2-K/README.md)和课程通知为准。
 
 ## Profile PR
 

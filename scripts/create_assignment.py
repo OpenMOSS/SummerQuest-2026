@@ -9,11 +9,13 @@ import shutil
 from pathlib import Path
 
 from a1_source import copy_submission, validate_source
+from a2k_source import copy_submission as copy_a2k_submission
+from a2k_source import validate_source as validate_a2k_source
 from a2p_source import copy_profiling, validate_source as validate_a2p_source
 
 
 ROOT = Path(__file__).resolve().parents[1]
-ASSIGNMENT = re.compile(r"A(?:1|2-P|[3-6])")
+ASSIGNMENT = re.compile(r"A(?:1|2-[KP]|[3-6])")
 
 
 def parse_args() -> argparse.Namespace:
@@ -22,7 +24,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--assignment",
         required=True,
-        help="assignment identifier: A1, A2-P, or A3-A6",
+        help="assignment identifier: A1, A2-P, A2-K, or A3-A6",
     )
     return parser.parse_args()
 
@@ -42,7 +44,7 @@ def create_assignment(root: Path, name: str, assignment: str) -> Path:
     validate_name(name)
     if not ASSIGNMENT.fullmatch(assignment):
         raise ValueError(
-            "--assignment must be A1, A2-P, or A3-A6; "
+            "--assignment must be A1, A2-P, A2-K, or A3-A6; "
             "A0 is created by create_student.py"
         )
 
@@ -60,9 +62,12 @@ def create_assignment(root: Path, name: str, assignment: str) -> Path:
         raise FileNotFoundError(f"assignment template is missing: {template_report}")
 
     a1_source: Path | None = None
+    a2k_source: Path | None = None
     a2p_source: Path | None = None
     if assignment == "A1":
         a1_source = validate_source(root)
+    elif assignment == "A2-K":
+        a2k_source = validate_a2k_source(root)
     elif assignment == "A2-P":
         a2p_source = validate_a2p_source(root)
 
@@ -77,6 +82,11 @@ def create_assignment(root: Path, name: str, assignment: str) -> Path:
         submission = destination / "submission"
         copy_submission(a1_source, submission)
         (destination / "logs").mkdir()
+        (destination / "assets").mkdir()
+    elif assignment == "A2-K":
+        assert a2k_source is not None
+        copy_a2k_submission(a2k_source, destination / "submission")
+        (destination / "results").mkdir()
         (destination / "assets").mkdir()
     elif assignment == "A2-P":
         assert a2p_source is not None
@@ -113,6 +123,12 @@ def main() -> int:
         print(
             "A1 workspace: ../assignment1-basics. Work and test there, then run "
             "python3 scripts/sync_a1_submission.py --name '<同学真名>'."
+        )
+    elif args.assignment.strip().upper() == "A2-K":
+        print(
+            "A2-K workspace: ../assignment2-systems. Run official tests and "
+            "benchmarks there, then run python3 scripts/sync_a2k_submission.py "
+            "--name '<同学真名>'."
         )
     elif args.assignment.strip().upper() == "A2-P":
         print(
