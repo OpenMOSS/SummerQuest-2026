@@ -55,6 +55,23 @@ PR。
 - [ ] 未提交 `.nsys-rep`、snapshot、完整 trace、权重、数据、压缩包、上游代码或依赖环境。
 - [ ] `results/` 与 `assets/` 合计不超过 2 MiB，Profile 只保留关键汇总与截图。
 
+## A2-K 额外检查
+
+若本 PR 不是 A2-K，请将本节标记为不适用。A2-K 在题面状态改为“已发布”前不接收学生
+PR。
+
+- [ ] 已提交 Markdown `README.md`、A2-K Python allowlist、全部规定的轻量 `results/`
+      和至少两张被报告引用的压缩图片。
+- [ ] 已运行 `scripts/sync_a2k_submission.py`、官方 GPU tests 和
+      `scripts/validate_repo.py`，且没有把 CUDA skip 写成 pass。
+- [ ] 正式矩阵来自单张 RTX 4090 24GB；各脚本独立串行执行，并在首次 CUDA allocation
+      前设置 23552 MiB allocator 上限。
+- [ ] `memory_evidence.json` 已记录 allocator limit/fraction、peak allocated/reserved 和
+      24 GiB 判定。
+- [ ] 仓库外源码与资料引用使用固定 commit 的 GitHub HTTPS 绝对 URL，未使用本机或跨仓库相对链接。
+- [ ] 未提交 compile cache、PTX/CUBIN、binary、完整日志/采样、权重、数据、压缩包、上游代码或依赖环境。
+- [ ] `results/` 与 `assets/` 合计不超过 2 MiB，关键数字可回到轻量结果与命令。
+
 ## 给助教的说明
 
 <说明未完成项、环境限制或希望重点审核的内容。不要粘贴密钥和内部地址。>
