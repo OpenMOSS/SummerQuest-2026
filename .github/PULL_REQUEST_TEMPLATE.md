@@ -41,6 +41,20 @@
 - [ ] 已在个人服务器实际运行 `nvidia-smi` 与 `gpustat` 并记录退出码。
 - [ ] A0 的组内验收材料已放入 README 链接的飞书补充文档。
 
+## A2-P 额外检查
+
+若本 PR 不是 A2-P，请将本节标记为不适用。A2-P 在题面状态改为“已发布”前不接收学生
+PR。
+
+- [ ] 已提交 Markdown `README.md`、`submission/profiling/**/*.py`、规定的轻量
+      `results/` 和至少三张被报告引用的裁剪、压缩图片。
+- [ ] 已运行 `scripts/sync_a2p_submission.py` 和 `scripts/validate_repo.py`。
+- [ ] 已使用 nsys 或 `torch.profiler` 完成两个模型规模 × 三个 context 的六个
+      `train_step` trace。
+- [ ] 仓库外源码与资料引用使用固定 commit 的 GitHub HTTPS 绝对 URL，未使用本机或跨仓库相对链接。
+- [ ] 未提交 `.nsys-rep`、snapshot、完整 trace、权重、数据、压缩包、上游代码或依赖环境。
+- [ ] `results/` 与 `assets/` 合计不超过 2 MiB，Profile 只保留关键汇总与截图。
+
 ## 给助教的说明
 
 <说明未完成项、环境限制或希望重点审核的内容。不要粘贴密钥和内部地址。>

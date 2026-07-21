@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Create one A1-A6 student assignment directory from the public template."""
+"""Create one supported student assignment directory from its public template."""
 
 from __future__ import annotations
 
@@ -9,16 +9,21 @@ import shutil
 from pathlib import Path
 
 from a1_source import copy_submission, validate_source
+from a2p_source import copy_profiling, validate_source as validate_a2p_source
 
 
 ROOT = Path(__file__).resolve().parents[1]
-ASSIGNMENT = re.compile(r"A[1-6]")
+ASSIGNMENT = re.compile(r"A(?:1|2-P|[3-6])")
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument("--name", required=True, help="student's real name directory")
-    parser.add_argument("--assignment", required=True, help="assignment number, A1-A6")
+    parser.add_argument(
+        "--assignment",
+        required=True,
+        help="assignment identifier: A1, A2-P, or A3-A6",
+    )
     return parser.parse_args()
 
 
@@ -37,7 +42,8 @@ def create_assignment(root: Path, name: str, assignment: str) -> Path:
     validate_name(name)
     if not ASSIGNMENT.fullmatch(assignment):
         raise ValueError(
-            "--assignment must be one of A1-A6; A0 is created by create_student.py"
+            "--assignment must be A1, A2-P, or A3-A6; "
+            "A0 is created by create_student.py"
         )
 
     student = root / "students" / name
@@ -47,18 +53,18 @@ def create_assignment(root: Path, name: str, assignment: str) -> Path:
         )
 
     generic_template = root / "students" / "_assignment_template"
-    template = (
-        root / "students" / "_assignment_templates" / "A1"
-        if assignment == "A1"
-        else generic_template
-    )
+    specific_template = root / "students" / "_assignment_templates" / assignment
+    template = specific_template if specific_template.is_dir() else generic_template
     template_report = template / "README.md"
     if not template_report.is_file():
         raise FileNotFoundError(f"assignment template is missing: {template_report}")
 
     a1_source: Path | None = None
+    a2p_source: Path | None = None
     if assignment == "A1":
         a1_source = validate_source(root)
+    elif assignment == "A2-P":
+        a2p_source = validate_a2p_source(root)
 
     destination = student / "assignments" / assignment
     if destination.exists():
@@ -72,6 +78,15 @@ def create_assignment(root: Path, name: str, assignment: str) -> Path:
         copy_submission(a1_source, submission)
         (destination / "logs").mkdir()
         (destination / "assets").mkdir()
+    elif assignment == "A2-P":
+        assert a2p_source is not None
+        copy_profiling(a2p_source, destination / "submission" / "profiling")
+        for relative in (
+            "results/profile",
+            "results/memory",
+            "assets",
+        ):
+            (destination / relative).mkdir(parents=True)
 
     replacements = {
         "<姓名>": name,
@@ -98,6 +113,12 @@ def main() -> int:
         print(
             "A1 workspace: ../assignment1-basics. Work and test there, then run "
             "python3 scripts/sync_a1_submission.py --name '<同学真名>'."
+        )
+    elif args.assignment.strip().upper() == "A2-P":
+        print(
+            "A2-P workspace: ../assignment2-systems. Keep raw profiler artifacts "
+            "there, then run python3 scripts/sync_a2p_submission.py "
+            "--name '<同学真名>'."
         )
     return 0
 
