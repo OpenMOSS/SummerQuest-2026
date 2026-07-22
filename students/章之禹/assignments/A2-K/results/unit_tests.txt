@@ -1,0 +1,15 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.11, pytest-8.4.1, pluggy-1.6.0
+rootdir: assignment2-systems
+configfile: pyproject.toml
+plugins: jaxtyping-0.3.11, anyio-4.10.0, typeguard-4.4.4
+collected 6 items
+
+tests/test_attention.py::test_flash_forward_pass_pytorch PASSED
+tests/test_attention.py::test_flash_forward_pass_triton[False] PASSED
+tests/test_attention.py::test_flash_forward_pass_triton[True] PASSED
+tests/test_attention.py::test_flash_backward_pytorch PASSED
+tests/test_attention.py::test_flash_backward_triton[False] PASSED
+tests/test_attention.py::test_flash_backward_triton[True] PASSED
+
+============================== 6 passed in 2.12s ===============================

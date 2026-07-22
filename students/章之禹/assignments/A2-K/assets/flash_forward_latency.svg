@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1345" height="560" viewBox="0 0 1345 560">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="80" y="34" font-family="sans-serif" font-size="22" font-weight="600">Flash forward p50 latency across core and 16384 boundary shapes</text>
+<text x="18" y="265.0" transform="rotate(-90 18 265.0)" font-family="sans-serif" font-size="14">p50 latency (ms)</text>
+<line x1="80" y1="460" x2="1315" y2="460" stroke="#333"/>
+<line x1="80" y1="70" x2="80" y2="460" stroke="#333"/>
+<rect x="95.20" y="452.35" width="64.60" height="7.65" fill="#3973ac"/>
+<text x="127.50" y="447.35" text-anchor="middle" font-family="sans-serif" font-size="11">0.2</text>
+<text x="127.50" y="484" text-anchor="end" transform="rotate(-35 127.50 484)" font-family="sans-serif" font-size="11">512x64 eager</text>
+<rect x="190.20" y="453.30" width="64.60" height="6.70" fill="#3973ac"/>
+<text x="222.50" y="448.30" text-anchor="middle" font-family="sans-serif" font-size="11">0.1</text>
+<text x="222.50" y="484" text-anchor="end" transform="rotate(-35 222.50 484)" font-family="sans-serif" font-size="11">512x64 compiled</text>
+<rect x="285.20" y="455.97" width="64.60" height="4.03" fill="#3973ac"/>
+<text x="317.50" y="450.97" text-anchor="middle" font-family="sans-serif" font-size="11">0.1</text>
+<text x="317.50" y="484" text-anchor="end" transform="rotate(-35 317.50 484)" font-family="sans-serif" font-size="11">512x64 triton</text>
+<rect x="380.20" y="452.44" width="64.60" height="7.56" fill="#3973ac"/>
+<text x="412.50" y="447.44" text-anchor="middle" font-family="sans-serif" font-size="11">0.2</text>
+<text x="412.50" y="484" text-anchor="end" transform="rotate(-35 412.50 484)" font-family="sans-serif" font-size="11">2048x128 eager</text>
+<rect x="475.20" y="453.20" width="64.60" height="6.80" fill="#3973ac"/>
+<text x="507.50" y="448.20" text-anchor="middle" font-family="sans-serif" font-size="11">0.1</text>
+<text x="507.50" y="484" text-anchor="end" transform="rotate(-35 507.50 484)" font-family="sans-serif" font-size="11">2048x128 compiled</text>
+<rect x="570.20" y="452.60" width="64.60" height="7.40" fill="#3973ac"/>
+<text x="602.50" y="447.60" text-anchor="middle" font-family="sans-serif" font-size="11">0.2</text>
+<text x="602.50" y="484" text-anchor="end" transform="rotate(-35 602.50 484)" font-family="sans-serif" font-size="11">2048x128 triton</text>
+<rect x="665.20" y="375.29" width="64.60" height="84.71" fill="#3973ac"/>
+<text x="697.50" y="370.29" text-anchor="middle" font-family="sans-serif" font-size="11">1.8</text>
+<text x="697.50" y="484" text-anchor="end" transform="rotate(-35 697.50 484)" font-family="sans-serif" font-size="11">8192x128 eager</text>
+<rect x="760.20" y="430.31" width="64.60" height="29.69" fill="#3973ac"/>
+<text x="792.50" y="425.31" text-anchor="middle" font-family="sans-serif" font-size="11">0.6</text>
+<text x="792.50" y="484" text-anchor="end" transform="rotate(-35 792.50 484)" font-family="sans-serif" font-size="11">8192x128 compiled</text>
+<rect x="855.20" y="434.17" width="64.60" height="25.83" fill="#3973ac"/>
+<text x="887.50" y="429.17" text-anchor="middle" font-family="sans-serif" font-size="11">0.6</text>
+<text x="887.50" y="484" text-anchor="end" transform="rotate(-35 887.50 484)" font-family="sans-serif" font-size="11">8192x128 triton</text>
+<rect x="950.20" y="123.02" width="64.60" height="336.98" fill="#3973ac"/>
+<text x="982.50" y="118.02" text-anchor="middle" font-family="sans-serif" font-size="11">7.2</text>
+<text x="982.50" y="484" text-anchor="end" transform="rotate(-35 982.50 484)" font-family="sans-serif" font-size="11">16384x64 eager</text>
+<rect x="1045.20" y="431.41" width="64.60" height="28.59" fill="#3973ac"/>
+<text x="1077.50" y="426.41" text-anchor="middle" font-family="sans-serif" font-size="11">0.6</text>
+<text x="1077.50" y="484" text-anchor="end" transform="rotate(-35 1077.50 484)" font-family="sans-serif" font-size="11">16384x64 triton</text>
+<rect x="1140.20" y="120.87" width="64.60" height="339.13" fill="#3973ac"/>
+<text x="1172.50" y="115.87" text-anchor="middle" font-family="sans-serif" font-size="11">7.3</text>
+<text x="1172.50" y="484" text-anchor="end" transform="rotate(-35 1172.50 484)" font-family="sans-serif" font-size="11">16384x128 eager</text>
+<rect x="1235.20" y="342.91" width="64.60" height="117.09" fill="#3973ac"/>
+<text x="1267.50" y="337.91" text-anchor="middle" font-family="sans-serif" font-size="11">2.5</text>
+<text x="1267.50" y="484" text-anchor="end" transform="rotate(-35 1267.50 484)" font-family="sans-serif" font-size="11">16384x128 triton</text>
+<text x="80" y="542" font-family="sans-serif" font-size="12">OOM/failed rows are omitted from bars and retained in CSV.</text>
+</svg>
