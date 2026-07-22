@@ -166,6 +166,10 @@ class RoPE(Module):
             dtype=torch.float32,
         )
 
+        if x.ndim==4 and cos.ndim==3:
+            cos = cos.unsqueeze(1)
+            sin = sin.unsqueeze(1)
+
         x_float = x.to(torch.float32)
 
         x_even = x_float[..., 0::2]
