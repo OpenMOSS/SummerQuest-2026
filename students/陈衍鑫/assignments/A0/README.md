@@ -5,7 +5,7 @@
 ## GitHub 与 PR
 
 - 分支：`a0/SSSSuperC`
-- Git 操作总结：已从公开仓库创建本地工作副本，将个人 fork 配置为 `origin`、OpenMOSS 主仓配置为 `upstream`，使用脚手架生成 `students/陈衍鑫/`，并在 `a0/SSSSuperC` 分支整理 A0 提交内容。提交范围只包含个人目录；push 后在 GitHub 创建指向上游 `main` 的 PR。
+- Git 操作总结：已从公开仓库创建本地工作副本，将个人 fork 配置为 `origin`、OpenMOSS 主仓配置为 `upstream`，使用脚手架生成 `students/陈衍鑫/`，并在 `a0/SSSSuperC` 分支整理 A0 提交内容。提交范围只包含个人目录，已 push 到个人 fork；PR 从该分支创建并指向上游 `main`。
 
 ## Linux 环境摘要
 
