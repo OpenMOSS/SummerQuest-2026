@@ -1,0 +1,8 @@
+{
+  "input_path": "data/owt_train.txt",
+  "vocab_size": 32000,
+  "special_tokens": ["<|endoftext|>"],
+  "num_workers": 4,
+  "stats_sample_path": "tests/fixtures/corpus.en",
+  "stats_sample_bytes": 5000000
+}

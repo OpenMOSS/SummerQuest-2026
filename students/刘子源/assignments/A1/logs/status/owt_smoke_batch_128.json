@@ -1,0 +1,15 @@
+{
+  "run_name": "owt_smoke_batch_128",
+  "config": "<local-path-omitted>/owt_smoke_batch_128.json",
+  "output_dir": "<local-path-omitted>/owt_smoke_batch_128",
+  "console_log": "<local-path-omitted>/owt_smoke_batch_128.log",
+  "gpu_telemetry": "<local-path-omitted>/owt_smoke_batch_128_gpu.csv",
+  "peak_gpu_memory_mib": 774.0,
+  "started_at_utc": "2026-07-14T11:29:03.556125+00:00",
+  "ended_at_utc": "2026-07-14T11:29:11.510820+00:00",
+  "wall_clock_sec": 7.954723902978003,
+  "return_code": 1,
+  "summary_exists": false,
+  "checkpoint_exists": false,
+  "last_train_record": null
+}

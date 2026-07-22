@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="570" viewBox="0 0 960 570">
+<rect width="100%" height="100%" fill="white"/>
+<style>text{font-family:sans-serif;fill:#1f2937}.tick{font-size:13px}</style>
+<text x="480.0" y="32" text-anchor="middle" font-size="20" font-weight="bold">TinyStories baseline training curves</text>
+<line x1="88" y1="492" x2="920" y2="492" stroke="#374151"/>
+<line x1="88" y1="72" x2="88" y2="492" stroke="#374151"/>
+<line x1="88" y1="492.00" x2="920" y2="492.00" stroke="#e5e7eb"/>
+<text class="tick" x="78" y="496.00" text-anchor="end">1.17</text>
+<line x1="88" y1="408.00" x2="920" y2="408.00" stroke="#e5e7eb"/>
+<text class="tick" x="78" y="412.00" text-anchor="end">1.74</text>
+<line x1="88" y1="324.00" x2="920" y2="324.00" stroke="#e5e7eb"/>
+<text class="tick" x="78" y="328.00" text-anchor="end">2.32</text>
+<line x1="88" y1="240.00" x2="920" y2="240.00" stroke="#e5e7eb"/>
+<text class="tick" x="78" y="244.00" text-anchor="end">2.89</text>
+<line x1="88" y1="156.00" x2="920" y2="156.00" stroke="#e5e7eb"/>
+<text class="tick" x="78" y="160.00" text-anchor="end">3.46</text>
+<line x1="88" y1="72.00" x2="920" y2="72.00" stroke="#e5e7eb"/>
+<text class="tick" x="78" y="76.00" text-anchor="end">4.03</text>
+<line x1="88.00" y1="492" x2="88.00" y2="497" stroke="#374151"/>
+<text class="tick" x="88.00" y="518" text-anchor="middle">0M</text>
+<line x1="254.40" y1="492" x2="254.40" y2="497" stroke="#374151"/>
+<text class="tick" x="254.40" y="518" text-anchor="middle">66M</text>
+<line x1="420.80" y1="492" x2="420.80" y2="497" stroke="#374151"/>
+<text class="tick" x="420.80" y="518" text-anchor="middle">131M</text>
+<line x1="587.20" y1="492" x2="587.20" y2="497" stroke="#374151"/>
+<text class="tick" x="587.20" y="518" text-anchor="middle">197M</text>
+<line x1="753.60" y1="492" x2="753.60" y2="497" stroke="#374151"/>
+<text class="tick" x="753.60" y="518" text-anchor="middle">262M</text>
+<line x1="920.00" y1="492" x2="920.00" y2="497" stroke="#374151"/>
+<text class="tick" x="920.00" y="518" text-anchor="middle">328M</text>
+<line x1="88" y1="451.04" x2="920" y2="451.04" stroke="#111827" stroke-dasharray="6 4"/>
+<text class="tick" x="916" y="445.04" text-anchor="end">target: 1.45</text>
+<polyline points="104.64,100.97 121.28,257.70 137.92,312.46 154.56,355.88 171.20,372.08 187.84,388.69 204.48,394.12 221.12,397.78 237.76,405.32 254.40,398.76 271.04,402.17 287.68,420.65 304.32,417.45 320.96,413.99 337.60,419.16 354.24,432.58 370.88,418.82 387.52,429.52 404.16,427.93 420.80,434.49 437.44,444.44 454.08,436.35 470.72,430.37 487.36,440.01 504.00,441.10 520.64,449.39 537.28,432.52 553.92,442.36 570.56,438.67 587.20,434.88 603.84,461.69 620.48,456.09 637.12,458.57 653.76,456.02 670.40,447.10 687.04,436.90 703.68,444.60 720.32,458.90 736.96,455.91 753.60,452.66 770.24,455.24 786.88,455.98 803.52,448.00 820.16,455.23 836.80,462.38 853.44,463.03 870.08,456.14 886.72,458.85 903.36,457.55 920.00,453.04" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+<polyline points="104.64,107.45 121.28,260.44 137.92,320.59 154.56,351.36 171.20,373.24 187.84,382.40 204.48,395.27 221.12,395.36 237.76,404.25 254.40,408.21 271.04,412.12 287.68,417.69 304.32,417.90 320.96,420.53 337.60,426.60 354.24,426.68 370.88,428.33 387.52,431.79 404.16,431.63 420.80,432.05 437.44,437.13 454.08,437.01 470.72,436.09 487.36,438.96 504.00,443.09 520.64,442.03 537.28,443.41 553.92,444.23 570.56,445.62 587.20,446.00 603.84,441.52 620.48,451.00 637.12,446.24 653.76,448.05 670.40,450.48 687.04,452.91 703.68,452.47 720.32,454.40 736.96,452.61 753.60,454.49 770.24,450.99 786.88,453.83 803.52,454.22 820.16,455.40 836.80,453.55 853.44,458.02 870.08,455.57 886.72,455.90 903.36,456.63 920.00,453.85" fill="none" stroke="#dc2626" stroke-width="3"/>
+<line x1="104" y1="80" x2="128" y2="80" stroke="#2563eb" stroke-width="3"/>
+<text class="tick" x="134" y="85">train loss</text>
+<line x1="214" y1="80" x2="238" y2="80" stroke="#dc2626" stroke-width="3"/>
+<text class="tick" x="244" y="85">validation loss</text>
+<text x="480.0" y="550" text-anchor="middle" font-size="15">processed training tokens</text>
+<text x="22" y="285.0" text-anchor="middle" font-size="15" transform="rotate(-90 22 285.0)">cross-entropy loss (per token)</text>
+</svg>

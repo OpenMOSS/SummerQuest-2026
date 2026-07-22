@@ -1,0 +1,399 @@
+{
+  "format": "summerquest-a1-public-tokenizer-log-v1",
+  "scope": "tinystories-10k",
+  "tokenizer": {
+    "artifact_format": "cs336-byte-bpe-v1",
+    "requested_vocab_size": 10000,
+    "actual_vocab_size": 10000,
+    "merge_count": 9743,
+    "special_tokens": [
+      "<|endoftext|>"
+    ],
+    "sha256": {
+      "merges_file": "81ba9ce433937d23f5446f1e34e8afc3423c48641b8e8be734227fc31e360aac",
+      "vocab_file": "95a84e44dc8b6f1b27ff3661c28a493e7520146e266ec6a36abd2205d9bb9702"
+    },
+    "training": {
+      "measurement_role": "official_unprofiled_final_code",
+      "created_at_utc": "2026-07-12T11:28:48Z",
+      "source_filename": "TinyStoriesV2-GPT4-train.txt",
+      "source_bytes": 2227753162,
+      "elapsed_seconds": 370.840213582851,
+      "peak_rss_bytes": 662147072,
+      "peak_rss_gb": 0.662147072,
+      "peak_rss_gib": 0.6166725158691406,
+      "used_gpu": false,
+      "resource_limits": {
+        "max_elapsed_seconds": 1800,
+        "max_peak_rss_bytes": 30000000000,
+        "elapsed_within_limit": true,
+        "rss_within_limit": true
+      }
+    },
+    "longest_tokens": [
+      {
+        "bytes_hex": "206163636f6d706c6973686d656e74",
+        "id": 7160,
+        "length_bytes": 15,
+        "text": " accomplishment"
+      },
+      {
+        "bytes_hex": "206469736170706f696e746d656e74",
+        "id": 9143,
+        "length_bytes": 15,
+        "text": " disappointment"
+      },
+      {
+        "bytes_hex": "20726573706f6e736962696c697479",
+        "id": 9379,
+        "length_bytes": 15,
+        "text": " responsibility"
+      },
+      {
+        "bytes_hex": "20756e636f6d666f727461626c65",
+        "id": 3228,
+        "length_bytes": 14,
+        "text": " uncomfortable"
+      },
+      {
+        "bytes_hex": "20636f6d70617373696f6e617465",
+        "id": 3515,
+        "length_bytes": 14,
+        "text": " compassionate"
+      },
+      {
+        "bytes_hex": "20756e6465727374616e64696e67",
+        "id": 5319,
+        "length_bytes": 14,
+        "text": " understanding"
+      },
+      {
+        "bytes_hex": "206e65696768626f7572686f6f64",
+        "id": 6386,
+        "length_bytes": 14,
+        "text": " neighbourhood"
+      },
+      {
+        "bytes_hex": "20556e666f7274756e6174656c79",
+        "id": 6497,
+        "length_bytes": 14,
+        "text": " Unfortunately"
+      },
+      {
+        "bytes_hex": "2064657465726d696e6174696f6e",
+        "id": 6874,
+        "length_bytes": 14,
+        "text": " determination"
+      },
+      {
+        "bytes_hex": "20656e636f75726167656d656e74",
+        "id": 7756,
+        "length_bytes": 14,
+        "text": " encouragement"
+      },
+      {
+        "bytes_hex": "20756e666f7274756e6174656c79",
+        "id": 8626,
+        "length_bytes": 14,
+        "text": " unfortunately"
+      },
+      {
+        "bytes_hex": "20636f6e67726174756c61746564",
+        "id": 8699,
+        "length_bytes": 14,
+        "text": " congratulated"
+      },
+      {
+        "bytes_hex": "2065787472616f7264696e617279",
+        "id": 8868,
+        "length_bytes": 14,
+        "text": " extraordinary"
+      },
+      {
+        "bytes_hex": "206772616e646461756768746572",
+        "id": 9095,
+        "length_bytes": 14,
+        "text": " granddaughter"
+      },
+      {
+        "bytes_hex": "3c7c656e646f66746578747c3e",
+        "id": 256,
+        "length_bytes": 13,
+        "text": "<|endoftext|>"
+      },
+      {
+        "bytes_hex": "206469736170706f696e746564",
+        "id": 3338,
+        "length_bytes": 13,
+        "text": " disappointed"
+      },
+      {
+        "bytes_hex": "20656e74687573696173746963",
+        "id": 3769,
+        "length_bytes": 13,
+        "text": " enthusiastic"
+      },
+      {
+        "bytes_hex": "206163636964656e74616c6c79",
+        "id": 4360,
+        "length_bytes": 13,
+        "text": " accidentally"
+      },
+      {
+        "bytes_hex": "20726566726967657261746f72",
+        "id": 4376,
+        "length_bytes": 13,
+        "text": " refrigerator"
+      },
+      {
+        "bytes_hex": "207665746572696e617269616e",
+        "id": 4472,
+        "length_bytes": 13,
+        "text": " veterinarian"
+      }
+    ]
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "tinystories_on_owt_10docs",
+      "format": "cs336-tokenizer-benchmark-v1",
+      "created_at_utc": "2026-07-12T10:14:49Z",
+      "source_filename": "owt_10docs.txt",
+      "source_log_basename": "tinystories_on_owt_10docs.json",
+      "tokenizer_artifact": "tokenizer.json",
+      "tokenizer_vocab_size": 10000,
+      "characters_per_pass": 50099,
+      "bytes_per_pass": 50590,
+      "tokens_per_pass": 14831,
+      "compression_bytes_per_token": 3.411098375025285,
+      "repeat": 3,
+      "durations_seconds": [
+        0.03699158877134323,
+        0.010525666177272797,
+        0.010092729702591896
+      ],
+      "median_seconds": 0.010525666177272797,
+      "throughput_bytes_per_second": 2634439.1674268185,
+      "median_throughput_bytes_per_second": 4806346.614833255,
+      "throughput_tokens_per_second": 772314.0401681587,
+      "peak_rss_bytes": 440848384
+    },
+    {
+      "benchmark_id": "tinystories_on_tinystories_10docs",
+      "format": "cs336-tokenizer-benchmark-v1",
+      "created_at_utc": "2026-07-12T10:14:47Z",
+      "source_filename": "tinystories_10docs.txt",
+      "source_log_basename": "tinystories_on_tinystories_10docs.json",
+      "tokenizer_artifact": "tokenizer.json",
+      "tokenizer_vocab_size": 10000,
+      "characters_per_pass": 10908,
+      "bytes_per_pass": 10908,
+      "tokens_per_pass": 2697,
+      "compression_bytes_per_token": 4.044493882091213,
+      "repeat": 3,
+      "durations_seconds": [
+        0.00596414040774107,
+        0.0025080014020204544,
+        0.002424434758722782
+      ],
+      "median_seconds": 0.0025080014020204544,
+      "throughput_bytes_per_second": 3003145.0515060113,
+      "median_throughput_bytes_per_second": 4349279.8653192455,
+      "throughput_tokens_per_second": 742526.7880373774,
+      "peak_rss_bytes": 439824384
+    },
+    {
+      "benchmark_id": "tinystories_throughput_valid",
+      "format": "cs336-tokenizer-benchmark-v1",
+      "created_at_utc": "2026-07-12T10:15:07Z",
+      "source_filename": "TinyStoriesV2-GPT4-valid.txt",
+      "source_log_basename": "tinystories_throughput_valid.json",
+      "tokenizer_artifact": "tokenizer.json",
+      "tokenizer_vocab_size": 10000,
+      "characters_per_pass": 22493387,
+      "bytes_per_pass": 22502601,
+      "tokens_per_pass": 5465883,
+      "compression_bytes_per_token": 4.116919626709902,
+      "repeat": 3,
+      "durations_seconds": [
+        5.60209871456027,
+        5.451048121787608,
+        5.421948555856943
+      ],
+      "median_seconds": 5.451048121787608,
+      "throughput_bytes_per_second": 4097566.7450120663,
+      "median_throughput_bytes_per_second": 4128123.7107517105,
+      "throughput_tokens_per_second": 995299.1839888548,
+      "peak_rss_bytes": 575664128
+    }
+  ],
+  "encodings": [
+    {
+      "split": "train",
+      "format": "cs336-token-array-v1",
+      "created_at_utc": "2026-07-12T10:30:45Z",
+      "source_filename": "TinyStoriesV2-GPT4-train.txt",
+      "source_log_basename": "tinystories_train.npy.json",
+      "output_basename": "tinystories_train.npy",
+      "source_bytes": 2227753162,
+      "output_bytes": 1082458822,
+      "token_count": 541229347,
+      "shape": [
+        541229347
+      ],
+      "dtype": "uint16",
+      "tokenizer_artifact": "tokenizer.json",
+      "tokenizer_vocab_size": 10000,
+      "bytes_per_token": 4.116098238848826,
+      "elapsed_seconds": 913.1451067430899,
+      "source_bytes_per_second": 2439648.578905182
+    },
+    {
+      "split": "validation",
+      "format": "cs336-token-array-v1",
+      "created_at_utc": "2026-07-12T10:15:30Z",
+      "source_filename": "TinyStoriesV2-GPT4-valid.txt",
+      "source_log_basename": "tinystories_valid.npy.json",
+      "output_basename": "tinystories_valid.npy",
+      "source_bytes": 22502601,
+      "output_bytes": 10931894,
+      "token_count": 5465883,
+      "shape": [
+        5465883
+      ],
+      "dtype": "uint16",
+      "tokenizer_artifact": "tokenizer.json",
+      "tokenizer_vocab_size": 10000,
+      "bytes_per_token": 4.116919626709902,
+      "elapsed_seconds": 9.369017219170928,
+      "source_bytes_per_second": 2401810.1870871866
+    }
+  ],
+  "profile": {
+    "run_role": "profiling_only",
+    "official_training_measurement": false,
+    "source_profile_basename": "tinystories-10k-final.prof",
+    "profiled_run": {
+      "created_at_utc": "2026-07-12T11:40:55Z",
+      "elapsed_seconds": 664.5525257270783,
+      "peak_rss_bytes": 664436736,
+      "peak_rss_gb": 0.664436736,
+      "peak_rss_gib": 0.618804931640625,
+      "used_gpu": false,
+      "profiler_overhead_included": true
+    },
+    "artifact_equivalence": {
+      "matches_official_tokenizer": true,
+      "sha256": {
+        "merges_file": "81ba9ce433937d23f5446f1e34e8afc3423c48641b8e8be734227fc31e360aac",
+        "vocab_file": "95a84e44dc8b6f1b27ff3661c28a493e7520146e266ec6a36abd2205d9bb9702"
+      }
+    },
+    "profile_total_seconds": 664.5991356940001,
+    "ordering": "self_seconds_descending",
+    "selection": "Only functions implemented in tokenizer.py are retained; builtins, standard-library, monitoring-thread, and psutil frames are omitted.",
+    "attribution_note": "Concurrent RSS monitoring makes caller and cumulative attribution unreliable; this summary reports per-function self time only.",
+    "sanitization": "Only source basenames are retained; absolute paths and caller maps are omitted. The raw profile is not submitted.",
+    "top_functions": [
+      {
+        "file_basename": "tokenizer.py",
+        "line": 57,
+        "function": "_count_pretokens",
+        "primitive_calls": 2717700,
+        "total_calls": 2717700,
+        "self_seconds": 486.844859138,
+        "self_time_fraction": 0.7325391096538484
+      },
+      {
+        "file_basename": "tokenizer.py",
+        "line": 127,
+        "function": "_merge_pair",
+        "primitive_calls": 277780,
+        "total_calls": 277780,
+        "self_seconds": 0.8488369130000001,
+        "self_time_fraction": 0.001277216396186871
+      },
+      {
+        "file_basename": "tokenizer.py",
+        "line": 123,
+        "function": "_adjacent_pair_counts",
+        "primitive_calls": 615493,
+        "total_calls": 615493,
+        "self_seconds": 0.482304188,
+        "self_time_fraction": 0.0007257069142835393
+      },
+      {
+        "file_basename": "tokenizer.py",
+        "line": 117,
+        "function": "__lt__",
+        "primitive_calls": 3564101,
+        "total_calls": 3564101,
+        "self_seconds": 0.466819301,
+        "self_time_fraction": 0.0007024073248493309
+      },
+      {
+        "file_basename": "tokenizer.py",
+        "line": 112,
+        "function": "__init__",
+        "primitive_calls": 298162,
+        "total_calls": 298162,
+        "self_seconds": 0.030979809,
+        "self_time_fraction": 4.66142781959078e-05
+      },
+      {
+        "file_basename": "tokenizer.py",
+        "line": 143,
+        "function": "train_bpe",
+        "primitive_calls": 1,
+        "total_calls": 1,
+        "self_seconds": 0.007545274,
+        "self_time_fraction": 1.1353120392070527e-05
+      },
+      {
+        "file_basename": "tokenizer.py",
+        "line": 68,
+        "function": "_count_pretokens_from_file",
+        "primitive_calls": 1,
+        "total_calls": 1,
+        "self_seconds": 0.00018113300000000002,
+        "self_time_fraction": 2.725447420434183e-07
+      },
+      {
+        "file_basename": "tokenizer.py",
+        "line": 27,
+        "function": "_unique_special_tokens",
+        "primitive_calls": 1,
+        "total_calls": 1,
+        "self_seconds": 8.225e-06,
+        "self_time_fraction": 1.2375881276780683e-08
+      },
+      {
+        "file_basename": "tokenizer.py",
+        "line": 43,
+        "function": "_compile_special_pattern",
+        "primitive_calls": 1,
+        "total_calls": 1,
+        "self_seconds": 7.782000000000001e-06,
+        "self_time_fraction": 1.1709314054213652e-08
+      },
+      {
+        "file_basename": "tokenizer.py",
+        "line": 54,
+        "function": "<genexpr>",
+        "primitive_calls": 2,
+        "total_calls": 2,
+        "self_seconds": 4.721e-06,
+        "self_time_fraction": 7.103530152909618e-09
+      },
+      {
+        "file_basename": "tokenizer.py",
+        "line": 53,
+        "function": "<lambda>",
+        "primitive_calls": 1,
+        "total_calls": 1,
+        "self_seconds": 1.069e-06,
+        "self_time_fraction": 1.6084883993773313e-09
+      }
+    ]
+  }
+}

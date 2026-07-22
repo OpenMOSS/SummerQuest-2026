@@ -1,0 +1,15 @@
+{
+  "base_config": "tinystories_baseline.json",
+  "description": "A800 full-size model throughput and memory smoke test on encoded validation data.",
+  "train_path": "data/encoded/tinystories_valid.bin",
+  "val_path": "data/encoded/tinystories_valid.bin",
+  "training_overrides": {
+    "batch_size": 256,
+    "max_steps": 10,
+    "warmup_steps": 1,
+    "min_lr": 0.0001,
+    "eval_interval": 10,
+    "eval_batches": 2,
+    "checkpoint_interval": 10
+  }
+}

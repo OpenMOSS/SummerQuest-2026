@@ -1,0 +1,27 @@
+{
+  "input_path": "data/owt_train.txt",
+  "vocab_size": 32000,
+  "special_tokens": [
+    "<|endoftext|>"
+  ],
+  "workers": 9,
+  "batch_bytes": 67108864,
+  "progress_interval": 1000,
+  "heap_rebuild_multiplier": 4,
+  "show_progress": true,
+  "unique_pretokens": 6601892,
+  "total_pretokens": 2471753092,
+  "actual_vocab_size": 32000,
+  "merge_count": 31743,
+  "pretokenization_seconds": 454.1937117408961,
+  "bpe_training_seconds": 1553.7911358755082,
+  "longest_token": {
+    "id": 25836,
+    "hex": "2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d",
+    "utf8": "----------------------------------------------------------------",
+    "byte_length": 64
+  },
+  "total_seconds": 2008.165888058953,
+  "serialization_seconds": 0.1716800406575203,
+  "peak_rss_mb": 9079.4921875
+}

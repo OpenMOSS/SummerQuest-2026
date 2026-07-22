@@ -1,0 +1,13 @@
+{
+  "best_validation_iteration": 4900,
+  "best_validation_loss": 1.3406833410263062,
+  "final_iteration": 5000,
+  "final_train_loss": 1.3294172286987305,
+  "final_validation_loss": 1.340969204902649,
+  "has_non_finite_metric": false,
+  "process_elapsed_seconds": 1559.812826144509,
+  "processed_tokens": 327680000,
+  "run_name": "tinystories_baseline",
+  "status": "completed",
+  "training_elapsed_seconds": 1554.8884974028915
+}

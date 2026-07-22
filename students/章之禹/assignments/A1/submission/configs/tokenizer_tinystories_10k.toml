@@ -1,0 +1,30 @@
+[metadata]
+status = "cpu_ready"
+purpose = "Train, benchmark, and encode the required TinyStories 10K byte-level BPE tokenizer."
+
+[tokenizer]
+input_path = "data/TinyStoriesV2-GPT4-train.txt"
+vocab_size = 10000
+special_tokens = ["<|endoftext|>"]
+num_workers = 16
+output_dir = "artifacts/tokenizers/tinystories_10k"
+
+[benchmark]
+input_path = "data/TinyStoriesV2-GPT4-valid.txt"
+vocab_path = "artifacts/tokenizers/tinystories_10k/vocab.json"
+merges_path = "artifacts/tokenizers/tinystories_10k/merges.json"
+special_tokens = ["<|endoftext|>"]
+json_output = "artifacts/tokenizers/tinystories_10k/valid_benchmark.json"
+
+# This section encodes the training split. Encode the validation split with:
+# python scripts/encode_corpus.py data/TinyStoriesV2-GPT4-valid.txt \
+#   data/encoded/tinystories_valid.npy \
+#   --vocab artifacts/tokenizers/tinystories_10k/vocab.json \
+#   --merges artifacts/tokenizers/tinystories_10k/merges.json \
+#   --special-token '<|endoftext|>'
+[encoding]
+input_path = "data/TinyStoriesV2-GPT4-train.txt"
+output_path = "data/encoded/tinystories_train.npy"
+vocab_path = "artifacts/tokenizers/tinystories_10k/vocab.json"
+merges_path = "artifacts/tokenizers/tinystories_10k/merges.json"
+special_tokens = ["<|endoftext|>"]

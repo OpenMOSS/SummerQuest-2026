@@ -1,0 +1,44 @@
+{
+  "run_name": "lr_3e-04",
+  "status": "completed",
+  "divergence_reason": null,
+  "completed_steps": 1500,
+  "processed_tokens": 49152000,
+  "total_training_time_sec": 126.69751328788698,
+  "final_train_loss": 2.114150285720825,
+  "final_val_loss": 2.083700752258301,
+  "best_val_loss": 2.083700752258301,
+  "parameter_count": 22696448,
+  "model": {
+    "vocab_size": 10000,
+    "context_length": 256,
+    "d_model": 512,
+    "num_layers": 4,
+    "num_heads": 16,
+    "d_ff": 1344,
+    "rope_theta": 10000.0,
+    "norm_mode": "pre",
+    "use_rope": true,
+    "ffn_type": "swiglu"
+  },
+  "training": {
+    "batch_size": 128,
+    "max_steps": 1500,
+    "max_lr": 0.0003,
+    "min_lr": 2.9999999999999997e-05,
+    "warmup_steps": 100,
+    "weight_decay": 0.1,
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "eps": 1e-08,
+    "grad_clip": 1.0,
+    "log_every": 10,
+    "val_every": 250,
+    "val_batches": 20,
+    "checkpoint_every": 0,
+    "precision": "bf16",
+    "compile": false
+  }
+}

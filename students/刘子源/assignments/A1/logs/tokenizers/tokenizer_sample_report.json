@@ -1,0 +1,20 @@
+{
+  "tinystories_with_tinystories_tokenizer": {
+    "documents": 10,
+    "bytes": 7435,
+    "tokens": 1808,
+    "bytes_per_token": 4.112278761061947
+  },
+  "owt_with_owt_tokenizer": {
+    "documents": 10,
+    "bytes": 31487,
+    "tokens": 6712,
+    "bytes_per_token": 4.691150178784267
+  },
+  "owt_with_tinystories_tokenizer": {
+    "documents": 10,
+    "bytes": 31487,
+    "tokens": 9873,
+    "bytes_per_token": 3.1892028765319558
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "status": "failed_oom",
+  "config": {
+    "batch_size": 1024,
+    "context_length": 256,
+    "training_steps": 500
+  },
+  "last_completed_step": 100,
+  "processed_tokens": 26214400,
+  "last_train_loss": 3.1684961318969727,
+  "last_val_loss": 3.142977714538574,
+  "wall_clock_sec": 100.02909990027547,
+  "peak_memory_gib": 85.18218183517456,
+  "failure_stage": "resuming training after step-100 validation"
+}

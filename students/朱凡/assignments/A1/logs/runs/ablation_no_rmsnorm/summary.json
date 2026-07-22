@@ -1,0 +1,13 @@
+{
+  "best_validation_iteration": 200,
+  "best_validation_loss": 2.4944236278533936,
+  "final_iteration": 200,
+  "final_train_loss": 1.4492584480487558e+20,
+  "final_validation_loss": 2.4944236278533936,
+  "has_non_finite_metric": false,
+  "process_elapsed_seconds": 61.13523797970265,
+  "processed_tokens": 13107200,
+  "run_name": "ablation_no_rmsnorm",
+  "status": "failed_or_stopped",
+  "training_elapsed_seconds": 57.41200278978795
+}

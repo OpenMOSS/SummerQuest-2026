@@ -1,0 +1,51 @@
+{
+  "run_name": "owt_baseline",
+  "experiment": "openwebtext_training",
+  "seed": 336,
+  "tokenizer": "artifacts/owt_32k.json",
+  "model": {
+    "vocab_size": 32000,
+    "context_length": 256,
+    "d_model": 512,
+    "num_layers": 4,
+    "num_heads": 16,
+    "d_ff": 1344,
+    "rope_theta": 10000.0
+  },
+  "data": {
+    "train": "tokenized/owt_train.bin",
+    "validation": "tokenized/owt_valid.bin"
+  },
+  "train_token_count": 2727120452,
+  "validation_token_count": 66401098,
+  "training": {
+    "batch_size": 128,
+    "context_length": 256,
+    "max_steps": 10000,
+    "max_learning_rate": 0.0012,
+    "min_learning_rate": 0.00012,
+    "warmup_steps": 500,
+    "cosine_cycle_steps": 10000,
+    "device": "cuda:0",
+    "weight_decay": 0.1,
+    "beta1": 0.9,
+    "beta2": 0.95,
+    "eps": 1e-08,
+    "max_grad_norm": 1.0,
+    "log_interval": 10,
+    "eval_interval": 250,
+    "eval_batches": 20,
+    "checkpoint_interval": 1000,
+    "output_dir": "runs/owt_baseline",
+    "log_path": "logs/owt/train_owt.jsonl",
+    "summary_path": "logs/owt/summary.json"
+  },
+  "final_iteration": 10000,
+  "final_train_loss": 3.9820544719696045,
+  "final_validation_loss": 4.016197311878204,
+  "elapsed_seconds": 6469.434344876558,
+  "processed_tokens": 327680000,
+  "checkpoint_path": "runs/owt_baseline/checkpoint_final.pt",
+  "final_val_loss": 4.016197311878204,
+  "total_training_time_sec": 6469.434344876558
+}

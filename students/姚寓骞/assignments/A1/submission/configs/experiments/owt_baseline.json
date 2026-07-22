@@ -1,0 +1,32 @@
+{
+  "seed": 42,
+  "device": "cuda",
+  "train_data": "artifacts/data/owt_train.bin",
+  "valid_data": "artifacts/data/owt_valid.bin",
+  "output_dir": "artifacts/runs/owt_baseline",
+  "model": {
+    "vocab_size": 32000,
+    "context_length": 256,
+    "d_model": 512,
+    "num_layers": 4,
+    "num_heads": 16,
+    "d_ff": 1344,
+    "rope_theta": 10000.0
+  },
+  "optimizer": {
+    "lr": 0.0003,
+    "betas": [0.9, 0.95],
+    "eps": 1e-8,
+    "weight_decay": 0.1
+  },
+  "batch_size": 128,
+  "max_steps": 10000,
+  "max_lr": 0.0003,
+  "min_lr": 0.00003,
+  "warmup_steps": 500,
+  "max_grad_norm": 1.0,
+  "log_every": 10,
+  "eval_every": 100,
+  "eval_batches": 20,
+  "checkpoint_every": 500
+}

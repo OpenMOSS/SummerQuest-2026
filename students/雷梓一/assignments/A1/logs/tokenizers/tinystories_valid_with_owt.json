@@ -1,0 +1,13 @@
+{
+  "input": "data/raw/TinyStoriesV2-GPT4-valid.txt",
+  "output": "data/encoded/cross/tinystories_valid_with_owt.bin",
+  "dtype": "uint16",
+  "token_count": 5617816,
+  "source_bytes": 22502601,
+  "compression_ratio_bytes_per_token": 4.005578146382865,
+  "wall_clock_sec": 36.968138669617474,
+  "throughput_bytes_per_sec": 608702.5589470699,
+  "num_processes": 1,
+  "output_sha256": "ac5c11982b7326ab893e8d43bf396a49e6b3b4e9923bb151c9ed4da7b9ecaa3c",
+  "peak_rss_mb": 443.8125
+}

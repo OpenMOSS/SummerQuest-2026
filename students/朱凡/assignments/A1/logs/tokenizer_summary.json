@@ -1,0 +1,12 @@
+{
+  "compression_ratio_bytes_per_token": {
+    "owt_with_owt_32k": 4.69,
+    "owt_with_tinystories_10k": 3.19,
+    "tinystories_with_owt_32k": 4.01,
+    "tinystories_with_tinystories_10k": 4.11
+  },
+  "owt_longest_token_bytes": 64,
+  "pile_825gb_estimated_hours": 20.8,
+  "throughput_mib_per_sec": 10.5,
+  "tinystories_longest_token_bytes": 15
+}

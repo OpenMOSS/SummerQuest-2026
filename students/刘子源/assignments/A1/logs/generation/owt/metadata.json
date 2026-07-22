@@ -1,0 +1,47 @@
+{
+  "dataset": "owt",
+  "created_at_utc": "2026-07-14T14:50:18.558246+00:00",
+  "checkpoint_omitted_from_public_submission": true,
+  "samples": [
+    {
+      "name": "technology_temp04",
+      "prompt": "The future of technology",
+      "temperature": 0.4,
+      "top_p": 0.95,
+      "seed": 0,
+      "max_new_tokens": 256,
+      "output": "technology_temp04.txt",
+      "return_code": 0
+    },
+    {
+      "name": "technology_temp08",
+      "prompt": "The future of technology",
+      "temperature": 0.8,
+      "top_p": 0.95,
+      "seed": 0,
+      "max_new_tokens": 256,
+      "output": "technology_temp08.txt",
+      "return_code": 0
+    },
+    {
+      "name": "technology_temp11",
+      "prompt": "The future of technology",
+      "temperature": 1.1,
+      "top_p": 0.95,
+      "seed": 0,
+      "max_new_tokens": 256,
+      "output": "technology_temp11.txt",
+      "return_code": 0
+    },
+    {
+      "name": "science_seed7",
+      "prompt": "Scientists recently discovered that",
+      "temperature": 0.8,
+      "top_p": 0.95,
+      "seed": 7,
+      "max_new_tokens": 256,
+      "output": "science_seed7.txt",
+      "return_code": 0
+    }
+  ]
+}

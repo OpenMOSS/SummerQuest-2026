@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "artifact_format": "gpt2_byte_level_bpe",
+  "started_at_utc": "2026-07-13T09:17:26.687366+00:00",
+  "finished_at_utc": "2026-07-13T09:17:37.063151+00:00",
+  "corpus": {
+    "path": "data/TinyStoriesV2-GPT4-train.txt",
+    "bytes": 2227753162
+  },
+  "configuration": {
+    "vocab_size_requested": 10000,
+    "special_tokens": [
+      "<|endoftext|>"
+    ],
+    "num_processes": 48
+  },
+  "result": {
+    "vocab_size": 10000,
+    "num_merges": 9743,
+    "elapsed_seconds": 10.351543663069606,
+    "corpus_bytes_per_second": 215209753.68608847,
+    "longest_token": {
+      "including_special_tokens": {
+        "id": 7160,
+        "length_bytes": 15,
+        "bytes_hex": "206163636f6d706c6973686d656e74",
+        "text_utf8": " accomplishment"
+      },
+      "excluding_special_tokens": {
+        "id": 7160,
+        "length_bytes": 15,
+        "bytes_hex": "206163636f6d706c6973686d656e74",
+        "text_utf8": " accomplishment"
+      }
+    }
+  },
+  "artifacts": {
+    "vocab": "tokenizer_artifacts/tinystories/vocab.json",
+    "merges": "tokenizer_artifacts/tinystories/merges.txt",
+    "summary": "tokenizer_artifacts/tinystories/tokenizer_summary.json"
+  }
+}

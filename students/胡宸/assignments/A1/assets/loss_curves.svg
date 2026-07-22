@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="500" viewBox="0 0 900 500" role="img" aria-label="Validation loss curves">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="70" y="24" font-family="Arial, sans-serif" font-size="18" fill="#111827">Validation loss curves</text>
+<line x1="70" y1="435.0" x2="875" y2="435.0" stroke="#e5e7eb" stroke-width="1"/>
+<text x="12" y="439.0" font-family="Arial, sans-serif" font-size="12" fill="#4b5563">1.2</text>
+<line x1="70" y1="355.0" x2="875" y2="355.0" stroke="#e5e7eb" stroke-width="1"/>
+<text x="12" y="359.0" font-family="Arial, sans-serif" font-size="12" fill="#4b5563">3.0</text>
+<line x1="70" y1="275.0" x2="875" y2="275.0" stroke="#e5e7eb" stroke-width="1"/>
+<text x="12" y="279.0" font-family="Arial, sans-serif" font-size="12" fill="#4b5563">4.9</text>
+<line x1="70" y1="195.0" x2="875" y2="195.0" stroke="#e5e7eb" stroke-width="1"/>
+<text x="12" y="199.0" font-family="Arial, sans-serif" font-size="12" fill="#4b5563">6.7</text>
+<line x1="70" y1="115.0" x2="875" y2="115.0" stroke="#e5e7eb" stroke-width="1"/>
+<text x="12" y="119.0" font-family="Arial, sans-serif" font-size="12" fill="#4b5563">8.6</text>
+<line x1="70" y1="35.0" x2="875" y2="35.0" stroke="#e5e7eb" stroke-width="1"/>
+<text x="12" y="39.0" font-family="Arial, sans-serif" font-size="12" fill="#4b5563">10.4</text>
+<line x1="70.0" y1="35" x2="70.0" y2="435" stroke="#f3f4f6" stroke-width="1"/>
+<text x="56.0" y="464" font-family="Arial, sans-serif" font-size="12" fill="#4b5563">0</text>
+<line x1="231.0" y1="35" x2="231.0" y2="435" stroke="#f3f4f6" stroke-width="1"/>
+<text x="217.0" y="464" font-family="Arial, sans-serif" font-size="12" fill="#4b5563">2000</text>
+<line x1="392.0" y1="35" x2="392.0" y2="435" stroke="#f3f4f6" stroke-width="1"/>
+<text x="378.0" y="464" font-family="Arial, sans-serif" font-size="12" fill="#4b5563">4000</text>
+<line x1="553.0" y1="35" x2="553.0" y2="435" stroke="#f3f4f6" stroke-width="1"/>
+<text x="539.0" y="464" font-family="Arial, sans-serif" font-size="12" fill="#4b5563">6000</text>
+<line x1="714.0" y1="35" x2="714.0" y2="435" stroke="#f3f4f6" stroke-width="1"/>
+<text x="700.0" y="464" font-family="Arial, sans-serif" font-size="12" fill="#4b5563">8000</text>
+<line x1="875.0" y1="35" x2="875.0" y2="435" stroke="#f3f4f6" stroke-width="1"/>
+<text x="861.0" y="464" font-family="Arial, sans-serif" font-size="12" fill="#4b5563">10000</text>
+<line x1="70" y1="35" x2="70" y2="435" stroke="#111827" stroke-width="1"/>
+<line x1="70" y1="435" x2="875" y2="435" stroke="#111827" stroke-width="1"/>
+<text x="420.0" y="490" font-family="Arial, sans-serif" font-size="13" fill="#111827">step</text>
+<text x="18" y="250" transform="rotate(-90 18 250)" font-family="Arial, sans-serif" font-size="13" fill="#111827">validation loss</text>
+<path d="M 70.1 84.7 L 110.2 381.4 L 150.5 397.3 L 190.8 404.3 L 231.0 408.2 L 271.2 410.7 L 311.5 412.9 L 351.8 414.2 L 392.0 415.4 L 432.2 416.7 L 472.5 417.4 L 512.8 418.1 L 553.0 419.0 L 593.2 420.4 L 633.5 420.5 L 673.8 419.8 L 714.0 421.1 L 754.2 421.3 L 794.5 420.7 L 834.8 421.6 L 875.0 421.5" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+<circle cx="70.1" cy="84.7" r="3" fill="#2563eb"/>
+<circle cx="110.2" cy="381.4" r="3" fill="#2563eb"/>
+<circle cx="150.5" cy="397.3" r="3" fill="#2563eb"/>
+<circle cx="190.8" cy="404.3" r="3" fill="#2563eb"/>
+<circle cx="231.0" cy="408.2" r="3" fill="#2563eb"/>
+<circle cx="271.2" cy="410.7" r="3" fill="#2563eb"/>
+<circle cx="311.5" cy="412.9" r="3" fill="#2563eb"/>
+<circle cx="351.8" cy="414.2" r="3" fill="#2563eb"/>
+<circle cx="392.0" cy="415.4" r="3" fill="#2563eb"/>
+<circle cx="432.2" cy="416.7" r="3" fill="#2563eb"/>
+<circle cx="472.5" cy="417.4" r="3" fill="#2563eb"/>
+<circle cx="512.8" cy="418.1" r="3" fill="#2563eb"/>
+<circle cx="553.0" cy="419.0" r="3" fill="#2563eb"/>
+<circle cx="593.2" cy="420.4" r="3" fill="#2563eb"/>
+<circle cx="633.5" cy="420.5" r="3" fill="#2563eb"/>
+<circle cx="673.8" cy="419.8" r="3" fill="#2563eb"/>
+<circle cx="714.0" cy="421.1" r="3" fill="#2563eb"/>
+<circle cx="754.2" cy="421.3" r="3" fill="#2563eb"/>
+<circle cx="794.5" cy="420.7" r="3" fill="#2563eb"/>
+<circle cx="834.8" cy="421.6" r="3" fill="#2563eb"/>
+<circle cx="875.0" cy="421.5" r="3" fill="#2563eb"/>
+<line x1="620" y1="45" x2="650" y2="45" stroke="#2563eb" stroke-width="3"/>
+<text x="660" y="49" font-family="Arial, sans-serif" font-size="13" fill="#111827">TinyStories baseline val</text>
+<path d="M 271.2 415.4 L 311.5 417.9 L 351.8 419.5 L 392.0 420.7 L 432.2 422.0 L 472.5 422.8 L 512.8 424.2 L 553.0 424.7 L 593.2 425.6 L 633.5 426.1 L 673.8 427.2 L 714.0 427.1 L 754.2 428.1 L 794.5 427.9 L 834.8 428.4 L 875.0 428.4" fill="none" stroke="#16a34a" stroke-width="2.5"/>
+<circle cx="271.2" cy="415.4" r="3" fill="#16a34a"/>
+<circle cx="311.5" cy="417.9" r="3" fill="#16a34a"/>
+<circle cx="351.8" cy="419.5" r="3" fill="#16a34a"/>
+<circle cx="392.0" cy="420.7" r="3" fill="#16a34a"/>
+<circle cx="432.2" cy="422.0" r="3" fill="#16a34a"/>
+<circle cx="472.5" cy="422.8" r="3" fill="#16a34a"/>
+<circle cx="512.8" cy="424.2" r="3" fill="#16a34a"/>
+<circle cx="553.0" cy="424.7" r="3" fill="#16a34a"/>
+<circle cx="593.2" cy="425.6" r="3" fill="#16a34a"/>
+<circle cx="633.5" cy="426.1" r="3" fill="#16a34a"/>
+<circle cx="673.8" cy="427.2" r="3" fill="#16a34a"/>
+<circle cx="714.0" cy="427.1" r="3" fill="#16a34a"/>
+<circle cx="754.2" cy="428.1" r="3" fill="#16a34a"/>
+<circle cx="794.5" cy="427.9" r="3" fill="#16a34a"/>
+<circle cx="834.8" cy="428.4" r="3" fill="#16a34a"/>
+<circle cx="875.0" cy="428.4" r="3" fill="#16a34a"/>
+<line x1="620" y1="67" x2="650" y2="67" stroke="#16a34a" stroke-width="3"/>
+<text x="660" y="71" font-family="Arial, sans-serif" font-size="13" fill="#111827">TinyStories high-LR val</text>
+<path d="M 70.1 35.7 L 110.2 229.4 L 150.5 245.5 L 190.8 257.3 L 231.0 262.5 L 271.2 268.0 L 311.5 273.4 L 351.8 274.6 L 392.0 276.8 L 432.2 279.4 L 472.5 280.4 L 512.8 283.9 L 553.0 285.4 L 593.2 283.7 L 633.5 285.9 L 673.8 286.3 L 714.0 286.3 L 754.2 286.9 L 794.5 287.2 L 834.8 289.0 L 875.0 286.2" fill="none" stroke="#dc2626" stroke-width="2.5"/>
+<circle cx="70.1" cy="35.7" r="3" fill="#dc2626"/>
+<circle cx="110.2" cy="229.4" r="3" fill="#dc2626"/>
+<circle cx="150.5" cy="245.5" r="3" fill="#dc2626"/>
+<circle cx="190.8" cy="257.3" r="3" fill="#dc2626"/>
+<circle cx="231.0" cy="262.5" r="3" fill="#dc2626"/>
+<circle cx="271.2" cy="268.0" r="3" fill="#dc2626"/>
+<circle cx="311.5" cy="273.4" r="3" fill="#dc2626"/>
+<circle cx="351.8" cy="274.6" r="3" fill="#dc2626"/>
+<circle cx="392.0" cy="276.8" r="3" fill="#dc2626"/>
+<circle cx="432.2" cy="279.4" r="3" fill="#dc2626"/>
+<circle cx="472.5" cy="280.4" r="3" fill="#dc2626"/>
+<circle cx="512.8" cy="283.9" r="3" fill="#dc2626"/>
+<circle cx="553.0" cy="285.4" r="3" fill="#dc2626"/>
+<circle cx="593.2" cy="283.7" r="3" fill="#dc2626"/>
+<circle cx="633.5" cy="285.9" r="3" fill="#dc2626"/>
+<circle cx="673.8" cy="286.3" r="3" fill="#dc2626"/>
+<circle cx="714.0" cy="286.3" r="3" fill="#dc2626"/>
+<circle cx="754.2" cy="286.9" r="3" fill="#dc2626"/>
+<circle cx="794.5" cy="287.2" r="3" fill="#dc2626"/>
+<circle cx="834.8" cy="289.0" r="3" fill="#dc2626"/>
+<circle cx="875.0" cy="286.2" r="3" fill="#dc2626"/>
+<line x1="620" y1="89" x2="650" y2="89" stroke="#dc2626" stroke-width="3"/>
+<text x="660" y="93" font-family="Arial, sans-serif" font-size="13" fill="#111827">OWT val</text>
+</svg>

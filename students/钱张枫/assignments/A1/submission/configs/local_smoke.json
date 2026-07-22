@@ -1,0 +1,31 @@
+{
+    "extends": "tinystories_baseline.json",
+    "experiment_name": "local_smoke",
+    "model": {
+        "context_length": 32,
+        "d_model": 64,
+        "num_layers": 2,
+        "num_heads": 4,
+        "d_ff": 192
+    },
+    "optimizer": {
+        "max_learning_rate": 0.001,
+        "min_learning_rate": 0.0001,
+        "warmup_steps": 1,
+        "cosine_cycle_steps": 4,
+        "weight_decay": 0.01
+    },
+    "training": {
+        "batch_size": 2,
+        "max_steps": 4,
+        "eval_interval": 2,
+        "eval_batch_size": 2,
+        "eval_batches": 2,
+        "log_interval": 1,
+        "checkpoint_interval": 2,
+        "device": "cpu",
+        "amp_dtype": null,
+        "log_dir": "artifacts/smoke/logs",
+        "checkpoint_dir": "artifacts/smoke/checkpoints"
+    }
+}

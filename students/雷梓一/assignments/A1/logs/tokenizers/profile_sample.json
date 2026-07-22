@@ -1,0 +1,9 @@
+{
+  "input_description": "representative public 5 MB TinyStories fixture",
+  "vocab_size": 10000,
+  "num_processes": 4,
+  "profile_total_sec": 8.396,
+  "pretoken_count_cumulative_sec": 6.735,
+  "pretoken_regex_and_count_cumulative_sec": 6.706,
+  "conclusion": "pre-tokenization and pre-token frequency counting dominate the measured BPE training time"
+}

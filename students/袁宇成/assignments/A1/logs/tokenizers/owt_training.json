@@ -1,0 +1,9 @@
+{
+  "input": "owt_train.txt",
+  "vocab_size": 32000,
+  "num_merges": 31743,
+  "special_tokens": [
+    "<|endoftext|>"
+  ],
+  "training_time_sec": 1190.022821681574
+}

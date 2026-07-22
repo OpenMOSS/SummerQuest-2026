@@ -1,0 +1,12 @@
+{
+  "base": "tinystories_final.json",
+  "run_name": "tinystories_ablation_no_rmsnorm",
+  "output_dir": "runs/tinystories_ablation_no_rmsnorm",
+  "training": {
+    "save_checkpoints": false,
+    "save_best": false
+  },
+  "ablation": {
+    "remove_rmsnorm": true
+  }
+}

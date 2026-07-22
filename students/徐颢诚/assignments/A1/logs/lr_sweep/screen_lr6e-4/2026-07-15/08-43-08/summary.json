@@ -1,0 +1,16 @@
+{
+  "run_name": "lr_sweep/screen_lr6e-4",
+  "final_val_loss": 1.7926616549491883,
+  "total_training_time_sec": 165.7105138786137,
+  "d_model": 512,
+  "num_layers": 4,
+  "num_heads": 16,
+  "context_length": 256,
+  "batch_size_per_gpu": 64,
+  "global_batch_size": 256,
+  "world_size": 4,
+  "total_steps": 1000,
+  "processed_tokens": 65536000,
+  "device": "cuda:0",
+  "checkpoint_path": "not submitted (model weights excluded)"
+}

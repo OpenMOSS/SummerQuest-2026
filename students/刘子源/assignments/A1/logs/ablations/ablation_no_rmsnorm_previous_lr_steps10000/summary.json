@@ -1,0 +1,28 @@
+{
+  "run_name": "ablation_no_rmsnorm_previous_lr_steps10000",
+  "dataset": "TinyStories",
+  "status": "completed",
+  "final_step": 9999,
+  "final_train_loss": 1.598464012145996,
+  "final_val_loss": 1.6327181935310364,
+  "best_val_loss": 1.6051349818706513,
+  "best_val_step": 9800,
+  "validation_points": 51,
+  "total_training_time_sec": 2833.499397731852,
+  "config": {
+    "vocab_size": 10000,
+    "context_length": 256,
+    "d_model": 512,
+    "d_ff": 1344,
+    "num_layers": 4,
+    "num_heads": 16,
+    "batch_size": 128,
+    "total_steps": 10000,
+    "max_learning_rate": 0.0005,
+    "min_learning_rate": 0.00005,
+    "warmup_steps": 500,
+    "cosine_cycle_steps": 10000,
+    "use_rmsnorm": false,
+    "seed": 0
+  }
+}

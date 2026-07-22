@@ -1,0 +1,5 @@
+{
+  "experiment": "tinystories_best_ctx512_15k",
+  "best_val_loss": 1.2465,
+  "total_time_sec": 3489.9
+}

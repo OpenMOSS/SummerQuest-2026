@@ -1,0 +1,59 @@
+{
+  "config": "configs/tinystories_small.json",
+  "device": "NVIDIA H100 80GB HBM3",
+  "tested_batch_sizes": [
+    1,
+    64,
+    128,
+    256,
+    512,
+    1024,
+    2048,
+    4096,
+    8192
+  ],
+  "max_successful_batch_size": 512,
+  "first_oom_batch_size": 1024,
+  "results": [
+    {
+      "batch_size": 1,
+      "status": "ok",
+      "loss": 9.255849838256836,
+      "elapsed_sec": 1.4733257293701172,
+      "peak_memory_gib": 0.2713489532470703
+    },
+    {
+      "batch_size": 64,
+      "status": "ok",
+      "loss": 9.25617504119873,
+      "elapsed_sec": 0.5712196826934814,
+      "peak_memory_gib": 7.590899467468262
+    },
+    {
+      "batch_size": 128,
+      "status": "ok",
+      "loss": 9.256446838378906,
+      "elapsed_sec": 0.6478691101074219,
+      "peak_memory_gib": 15.026385307312012
+    },
+    {
+      "batch_size": 256,
+      "status": "ok",
+      "loss": 9.257770538330078,
+      "elapsed_sec": 0.7193162441253662,
+      "peak_memory_gib": 29.90260601043701
+    },
+    {
+      "batch_size": 512,
+      "status": "ok",
+      "loss": 9.257015228271484,
+      "elapsed_sec": 1.0708949565887451,
+      "peak_memory_gib": 59.65675640106201
+    },
+    {
+      "batch_size": 1024,
+      "status": "oom",
+      "error": "CUDA out of memory. Tried to allocate 4.00 GiB. GPU 0 has a total capacity of 79.19 GiB of which 2.61 GiB is free. Process 1137421 has 76.57 GiB memory in use. Of the allocated memory 75.03 GiB is allocated by PyTorch, and 836.92 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)"
+    }
+  ]
+}

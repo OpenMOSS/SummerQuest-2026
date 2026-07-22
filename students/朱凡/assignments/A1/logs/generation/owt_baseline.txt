@@ -1,0 +1,22 @@
+run=owt_baseline
+prompt=The
+temperature=0.8 top_p=0.9 seed=1337
+The MP said it was a "unbiased" situation.
+
+She said the "greatest thing" of all the other journalists was the kind of "no one needs to understand".
+
+"I believe it's true that people could do the same thing again," she said.
+
+"I can't imagine it happening because I have a lot of respect for the people who have really been there," she said.
+
+"I don't think it's a bad thing. We have a lot of respect for people who have to work hard to fix things like that. I don't think there's any economic pressure on the people in these countries."
+
+When she spoke to reporters on Monday night about the media coverage that is believed to be "very, very positive" in British newspapers, she said.
+
+"The truth is, the media is so encouraging and in every way the media has it," she said.
+
+"You do not want to talk to anybody."
+
+Ms Sasse said she was not surprised at the time, and she did not share her views on her comments.
+
+"I think they have a lot to say. I think that's what I think about it. I think people are the real opinion

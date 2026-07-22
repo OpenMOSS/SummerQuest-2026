@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-07-13T09:04:56.629469+00:00",
+  "source": {
+    "path": "data/TinyStoriesV2-GPT4-valid.txt",
+    "source_bytes": 22502601,
+    "sample_limit_bytes": null,
+    "sample_was_limited": false,
+    "bytes_read": 22502601,
+    "bytes_processed": 22502601,
+    "incomplete_utf8_tail_bytes": 0,
+    "chunks": 6,
+    "chunk_bytes_target": 4194304,
+    "document_delimiter": "<|endoftext|>",
+    "boundary_policy": "document_delimiter_then_newline_then_utf8_safe_fixed_boundary"
+  },
+  "tokenizer": {
+    "vocab": "tokenizer_artifacts/owt/vocab.json",
+    "merges": "tokenizer_artifacts/owt/merges.txt",
+    "vocab_size": 32000,
+    "special_tokens": [
+      "<|endoftext|>"
+    ],
+    "longest_token": {
+      "including_special_tokens": {
+        "id": 25822,
+        "length_bytes": 64,
+        "bytes_hex": "c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382",
+        "text_utf8": "ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ"
+      },
+      "excluding_special_tokens": {
+        "id": 25822,
+        "length_bytes": 64,
+        "bytes_hex": "c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382",
+        "text_utf8": "ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ"
+      }
+    }
+  },
+  "metrics": {
+    "num_tokens": 5617816,
+    "compression_ratio_bytes_per_token": 4.005578146382865,
+    "elapsed_seconds": 42.355415143072605,
+    "source_bytes_per_second": 531280.3787659343,
+    "source_megabytes_per_second": 0.5312803787659341,
+    "tokens_per_second": 132635.13014861374
+  }
+}

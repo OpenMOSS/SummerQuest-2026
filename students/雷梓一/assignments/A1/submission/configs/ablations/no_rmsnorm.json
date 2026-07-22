@@ -1,0 +1,5 @@
+{
+  "description": "TinyStories architecture ablation: remove every RMSNorm.",
+  "base_config": "../tinystories_baseline.json",
+  "model_overrides": {"norm_style": "none"}
+}

@@ -1,0 +1,2 @@
+{"lr": 0.016666666666666666, "processed_tokens": 32768, "step": 1, "train_loss": 9.26175594329834, "val_loss": 7.151760458946228, "wall_clock_sec": 0.8929443815723062}
+{"lr": 0.1, "processed_tokens": 163840, "status": "diverged", "step": 6, "stop_reason": "nonfinite_or_large_train_loss", "train_loss": 25.47232437133789, "val_loss": 7.151760458946228, "wall_clock_sec": 1.3415304152294993}

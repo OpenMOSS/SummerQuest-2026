@@ -1,0 +1,22 @@
+{
+  "run_name": "ablation_post_norm_steps10000",
+  "config": "<local-path-omitted>/ablation_post_norm_steps10000.json",
+  "output_dir": "<local-path-omitted>/ablation_post_norm_steps10000",
+  "console_log": "<local-path-omitted>/ablation_post_norm_steps10000.log",
+  "gpu_telemetry": "<local-path-omitted>/ablation_post_norm_steps10000_gpu.csv",
+  "peak_gpu_memory_mib": 16244.0,
+  "started_at_utc": "2026-07-14T12:17:01.757497+00:00",
+  "ended_at_utc": "2026-07-14T13:08:48.624203+00:00",
+  "wall_clock_sec": 3106.866931403987,
+  "return_code": 0,
+  "summary_exists": true,
+  "checkpoint_exists": true,
+  "last_train_record": {
+    "step": 9999,
+    "wall_clock_sec": 3094.41430677101,
+    "processed_tokens": 327680000,
+    "train_loss": 1.3800158500671387,
+    "lr": 5.0000012302830855e-05,
+    "val_loss": 1.4226385354995728
+  }
+}

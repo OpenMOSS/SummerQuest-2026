@@ -1,0 +1,13 @@
+{
+  "best_validation_iteration": null,
+  "best_validation_loss": null,
+  "final_iteration": null,
+  "final_train_loss": 9.223958969116211,
+  "final_validation_loss": null,
+  "has_non_finite_metric": false,
+  "process_elapsed_seconds": null,
+  "processed_tokens": null,
+  "run_name": "batch_768",
+  "status": "failed_or_stopped",
+  "training_elapsed_seconds": null
+}

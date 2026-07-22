@@ -1,0 +1,21 @@
+{
+  "status": "completed",
+  "final_val_loss": 1.3863066375255584,
+  "total_wall_clock_sec": 2177.9396208561957,
+  "d_model": 512,
+  "num_layers": 4,
+  "num_heads": 16,
+  "context_length": 256,
+  "batch_size": 128,
+  "total_steps": 10000,
+  "processed_tokens": 327680000,
+  "max_lr": 0.001,
+  "min_lr": 0.0001,
+  "warmup_steps": 100,
+  "seed": 42,
+  "use_rmsnorm": true,
+  "norm_position": "pre",
+  "position_encoding": "rope",
+  "ffn_type": "swiglu",
+  "d_ff": 1344
+}

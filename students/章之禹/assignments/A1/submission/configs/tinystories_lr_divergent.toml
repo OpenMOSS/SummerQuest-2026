@@ -1,0 +1,51 @@
+[metadata]
+status = "gpu"
+purpose = "Deliberately divergent TinyStories run: very high constant-ish LR, grad clipping relaxed, to demonstrate loss blow-up (NaN/inf) for the required divergent-run experiment."
+
+[model]
+vocab_size = 10000
+context_length = 256
+d_model = 512
+num_layers = 4
+num_heads = 16
+d_ff = 1344
+rope_theta = 10000.0
+
+[data]
+train_path = "data/encoded/tinystories_train.npy"
+validation_path = "data/encoded/tinystories_valid.npy"
+dtype = "uint16"
+validate_token_range = true
+strict_token_range = false
+
+[optimizer]
+lr = 0.1
+betas = [0.9, 0.95]
+eps = 1e-8
+weight_decay = 0.1
+separate_weight_decay = true
+
+[schedule]
+max_learning_rate = 0.1
+min_learning_rate = 0.1
+warmup_iters = 0
+cosine_cycle_iters = 2000
+
+[training]
+device = "cuda"
+seed = 1337
+batch_size = 128
+max_iters = 2000
+max_grad_norm = 1000000.0
+compile = true
+log_interval = 5
+eval_interval = 100
+eval_iters = 10
+checkpoint_interval = 100000
+eval_at_start = true
+
+[run]
+output_dir = "runs/tinystories/lr_sweep/lr_1e_m1_divergent"
+log_file = "metrics.jsonl"
+checkpoint_file = "latest.pt"
+keep_step_checkpoints = false

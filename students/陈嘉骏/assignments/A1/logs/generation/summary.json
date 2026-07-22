@@ -1,0 +1,193 @@
+{
+  "experiment_name": "final_text_generation",
+  "device": "cuda:0",
+  "max_new_tokens": 256,
+  "seed": 336,
+  "sampling_settings": [
+    {
+      "name": "baseline",
+      "temperature": 0.8,
+      "top_p": 0.95
+    },
+    {
+      "name": "low_temperature",
+      "temperature": 0.5,
+      "top_p": 0.95
+    },
+    {
+      "name": "low_top_p",
+      "temperature": 0.8,
+      "top_p": 0.8
+    }
+  ],
+  "samples": [
+    {
+      "sample_name": "tinystories_baseline",
+      "model": "tinystories",
+      "config_path": "configs/tinystories_lr6e4.json",
+      "checkpoint_path": "runs/lr_sweep/tinystories_lr6e4/checkpoint_final.pt",
+      "tokenizer_path": "artifacts/tinystories_10k.json",
+      "model_config": {
+        "vocab_size": 10000,
+        "context_length": 256,
+        "d_model": 512,
+        "num_layers": 4,
+        "num_heads": 16,
+        "d_ff": 1344,
+        "rope_theta": 10000.0
+      },
+      "prompt": "Once upon a time, there was a little girl named Lily who",
+      "prompt_token_count": 13,
+      "generated_token_count": 124,
+      "total_token_count": 137,
+      "temperature": 0.8,
+      "top_p": 0.95,
+      "seed": 336,
+      "eos_token_id": 0,
+      "stop_reason": "eos",
+      "elapsed_seconds": 2.343222748488188,
+      "generated_text": " was very excited. She wanted to go on a trip with her family. They wanted to pack their bags and bags.\nLily and her family went on the trip with her family. They put their clothes in the car and drove around the town. They saw many fun things like trees, flowers, and a big lake.\nWhen they got to the camp, they played games and had a great time. They laughed and smiled all the time. When it was time to go home, they packed their things and left the trip. Lily was so happy she packed her bag and said goodbye to her family.\n<|endoftext|>",
+      "full_text": "Once upon a time, there was a little girl named Lily who was very excited. She wanted to go on a trip with her family. They wanted to pack their bags and bags.\nLily and her family went on the trip with her family. They put their clothes in the car and drove around the town. They saw many fun things like trees, flowers, and a big lake.\nWhen they got to the camp, they played games and had a great time. They laughed and smiled all the time. When it was time to go home, they packed their things and left the trip. Lily was so happy she packed her bag and said goodbye to her family.\n<|endoftext|>"
+    },
+    {
+      "sample_name": "tinystories_low_temperature",
+      "model": "tinystories",
+      "config_path": "configs/tinystories_lr6e4.json",
+      "checkpoint_path": "runs/lr_sweep/tinystories_lr6e4/checkpoint_final.pt",
+      "tokenizer_path": "artifacts/tinystories_10k.json",
+      "model_config": {
+        "vocab_size": 10000,
+        "context_length": 256,
+        "d_model": 512,
+        "num_layers": 4,
+        "num_heads": 16,
+        "d_ff": 1344,
+        "rope_theta": 10000.0
+      },
+      "prompt": "Once upon a time, there was a little girl named Lily who",
+      "prompt_token_count": 13,
+      "generated_token_count": 157,
+      "total_token_count": 170,
+      "temperature": 0.5,
+      "top_p": 0.95,
+      "seed": 336,
+      "eos_token_id": 0,
+      "stop_reason": "eos",
+      "elapsed_seconds": 0.7270749434828758,
+      "generated_text": " loved to play with her toys. One day, she found a big, red ball in her room. She was so happy and wanted to play with it all day.\nLily took the ball outside to the park. She saw a boy named Tom playing with a toy car. Tom was playing with the car when he accidentally dropped it. Lily was very sad and started to cry. Tom felt bad and wanted to help Lily.\nTom said, \"Don't cry, Lily. I will help you.\" He picked up the ball and gave it back to Lily. She was so happy and thanked Tom. They played with the ball together and had lots of fun. From that day on, Lily and Tom became best friends, and they always played with the red ball.\n<|endoftext|>",
+      "full_text": "Once upon a time, there was a little girl named Lily who loved to play with her toys. One day, she found a big, red ball in her room. She was so happy and wanted to play with it all day.\nLily took the ball outside to the park. She saw a boy named Tom playing with a toy car. Tom was playing with the car when he accidentally dropped it. Lily was very sad and started to cry. Tom felt bad and wanted to help Lily.\nTom said, \"Don't cry, Lily. I will help you.\" He picked up the ball and gave it back to Lily. She was so happy and thanked Tom. They played with the ball together and had lots of fun. From that day on, Lily and Tom became best friends, and they always played with the red ball.\n<|endoftext|>"
+    },
+    {
+      "sample_name": "tinystories_low_top_p",
+      "model": "tinystories",
+      "config_path": "configs/tinystories_lr6e4.json",
+      "checkpoint_path": "runs/lr_sweep/tinystories_lr6e4/checkpoint_final.pt",
+      "tokenizer_path": "artifacts/tinystories_10k.json",
+      "model_config": {
+        "vocab_size": 10000,
+        "context_length": 256,
+        "d_model": 512,
+        "num_layers": 4,
+        "num_heads": 16,
+        "d_ff": 1344,
+        "rope_theta": 10000.0
+      },
+      "prompt": "Once upon a time, there was a little girl named Lily who",
+      "prompt_token_count": 13,
+      "generated_token_count": 211,
+      "total_token_count": 224,
+      "temperature": 0.8,
+      "top_p": 0.8,
+      "seed": 336,
+      "eos_token_id": 0,
+      "stop_reason": "eos",
+      "elapsed_seconds": 0.9701236002147198,
+      "generated_text": " loved to play with her toys. One day, she found a pretty crystal in her toy box. It was shiny and sparkly, and she wanted to show it to her best friend, Tom.\nLily went to Tom's house and said, \"Tom, look what I found! It's so pretty!\" Tom looked at the crystal and said, \"Wow, it's so shiny and pretty! Let's play with it!\" They took the crystal outside and started to play with it.\nAs they played, a big wind came and blew the crystal away. Lily and Tom were sad. They looked everywhere for the crystal, but they could not find it. Then, they saw a big dog with the crystal in its mouth. The dog had the crystal in its mouth!\nLily and Tom were so happy to have the crystal back. They played with the dog and had a lot of fun. They knew they could always count on each other to solve any problem. And they played with the crystal all day long, happy and excited.\n<|endoftext|>",
+      "full_text": "Once upon a time, there was a little girl named Lily who loved to play with her toys. One day, she found a pretty crystal in her toy box. It was shiny and sparkly, and she wanted to show it to her best friend, Tom.\nLily went to Tom's house and said, \"Tom, look what I found! It's so pretty!\" Tom looked at the crystal and said, \"Wow, it's so shiny and pretty! Let's play with it!\" They took the crystal outside and started to play with it.\nAs they played, a big wind came and blew the crystal away. Lily and Tom were sad. They looked everywhere for the crystal, but they could not find it. Then, they saw a big dog with the crystal in its mouth. The dog had the crystal in its mouth!\nLily and Tom were so happy to have the crystal back. They played with the dog and had a lot of fun. They knew they could always count on each other to solve any problem. And they played with the crystal all day long, happy and excited.\n<|endoftext|>"
+    },
+    {
+      "sample_name": "owt_baseline",
+      "model": "owt",
+      "config_path": "configs/owt_baseline.json",
+      "checkpoint_path": "runs/owt_baseline/checkpoint_final.pt",
+      "tokenizer_path": "artifacts/owt_32k.json",
+      "model_config": {
+        "vocab_size": 32000,
+        "context_length": 256,
+        "d_model": 512,
+        "num_layers": 4,
+        "num_heads": 16,
+        "d_ff": 1344,
+        "rope_theta": 10000.0
+      },
+      "prompt": "The rapid development of artificial intelligence has",
+      "prompt_token_count": 7,
+      "generated_token_count": 256,
+      "total_token_count": 263,
+      "temperature": 0.8,
+      "top_p": 0.95,
+      "seed": 336,
+      "eos_token_id": 0,
+      "stop_reason": "max_new_tokens",
+      "elapsed_seconds": 1.196032576262951,
+      "generated_text": " led to the introduction of new technology to all technologies (like AI, robotics, AI, intelligent human and computer software), in developing robotics technology, and technology for us, as AI can allow us to deliver innovation that will enable us to understand the aspects we need and become a bigger user of as we grow their AI and give us the opportunity to create and support our digital and digital platforms that connect us with a broader society through innovation and technology (and it’s a new world). But we can also be the target of that technology and yet, as we’ve seen, to fight for technology in the past, we can look to share it with others if we can get it done.\n\nThe world is up to it. And it is the world. The world is about the world.\n\nThe world is about human beings. We can be biological and we cannot be humans, we can control our environment, and we can learn, make ourselves, and grow our own. We can build more and more computers on our own, and we can grow more and more and more.\n\nBut it’s true. We can learn from them.\n\nOur way is from our standpoint to our world.\n\nIn order to know what the world is",
+      "full_text": "The rapid development of artificial intelligence has led to the introduction of new technology to all technologies (like AI, robotics, AI, intelligent human and computer software), in developing robotics technology, and technology for us, as AI can allow us to deliver innovation that will enable us to understand the aspects we need and become a bigger user of as we grow their AI and give us the opportunity to create and support our digital and digital platforms that connect us with a broader society through innovation and technology (and it’s a new world). But we can also be the target of that technology and yet, as we’ve seen, to fight for technology in the past, we can look to share it with others if we can get it done.\n\nThe world is up to it. And it is the world. The world is about the world.\n\nThe world is about human beings. We can be biological and we cannot be humans, we can control our environment, and we can learn, make ourselves, and grow our own. We can build more and more computers on our own, and we can grow more and more and more.\n\nBut it’s true. We can learn from them.\n\nOur way is from our standpoint to our world.\n\nIn order to know what the world is"
+    },
+    {
+      "sample_name": "owt_low_temperature",
+      "model": "owt",
+      "config_path": "configs/owt_baseline.json",
+      "checkpoint_path": "runs/owt_baseline/checkpoint_final.pt",
+      "tokenizer_path": "artifacts/owt_32k.json",
+      "model_config": {
+        "vocab_size": 32000,
+        "context_length": 256,
+        "d_model": 512,
+        "num_layers": 4,
+        "num_heads": 16,
+        "d_ff": 1344,
+        "rope_theta": 10000.0
+      },
+      "prompt": "The rapid development of artificial intelligence has",
+      "prompt_token_count": 7,
+      "generated_token_count": 256,
+      "total_token_count": 263,
+      "temperature": 0.5,
+      "top_p": 0.95,
+      "seed": 336,
+      "eos_token_id": 0,
+      "stop_reason": "max_new_tokens",
+      "elapsed_seconds": 1.196990940719843,
+      "generated_text": " led to the emergence of a new technology that will enable the creation of the new technology.\n\nThe new technology is not new, it is not just a technology that is also available in the United States. It is also a technology that is used in the digital age and has been used to develop artificial intelligence.\n\nThe technology is also being developed in the United States, and has been used in the United States for several years.\n\nThe technology is also being developed in the United States, where the technology is first developed and developed in the United States.\n\nThe technology is the first technology to be developed in the United States.\n\nThe technology is developed in the United States, and is used in the United States.\n\nThe technology is designed to provide a new technology that can be used to create a new technology that is used in the United States, and will also be used in the United States.\n\nThe technology is based on the technology that is used to develop a new technology that can be used to create new technology and to create new technology.\n\nThe technology is used to create new technologies that can be used to create new technology and create new technology.\n\nThe technology is used to create new technology that will help the technology",
+      "full_text": "The rapid development of artificial intelligence has led to the emergence of a new technology that will enable the creation of the new technology.\n\nThe new technology is not new, it is not just a technology that is also available in the United States. It is also a technology that is used in the digital age and has been used to develop artificial intelligence.\n\nThe technology is also being developed in the United States, and has been used in the United States for several years.\n\nThe technology is also being developed in the United States, where the technology is first developed and developed in the United States.\n\nThe technology is the first technology to be developed in the United States.\n\nThe technology is developed in the United States, and is used in the United States.\n\nThe technology is designed to provide a new technology that can be used to create a new technology that is used in the United States, and will also be used in the United States.\n\nThe technology is based on the technology that is used to develop a new technology that can be used to create new technology and to create new technology.\n\nThe technology is used to create new technologies that can be used to create new technology and create new technology.\n\nThe technology is used to create new technology that will help the technology"
+    },
+    {
+      "sample_name": "owt_low_top_p",
+      "model": "owt",
+      "config_path": "configs/owt_baseline.json",
+      "checkpoint_path": "runs/owt_baseline/checkpoint_final.pt",
+      "tokenizer_path": "artifacts/owt_32k.json",
+      "model_config": {
+        "vocab_size": 32000,
+        "context_length": 256,
+        "d_model": 512,
+        "num_layers": 4,
+        "num_heads": 16,
+        "d_ff": 1344,
+        "rope_theta": 10000.0
+      },
+      "prompt": "The rapid development of artificial intelligence has",
+      "prompt_token_count": 7,
+      "generated_token_count": 125,
+      "total_token_count": 132,
+      "temperature": 0.8,
+      "top_p": 0.8,
+      "seed": 336,
+      "eos_token_id": 0,
+      "stop_reason": "eos",
+      "elapsed_seconds": 0.5806254595518112,
+      "generated_text": " led to the introduction of new technology to all technologies and systems in the United States.\n\nAs of 2010, the International Computer Foundation had been developing its technology for a decade. A huge number of U.S. companies, including IBM, were working on a major technology launch with the Microsoft Office for an extended period of time, the company’s name, and the company’s development. The company’s role in the project was to develop a set of sensors for the IBM and the company that created the applications for the technology.\n\nThe company’s research is available in the US and Europe.<|endoftext|>",
+      "full_text": "The rapid development of artificial intelligence has led to the introduction of new technology to all technologies and systems in the United States.\n\nAs of 2010, the International Computer Foundation had been developing its technology for a decade. A huge number of U.S. companies, including IBM, were working on a major technology launch with the Microsoft Office for an extended period of time, the company’s name, and the company’s development. The company’s role in the project was to develop a set of sensors for the IBM and the company that created the applications for the technology.\n\nThe company’s research is available in the US and Europe.<|endoftext|>"
+    }
+  ]
+}

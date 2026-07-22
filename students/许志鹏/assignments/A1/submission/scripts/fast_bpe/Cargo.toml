@@ -1,0 +1,13 @@
+[package]
+name = "fast_bpe"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rayon = "1.10"
+rustc-hash = "2.1"
+
+[profile.release]
+codegen-units = 1
+lto = true
+panic = "abort"

@@ -1,0 +1,10 @@
+{
+  "base": "tinystories_baseline.json",
+  "run_name": "owt_baseline",
+  "train_data": "data/owt_train.npy",
+  "validation_data": "data/owt_validation.npy",
+  "output_dir": "runs/owt_baseline",
+  "model": {
+    "vocab_size": 32000
+  }
+}

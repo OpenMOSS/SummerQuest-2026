@@ -1,0 +1,10 @@
+{
+  "prompt": "Once upon a time",
+  "seed": 42,
+  "temperature": 0.8,
+  "top_p": 0.8,
+  "requested_new_tokens": 256,
+  "generated_new_tokens": 163,
+  "stopped_on_eos": true,
+  "text": "Once upon a time, there was a big, heavy rock. The rock was sad because it was so heavy. It wanted to be the best rock ever. The rock tried to push the rock, but it was too heavy.\nOne day, a little girl named Lily saw the heavy rock. She wanted to help the rock. Lily had an idea. She asked her mom to help her push the rock. They pushed and pushed, but the rock did not move.\nThen, something unexpected happened. The heavy rock started to move! It was not heavy anymore. The rock was a big, strong turtle! The turtle said, \"Thank you, Lily and Mom! I was so tired, but now I am free!\" The heavy rock and the turtle became best friends, and they all lived happily ever after.\n<|endoftext|>"
+}

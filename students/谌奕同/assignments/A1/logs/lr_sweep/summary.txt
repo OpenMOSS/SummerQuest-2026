@@ -1,0 +1,14 @@
+Learning Rate Sweep
+Context length: 256
+Batch size: 128
+Steps: 1000 per LR
+lr=3e-4 -> best val loss 2.2639
+lr=6e-4 -> best val loss 1.9855
+lr=1e-3 -> best val loss 1.8347
+lr=3e-3 -> best val loss 1.6989
+lr=1e-2 -> best val loss 2.3426
+
+Note: AdamW's adaptive normalization keeps even very high LRs numerically stable,
+so the sweep shows performance degradation rather than NaN divergence. A true
+catastrophic divergence example is recorded in the ablation_no_rmsnorm log
+(lr=1e-3 without RMSNorm: loss explodes / OOM).

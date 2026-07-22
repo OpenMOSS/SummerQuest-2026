@@ -1,0 +1,10 @@
+{
+  "num_bytes": 289998753,
+  "num_tokens": 66401098,
+  "compression_ratio": 4.367378879789006,
+  "elapsed_seconds": 440.1553291808814,
+  "bytes_per_second": 658855.48526626,
+  "tokens_per_second": 150858.3302253113,
+  "longest_observed_token_id": 25836,
+  "longest_observed_token_num_bytes": 64
+}

@@ -1,0 +1,17 @@
+{
+    "extends": "tinystories_baseline.json",
+    "experiment_name": "tinystories_lr_high",
+    "optimizer": {
+        "max_learning_rate": 0.1,
+        "min_learning_rate": 0.01,
+        "warmup_steps": 10,
+        "cosine_cycle_steps": 300
+    },
+    "training": {
+        "max_steps": 300,
+        "eval_interval": 10,
+        "checkpoint_interval": 0,
+        "log_dir": "logs/lr_sweep/tinystories_lr_high",
+        "checkpoint_dir": "artifacts/checkpoints/lr_sweep/tinystories_lr_high"
+    }
+}

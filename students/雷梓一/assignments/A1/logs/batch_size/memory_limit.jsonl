@@ -1,0 +1,8 @@
+{"batch_size":1,"status":"ok","max_memory_allocated_mb":412.57}
+{"batch_size":16,"status":"ok","max_memory_allocated_mb":1577.33}
+{"batch_size":64,"status":"ok","max_memory_allocated_mb":5886.66}
+{"batch_size":128,"status":"ok","max_memory_allocated_mb":11631.14}
+{"batch_size":256,"status":"ok","max_memory_allocated_mb":23117.22}
+{"batch_size":512,"status":"ok","max_memory_allocated_mb":46096.28}
+{"batch_size":768,"status":"ok","max_memory_allocated_mb":69074.53}
+{"batch_size":1024,"status":"oom"}

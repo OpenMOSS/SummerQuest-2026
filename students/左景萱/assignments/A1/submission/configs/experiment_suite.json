@@ -1,0 +1,54 @@
+{
+  "baseline_config": "configs/tinystories_baseline.json",
+  "owt_config": "configs/owt_baseline.json",
+  "learning_rate_sweep": {
+    "values": [0.0001, 0.0003, 0.001, 0.03, 0.1, 0.3, 1.0, 30.0],
+    "max_steps": 1500,
+    "val_every": 250
+  },
+  "batch_size_sweep": {
+    "values": [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096],
+    "steps_per_value": 50
+  },
+  "validation": {
+    "tinystories_max_final_val_loss": 1.45,
+    "required_batch_sizes": [64, 128],
+    "require_batch_oom": true,
+    "require_divergent_learning_rate": true
+  },
+  "ablations": [
+    {
+      "name": "no_rmsnorm",
+      "overrides": {
+        "model.norm_mode": "none"
+      }
+    },
+    {
+      "name": "no_rmsnorm_low_lr",
+      "overrides": {
+        "model.norm_mode": "none",
+        "training.max_lr": 0.0001,
+        "training.min_lr": 0.00001
+      }
+    },
+    {
+      "name": "post_norm",
+      "overrides": {
+        "model.norm_mode": "post"
+      }
+    },
+    {
+      "name": "no_rope",
+      "overrides": {
+        "model.use_rope": false
+      }
+    },
+    {
+      "name": "silu_matched",
+      "overrides": {
+        "model.ffn_type": "silu",
+        "model.d_ff": 2048
+      }
+    }
+  ]
+}

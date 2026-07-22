@@ -1,0 +1,66 @@
+{
+  "run": {
+    "name": "train_tinystories"
+  },
+  "data": {
+    "train_dataset": "artifacts/token_ids/tinystories_train.npy",
+    "val_dataset": "artifacts/token_ids/tinystories_valid.npy",
+    "vocab_path": "artifacts/TinyStories_train_bpe/vocab.json",
+    "merges_path": "artifacts/TinyStories_train_bpe/merges.json",
+    "special_tokens": ["<|endoftext|>"],
+    "dataset_dtype": "uint16"
+  },
+  "model": {
+    "vocab_size": 10000,
+    "context_length": 256,
+    "d_model": 512,
+    "d_ff": 1344,
+    "num_layers": 4,
+    "num_heads": 16,
+    "theta": 10000.0,
+    "eps": 1e-5,
+    "use_rope": true,
+    "norm_mode": "pre",
+    "ffn_type": "swiglu"
+  },
+  "optimizer": {
+    "weight_decay": 0.0005,
+    "betas": [0.9, 0.999],
+    "eps": 1e-8,
+    "grad_clip_max_norm": 1.0,
+    "grad_clip_eps": 1e-6
+  },
+  "schedule": {
+    "lr_max": 0.003,
+    "lr_min_ratio": 0.1,
+    "warmup_fraction": 0.025
+  },
+  "training": {
+    "target_tokens": 327680000,
+    "batch_size": 128,
+    "device": "auto",
+    "dtype": null,
+    "float32_matmul_precision": "high",
+    "seed": 1337,
+    "log_every": 50,
+    "print_every": 50
+  },
+  "validation": {
+    "batch_size": 128,
+    "every_tokens": 16384000,
+    "max_tokens": 1048576
+  },
+  "checkpoint": {
+    "enabled": true,
+    "dir": "checkpoint/tinystories",
+    "save_every": 5000,
+    "save_best": true
+  },
+  "logging": {
+    "path": "logs/train_tinystories.jsonl",
+    "summary_path": "logs/train_tinystories.summary.json"
+  },
+  "stability": {
+    "divergence_loss_threshold": 100.0
+  }
+}

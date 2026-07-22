@@ -1,0 +1,8 @@
+{
+  "primary_tinystories_run": "lr_1e-3",
+  "best_tinystories_val_loss": 1.3863066375255584,
+  "owt_val_loss": 4.286454272270203,
+  "maximum_successful_batch_size": 512,
+  "first_oom_batch_size": 1024,
+  "divergent_lr_run": "omitted by student decision"
+}

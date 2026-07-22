@@ -1,0 +1,17 @@
+{
+  "final_val_loss": 1.3806428551673888,
+  "total_training_time_sec": 1628.1918377876282,
+  "d_model": 512,
+  "num_layers": 4,
+  "num_heads": 16,
+  "context_length": 256,
+  "batch_size": 128,
+  "steps": 10000,
+  "vocab_size": 10000,
+  "norm_mode": "pre",
+  "use_rmsnorm": true,
+  "use_rope": true,
+  "ffn_type": "swiglu",
+  "checkpoint": "runs/tinystories_small/checkpoint.pt",
+  "sample": "Once upon a time, there was a little boy named Tim. Tim loved to play outside. One day, he found a big stick in the park. He thought it would be fun to play with the stick.\nTim met a girl named Sue. Sue saw the stick and said, \"I want to play too!\" Tim and Sue decided to share the stick. They took turns holding it and running around. They had a lot of fun.\nAfter playing, Tim and Sue sat under a tree. They looked at the sky and saw the big clouds. They knew it was time to go home. Tim and Sue said goodbye and promised to play together again soon.\n<|endoftext|>"
+}

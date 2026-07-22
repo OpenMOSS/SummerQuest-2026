@@ -1,0 +1,48 @@
+{
+  "run_name": "train_tinystories_ablation_silu",
+  "seed": 336,
+  "model": {
+    "vocab_size": 10000,
+    "context_length": 256,
+    "d_model": 512,
+    "num_layers": 4,
+    "num_heads": 16,
+    "d_ff": 2048,
+    "rope_theta": 10000.0,
+    "ffn_type": "silu"
+  },
+  "data": {
+    "train": "tokenized/tinystories_train.bin",
+    "validation": "tokenized/tinystories_valid.bin"
+  },
+  "training": {
+    "batch_size": 128,
+    "context_length": 256,
+    "max_steps": 10000,
+    "max_learning_rate": 0.0012,
+    "min_learning_rate": 0.00012,
+    "warmup_steps": 500,
+    "cosine_cycle_steps": 10000,
+    "device": "cuda:0",
+    "weight_decay": 0.1,
+    "beta1": 0.9,
+    "beta2": 0.95,
+    "eps": 1e-08,
+    "max_grad_norm": 1.0,
+    "log_interval": 10,
+    "eval_interval": 250,
+    "eval_batches": 20,
+    "checkpoint_interval": 1000,
+    "output_dir": "runs/ablation/silu",
+    "log_path": "logs/ablation/train_tinystories_ablation_silu.jsonl",
+    "summary_path": "logs/ablation/train_tinystories_ablation_silu.summary.json"
+  },
+  "final_iteration": 10000,
+  "final_train_loss": 1.3759018182754517,
+  "final_validation_loss": 1.3900810360908509,
+  "elapsed_seconds": 3557.9747724831104,
+  "processed_tokens": 327680000,
+  "checkpoint_path": "runs/ablation/silu/checkpoint_final.pt",
+  "final_val_loss": 1.3900810360908509,
+  "total_training_time_sec": 3557.9747724831104
+}

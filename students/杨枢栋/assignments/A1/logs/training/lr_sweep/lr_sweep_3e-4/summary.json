@@ -1,0 +1,17 @@
+{
+  "final_val_loss": 1.5102126717567443,
+  "total_training_time_sec": 1622.3716568946838,
+  "d_model": 512,
+  "num_layers": 4,
+  "num_heads": 16,
+  "context_length": 256,
+  "batch_size": 128,
+  "steps": 10000,
+  "vocab_size": 10000,
+  "norm_mode": "pre",
+  "use_rmsnorm": true,
+  "use_rope": true,
+  "ffn_type": "swiglu",
+  "checkpoint": "runs/lr_sweep_3e-4/checkpoint.pt",
+  "sample": "Once upon a time, there was a little boy named Tim. Tim loved to play with his toy gun. He would shoot at his toy gun and pretend to shoot at things. Tim had a toy gun that he used to shoot.\nOne day, Tim's toy gun was gone. He looked everywhere but could not find it. Tim was very sad. He asked his mom, \"Mom, where is my toy gun?\" His mom said, \"I don't know, Tim. Let's look for it together.\"\nThey looked in the house, the living room, and the bedroom. But they could not find the toy gun. Tim was very sad. He thought his toy gun was lost forever.\nThen, Tim saw his toy gun in the garden. He picked it up and started to shoot at it. Suddenly, a big wind came and blew the toy gun away. Tim was so happy! He learned that if he wants to shoot his toy gun, he can make a big difference.\n<|endoftext|>"
+}

@@ -1,0 +1,24 @@
+{
+  "ablation": {},
+  "batch_size": 128,
+  "best_val_loss": 1.719861626625061,
+  "context_length": 256,
+  "final_train_loss": 1.7039191722869873,
+  "final_val_loss": 1.7293087244033813,
+  "max_cuda_memory_bytes": 11739307008,
+  "model": {
+    "context_length": 256,
+    "d_ff": 1344,
+    "d_model": 512,
+    "num_heads": 16,
+    "num_layers": 4,
+    "rope_theta": 10000.0,
+    "vocab_size": 10000
+  },
+  "parameter_count": 22696448,
+  "processed_tokens": 49152000,
+  "run_name": "ablation_control",
+  "steps": 1500,
+  "tokens_per_sec": 157387.82101402114,
+  "total_training_sec": 312.29862440004945
+}

@@ -1,0 +1,16 @@
+{
+  "vocab_size": 10000,
+  "context_length": 256,
+  "d_model": 512,
+  "num_layers": 4,
+  "num_heads": 16,
+  "d_ff": 1344,
+  "rope_theta": 10000.0,
+  "norm_position": "post",
+  "batch_size": 128,
+  "total_steps": 10000,
+  "processed_tokens": 327680000,
+  "final_val_loss": 1.4462016940116882,
+  "total_training_time_sec": 2951.4558490402997,
+  "device": "cuda"
+}

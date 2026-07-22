@@ -1,0 +1,58 @@
+{
+  "data": {
+    "train_path": "artifacts/tokenizer_experiments/tinystories_train_uint16.npy",
+    "validation_path": "artifacts/tokenizer_experiments/tinystories_dev_uint16.npy"
+  },
+  "experiment_name": "tinystories_batch_1",
+  "model": {
+    "context_length": 256,
+    "d_ff": 1344,
+    "d_model": 512,
+    "ffn_type": "swiglu",
+    "norm_mode": "pre",
+    "num_heads": 16,
+    "num_layers": 4,
+    "rope_theta": 10000.0,
+    "use_rope": true,
+    "vocab_size": 10000
+  },
+  "optimizer": {
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "cosine_cycle_steps": 16384,
+    "eps": 1e-08,
+    "max_grad_norm": 1.0,
+    "max_learning_rate": 0.0003,
+    "min_learning_rate": 3e-05,
+    "warmup_steps": 1024,
+    "weight_decay": 0.1
+  },
+  "tokenizer": {
+    "eot_token_id": 256,
+    "merges_path": "artifacts/tinystories_bpe/merges.json",
+    "special_tokens": [
+      "<|endoftext|>"
+    ],
+    "vocab_path": "artifacts/tinystories_bpe/vocab.json"
+  },
+  "training": {
+    "amp_dtype": "bfloat16",
+    "batch_size": 1,
+    "checkpoint_dir": "artifacts/checkpoints/batch_size/tinystories_batch_1",
+    "checkpoint_interval": 0,
+    "device": "cuda:0",
+    "dtype": "float32",
+    "eval_batch_size": 128,
+    "eval_batches": 20,
+    "eval_interval": 1024,
+    "gradient_accumulation_steps": 1,
+    "log_dir": "logs/batch_size/tinystories_batch_1",
+    "log_interval": 256,
+    "max_steps": 16384,
+    "max_wall_clock_sec": null,
+    "resume_from": null,
+    "seed": 42
+  }
+}

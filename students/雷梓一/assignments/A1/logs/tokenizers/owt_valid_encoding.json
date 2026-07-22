@@ -1,0 +1,13 @@
+{
+  "input": "data/raw/owt_valid.txt",
+  "output": "data/encoded/owt_valid.bin",
+  "dtype": "uint16",
+  "token_count": 66401098,
+  "source_bytes": 289998753,
+  "compression_ratio_bytes_per_token": 4.367378879789006,
+  "wall_clock_sec": 37.894825488328934,
+  "throughput_bytes_per_sec": 7652726.817595555,
+  "num_processes": 32,
+  "output_sha256": "644d6bb54a0fe0e9e9605e60a7b904967b50e25d22d32aa20e9cfb343283e577",
+  "peak_rss_mb": 450.25
+}

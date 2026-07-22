@@ -1,0 +1,24 @@
+{
+  "vocab_size": 10000,
+  "num_merges": 9743,
+  "special_tokens": [
+    "<|endoftext|>"
+  ],
+  "train_text": "TinyStoriesV2-GPT4-train.txt",
+  "valid_text": "TinyStoriesV2-GPT4-valid.txt",
+  "train": {
+    "tokens": 540796778,
+    "bytes": 2227753162,
+    "bytes_per_token": 4.11939059666513,
+    "tokens_per_sec": 1006153.8568933113
+  },
+  "valid": {
+    "tokens": 5461210,
+    "bytes": 22502601,
+    "bytes_per_token": 4.120442356181139,
+    "tokens_per_sec": 1005073.152338647
+  },
+  "longest_token_bytes": 15,
+  "longest_token_preview": " accomplishment",
+  "wall_clock_sec": 545.7811336517334
+}

@@ -1,0 +1,17 @@
+{
+  "status": "ok",
+  "process_failures": [],
+  "validation_errors": [],
+  "checks": {
+    "tinystories_final_val_loss": 1.370364099740982,
+    "tinystories_max_final_val_loss": 1.45,
+    "divergent_learning_rate_runs": [
+      "3e01"
+    ],
+    "required_batch_sizes": [
+      64,
+      128
+    ],
+    "batch_oom_observed": true
+  }
+}

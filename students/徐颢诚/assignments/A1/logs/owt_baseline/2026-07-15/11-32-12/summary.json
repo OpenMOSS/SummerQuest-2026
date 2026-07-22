@@ -1,0 +1,19 @@
+{
+  "run_name": "owt_baseline",
+  "final_val_loss": 4.0571839094161986,
+  "total_training_time_sec": 1129.2137527614832,
+  "d_model": 512,
+  "num_layers": 4,
+  "num_heads": 16,
+  "context_length": 256,
+  "use_rmsnorm": true,
+  "use_rope": true,
+  "use_swiglu": true,
+  "batch_size_per_gpu": 64,
+  "global_batch_size": 256,
+  "world_size": 4,
+  "total_steps": 5000,
+  "processed_tokens": 327680000,
+  "device": "cuda:0",
+  "checkpoint_path": "not submitted (model weights excluded)"
+}

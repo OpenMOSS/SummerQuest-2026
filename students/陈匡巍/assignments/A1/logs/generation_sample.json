@@ -1,0 +1,5 @@
+{
+  "prompt": "Once upon a time",
+  "sample": "Once upon a time, there was a humble cat named Tom. Tom loved to play with his hoop. He would roll it around the garden and watch it roll on the ground. Tom's friends, a dog named Max, saw him playing with the hoop.\nOne day, Tom was playing with the hoop in the garden. He kicked it high into the air and it moved! Tom was sad and confused. He didn't know what to do.\nJust then, a big gust of wind came through the window. It was a magic kick! Tom and Max ran after the ball and found it near a big tree. They were so happy! Tom learned that even when things go by, it's good to listen to them.\n<|endoftext|>",
+  "note": "Sample generated from the trained TinyStories checkpoint kept in memory during this script run."
+}

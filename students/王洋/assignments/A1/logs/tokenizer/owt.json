@@ -1,0 +1,278 @@
+{
+  "format": "summerquest-a1-public-tokenizer-log-v1",
+  "scope": "owt-32k",
+  "tokenizer": {
+    "artifact_format": "cs336-byte-bpe-v1",
+    "requested_vocab_size": 32000,
+    "actual_vocab_size": 32000,
+    "merge_count": 31743,
+    "special_tokens": [
+      "<|endoftext|>"
+    ],
+    "sha256": {
+      "merges_file": "181a47c159d45d99894e3f1d3c9eb6c258d13a48e5f9998d0abfc468861b90d9",
+      "vocab_file": "9179737a5b6ffc6da73df35850cc80c991548ca6c57ba1d825bf6d8f28d7130a"
+    },
+    "training": {
+      "measurement_role": "official_unprofiled_final_code",
+      "created_at_utc": "2026-07-12T11:45:09Z",
+      "source_filename": "owt_train.txt",
+      "source_bytes": 11920511059,
+      "elapsed_seconds": 2695.2638471983373,
+      "peak_rss_bytes": 10223534080,
+      "peak_rss_gb": 10.22353408,
+      "peak_rss_gib": 9.521408081054688,
+      "used_gpu": false,
+      "resource_limits": {
+        "max_elapsed_seconds": 43200,
+        "max_peak_rss_bytes": 100000000000,
+        "elapsed_within_limit": true,
+        "rss_within_limit": true
+      }
+    },
+    "longest_tokens": [
+      {
+        "bytes_hex": "c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382",
+        "id": 25822,
+        "length_bytes": 64,
+        "text": "ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ"
+      },
+      {
+        "bytes_hex": "2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d",
+        "id": 25836,
+        "length_bytes": 64,
+        "text": "----------------------------------------------------------------"
+      },
+      {
+        "bytes_hex": "e28094e28094e28094e28094e28094e28094e28094e28094e28094e28094e28094e28094e28094e28094e28094e28094",
+        "id": 31274,
+        "length_bytes": 48,
+        "text": "————————————————"
+      },
+      {
+        "bytes_hex": "2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d",
+        "id": 10900,
+        "length_bytes": 32,
+        "text": "--------------------------------"
+      },
+      {
+        "bytes_hex": "5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f5f",
+        "id": 15947,
+        "length_bytes": 32,
+        "text": "________________________________"
+      },
+      {
+        "bytes_hex": "c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382",
+        "id": 16885,
+        "length_bytes": 32,
+        "text": "ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ"
+      },
+      {
+        "bytes_hex": "3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d",
+        "id": 25146,
+        "length_bytes": 32,
+        "text": "================================"
+      },
+      {
+        "bytes_hex": "2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e",
+        "id": 28585,
+        "length_bytes": 32,
+        "text": "................................"
+      },
+      {
+        "bytes_hex": "2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a",
+        "id": 31162,
+        "length_bytes": 32,
+        "text": "********************************"
+      },
+      {
+        "bytes_hex": "e28094e28094e28094e28094e28094e28094e28094e28094",
+        "id": 15279,
+        "length_bytes": 24,
+        "text": "————————"
+      },
+      {
+        "bytes_hex": "2064697370726f706f7274696f6e6174656c79",
+        "id": 23327,
+        "length_bytes": 19,
+        "text": " disproportionately"
+      },
+      {
+        "bytes_hex": "2074656c65636f6d6d756e69636174696f6e73",
+        "id": 24268,
+        "length_bytes": 19,
+        "text": " telecommunications"
+      },
+      {
+        "bytes_hex": "20656e7669726f6e6d656e74616c69737473",
+        "id": 28274,
+        "length_bytes": 18,
+        "text": " environmentalists"
+      },
+      {
+        "bytes_hex": "20726573706f6e736962696c6974696573",
+        "id": 14284,
+        "length_bytes": 17,
+        "text": " responsibilities"
+      },
+      {
+        "bytes_hex": "20756e636f6e737469747574696f6e616c",
+        "id": 16284,
+        "length_bytes": 17,
+        "text": " unconstitutional"
+      },
+      {
+        "bytes_hex": "2063727970746f63757272656e63696573",
+        "id": 25698,
+        "length_bytes": 17,
+        "text": " cryptocurrencies"
+      },
+      {
+        "bytes_hex": "2064697370726f706f7274696f6e617465",
+        "id": 26073,
+        "length_bytes": 17,
+        "text": " disproportionate"
+      },
+      {
+        "bytes_hex": "206d6973756e6465727374616e64696e67",
+        "id": 27038,
+        "length_bytes": 17,
+        "text": " misunderstanding"
+      },
+      {
+        "bytes_hex": "20636f756e746572746572726f7269736d",
+        "id": 28492,
+        "length_bytes": 17,
+        "text": " counterterrorism"
+      },
+      {
+        "bytes_hex": "20636861726163746572697a6174696f6e",
+        "id": 30211,
+        "length_bytes": 17,
+        "text": " characterization"
+      }
+    ]
+  },
+  "benchmarks": [
+    {
+      "benchmark_id": "owt_on_owt_10docs",
+      "format": "cs336-tokenizer-benchmark-v1",
+      "created_at_utc": "2026-07-12T10:55:08Z",
+      "source_filename": "owt_10docs.txt",
+      "source_log_basename": "owt_on_owt_10docs.json",
+      "tokenizer_artifact": "tokenizer.json",
+      "tokenizer_vocab_size": 32000,
+      "characters_per_pass": 50099,
+      "bytes_per_pass": 50590,
+      "tokens_per_pass": 11211,
+      "compression_bytes_per_token": 4.512532334314512,
+      "repeat": 3,
+      "durations_seconds": [
+        0.010000212118029594,
+        0.009898976422846317,
+        0.009840695187449455
+      ],
+      "median_seconds": 0.009898976422846317,
+      "throughput_bytes_per_second": 5103247.927477559,
+      "median_throughput_bytes_per_second": 5110629.406414277,
+      "throughput_tokens_per_second": 1130905.5646363099,
+      "peak_rss_bytes": 456138752
+    },
+    {
+      "benchmark_id": "owt_on_tinystories_10docs",
+      "format": "cs336-tokenizer-benchmark-v1",
+      "created_at_utc": "2026-07-12T10:55:06Z",
+      "source_filename": "tinystories_10docs.txt",
+      "source_log_basename": "owt_on_tinystories_10docs.json",
+      "tokenizer_artifact": "tokenizer.json",
+      "tokenizer_vocab_size": 32000,
+      "characters_per_pass": 10908,
+      "bytes_per_pass": 10908,
+      "tokens_per_pass": 2797,
+      "compression_bytes_per_token": 3.899892742223811,
+      "repeat": 3,
+      "durations_seconds": [
+        0.002570238895714283,
+        0.002419769763946533,
+        0.0023904144763946533
+      ],
+      "median_seconds": 0.002419769763946533,
+      "throughput_bytes_per_second": 4433892.122002319,
+      "median_throughput_bytes_per_second": 4507866.889868709,
+      "throughput_tokens_per_second": 1136926.683648743,
+      "peak_rss_bytes": 456036352
+    },
+    {
+      "benchmark_id": "owt_throughput_valid",
+      "format": "cs336-tokenizer-benchmark-v1",
+      "created_at_utc": "2026-07-12T11:02:58Z",
+      "source_filename": "owt_valid.txt",
+      "source_log_basename": "owt_throughput_valid.json",
+      "tokenizer_artifact": "tokenizer.json",
+      "tokenizer_vocab_size": 32000,
+      "characters_per_pass": 287354132,
+      "bytes_per_pass": 289998753,
+      "tokens_per_pass": 66402215,
+      "compression_bytes_per_token": 4.367305412929373,
+      "repeat": 3,
+      "durations_seconds": [
+        156.24364878423512,
+        156.47116555273533,
+        155.7927731787786
+      ],
+      "median_seconds": 156.24364878423512,
+      "throughput_bytes_per_second": 1856952.335848253,
+      "median_throughput_bytes_per_second": 1856067.4642236126,
+      "throughput_tokens_per_second": 425194.0636784321,
+      "peak_rss_bytes": 563671040
+    }
+  ],
+  "encodings": [
+    {
+      "split": "train",
+      "format": "cs336-token-array-v1",
+      "created_at_utc": "2026-07-12T11:02:56Z",
+      "source_filename": "owt_train.txt",
+      "source_log_basename": "owt_train.npy.json",
+      "output_basename": "owt_train.npy",
+      "source_bytes": 11920511059,
+      "output_bytes": 5454483834,
+      "token_count": 2727241853,
+      "shape": [
+        2727241853
+      ],
+      "dtype": "uint16",
+      "tokenizer_artifact": "tokenizer.json",
+      "tokenizer_vocab_size": 32000,
+      "split_special_token": "<|endoftext|>",
+      "requested_workers": 16,
+      "effective_workers": 16,
+      "bytes_per_token": 4.37090353607154,
+      "elapsed_seconds": 451.4971622386947,
+      "source_bytes_per_second": 26402183.7920167
+    },
+    {
+      "split": "validation",
+      "format": "cs336-token-array-v1",
+      "created_at_utc": "2026-07-12T11:03:12Z",
+      "source_filename": "owt_valid.txt",
+      "source_log_basename": "owt_valid.npy.json",
+      "output_basename": "owt_valid.npy",
+      "source_bytes": 289998753,
+      "output_bytes": 132804558,
+      "token_count": 66402215,
+      "shape": [
+        66402215
+      ],
+      "dtype": "uint16",
+      "tokenizer_artifact": "tokenizer.json",
+      "tokenizer_vocab_size": 32000,
+      "split_special_token": "<|endoftext|>",
+      "requested_workers": 16,
+      "effective_workers": 16,
+      "bytes_per_token": 4.367305412929373,
+      "elapsed_seconds": 13.787113588303328,
+      "source_bytes_per_second": 21034043.938393917
+    }
+  ]
+}

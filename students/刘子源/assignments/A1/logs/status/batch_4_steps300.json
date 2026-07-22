@@ -1,0 +1,22 @@
+{
+  "run_name": "batch_4_steps300",
+  "config": "<local-path-omitted>/batch_4_steps300.json",
+  "output_dir": "<local-path-omitted>/batch_4_steps300",
+  "console_log": "<local-path-omitted>/batch_4_steps300.log",
+  "gpu_telemetry": "<local-path-omitted>/batch_4_steps300_gpu.csv",
+  "peak_gpu_memory_mib": 1264.0,
+  "started_at_utc": "2026-07-14T11:29:47.806990+00:00",
+  "ended_at_utc": "2026-07-14T11:30:06.640301+00:00",
+  "wall_clock_sec": 18.83332869783044,
+  "return_code": 0,
+  "summary_exists": true,
+  "checkpoint_exists": true,
+  "last_train_record": {
+    "step": 299,
+    "wall_clock_sec": 12.424038731027395,
+    "processed_tokens": 307200,
+    "train_loss": 3.630103826522827,
+    "lr": 5.001523069915351e-05,
+    "val_loss": 3.94073600769043
+  }
+}

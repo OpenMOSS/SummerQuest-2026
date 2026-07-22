@@ -1,0 +1,55 @@
+{
+  "run_name": "cpu_debug",
+  "output_dir": "runs/cpu_debug",
+  "seed": 1337,
+  "device": "cpu",
+  "precision": "float32",
+  "deterministic": true,
+  "allow_tf32": false,
+  "data": {
+    "train": "data/tokenized/tinystories_train.npy",
+    "validation": "data/tokenized/tinystories_valid.npy"
+  },
+  "model": {
+    "vocab_size": 10000,
+    "context_length": 64,
+    "d_model": 128,
+    "num_layers": 2,
+    "num_heads": 4,
+    "d_ff": 320,
+    "rope_theta": 10000.0,
+    "remove_rmsnorm": false,
+    "use_post_norm": false,
+    "remove_rope": false,
+    "ffn_type": "swiglu"
+  },
+  "optimizer": {
+    "learning_rate": 0.001,
+    "betas": [0.9, 0.95],
+    "eps": 1e-8,
+    "weight_decay": 0.1
+  },
+  "schedule": {
+    "min_learning_rate": 0.0001,
+    "warmup_iters": 2,
+    "cosine_cycle_iters": 20
+  },
+  "training": {
+    "max_steps": 20,
+    "micro_batch_size": 2,
+    "gradient_accumulation_steps": 1,
+    "gradient_clip_norm": 1.0
+  },
+  "evaluation": {
+    "interval": 5,
+    "batches": 2,
+    "batch_size": 2,
+    "at_start": true
+  },
+  "logging": {
+    "interval": 1
+  },
+  "checkpoint": {
+    "interval": 10
+  }
+}

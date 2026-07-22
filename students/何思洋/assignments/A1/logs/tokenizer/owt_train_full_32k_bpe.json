@@ -1,0 +1,16 @@
+{
+  "tokenizer_path": "artifacts/tokenizers/owt_train_full_32k.json",
+  "metric_text_path": "data/owt_valid.txt",
+  "metric_max_bytes": 10485760,
+  "vocab_size": 32000,
+  "num_merges": 31743,
+  "bytes": 10485760,
+  "tokens": 2417779,
+  "compression_ratio_bytes_per_token": 4.336938984084154,
+  "throughput_tokens_per_sec": 118571.58282306729,
+  "throughput_bytes_per_sec": 514237.7199499235,
+  "wall_clock_sec": 20.39088070206344,
+  "longest_token_bytes": 64,
+  "longest_token_utf8": "ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ",
+  "longest_token_hex": "c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382"
+}

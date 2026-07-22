@@ -1,0 +1,6 @@
+(/etc/inspire) (cs336-basics) %(?:%{[01;32m%}%1{➜%} :%{[01;31m%}%1{➜%} ) %{[36m%}%c%{[00m%} $(git_prompt_info) in the theater.
+One day, the theater manager brought a very heavy rock and a really cool hat. She asked her son to go and see it. But the rock was too heavy for her. She asked her son for help.
+"I need to go home," the boy said. He began to pull her hand, but it was too heavy for him.
+The boy then decided to take her mom's hand and look for help. After a while, she found the rock. She was so excited!
+The boy was so happy and he thanked his dad for helping her. From then on, he always remembered to be extra careful when playing.
+<|endoftext|>

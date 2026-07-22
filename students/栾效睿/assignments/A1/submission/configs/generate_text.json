@@ -1,0 +1,12 @@
+{
+  "training_config": "configs/train_tinystories.json",
+  "checkpoint": "checkpoint/tinystories/best.pt",
+  "output": "logs/generation_samples.jsonl",
+  "prompt": "Once upon a time",
+  "max_new_tokens": 256,
+  "temperature": 0.8,
+  "top_p": 0.9,
+  "seed": 1337,
+  "device": "auto",
+  "eos_token": "<|endoftext|>"
+}

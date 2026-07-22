@@ -1,0 +1,10 @@
+{
+  "prompt": "Once upon a time",
+  "seed": 42,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "requested_new_tokens": 256,
+  "generated_new_tokens": 110,
+  "stopped_on_eos": true,
+  "text": "Once upon a time, there was a big, heavy rock. The rock was very sad because it was always alone. The rock wanted to make friends with the rock.\nOne day, a little girl named Lily saw the rock. She said, \"Hi, rock! Do you want to be my friend?\" The rock was happy and said, \"Yes, I want to be your friend!\"\nLily and the rock played together every day. They would rock back and forth, and they were very happy. The rock and Lily were best friends forever.\n<|endoftext|>"
+}

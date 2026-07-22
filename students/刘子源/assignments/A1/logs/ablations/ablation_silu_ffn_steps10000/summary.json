@@ -1,0 +1,18 @@
+{
+  "run_name": "ablation_silu_ffn_steps10000",
+  "dataset": "TinyStories",
+  "final_val_loss": 1.4057465970516205,
+  "total_training_time_sec": 3068.835618919693,
+  "config": {
+    "vocab_size": 10000,
+    "context_length": 256,
+    "d_model": 512,
+    "d_ff": 2048,
+    "num_layers": 4,
+    "num_heads": 16,
+    "batch_size": 128,
+    "total_steps": 10000
+  },
+  "checkpoint": "<local-path-omitted>/checkpoint.pt",
+  "log": "<local-path-omitted>/train.jsonl"
+}

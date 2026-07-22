@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "official_test_suite": {
+    "passed": 47,
+    "xpassed": 1,
+    "failed": 0
+  },
+  "with_local_regressions": {
+    "passed": 51,
+    "xpassed": 1,
+    "failed": 0,
+    "added_test_count": 4,
+    "added_regressions": [
+      "streaming special-token prefix with preceding whitespace",
+      "parallel BPE chunking with overlapping special tokens",
+      "tiny positive sampling temperature",
+      "float64 LM adapter dtype preservation"
+    ]
+  },
+  "quality_checks": {
+    "ruff": "passed",
+    "ty": {
+      "status": "passed",
+      "scope": "student-owned cs336_basics, scripts, adapter, and local regression tests"
+    },
+    "git_diff_check": "passed",
+    "forbidden_high_level_pytorch_api_scan": "passed",
+    "toml_configs_parsed": 11,
+    "effective_training_configs_meta_built": 21
+  },
+  "cpu_self_check": {
+    "seed": 1337,
+    "steps": 100,
+    "initial_loss": 5.2534685134887695,
+    "final_loss": 0.002504612784832716,
+    "loss_ratio": 0.0004767541250893366,
+    "cross_entropy": 0.9076058864593506,
+    "adamw_first_step": 1.9880000352859497,
+    "checkpoint_continuation": "passed",
+    "generation": "passed",
+    "variants": [
+      "no_rmsnorm",
+      "post_norm",
+      "no_rope",
+      "silu_ffn"
+    ]
+  }
+}

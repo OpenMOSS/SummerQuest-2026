@@ -1,0 +1,35 @@
+{
+  "tokenizer_train_seconds": 111.2152094412595,
+  "peak_process_rss_after_bpe_bytes": 136605696,
+  "bpe_profile_file": "bpe_profile.txt",
+  "actual_vocab_size": 10000,
+  "bpe_num_processes": 16,
+  "encoding_num_processes": 16,
+  "special_tokens": [
+    "<|endoftext|>"
+  ],
+  "longest_token": {
+    "hex": "206163636f6d706c6973686d656e74",
+    "utf8_with_replacement": " accomplishment",
+    "byte_length": 15
+  },
+  "longest_ordinary_token": {
+    "hex": "206163636f6d706c6973686d656e74",
+    "utf8_with_replacement": " accomplishment",
+    "byte_length": 15
+  },
+  "train": {
+    "byte_count": 2227753162,
+    "token_count": 541229347,
+    "encode_seconds": 84.2517561679706,
+    "bytes_per_token": 4.116098238848826,
+    "bytes_per_second": 26441622.861351218
+  },
+  "valid": {
+    "byte_count": 22502601,
+    "token_count": 5465883,
+    "encode_seconds": 1.219748287461698,
+    "bytes_per_token": 4.116919626709902,
+    "bytes_per_second": 18448561.257526353
+  }
+}

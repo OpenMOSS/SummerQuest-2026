@@ -1,0 +1,18 @@
+{
+  "run_name": "ablation_no_rmsnorm_steps10000",
+  "dataset": "TinyStories",
+  "final_val_loss": 1.8707315802574158,
+  "total_training_time_sec": 2872.637133813929,
+  "config": {
+    "vocab_size": 10000,
+    "context_length": 256,
+    "d_model": 512,
+    "d_ff": 1344,
+    "num_layers": 4,
+    "num_heads": 16,
+    "batch_size": 128,
+    "total_steps": 10000
+  },
+  "checkpoint": "<local-path-omitted>/checkpoint.pt",
+  "log": "<local-path-omitted>/train.jsonl"
+}

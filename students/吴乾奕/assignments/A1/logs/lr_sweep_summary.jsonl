@@ -1,0 +1,8 @@
+{"run":"tinystories_lr_1e-4","max_learning_rate":0.0001,"status":"completed","best_validation_loss":2.456213,"divergence_observed":false}
+{"run":"tinystories_lr_3e-4","max_learning_rate":0.0003,"status":"completed","best_validation_loss":1.964068,"divergence_observed":false}
+{"run":"tinystories_lr_1e-3","max_learning_rate":0.001,"status":"completed","best_validation_loss":1.643947,"divergence_observed":false}
+{"run":"tinystories_lr_1e-2_probe","max_learning_rate":0.01,"status":"completed","best_validation_loss":2.523919,"finite_loss":true,"divergence_observed":false}
+{"run":"tinystories_lr_3e-2_probe","max_learning_rate":0.03,"status":"completed","best_validation_loss":3.952226,"finite_loss":true,"divergence_observed":false}
+{"run":"tinystories_lr_1e-1_probe","max_learning_rate":0.1,"status":"completed","best_validation_loss":4.006975,"finite_loss":true,"divergence_observed":false}
+{"run":"tinystories_lr_10_true_divergence","max_learning_rate":10.0,"min_learning_rate":1.0,"warmup_iters":1,"steps":100,"processed_tokens":3276800,"gradient_clip":1000000,"status":"completed","outcome":"optimization_divergence","step_2_train_loss":9.263650894,"step_3_train_loss":9263.390625,"loss_jump_ratio":999.971904,"step_3_gradient_norm_finite":false,"step_10_validation_loss":910.366315,"max_validation_loss":1480.150226,"best_validation_loss":36.500684,"elapsed_seconds":17.601189,"divergence_observed":true,"nonfinite_loss_observed":false}
+{"note":"The 1e-2/3e-2/1e-1 probes completed without divergence. The LR=10 diagnostic shows real loss/gradient explosion, but also relaxes gradient clipping and is therefore reported as a diagnostic rather than a single-variable performance comparison."}

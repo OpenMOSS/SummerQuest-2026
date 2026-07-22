@@ -1,0 +1,29 @@
+{
+  "dataset": "TinyStoriesV2-GPT4",
+  "vocab_size": 10000,
+  "merges": 9743,
+  "special_token_id": 256,
+  "training_time_sec": 567.05,
+  "peak_rss_gb": 11.1,
+  "longest_token_id": 7160,
+  "longest_token": " accomplishment",
+  "longest_token_bytes": 15,
+  "train": {
+    "input_bytes": 2227753162,
+    "tokens": 540796778,
+    "compression_bytes_per_token": 4.119390597,
+    "encoding_time_sec": 484.33,
+    "tokens_per_sec": 1116584.33,
+    "workers": 8,
+    "dtype": "uint16"
+  },
+  "valid": {
+    "input_bytes": 22502601,
+    "tokens": 5461210,
+    "compression_bytes_per_token": 4.120442356,
+    "encoding_time_sec": 39.36,
+    "tokens_per_sec": 138755.42,
+    "workers": 1,
+    "dtype": "uint16"
+  }
+}

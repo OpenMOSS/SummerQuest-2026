@@ -1,0 +1,35 @@
+{
+  "model": {
+    "vocab_size": 10000,
+    "context_length": 64,
+    "d_model": 128,
+    "num_layers": 2,
+    "num_heads": 4,
+    "d_ff": 320,
+    "rope_theta": 10000.0
+  },
+  "data": {
+    "train": "tokenized/tinystories_train.bin",
+    "validation": "tokenized/tinystories_valid.bin"
+  },
+  "training": {
+    "batch_size": 8,
+    "context_length": 64,
+    "max_steps": 100,
+    "max_learning_rate": 0.0003,
+    "min_learning_rate": 0.00003,
+    "warmup_steps": 10,
+    "cosine_cycle_steps": 100,
+    "device": "cuda:0",
+    "weight_decay": 0.1,
+    "beta1": 0.9,
+    "beta2": 0.95,
+    "eps": 1e-8,
+    "max_grad_norm": 1.0,
+    "log_interval": 5,
+    "eval_interval": 20,
+    "eval_batches": 5,
+    "checkpoint_interval": 50,
+    "output_dir": "runs/tinystories_debug"
+  }
+}

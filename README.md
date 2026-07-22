@@ -26,7 +26,7 @@ students/<同学真名>/
 └── assignments/
     ├── A0/
     │   └── README.md           # 公开报告，并在其中填写组内飞书补充文档链接
-    └── A1...A6/                # 发布后按各作业题面规定的结构提交
+    └── <A编号>/                 # A1、A2-P、A2-K、A3...A6 按对应题面提交
 ```
 
 个人资料和每次作业都采用“双层提交”：GitHub Markdown 负责可公开、可评审、可检索的摘要；飞书文档负责组织内公开的补充材料。个人飞书主页链接写入 `PROFILE.md`，每次作业的飞书补充文档链接写入该作业的 `README.md`；仓库不使用额外的飞书索引文件。
@@ -60,20 +60,43 @@ A1 还要求把 Stanford 原版仓库下载到固定兄弟目录 `../assignment1
 该仓库中进行，再用 `python3 scripts/sync_a1_submission.py --name '<同学真名>'` 同步
 个人提交文件。完整流程见 [A1 题面](assignments/A1/README.md)。
 
+A2-P 已发布，使用同一作业脚手架：
+
+```bash
+python scripts/create_assignment.py --name '<同学真名>' --assignment A2-P
+python3 scripts/sync_a2p_submission.py --name '<同学真名>'
+```
+
+上游仓库位于固定兄弟目录 `../assignment2-systems`，只同步学生自己编写的
+`profiling/**/*.py`。完整要求见 [A2-P 题面](assignments/A2-P/README.md)。
+
+A2-K 与 A2-P 共用同一个固定 commit 的兄弟仓库，但使用独立目录、同步脚本和 PR。A2-K
+只同步学生自己编写的 `cs336_systems/a2k/**/*.py`、`tests/adapters.py` 与
+`student_scripts/a2k/**/*.py`：
+
+```bash
+python scripts/create_assignment.py --name '<同学真名>' --assignment A2-K
+python3 scripts/sync_a2k_submission.py --name '<同学真名>'
+```
+
+正式矩阵固定为单张 RTX 4090 24GB，并使用 23 GiB allocator 上限。完整要求见
+[A2-K 题面](assignments/A2-K/README.md)。
+
 ## 作业预告
 
 | 作业 | 主题 | 状态 | 参考资料 |
 | --- | --- | --- | --- |
 | [A0](assignments/A0/README.md) | Linux、GitHub、服务器环境与双层 Profile | 已发布 | 实验室原创入口作业 |
 | [A1](assignments/A1/README.md) | 从零实现 tokenizer、Transformer 与训练流程 | 已发布 | [实验室题面](assignments/A1/README.md) · [Stanford 原版](https://github.com/stanford-cs336/assignment1-basics) |
-| [A2](assignments/A2/README.md) | Systems | 预告 | [Stanford 原版 assignment2-systems](https://github.com/stanford-cs336/assignment2-systems) |
+| [A2-P](assignments/A2-P/README.md) | Profiling 与性能分析（A2 子作业） | 已发布 | [实验室题面](assignments/A2-P/README.md) · [Stanford A2 固定快照](https://github.com/stanford-cs336/assignment2-systems/tree/ca8bc81a59b70516f7ebb2da4808daade877c736) |
+| [A2-K](assignments/A2-K/README.md) | 单卡显存优化与 GPU Kernels（A2 子作业） | 已发布 | [实验室题面](assignments/A2-K/README.md) · [Stanford A2 固定快照](https://github.com/stanford-cs336/assignment2-systems/tree/ca8bc81a59b70516f7ebb2da4808daade877c736) |
 | [A3](assignments/A3/README.md) | Scaling | 预告 | [Stanford 原版 assignment3-scaling](https://github.com/stanford-cs336/assignment3-scaling) |
 | [A4](assignments/A4/README.md) | Data | 预告 | [Stanford 原版 assignment4-data](https://github.com/stanford-cs336/assignment4-data) |
 | [A5](assignments/A5/README.md) | Alignment | 预告 | [Stanford 原版 assignment5-alignment](https://github.com/stanford-cs336/assignment5-alignment) |
 | [A6](assignments/A6/README.md) | 内容待公布 | 预告 | 具体题目后续发布 |
 
-A2-A5 的链接用于提前了解原版内容，不代表 2026 实验室版最终题面。A1 已正式发布；
-技术细节可参考原 PDF，提交目录、文件格式和 PR 要求以本仓库 A1 题面为准。
+A2-P 与 A2-K 已发布；A3-A5 的链接只用于提前了解原版内容。已发布作业的提交目录、
+文件格式和 PR 要求以本仓库对应题面为准。
 
 ## 入口
 

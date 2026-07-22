@@ -1,0 +1,25 @@
+{
+  "name": "lr_0.03",
+  "final_val_loss": 3.7990406453609467,
+  "total_train_time_sec": 50.842626094818115,
+  "processed_tokens": 9830400,
+  "config": {
+    "vocab_size": 10000,
+    "context_length": 256,
+    "d_model": 512,
+    "d_ff": 1344,
+    "num_layers": 4,
+    "num_heads": 16,
+    "batch_size": 128,
+    "total_steps": 300,
+    "max_lr": 0.03,
+    "min_lr": 0.003,
+    "warmup_steps": 30,
+    "use_rmsnorm": true,
+    "norm_position": "pre",
+    "use_rope": true,
+    "ffn_variant": "swiglu",
+    "device": "cuda"
+  },
+  "peak_memory_gb": 15.236702919006348
+}

@@ -1,0 +1,66 @@
+{
+  "selected_batch_size": 64,
+  "smoke_statuses": [
+    {
+      "run_name": "owt_smoke_batch_128",
+      "config": "<local-path-omitted>/owt_smoke_batch_128.json",
+      "output_dir": "<local-path-omitted>/owt_smoke_batch_128",
+      "console_log": "<local-path-omitted>/owt_smoke_batch_128.log",
+      "gpu_telemetry": "<local-path-omitted>/owt_smoke_batch_128_gpu.csv",
+      "peak_gpu_memory_mib": 774.0,
+      "started_at_utc": "2026-07-14T11:29:03.556125+00:00",
+      "ended_at_utc": "2026-07-14T11:29:11.510820+00:00",
+      "wall_clock_sec": 7.954723902978003,
+      "return_code": 1,
+      "summary_exists": false,
+      "checkpoint_exists": false,
+      "last_train_record": null
+    },
+    {
+      "run_name": "owt_smoke_batch_64",
+      "config": "<local-path-omitted>/owt_smoke_batch_64.json",
+      "output_dir": "<local-path-omitted>/owt_smoke_batch_64",
+      "console_log": "<local-path-omitted>/owt_smoke_batch_64.log",
+      "gpu_telemetry": "<local-path-omitted>/owt_smoke_batch_64_gpu.csv",
+      "peak_gpu_memory_mib": 13884.0,
+      "started_at_utc": "2026-07-14T11:29:11.520431+00:00",
+      "ended_at_utc": "2026-07-14T11:29:22.523268+00:00",
+      "wall_clock_sec": 11.002872225828469,
+      "return_code": 0,
+      "summary_exists": true,
+      "checkpoint_exists": true,
+      "last_train_record": {
+        "step": 0,
+        "wall_clock_sec": 1.7726756390184164,
+        "processed_tokens": 16384,
+        "train_loss": 10.469642639160156,
+        "lr": 0.0,
+        "val_loss": 10.46623420715332
+      }
+    }
+  ],
+  "recorded_at_utc": "2026-07-14T11:29:27.094202+00:00",
+  "full_config": "<local-path-omitted>/owt_baseline_batch_64_steps10000.json",
+  "full_status": {
+    "run_name": "owt_baseline_batch_64_steps10000",
+    "config": "<local-path-omitted>/owt_baseline_batch_64_steps10000.json",
+    "output_dir": "<local-path-omitted>/owt_baseline_batch_64_steps10000",
+    "console_log": "<local-path-omitted>/owt_baseline_batch_64_steps10000.log",
+    "gpu_telemetry": "<local-path-omitted>/owt_baseline_batch_64_steps10000_gpu.csv",
+    "peak_gpu_memory_mib": 14404.0,
+    "started_at_utc": "2026-07-14T11:29:27.109956+00:00",
+    "ended_at_utc": "2026-07-14T12:07:16.444642+00:00",
+    "wall_clock_sec": 2269.3348103798926,
+    "return_code": 0,
+    "summary_exists": true,
+    "checkpoint_exists": true,
+    "last_train_record": {
+      "step": 9999,
+      "wall_clock_sec": 2239.239551336039,
+      "processed_tokens": 163840000,
+      "train_loss": 4.189242839813232,
+      "lr": 5.0000012302830855e-05,
+      "val_loss": 4.1340971946716305
+    }
+  }
+}

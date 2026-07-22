@@ -1,0 +1,18 @@
+{
+  "run_name": "lr_1em02_steps2000",
+  "dataset": "TinyStories",
+  "final_val_loss": 2.004975461959839,
+  "total_training_time_sec": 616.3993791011162,
+  "config": {
+    "vocab_size": 10000,
+    "context_length": 256,
+    "d_model": 512,
+    "d_ff": 1344,
+    "num_layers": 4,
+    "num_heads": 16,
+    "batch_size": 128,
+    "total_steps": 2000
+  },
+  "checkpoint": "<local-path-omitted>/checkpoint.pt",
+  "log": "<local-path-omitted>/train.jsonl"
+}

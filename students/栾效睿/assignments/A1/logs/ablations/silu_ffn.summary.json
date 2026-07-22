@@ -1,0 +1,27 @@
+{
+  "best_val_loss": 1.3483056649565697,
+  "checkpoint_dir": "checkpoint/ablations/silu_ffn",
+  "final_step": 10000,
+  "final_train_loss": 1.3081870079040527,
+  "final_val_loss": 1.3483056649565697,
+  "key_config": {
+    "batch_size": 128,
+    "context_length": 256,
+    "d_ff": 2048,
+    "d_model": 512,
+    "ffn_type": "silu",
+    "lr_max": 0.003,
+    "max_wall_clock_sec": null,
+    "norm_mode": "pre",
+    "num_heads": 16,
+    "num_layers": 4,
+    "use_rope": true,
+    "vocab_size": 10000
+  },
+  "log_path": "logs/ablations/silu_ffn.jsonl",
+  "processed_tokens": 327680000,
+  "run_name": "silu_ffn",
+  "status": "completed",
+  "stop_reason": "max_steps",
+  "wall_clock_sec": 840.8956668749452
+}

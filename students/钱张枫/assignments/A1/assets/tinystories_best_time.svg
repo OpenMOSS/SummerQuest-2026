@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="620" viewBox="0 0 1000 620">
+<rect width="100%" height="100%" fill="white"/>
+<text x="500.0" y="36" text-anchor="middle" font-family="sans-serif" font-size="22">TinyStories best validation loss by wall-clock time</text>
+<line x1="90.00" y1="70" x2="90.00" y2="540" stroke="#e5e7eb"/>
+<text x="90.00" y="568" text-anchor="middle" font-family="sans-serif" font-size="12">-27.43</text>
+<line x1="90" y1="540.00" x2="750" y2="540.00" stroke="#e5e7eb"/>
+<text x="78" y="544.00" text-anchor="end" font-family="sans-serif" font-size="12">1.22</text>
+<line x1="222.00" y1="70" x2="222.00" y2="540" stroke="#e5e7eb"/>
+<text x="222.00" y="568" text-anchor="middle" font-family="sans-serif" font-size="12">236</text>
+<line x1="90" y1="446.00" x2="750" y2="446.00" stroke="#e5e7eb"/>
+<text x="78" y="450.00" text-anchor="end" font-family="sans-serif" font-size="12">1.92</text>
+<line x1="354.00" y1="70" x2="354.00" y2="540" stroke="#e5e7eb"/>
+<text x="354.00" y="568" text-anchor="middle" font-family="sans-serif" font-size="12">499</text>
+<line x1="90" y1="352.00" x2="750" y2="352.00" stroke="#e5e7eb"/>
+<text x="78" y="356.00" text-anchor="end" font-family="sans-serif" font-size="12">2.63</text>
+<line x1="486.00" y1="70" x2="486.00" y2="540" stroke="#e5e7eb"/>
+<text x="486.00" y="568" text-anchor="middle" font-family="sans-serif" font-size="12">762</text>
+<line x1="90" y1="258.00" x2="750" y2="258.00" stroke="#e5e7eb"/>
+<text x="78" y="262.00" text-anchor="end" font-family="sans-serif" font-size="12">3.33</text>
+<line x1="618.00" y1="70" x2="618.00" y2="540" stroke="#e5e7eb"/>
+<text x="618.00" y="568" text-anchor="middle" font-family="sans-serif" font-size="12">1025</text>
+<line x1="90" y1="164.00" x2="750" y2="164.00" stroke="#e5e7eb"/>
+<text x="78" y="168.00" text-anchor="end" font-family="sans-serif" font-size="12">4.03</text>
+<line x1="750.00" y1="70" x2="750.00" y2="540" stroke="#e5e7eb"/>
+<text x="750.00" y="568" text-anchor="middle" font-family="sans-serif" font-size="12">1288</text>
+<line x1="90" y1="70.00" x2="750" y2="70.00" stroke="#e5e7eb"/>
+<text x="78" y="74.00" text-anchor="end" font-family="sans-serif" font-size="12">4.73</text>
+<line x1="90" y1="540" x2="750" y2="540" stroke="#111827" stroke-width="1.5"/>
+<line x1="90" y1="70" x2="90" y2="540" stroke="#111827" stroke-width="1.5"/>
+<text x="420.00" y="596" text-anchor="middle" font-family="sans-serif" font-size="14">wall_clock_sec</text>
+<text x="24" y="305.00" text-anchor="middle" transform="rotate(-90 24 305.00)" font-family="sans-serif" font-size="14">loss</text>
+<polyline points="120.00,91.36 126.07,276.75 132.12,338.81 138.16,372.74 144.21,396.07 150.25,415.25 156.29,428.30 162.33,437.25 168.38,444.22 174.42,450.42 180.71,454.44 186.75,458.74 192.79,462.24 198.84,464.93 204.88,467.47 210.92,469.57 216.97,471.90 223.01,474.05 229.05,475.92 235.10,477.40 241.40,478.91 247.44,480.42 253.49,481.60 259.53,483.14 265.57,484.15 271.62,485.29 277.66,486.64 283.70,487.68 289.74,488.60 295.79,489.55 302.05,490.25 308.08,491.23 314.12,491.79 320.15,492.91 326.19,493.73 332.23,494.46 338.26,495.20 344.30,495.88 350.33,496.58 356.37,497.10 362.59,497.83 368.63,498.37 374.67,499.10 380.70,499.71 386.74,500.25 392.77,501.19 398.81,501.45 404.85,502.13 410.88,502.58 416.92,503.00 423.14,503.69 429.18,504.26 435.21,504.90 441.25,505.34 447.29,505.92 453.32,506.19 459.36,506.86 465.40,507.13 471.44,507.74 477.48,508.09 483.78,508.56 489.82,508.94 495.86,509.35 501.89,509.71 507.93,510.12 513.96,510.64 520.00,511.04 526.03,511.37 532.07,511.71 538.11,512.12 544.35,512.52 550.39,512.90 556.42,513.14 562.46,513.46 568.49,513.84 574.53,514.16 580.56,514.49 586.60,514.81 592.63,515.04 598.67,515.36 604.97,515.59 611.00,515.88 617.04,516.08 623.07,516.37 629.11,516.64 635.14,516.75 641.18,517.02 647.21,517.17 653.25,517.37 659.28,517.54 665.62,517.69 671.66,517.92 677.71,517.95 683.75,518.09 689.79,518.23 695.83,518.37 701.87,518.45 707.92,518.52 713.96,518.55 720.00,518.64" fill="none" stroke="#1f77b4" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="778" y1="70" x2="802" y2="70" stroke="#1f77b4" stroke-width="3"/>
+<text x="810" y="74" font-family="sans-serif" font-size="12">best</text>
+</svg>

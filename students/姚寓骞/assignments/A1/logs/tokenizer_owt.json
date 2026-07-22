@@ -1,0 +1,12 @@
+{
+  "name": "OWT-32K",
+  "sample_bytes": 10485760,
+  "encoded_tokens": 2417779,
+  "elapsed_sec": 27.872807651758194,
+  "bytes_per_token": 4.336938984084154,
+  "bytes_per_sec": 376200.3502126047,
+  "tokens_per_sec": 86743.28866354762,
+  "vocab_size": 32000,
+  "longest_token_bytes": 64,
+  "longest_token_repr": "b'\\xc3\\x83\\xc3\\x82\\xc3\\x83\\xc3\\x82\\xc3\\x83\\xc3\\x82\\xc3\\x83\\xc3\\x82\\xc3\\x83\\xc3\\x82\\xc3\\x83\\xc3\\x82\\xc3\\x83\\xc3\\x82\\xc3\\x83\\xc3\\x82\\xc3\\x83\\xc3\\x82\\xc3\\x83\\xc3\\x82\\xc3\\x83\\xc3\\x82\\xc3\\x83\\xc3\\x82\\xc3\\x83\\xc3\\x82\\xc3\\x83\\xc3\\x82\\xc3\\x83\\xc3\\x82\\xc3\\x83\\xc3\\x82'"
+}

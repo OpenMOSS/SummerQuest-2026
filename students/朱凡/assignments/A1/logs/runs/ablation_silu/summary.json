@@ -1,0 +1,13 @@
+{
+  "best_validation_iteration": 5000,
+  "best_validation_loss": 1.351182460784912,
+  "final_iteration": 5000,
+  "final_train_loss": 1.3400390148162842,
+  "final_validation_loss": 1.351182460784912,
+  "has_non_finite_metric": false,
+  "process_elapsed_seconds": 1543.3118760176003,
+  "processed_tokens": 327680000,
+  "run_name": "ablation_silu",
+  "status": "completed",
+  "training_elapsed_seconds": 1540.3866506898776
+}

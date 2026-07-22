@@ -1,0 +1,16 @@
+{
+  "run_name": "lr_divergence_probe",
+  "dataset": "TinyStories",
+  "max_learning_rate": 10.0,
+  "min_learning_rate": 1.0,
+  "total_steps": 200,
+  "last_step": 199,
+  "initial_val_loss": 9.349354600906372,
+  "peak_val_loss": 720.9037109375,
+  "final_train_loss": 73.50297546386719,
+  "final_val_loss": 125.76496238708496,
+  "wall_clock_sec": 80.12525041075423,
+  "classification": "diverged: validation loss rose far above initialization and remained unstable",
+  "checkpoint_included": false,
+  "note": "The complete 200-step JSONL is included as optimization evidence; model weights are excluded from the public submission."
+}

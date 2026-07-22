@@ -1,0 +1,17 @@
+{
+  "final_val_loss": 1.4328146934509278,
+  "total_training_time_sec": 1532.538057088852,
+  "d_model": 512,
+  "num_layers": 4,
+  "num_heads": 16,
+  "context_length": 256,
+  "batch_size": 128,
+  "steps": 10000,
+  "vocab_size": 10000,
+  "norm_mode": "pre",
+  "use_rmsnorm": true,
+  "use_rope": false,
+  "ffn_type": "swiglu",
+  "checkpoint": "runs/ablation_nope/checkpoint.pt",
+  "sample": "Once upon a time, there was a little boy named Tim. Tim loved to play outside in the sun. One day, he saw a big tree with a swing. Tim wanted to play on the swing, but he was too small to reach it.\nTim had an idea. He saw a tall ladder near the tree. He climbed up the ladder and got ready to push the swing. But when he pushed the swing, he saw that it was not a swing at all. It was a big, red balloon!\nTim was surprised and didn't know what to do. He looked at the balloon and thought for a moment. Then, he had an idea. He got his toy phone and started to play with it. Tim was happy that he could play on the swing now.\n<|endoftext|>"
+}

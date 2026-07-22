@@ -1,0 +1,96 @@
+{
+  "base_config": "configs/tinystories_baseline.json",
+  "summary": "artifacts/sweeps/tinystories_lr_sweep_summary.jsonl",
+  "variants": [
+    {
+      "name": "tinystories_lr_1e-4",
+      "overrides": {
+        "optimizer": {
+          "max_learning_rate": 0.0001,
+          "min_learning_rate": 0.00001,
+          "warmup_iters": 100,
+          "cosine_cycle_iters": 2000
+        },
+        "training": {
+          "max_steps": 2000,
+          "output_dir": "artifacts/runs/tinystories_lr_1e-4"
+        }
+      }
+    },
+    {
+      "name": "tinystories_lr_3e-4",
+      "overrides": {
+        "optimizer": {
+          "max_learning_rate": 0.0003,
+          "min_learning_rate": 0.00003,
+          "warmup_iters": 100,
+          "cosine_cycle_iters": 2000
+        },
+        "training": {
+          "max_steps": 2000,
+          "output_dir": "artifacts/runs/tinystories_lr_3e-4"
+        }
+      }
+    },
+    {
+      "name": "tinystories_lr_1e-3",
+      "overrides": {
+        "optimizer": {
+          "max_learning_rate": 0.001,
+          "min_learning_rate": 0.0001,
+          "warmup_iters": 100,
+          "cosine_cycle_iters": 2000
+        },
+        "training": {
+          "max_steps": 2000,
+          "output_dir": "artifacts/runs/tinystories_lr_1e-3"
+        }
+      }
+    },
+    {
+      "name": "tinystories_lr_1e-2_divergence_probe",
+      "overrides": {
+        "optimizer": {
+          "max_learning_rate": 0.01,
+          "min_learning_rate": 0.001,
+          "warmup_iters": 20,
+          "cosine_cycle_iters": 500
+        },
+        "training": {
+          "max_steps": 500,
+          "output_dir": "artifacts/runs/tinystories_lr_1e-2_divergence_probe"
+        }
+      }
+    },
+    {
+      "name": "tinystories_lr_3e-2_divergence_probe",
+      "overrides": {
+        "optimizer": {
+          "max_learning_rate": 0.03,
+          "min_learning_rate": 0.003,
+          "warmup_iters": 10,
+          "cosine_cycle_iters": 200
+        },
+        "training": {
+          "max_steps": 200,
+          "output_dir": "artifacts/runs/tinystories_lr_3e-2_divergence_probe"
+        }
+      }
+    },
+    {
+      "name": "tinystories_lr_1e-1_divergence_probe",
+      "overrides": {
+        "optimizer": {
+          "max_learning_rate": 0.1,
+          "min_learning_rate": 0.01,
+          "warmup_iters": 10,
+          "cosine_cycle_iters": 200
+        },
+        "training": {
+          "max_steps": 200,
+          "output_dir": "artifacts/runs/tinystories_lr_1e-1_divergence_probe"
+        }
+      }
+    }
+  ]
+}

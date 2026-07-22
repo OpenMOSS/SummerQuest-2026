@@ -1,0 +1,13 @@
+{
+  "best_validation_iteration": 5000,
+  "best_validation_loss": 1.4064520597457886,
+  "final_iteration": 5000,
+  "final_train_loss": 1.3764266967773438,
+  "final_validation_loss": 1.4064520597457886,
+  "has_non_finite_metric": false,
+  "process_elapsed_seconds": 824.5449912920594,
+  "processed_tokens": 163840000,
+  "run_name": "batch_128",
+  "status": "completed",
+  "training_elapsed_seconds": 820.9000460626557
+}

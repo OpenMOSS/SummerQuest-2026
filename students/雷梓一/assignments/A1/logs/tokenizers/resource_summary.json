@@ -1,0 +1,14 @@
+{
+  "tinystories": {
+    "wall_clock_sec": 59.31108414195478,
+    "main_process_peak_rss_mb": 528.984375,
+    "scheduler_job_max_rss_gb": 3.68,
+    "num_processes": 32
+  },
+  "openwebtext": {
+    "wall_clock_sec": 1059.5685934461653,
+    "main_process_peak_rss_mb": 12519.00390625,
+    "scheduler_job_max_rss_gb": 22.28,
+    "num_processes": 32
+  }
+}

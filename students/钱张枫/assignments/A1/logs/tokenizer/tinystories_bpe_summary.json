@@ -1,0 +1,24 @@
+{
+  "input_path": "data/TinyStoriesV2-GPT4-train.txt",
+  "vocab_size": 10000,
+  "special_tokens": [
+    "<|endoftext|>"
+  ],
+  "workers": 9,
+  "batch_bytes": 67108864,
+  "unique_pretokens": 59933,
+  "total_pretokens": 536592168,
+  "actual_vocab_size": 10000,
+  "merge_count": 9743,
+  "pretokenization_seconds": 92.08601025491953,
+  "bpe_training_seconds": 16.889394517987967,
+  "longest_token": {
+    "id": 9379,
+    "hex": "20726573706f6e736962696c697479",
+    "utf8": " responsibility",
+    "byte_length": 15
+  },
+  "total_seconds": 109.03638689313084,
+  "serialization_seconds": 0.03532758913934231,
+  "peak_rss_mb": 3130.4375
+}
