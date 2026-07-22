@@ -22,3 +22,14 @@ python3 scripts/sync_a2p_submission.py --name '<同学真名>'
 A2-P 的原版工作仓库固定放在 `../assignment2-systems`；同步脚本只复制
 `profiling/**/*.py`。大型 trace、snapshot、上游代码和依赖不得进入本仓库；
 `results/` 与 `assets/` 附件合计不超过 2 MiB。
+
+A2-K 当前也是发布候选稿。正式发布后使用：
+
+```bash
+python scripts/create_assignment.py --name '<同学真名>' --assignment A2-K
+python3 scripts/sync_a2k_submission.py --name '<同学真名>'
+```
+
+A2-K 复用 `../assignment2-systems`，同步脚本只复制题面允许的 Python 文件。正式矩阵使用
+单张 RTX 4090 24GB 与 23 GiB allocator 上限；`results/` 与 `assets/` 附件合计不超过
+2 MiB。

@@ -90,7 +90,7 @@ def validate_scope(
         for path in student_paths
         if len(path.parts) >= 4
         and path.parts[2] == "assignments"
-        and re.fullmatch(r"A(?:[0-1]|2-P|[3-6])", path.parts[3])
+        and re.fullmatch(r"A(?:[0-1]|2-[KP]|[3-6])", path.parts[3])
     }
     if len(assignments) > 1:
         raise ScopeError(f"student PR changes multiple assignments: {sorted(assignments)}")
