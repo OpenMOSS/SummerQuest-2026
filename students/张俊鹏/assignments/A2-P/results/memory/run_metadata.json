@@ -1,0 +1,194 @@
+{
+  "experiment": "A2-P memory profiling",
+  "runs": [
+    {
+      "run_name": "large_c2048_train_step",
+      "metadata": {
+        "timestamp_utc": "2026-07-23T09:43:51.211754+00:00",
+        "command": "/opt/conda/bin/python profiling/memory_profile_xl.py --model-size large --context-length 2048 --mode train_step --warmup 1 --output-dir results/memory/large_c2048_train_step",
+        "model_size": "large",
+        "model_config": {
+          "d_model": 1280,
+          "d_ff": 5120,
+          "num_layers": 36,
+          "num_heads": 20
+        },
+        "context_length": 2048,
+        "batch_size": 1,
+        "vocab_size": 10000,
+        "mode": "train_step",
+        "warmup": 1,
+        "dtype": "float32",
+        "status": "success",
+        "device": "NVIDIA GeForce RTX 4090",
+        "torch_version": "2.6.0+cu124",
+        "memory_history_enabled": true,
+        "loss": 8.713740348815918,
+        "memory": {
+          "allocated_mib": 14917.379,
+          "reserved_mib": 47188.0,
+          "max_allocated_mib": 46494.697,
+          "max_reserved_mib": 47188.0
+        }
+      }
+    },
+    {
+      "run_name": "xl_c1024_train_step",
+      "metadata": {
+        "timestamp_utc": "2026-07-23T09:34:17.241723+00:00",
+        "command": "/opt/conda/bin/python profiling/memory_profile_xl.py --context-length 1024 --mode train_step --warmup 1 --output-dir results/memory/xl_c1024_train_step",
+        "model_size": "xl",
+        "model_config": {
+          "d_model": 2560,
+          "d_ff": 10240,
+          "num_layers": 32,
+          "num_heads": 32
+        },
+        "context_length": 1024,
+        "batch_size": 1,
+        "vocab_size": 10000,
+        "mode": "train_step",
+        "warmup": 1,
+        "dtype": "float32",
+        "status": "oom",
+        "device": "NVIDIA GeForce RTX 4090",
+        "torch_version": "2.6.0+cu124",
+        "memory_history_enabled": false,
+        "error_type": "torch.cuda.OutOfMemoryError",
+        "error": "CUDA out of memory. Tried to allocate 100.00 MiB. GPU 0 has a total capacity of 47.50 GiB of which 74.44 MiB is free. Process 988615 has 47.41 GiB memory in use. Of the allocated memory 46.36 GiB is allocated by PyTorch, and 608.21 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)",
+        "memory": {
+          "allocated_mib": 47273.793,
+          "reserved_mib": 48082.0,
+          "max_allocated_mib": 47473.793,
+          "max_reserved_mib": 48082.0
+        }
+      }
+    },
+    {
+      "run_name": "xl_c128_forward",
+      "metadata": {
+        "timestamp_utc": "2026-07-23T09:21:41.025398+00:00",
+        "command": "/opt/conda/bin/python profiling/memory_profile_xl.py --context-length 128 --mode forward --warmup 1 --output-dir results/memory/xl_c128_forward",
+        "model_size": "xl",
+        "model_config": {
+          "d_model": 2560,
+          "d_ff": 10240,
+          "num_layers": 32,
+          "num_heads": 32
+        },
+        "context_length": 128,
+        "batch_size": 1,
+        "vocab_size": 10000,
+        "mode": "forward",
+        "warmup": 1,
+        "dtype": "float32",
+        "status": "success",
+        "device": "NVIDIA GeForce RTX 4090",
+        "torch_version": "2.6.0+cu124",
+        "memory_history_enabled": true,
+        "loss": null,
+        "memory": {
+          "allocated_mib": 13132.801,
+          "reserved_mib": 13168.0,
+          "max_allocated_mib": 13154.051,
+          "max_reserved_mib": 13168.0
+        }
+      }
+    },
+    {
+      "run_name": "xl_c128_train_step",
+      "metadata": {
+        "timestamp_utc": "2026-07-23T09:24:26.666387+00:00",
+        "command": "/opt/conda/bin/python profiling/memory_profile_xl.py --context-length 128 --mode train_step --warmup 1 --output-dir results/memory/xl_c128_train_step",
+        "model_size": "xl",
+        "model_config": {
+          "d_model": 2560,
+          "d_ff": 10240,
+          "num_layers": 32,
+          "num_heads": 32
+        },
+        "context_length": 128,
+        "batch_size": 1,
+        "vocab_size": 10000,
+        "mode": "train_step",
+        "warmup": 1,
+        "dtype": "float32",
+        "status": "oom",
+        "device": "NVIDIA GeForce RTX 4090",
+        "torch_version": "2.6.0+cu124",
+        "memory_history_enabled": false,
+        "error_type": "torch.cuda.OutOfMemoryError",
+        "error": "CUDA out of memory. Tried to allocate 100.00 MiB. GPU 0 has a total capacity of 47.50 GiB of which 88.44 MiB is free. Process 46236 has 47.39 GiB memory in use. Of the allocated memory 46.62 GiB is allocated by PyTorch, and 328.54 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)",
+        "memory": {
+          "allocated_mib": 47539.459,
+          "reserved_mib": 48068.0,
+          "max_allocated_mib": 47739.459,
+          "max_reserved_mib": 48110.0
+        }
+      }
+    },
+    {
+      "run_name": "xl_c2048_forward",
+      "metadata": {
+        "timestamp_utc": "2026-07-23T09:27:34.204805+00:00",
+        "command": "/opt/conda/bin/python profiling/memory_profile_xl.py --context-length 2048 --mode forward --warmup 1 --output-dir results/memory/xl_c2048_forward",
+        "model_size": "xl",
+        "model_config": {
+          "d_model": 2560,
+          "d_ff": 10240,
+          "num_layers": 32,
+          "num_heads": 32
+        },
+        "context_length": 2048,
+        "batch_size": 1,
+        "vocab_size": 10000,
+        "mode": "forward",
+        "warmup": 1,
+        "dtype": "float32",
+        "status": "success",
+        "device": "NVIDIA GeForce RTX 4090",
+        "torch_version": "2.6.0+cu124",
+        "memory_history_enabled": true,
+        "loss": null,
+        "memory": {
+          "allocated_mib": 13133.416,
+          "reserved_mib": 15858.0,
+          "max_allocated_mib": 15305.682,
+          "max_reserved_mib": 15858.0
+        }
+      }
+    },
+    {
+      "run_name": "xl_c2048_train_step",
+      "metadata": {
+        "timestamp_utc": "2026-07-23T09:30:53.948429+00:00",
+        "command": "/opt/conda/bin/python profiling/memory_profile_xl.py --context-length 2048 --mode train_step --warmup 1 --output-dir results/memory/xl_c2048_train_step",
+        "model_size": "xl",
+        "model_config": {
+          "d_model": 2560,
+          "d_ff": 10240,
+          "num_layers": 32,
+          "num_heads": 32
+        },
+        "context_length": 2048,
+        "batch_size": 1,
+        "vocab_size": 10000,
+        "mode": "train_step",
+        "warmup": 1,
+        "dtype": "float32",
+        "status": "oom",
+        "device": "NVIDIA GeForce RTX 4090",
+        "torch_version": "2.6.0+cu124",
+        "memory_history_enabled": false,
+        "error_type": "torch.cuda.OutOfMemoryError",
+        "error": "CUDA out of memory. Tried to allocate 512.00 MiB. GPU 0 has a total capacity of 47.50 GiB of which 528.44 MiB is free. Process 663660 has 46.96 GiB memory in use. Of the allocated memory 46.26 GiB is allocated by PyTorch, and 266.50 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)",
+        "memory": {
+          "allocated_mib": 47369.252,
+          "reserved_mib": 47636.0,
+          "max_allocated_mib": 47369.502,
+          "max_reserved_mib": 47636.0
+        }
+      }
+    }
+  ]
+}

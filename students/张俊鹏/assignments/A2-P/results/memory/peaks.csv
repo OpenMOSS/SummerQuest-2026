@@ -1,0 +1,7 @@
+model_size,context_length,batch_size,mode,status,allocated_mib,reserved_mib,max_allocated_mib,max_reserved_mib,loss,run_name
+large,2048,1,train_step,success,14917.379,47188.0,46494.697,47188.0,8.713740348815918,large_c2048_train_step
+xl,1024,1,train_step,oom,47273.793,48082.0,47473.793,48082.0,,xl_c1024_train_step
+xl,128,1,forward,success,13132.801,13168.0,13154.051,13168.0,,xl_c128_forward
+xl,128,1,train_step,oom,47539.459,48068.0,47739.459,48110.0,,xl_c128_train_step
+xl,2048,1,forward,success,13133.416,15858.0,15305.682,15858.0,,xl_c2048_forward
+xl,2048,1,train_step,oom,47369.252,47636.0,47369.502,47636.0,,xl_c2048_train_step

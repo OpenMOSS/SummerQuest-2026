@@ -1,0 +1,8 @@
+source_file,model_size,mode,batch_size,context_length,dtype,device,torch_version,warmup_steps,measure_steps,mean_step_time_ms,std_step_time_ms,min_step_time_ms,max_step_time_ms,coefficient_of_variation,final_loss,step_times_ms
+results/benchmark/benchmark_small_forward.json,small,forward,4,512,fp32,,,5,10,23.940465785562992,,,,0.004338412532068763,,
+results/benchmark/benchmark_small_forward_backward.json,small,forward_backward,4,512,fp32,,,5,10,80.4965490475297,,,,0.0012526447627510037,,
+results/benchmark/benchmark_small_train_step_w0.json,small,train_step,4,512,fp32,,,0,10,128.32515221089125,,,,0.9283876745433238,,
+results/benchmark/benchmark_small_train_step_w5.json,small,train_step,4,512,fp32,,,5,10,90.56057427078485,,,,0.0039344280376474835,,
+results/benchmark/smoke_forward.json,small,forward,1,128,fp32,,,1,3,9.942912186185518,,,,0.015269983581048212,,
+results/benchmark/smoke_forward_backward.json,small,forward_backward,1,128,fp32,,,1,3,42.40483480195204,,,,0.023403906491531797,,
+results/benchmark/smoke_train_step.json,small,train_step,1,128,fp32,,,1,3,56.813385958472885,,,,0.015773662189250862,,
