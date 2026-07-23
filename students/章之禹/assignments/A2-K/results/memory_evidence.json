@@ -142,8 +142,8 @@
     },
     {
       "source": "medium_ctx1024_b1_block8.json",
-      "peak_allocated_mib": 8125.47314453125,
-      "peak_reserved_mib": 8234.0,
+      "peak_allocated_mib": 8124.53564453125,
+      "peak_reserved_mib": 8210.0,
       "status": "complete"
     },
     {
@@ -154,26 +154,26 @@
     },
     {
       "source": "medium_ctx2048_b1_block1.json",
-      "peak_allocated_mib": 8153.73876953125,
+      "peak_allocated_mib": 8152.80126953125,
       "peak_reserved_mib": 9450.0,
       "status": "complete"
     },
     {
       "source": "attention_compiled_2048_128_backward.json",
       "peak_allocated_mib": 36.25,
-      "peak_reserved_mib": 46.0,
+      "peak_reserved_mib": 118.0,
       "status": "complete"
     },
     {
       "source": "attention_compiled_2048_128_forward.json",
       "peak_allocated_mib": 18.625,
-      "peak_reserved_mib": 24.0,
+      "peak_reserved_mib": 116.0,
       "status": "complete"
     },
     {
       "source": "attention_compiled_2048_128_forward_backward.json",
       "peak_allocated_mib": 35.25,
-      "peak_reserved_mib": 46.0,
+      "peak_reserved_mib": 118.0,
       "status": "complete"
     },
     {
@@ -197,19 +197,19 @@
     {
       "source": "attention_compiled_8192_128_backward.json",
       "peak_allocated_mib": 288.25,
-      "peak_reserved_mib": 298.0,
+      "peak_reserved_mib": 406.0,
       "status": "complete"
     },
     {
       "source": "attention_compiled_8192_128_forward.json",
       "peak_allocated_mib": 146.125,
-      "peak_reserved_mib": 150.0,
+      "peak_reserved_mib": 406.0,
       "status": "complete"
     },
     {
       "source": "attention_compiled_8192_128_forward_backward.json",
       "peak_allocated_mib": 284.25,
-      "peak_reserved_mib": 298.0,
+      "peak_reserved_mib": 406.0,
       "status": "complete"
     },
     {
@@ -268,19 +268,19 @@
     },
     {
       "source": "small_model_compiled_ctx512_forward.json",
-      "peak_allocated_mib": 1114.9501953125,
+      "peak_allocated_mib": 1114.9033203125,
       "peak_reserved_mib": 1206.0,
       "status": "complete"
     },
     {
       "source": "small_model_compiled_ctx512_forward_backward.json",
       "peak_allocated_mib": 1174.669921875,
-      "peak_reserved_mib": 1368.0,
+      "peak_reserved_mib": 1338.0,
       "status": "complete"
     },
     {
       "source": "small_model_compiled_ctx512_train_step.json",
-      "peak_allocated_mib": 2504.03076171875,
+      "peak_allocated_mib": 2502.53076171875,
       "peak_reserved_mib": 2830.0,
       "status": "complete"
     },
@@ -293,7 +293,7 @@
     {
       "source": "small_model_eager_ctx512_forward_backward.json",
       "peak_allocated_mib": 1386.9765625,
-      "peak_reserved_mib": 1500.0,
+      "peak_reserved_mib": 1470.0,
       "status": "complete"
     },
     {
@@ -305,37 +305,37 @@
     {
       "source": "compiled_2048_128_backward.json",
       "peak_allocated_mib": 44.75,
-      "peak_reserved_mib": 66.0,
+      "peak_reserved_mib": 118.0,
       "status": "complete"
     },
     {
       "source": "compiled_2048_128_forward.json",
       "peak_allocated_mib": 27.125,
-      "peak_reserved_mib": 44.0,
+      "peak_reserved_mib": 116.0,
       "status": "complete"
     },
     {
       "source": "compiled_2048_128_forward_backward.json",
       "peak_allocated_mib": 35.75,
-      "peak_reserved_mib": 46.0,
+      "peak_reserved_mib": 118.0,
       "status": "complete"
     },
     {
       "source": "compiled_2048_64_backward.json",
       "peak_allocated_mib": 42.5,
-      "peak_reserved_mib": 64.0,
+      "peak_reserved_mib": 116.0,
       "status": "complete"
     },
     {
       "source": "compiled_2048_64_forward.json",
       "peak_allocated_mib": 25.625,
-      "peak_reserved_mib": 42.0,
+      "peak_reserved_mib": 114.0,
       "status": "complete"
     },
     {
       "source": "compiled_2048_64_forward_backward.json",
       "peak_allocated_mib": 34.0,
-      "peak_reserved_mib": 44.0,
+      "peak_reserved_mib": 116.0,
       "status": "complete"
     },
     {
@@ -377,19 +377,19 @@
     {
       "source": "compiled_8192_128_backward.json",
       "peak_allocated_mib": 418.25,
-      "peak_reserved_mib": 426.0,
+      "peak_reserved_mib": 534.0,
       "status": "complete"
     },
     {
       "source": "compiled_8192_128_forward.json",
       "peak_allocated_mib": 276.125,
-      "peak_reserved_mib": 298.0,
+      "peak_reserved_mib": 406.0,
       "status": "complete"
     },
     {
       "source": "compiled_8192_128_forward_backward.json",
       "peak_allocated_mib": 286.25,
-      "peak_reserved_mib": 298.0,
+      "peak_reserved_mib": 406.0,
       "status": "complete"
     },
     {
@@ -401,13 +401,13 @@
     {
       "source": "compiled_8192_64_forward.json",
       "peak_allocated_mib": 270.125,
-      "peak_reserved_mib": 282.0,
+      "peak_reserved_mib": 410.0,
       "status": "complete"
     },
     {
       "source": "compiled_8192_64_forward_backward.json",
       "peak_allocated_mib": 279.25,
-      "peak_reserved_mib": 286.0,
+      "peak_reserved_mib": 414.0,
       "status": "complete"
     },
     {

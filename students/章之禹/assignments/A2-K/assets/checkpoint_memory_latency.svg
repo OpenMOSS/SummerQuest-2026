@@ -16,8 +16,8 @@
 <rect x="617.20" y="186.37" width="115.60" height="273.63" fill="#3973ac"/>
 <text x="675.00" y="181.37" text-anchor="middle" font-family="sans-serif" font-size="11">8124.5</text>
 <text x="675.00" y="484" text-anchor="end" transform="rotate(-35 675.00 484)" font-family="sans-serif" font-size="11">block 4</text>
-<rect x="787.20" y="186.33" width="115.60" height="273.67" fill="#3973ac"/>
-<text x="845.00" y="181.33" text-anchor="middle" font-family="sans-serif" font-size="11">8125.5</text>
+<rect x="787.20" y="186.37" width="115.60" height="273.63" fill="#3973ac"/>
+<text x="845.00" y="181.37" text-anchor="middle" font-family="sans-serif" font-size="11">8124.5</text>
 <text x="845.00" y="484" text-anchor="end" transform="rotate(-35 845.00 484)" font-family="sans-serif" font-size="11">block 8</text>
 <text x="80" y="542" font-family="sans-serif" font-size="12">OOM/failed rows are omitted from bars and retained in CSV.</text>
 </svg>

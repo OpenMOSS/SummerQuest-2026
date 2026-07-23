@@ -316,12 +316,11 @@ def _write_metadata(root: Path, output: Path, rows: dict[str, list[dict[str, Any
         "generated_at_utc": datetime.now(UTC).isoformat(),
         "seed": 20260722,
         "commands": [
-            "python -m student_scripts.a2k.run_a2k --results local_results/formal "
-            "--skip-checkpoint --skip-baseline --skip-compile --skip-correctness",
-            "python -m student_scripts.a2k.correctness "
-            "--output local_results/formal/correctness.json",
-            "python -m pytest -q tests/test_attention.py -v",
-            "python -m student_scripts.a2k.summarize_a2k "
+            "PYTHONPATH=.:cs336-basics uv run python "
+            "-m student_scripts.a2k.run_a2k --results local_results/formal",
+            "PYTHONPATH=.:cs336-basics uv run pytest "
+            "-q tests/test_attention.py -v",
+            "uv run python -m student_scripts.a2k.summarize_a2k "
             "--raw-results local_results/formal "
             "--output-dir public_results",
         ],
