@@ -1,0 +1,351 @@
+{
+  "status": "success",
+  "experiment": "mixed_precision",
+  "command": [
+    "python",
+    "-m",
+    "profiling.mixed_precision",
+    "--device",
+    "cuda",
+    "--output",
+    "results/a2p/mixed_precision.json",
+    "--warmup",
+    "5",
+    "--steps",
+    "10",
+    "--seed",
+    "0",
+    "--model-size",
+    "small",
+    "--batch-size",
+    "4",
+    "--context-length",
+    "512"
+  ],
+  "environment": {
+    "python": "3.13.14",
+    "pytorch": "2.7.1+cu126",
+    "cuda_runtime": "12.6",
+    "cudnn": 90501,
+    "device_type": "cuda",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpu_total_memory_mib": 24111.06,
+    "compute_capability": "8.9",
+    "driver": "560.28.03"
+  },
+  "accumulation": {
+    "iterations": 1000,
+    "increment": 0.01,
+    "expected": 10.0,
+    "outputs": {
+      "fp32_accumulator_fp32_input": 10.000133514404297,
+      "fp16_accumulator_fp16_input": 9.953125,
+      "fp32_accumulator_fp16_input": 10.00213623046875,
+      "fp32_accumulator_explicit_cast_input": 10.00213623046875
+    }
+  },
+  "toy_model": {
+    "architecture": "Linear(32, 10) -> LayerNorm(10) -> Linear(10, 7)",
+    "batch_size": 4,
+    "warmup": 5,
+    "steps": 10,
+    "cases": {
+      "fp32": {
+        "dtype": "fp32",
+        "observed_dtypes": {
+          "parameter": "float32",
+          "fc1_output": "float32",
+          "layer_norm_output": "float32",
+          "logits": "float32",
+          "loss": "float32",
+          "gradient": "float32"
+        },
+        "raw_timings_ms": [
+          0.6039431318640709,
+          0.6322069093585014,
+          0.7315836846828461,
+          0.7258085533976555,
+          0.7276888936758041,
+          0.7187556475400925,
+          0.7354691624641418,
+          0.7232287898659706,
+          0.7181372493505478,
+          0.7147528231143951
+        ],
+        "mean_ms": 0.7031574845314026,
+        "sample_std_ms": 0.045764410543815685,
+        "cv": 0.06508415475988846,
+        "losses": [
+          1.6580100059509277,
+          1.6580100059509277,
+          1.6580100059509277,
+          1.6580100059509277,
+          1.6580100059509277,
+          1.6580100059509277,
+          1.6580100059509277,
+          1.6580100059509277,
+          1.6580100059509277,
+          1.6580100059509277
+        ],
+        "memory": {
+          "allocated_mib": 16.258,
+          "reserved_mib": 22.0,
+          "peak_allocated_mib": 16.259,
+          "peak_reserved_mib": 22.0,
+          "active_mib": 16.258,
+          "peak_active_mib": 16.259
+        }
+      },
+      "bf16": {
+        "dtype": "bf16",
+        "observed_dtypes": {
+          "parameter": "float32",
+          "fc1_output": "bfloat16",
+          "layer_norm_output": "float32",
+          "logits": "bfloat16",
+          "loss": "float32",
+          "gradient": "float32"
+        },
+        "raw_timings_ms": [
+          1.038597896695137,
+          1.0390067473053932,
+          1.0858140885829926,
+          1.0844860225915909,
+          1.0837381705641747,
+          1.0822499170899391,
+          1.0851453989744186,
+          1.0955650359392166,
+          1.074017956852913,
+          1.0793302208185196
+        ],
+        "mean_ms": 1.0747951455414295,
+        "sample_std_ms": 0.019724825910465784,
+        "cv": 0.01835217249751289,
+        "losses": [
+          1.6591796875,
+          1.6591796875,
+          1.6591796875,
+          1.6591796875,
+          1.6591796875,
+          1.6591796875,
+          1.6591796875,
+          1.6591796875,
+          1.6591796875,
+          1.6591796875
+        ],
+        "memory": {
+          "allocated_mib": 16.258,
+          "reserved_mib": 22.0,
+          "peak_allocated_mib": 16.261,
+          "peak_reserved_mib": 22.0,
+          "active_mib": 16.258,
+          "peak_active_mib": 16.261
+        }
+      }
+    },
+    "numeric_comparison": {
+      "max_abs_logit_difference": 0.009813487529754639,
+      "mean_abs_logit_difference": 0.0032432829029858112
+    }
+  },
+  "language_model": {
+    "fp32": {
+      "status": "success",
+      "experiment": "end_to_end_benchmark",
+      "config": {
+        "model_size": "small",
+        "batch_size": 4,
+        "context_length": 512,
+        "mode": "forward_backward",
+        "warmup": 5,
+        "steps": 10,
+        "dtype": "fp32",
+        "device": "cuda",
+        "seed": 0
+      },
+      "model_config": {
+        "vocab_size": 10000,
+        "d_model": 768,
+        "num_layers": 12,
+        "num_heads": 12,
+        "d_ff": 3072,
+        "context_length": 512
+      },
+      "command": [
+        "python",
+        "-m",
+        "profiling.mixed_precision",
+        "--device",
+        "cuda",
+        "--output",
+        "results/a2p/mixed_precision.json",
+        "--warmup",
+        "5",
+        "--steps",
+        "10",
+        "--seed",
+        "0",
+        "--model-size",
+        "small",
+        "--batch-size",
+        "4",
+        "--context-length",
+        "512"
+      ],
+      "environment": {
+        "python": "3.13.14",
+        "pytorch": "2.7.1+cu126",
+        "cuda_runtime": "12.6",
+        "cudnn": 90501,
+        "device_type": "cuda",
+        "gpu": "NVIDIA GeForce RTX 4090",
+        "gpu_total_memory_mib": 24111.06,
+        "compute_capability": "8.9",
+        "driver": "560.28.03"
+      },
+      "result_path": null,
+      "timing": {
+        "timer": "time.perf_counter",
+        "cuda_synchronize_before_step": true,
+        "cuda_synchronize_after_step": true,
+        "raw_timings_ms": [
+          79.47344053536654,
+          78.7987606599927,
+          79.19657416641712,
+          78.58834136277437,
+          78.58087494969368,
+          79.19666171073914,
+          78.94790265709162,
+          78.94646562635899,
+          78.71134579181671,
+          78.90581246465445
+        ],
+        "mean_ms": 78.93461799249053,
+        "sample_std_ms": 0.2871533895597439,
+        "cv": 0.003637863802508835,
+        "min_ms": 78.58087494969368,
+        "max_ms": 79.47344053536654
+      },
+      "parameter_count": 128625408,
+      "loss_samples": [
+        9.280804634094238,
+        9.280804634094238,
+        9.280804634094238,
+        9.280804634094238,
+        9.280804634094238,
+        9.280804634094238,
+        9.280804634094238,
+        9.280804634094238,
+        9.280804634094238,
+        9.280804634094238
+      ],
+      "memory": {
+        "allocated_mib": 1084.82,
+        "reserved_mib": 4288.0,
+        "peak_allocated_mib": 4157.552,
+        "peak_reserved_mib": 4288.0,
+        "active_mib": 1084.82,
+        "peak_active_mib": 4157.552
+      }
+    },
+    "bf16": {
+      "status": "success",
+      "experiment": "end_to_end_benchmark",
+      "config": {
+        "model_size": "small",
+        "batch_size": 4,
+        "context_length": 512,
+        "mode": "forward_backward",
+        "warmup": 5,
+        "steps": 10,
+        "dtype": "bf16",
+        "device": "cuda",
+        "seed": 0
+      },
+      "model_config": {
+        "vocab_size": 10000,
+        "d_model": 768,
+        "num_layers": 12,
+        "num_heads": 12,
+        "d_ff": 3072,
+        "context_length": 512
+      },
+      "command": [
+        "python",
+        "-m",
+        "profiling.mixed_precision",
+        "--device",
+        "cuda",
+        "--output",
+        "results/a2p/mixed_precision.json",
+        "--warmup",
+        "5",
+        "--steps",
+        "10",
+        "--seed",
+        "0",
+        "--model-size",
+        "small",
+        "--batch-size",
+        "4",
+        "--context-length",
+        "512"
+      ],
+      "environment": {
+        "python": "3.13.14",
+        "pytorch": "2.7.1+cu126",
+        "cuda_runtime": "12.6",
+        "cudnn": 90501,
+        "device_type": "cuda",
+        "gpu": "NVIDIA GeForce RTX 4090",
+        "gpu_total_memory_mib": 24111.06,
+        "compute_capability": "8.9",
+        "driver": "560.28.03"
+      },
+      "result_path": null,
+      "timing": {
+        "timer": "time.perf_counter",
+        "cuda_synchronize_before_step": true,
+        "cuda_synchronize_after_step": true,
+        "raw_timings_ms": [
+          70.30812278389931,
+          69.22916602343321,
+          60.96999906003475,
+          69.98960021883249,
+          64.33444004505873,
+          65.03652408719063,
+          66.35213736444712,
+          65.52765518426895,
+          63.38373385369778,
+          73.51064030081034
+        ],
+        "mean_ms": 66.86420189216733,
+        "sample_std_ms": 3.8011819478924425,
+        "cv": 0.0568492831788025,
+        "min_ms": 60.96999906003475,
+        "max_ms": 73.51064030081034
+      },
+      "parameter_count": 128625408,
+      "loss_samples": [
+        9.280410766601562,
+        9.280410766601562,
+        9.280410766601562,
+        9.280410766601562,
+        9.280410766601562,
+        9.280410766601562,
+        9.280410766601562,
+        9.280410766601562,
+        9.280410766601562,
+        9.280410766601562
+      ],
+      "memory": {
+        "allocated_mib": 1064.96,
+        "reserved_mib": 3436.0,
+        "peak_allocated_mib": 3238.826,
+        "peak_reserved_mib": 3436.0,
+        "active_mib": 1064.96,
+        "peak_active_mib": 3238.826
+      }
+    }
+  }
+}

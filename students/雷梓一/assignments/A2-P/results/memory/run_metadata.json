@@ -1,0 +1,757 @@
+{
+  "runs": [
+    {
+      "command": "python profiling/memory_snapshot.py --model-size large --batch-size 1 --context-length 2048 --mode forward --warmup 1 --steps 1 --dtype fp32 --device cuda --output results/memory/large_ctx2048_forward_unused.json --snapshot-output results/memory/large_ctx2048_forward.pickle --summary-output results/memory/large_ctx2048_forward_summary.json",
+      "config": {
+        "batch_size": 1,
+        "context_length": 2048,
+        "d_ff": 5120,
+        "d_model": 1280,
+        "dtype": "fp32",
+        "mode": "forward",
+        "model_size": "large",
+        "num_heads": 20,
+        "num_layers": 36,
+        "seed": 1337,
+        "vocab_size": 10000,
+        "warmup": 1
+      },
+      "error": null,
+      "error_type": null,
+      "failure_stage": null,
+      "largest_active_allocation": {
+        "requested_size_bytes": 51200000,
+        "size_bytes": 51200000
+      },
+      "largest_recorded_allocation": {
+        "frames": [
+          {
+            "filename": "Linear.cpp",
+            "line": 0,
+            "name": "at::native::sumproduct_pair(at::Tensor const&, at::Tensor const&, c10::ArrayRef<long>, bool) [clone .constprop.0]"
+          },
+          {
+            "filename": "nvtx_ranges.py",
+            "line": 20,
+            "name": "annotated_scaled_dot_product_attention"
+          },
+          {
+            "filename": "model.py",
+            "line": 520,
+            "name": "forward"
+          },
+          {
+            "filename": "model.py",
+            "line": 382,
+            "name": "forward"
+          },
+          {
+            "filename": "model.py",
+            "line": 253,
+            "name": "forward"
+          },
+          {
+            "filename": "benchmark.py",
+            "line": 99,
+            "name": "forward"
+          }
+        ],
+        "size_bytes": 335544320,
+        "time_us": 1784636520196934
+      },
+      "memory": {
+        "active_bytes": 3999970304,
+        "allocated_bytes": 3999970304,
+        "peak_active_bytes": 5409436672,
+        "peak_allocated_bytes": 5409436672,
+        "peak_reserved_bytes": 5830082560,
+        "reserved_bytes": 5830082560
+      },
+      "snapshot_file": "large_ctx2048_forward.pickle",
+      "software": {
+        "compute_capability": "8.9",
+        "cuda_runtime": "12.6",
+        "cudnn": 91002,
+        "device_type": "cuda",
+        "driver": "560.28.03",
+        "gpu_memory_bytes": 25282281472,
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "python": "3.13.14",
+        "pytorch": "2.11.0+cu126"
+      },
+      "status": "ok",
+      "summary_file": "large_ctx2048_forward_summary.json",
+      "timestamp_utc": "2026-07-21T12:21:51.697009+00:00",
+      "transformer_blocks": {
+        "backward_memory_events": [],
+        "saved_tensor_bytes": {}
+      }
+    },
+    {
+      "command": "python profiling/memory_snapshot.py --model-size large --batch-size 1 --context-length 2048 --mode train_step --warmup 1 --steps 1 --dtype fp32 --device cuda --output results/memory/large_ctx2048_train_step_unused.json --snapshot-output results/memory/large_ctx2048_train_step.pickle --summary-output results/memory/large_ctx2048_train_step_summary.json",
+      "config": {
+        "batch_size": 1,
+        "context_length": 2048,
+        "d_ff": 5120,
+        "d_model": 1280,
+        "dtype": "fp32",
+        "mode": "train_step",
+        "model_size": "large",
+        "num_heads": 20,
+        "num_layers": 36,
+        "seed": 1337,
+        "vocab_size": 10000,
+        "warmup": 1
+      },
+      "error": "CUDA out of memory while requesting 320.00 MiB",
+      "error_type": "OutOfMemoryError",
+      "failure_stage": "warmup",
+      "largest_active_allocation": null,
+      "largest_recorded_allocation": null,
+      "memory": {
+        "active_bytes": 23895348224,
+        "allocated_bytes": 23895348224,
+        "peak_active_bytes": 24246604800,
+        "peak_allocated_bytes": 24246604800,
+        "peak_reserved_bytes": 24641536000,
+        "reserved_bytes": 24641536000
+      },
+      "snapshot_file": "large_ctx2048_train_step.pickle",
+      "software": {
+        "compute_capability": "8.9",
+        "cuda_runtime": "12.6",
+        "cudnn": 91002,
+        "device_type": "cuda",
+        "driver": "560.28.03",
+        "gpu_memory_bytes": 25282281472,
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "python": "3.13.14",
+        "pytorch": "2.11.0+cu126"
+      },
+      "status": "oom",
+      "summary_file": "large_ctx2048_train_step_summary.json",
+      "timestamp_utc": "2026-07-21T12:22:04.136193+00:00",
+      "transformer_blocks": null
+    },
+    {
+      "command": "python profiling/memory_snapshot.py --model-size small --batch-size 1 --context-length 512 --mode train_step --warmup 1 --steps 1 --dtype fp32 --device cuda --output results/memory/small_ctx512_train_step_unused.json --snapshot-output results/memory/small_ctx512_train_step.pickle --summary-output results/memory/small_ctx512_train_step_summary.json",
+      "config": {
+        "batch_size": 1,
+        "context_length": 512,
+        "d_ff": 3072,
+        "d_model": 768,
+        "dtype": "fp32",
+        "mode": "train_step",
+        "model_size": "small",
+        "num_heads": 12,
+        "num_layers": 12,
+        "seed": 1337,
+        "vocab_size": 10000,
+        "warmup": 1
+      },
+      "error": null,
+      "error_type": null,
+      "failure_stage": null,
+      "largest_active_allocation": {
+        "requested_size_bytes": 30720000,
+        "size_bytes": 31457280
+      },
+      "largest_recorded_allocation": {
+        "frames": [
+          {
+            "filename": "Functions.cpp",
+            "line": 0,
+            "name": "torch::autograd::generated::BmmBackward0_apply_functional(std::vector<at::Tensor, std::allocator<at::Tensor> >&&, std::array<bool, 2ul>, at::Tensor&, at::Tensor&)"
+          }
+        ],
+        "size_bytes": 30720000,
+        "time_us": 1784636571692661
+      },
+      "memory": {
+        "active_bytes": 2133250048,
+        "allocated_bytes": 2133250048,
+        "peak_active_bytes": 2592339968,
+        "peak_allocated_bytes": 2592339968,
+        "peak_reserved_bytes": 2759852032,
+        "reserved_bytes": 2759852032
+      },
+      "snapshot_file": "small_ctx512_train_step.pickle",
+      "software": {
+        "compute_capability": "8.9",
+        "cuda_runtime": "12.6",
+        "cudnn": 91002,
+        "device_type": "cuda",
+        "driver": "560.28.03",
+        "gpu_memory_bytes": 25282281472,
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "python": "3.13.14",
+        "pytorch": "2.11.0+cu126"
+      },
+      "status": "ok",
+      "summary_file": "small_ctx512_train_step_summary.json",
+      "timestamp_utc": "2026-07-21T12:22:49.851345+00:00",
+      "transformer_blocks": {
+        "backward_memory_events": [
+          {
+            "active_bytes": 2546201600,
+            "allocated_bytes": 2546201600,
+            "block": "layers.11",
+            "event": "backward_start"
+          },
+          {
+            "active_bytes": 2512837632,
+            "allocated_bytes": 2512837632,
+            "block": "layers.11",
+            "event": "backward_end"
+          },
+          {
+            "active_bytes": 2511264768,
+            "allocated_bytes": 2511264768,
+            "block": "layers.10",
+            "event": "backward_start"
+          },
+          {
+            "active_bytes": 2478687232,
+            "allocated_bytes": 2478687232,
+            "block": "layers.10",
+            "event": "backward_end"
+          },
+          {
+            "active_bytes": 2477114368,
+            "allocated_bytes": 2477114368,
+            "block": "layers.9",
+            "event": "backward_start"
+          },
+          {
+            "active_bytes": 2444798976,
+            "allocated_bytes": 2444798976,
+            "block": "layers.9",
+            "event": "backward_end"
+          },
+          {
+            "active_bytes": 2443226112,
+            "allocated_bytes": 2443226112,
+            "block": "layers.8",
+            "event": "backward_start"
+          },
+          {
+            "active_bytes": 2409862144,
+            "allocated_bytes": 2409862144,
+            "block": "layers.8",
+            "event": "backward_end"
+          },
+          {
+            "active_bytes": 2408289280,
+            "allocated_bytes": 2408289280,
+            "block": "layers.7",
+            "event": "backward_start"
+          },
+          {
+            "active_bytes": 2377284608,
+            "allocated_bytes": 2377284608,
+            "block": "layers.7",
+            "event": "backward_end"
+          },
+          {
+            "active_bytes": 2375711744,
+            "allocated_bytes": 2375711744,
+            "block": "layers.6",
+            "event": "backward_start"
+          },
+          {
+            "active_bytes": 2343396352,
+            "allocated_bytes": 2343396352,
+            "block": "layers.6",
+            "event": "backward_end"
+          },
+          {
+            "active_bytes": 2341823488,
+            "allocated_bytes": 2341823488,
+            "block": "layers.5",
+            "event": "backward_start"
+          },
+          {
+            "active_bytes": 2305575936,
+            "allocated_bytes": 2305575936,
+            "block": "layers.5",
+            "event": "backward_end"
+          },
+          {
+            "active_bytes": 2304003072,
+            "allocated_bytes": 2304003072,
+            "block": "layers.4",
+            "event": "backward_start"
+          },
+          {
+            "active_bytes": 2268541952,
+            "allocated_bytes": 2268541952,
+            "block": "layers.4",
+            "event": "backward_end"
+          },
+          {
+            "active_bytes": 2266969088,
+            "allocated_bytes": 2266969088,
+            "block": "layers.3",
+            "event": "backward_start"
+          },
+          {
+            "active_bytes": 2231507968,
+            "allocated_bytes": 2231507968,
+            "block": "layers.3",
+            "event": "backward_end"
+          },
+          {
+            "active_bytes": 2229935104,
+            "allocated_bytes": 2229935104,
+            "block": "layers.2",
+            "event": "backward_start"
+          },
+          {
+            "active_bytes": 2194473984,
+            "allocated_bytes": 2194473984,
+            "block": "layers.2",
+            "event": "backward_end"
+          },
+          {
+            "active_bytes": 2192901120,
+            "allocated_bytes": 2192901120,
+            "block": "layers.1",
+            "event": "backward_start"
+          },
+          {
+            "active_bytes": 2157440000,
+            "allocated_bytes": 2157440000,
+            "block": "layers.1",
+            "event": "backward_end"
+          },
+          {
+            "active_bytes": 2155867136,
+            "allocated_bytes": 2155867136,
+            "block": "layers.0",
+            "event": "backward_start"
+          },
+          {
+            "active_bytes": 2119619584,
+            "allocated_bytes": 2119619584,
+            "block": "layers.0",
+            "event": "backward_end"
+          }
+        ],
+        "saved_tensor_bytes": {
+          "layers.0": 137707520,
+          "layers.1": 137707520,
+          "layers.10": 137707520,
+          "layers.11": 137707520,
+          "layers.2": 137707520,
+          "layers.3": 137707520,
+          "layers.4": 137707520,
+          "layers.5": 137707520,
+          "layers.6": 137707520,
+          "layers.7": 137707520,
+          "layers.8": 137707520,
+          "layers.9": 137707520
+        }
+      }
+    },
+    {
+      "command": "python profiling/memory_snapshot.py --model-size xl --batch-size 1 --context-length 1024 --mode forward --warmup 1 --steps 1 --dtype fp32 --device cuda --output results/memory/xl_ctx1024_forward_unused.json --snapshot-output results/memory/xl_ctx1024_forward.pickle --summary-output results/memory/xl_ctx1024_forward_summary.json",
+      "config": {
+        "batch_size": 1,
+        "context_length": 1024,
+        "d_ff": 10240,
+        "d_model": 2560,
+        "dtype": "fp32",
+        "mode": "forward",
+        "model_size": "xl",
+        "num_heads": 32,
+        "num_layers": 32,
+        "seed": 1337,
+        "vocab_size": 10000,
+        "warmup": 1
+      },
+      "error": null,
+      "error_type": null,
+      "failure_stage": null,
+      "largest_active_allocation": {
+        "requested_size_bytes": 104857600,
+        "size_bytes": 104857600
+      },
+      "largest_recorded_allocation": {
+        "frames": [
+          {
+            "filename": "Linear.cpp",
+            "line": 0,
+            "name": "at::native::sumproduct_pair(at::Tensor const&, at::Tensor const&, c10::ArrayRef<long>, bool) [clone .constprop.0]"
+          },
+          {
+            "filename": "nvtx_ranges.py",
+            "line": 20,
+            "name": "annotated_scaled_dot_product_attention"
+          },
+          {
+            "filename": "model.py",
+            "line": 520,
+            "name": "forward"
+          },
+          {
+            "filename": "model.py",
+            "line": 382,
+            "name": "forward"
+          },
+          {
+            "filename": "model.py",
+            "line": 253,
+            "name": "forward"
+          },
+          {
+            "filename": "benchmark.py",
+            "line": 99,
+            "name": "forward"
+          }
+        ],
+        "size_bytes": 134217728,
+        "time_us": 1784636479415255
+      },
+      "memory": {
+        "active_bytes": 13771040768,
+        "allocated_bytes": 13771040768,
+        "peak_active_bytes": 14372014080,
+        "peak_allocated_bytes": 14372014080,
+        "peak_reserved_bytes": 14531166208,
+        "reserved_bytes": 14531166208
+      },
+      "snapshot_file": "xl_ctx1024_forward.pickle",
+      "software": {
+        "compute_capability": "8.9",
+        "cuda_runtime": "12.6",
+        "cudnn": 91002,
+        "device_type": "cuda",
+        "driver": "560.28.03",
+        "gpu_memory_bytes": 25282281472,
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "python": "3.13.14",
+        "pytorch": "2.11.0+cu126"
+      },
+      "status": "ok",
+      "summary_file": "xl_ctx1024_forward_summary.json",
+      "timestamp_utc": "2026-07-21T12:20:53.508670+00:00",
+      "transformer_blocks": {
+        "backward_memory_events": [],
+        "saved_tensor_bytes": {}
+      }
+    },
+    {
+      "command": "python profiling/memory_snapshot.py --model-size xl --batch-size 1 --context-length 1024 --mode train_step --warmup 1 --steps 1 --dtype fp32 --device cuda --output results/memory/xl_ctx1024_train_step_unused.json --snapshot-output results/memory/xl_ctx1024_train_step.pickle --summary-output results/memory/xl_ctx1024_train_step_summary.json",
+      "config": {
+        "batch_size": 1,
+        "context_length": 1024,
+        "d_ff": 10240,
+        "d_model": 2560,
+        "dtype": "fp32",
+        "mode": "train_step",
+        "model_size": "xl",
+        "num_heads": 32,
+        "num_layers": 32,
+        "seed": 1337,
+        "vocab_size": 10000,
+        "warmup": 1
+      },
+      "error": "CUDA out of memory while requesting 128.00 MiB",
+      "error_type": "OutOfMemoryError",
+      "failure_stage": "warmup",
+      "largest_active_allocation": null,
+      "largest_recorded_allocation": null,
+      "memory": {
+        "active_bytes": 24355264512,
+        "allocated_bytes": 24355264512,
+        "peak_active_bytes": 24375179264,
+        "peak_allocated_bytes": 24375179264,
+        "peak_reserved_bytes": 24670896128,
+        "reserved_bytes": 24660410368
+      },
+      "snapshot_file": "xl_ctx1024_train_step.pickle",
+      "software": {
+        "compute_capability": "8.9",
+        "cuda_runtime": "12.6",
+        "cudnn": 91002,
+        "device_type": "cuda",
+        "driver": "560.28.03",
+        "gpu_memory_bytes": 25282281472,
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "python": "3.13.14",
+        "pytorch": "2.11.0+cu126"
+      },
+      "status": "oom",
+      "summary_file": "xl_ctx1024_train_step_summary.json",
+      "timestamp_utc": "2026-07-21T12:21:23.250167+00:00",
+      "transformer_blocks": null
+    },
+    {
+      "command": "python profiling/memory_snapshot.py --model-size xl --batch-size 1 --context-length 128 --mode forward --warmup 1 --steps 1 --dtype fp32 --device cuda --output results/memory/xl_ctx128_forward_unused.json --snapshot-output results/memory/xl_ctx128_forward.pickle --summary-output results/memory/xl_ctx128_forward_summary.json",
+      "config": {
+        "batch_size": 1,
+        "context_length": 128,
+        "d_ff": 10240,
+        "d_model": 2560,
+        "dtype": "fp32",
+        "mode": "forward",
+        "model_size": "xl",
+        "num_heads": 32,
+        "num_layers": 32,
+        "seed": 1337,
+        "vocab_size": 10000,
+        "warmup": 1
+      },
+      "error": null,
+      "error_type": null,
+      "failure_stage": null,
+      "largest_active_allocation": {
+        "requested_size_bytes": 104857600,
+        "size_bytes": 104857600
+      },
+      "largest_recorded_allocation": {
+        "frames": [
+          {
+            "filename": "Linear.cpp",
+            "line": 0,
+            "name": "at::native::sumproduct_pair(at::Tensor const&, at::Tensor const&, c10::ArrayRef<long>, bool) [clone .constprop.0]"
+          },
+          {
+            "filename": "model.py",
+            "line": 39,
+            "name": "forward"
+          },
+          {
+            "filename": "model.py",
+            "line": 399,
+            "name": "forward"
+          },
+          {
+            "filename": "model.py",
+            "line": 386,
+            "name": "forward"
+          },
+          {
+            "filename": "model.py",
+            "line": 253,
+            "name": "forward"
+          },
+          {
+            "filename": "benchmark.py",
+            "line": 99,
+            "name": "forward"
+          }
+        ],
+        "size_bytes": 5242880,
+        "time_us": 1784636361170729
+      },
+      "memory": {
+        "active_bytes": 13770739712,
+        "allocated_bytes": 13770739712,
+        "peak_active_bytes": 13793021952,
+        "peak_allocated_bytes": 13793021952,
+        "peak_reserved_bytes": 13807648768,
+        "reserved_bytes": 13807648768
+      },
+      "snapshot_file": "xl_ctx128_forward.pickle",
+      "software": {
+        "compute_capability": "8.9",
+        "cuda_runtime": "12.6",
+        "cudnn": 91002,
+        "device_type": "cuda",
+        "driver": "560.28.03",
+        "gpu_memory_bytes": 25282281472,
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "python": "3.13.14",
+        "pytorch": "2.11.0+cu126"
+      },
+      "status": "ok",
+      "summary_file": "xl_ctx128_forward_summary.json",
+      "timestamp_utc": "2026-07-21T12:18:55.204700+00:00",
+      "transformer_blocks": {
+        "backward_memory_events": [],
+        "saved_tensor_bytes": {}
+      }
+    },
+    {
+      "command": "python profiling/memory_snapshot.py --model-size xl --batch-size 1 --context-length 128 --mode train_step --warmup 1 --steps 1 --dtype fp32 --device cuda --output results/memory/xl_ctx128_train_step_unused.json --snapshot-output results/memory/xl_ctx128_train_step.pickle --summary-output results/memory/xl_ctx128_train_step_summary.json",
+      "config": {
+        "batch_size": 1,
+        "context_length": 128,
+        "d_ff": 10240,
+        "d_model": 2560,
+        "dtype": "fp32",
+        "mode": "train_step",
+        "model_size": "xl",
+        "num_heads": 32,
+        "num_layers": 32,
+        "seed": 1337,
+        "vocab_size": 10000,
+        "warmup": 1
+      },
+      "error": "CUDA out of memory while requesting 100.00 MiB",
+      "error_type": "OutOfMemoryError",
+      "failure_stage": "warmup",
+      "largest_active_allocation": null,
+      "largest_recorded_allocation": null,
+      "memory": {
+        "active_bytes": 24492817408,
+        "allocated_bytes": 24492817408,
+        "peak_active_bytes": 24617335808,
+        "peak_allocated_bytes": 24617335808,
+        "peak_reserved_bytes": 24773656576,
+        "reserved_bytes": 24750587904
+      },
+      "snapshot_file": "xl_ctx128_train_step.pickle",
+      "software": {
+        "compute_capability": "8.9",
+        "cuda_runtime": "12.6",
+        "cudnn": 91002,
+        "device_type": "cuda",
+        "driver": "560.28.03",
+        "gpu_memory_bytes": 25282281472,
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "python": "3.13.14",
+        "pytorch": "2.11.0+cu126"
+      },
+      "status": "oom",
+      "summary_file": "xl_ctx128_train_step_summary.json",
+      "timestamp_utc": "2026-07-21T12:19:25.823039+00:00",
+      "transformer_blocks": null
+    },
+    {
+      "command": "python profiling/memory_snapshot.py --model-size xl --batch-size 1 --context-length 2048 --mode forward --warmup 1 --steps 1 --dtype fp32 --device cuda --output results/memory/xl_ctx2048_forward_unused.json --snapshot-output results/memory/xl_ctx2048_forward.pickle --summary-output results/memory/xl_ctx2048_forward_summary.json",
+      "config": {
+        "batch_size": 1,
+        "context_length": 2048,
+        "d_ff": 10240,
+        "d_model": 2560,
+        "dtype": "fp32",
+        "mode": "forward",
+        "model_size": "xl",
+        "num_heads": 32,
+        "num_layers": 32,
+        "seed": 1337,
+        "vocab_size": 10000,
+        "warmup": 1
+      },
+      "error": null,
+      "error_type": null,
+      "failure_stage": null,
+      "largest_active_allocation": {
+        "requested_size_bytes": 104857600,
+        "size_bytes": 104857600
+      },
+      "largest_recorded_allocation": {
+        "frames": [
+          {
+            "filename": "Linear.cpp",
+            "line": 0,
+            "name": "at::native::sumproduct_pair(at::Tensor const&, at::Tensor const&, c10::ArrayRef<long>, bool) [clone .constprop.0]"
+          },
+          {
+            "filename": "nvtx_ranges.py",
+            "line": 20,
+            "name": "annotated_scaled_dot_product_attention"
+          },
+          {
+            "filename": "model.py",
+            "line": 520,
+            "name": "forward"
+          },
+          {
+            "filename": "model.py",
+            "line": 382,
+            "name": "forward"
+          },
+          {
+            "filename": "model.py",
+            "line": 253,
+            "name": "forward"
+          },
+          {
+            "filename": "benchmark.py",
+            "line": 99,
+            "name": "forward"
+          }
+        ],
+        "size_bytes": 536870912,
+        "time_us": 1784636420850280
+      },
+      "memory": {
+        "active_bytes": 13771384832,
+        "allocated_bytes": 13771384832,
+        "peak_active_bytes": 16049170432,
+        "peak_allocated_bytes": 16049170432,
+        "peak_reserved_bytes": 16628318208,
+        "reserved_bytes": 16628318208
+      },
+      "snapshot_file": "xl_ctx2048_forward.pickle",
+      "software": {
+        "compute_capability": "8.9",
+        "cuda_runtime": "12.6",
+        "cudnn": 91002,
+        "device_type": "cuda",
+        "driver": "560.28.03",
+        "gpu_memory_bytes": 25282281472,
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "python": "3.13.14",
+        "pytorch": "2.11.0+cu126"
+      },
+      "status": "ok",
+      "summary_file": "xl_ctx2048_forward_summary.json",
+      "timestamp_utc": "2026-07-21T12:19:54.526673+00:00",
+      "transformer_blocks": {
+        "backward_memory_events": [],
+        "saved_tensor_bytes": {}
+      }
+    },
+    {
+      "command": "python profiling/memory_snapshot.py --model-size xl --batch-size 1 --context-length 2048 --mode train_step --warmup 1 --steps 1 --dtype fp32 --device cuda --output results/memory/xl_ctx2048_train_step_unused.json --snapshot-output results/memory/xl_ctx2048_train_step.pickle --summary-output results/memory/xl_ctx2048_train_step_summary.json",
+      "config": {
+        "batch_size": 1,
+        "context_length": 2048,
+        "d_ff": 10240,
+        "d_model": 2560,
+        "dtype": "fp32",
+        "mode": "train_step",
+        "model_size": "xl",
+        "num_heads": 32,
+        "num_layers": 32,
+        "seed": 1337,
+        "vocab_size": 10000,
+        "warmup": 1
+      },
+      "error": "CUDA out of memory while requesting 512.00 MiB",
+      "error_type": "OutOfMemoryError",
+      "failure_stage": "warmup",
+      "largest_active_allocation": null,
+      "largest_recorded_allocation": null,
+      "memory": {
+        "active_bytes": 24148740096,
+        "allocated_bytes": 24148740096,
+        "peak_active_bytes": 24589125632,
+        "peak_allocated_bytes": 24589125632,
+        "peak_reserved_bytes": 24704450560,
+        "reserved_bytes": 24704450560
+      },
+      "snapshot_file": "xl_ctx2048_train_step.pickle",
+      "software": {
+        "compute_capability": "8.9",
+        "cuda_runtime": "12.6",
+        "cudnn": 91002,
+        "device_type": "cuda",
+        "driver": "560.28.03",
+        "gpu_memory_bytes": 25282281472,
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "python": "3.13.14",
+        "pytorch": "2.11.0+cu126"
+      },
+      "status": "oom",
+      "summary_file": "xl_ctx2048_train_step_summary.json",
+      "timestamp_utc": "2026-07-21T12:20:25.107807+00:00",
+      "transformer_blocks": null
+    }
+  ],
+  "schema_version": 1
+}

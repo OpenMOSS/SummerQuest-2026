@@ -1,0 +1,9 @@
+run_id,requested_model,requested_context,requested_batch,actual_model,actual_context,actual_batch,mode,dtype,status,failure_stage,peak_active_mib,peak_allocated_mib,peak_reserved_mib,largest_allocation_mib,fallback_reason,source_run
+M-BF16-F,xl,128,4,xl,128,4,forward,bf16,success,,19604.1348,19604.1348,19848.0,50.0,,memory-M-BF16-F_xl_bs4_ctx128_forward_bf16_history.metadata.json
+M-BF16-T,xl,128,4,xl,128,4,train_step,bf16,success,,52639.2271,52639.2271,59688.0,100.0,,memory-M-BF16-T_xl_bs4_ctx128_train_step_bf16_history.metadata.json
+M1,xl,128,4,xl,128,4,forward,fp32,success,,13217.8066,13217.8066,13246.0,20.0,,memory-M1_xl_bs4_ctx128_forward_fp32_history.metadata.json
+M2,xl,128,4,xl,128,4,train_step,fp32,success,,52649.1177,52649.1177,58670.0,100.0,,memory-M2_xl_bs4_ctx128_train_step_fp32_history.metadata.json
+M3,xl,2048,4,xl,2048,4,forward,fp32,success,,21810.5254,21810.5254,24028.0,2048.0,,memory-M3_xl_bs4_ctx2048_forward_fp32_history.metadata.json
+M4-VERIFY,xl,2048,4,xl,2048,4,train_step,fp32,oom,forward,78292.1191,78292.1191,79412.0,,,memory-M4-VERIFY_xl_bs4_ctx2048_train_step_fp32_history.metadata.json
+MF4,xl,2048,4,xl,2048,1,train_step,fp32,oom,forward,79376.4902,79376.4902,80414.0,,prior_attempt_oom,memory-MF4_xl_bs1_ctx2048_train_step_fp32_history.metadata.json
+MF5,xl,2048,4,xl,1024,1,train_step,fp32,success,,57714.374,57714.374,58628.0,128.0,prior_attempt_oom,memory-MF5_xl_bs1_ctx1024_train_step_fp32_history.metadata.json

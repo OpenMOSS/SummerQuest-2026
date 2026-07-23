@@ -1,0 +1,269 @@
+{
+  "assignment": "A2-P",
+  "benchmark_runs": [
+    {
+      "batch_size": 4,
+      "context_length": 512,
+      "device": "cuda:0",
+      "dtype": "bf16",
+      "mode": "forward_backward",
+      "model_size": "large",
+      "output_csv": "results/timings/mixed_precision/large_ctx512_bs4_forward_backward_bf16_w5_s10.csv",
+      "seed": 0,
+      "source_json": "large_ctx512_bs4_forward_backward_bf16_w5_s10.json",
+      "steps": 10,
+      "warmup": 5
+    },
+    {
+      "batch_size": 4,
+      "context_length": 512,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "mode": "forward_backward",
+      "model_size": "large",
+      "output_csv": "results/timings/mixed_precision/large_ctx512_bs4_forward_backward_fp32_w5_s10.csv",
+      "seed": 0,
+      "source_json": "large_ctx512_bs4_forward_backward_fp32_w5_s10.json",
+      "steps": 10,
+      "warmup": 5
+    },
+    {
+      "batch_size": 4,
+      "context_length": 512,
+      "device": "cuda:0",
+      "dtype": "bf16",
+      "mode": "forward",
+      "model_size": "large",
+      "output_csv": "results/timings/mixed_precision/large_ctx512_bs4_forward_bf16_w5_s10.csv",
+      "seed": 0,
+      "source_json": "large_ctx512_bs4_forward_bf16_w5_s10.json",
+      "steps": 10,
+      "warmup": 5
+    },
+    {
+      "batch_size": 4,
+      "context_length": 512,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "mode": "forward",
+      "model_size": "large",
+      "output_csv": "results/timings/mixed_precision/large_ctx512_bs4_forward_fp32_w5_s10.csv",
+      "seed": 0,
+      "source_json": "large_ctx512_bs4_forward_fp32_w5_s10.json",
+      "steps": 10,
+      "warmup": 5
+    },
+    {
+      "batch_size": 4,
+      "context_length": 512,
+      "device": "cuda:0",
+      "dtype": "bf16",
+      "mode": "forward_backward",
+      "model_size": "medium",
+      "output_csv": "results/timings/mixed_precision/medium_ctx512_bs4_forward_backward_bf16_w5_s10.csv",
+      "seed": 0,
+      "source_json": "medium_ctx512_bs4_forward_backward_bf16_w5_s10.json",
+      "steps": 10,
+      "warmup": 5
+    },
+    {
+      "batch_size": 4,
+      "context_length": 512,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "mode": "forward_backward",
+      "model_size": "medium",
+      "output_csv": "results/timings/mixed_precision/medium_ctx512_bs4_forward_backward_fp32_w5_s10.csv",
+      "seed": 0,
+      "source_json": "medium_ctx512_bs4_forward_backward_fp32_w5_s10.json",
+      "steps": 10,
+      "warmup": 5
+    },
+    {
+      "batch_size": 4,
+      "context_length": 512,
+      "device": "cuda:0",
+      "dtype": "bf16",
+      "mode": "forward",
+      "model_size": "medium",
+      "output_csv": "results/timings/mixed_precision/medium_ctx512_bs4_forward_bf16_w5_s10.csv",
+      "seed": 0,
+      "source_json": "medium_ctx512_bs4_forward_bf16_w5_s10.json",
+      "steps": 10,
+      "warmup": 5
+    },
+    {
+      "batch_size": 4,
+      "context_length": 512,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "mode": "forward",
+      "model_size": "medium",
+      "output_csv": "results/timings/mixed_precision/medium_ctx512_bs4_forward_fp32_w5_s10.csv",
+      "seed": 0,
+      "source_json": "medium_ctx512_bs4_forward_fp32_w5_s10.json",
+      "steps": 10,
+      "warmup": 5
+    },
+    {
+      "batch_size": 4,
+      "context_length": 512,
+      "device": "cuda:0",
+      "dtype": "bf16",
+      "mode": "forward_backward",
+      "model_size": "small",
+      "output_csv": "results/timings/mixed_precision/small_ctx512_bs4_forward_backward_bf16_w5_s10.csv",
+      "seed": 0,
+      "source_json": "small_ctx512_bs4_forward_backward_bf16_w5_s10.json",
+      "steps": 10,
+      "warmup": 5
+    },
+    {
+      "batch_size": 4,
+      "context_length": 512,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "mode": "forward_backward",
+      "model_size": "small",
+      "output_csv": "results/timings/mixed_precision/small_ctx512_bs4_forward_backward_fp32_w5_s10.csv",
+      "seed": 0,
+      "source_json": "small_ctx512_bs4_forward_backward_fp32_w5_s10.json",
+      "steps": 10,
+      "warmup": 5
+    },
+    {
+      "batch_size": 4,
+      "context_length": 512,
+      "device": "cuda:0",
+      "dtype": "bf16",
+      "mode": "forward",
+      "model_size": "small",
+      "output_csv": "results/timings/mixed_precision/small_ctx512_bs4_forward_bf16_w5_s10.csv",
+      "seed": 0,
+      "source_json": "small_ctx512_bs4_forward_bf16_w5_s10.json",
+      "steps": 10,
+      "warmup": 5
+    },
+    {
+      "batch_size": 4,
+      "context_length": 512,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "mode": "forward",
+      "model_size": "small",
+      "output_csv": "results/timings/mixed_precision/small_ctx512_bs4_forward_fp32_w5_s10.csv",
+      "seed": 0,
+      "source_json": "small_ctx512_bs4_forward_fp32_w5_s10.json",
+      "steps": 10,
+      "warmup": 5
+    },
+    {
+      "batch_size": 4,
+      "context_length": 512,
+      "device": "cuda:0",
+      "dtype": "bf16",
+      "mode": "forward_backward",
+      "model_size": "xl",
+      "output_csv": "results/timings/mixed_precision/xl_ctx512_bs4_forward_backward_bf16_w5_s10.csv",
+      "seed": 0,
+      "source_json": "xl_ctx512_bs4_forward_backward_bf16_w5_s10.json",
+      "steps": 10,
+      "warmup": 5
+    },
+    {
+      "batch_size": 4,
+      "context_length": 512,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "mode": "forward_backward",
+      "model_size": "xl",
+      "output_csv": "results/timings/mixed_precision/xl_ctx512_bs4_forward_backward_fp32_w5_s10.csv",
+      "seed": 0,
+      "source_json": "xl_ctx512_bs4_forward_backward_fp32_w5_s10.json",
+      "steps": 10,
+      "warmup": 5
+    },
+    {
+      "batch_size": 4,
+      "context_length": 512,
+      "device": "cuda:0",
+      "dtype": "bf16",
+      "mode": "forward",
+      "model_size": "xl",
+      "output_csv": "results/timings/mixed_precision/xl_ctx512_bs4_forward_bf16_w5_s10.csv",
+      "seed": 0,
+      "source_json": "xl_ctx512_bs4_forward_bf16_w5_s10.json",
+      "steps": 10,
+      "warmup": 5
+    },
+    {
+      "batch_size": 4,
+      "context_length": 512,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "mode": "forward",
+      "model_size": "xl",
+      "output_csv": "results/timings/mixed_precision/xl_ctx512_bs4_forward_fp32_w5_s10.csv",
+      "seed": 0,
+      "source_json": "xl_ctx512_bs4_forward_fp32_w5_s10.json",
+      "steps": 10,
+      "warmup": 5
+    }
+  ],
+  "commands_redacted": [
+    "PYTHON_CMD=python bash profiling/run_mixed_precision_suite.sh"
+  ],
+  "environment": {
+    "cuda_runtime": "12.8",
+    "driver_version": "570.124.06",
+    "gpu_name": "NVIDIA H200",
+    "gpu_total_memory_gib": 139.81,
+    "os": "Linux",
+    "python": "3.10.20",
+    "torch": "2.11.0+cu128"
+  },
+  "local_raw_result_policy": "ToyModel dtype JSON files and per-run mixed precision benchmark CSV/JSON files remain in local results; public submission contains aggregated JSON and this lightweight metadata.",
+  "public_result_file": "results/mixed_precision.json",
+  "source_commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+  "topic": "Mixed Precision",
+  "toy_model_runs": [
+    {
+      "config": {
+        "batch_size": 4,
+        "device": "cuda:0",
+        "dtype": "bf16",
+        "in_features": 32,
+        "out_features": 8,
+        "seed": 0
+      },
+      "source_json": "toy_dtype_bf16.json",
+      "toy_model_dtypes": {
+        "fc1_output": "torch.bfloat16",
+        "gradient": "torch.float32",
+        "layernorm_output": "torch.float32",
+        "logits": "torch.bfloat16",
+        "loss": "torch.float32",
+        "parameter": "torch.float32"
+      }
+    },
+    {
+      "config": {
+        "batch_size": 4,
+        "device": "cuda:0",
+        "dtype": "fp16",
+        "in_features": 32,
+        "out_features": 8,
+        "seed": 0
+      },
+      "source_json": "toy_dtype_fp16.json",
+      "toy_model_dtypes": {
+        "fc1_output": "torch.float16",
+        "gradient": "torch.float32",
+        "layernorm_output": "torch.float32",
+        "logits": "torch.float16",
+        "loss": "torch.float32",
+        "parameter": "torch.float32"
+      }
+    }
+  ]
+}

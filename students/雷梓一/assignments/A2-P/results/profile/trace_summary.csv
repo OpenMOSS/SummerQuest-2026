@@ -1,0 +1,289 @@
+model_size,batch_size,context_length,dtype,tool,name,calls,cpu_total_us,cpu_self_us,cuda_total_us,cuda_self_us
+medium,1,1024,fp32,cuda_event,backward,1,,,126749.34387207031,
+medium,1,1024,fp32,cuda_event,forward,1,,,65180.80139160156,
+medium,1,1024,fp32,cuda_event,optimizer,1,,,75549.02648925781,
+medium,1,1024,fp32,torch.profiler,profile/measure,1,269644.511,2140.8450000000303,78400.11299999892,0.0
+medium,1,1024,fp32,torch.profiler,Optimizer.step#AdamW.step,1,0.0,0.0,75303.30700000003,75303.30700000003
+medium,1,1024,fp32,torch.profiler,aten::bmm,651,20983.993999999857,14361.213999999869,71765.85299999977,71765.85299999977
+medium,1,1024,fp32,torch.profiler,forward,1,0.0,0.0,64850.117000000006,64850.117000000006
+medium,1,1024,fp32,torch.profiler,forward,1,64507.99800000001,13805.695000000102,48092.19699999986,0.0
+medium,1,1024,fp32,torch.profiler,autograd::engine::evaluate_function: BmmBackward0,217,18291.163999999713,2000.1899999998423,44722.93899999985,0.0
+medium,1,1024,fp32,torch.profiler,BmmBackward0,217,16290.973999999871,1684.0479999997187,44722.93899999985,0.0
+medium,1,1024,fp32,torch.profiler,aten::mul,2382,37132.57099999982,22654.253999998502,32404.20899999979,32395.696999999804
+medium,1,1024,fp32,torch.profiler,optimizer,1,74659.595,93.21300000001793,30301.099999999104,0.0
+medium,1,1024,fp32,torch.profiler,Optimizer.step#AdamW.step,1,74566.38199999998,19980.641999999643,30301.099999999104,0.0
+medium,1,1024,fp32,torch.profiler,aten::einsum,217,22947.74700000008,4759.864999999715,27042.91399999991,0.0
+medium,1,1024,fp32,torch.profiler,autograd::engine::evaluate_function: DivBackward0,48,3542.983999999924,507.7529999998951,24615.279999999955,0.0
+medium,1,1024,fp32,torch.profiler,ampere_sgemm_128x64_tn,169,0.0,0.0,22923.625000000015,22923.625000000015
+medium,1,1024,fp32,torch.profiler,DivBackward0,48,2586.4990000000544,334.0219999999972,22228.65399999995,0.0
+medium,1,1024,fp32,torch.profiler,aten::div,414,6848.466000000555,4454.501000000641,21723.822000000346,21723.822000000346
+medium,1,1024,fp32,torch.profiler,"void at::native::vectorized_elementwise_kernel<4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul> >(int, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul>)",388,0.0,0.0,15298.186000000438,15298.186000000438
+medium,1,1024,fp32,torch.profiler,"void at::native::vectorized_elementwise_kernel<4, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul> >(int, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul>)",1412,0.0,0.0,14610.437999999645,14610.437999999645
+medium,1,1024,fp32,torch.profiler,"void at::native::vectorized_elementwise_kernel<4, at::native::CUDAFunctor_add<float>, std::array<char*, 3ul> >(int, at::native::CUDAFunctor_add<float>, std::array<char*, 3ul>)",1335,0.0,0.0,14455.96599999857,14455.96599999857
+medium,1,1024,fp32,torch.profiler,void cutlass::Kernel2<cutlass_80_simt_sgemm_256x128_8x4_nn_align1>(cutlass_80_simt_sgemm_256x128_8x4_nn_align1::Params),73,0.0,0.0,14174.82700000002,14174.82700000002
+medium,1,1024,fp32,torch.profiler,"void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::DivFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::DivFunctor<float> > const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::DivFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::DivFunctor<float> > const&)::{lambda(int)#1})",96,0.0,0.0,13032.710999999887,13032.710999999887
+medium,1,1024,fp32,torch.profiler,void cutlass::Kernel2<cutlass_80_simt_sgemm_128x256_8x4_nt_align1>(cutlass_80_simt_sgemm_128x256_8x4_nt_align1::Params),73,0.0,0.0,11364.806000000084,11364.806000000084
+medium,1,1024,fp32,torch.profiler,attention/softmax,24,0.0,0.0,10844.391000000003,10844.391000000003
+medium,1,1024,fp32,torch.profiler,attention/softmax,24,3934.4310000000078,1444.6409999999487,10781.76899999999,0.0
+medium,1,1024,fp32,torch.profiler,aten::where,96,3930.6179999999667,971.018999999892,10686.916999999812,5311.139999999947
+medium,1,1024,fp32,torch.profiler,aten::add_,291,3401.846000000005,1869.2400000000926,8601.779999999722,8601.779999999722
+medium,1,1024,fp32,torch.profiler,attention/scores,24,0.0,0.0,7735.9730000000045,7735.9730000000045
+medium,1,1024,fp32,torch.profiler,attention/scores,24,6410.189999999991,1857.3650000000116,7634.690999999963,0.0
+medium,1,1024,fp32,torch.profiler,aten::neg,100,1538.0189999998547,952.512000000017,6997.412000000113,6997.412000000113
+medium,1,1024,fp32,torch.profiler,"void at::native::vectorized_elementwise_kernel<4, at::native::neg_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::neg_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>)",52,0.0,0.0,6816.5460000001185,6816.5460000001185
+medium,1,1024,fp32,torch.profiler,"void at::native::vectorized_elementwise_kernel<4, at::native::BUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul> >(int, at::native::BUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul>)",48,0.0,0.0,6770.886000000004,6770.886000000004
+medium,1,1024,fp32,torch.profiler,aten::copy_,362,6226.982000000057,3193.20100000002,6590.812000000037,6590.812000000037
+medium,1,1024,fp32,torch.profiler,"void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1} const&)::{lambda(int)#1})",313,0.0,0.0,6429.562000000066,6429.562000000066
+medium,1,1024,fp32,torch.profiler,autograd::engine::evaluate_function: MaxBackward0,25,2166.2099999999773,348.42700000008335,6104.77399999999,0.0
+medium,1,1024,fp32,torch.profiler,autograd::engine::evaluate_function: MulBackward0,338,15906.609999999884,3446.121999999901,6086.228999999788,0.0
+medium,1,1024,fp32,torch.profiler,autograd::engine::evaluate_function: torch::autograd::AccumulateGrad,219,6830.305000000037,870.9550000000017,5789.855000000083,0.0
+medium,1,1024,fp32,torch.profiler,torch::autograd::AccumulateGrad,219,5959.350000000035,1134.138999999952,5789.855000000083,0.0
+medium,1,1024,fp32,torch.profiler,void cutlass::Kernel2<cutlass_80_simt_sgemm_64x64_8x5_nt_align1>(cutlass_80_simt_sgemm_64x64_8x5_nt_align1::Params),96,0.0,0.0,5488.896999999881,5488.896999999881
+medium,1,1024,fp32,torch.profiler,"void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::(anonymous namespace)::where_kernel_impl(at::TensorIterator&)::{lambda()#1}::operator()() const::{lambda()#11}::operator()() const::{lambda(bool, float, float)#1}>(at::TensorIteratorBase&, at::native::(anonymous namespace)::where_kernel_impl(at::TensorIterator&)::{lambda()#1}::operator()() const::{lambda()#11}::operator()() const::{lambda(bool, float, float)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::(anonymous namespace)::where_kernel_impl(at::TensorIterator&)::{lambda()#1}::operator()() const::{lambda()#11}::operator()() const::{lambda(bool, float, float)#1}>(at::TensorIteratorBase&, at::native::(anonymous namespace)::where_kernel_impl(at::TensorIterator&)::{lambda()#1}::operator()() const::{lambda()#11}::operator()() const::{lambda(bool, float, float)#1} const&)::{lambda(int)#1})",48,0.0,0.0,5311.139999999947,5311.139999999947
+medium,1,1024,fp32,torch.profiler,"void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",50,0.0,0.0,5258.405000000019,5258.405000000019
+medium,1,1024,fp32,torch.profiler,aten::add,850,12365.872999999878,7874.328999999727,5231.610999999916,5231.610999999916
+medium,1,1024,fp32,torch.profiler,attention/value,24,3807.111999999989,1123.31699999997,2433.5999999999913,0.0
+medium,1,1024,fp32,torch.profiler,attention/value,24,0.0,0.0,2433.5999999999913,2433.5999999999913
+medium,1,1024,fp32,torch.profiler,backward,1,127067.63299999999,127028.03699999998,0.8959999999933643,0.0
+medium,1,1024,fp32,torch.profiler,backward,1,0.0,0.0,0.8959999999933643,0.8959999999933643
+medium,1,1024,fp32,torch.profiler,profile/warmup,1,1875.909,1875.909,0.0,0.0
+medium,1,256,fp32,cuda_event,backward,1,,,128864.63928222656,
+medium,1,256,fp32,cuda_event,forward,1,,,65967.68188476562,
+medium,1,256,fp32,cuda_event,optimizer,1,,,74116.22619628906,
+medium,1,256,fp32,torch.profiler,Optimizer.step#AdamW.step,1,0.0,0.0,73832.97100000002,73832.97100000002
+medium,1,256,fp32,torch.profiler,forward,1,0.0,0.0,65468.838,65468.838
+medium,1,256,fp32,torch.profiler,profile/measure,1,271467.795,2373.060999999987,39952.36999999981,0.0
+medium,1,256,fp32,torch.profiler,optimizer,1,73160.22500000003,107.92700000002515,30111.399999999936,0.0
+medium,1,256,fp32,torch.profiler,Optimizer.step#AdamW.step,1,73052.29800000001,19666.235000000772,30111.399999999936,0.0
+medium,1,256,fp32,torch.profiler,aten::bmm,651,20215.20599999978,14420.683999999692,21524.152000000257,21524.152000000257
+medium,1,256,fp32,torch.profiler,aten::mul,2382,36329.50800000028,22972.783000000407,17287.734999999793,17287.734999999793
+medium,1,256,fp32,torch.profiler,"void at::native::vectorized_elementwise_kernel<4, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul> >(int, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul>)",1412,0.0,0.0,14464.189000000071,14464.189000000071
+medium,1,256,fp32,torch.profiler,autograd::engine::evaluate_function: BmmBackward0,217,17462.442999999985,2041.593000000139,14013.881000000241,0.0
+medium,1,256,fp32,torch.profiler,BmmBackward0,217,15420.849999999846,1710.7279999998864,14013.881000000241,0.0
+medium,1,256,fp32,torch.profiler,forward,1,65875.399,14365.184999999867,9832.521999999854,0.0
+medium,1,256,fp32,torch.profiler,"void at::native::vectorized_elementwise_kernel<4, at::native::CUDAFunctor_add<float>, std::array<char*, 3ul> >(int, at::native::CUDAFunctor_add<float>, std::array<char*, 3ul>)",1335,0.0,0.0,8379.007000000192,8379.007000000192
+medium,1,256,fp32,torch.profiler,aten::einsum,217,23057.465000000062,4742.077999999848,7510.271000000017,0.0
+medium,1,256,fp32,torch.profiler,aten::copy_,362,6318.352999999743,3291.6119999997463,6146.053999999982,6146.053999999982
+medium,1,256,fp32,torch.profiler,ampere_sgemm_128x64_tn,169,0.0,0.0,6109.537999999984,6109.537999999984
+medium,1,256,fp32,torch.profiler,"void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1} const&)::{lambda(int)#1})",313,0.0,0.0,6069.763999999828,6069.763999999828
+medium,1,256,fp32,torch.profiler,autograd::engine::evaluate_function: torch::autograd::AccumulateGrad,219,6940.962000000014,901.6960000002,5766.561999999947,0.0
+medium,1,256,fp32,torch.profiler,torch::autograd::AccumulateGrad,219,6039.265999999814,1152.2949999995035,5766.561999999947,0.0
+medium,1,256,fp32,torch.profiler,ampere_sgemm_32x32_sliced1x4_nn,144,0.0,0.0,5758.206000000209,5758.206000000209
+medium,1,256,fp32,torch.profiler,aten::add,850,12492.122999999865,7982.944000000092,4804.092000000122,4799.868000000106
+medium,1,256,fp32,torch.profiler,aten::sub_,438,4821.281999999861,2757.5319999996573,4165.566999999894,4165.566999999894
+medium,1,256,fp32,torch.profiler,void cutlass::Kernel2<cutlass_80_simt_sgemm_128x256_8x4_nt_align1>(cutlass_80_simt_sgemm_128x256_8x4_nt_align1::Params),73,0.0,0.0,3201.342000000106,3201.342000000106
+medium,1,256,fp32,torch.profiler,attention/scores,24,0.0,0.0,2982.3050000000094,2982.3050000000094
+medium,1,256,fp32,torch.profiler,aten::pow,366,7480.851000000099,4548.110000000068,2641.770000000304,2565.4800000001505
+medium,1,256,fp32,torch.profiler,"void at::native::vectorized_elementwise_kernel<4, at::native::(anonymous namespace)::pow_tensor_scalar_kernel_impl<float, float>(at::TensorIteratorBase&, float)::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::(anonymous namespace)::pow_tensor_scalar_kernel_impl<float, float>(at::TensorIteratorBase&, float)::{lambda(float)#1}, std::array<char*, 2ul>)",268,0.0,0.0,2514.566000000161,2514.566000000161
+medium,1,256,fp32,torch.profiler,autograd::engine::evaluate_function: MulBackward0,338,15594.652999999977,3591.7319999997853,2457.151000000027,0.0
+medium,1,256,fp32,torch.profiler,attention/softmax,24,0.0,0.0,2454.0179999999964,2454.0179999999964
+medium,1,256,fp32,torch.profiler,aten::square,219,4147.892000000371,330.71200000020326,2447.8130000001693,0.0
+medium,1,256,fp32,torch.profiler,aten::div,414,6875.011000000154,4527.220000000237,2443.132999999918,2443.132999999918
+medium,1,256,fp32,torch.profiler,aten::fill_,514,5040.618999999925,2347.3369999999977,1919.3369999997894,1919.3369999997894
+medium,1,256,fp32,torch.profiler,"void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<float>, std::array<char*, 1ul> >(int, at::native::FillFunctor<float>, std::array<char*, 1ul>)",514,0.0,0.0,1919.3369999997894,1919.3369999997894
+medium,1,256,fp32,torch.profiler,aten::zero_,465,5872.016000000425,1397.3890000004903,1876.4219999998313,0.0
+medium,1,256,fp32,torch.profiler,aten::zeros_like,438,9766.578000000067,1104.5299999995623,1786.4069999997155,0.0
+medium,1,256,fp32,torch.profiler,MulBackward0,338,8558.364000000074,1170.211999999694,1776.6619999998657,0.0
+medium,1,256,fp32,torch.profiler,"void at::native::vectorized_elementwise_kernel<4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::DivFunctor<float> >, std::array<char*, 3ul> >(int, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::DivFunctor<float> >, std::array<char*, 3ul>)",220,0.0,0.0,1708.409999999989,1708.409999999989
+medium,1,256,fp32,torch.profiler,"void at::native::vectorized_elementwise_kernel<4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul> >(int, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul>)",388,0.0,0.0,1617.1549999996842,1617.1549999996842
+medium,1,256,fp32,torch.profiler,ampere_sgemm_32x128_nt,96,0.0,0.0,1528.0979999998817,1528.0979999998817
+medium,1,256,fp32,torch.profiler,ampere_sgemm_128x64_nn,24,0.0,0.0,1373.8879999999335,1373.8879999999335
+medium,1,256,fp32,torch.profiler,aten::sqrt,219,2903.728999999934,1794.1859999998705,1233.250999999931,1233.250999999931
+medium,1,256,fp32,torch.profiler,"void at::native::vectorized_elementwise_kernel<4, at::native::sqrt_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#2}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::sqrt_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#2}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>)",219,0.0,0.0,1233.250999999931,1233.250999999931
+medium,1,256,fp32,torch.profiler,attention/value,24,3864.900000000008,1173.211999999995,544.191000000008,0.0
+medium,1,256,fp32,torch.profiler,attention/value,24,0.0,0.0,544.191000000008,544.191000000008
+medium,1,256,fp32,torch.profiler,backward,1,128552.62500000001,128504.19000000002,0.8959999999933643,0.0
+medium,1,256,fp32,torch.profiler,backward,1,0.0,0.0,0.8959999999933643,0.8959999999933643
+medium,1,256,fp32,torch.profiler,profile/warmup,1,804.375,804.375,0.0,0.0
+medium,1,512,fp32,cuda_event,backward,1,,,134639.5263671875,
+medium,1,512,fp32,cuda_event,forward,1,,,64763.10729980469,
+medium,1,512,fp32,cuda_event,optimizer,1,,,72231.68182373047,
+medium,1,512,fp32,torch.profiler,Optimizer.step#AdamW.step,1,0.0,0.0,72032.60999999999,72032.60999999999
+medium,1,512,fp32,torch.profiler,forward,1,0.0,0.0,64439.199,64439.199
+medium,1,512,fp32,torch.profiler,profile/measure,1,273938.829,2195.3890000000247,49690.60899999928,0.0
+medium,1,512,fp32,torch.profiler,aten::bmm,651,21379.1849999999,14175.1549999999,40808.74599999988,40808.74599999988
+medium,1,512,fp32,torch.profiler,optimizer,1,71298.524,81.44800000000396,29983.78999999928,0.0
+medium,1,512,fp32,torch.profiler,Optimizer.step#AdamW.step,1,71217.076,19257.72199999905,29983.78999999928,0.0
+medium,1,512,fp32,torch.profiler,autograd::engine::evaluate_function: BmmBackward0,217,18973.54500000016,2142.7920000002487,25527.14499999986,0.0
+medium,1,512,fp32,torch.profiler,BmmBackward0,217,16830.75299999991,1770.8009999999194,25527.14499999986,0.0
+medium,1,512,fp32,torch.profiler,aten::mul,2382,36690.004999999874,22657.575999998513,19714.951999999765,19670.566999999755
+medium,1,512,fp32,torch.profiler,forward,1,64662.348999999995,13993.041000000114,19644.51499999999,0.0
+medium,1,512,fp32,torch.profiler,aten::einsum,217,22709.45400000002,4522.324000000049,15281.601000000024,0.0
+medium,1,512,fp32,torch.profiler,"void at::native::vectorized_elementwise_kernel<4, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul> >(int, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul>)",1412,0.0,0.0,14417.440999999322,14417.440999999322
+medium,1,512,fp32,torch.profiler,ampere_sgemm_128x64_tn,73,0.0,0.0,9468.452999999976,9468.452999999976
+medium,1,512,fp32,torch.profiler,ampere_sgemm_128x64_nn,73,0.0,0.0,9435.945999999909,9435.945999999909
+medium,1,512,fp32,torch.profiler,"void at::native::vectorized_elementwise_kernel<4, at::native::CUDAFunctor_add<float>, std::array<char*, 3ul> >(int, at::native::CUDAFunctor_add<float>, std::array<char*, 3ul>)",1335,0.0,0.0,9088.037000000222,9088.037000000222
+medium,1,512,fp32,torch.profiler,aten::copy_,362,6643.279000000074,3388.954000000048,6263.112000000034,6263.112000000034
+medium,1,512,fp32,torch.profiler,"void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1} const&)::{lambda(int)#1})",313,0.0,0.0,6161.444000000072,6161.444000000072
+medium,1,512,fp32,torch.profiler,void cutlass::Kernel2<cutlass_80_simt_sgemm_128x256_8x4_nt_align1>(cutlass_80_simt_sgemm_128x256_8x4_nt_align1::Params),73,0.0,0.0,5931.458000000042,5931.458000000042
+medium,1,512,fp32,torch.profiler,autograd::engine::evaluate_function: torch::autograd::AccumulateGrad,219,7333.4369999999035,937.2710000000079,5724.385000000009,0.0
+medium,1,512,fp32,torch.profiler,torch::autograd::AccumulateGrad,219,6396.165999999896,1223.748999999836,5724.385000000009,0.0
+medium,1,512,fp32,torch.profiler,aten::add,850,12133.503000000323,7589.854000001136,5033.898999999893,5020.810999999904
+medium,1,512,fp32,torch.profiler,aten::div,414,6948.102000000236,4508.255000000408,4462.304000000121,4462.304000000121
+medium,1,512,fp32,torch.profiler,ampere_sgemm_64x64_tn,96,0.0,0.0,4248.382000000015,4248.382000000015
+medium,1,512,fp32,torch.profiler,aten::sub_,438,4751.985000000277,2680.703000000125,4163.916999999958,4163.916999999958
+medium,1,512,fp32,torch.profiler,autograd::engine::evaluate_function: MulBackward0,338,16551.150999999838,3724.136000000144,3923.32800000078,0.0
+medium,1,512,fp32,torch.profiler,ampere_sgemm_64x64_nn,96,0.0,0.0,3754.3369999997813,3754.3369999997813
+medium,1,512,fp32,torch.profiler,"void at::native::vectorized_elementwise_kernel<4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul> >(int, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul>)",388,0.0,0.0,3611.1360000000923,3611.1360000000923
+medium,1,512,fp32,torch.profiler,autograd::engine::evaluate_function: DivBackward0,48,3694.2630000000063,517.0870000000577,3164.2559999999794,0.0
+medium,1,512,fp32,torch.profiler,attention/scores,24,0.0,0.0,3088.3190000000004,3088.3190000000004
+medium,1,512,fp32,torch.profiler,MulBackward0,338,9166.865999999936,1241.7409999998636,3025.671000000657,0.0
+medium,1,512,fp32,torch.profiler,DivBackward0,48,2717.7149999999965,355.58299999986775,2987.2339999999967,0.0
+medium,1,512,fp32,torch.profiler,ampere_sgemm_32x128_nt,96,0.0,0.0,2787.804000000091,2787.804000000091
+medium,1,512,fp32,torch.profiler,aten::pow,366,7544.043999999522,4519.367999999555,2698.851000000133,2597.1830000001714
+medium,1,512,fp32,torch.profiler,attention/softmax,24,0.0,0.0,2592.9909999999936,2592.9909999999936
+medium,1,512,fp32,torch.profiler,"void at::native::vectorized_elementwise_kernel<4, at::native::(anonymous namespace)::pow_tensor_scalar_kernel_impl<float, float>(at::TensorIteratorBase&, float)::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::(anonymous namespace)::pow_tensor_scalar_kernel_impl<float, float>(at::TensorIteratorBase&, float)::{lambda(float)#1}, std::array<char*, 2ul>)",268,0.0,0.0,2543.939000000151,2543.939000000151
+medium,1,512,fp32,torch.profiler,aten::square,219,4066.6789999999455,307.221000000427,2448.325000000157,0.0
+medium,1,512,fp32,torch.profiler,ampere_sgemm_128x128_nn,48,0.0,0.0,2102.1119999999473,2102.1119999999473
+medium,1,512,fp32,torch.profiler,aten::fill_,514,4943.7080000002325,2237.5669999998954,2056.001999999724,2056.001999999724
+medium,1,512,fp32,torch.profiler,"void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<float>, std::array<char*, 1ul> >(int, at::native::FillFunctor<float>, std::array<char*, 1ul>)",514,0.0,0.0,2056.001999999724,2056.001999999724
+medium,1,512,fp32,torch.profiler,ampere_sgemm_128x128_nt,48,0.0,0.0,2052.286999999953,2052.286999999953
+medium,1,512,fp32,torch.profiler,attention/value,24,3804.126999999995,1117.970999999994,1068.864999999988,0.0
+medium,1,512,fp32,torch.profiler,attention/value,24,0.0,0.0,1068.864999999988,1068.864999999988
+medium,1,512,fp32,torch.profiler,backward,1,134402.255,134361.51,0.864000000001397,0.0
+medium,1,512,fp32,torch.profiler,backward,1,0.0,0.0,0.864000000001397,0.864000000001397
+medium,1,512,fp32,torch.profiler,profile/warmup,1,732.707,732.707,0.0,0.0
+small,1,1024,fp32,cuda_event,backward,1,,,72169.73114013672,
+small,1,1024,fp32,cuda_event,forward,1,,,34595.39031982422,
+small,1,1024,fp32,cuda_event,optimizer,1,,,48220.25680541992,
+small,1,1024,fp32,torch.profiler,Optimizer.step#AdamW.step,1,0.0,0.0,47934.37200000002,47934.37200000002
+small,1,1024,fp32,torch.profiler,forward,1,0.0,0.0,34311.384999999995,34311.384999999995
+small,1,1024,fp32,torch.profiler,aten::bmm,327,11353.517999999958,7609.973999999795,26624.893999999906,26624.893999999906
+small,1,1024,fp32,torch.profiler,profile/measure,1,156133.734,1181.8609999999462,24658.635000000006,0.0
+small,1,1024,fp32,torch.profiler,autograd::engine::evaluate_function: BmmBackward0,109,10188.507000000063,1109.1540000000896,17631.76199999993,0.0
+small,1,1024,fp32,torch.profiler,BmmBackward0,109,9079.352999999974,985.5980000001,17631.76199999993,0.0
+small,1,1024,fp32,torch.profiler,forward,1,34204.084,7539.79900000001,15575.243999999962,0.0
+small,1,1024,fp32,torch.profiler,aten::mul,1206,20744.896000000015,13243.855000000107,10574.399000000376,10574.399000000376
+small,1,1024,fp32,torch.profiler,optimizer,1,47673.47200000001,112.02999999999884,9076.83100000002,0.0
+small,1,1024,fp32,torch.profiler,Optimizer.step#AdamW.step,1,47561.44200000001,12302.842000000412,9076.83100000002,0.0
+small,1,1024,fp32,torch.profiler,aten::einsum,109,12049.72699999999,2673.981000000014,8993.131999999976,0.0
+small,1,1024,fp32,torch.profiler,autograd::engine::evaluate_function: DivBackward0,24,1978.9509999999864,290.28200000002107,8512.261999999937,0.0
+small,1,1024,fp32,torch.profiler,DivBackward0,24,1436.909999999989,177.99399999992602,7604.900999999918,0.0
+small,1,1024,fp32,torch.profiler,aten::div,210,4000.8659999998717,2620.9859999998253,7253.932999999844,7253.932999999844
+small,1,1024,fp32,torch.profiler,ampere_sgemm_128x64_tn,85,0.0,0.0,7188.419999999995,7188.419999999995
+small,1,1024,fp32,torch.profiler,"void at::native::vectorized_elementwise_kernel<4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul> >(int, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul>)",196,0.0,0.0,5160.192000000107,5160.192000000107
+small,1,1024,fp32,torch.profiler,void cutlass::Kernel2<cutlass_80_simt_sgemm_128x256_8x4_nt_align1>(cutlass_80_simt_sgemm_128x256_8x4_nt_align1::Params),37,0.0,0.0,4988.803999999989,4988.803999999989
+small,1,1024,fp32,torch.profiler,ampere_sgemm_128x64_nn,72,0.0,0.0,4921.122000000047,4921.122000000047
+small,1,1024,fp32,torch.profiler,"void at::native::vectorized_elementwise_kernel<4, at::native::CUDAFunctor_add<float>, std::array<char*, 3ul> >(int, at::native::CUDAFunctor_add<float>, std::array<char*, 3ul>)",675,0.0,0.0,4702.156000000437,4702.156000000437
+small,1,1024,fp32,torch.profiler,"void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::DivFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::DivFunctor<float> > const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::DivFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::DivFunctor<float> > const&)::{lambda(int)#1})",48,0.0,0.0,4522.818999999963,4522.818999999963
+small,1,1024,fp32,torch.profiler,"void at::native::vectorized_elementwise_kernel<4, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul> >(int, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul>)",716,0.0,0.0,4328.287000000266,4328.287000000266
+small,1,1024,fp32,torch.profiler,aten::where,48,2068.0059999999967,509.1819999999534,3085.7890000000543,1528.1590000000315
+small,1,1024,fp32,torch.profiler,aten::add_,147,1969.6509999999835,1096.454999999929,2882.7150000001275,2882.7150000001275
+small,1,1024,fp32,torch.profiler,attention/softmax,12,0.0,0.0,2794.305000000005,2794.305000000005
+small,1,1024,fp32,torch.profiler,attention/scores,12,0.0,0.0,2735.3950000000004,2735.3950000000004
+small,1,1024,fp32,torch.profiler,attention/softmax,12,2063.9189999999926,773.2100000000273,2732.6430000000128,0.0
+small,1,1024,fp32,torch.profiler,attention/scores,12,3349.0800000000045,973.2070000000049,2588.831,0.0
+small,1,1024,fp32,torch.profiler,autograd::engine::evaluate_function: MulBackward0,170,8999.16000000009,1960.0540000001129,2383.227000000101,0.0
+small,1,1024,fp32,torch.profiler,aten::neg,52,931.7909999999902,570.1970000000874,2316.613000000041,2316.613000000041
+small,1,1024,fp32,torch.profiler,"void at::native::vectorized_elementwise_kernel<4, at::native::neg_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::neg_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>)",28,0.0,0.0,2233.346000000034,2233.346000000034
+small,1,1024,fp32,torch.profiler,ampere_sgemm_128x128_nt,24,0.0,0.0,2151.1690000000235,2151.1690000000235
+small,1,1024,fp32,torch.profiler,aten::copy_,182,3501.235999999887,1817.119999999789,2112.2210000000314,2112.2210000000314
+small,1,1024,fp32,torch.profiler,ampere_sgemm_128x32_nt,48,0.0,0.0,2092.7079999999914,2092.7079999999914
+small,1,1024,fp32,torch.profiler,"void at::native::vectorized_elementwise_kernel<4, at::native::BUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul> >(int, at::native::BUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul>)",24,0.0,0.0,2090.304999999981,2090.304999999981
+small,1,1024,fp32,torch.profiler,ampere_sgemm_128x128_nn,24,0.0,0.0,2072.063999999934,2072.063999999934
+small,1,1024,fp32,torch.profiler,"void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1} const&)::{lambda(int)#1})",157,0.0,0.0,2047.8390000000336,2047.8390000000336
+small,1,1024,fp32,torch.profiler,MulBackward0,170,4808.852999999945,580.5259999999907,1942.20500000006,0.0
+small,1,1024,fp32,torch.profiler,aten::add,430,7205.264999999749,4675.963999999345,1853.2540000003933,1853.2540000003933
+small,1,1024,fp32,torch.profiler,autograd::engine::evaluate_function: MaxBackward0,13,1327.3700000000317,206.40700000003562,1799.645999999986,0.0
+small,1,1024,fp32,torch.profiler,autograd::engine::evaluate_function: torch::autograd::AccumulateGrad,111,3843.7280000000683,493.6430000000837,1766.784000000007,0.0
+small,1,1024,fp32,torch.profiler,attention/value,12,1996.5690000000113,611.0530000000081,1093.8879999999926,0.0
+small,1,1024,fp32,torch.profiler,attention/value,12,0.0,0.0,1093.8879999999926,1093.8879999999926
+small,1,1024,fp32,torch.profiler,backward,1,72297.199,72258.218,0.8960000000006403,0.0
+small,1,1024,fp32,torch.profiler,backward,1,0.0,0.0,0.8960000000006403,0.8960000000006403
+small,1,1024,fp32,torch.profiler,profile/warmup,1,2530.433,2530.433,0.0,0.0
+small,1,256,fp32,cuda_event,backward,1,,,73432.47985839844,
+small,1,256,fp32,cuda_event,forward,1,,,33840.641021728516,
+small,1,256,fp32,cuda_event,optimizer,1,,,34597.5341796875,
+small,1,256,fp32,torch.profiler,Optimizer.step#AdamW.step,1,0.0,0.0,34463.633000000016,34463.633000000016
+small,1,256,fp32,torch.profiler,forward,1,0.0,0.0,33055.793000000005,33055.793000000005
+small,1,256,fp32,torch.profiler,profile/measure,1,143555.622,1634.643999999942,13611.118000000562,0.0
+small,1,256,fp32,torch.profiler,optimizer,1,34354.77900000001,50.25500000001921,9507.019000000524,0.0
+small,1,256,fp32,torch.profiler,Optimizer.step#AdamW.step,1,34304.52399999999,9472.10899999959,9507.019000000524,0.0
+small,1,256,fp32,torch.profiler,aten::bmm,327,10942.067999999996,7584.628000000096,8583.204000000043,8583.204000000043
+small,1,256,fp32,torch.profiler,aten::mul,1206,18096.42500000007,11538.033000000047,5728.026000000238,5728.026000000238
+small,1,256,fp32,torch.profiler,autograd::engine::evaluate_function: BmmBackward0,109,10311.320000000036,1188.6760000000577,5626.599000000038,0.0
+small,1,256,fp32,torch.profiler,BmmBackward0,109,9122.643999999978,1006.9080000000904,5626.599000000038,0.0
+small,1,256,fp32,torch.profiler,"void at::native::vectorized_elementwise_kernel<4, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul> >(int, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul>)",716,0.0,0.0,4422.550000000323,4422.550000000323
+small,1,256,fp32,torch.profiler,forward,1,33737.907,7549.491000000027,4092.899000000032,0.0
+small,1,256,fp32,torch.profiler,"void at::native::vectorized_elementwise_kernel<4, at::native::CUDAFunctor_add<float>, std::array<char*, 3ul> >(int, at::native::CUDAFunctor_add<float>, std::array<char*, 3ul>)",675,0.0,0.0,2957.1509999999134,2957.1509999999134
+small,1,256,fp32,torch.profiler,aten::einsum,109,11431.191999999992,2588.802999999978,2956.605000000005,0.0
+small,1,256,fp32,torch.profiler,aten::copy_,182,3469.341999999957,1784.4819999998263,2095.78900000009,2095.78900000009
+small,1,256,fp32,torch.profiler,"void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1} const&)::{lambda(int)#1})",157,0.0,0.0,2059.7230000001055,2059.7230000001055
+small,1,256,fp32,torch.profiler,autograd::engine::evaluate_function: torch::autograd::AccumulateGrad,111,3991.3359999999448,533.1319999999469,1916.1990000000224,0.0
+small,1,256,fp32,torch.profiler,torch::autograd::AccumulateGrad,111,3458.203999999998,713.4880000000558,1916.1990000000224,0.0
+small,1,256,fp32,torch.profiler,aten::add,430,6108.878000000078,3788.991000000029,1717.3389999998872,1717.3389999998872
+small,1,256,fp32,torch.profiler,ampere_sgemm_128x64_tn,37,0.0,0.0,1569.6639999999898,1569.6639999999898
+small,1,256,fp32,torch.profiler,attention/scores,12,0.0,0.0,1533.2150000000038,1533.2150000000038
+small,1,256,fp32,torch.profiler,void cutlass::Kernel2<cutlass_80_simt_sgemm_128x256_8x4_nt_align1>(cutlass_80_simt_sgemm_128x256_8x4_nt_align1::Params),36,0.0,0.0,1485.1169999999765,1485.1169999999765
+small,1,256,fp32,torch.profiler,aten::sub_,222,2263.6030000000464,1271.2150000001711,1376.0659999999625,1376.0659999999625
+small,1,256,fp32,torch.profiler,ampere_sgemm_128x64_nn,36,0.0,0.0,1268.77199999999,1268.77199999999
+small,1,256,fp32,torch.profiler,attention/softmax,12,0.0,0.0,1203.2979999999943,1203.2979999999943
+small,1,256,fp32,torch.profiler,autograd::engine::evaluate_function: MulBackward0,170,8817.154000000075,2023.3860000001732,1138.1729999999588,0.0
+small,1,256,fp32,torch.profiler,aten::div,210,3644.27700000028,2387.3520000004564,922.3380000001025,922.3380000001025
+small,1,256,fp32,torch.profiler,ampere_sgemm_64x32_sliced1x4_tn,48,0.0,0.0,920.2880000000087,920.2880000000087
+small,1,256,fp32,torch.profiler,ampere_sgemm_64x32_sliced1x4_nn,48,0.0,0.0,836.548000000017,836.548000000017
+small,1,256,fp32,torch.profiler,MulBackward0,170,4838.75399999987,603.0189999998329,793.7549999999537,0.0
+small,1,256,fp32,torch.profiler,ampere_sgemm_128x32_nt,48,0.0,0.0,729.7630000000063,729.7630000000063
+small,1,256,fp32,torch.profiler,aten::fill_,262,2480.761000000055,1158.3630000001003,710.3370000002569,710.3370000002569
+small,1,256,fp32,torch.profiler,"void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<float>, std::array<char*, 1ul> >(int, at::native::FillFunctor<float>, std::array<char*, 1ul>)",262,0.0,0.0,710.3370000002569,710.3370000002569
+small,1,256,fp32,torch.profiler,"void at::native::vectorized_elementwise_kernel<4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul> >(int, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul>)",196,0.0,0.0,704.7079999999605,704.7079999999605
+small,1,256,fp32,torch.profiler,aten::zero_,237,2753.556999999899,573.1339999998454,686.8810000002559,0.0
+small,1,256,fp32,torch.profiler,ampere_sgemm_128x128_nn,25,0.0,0.0,674.8490000000384,674.8490000000384
+small,1,256,fp32,torch.profiler,aten::zeros_like,222,4603.8340000001335,573.5240000002668,636.4160000002448,0.0
+small,1,256,fp32,torch.profiler,"void at::native::vectorized_elementwise_kernel<4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::DivFunctor<float> >, std::array<char*, 3ul> >(int, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::DivFunctor<float> >, std::array<char*, 3ul>)",112,0.0,0.0,600.1920000001337,600.1920000001337
+small,1,256,fp32,torch.profiler,"void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1})",293,0.0,0.0,599.5839999999607,599.5839999999607
+small,1,256,fp32,torch.profiler,aten::pow,186,3925.2789999998104,2386.0779999999586,571.9009999999962,535.8350000000119
+small,1,256,fp32,torch.profiler,ampere_sgemm_128x128_nt,24,0.0,0.0,561.9859999999971,561.9859999999971
+small,1,256,fp32,torch.profiler,attention/value,12,1955.4659999999876,575.170999999993,294.52900000000227,0.0
+small,1,256,fp32,torch.profiler,attention/value,12,0.0,0.0,294.52900000000227,294.52900000000227
+small,1,256,fp32,torch.profiler,backward,1,73321.861,73258.927,0.9600000000064028,0.0
+small,1,256,fp32,torch.profiler,backward,1,0.0,0.0,0.9600000000064028,0.9600000000064028
+small,1,256,fp32,torch.profiler,profile/warmup,1,2324.229,2324.229,0.0,0.0
+small,1,512,fp32,cuda_event,backward,1,,,76310.9130859375,
+small,1,512,fp32,cuda_event,forward,1,,,33124.70245361328,
+small,1,512,fp32,cuda_event,optimizer,1,,,42540.25650024414,
+small,1,512,fp32,torch.profiler,Optimizer.step#AdamW.step,1,0.0,0.0,42368.53300000001,42368.53300000001
+small,1,512,fp32,torch.profiler,forward,1,0.0,0.0,32791.312,32791.312
+small,1,512,fp32,torch.profiler,profile/measure,1,153040.691,1037.3489999999874,16185.885000000271,0.0
+small,1,512,fp32,torch.profiler,aten::bmm,327,11721.163999999919,7818.936000000012,15488.718999999975,15488.718999999975
+small,1,512,fp32,torch.profiler,autograd::engine::evaluate_function: BmmBackward0,109,10915.327999999943,1208.3720000000612,10204.001999999957,0.0
+small,1,512,fp32,torch.profiler,BmmBackward0,109,9706.955999999882,1049.387000000017,10204.001999999957,0.0
+small,1,512,fp32,torch.profiler,optimizer,1,42003.989,62.310000000012224,9086.573000000266,0.0
+small,1,512,fp32,torch.profiler,Optimizer.step#AdamW.step,1,41941.67899999999,11495.283999999956,9086.573000000266,0.0
+small,1,512,fp32,torch.profiler,forward,1,33055.273,7057.541999999936,7059.760000000011,0.0
+small,1,512,fp32,torch.profiler,aten::mul,1206,20335.574000000393,12974.585000000297,6369.3120000004,6369.3120000004
+small,1,512,fp32,torch.profiler,aten::einsum,109,11708.347000000012,2577.3660000000764,5284.717000000019,0.0
+small,1,512,fp32,torch.profiler,"void at::native::vectorized_elementwise_kernel<4, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul> >(int, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul>)",716,0.0,0.0,4295.032000000385,4295.032000000385
+small,1,512,fp32,torch.profiler,ampere_sgemm_64x64_nn,73,0.0,0.0,3855.3919999999707,3855.3919999999707
+small,1,512,fp32,torch.profiler,"void at::native::vectorized_elementwise_kernel<4, at::native::CUDAFunctor_add<float>, std::array<char*, 3ul> >(int, at::native::CUDAFunctor_add<float>, std::array<char*, 3ul>)",675,0.0,0.0,3064.206,3064.206
+small,1,512,fp32,torch.profiler,void cutlass::Kernel2<cutlass_80_simt_sgemm_128x256_8x4_nt_align1>(cutlass_80_simt_sgemm_128x256_8x4_nt_align1::Params),37,0.0,0.0,2687.167999999976,2687.167999999976
+small,1,512,fp32,torch.profiler,ampere_sgemm_64x64_tn,60,0.0,0.0,2673.478000000009,2673.478000000009
+small,1,512,fp32,torch.profiler,aten::copy_,182,3702.6189999999706,1943.3259999998745,2016.621999999853,2016.621999999853
+small,1,512,fp32,torch.profiler,"void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1} const&)::{lambda(int)#1})",157,0.0,0.0,1970.8919999998934,1970.8919999998934
+small,1,512,fp32,torch.profiler,ampere_sgemm_128x64_tn,25,0.0,0.0,1893.9229999999916,1893.9229999999916
+small,1,512,fp32,torch.profiler,autograd::engine::evaluate_function: torch::autograd::AccumulateGrad,111,4148.505000000019,544.2430000000313,1779.8449999999866,0.0
+small,1,512,fp32,torch.profiler,torch::autograd::AccumulateGrad,111,3604.261999999988,694.2560000000522,1779.8449999999866,0.0
+small,1,512,fp32,torch.profiler,aten::add,430,6915.600999999845,4485.079999999917,1728.8709999997031,1728.8709999997031
+small,1,512,fp32,torch.profiler,autograd::engine::evaluate_function: MulBackward0,170,9223.677999999942,2115.799999999879,1658.4110000000437,0.0
+small,1,512,fp32,torch.profiler,attention/scores,12,0.0,0.0,1559.136000000004,1559.136000000004
+small,1,512,fp32,torch.profiler,aten::div,210,4020.542999999974,2632.661999999853,1486.9459999999945,1486.9459999999945
+small,1,512,fp32,torch.profiler,"void at::native::vectorized_elementwise_kernel<4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul> >(int, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul>)",196,0.0,0.0,1353.7310000000634,1353.7310000000634
+small,1,512,fp32,torch.profiler,aten::sub_,222,2797.229000000021,1573.2529999997641,1284.7090000001772,1284.7090000001772
+small,1,512,fp32,torch.profiler,attention/softmax,12,0.0,0.0,1257.2820000000029,1257.2820000000029
+small,1,512,fp32,torch.profiler,MulBackward0,170,5035.819000000047,634.8020000000179,1231.9130000000005,0.0
+small,1,512,fp32,torch.profiler,ampere_sgemm_128x32_nt,48,0.0,0.0,1115.5529999999853,1115.5529999999853
+small,1,512,fp32,torch.profiler,autograd::engine::evaluate_function: DivBackward0,24,2055.689999999973,289.57699999994657,1083.3930000000328,0.0
+small,1,512,fp32,torch.profiler,ampere_sgemm_128x128_nn,24,0.0,0.0,1024.7379999999794,1024.7379999999794
+small,1,512,fp32,torch.profiler,DivBackward0,24,1503.0260000000053,190.91800000002695,1018.210000000021,0.0
+small,1,512,fp32,torch.profiler,ampere_sgemm_128x128_nt,24,0.0,0.0,997.7260000000097,997.7260000000097
+small,1,512,fp32,torch.profiler,ampere_sgemm_128x64_nn,12,0.0,0.0,800.03100000001,800.03100000001
+small,1,512,fp32,torch.profiler,aten::fill_,262,2956.960000000071,1344.1230000001297,720.1040000000648,720.1040000000648
+small,1,512,fp32,torch.profiler,"void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<float>, std::array<char*, 1ul> >(int, at::native::FillFunctor<float>, std::array<char*, 1ul>)",262,0.0,0.0,720.1040000000648,720.1040000000648
+small,1,512,fp32,torch.profiler,"void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1})",293,0.0,0.0,719.3649999999429,719.3649999999429
+small,1,512,fp32,torch.profiler,aten::zero_,237,3343.2250000000786,697.8309999999838,698.087000000065,0.0
+small,1,512,fp32,torch.profiler,"void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::DivFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::DivFunctor<float> > const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::DivFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::DivFunctor<float> > const&)::{lambda(int)#1})",48,0.0,0.0,639.0390000000261,639.0390000000261
+small,1,512,fp32,torch.profiler,attention/value,12,1919.9609999999957,565.4329999999954,517.088999999989,0.0
+small,1,512,fp32,torch.profiler,attention/value,12,0.0,0.0,517.088999999989,517.088999999989
+small,1,512,fp32,torch.profiler,backward,1,76185.93299999999,76145.00699999998,0.8960000000006403,0.0
+small,1,512,fp32,torch.profiler,backward,1,0.0,0.0,0.8960000000006403,0.8960000000006403
+small,1,512,fp32,torch.profiler,profile/warmup,1,2145.921,2145.921,0.0,0.0

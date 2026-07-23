@@ -1,0 +1,254 @@
+[
+  {
+    "artifacts": {
+      "operator_summary": "results/profile/raw/medium-bs1-ctx1024-train_step-fp32.ops.json",
+      "timings_csv": "results/profile/profile_timings.csv",
+      "trace": "results/profile/raw/medium-bs1-ctx1024-train_step-fp32.trace.json"
+    },
+    "command": "python profiling/benchmark.py --model-size medium --batch-size 1 --context-length 1024 --mode train_step --warmup 5 --steps 1 --dtype fp32 --seed 42 --profiler torch --run-name medium-bs1-ctx1024-train_step-fp32 --trace-output results/profile/raw/medium-bs1-ctx1024-train_step-fp32.trace.json --operator-summary-output results/profile/raw/medium-bs1-ctx1024-train_step-fp32.ops.json --output results/profile/profile_timings.csv --metadata-output results/profile/run_metadata.json",
+    "configuration": {
+      "batch_size": 1,
+      "context_length": 1024,
+      "d_ff": 4096,
+      "d_model": 1024,
+      "dtype": "fp32",
+      "mode": "train_step",
+      "model_size": "medium",
+      "num_heads": 16,
+      "num_layers": 24,
+      "seed": 42,
+      "steps": 1,
+      "vocab_size": 10000,
+      "warmup": 5
+    },
+    "environment": {
+      "bf16_supported": true,
+      "compiled_cuda": "12.8",
+      "device": "cuda",
+      "driver_version": "570.124.06",
+      "git_commit": "33dcbe8dbee2d5ab754fcf4b0eb8ca26f60fc1cf",
+      "gpu_name": "NVIDIA GeForce RTX 4090",
+      "python_version": "3.12.3",
+      "torch_version": "2.11.0+cu128"
+    },
+    "profiler": "torch",
+    "run_id": "medium-bs1-ctx1024-train_step-fp32",
+    "statistics": {
+      "cv": 0.0,
+      "mean_ms": 196.2735839188099,
+      "sample_std_ms": 0.0
+    },
+    "status": "success",
+    "timestamp_utc": "2026-07-22T12:56:05Z"
+  },
+  {
+    "artifacts": {
+      "operator_summary": "results/profile/raw/medium-bs1-ctx256-train_step-fp32.ops.json",
+      "timings_csv": "results/profile/profile_timings.csv",
+      "trace": "results/profile/raw/medium-bs1-ctx256-train_step-fp32.trace.json"
+    },
+    "command": "python profiling/benchmark.py --model-size medium --batch-size 1 --context-length 256 --mode train_step --warmup 5 --steps 1 --dtype fp32 --seed 42 --profiler torch --run-name medium-bs1-ctx256-train_step-fp32 --trace-output results/profile/raw/medium-bs1-ctx256-train_step-fp32.trace.json --operator-summary-output results/profile/raw/medium-bs1-ctx256-train_step-fp32.ops.json --output results/profile/profile_timings.csv --metadata-output results/profile/run_metadata.json",
+    "configuration": {
+      "batch_size": 1,
+      "context_length": 256,
+      "d_ff": 4096,
+      "d_model": 1024,
+      "dtype": "fp32",
+      "mode": "train_step",
+      "model_size": "medium",
+      "num_heads": 16,
+      "num_layers": 24,
+      "seed": 42,
+      "steps": 1,
+      "vocab_size": 10000,
+      "warmup": 5
+    },
+    "environment": {
+      "bf16_supported": true,
+      "compiled_cuda": "12.8",
+      "device": "cuda",
+      "driver_version": "570.124.06",
+      "git_commit": "33dcbe8dbee2d5ab754fcf4b0eb8ca26f60fc1cf",
+      "gpu_name": "NVIDIA GeForce RTX 4090",
+      "python_version": "3.12.3",
+      "torch_version": "2.11.0+cu128"
+    },
+    "profiler": "torch",
+    "run_id": "medium-bs1-ctx256-train_step-fp32",
+    "statistics": {
+      "cv": 0.0,
+      "mean_ms": 197.992242872715,
+      "sample_std_ms": 0.0
+    },
+    "status": "success",
+    "timestamp_utc": "2026-07-22T12:55:38Z"
+  },
+  {
+    "artifacts": {
+      "operator_summary": "results/profile/raw/medium-bs1-ctx512-train_step-fp32.ops.json",
+      "timings_csv": "results/profile/profile_timings.csv",
+      "trace": "results/profile/raw/medium-bs1-ctx512-train_step-fp32.trace.json"
+    },
+    "command": "python profiling/benchmark.py --model-size medium --batch-size 1 --context-length 512 --mode train_step --warmup 5 --steps 1 --dtype fp32 --seed 42 --profiler torch --run-name medium-bs1-ctx512-train_step-fp32 --trace-output results/profile/raw/medium-bs1-ctx512-train_step-fp32.trace.json --operator-summary-output results/profile/raw/medium-bs1-ctx512-train_step-fp32.ops.json --output results/profile/profile_timings.csv --metadata-output results/profile/run_metadata.json",
+    "configuration": {
+      "batch_size": 1,
+      "context_length": 512,
+      "d_ff": 4096,
+      "d_model": 1024,
+      "dtype": "fp32",
+      "mode": "train_step",
+      "model_size": "medium",
+      "num_heads": 16,
+      "num_layers": 24,
+      "seed": 42,
+      "steps": 1,
+      "vocab_size": 10000,
+      "warmup": 5
+    },
+    "environment": {
+      "bf16_supported": true,
+      "compiled_cuda": "12.8",
+      "device": "cuda",
+      "driver_version": "570.124.06",
+      "git_commit": "33dcbe8dbee2d5ab754fcf4b0eb8ca26f60fc1cf",
+      "gpu_name": "NVIDIA GeForce RTX 4090",
+      "python_version": "3.12.3",
+      "torch_version": "2.11.0+cu128"
+    },
+    "profiler": "torch",
+    "run_id": "medium-bs1-ctx512-train_step-fp32",
+    "statistics": {
+      "cv": 0.0,
+      "mean_ms": 199.18333366513252,
+      "sample_std_ms": 0.0
+    },
+    "status": "success",
+    "timestamp_utc": "2026-07-22T12:55:52Z"
+  },
+  {
+    "artifacts": {
+      "operator_summary": "results/profile/raw/small-bs1-ctx1024-train_step-fp32.ops.json",
+      "timings_csv": "results/profile/profile_timings.csv",
+      "trace": "results/profile/raw/small-bs1-ctx1024-train_step-fp32.trace.json"
+    },
+    "command": "python profiling/benchmark.py --model-size small --batch-size 1 --context-length 1024 --mode train_step --warmup 5 --steps 1 --dtype fp32 --seed 42 --profiler torch --run-name small-bs1-ctx1024-train_step-fp32 --trace-output results/profile/raw/small-bs1-ctx1024-train_step-fp32.trace.json --operator-summary-output results/profile/raw/small-bs1-ctx1024-train_step-fp32.ops.json --output results/profile/profile_timings.csv --metadata-output results/profile/run_metadata.json",
+    "configuration": {
+      "batch_size": 1,
+      "context_length": 1024,
+      "d_ff": 3072,
+      "d_model": 768,
+      "dtype": "fp32",
+      "mode": "train_step",
+      "model_size": "small",
+      "num_heads": 12,
+      "num_layers": 12,
+      "seed": 42,
+      "steps": 1,
+      "vocab_size": 10000,
+      "warmup": 5
+    },
+    "environment": {
+      "bf16_supported": true,
+      "compiled_cuda": "12.8",
+      "device": "cuda",
+      "driver_version": "570.124.06",
+      "git_commit": "33dcbe8dbee2d5ab754fcf4b0eb8ca26f60fc1cf",
+      "gpu_name": "NVIDIA GeForce RTX 4090",
+      "python_version": "3.12.3",
+      "torch_version": "2.11.0+cu128"
+    },
+    "profiler": "torch",
+    "run_id": "small-bs1-ctx1024-train_step-fp32",
+    "statistics": {
+      "cv": 0.0,
+      "mean_ms": 94.05653178691864,
+      "sample_std_ms": 0.0
+    },
+    "status": "success",
+    "timestamp_utc": "2026-07-22T12:55:25Z"
+  },
+  {
+    "artifacts": {
+      "operator_summary": "results/profile/raw/small-bs1-ctx256-train_step-fp32.ops.json",
+      "timings_csv": "results/profile/profile_timings.csv",
+      "trace": "results/profile/raw/small-bs1-ctx256-train_step-fp32.trace.json"
+    },
+    "command": "python profiling/benchmark.py --model-size small --batch-size 1 --context-length 256 --mode train_step --warmup 5 --steps 1 --dtype fp32 --seed 42 --profiler torch --run-name small-bs1-ctx256-train_step-fp32 --trace-output results/profile/raw/small-bs1-ctx256-train_step-fp32.trace.json --operator-summary-output results/profile/raw/small-bs1-ctx256-train_step-fp32.ops.json --output results/profile/profile_timings.csv --metadata-output results/profile/run_metadata.json",
+    "configuration": {
+      "batch_size": 1,
+      "context_length": 256,
+      "d_ff": 3072,
+      "d_model": 768,
+      "dtype": "fp32",
+      "mode": "train_step",
+      "model_size": "small",
+      "num_heads": 12,
+      "num_layers": 12,
+      "seed": 42,
+      "steps": 1,
+      "vocab_size": 10000,
+      "warmup": 5
+    },
+    "environment": {
+      "bf16_supported": true,
+      "compiled_cuda": "12.8",
+      "device": "cuda",
+      "driver_version": "570.124.06",
+      "git_commit": "33dcbe8dbee2d5ab754fcf4b0eb8ca26f60fc1cf",
+      "gpu_name": "NVIDIA GeForce RTX 4090",
+      "python_version": "3.12.3",
+      "torch_version": "2.11.0+cu128"
+    },
+    "profiler": "torch",
+    "run_id": "small-bs1-ctx256-train_step-fp32",
+    "statistics": {
+      "cv": 0.0,
+      "mean_ms": 99.05503690242767,
+      "sample_std_ms": 0.0
+    },
+    "status": "success",
+    "timestamp_utc": "2026-07-22T12:55:08Z"
+  },
+  {
+    "artifacts": {
+      "operator_summary": "results/profile/raw/small-bs1-ctx512-train_step-fp32.ops.json",
+      "timings_csv": "results/profile/profile_timings.csv",
+      "trace": "results/profile/raw/small-bs1-ctx512-train_step-fp32.trace.json"
+    },
+    "command": "python profiling/benchmark.py --model-size small --batch-size 1 --context-length 512 --mode train_step --warmup 5 --steps 1 --dtype fp32 --seed 42 --profiler torch --run-name small-bs1-ctx512-train_step-fp32 --trace-output results/profile/raw/small-bs1-ctx512-train_step-fp32.trace.json --operator-summary-output results/profile/raw/small-bs1-ctx512-train_step-fp32.ops.json --output results/profile/profile_timings.csv --metadata-output results/profile/run_metadata.json",
+    "configuration": {
+      "batch_size": 1,
+      "context_length": 512,
+      "d_ff": 3072,
+      "d_model": 768,
+      "dtype": "fp32",
+      "mode": "train_step",
+      "model_size": "small",
+      "num_heads": 12,
+      "num_layers": 12,
+      "seed": 42,
+      "steps": 1,
+      "vocab_size": 10000,
+      "warmup": 5
+    },
+    "environment": {
+      "bf16_supported": true,
+      "compiled_cuda": "12.8",
+      "device": "cuda",
+      "driver_version": "570.124.06",
+      "git_commit": "33dcbe8dbee2d5ab754fcf4b0eb8ca26f60fc1cf",
+      "gpu_name": "NVIDIA GeForce RTX 4090",
+      "python_version": "3.12.3",
+      "torch_version": "2.11.0+cu128"
+    },
+    "profiler": "torch",
+    "run_id": "small-bs1-ctx512-train_step-fp32",
+    "statistics": {
+      "cv": 0.0,
+      "mean_ms": 95.59763222932816,
+      "sample_std_ms": 0.0
+    },
+    "status": "success",
+    "timestamp_utc": "2026-07-22T12:55:16Z"
+  }
+]
