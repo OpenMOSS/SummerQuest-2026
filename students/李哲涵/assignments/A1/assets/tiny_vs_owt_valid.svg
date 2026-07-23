@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="500" viewBox="0 0 820 500">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="80" y="28" font-family="Arial" font-size="20" font-weight="700">TinyStories vs OpenWebText</text>
+<line x1="80" y1="48.0" x2="660" y2="48.0" stroke="#e5e7eb"/>
+<text x="70" y="52.0" text-anchor="end" font-family="Arial" font-size="12" fill="#4b5563">6.72</text>
+<line x1="80" y1="124.4" x2="660" y2="124.4" stroke="#e5e7eb"/>
+<text x="70" y="128.4" text-anchor="end" font-family="Arial" font-size="12" fill="#4b5563">5.57</text>
+<line x1="80" y1="200.8" x2="660" y2="200.8" stroke="#e5e7eb"/>
+<text x="70" y="204.8" text-anchor="end" font-family="Arial" font-size="12" fill="#4b5563">4.42</text>
+<line x1="80" y1="277.2" x2="660" y2="277.2" stroke="#e5e7eb"/>
+<text x="70" y="281.2" text-anchor="end" font-family="Arial" font-size="12" fill="#4b5563">3.28</text>
+<line x1="80" y1="353.6" x2="660" y2="353.6" stroke="#e5e7eb"/>
+<text x="70" y="357.6" text-anchor="end" font-family="Arial" font-size="12" fill="#4b5563">2.13</text>
+<line x1="80" y1="430.0" x2="660" y2="430.0" stroke="#e5e7eb"/>
+<text x="70" y="434.0" text-anchor="end" font-family="Arial" font-size="12" fill="#4b5563">0.98</text>
+<text x="80.0" y="454" text-anchor="middle" font-family="Arial" font-size="12" fill="#4b5563">500</text>
+<text x="196.0" y="454" text-anchor="middle" font-family="Arial" font-size="12" fill="#4b5563">2400</text>
+<text x="312.0" y="454" text-anchor="middle" font-family="Arial" font-size="12" fill="#4b5563">4300</text>
+<text x="428.0" y="454" text-anchor="middle" font-family="Arial" font-size="12" fill="#4b5563">6200</text>
+<text x="544.0" y="454" text-anchor="middle" font-family="Arial" font-size="12" fill="#4b5563">8100</text>
+<text x="660.0" y="454" text-anchor="middle" font-family="Arial" font-size="12" fill="#4b5563">10000</text>
+<line x1="80" y1="430" x2="660" y2="430" stroke="#111827"/>
+<line x1="80" y1="48" x2="80" y2="430" stroke="#111827"/>
+<text x="370.0" y="482" text-anchor="middle" font-family="Arial" font-size="14">gradient step</text>
+<text transform="translate(22 239.0) rotate(-90)" text-anchor="middle" font-family="Arial" font-size="14">loss</text>
+<polyline points="80.0,328.7 110.5,362.8 141.1,374.6 171.6,380.9 202.1,385.0 232.6,388.0 263.2,390.5 293.7,392.3 324.2,394.0 354.7,396.2 385.3,397.2 415.8,398.1 446.3,399.3 476.8,400.3 507.4,401.3 537.9,402.1 568.4,402.6 598.9,402.6 629.5,403.3 660.0,403.7" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="660.0" cy="403.7" r="3.5" fill="#16a34a"/>
+<line x1="660" y1="68" x2="690" y2="68" stroke="#16a34a" stroke-width="3"/>
+<text x="696" y="72" font-family="Arial" font-size="13" fill="#111827">TinyStories 10k</text>
+<polyline points="80.0,74.3 110.5,126.5 141.1,152.7 171.6,168.3 202.1,176.5 232.6,183.2 263.2,188.6 293.7,192.9 324.2,196.8 354.7,200.7 385.3,202.8 415.8,204.3 446.3,207.3 476.8,208.7 507.4,209.6 537.9,211.0 568.4,211.8 598.9,211.9 629.5,212.9 660.0,212.9" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="660.0" cy="212.9" r="3.5" fill="#2563eb"/>
+<line x1="660" y1="92" x2="690" y2="92" stroke="#2563eb" stroke-width="3"/>
+<text x="696" y="96" font-family="Arial" font-size="13" fill="#111827">OWT full 10k</text>
+</svg>

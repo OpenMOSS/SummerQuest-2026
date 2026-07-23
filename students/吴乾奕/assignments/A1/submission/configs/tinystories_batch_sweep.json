@@ -1,0 +1,101 @@
+{
+  "base_config": "configs/tinystories_baseline.json",
+  "summary": "artifacts/sweeps/tinystories_batch_sweep_summary.jsonl",
+  "variants": [
+    {
+      "name": "tinystories_batch_1",
+      "overrides": {
+        "training": {
+          "batch_size": 1,
+          "gradient_accumulation_steps": 1,
+          "max_steps": 40960,
+          "log_interval": 200,
+          "validation_interval": 2048,
+          "validation_batch_size": 16,
+          "checkpoint_interval": 4096,
+          "output_dir": "artifacts/runs/tinystories_batch_1"
+        },
+        "optimizer": {
+          "warmup_iters": 2048,
+          "cosine_cycle_iters": 40960
+        }
+      }
+    },
+    {
+      "name": "tinystories_batch_16",
+      "overrides": {
+        "training": {
+          "batch_size": 16,
+          "gradient_accumulation_steps": 1,
+          "max_steps": 2560,
+          "log_interval": 20,
+          "validation_interval": 128,
+          "validation_batch_size": 16,
+          "checkpoint_interval": 256,
+          "output_dir": "artifacts/runs/tinystories_batch_16"
+        },
+        "optimizer": {
+          "warmup_iters": 128,
+          "cosine_cycle_iters": 2560
+        }
+      }
+    },
+    {
+      "name": "tinystories_batch_64",
+      "overrides": {
+        "training": {
+          "batch_size": 64,
+          "gradient_accumulation_steps": 1,
+          "max_steps": 640,
+          "log_interval": 10,
+          "validation_interval": 32,
+          "validation_batch_size": 16,
+          "checkpoint_interval": 64,
+          "output_dir": "artifacts/runs/tinystories_batch_64"
+        },
+        "optimizer": {
+          "warmup_iters": 32,
+          "cosine_cycle_iters": 640
+        }
+      }
+    },
+    {
+      "name": "tinystories_batch_128",
+      "overrides": {
+        "training": {
+          "batch_size": 128,
+          "gradient_accumulation_steps": 1,
+          "max_steps": 320,
+          "log_interval": 5,
+          "validation_interval": 16,
+          "validation_batch_size": 16,
+          "checkpoint_interval": 32,
+          "output_dir": "artifacts/runs/tinystories_batch_128"
+        },
+        "optimizer": {
+          "warmup_iters": 16,
+          "cosine_cycle_iters": 320
+        }
+      }
+    },
+    {
+      "name": "tinystories_batch_256_memory_probe",
+      "overrides": {
+        "training": {
+          "batch_size": 256,
+          "gradient_accumulation_steps": 1,
+          "max_steps": 160,
+          "log_interval": 5,
+          "validation_interval": 8,
+          "validation_batch_size": 16,
+          "checkpoint_interval": 16,
+          "output_dir": "artifacts/runs/tinystories_batch_256_memory_probe"
+        },
+        "optimizer": {
+          "warmup_iters": 8,
+          "cosine_cycle_iters": 160
+        }
+      }
+    }
+  ]
+}

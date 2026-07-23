@@ -1,0 +1,49 @@
+{
+  "run_name": "train_tinystories_bs_32",
+  "experiment": "batch_size_sweep",
+  "seed": 336,
+  "model": {
+    "vocab_size": 10000,
+    "context_length": 256,
+    "d_model": 512,
+    "num_layers": 4,
+    "num_heads": 16,
+    "d_ff": 1344,
+    "rope_theta": 10000.0
+  },
+  "data": {
+    "train": "tokenized/tinystories_train.bin",
+    "validation": "tokenized/tinystories_valid.bin"
+  },
+  "total_tokens_budget": 327680000,
+  "training": {
+    "batch_size": 32,
+    "context_length": 256,
+    "max_steps": 40000,
+    "max_learning_rate": 0.0012,
+    "min_learning_rate": 0.00012,
+    "warmup_steps": 2000,
+    "cosine_cycle_steps": 40000,
+    "device": "cuda:0",
+    "weight_decay": 0.1,
+    "beta1": 0.9,
+    "beta2": 0.95,
+    "eps": 1e-08,
+    "max_grad_norm": 1.0,
+    "log_interval": 40,
+    "eval_interval": 1000,
+    "eval_batches": 80,
+    "checkpoint_interval": 4000,
+    "output_dir": "runs/batch_size/bs_32",
+    "log_path": "logs/batch_size/train_tinystories_bs_32.jsonl",
+    "summary_path": "logs/batch_size/train_tinystories_bs_32.summary.json"
+  },
+  "final_iteration": 40000,
+  "final_train_loss": 1.3893109560012817,
+  "final_validation_loss": 1.3925419241189956,
+  "elapsed_seconds": 4349.450595553964,
+  "processed_tokens": 327680000,
+  "checkpoint_path": "runs/batch_size/bs_32/checkpoint_final.pt",
+  "final_val_loss": 1.3925419241189956,
+  "total_training_time_sec": 4349.450595553964
+}

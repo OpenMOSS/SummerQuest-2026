@@ -1,0 +1,23 @@
+{
+  "context_length": 256,
+  "model_parameters": 22704640,
+  "probe_definition": "one complete forward/backward/optimizer step",
+  "results": [
+    {"batch_size": 1, "status": "success", "evidence": "5000-step run"},
+    {"batch_size": 64, "status": "success", "evidence": "fixed-token run"},
+    {"batch_size": 128, "status": "success", "evidence": "5000-step run"},
+    {"batch_size": 256, "status": "success", "evidence": "1-step probe and final checkpoint"},
+    {"batch_size": 512, "status": "success", "evidence": "1-step probe and final checkpoint"},
+    {
+      "batch_size": 1024,
+      "status": "oom",
+      "stage": "first training step, cross_entropy",
+      "requested_allocation_gib": 9.77,
+      "gpu_capacity_gib": 79.19,
+      "process_memory_in_use_gib": 69.50
+    }
+  ],
+  "largest_successful_batch": 512,
+  "next_doubling_oom_batch": 1024,
+  "notes": "The earlier batch-512 directory had no metrics and was not valid OOM evidence; the repeated one-step probe succeeded."
+}

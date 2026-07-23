@@ -1,0 +1,10 @@
+{
+  "elapsed_sec": 230.71947087347507,
+  "input_bytes": 11920511059,
+  "merge_count": 31743,
+  "output": "data/owt_tokenizer.json",
+  "sample_fraction": 0.04503757509579775,
+  "sampled_input_bytes": 536870912,
+  "unique_pretokens": 906809,
+  "vocab_size": 32000
+}

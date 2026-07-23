@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="640" viewBox="0 0 1000 640">
+<rect width="100%" height="100%" fill="white"/>
+<text x="500.0" y="34" text-anchor="middle" font-family="sans-serif" font-size="22">TinyStories LR=10 optimization divergence</text>
+<line x1="90.00" y1="70" x2="90.00" y2="560" stroke="#e5e7eb"/>
+<text x="90.00" y="588" text-anchor="middle" font-family="sans-serif" font-size="12">10</text>
+<line x1="220.00" y1="70" x2="220.00" y2="560" stroke="#e5e7eb"/>
+<text x="220.00" y="588" text-anchor="middle" font-family="sans-serif" font-size="12">28</text>
+<line x1="350.00" y1="70" x2="350.00" y2="560" stroke="#e5e7eb"/>
+<text x="350.00" y="588" text-anchor="middle" font-family="sans-serif" font-size="12">46</text>
+<line x1="480.00" y1="70" x2="480.00" y2="560" stroke="#e5e7eb"/>
+<text x="480.00" y="588" text-anchor="middle" font-family="sans-serif" font-size="12">64</text>
+<line x1="610.00" y1="70" x2="610.00" y2="560" stroke="#e5e7eb"/>
+<text x="610.00" y="588" text-anchor="middle" font-family="sans-serif" font-size="12">82</text>
+<line x1="740.00" y1="70" x2="740.00" y2="560" stroke="#e5e7eb"/>
+<text x="740.00" y="588" text-anchor="middle" font-family="sans-serif" font-size="12">100</text>
+<line x1="90" y1="560.00" x2="740" y2="560.00" stroke="#e5e7eb"/>
+<text x="78" y="564.00" text-anchor="end" font-family="sans-serif" font-size="12">-35.68</text>
+<line x1="90" y1="462.00" x2="740" y2="462.00" stroke="#e5e7eb"/>
+<text x="78" y="466.00" text-anchor="end" font-family="sans-serif" font-size="12">281.9</text>
+<line x1="90" y1="364.00" x2="740" y2="364.00" stroke="#e5e7eb"/>
+<text x="78" y="368.00" text-anchor="end" font-family="sans-serif" font-size="12">599.5</text>
+<line x1="90" y1="266.00" x2="740" y2="266.00" stroke="#e5e7eb"/>
+<text x="78" y="270.00" text-anchor="end" font-family="sans-serif" font-size="12">917.1</text>
+<line x1="90" y1="168.00" x2="740" y2="168.00" stroke="#e5e7eb"/>
+<text x="78" y="172.00" text-anchor="end" font-family="sans-serif" font-size="12">1.2K</text>
+<line x1="90" y1="70.00" x2="740" y2="70.00" stroke="#e5e7eb"/>
+<text x="78" y="74.00" text-anchor="end" font-family="sans-serif" font-size="12">1.6K</text>
+<line x1="90" y1="560" x2="740" y2="560" stroke="#111827"/>
+<line x1="90" y1="70" x2="90" y2="560" stroke="#111827"/>
+<text x="415.0" y="618" text-anchor="middle" font-family="sans-serif" font-size="15">step</text>
+<text x="22" y="315.0" text-anchor="middle" transform="rotate(-90 22 315.0)" font-family="sans-serif" font-size="15">validation_loss</text>
+<polyline points="90.00,268.09 162.22,498.19 234.44,537.73 306.67,92.27 378.89,234.70 451.11,371.43 523.33,454.26 595.56,497.67 667.78,518.33 740.00,527.06" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+<line x1="765" y1="70" x2="795" y2="70" stroke="#2563eb" stroke-width="3"/>
+<text x="805" y="74" font-family="sans-serif" font-size="13">tinystories_lr_10_true_divergence</text>
+</svg>

@@ -1,0 +1,12 @@
+{
+  "final_val_loss": 1.438315987586975,
+  "total_train_time_sec": 875.1320872306824,
+  "config": {
+    "d_model": 512,
+    "num_layers": 4,
+    "num_heads": 16,
+    "context_length": 256,
+    "batch_size": 64,
+    "total_steps": 20000
+  }
+}

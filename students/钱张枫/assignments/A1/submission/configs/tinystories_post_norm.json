@@ -1,0 +1,11 @@
+{
+    "extends": "tinystories_baseline.json",
+    "experiment_name": "tinystories_post_norm",
+    "model": {
+        "norm_mode": "post"
+    },
+    "training": {
+        "log_dir": "logs/ablations/tinystories_post_norm",
+        "checkpoint_dir": "artifacts/checkpoints/ablations/tinystories_post_norm"
+    }
+}

@@ -1,0 +1,9 @@
+{
+  "prompt": "Once upon a time",
+  "seed": 42,
+  "temperature": 0.8,
+  "top_p": 0.9,
+  "generated_tokens": 195,
+  "stopped_on_eot": true,
+  "text": "Once upon a time, there was a big, ugly bird. The bird lived in a tree near a house. The house was very old and had a lot of dust. One day, the bird saw a little boy. The boy was sad because he lost his toy.\nThe ugly bird wanted to help the boy. So, it flew down to the boy and said, \"Why are you sad?\" The boy looked at the bird and said, \"I lost my toy. I can't find it anywhere.\"\nThe bird wanted to help the boy. So, it flew away and came back with the toy. The boy was very happy. He said, \"Thank you, bird!\" The bird smiled and flew away.\nThe next day, the boy came back to the ugly bird. The bird had found a new toy for the boy. The boy was very happy and thanked the bird. They played together all day, and the bird never lost her toy again.\n<|endoftext|>"
+}

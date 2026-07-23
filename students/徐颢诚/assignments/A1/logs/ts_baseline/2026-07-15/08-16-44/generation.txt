@@ -1,0 +1,12 @@
+# checkpoint: not submitted (model weights excluded)
+# prompt: '<|endoftext|>Once upon a time'
+# temperature: 0.8
+# top_p: 0.9
+# seed: 42
+# generated_new_tokens: 169
+# stopped_at_eos: True
+
+<|endoftext|>Once upon a time, there was a big, strong cat named Tom. Tom lived in a small house with his best friend, a little girl named Lily. They liked to play together all day long.
+One day, Tom and Lily were playing in the yard. Tom saw a tiny bug on the ground. He wanted to catch it, but he was too small. So, Tom ran and jumped to catch the bug. The bug crawled onto his back legs, and he could see it was time to catch it.
+Lily saw the bug and waved her hand in the air. She jumped back and tried to catch it. Tom chased the bug, but it was too fast. They both laughed and played together, enjoying the day. In the end, Tom and Lily became the best of friends, and they always played together in the yard.
+<|endoftext|>

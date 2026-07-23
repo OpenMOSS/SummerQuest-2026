@@ -1,0 +1,19 @@
+{
+  "status": "diverged_loss_explosion",
+  "divergence_step": 10,
+  "final_val_loss": 29227.37734375,
+  "total_training_time_sec": 4.5889434814453125,
+  "d_model": 512,
+  "num_layers": 4,
+  "num_heads": 16,
+  "context_length": 256,
+  "batch_size": 128,
+  "steps": 200,
+  "vocab_size": 10000,
+  "norm_mode": "pre",
+  "use_rmsnorm": true,
+  "use_rope": true,
+  "ffn_type": "swiglu",
+  "checkpoint": null,
+  "sample": ""
+}

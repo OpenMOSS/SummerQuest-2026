@@ -1,0 +1,18 @@
+{
+  "run_name": "ablation_nope",
+  "final_val_loss": 1.499441248178482,
+  "total_training_time_sec": 772.4055879637599,
+  "d_model": 512,
+  "num_layers": 4,
+  "num_heads": 16,
+  "context_length": 256,
+  "use_rmsnorm": true,
+  "use_rope": false,
+  "batch_size_per_gpu": 64,
+  "global_batch_size": 256,
+  "world_size": 4,
+  "total_steps": 5000,
+  "processed_tokens": 327680000,
+  "device": "cuda:0",
+  "checkpoint_path": "not submitted (model weights excluded)"
+}

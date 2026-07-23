@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="520" viewBox="0 0 880 520">
+<rect width="100%" height="100%" fill="#fff"/>
+<text x="82" y="30" font-family="Arial" font-size="20" font-weight="700">TinyStories learning-rate sweep: matched 2k validation loss</text>
+<line x1="82" y1="50.0" x2="670" y2="50.0" stroke="#e5e7eb"/>
+<text x="72" y="54.0" text-anchor="end" font-family="Arial" font-size="12" fill="#4b5563">5.95</text>
+<line x1="82" y1="129.6" x2="670" y2="129.6" stroke="#e5e7eb"/>
+<text x="72" y="133.6" text-anchor="end" font-family="Arial" font-size="12" fill="#4b5563">5.05</text>
+<line x1="82" y1="209.2" x2="670" y2="209.2" stroke="#e5e7eb"/>
+<text x="72" y="213.2" text-anchor="end" font-family="Arial" font-size="12" fill="#4b5563">4.15</text>
+<line x1="82" y1="288.8" x2="670" y2="288.8" stroke="#e5e7eb"/>
+<text x="72" y="292.8" text-anchor="end" font-family="Arial" font-size="12" fill="#4b5563">3.25</text>
+<line x1="82" y1="368.4" x2="670" y2="368.4" stroke="#e5e7eb"/>
+<text x="72" y="372.4" text-anchor="end" font-family="Arial" font-size="12" fill="#4b5563">2.35</text>
+<line x1="82" y1="448.0" x2="670" y2="448.0" stroke="#e5e7eb"/>
+<text x="72" y="452.0" text-anchor="end" font-family="Arial" font-size="12" fill="#4b5563">1.45</text>
+<text x="82.0" y="472" text-anchor="middle" font-family="Arial" font-size="12" fill="#4b5563">500</text>
+<text x="229.0" y="472" text-anchor="middle" font-family="Arial" font-size="12" fill="#4b5563">875</text>
+<text x="376.0" y="472" text-anchor="middle" font-family="Arial" font-size="12" fill="#4b5563">1250</text>
+<text x="523.0" y="472" text-anchor="middle" font-family="Arial" font-size="12" fill="#4b5563">1625</text>
+<text x="670.0" y="472" text-anchor="middle" font-family="Arial" font-size="12" fill="#4b5563">2000</text>
+<line x1="82" y1="448" x2="670" y2="448" stroke="#111827"/>
+<line x1="82" y1="50" x2="82" y2="448" stroke="#111827"/>
+<text x="376.0" y="502" text-anchor="middle" font-family="Arial" font-size="14">gradient step</text>
+<text transform="translate(24 249.0) rotate(-90)" text-anchor="middle" font-family="Arial" font-size="14">validation loss</text>
+<polyline points="82.0,223.1 278.0,322.2 474.0,351.4 670.0,359.0" fill="none" stroke="#64748b" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="82.0" cy="223.1" r="3.0" fill="#64748b"/>
+<circle cx="278.0" cy="322.2" r="3.0" fill="#64748b"/>
+<circle cx="474.0" cy="351.4" r="3.0" fill="#64748b"/>
+<circle cx="670.0" cy="359.0" r="3.0" fill="#64748b"/>
+<line x1="698" y1="68" x2="728" y2="68" stroke="#64748b" stroke-width="3"/>
+<text x="734" y="72" font-family="Arial" font-size="13" fill="#111827">1e-4, 2k</text>
+<polyline points="82.0,303.0 278.0,367.0 474.0,393.9 670.0,407.0" fill="none" stroke="#2563eb" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="82.0" cy="303.0" r="3.0" fill="#2563eb"/>
+<circle cx="278.0" cy="367.0" r="3.0" fill="#2563eb"/>
+<circle cx="474.0" cy="393.9" r="3.0" fill="#2563eb"/>
+<circle cx="670.0" cy="407.0" r="3.0" fill="#2563eb"/>
+<line x1="698" y1="92" x2="728" y2="92" stroke="#2563eb" stroke-width="3"/>
+<text x="734" y="96" font-family="Arial" font-size="13" fill="#111827">3e-4, 10k run @ &lt;=2k</text>
+<polyline points="82.0,354.8 278.0,400.1 474.0,415.7 670.0,424.2" fill="none" stroke="#dc2626" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="82.0" cy="354.8" r="3.0" fill="#dc2626"/>
+<circle cx="278.0" cy="400.1" r="3.0" fill="#dc2626"/>
+<circle cx="474.0" cy="415.7" r="3.0" fill="#dc2626"/>
+<circle cx="670.0" cy="424.2" r="3.0" fill="#dc2626"/>
+<line x1="698" y1="116" x2="728" y2="116" stroke="#dc2626" stroke-width="3"/>
+<text x="734" y="120" font-family="Arial" font-size="13" fill="#111827">1e-3, 10k run @ &lt;=2k</text>
+</svg>

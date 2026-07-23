@@ -1,0 +1,16 @@
+{
+  "run_name": "batch_sweep/batch_001_lr_0p00013",
+  "final_val_loss": 1.8317215085029601,
+  "total_training_time_sec": 1159.6615993343294,
+  "d_model": 512,
+  "num_layers": 4,
+  "num_heads": 16,
+  "context_length": 256,
+  "batch_size_per_gpu": 1,
+  "global_batch_size": 4,
+  "world_size": 4,
+  "total_steps": 64000,
+  "processed_tokens": 65536000,
+  "device": "cuda:0",
+  "checkpoint_path": "not submitted (model weights excluded)"
+}

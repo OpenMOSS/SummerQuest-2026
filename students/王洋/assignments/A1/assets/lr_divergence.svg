@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="640" viewBox="0 0 1000 640">
+<style>
+text { font-family: ui-sans-serif, system-ui, sans-serif; fill: #172033; }
+.grid { stroke: #d8dee9; stroke-width: 1; }
+.axis { stroke: #475569; stroke-width: 1.4; }
+.series { fill: none; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+</style>
+<defs><clipPath id="plot-area"><rect x="90.0" y="65.0" width="880.0" height="401.0"/></clipPath></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="500.00" y="32.00" text-anchor="middle" font-size="20" font-weight="600">High learning rates: instability and recovery</text>
+<line class="grid" x1="90.00" y1="65.0" x2="90.00" y2="466.0"/>
+<text x="90.00" y="490.00" text-anchor="middle" font-size="12">66K</text>
+<line class="grid" x1="90.0" y1="466.00" x2="970.0" y2="466.00"/>
+<text x="78.00" y="470.00" text-anchor="end" font-size="12">0</text>
+<line class="grid" x1="266.00" y1="65.0" x2="266.00" y2="466.0"/>
+<text x="266.00" y="490.00" text-anchor="middle" font-size="12">6.6M</text>
+<line class="grid" x1="90.0" y1="385.80" x2="970.0" y2="385.80"/>
+<text x="78.00" y="389.80" text-anchor="end" font-size="12">22</text>
+<line class="grid" x1="442.00" y1="65.0" x2="442.00" y2="466.0"/>
+<text x="442.00" y="490.00" text-anchor="middle" font-size="12">13M</text>
+<line class="grid" x1="90.0" y1="305.60" x2="970.0" y2="305.60"/>
+<text x="78.00" y="309.60" text-anchor="end" font-size="12">44</text>
+<line class="grid" x1="618.00" y1="65.0" x2="618.00" y2="466.0"/>
+<text x="618.00" y="490.00" text-anchor="middle" font-size="12">20M</text>
+<line class="grid" x1="90.0" y1="225.40" x2="970.0" y2="225.40"/>
+<text x="78.00" y="229.40" text-anchor="end" font-size="12">66</text>
+<line class="grid" x1="794.00" y1="65.0" x2="794.00" y2="466.0"/>
+<text x="794.00" y="490.00" text-anchor="middle" font-size="12">26M</text>
+<line class="grid" x1="90.0" y1="145.20" x2="970.0" y2="145.20"/>
+<text x="78.00" y="149.20" text-anchor="end" font-size="12">88</text>
+<line class="grid" x1="970.00" y1="65.0" x2="970.00" y2="466.0"/>
+<text x="970.00" y="490.00" text-anchor="middle" font-size="12">33M</text>
+<line class="grid" x1="90.0" y1="65.00" x2="970.0" y2="65.00"/>
+<text x="78.00" y="69.00" text-anchor="end" font-size="12">110</text>
+<line class="axis" x1="90.0" y1="65.0" x2="90.0" y2="466.0"/>
+<line class="axis" x1="90.0" y1="466.0" x2="970.0" y2="466.0"/>
+<text x="530.00" y="517.00" text-anchor="middle" font-size="14">processed tokens</text>
+<text x="20" y="265.50" text-anchor="middle" font-size="14" transform="rotate(-90 20 265.50)">loss</text>
+<polyline class="series" stroke="#2563eb" points="97.05,447.23 105.87,444.34 114.69,446.86 123.51,449.52 132.32,450.28 141.14,451.37 149.96,451.49 158.78,451.62 167.60,451.97 176.41,452.39 185.23,452.30 194.05,452.32 202.87,452.23 211.68,451.59 220.50,450.88 229.32,450.80 238.14,450.42 246.95,450.67 255.77,450.20 264.59,450.29 273.41,449.98 282.22,450.18 291.04,449.97 299.86,450.26 308.68,450.23 317.49,450.19 326.31,450.14 335.13,450.08 343.95,450.17 352.77,450.61 361.58,450.36 370.40,450.51 379.22,450.78 388.04,450.99 396.85,450.84 405.67,450.70 414.49,450.90 423.31,451.43 432.12,451.16 440.94,451.48 449.76,451.49 458.58,451.80 467.39,451.54 476.21,451.80 485.03,451.55 493.85,451.64 502.67,451.94 511.48,452.13 520.30,452.08 529.12,451.97 537.94,452.18 546.75,451.96 555.57,452.25 564.39,452.36 573.21,452.69 582.02,452.55 590.84,452.74 599.66,452.93 608.48,453.26 617.29,452.95 626.11,453.51 634.93,453.23 643.75,453.37 652.57,453.41 661.38,453.85 670.20,453.83 679.02,453.96 687.84,453.85 696.65,453.87 705.47,453.98 714.29,454.23 723.11,454.17 731.92,453.79 740.74,454.10 749.56,454.42 758.38,454.34 767.19,454.46 776.01,454.15 784.83,454.22 793.65,454.48 802.46,454.67 811.28,454.82 820.10,454.56 828.92,454.48 837.74,454.68 846.55,454.56 855.37,454.57 864.19,454.72 873.01,454.73 881.82,454.75 890.64,454.90 899.46,454.92 908.28,455.08 917.09,455.13 925.91,454.77 934.73,455.01 943.55,454.85 952.36,454.90 961.18,455.31 970.00,455.16" clip-path="url(#plot-area)"/>
+<polyline class="series" stroke="#2563eb" stroke-dasharray="7 5" points="176.41,452.27 264.59,450.29 352.77,450.39 440.94,451.17 529.12,452.10 617.29,453.27 705.47,453.88 793.65,454.50 881.82,454.92 970.00,455.10" clip-path="url(#plot-area)"/>
+<circle cx="176.41" cy="452.27" r="2.8" fill="#2563eb" clip-path="url(#plot-area)"><title>lr=3e-2 validation: 3.76629</title></circle>
+<circle cx="264.59" cy="450.29" r="2.8" fill="#2563eb" clip-path="url(#plot-area)"><title>lr=3e-2 validation: 4.31048</title></circle>
+<circle cx="352.77" cy="450.39" r="2.8" fill="#2563eb" clip-path="url(#plot-area)"><title>lr=3e-2 validation: 4.28257</title></circle>
+<circle cx="440.94" cy="451.17" r="2.8" fill="#2563eb" clip-path="url(#plot-area)"><title>lr=3e-2 validation: 4.06832</title></circle>
+<circle cx="529.12" cy="452.10" r="2.8" fill="#2563eb" clip-path="url(#plot-area)"><title>lr=3e-2 validation: 3.81379</title></circle>
+<circle cx="617.29" cy="453.27" r="2.8" fill="#2563eb" clip-path="url(#plot-area)"><title>lr=3e-2 validation: 3.49234</title></circle>
+<circle cx="705.47" cy="453.88" r="2.8" fill="#2563eb" clip-path="url(#plot-area)"><title>lr=3e-2 validation: 3.32588</title></circle>
+<circle cx="793.65" cy="454.50" r="2.8" fill="#2563eb" clip-path="url(#plot-area)"><title>lr=3e-2 validation: 3.1536</title></circle>
+<circle cx="881.82" cy="454.92" r="2.8" fill="#2563eb" clip-path="url(#plot-area)"><title>lr=3e-2 validation: 3.03986</title></circle>
+<circle cx="970.00" cy="455.10" r="2.8" fill="#2563eb" clip-path="url(#plot-area)"><title>lr=3e-2 validation: 2.99047</title></circle>
+<line x1="90.0" y1="541.0" x2="117.0" y2="541.0" stroke="#2563eb" stroke-width="2"/>
+<line x1="127.0" y1="541.0" x2="154.0" y2="541.0" stroke="#2563eb" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="165.00" y="545.00" font-size="12">lr=3e-2 (solid: train, dashed: validation)</text>
+<polyline class="series" stroke="#dc2626" points="92.65,434.12 97.05,418.90 101.46,413.78 105.87,424.32 110.28,443.22 114.69,445.66 119.10,446.23 123.51,447.02 127.92,446.99 132.32,446.50 136.73,447.56 141.14,448.32 145.55,448.42 149.96,448.67 154.37,448.80 158.78,449.00 163.19,449.35 167.60,449.35 172.00,449.69 176.41,450.04 180.82,449.89 185.23,450.17 189.64,450.12 194.05,450.29 198.46,450.20 202.87,450.57 207.27,450.65 211.68,450.46 216.09,450.17 220.50,450.11 224.91,449.73 229.32,449.15 233.73,449.34 238.14,449.13 242.55,448.77 246.95,448.75 251.36,448.74 255.77,448.74 260.18,448.50 264.59,448.11 269.00,447.87 273.41,447.61 277.82,447.36 282.22,447.94 286.63,448.06 291.04,446.83 295.45,448.00 299.86,448.34 304.27,448.38 308.68,448.33 313.09,447.96 317.49,447.23 321.90,447.13 326.31,447.30 330.72,447.26 335.13,447.21 339.54,447.35 343.95,446.88 348.36,447.13 352.77,447.51 357.17,447.57 361.58,447.55 365.99,447.42 370.40,447.37 374.81,447.48 379.22,448.09 383.63,448.19 388.04,448.50 392.44,448.78 396.85,448.43 401.26,448.63 405.67,448.41 410.08,448.65 414.49,448.52 418.90,448.78 423.31,448.89 427.72,448.85 432.12,448.71 436.53,448.89 440.94,448.97" clip-path="url(#plot-area)"/>
+<polyline class="series" stroke="#dc2626" stroke-dasharray="7 5" points="123.51,447.05 158.78,449.12 194.05,450.21 229.32,449.31 264.59,447.88 299.86,448.18 335.13,447.23 370.40,447.55 405.67,448.61 440.94,448.90" clip-path="url(#plot-area)"/>
+<circle cx="123.51" cy="447.05" r="2.8" fill="#dc2626" clip-path="url(#plot-area)"><title>lr=1e-1 validation: 5.19697</title></circle>
+<circle cx="158.78" cy="449.12" r="2.8" fill="#dc2626" clip-path="url(#plot-area)"><title>lr=1e-1 validation: 4.6293</title></circle>
+<circle cx="194.05" cy="450.21" r="2.8" fill="#dc2626" clip-path="url(#plot-area)"><title>lr=1e-1 validation: 4.3314</title></circle>
+<circle cx="229.32" cy="449.31" r="2.8" fill="#dc2626" clip-path="url(#plot-area)"><title>lr=1e-1 validation: 4.57888</title></circle>
+<circle cx="264.59" cy="447.88" r="2.8" fill="#dc2626" clip-path="url(#plot-area)"><title>lr=1e-1 validation: 4.97094</title></circle>
+<circle cx="299.86" cy="448.18" r="2.8" fill="#dc2626" clip-path="url(#plot-area)"><title>lr=1e-1 validation: 4.88905</title></circle>
+<circle cx="335.13" cy="447.23" r="2.8" fill="#dc2626" clip-path="url(#plot-area)"><title>lr=1e-1 validation: 5.14841</title></circle>
+<circle cx="370.40" cy="447.55" r="2.8" fill="#dc2626" clip-path="url(#plot-area)"><title>lr=1e-1 validation: 5.06151</title></circle>
+<circle cx="405.67" cy="448.61" r="2.8" fill="#dc2626" clip-path="url(#plot-area)"><title>lr=1e-1 validation: 4.7691</title></circle>
+<circle cx="440.94" cy="448.90" r="2.8" fill="#dc2626" clip-path="url(#plot-area)"><title>lr=1e-1 validation: 4.69136</title></circle>
+<line x1="90.0" y1="569.0" x2="117.0" y2="569.0" stroke="#dc2626" stroke-width="2"/>
+<line x1="127.0" y1="569.0" x2="154.0" y2="569.0" stroke="#dc2626" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="165.00" y="573.00" font-size="12">lr=1e-1 (solid: train, dashed: validation)</text>
+<polyline class="series" stroke="#059669" points="90.00,432.18 91.76,415.19 93.53,386.60 95.29,91.10 97.05,273.62 98.82,383.54 100.58,402.74 102.34,389.70 104.11,381.50 105.87,384.41 107.64,369.61 109.40,376.51 111.16,389.06 112.93,369.05 114.69,393.77 116.45,402.97 118.22,400.49 119.98,411.04 121.74,426.43 123.51,424.52 125.27,420.91 127.03,422.99 128.80,430.90 130.56,436.77 132.32,434.40 134.09,437.64 135.85,440.75 137.62,439.27 139.38,442.60 141.14,441.52 142.91,440.14 144.67,440.40 146.43,442.43 148.20,443.21 149.96,442.66 151.72,443.45 153.49,443.89 155.25,443.57 157.01,443.87 158.78,444.25 160.54,444.34 162.30,444.44 164.07,444.49 165.83,444.11 167.60,444.10 169.36,444.29 171.12,444.68 172.89,444.34 174.65,444.73 176.41,444.93 178.18,444.98 179.94,445.27 181.70,445.28 183.47,445.54 185.23,445.38 186.99,445.80 188.76,445.76 190.52,445.67 192.28,446.22 194.05,446.25 195.81,446.35 197.58,446.48 199.34,445.94 201.10,446.17 202.87,446.78 204.63,446.53 206.39,446.61 208.16,446.71 209.92,447.11 211.68,447.21 213.45,447.35 215.21,447.60 216.97,447.48 218.74,447.80 220.50,447.69 222.26,447.88 224.03,448.08 225.79,448.03 227.56,448.25 229.32,448.02 231.08,448.40 232.85,448.31 234.61,448.46 236.37,448.44 238.14,448.61 239.90,448.81 241.66,448.76 243.43,448.84 245.19,449.11 246.95,449.11 248.72,449.05 250.48,449.11 252.24,449.31 254.01,449.24 255.77,449.35 257.54,449.36 259.30,449.32 261.06,449.50 262.83,449.40 264.59,449.54" clip-path="url(#plot-area)"/>
+<polyline class="series" stroke="#059669" stroke-dasharray="7 5" points="105.87,381.71 123.51,418.30 141.14,439.14 158.78,444.26 176.41,445.39 194.05,446.32 211.68,447.41 229.32,448.37 246.95,449.12 264.59,449.51" clip-path="url(#plot-area)"/>
+<circle cx="105.87" cy="381.71" r="2.8" fill="#059669" clip-path="url(#plot-area)"><title>lr=3e-1 validation: 23.1223</title></circle>
+<circle cx="123.51" cy="418.30" r="2.8" fill="#059669" clip-path="url(#plot-area)"><title>lr=3e-1 validation: 13.086</title></circle>
+<circle cx="141.14" cy="439.14" r="2.8" fill="#059669" clip-path="url(#plot-area)"><title>lr=3e-1 validation: 7.36749</title></circle>
+<circle cx="158.78" cy="444.26" r="2.8" fill="#059669" clip-path="url(#plot-area)"><title>lr=3e-1 validation: 5.96367</title></circle>
+<circle cx="176.41" cy="445.39" r="2.8" fill="#059669" clip-path="url(#plot-area)"><title>lr=3e-1 validation: 5.65339</title></circle>
+<circle cx="194.05" cy="446.32" r="2.8" fill="#059669" clip-path="url(#plot-area)"><title>lr=3e-1 validation: 5.39973</title></circle>
+<circle cx="211.68" cy="447.41" r="2.8" fill="#059669" clip-path="url(#plot-area)"><title>lr=3e-1 validation: 5.09876</title></circle>
+<circle cx="229.32" cy="448.37" r="2.8" fill="#059669" clip-path="url(#plot-area)"><title>lr=3e-1 validation: 4.83657</title></circle>
+<circle cx="246.95" cy="449.12" r="2.8" fill="#059669" clip-path="url(#plot-area)"><title>lr=3e-1 validation: 4.63172</title></circle>
+<circle cx="264.59" cy="449.51" r="2.8" fill="#059669" clip-path="url(#plot-area)"><title>lr=3e-1 validation: 4.52302</title></circle>
+<line x1="90.0" y1="597.0" x2="117.0" y2="597.0" stroke="#059669" stroke-width="2"/>
+<line x1="127.0" y1="597.0" x2="154.0" y2="597.0" stroke="#059669" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="165.00" y="601.00" font-size="12">lr=3e-1 (solid: train, dashed: validation)</text>
+</svg>

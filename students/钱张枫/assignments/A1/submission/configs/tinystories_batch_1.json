@@ -1,0 +1,17 @@
+{
+    "extends": "tinystories_baseline.json",
+    "experiment_name": "tinystories_batch_1",
+    "optimizer": {
+        "warmup_steps": 1024,
+        "cosine_cycle_steps": 16384
+    },
+    "training": {
+        "batch_size": 1,
+        "max_steps": 16384,
+        "eval_interval": 1024,
+        "log_interval": 256,
+        "checkpoint_interval": 0,
+        "log_dir": "logs/batch_size/tinystories_batch_1",
+        "checkpoint_dir": "artifacts/checkpoints/batch_size/tinystories_batch_1"
+    }
+}

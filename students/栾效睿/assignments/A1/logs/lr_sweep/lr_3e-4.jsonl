@@ -1,0 +1,13 @@
+{"lr": 4.9999999999999996e-05, "processed_tokens": 32768, "step": 1, "train_loss": 9.26175594329834, "val_loss": 9.190078020095825, "wall_clock_sec": 0.9236726593226194}
+{"lr": 0.0002925060458857942, "processed_tokens": 1048576, "step": 32, "train_loss": 4.994546413421631, "val_loss": 4.944688439369202, "wall_clock_sec": 4.575672601349652}
+{"lr": 0.00027890970057613, "processed_tokens": 1638400, "step": 50, "train_loss": 4.310357093811035, "wall_clock_sec": 6.429168280214071}
+{"lr": 0.0002652469766946325, "processed_tokens": 2064384, "step": 63, "train_loss": 4.02265739440918, "val_loss": 3.970800906419754, "wall_clock_sec": 8.238064081408083}
+{"lr": 0.00022222844274583117, "processed_tokens": 3080192, "step": 94, "train_loss": 3.6801652908325195, "val_loss": 3.6045405566692352, "wall_clock_sec": 11.900913612917066}
+{"lr": 0.00021262153168412776, "processed_tokens": 3276800, "step": 100, "train_loss": 3.5248947143554688, "wall_clock_sec": 12.518128789961338}
+{"lr": 0.00017021323222557759, "processed_tokens": 4096000, "step": 125, "train_loss": 3.416802406311035, "val_loss": 3.3867269456386566, "wall_clock_sec": 15.531909081153572}
+{"lr": 0.0001272694392950327, "processed_tokens": 4915200, "step": 150, "train_loss": 3.1999382972717285, "wall_clock_sec": 18.10646170936525}
+{"lr": 0.00011575601967360288, "processed_tokens": 5144576, "step": 157, "train_loss": 3.2916312217712402, "val_loss": 3.2484278678894043, "wall_clock_sec": 19.27768480591476}
+{"lr": 7.077753910654363e-05, "processed_tokens": 6160384, "step": 188, "train_loss": 3.094283103942871, "val_loss": 3.1714175939559937, "wall_clock_sec": 22.90867800824344}
+{"lr": 5.702170196013788e-05, "processed_tokens": 6553600, "step": 200, "train_loss": 3.1340038776397705, "wall_clock_sec": 24.143221030943096}
+{"lr": 4.061143094999322e-05, "processed_tokens": 7176192, "step": 219, "train_loss": 3.1587510108947754, "val_loss": 3.1280734539031982, "wall_clock_sec": 26.541855862364173}
+{"lr": 2.9999999999999997e-05, "processed_tokens": 8192000, "step": 250, "train_loss": 3.161398410797119, "val_loss": 3.1016790866851807, "wall_clock_sec": 30.178713557310402}

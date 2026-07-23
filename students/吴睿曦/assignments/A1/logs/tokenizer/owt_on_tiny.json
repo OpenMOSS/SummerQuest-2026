@@ -1,0 +1,9 @@
+{
+  "source": "TinyStoriesV2-GPT4-valid.txt",
+  "sample_documents": 1000,
+  "input_bytes": 816600,
+  "tokens": 203969,
+  "compression_bytes_per_token": 4.003549559001613,
+  "elapsed_sec": 3.4543947391211987,
+  "throughput_bytes_per_sec": 236394.5239818608
+}

@@ -1,0 +1,25 @@
+{
+  "name": "silu_ffn",
+  "final_val_loss": 2.0967749655246735,
+  "total_train_time_sec": 123.61001563072205,
+  "processed_tokens": 24576000,
+  "config": {
+    "vocab_size": 10000,
+    "context_length": 256,
+    "d_model": 512,
+    "d_ff": 2016,
+    "num_layers": 4,
+    "num_heads": 16,
+    "batch_size": 128,
+    "total_steps": 750,
+    "max_lr": 0.001,
+    "min_lr": 0.0001,
+    "warmup_steps": 75,
+    "use_rmsnorm": true,
+    "norm_position": "pre",
+    "use_rope": true,
+    "ffn_variant": "silu",
+    "device": "cuda"
+  },
+  "peak_memory_gb": 14.922799110412598
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "dataset": "TinyStories train",
+    "input_path": "data/TinyStoriesV2-GPT4-train.txt",
+    "tokenizer": "TinyStories 10K",
+    "sample_docs": 10,
+    "seed": 2026,
+    "bytes": 10994,
+    "tokens": 2602,
+    "bytes_per_token": 4.22521137586472
+  },
+  {
+    "dataset": "OpenWebText train",
+    "input_path": "data/owt_train.txt",
+    "tokenizer": "OWT 32K",
+    "sample_docs": 10,
+    "seed": 2026,
+    "bytes": 32864,
+    "tokens": 6919,
+    "bytes_per_token": 4.749819338054632
+  },
+  {
+    "dataset": "OpenWebText train",
+    "input_path": "data/owt_train.txt",
+    "tokenizer": "TinyStories 10K",
+    "sample_docs": 10,
+    "seed": 2026,
+    "bytes": 32864,
+    "tokens": 10225,
+    "bytes_per_token": 3.214083129584352
+  }
+]

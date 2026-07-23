@@ -1,0 +1,8 @@
+{
+  "base": "tinystories_baseline.json",
+  "run_name": "ablation_silu",
+  "output_dir": "runs/ablation_silu",
+  "ablation": {
+    "ffn_type": "silu"
+  }
+}

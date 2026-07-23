@@ -1,0 +1,41 @@
+{
+  "max_learning_rate": 0.0048,
+  "min_learning_rate": 0.00047999999999999996,
+  "status": "diverged",
+  "divergence_reason": "non_finite_loss",
+  "completed_steps": 526,
+  "planned_steps": 10000,
+  "processed_tokens": 17235968,
+  "final_train_loss": null,
+  "final_validation_loss": 2.1190528512001037,
+  "best_ema_train_loss": 2.1201070385918634,
+  "elapsed_seconds": 223.53789631277323,
+  "seed": 336,
+  "model": {
+    "vocab_size": 10000,
+    "context_length": 256,
+    "d_model": 512,
+    "num_layers": 4,
+    "num_heads": 16,
+    "d_ff": 1344,
+    "rope_theta": 10000.0
+  },
+  "training": {
+    "batch_size": 128,
+    "context_length": 256,
+    "warmup_steps": 500,
+    "cosine_cycle_steps": 10000,
+    "weight_decay": 0.1,
+    "beta1": 0.9,
+    "beta2": 0.95,
+    "max_grad_norm": 1.0,
+    "max_steps": 10000,
+    "max_learning_rate": 0.0048,
+    "min_learning_rate": 0.00047999999999999996
+  },
+  "log_path": "logs/lr_sweep/train_tinystories_lr_4p8e-3.jsonl",
+  "run_name": "train_tinystories_lr_4p8e-3",
+  "final_iteration": 526,
+  "final_val_loss": 2.1190528512001037,
+  "total_training_time_sec": 223.53789631277323
+}

@@ -1,0 +1,170 @@
+[
+  {
+    "artifacts": {
+      "operator_summary": null,
+      "timings_csv": "results/benchmark.csv",
+      "trace": null
+    },
+    "command": "python profiling/benchmark.py --model-size small --batch-size 4 --context-length 512 --mode forward --warmup 5 --steps 10 --dtype fp32 --seed 42 --run-name small-bs4-ctx512-forward-fp32-w5 --output results/benchmark.csv --metadata-output results/benchmark_metadata.json",
+    "configuration": {
+      "batch_size": 4,
+      "context_length": 512,
+      "d_ff": 3072,
+      "d_model": 768,
+      "dtype": "fp32",
+      "mode": "forward",
+      "model_size": "small",
+      "num_heads": 12,
+      "num_layers": 12,
+      "seed": 42,
+      "steps": 10,
+      "vocab_size": 10000,
+      "warmup": 5
+    },
+    "environment": {
+      "bf16_supported": true,
+      "compiled_cuda": "12.8",
+      "device": "cuda",
+      "driver_version": "570.124.06",
+      "git_commit": "33dcbe8dbee2d5ab754fcf4b0eb8ca26f60fc1cf",
+      "gpu_name": "NVIDIA GeForce RTX 4090",
+      "python_version": "3.12.3",
+      "torch_version": "2.11.0+cu128"
+    },
+    "profiler": "none",
+    "run_id": "small-bs4-ctx512-forward-fp32-w5",
+    "statistics": {
+      "cv": 0.03657925804050184,
+      "mean_ms": 16.358990222215652,
+      "sample_std_ms": 0.5983997246204729
+    },
+    "status": "success",
+    "timestamp_utc": "2026-07-22T12:50:04Z"
+  },
+  {
+    "artifacts": {
+      "operator_summary": null,
+      "timings_csv": "results/benchmark.csv",
+      "trace": null
+    },
+    "command": "python profiling/benchmark.py --model-size small --batch-size 4 --context-length 512 --mode forward_backward --warmup 5 --steps 10 --dtype fp32 --seed 42 --run-name small-bs4-ctx512-forward_backward-fp32-w5 --output results/benchmark.csv --metadata-output results/benchmark_metadata.json",
+    "configuration": {
+      "batch_size": 4,
+      "context_length": 512,
+      "d_ff": 3072,
+      "d_model": 768,
+      "dtype": "fp32",
+      "mode": "forward_backward",
+      "model_size": "small",
+      "num_heads": 12,
+      "num_layers": 12,
+      "seed": 42,
+      "steps": 10,
+      "vocab_size": 10000,
+      "warmup": 5
+    },
+    "environment": {
+      "bf16_supported": true,
+      "compiled_cuda": "12.8",
+      "device": "cuda",
+      "driver_version": "570.124.06",
+      "git_commit": "33dcbe8dbee2d5ab754fcf4b0eb8ca26f60fc1cf",
+      "gpu_name": "NVIDIA GeForce RTX 4090",
+      "python_version": "3.12.3",
+      "torch_version": "2.11.0+cu128"
+    },
+    "profiler": "none",
+    "run_id": "small-bs4-ctx512-forward_backward-fp32-w5",
+    "statistics": {
+      "cv": 0.0009937471715555754,
+      "mean_ms": 60.84859147667885,
+      "sample_std_ms": 0.0604681156730903
+    },
+    "status": "success",
+    "timestamp_utc": "2026-07-22T12:50:10Z"
+  },
+  {
+    "artifacts": {
+      "operator_summary": null,
+      "timings_csv": "results/benchmark.csv",
+      "trace": null
+    },
+    "command": "python profiling/benchmark.py --model-size small --batch-size 4 --context-length 512 --mode train_step --warmup 0 --steps 10 --dtype fp32 --seed 42 --run-name small-bs4-ctx512-train_step-fp32-w0 --output results/benchmark.csv --metadata-output results/benchmark_metadata.json",
+    "configuration": {
+      "batch_size": 4,
+      "context_length": 512,
+      "d_ff": 3072,
+      "d_model": 768,
+      "dtype": "fp32",
+      "mode": "train_step",
+      "model_size": "small",
+      "num_heads": 12,
+      "num_layers": 12,
+      "seed": 42,
+      "steps": 10,
+      "vocab_size": 10000,
+      "warmup": 0
+    },
+    "environment": {
+      "bf16_supported": true,
+      "compiled_cuda": "12.8",
+      "device": "cuda",
+      "driver_version": "570.124.06",
+      "git_commit": "33dcbe8dbee2d5ab754fcf4b0eb8ca26f60fc1cf",
+      "gpu_name": "NVIDIA GeForce RTX 4090",
+      "python_version": "3.12.3",
+      "torch_version": "2.11.0+cu128"
+    },
+    "profiler": "none",
+    "run_id": "small-bs4-ctx512-train_step-fp32-w0",
+    "statistics": {
+      "cv": 1.098990336290482,
+      "mean_ms": 111.31037883460522,
+      "sample_std_ms": 122.32903066806374
+    },
+    "status": "success",
+    "timestamp_utc": "2026-07-22T12:50:32Z"
+  },
+  {
+    "artifacts": {
+      "operator_summary": null,
+      "timings_csv": "results/benchmark.csv",
+      "trace": null
+    },
+    "command": "python profiling/benchmark.py --model-size small --batch-size 4 --context-length 512 --mode train_step --warmup 5 --steps 10 --dtype fp32 --seed 42 --run-name small-bs4-ctx512-train_step-fp32-w5 --output results/benchmark.csv --metadata-output results/benchmark_metadata.json",
+    "configuration": {
+      "batch_size": 4,
+      "context_length": 512,
+      "d_ff": 3072,
+      "d_model": 768,
+      "dtype": "fp32",
+      "mode": "train_step",
+      "model_size": "small",
+      "num_heads": 12,
+      "num_layers": 12,
+      "seed": 42,
+      "steps": 10,
+      "vocab_size": 10000,
+      "warmup": 5
+    },
+    "environment": {
+      "bf16_supported": true,
+      "compiled_cuda": "12.8",
+      "device": "cuda",
+      "driver_version": "570.124.06",
+      "git_commit": "33dcbe8dbee2d5ab754fcf4b0eb8ca26f60fc1cf",
+      "gpu_name": "NVIDIA GeForce RTX 4090",
+      "python_version": "3.12.3",
+      "torch_version": "2.11.0+cu128"
+    },
+    "profiler": "none",
+    "run_id": "small-bs4-ctx512-train_step-fp32-w5",
+    "statistics": {
+      "cv": 0.0004102299511452018,
+      "mean_ms": 71.73955738544464,
+      "sample_std_ms": 0.029429715121409353
+    },
+    "status": "success",
+    "timestamp_utc": "2026-07-22T12:50:18Z"
+  }
+]

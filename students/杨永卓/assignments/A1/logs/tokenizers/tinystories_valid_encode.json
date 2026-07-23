@@ -1,0 +1,7 @@
+{
+  "compression_ratio_bytes_per_token": 4.120442356181139,
+  "elapsed_sec": 7.830207094550133,
+  "input_bytes": 22502601,
+  "throughput_bytes_per_sec": 2873819.3930607447,
+  "token_count": 5461210
+}

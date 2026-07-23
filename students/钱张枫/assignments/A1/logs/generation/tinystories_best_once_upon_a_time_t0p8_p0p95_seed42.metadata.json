@@ -1,0 +1,14 @@
+{
+  "checkpoint": "artifacts/checkpoints/tinystories_best/step_00010000.pt",
+  "config": "configs/tinystories_baseline.json",
+  "eot_token_id": 256,
+  "experiment_name": "tinystories_baseline",
+  "generated_token_count": 158,
+  "max_new_tokens": 256,
+  "prompt": "Once upon a time",
+  "prompt_token_count": 4,
+  "seed": 42,
+  "stopped_on_eot": true,
+  "temperature": 0.8,
+  "top_p": 0.95
+}

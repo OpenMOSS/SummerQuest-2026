@@ -1,0 +1,9 @@
+{
+  "input_bytes": 2147483648,
+  "input_description": "2 GiB fallback slice of OWT training text; not the complete OWT corpus",
+  "vocab_size": 32000,
+  "merges": 31743,
+  "training_time_sec": 11054.03221962601,
+  "status": "completed",
+  "scope": "supplementary tokenizer-only result"
+}

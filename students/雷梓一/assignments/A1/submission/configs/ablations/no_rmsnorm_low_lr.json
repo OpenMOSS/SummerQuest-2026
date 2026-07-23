@@ -1,0 +1,7 @@
+{
+  "base_config": "../tinystories_baseline.json",
+  "description": "No-RMSNorm stability retry at a 10x lower peak learning rate.",
+  "model_overrides": {"norm_style": "none"},
+  "optimizer_overrides": {"lr": 0.0003},
+  "training_overrides": {"min_lr": 0.00003}
+}

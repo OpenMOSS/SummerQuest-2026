@@ -1,0 +1,16 @@
+{
+  "run_name": "lr_sweep/edge_lr3e-2",
+  "final_val_loss": 3.0002824544906614,
+  "total_training_time_sec": 165.3812383674085,
+  "d_model": 512,
+  "num_layers": 4,
+  "num_heads": 16,
+  "context_length": 256,
+  "batch_size_per_gpu": 64,
+  "global_batch_size": 256,
+  "world_size": 4,
+  "total_steps": 1000,
+  "processed_tokens": 65536000,
+  "device": "cuda:0",
+  "checkpoint_path": "not submitted (model weights excluded)"
+}

@@ -1,0 +1,9 @@
+input_path: data/owt_train.txt
+requested vocab size: 32000
+final vocab size: 32000
+number of merges: 31743
+elapsed seconds: 4905.077
+peak RSS MiB: 9979.38
+longest overall token pattern: b'\xc3\x83\xc3\x82' repeated 16 times (64 bytes)
+longest learned token pattern: b'\xc3\x83\xc3\x82' repeated 16 times (64 bytes)
+serialized output: data/owt_bpe_32k.json

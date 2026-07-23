@@ -1,0 +1,16 @@
+{
+  "batch_size": 128,
+  "batches": 168,
+  "checkpoint": "checkpoint/ablations/remove_rmsnorm/best.pt",
+  "checkpoint_iteration": 1,
+  "checkpoint_sha256": "b52c51c4f8a73f3a149f4517b00a16eff9d5e54ee2b097060a046f63b6dd0268",
+  "context_length": 256,
+  "device": "cuda",
+  "evaluated_tokens": 5465882,
+  "is_full_validation": true,
+  "run_name": "remove_rmsnorm",
+  "timestamp_utc": "2026-07-15T04:22:58.553153+00:00",
+  "val_loss": 37.427689929251116,
+  "validation_tokens_total": 5465883,
+  "wall_clock_sec": 5.930425573140383
+}

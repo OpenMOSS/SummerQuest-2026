@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="620" viewBox="0 0 1000 620">
+<rect width="100%" height="100%" fill="white"/>
+<text x="500.0" y="32" text-anchor="middle" font-family="sans-serif" font-size="22">Batch-size sweep: validation loss by wall clock</text>
+<line x1="90.0" y1="65" x2="90.0" y2="545" stroke="#e5e7eb"/>
+<text x="90.0" y="570" text-anchor="middle" font-family="sans-serif" font-size="12">7.36</text>
+<line x1="90" y1="65.0" x2="970" y2="65.0" stroke="#e5e7eb"/>
+<text x="78" y="69.0" text-anchor="end" font-family="sans-serif" font-size="12">4</text>
+<line x1="266.0" y1="65" x2="266.0" y2="545" stroke="#e5e7eb"/>
+<text x="266.0" y="570" text-anchor="middle" font-family="sans-serif" font-size="12">75.5</text>
+<line x1="90" y1="161.0" x2="970" y2="161.0" stroke="#e5e7eb"/>
+<text x="78" y="165.0" text-anchor="end" font-family="sans-serif" font-size="12">3.46</text>
+<line x1="442.0" y1="65" x2="442.0" y2="545" stroke="#e5e7eb"/>
+<text x="442.0" y="570" text-anchor="middle" font-family="sans-serif" font-size="12">144</text>
+<line x1="90" y1="257.0" x2="970" y2="257.0" stroke="#e5e7eb"/>
+<text x="78" y="261.0" text-anchor="end" font-family="sans-serif" font-size="12">2.92</text>
+<line x1="618.0" y1="65" x2="618.0" y2="545" stroke="#e5e7eb"/>
+<text x="618.0" y="570" text-anchor="middle" font-family="sans-serif" font-size="12">212</text>
+<line x1="90" y1="353.0" x2="970" y2="353.0" stroke="#e5e7eb"/>
+<text x="78" y="357.0" text-anchor="end" font-family="sans-serif" font-size="12">2.38</text>
+<line x1="794.0" y1="65" x2="794.0" y2="545" stroke="#e5e7eb"/>
+<text x="794.0" y="570" text-anchor="middle" font-family="sans-serif" font-size="12">280</text>
+<line x1="90" y1="449.0" x2="970" y2="449.0" stroke="#e5e7eb"/>
+<text x="78" y="453.0" text-anchor="end" font-family="sans-serif" font-size="12">1.84</text>
+<line x1="970.0" y1="65" x2="970.0" y2="545" stroke="#e5e7eb"/>
+<text x="970.0" y="570" text-anchor="middle" font-family="sans-serif" font-size="12">348</text>
+<line x1="90" y1="545.0" x2="970" y2="545.0" stroke="#e5e7eb"/>
+<text x="78" y="549.0" text-anchor="end" font-family="sans-serif" font-size="12">1.3</text>
+<line x1="90" y1="545" x2="970" y2="545" stroke="#111827" stroke-width="2"/>
+<line x1="90" y1="65" x2="90" y2="545" stroke="#111827" stroke-width="2"/>
+<text x="530.0" y="600" text-anchor="middle" font-family="sans-serif" font-size="15">wall_clock_sec</text>
+<text x="20" y="305.0" text-anchor="middle" transform="rotate(-90 20 305.0)" font-family="sans-serif" font-size="15">val_loss</text>
+<polyline points="110.0,65.0 134.0,65.0 137.7,65.0 141.5,65.0 145.2,65.0 148.9,65.0 152.7,65.0 156.4,65.0 160.1,66.5 163.9,83.7 167.6,88.8 171.3,89.9 175.1,97.7 178.8,103.8 182.5,104.7 186.3,109.1 190.0,109.7 193.7,113.9 197.5,116.1 201.2,117.3" fill="none" stroke="#2563eb" stroke-width="2.2"/>
+<line x1="102" y1="83" x2="126" y2="83" stroke="#2563eb" stroke-width="3"/>
+<text x="133" y="87" font-family="sans-serif" font-size="12">b1</text>
+<polyline points="113.9,102.5 131.1,222.7 135.8,279.9 140.5,311.1 145.2,332.3 149.9,347.4 154.6,367.1 159.3,374.0 164.0,381.8 168.7,391.1 173.4,396.6 178.1,405.8 182.7,416.6 187.4,418.0 192.1,422.3 196.8,431.5 201.5,430.7 206.2,430.0 210.9,435.1 215.6,439.9" fill="none" stroke="#dc2626" stroke-width="2.2"/>
+<line x1="307" y1="83" x2="331" y2="83" stroke="#dc2626" stroke-width="3"/>
+<text x="338" y="87" font-family="sans-serif" font-size="12">b64</text>
+<polyline points="118.0,127.9 140.2,261.5 148.4,321.4 156.5,356.1 164.6,373.8 172.7,387.2 180.9,398.7 189.0,409.9 197.2,419.4 205.3,426.2 213.5,434.1 221.6,440.7 229.8,448.3 237.9,449.4 246.1,457.9 254.2,458.8 262.3,458.4 270.4,467.1 278.6,468.2 286.7,467.4" fill="none" stroke="#16a34a" stroke-width="2.2"/>
+<line x1="512" y1="83" x2="536" y2="83" stroke="#16a34a" stroke-width="3"/>
+<text x="543" y="87" font-family="sans-serif" font-size="12">b128</text>
+<polyline points="90.0,135.0 133.6,283.3 148.6,350.3 163.5,383.1 178.4,403.4 193.4,420.2 208.4,433.5 223.4,441.1 238.4,445.9 253.4,449.7 268.3,454.2 283.3,466.1 298.3,469.3 313.3,477.4 328.3,475.9 343.4,477.2 358.5,485.4 373.5,486.1 388.5,482.6 403.5,485.2" fill="none" stroke="#9333ea" stroke-width="2.2"/>
+<line x1="717" y1="83" x2="741" y2="83" stroke="#9333ea" stroke-width="3"/>
+<text x="748" y="87" font-family="sans-serif" font-size="12">b256</text>
+<polyline points="139.6,155.3 171.6,312.8 200.3,381.6 229.1,415.2 257.9,434.9 286.6,444.9 315.4,459.7 344.2,459.9 373.0,468.0 401.8,477.9 430.6,484.0 459.5,483.8 488.3,487.4 517.1,496.3 545.9,496.1 574.7,500.1 603.5,502.0 632.3,500.0 661.1,505.5 689.8,505.1" fill="none" stroke="#ea580c" stroke-width="2.2"/>
+<line x1="102" y1="105" x2="126" y2="105" stroke="#ea580c" stroke-width="3"/>
+<text x="133" y="109" font-family="sans-serif" font-size="12">b512</text>
+<polyline points="153.1,179.2 199.0,328.7 241.7,395.2 284.4,423.0 327.1,446.5 369.9,456.2 412.6,464.0 455.4,471.4 498.2,479.0 541.1,486.0 584.0,488.7 626.8,494.2 669.7,495.2 712.6,498.1 755.5,501.6 798.4,503.5 841.3,506.1 884.2,507.9 927.1,510.7 970.0,513.7" fill="none" stroke="#0891b2" stroke-width="2.2"/>
+<line x1="307" y1="105" x2="331" y2="105" stroke="#0891b2" stroke-width="3"/>
+<text x="338" y="109" font-family="sans-serif" font-size="12">b768</text>
+</svg>

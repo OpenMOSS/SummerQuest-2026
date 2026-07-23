@@ -1,0 +1,42 @@
+{
+  "run_name": "tinystories_baseline",
+  "seed": 42,
+  "device": "auto",
+  "train_data": "data/tinystories_train.npy",
+  "validation_data": "data/tinystories_validation.npy",
+  "output_dir": "runs/tinystories_baseline",
+  "model": {
+    "vocab_size": 10000,
+    "context_length": 256,
+    "d_model": 512,
+    "num_layers": 4,
+    "num_heads": 16,
+    "d_ff": 1344,
+    "rope_theta": 10000.0
+  },
+  "optimizer": {
+    "max_lr": 0.0003,
+    "min_lr": 0.00003,
+    "warmup_iters": 100,
+    "cosine_cycle_iters": 10000,
+    "betas": [0.9, 0.999],
+    "eps": 1e-8,
+    "weight_decay": 0.01
+  },
+  "training": {
+    "steps": 10000,
+    "batch_size": 128,
+    "eval_interval": 100,
+    "eval_batches": 20,
+    "checkpoint_interval": 1000,
+    "log_interval": 10,
+    "max_grad_norm": 1.0,
+    "mixed_precision": "bf16"
+  },
+  "ablation": {
+    "remove_rmsnorm": false,
+    "use_post_norm": false,
+    "remove_rope": false,
+    "ffn_type": null
+  }
+}

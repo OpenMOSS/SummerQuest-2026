@@ -1,0 +1,5 @@
+{
+  "description": "TinyStories architecture ablation: disable RoPE (NoPE).",
+  "base_config": "../tinystories_baseline.json",
+  "model_overrides": {"use_rope": false}
+}

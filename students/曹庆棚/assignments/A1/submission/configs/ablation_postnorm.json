@@ -1,0 +1,8 @@
+{
+  "base": "tinystories_baseline.json",
+  "run_name": "ablation_postnorm",
+  "output_dir": "runs/ablation_postnorm",
+  "ablation": {
+    "use_post_norm": true
+  }
+}

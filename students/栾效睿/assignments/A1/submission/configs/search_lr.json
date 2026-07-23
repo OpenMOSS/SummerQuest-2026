@@ -1,0 +1,24 @@
+{
+  "suite_name": "search_lr_tinystories",
+  "base_config": "configs/train_tinystories.json",
+  "log_dir": "logs/lr_sweep",
+  "checkpoint_dir": "checkpoint/lr_sweep",
+  "common_set": {
+    "training.target_tokens": 8192000,
+    "validation.every_tokens": 1024000,
+    "validation.max_tokens": 262144,
+    "checkpoint.save_every": null,
+    "checkpoint.save_best": true
+  },
+  "runs": [
+    {"name": "lr_1e-4", "set": {"schedule.lr_max": 0.0001}},
+    {"name": "lr_3e-4", "set": {"schedule.lr_max": 0.0003}},
+    {"name": "lr_1e-3", "set": {"schedule.lr_max": 0.001}},
+    {"name": "lr_3e-3", "set": {"schedule.lr_max": 0.003}},
+    {"name": "lr_1e-2", "set": {"schedule.lr_max": 0.01}},
+    {"name": "lr_3e-2", "set": {"schedule.lr_max": 0.03}},
+    {"name": "lr_1e-1", "set": {"schedule.lr_max": 0.1}},
+    {"name": "lr_3e-1", "set": {"schedule.lr_max": 0.3}},
+    {"name": "lr_1e1", "set": {"schedule.lr_max": 10.0}}
+  ]
+}

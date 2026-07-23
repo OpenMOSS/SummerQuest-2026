@@ -1,0 +1,14 @@
+{
+  "input": "data/raw/owt_train.txt",
+  "vocab_size": 32000,
+  "num_merges": 31743,
+  "special_tokens": [
+    "<|endoftext|>"
+  ],
+  "num_processes": 32,
+  "wall_clock_sec": 1059.5685934461653,
+  "peak_rss_mb": 12519.00390625,
+  "longest_token_bytes": 64,
+  "longest_token_hex": "c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382",
+  "longest_token_text": "ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ"
+}

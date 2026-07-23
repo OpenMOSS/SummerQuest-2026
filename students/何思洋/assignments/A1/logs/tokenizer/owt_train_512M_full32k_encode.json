@@ -1,0 +1,13 @@
+{
+  "tokenizer_path": "artifacts/tokenizers/owt_train_full_32k.json",
+  "input_path": "data/owt_train.txt",
+  "output_path": "artifacts/encoded/owt_train_512M_full32k.npy",
+  "dtype": "uint16",
+  "tokens": 122868632,
+  "bytes": 536870912,
+  "max_bytes": 536870912,
+  "compression_ratio_bytes_per_token": 4.369470899619034,
+  "encode_wall_clock_sec": 1095.7735686842352,
+  "throughput_tokens_per_sec": 112129.58179629772,
+  "throughput_bytes_per_sec": 489946.944645375
+}

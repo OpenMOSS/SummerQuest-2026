@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "python": "3.12.13",
+  "pytest": {
+    "passed": 47,
+    "xpassed": 1,
+    "warnings": 1,
+    "wall_clock_sec": 30.56
+  },
+  "static_checks": {
+    "ty": "passed with 0 diagnostics",
+    "ruff": "passed"
+  },
+  "extended_verification": {
+    "status": "passed",
+    "wall_clock_sec": 1.59,
+    "checks": [
+      "model_and_attention_snapshots",
+      "training_utilities",
+      "tokenizer_and_bpe"
+    ]
+  },
+  "notes": [
+    "All public assertion-based tests passed.",
+    "The XPASS is the tokenizer encode-memory test, which passed despite being marked expected-failure upstream.",
+    "The single warning came from CUDA capability probing; assertions completed on CPU.",
+    "Fresh final verification was run after the style-only source cleanup."
+  ]
+}

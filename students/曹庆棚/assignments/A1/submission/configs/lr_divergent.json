@@ -1,0 +1,14 @@
+{
+  "base": "tinystories_baseline.json",
+  "run_name": "lr_divergent",
+  "output_dir": "runs/lr_divergent",
+  "optimizer": {
+    "max_lr": 0.1,
+    "min_lr": 0.01
+  },
+  "training": {
+    "steps": 500,
+    "eval_interval": 25,
+    "checkpoint_interval": 500
+  }
+}

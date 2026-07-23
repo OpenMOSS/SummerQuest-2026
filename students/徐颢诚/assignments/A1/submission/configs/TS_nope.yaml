@@ -1,0 +1,56 @@
+# 位置编码消融：除禁用 RoPE 外，与 TinyStories baseline 完全一致。
+run_name: ablation_nope
+
+data:
+  train_path: artifacts/token_ids/tinystories_train_uint16.npy
+  valid_path: artifacts/token_ids/tinystories_valid_uint16.npy
+  vocab_size: 10000
+
+model:
+  context_length: 256
+  d_model: 512
+  d_ff: 1344
+  num_layers: 4
+  num_heads: 16
+  rope_theta: 10000.0
+  dtype: float32
+  use_rmsnorm: true
+  use_rope: false
+
+optimizer:
+  max_lr: 0.001
+  min_lr: 0.00006
+  beta1: 0.9
+  beta2: 0.95
+  eps: 1.0e-8
+  weight_decay: 0.01
+  grad_clip_norm: 1.0
+
+scheduler:
+  warmup_steps: 250
+  cosine_cycle_steps: 5000
+  restart_on_resume: false
+
+training:
+  # 四卡：每卡 64，global batch=256；总计 327,680,000 tokens。
+  batch_size: 64
+  steps: 5000
+  eval_interval: 100
+  eval_batches: 20
+  log_interval: 100
+  checkpoint_interval: 1000
+  checkpoint_name: latest.pt
+  resume: null
+  device: cuda
+  seed: 42
+
+logging:
+  backends:
+    - name: jsonl
+    - name: tensorboard
+
+hydra:
+  run:
+    dir: logs/${run_name}/${now:%Y-%m-%d}/${now:%H-%M-%S}
+  job:
+    chdir: false

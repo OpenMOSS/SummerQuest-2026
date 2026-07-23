@@ -1,0 +1,91 @@
+{
+  "assignment": "A1",
+  "student": "曹正伟",
+  "handout_version": "26.0.4",
+  "tests": {
+    "official_tests_passed": true
+  },
+  "shared_model_config": {
+    "context_length": 256,
+    "d_model": 256,
+    "num_layers": 4,
+    "num_heads": 8,
+    "d_ff": 1024,
+    "batch_size": 32,
+    "steps": 60000,
+    "max_learning_rate": 0.0003,
+    "min_learning_rate": 3e-05,
+    "warmup_steps": 1000,
+    "cosine_cycle_steps": 60000,
+    "normalization": "rmsnorm",
+    "position_encoding": "rope",
+    "ffn_type": "swiglu",
+    "seed": 42
+  },
+  "tinystories": {
+    "vocab_size": 10000,
+    "corpus_train_tokens": 541229347,
+    "corpus_validation_tokens": 5465883,
+    "training_tokens_seen": 491520000,
+    "best_iteration": 56000,
+    "best_validation_loss": 1.5468807578086854,
+    "best_validation_perplexity": 4.696796862730495,
+    "total_training_seconds": 3242.0335085727274,
+    "tokenizer": {
+      "training_seconds": null,
+      "vocab_size": 10000,
+      "merge_count": 9743,
+      "longest_token_utf8": " accomplishment",
+      "longest_token_bytes": 15
+    }
+  },
+  "ablations": {
+    "no_rmsnorm": {
+      "best_iteration": 56000,
+      "best_validation_loss": 1.5798179388046265,
+      "best_validation_perplexity": 4.854071992635931
+    },
+    "no_position_encoding": {
+      "best_iteration": 56000,
+      "best_validation_loss": 1.626610678434372,
+      "best_validation_perplexity": 5.086605328175355
+    },
+    "silu_ffn": {
+      "best_iteration": 56000,
+      "best_validation_loss": 1.583130234479904,
+      "best_validation_perplexity": 4.870176771475077
+    }
+  },
+  "openwebtext": {
+    "vocab_size": 32000,
+    "corpus_train_tokens": 2727120445,
+    "corpus_validation_tokens": 66401098,
+    "training_tokens_seen": 491520000,
+    "best_iteration": 58000,
+    "best_validation_loss": 4.449044299125672,
+    "best_validation_perplexity": 85.54514934878819,
+    "total_training_seconds": 4870.638592321426,
+    "train_bytes_per_token": 4.3710981232440576,
+    "validation_bytes_per_token": 4.367378879789006,
+    "tokenizer": {
+      "training_seconds": 13430.185637936927,
+      "workers": 16,
+      "vocab_size": 32000,
+      "merge_count": 31743,
+      "longest_token_utf8": "ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ",
+      "longest_token_bytes": 64
+    }
+  },
+  "tokenization_optimization": {
+    "old_validation_seconds": 804.7969011096284,
+    "parallel_validation_seconds": 19.966601920314133,
+    "speedup": 40.306,
+    "workers": 16,
+    "outputs_byte_identical": true
+  },
+  "not_run": [
+    "post_norm_ablation",
+    "language_model_learning_rate_sweep",
+    "batch_size_sweep"
+  ]
+}

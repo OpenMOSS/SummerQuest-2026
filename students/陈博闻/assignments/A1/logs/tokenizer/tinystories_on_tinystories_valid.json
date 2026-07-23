@@ -1,0 +1,12 @@
+{
+  "input": "data/TinyStoriesV2-GPT4-valid.txt",
+  "byte_count": 22502601,
+  "token_count": 5466367,
+  "compression_ratio_bytes_per_token": 4.116555108722118,
+  "throughput_bytes_per_sec": 4615656.752668743,
+  "throughput_tokens_per_sec": 1121242.5512995399,
+  "elapsed_sec": 4.8752760887146,
+  "longest_token_id": 7160,
+  "longest_token_num_bytes": 15,
+  "longest_token_utf8_preview": " accomplishment"
+}

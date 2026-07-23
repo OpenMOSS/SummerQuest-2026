@@ -1,0 +1,42 @@
+{
+  "status": "completed",
+  "divergence_reason": null,
+  "final_step": 1000,
+  "final_val_loss": 1.891161322593689,
+  "total_wall_clock_sec": 56.58810906019062,
+  "device": "cuda",
+  "precision": "bf16",
+  "compile": true,
+  "model": {
+    "vocab_size": 10000,
+    "context_length": 256,
+    "d_model": 512,
+    "num_layers": 4,
+    "num_heads": 16,
+    "d_ff": 1344,
+    "rope_theta": 10000.0,
+    "norm_style": "pre",
+    "use_rope": true,
+    "ffn_type": "swiglu"
+  },
+  "training": {
+    "batch_size": 64,
+    "max_steps": 1000,
+    "warmup_steps": 50,
+    "min_lr": 0.0002,
+    "max_grad_norm": 1.0,
+    "eval_interval": 50,
+    "eval_batches": 10,
+    "checkpoint_interval": 1000,
+    "eval_batch_size": 128
+  },
+  "optimizer": {
+    "lr": 0.002,
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0.1
+  }
+}

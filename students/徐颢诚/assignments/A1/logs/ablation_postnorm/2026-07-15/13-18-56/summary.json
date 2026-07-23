@@ -1,0 +1,20 @@
+{
+  "run_name": "ablation_postnorm",
+  "final_val_loss": 1.4254487991333007,
+  "total_training_time_sec": 793.3253212161362,
+  "d_model": 512,
+  "num_layers": 4,
+  "num_heads": 16,
+  "context_length": 256,
+  "use_rmsnorm": true,
+  "use_rope": true,
+  "use_swiglu": true,
+  "norm_position": "post",
+  "batch_size_per_gpu": 64,
+  "global_batch_size": 256,
+  "world_size": 4,
+  "total_steps": 5000,
+  "processed_tokens": 327680000,
+  "device": "cuda:0",
+  "checkpoint_path": "not submitted (model weights excluded)"
+}

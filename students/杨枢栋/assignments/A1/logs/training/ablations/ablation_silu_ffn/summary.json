@@ -1,0 +1,17 @@
+{
+  "final_val_loss": 1.3926932692527771,
+  "total_training_time_sec": 1603.6194295883179,
+  "d_model": 512,
+  "num_layers": 4,
+  "num_heads": 16,
+  "context_length": 256,
+  "batch_size": 128,
+  "steps": 10000,
+  "vocab_size": 10000,
+  "norm_mode": "pre",
+  "use_rmsnorm": true,
+  "use_rope": true,
+  "ffn_type": "silu",
+  "checkpoint": "runs/ablation_silu_ffn/checkpoint.pt",
+  "sample": "Once upon a time, there was a little boy named Tim. Tim was very enthusiastic about his school. He loved to learn new things and play with his friends. One day, Tim's teacher told the class to bring a big surprise.\nThe surprise was a big box of new toys. Tim was so excited! He opened the box and found a new toy car inside. Tim was so happy! He played with the new toy car all day long.\nThe next day, Tim's teacher asked him to take the new toy car back to school. Tim did as he was told and took the new toy car home. His friends were so happy to see the new toy car and they all played together. Tim felt very proud of himself for finding the surprise in his new toy box.\n<|endoftext|>"
+}

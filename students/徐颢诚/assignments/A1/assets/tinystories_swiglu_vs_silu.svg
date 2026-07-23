@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="570" viewBox="0 0 960 570">
+<rect width="100%" height="100%" fill="white"/>
+<style>text{font-family:sans-serif;fill:#1f2937}.tick{font-size:13px}</style>
+<text x="480.0" y="32" text-anchor="middle" font-size="20" font-weight="bold">TinyStories FFN ablation: SwiGLU vs. SiLU</text>
+<line x1="88" y1="492" x2="920" y2="492" stroke="#374151"/>
+<line x1="88" y1="72" x2="88" y2="492" stroke="#374151"/>
+<line x1="88" y1="492.00" x2="920" y2="492.00" stroke="#e5e7eb"/>
+<text class="tick" x="78" y="496.00" text-anchor="end">1.20</text>
+<line x1="88" y1="408.00" x2="920" y2="408.00" stroke="#e5e7eb"/>
+<text class="tick" x="78" y="412.00" text-anchor="end">1.78</text>
+<line x1="88" y1="324.00" x2="920" y2="324.00" stroke="#e5e7eb"/>
+<text class="tick" x="78" y="328.00" text-anchor="end">2.35</text>
+<line x1="88" y1="240.00" x2="920" y2="240.00" stroke="#e5e7eb"/>
+<text class="tick" x="78" y="244.00" text-anchor="end">2.93</text>
+<line x1="88" y1="156.00" x2="920" y2="156.00" stroke="#e5e7eb"/>
+<text class="tick" x="78" y="160.00" text-anchor="end">3.50</text>
+<line x1="88" y1="72.00" x2="920" y2="72.00" stroke="#e5e7eb"/>
+<text class="tick" x="78" y="76.00" text-anchor="end">4.07</text>
+<line x1="88.00" y1="492" x2="88.00" y2="497" stroke="#374151"/>
+<text class="tick" x="88.00" y="518" text-anchor="middle">0M</text>
+<line x1="254.40" y1="492" x2="254.40" y2="497" stroke="#374151"/>
+<text class="tick" x="254.40" y="518" text-anchor="middle">66M</text>
+<line x1="420.80" y1="492" x2="420.80" y2="497" stroke="#374151"/>
+<text class="tick" x="420.80" y="518" text-anchor="middle">131M</text>
+<line x1="587.20" y1="492" x2="587.20" y2="497" stroke="#374151"/>
+<text class="tick" x="587.20" y="518" text-anchor="middle">197M</text>
+<line x1="753.60" y1="492" x2="753.60" y2="497" stroke="#374151"/>
+<text class="tick" x="753.60" y="518" text-anchor="middle">262M</text>
+<line x1="920.00" y1="492" x2="920.00" y2="497" stroke="#374151"/>
+<text class="tick" x="920.00" y="518" text-anchor="middle">328M</text>
+<polyline points="104.64,113.53 121.28,266.05 137.92,326.03 154.56,356.70 171.20,378.51 187.84,387.65 204.48,400.47 221.12,400.56 237.76,409.43 254.40,413.37 271.04,417.28 287.68,422.83 304.32,423.04 320.96,425.65 337.60,431.71 354.24,431.79 370.88,433.43 387.52,436.89 404.16,436.73 420.80,437.14 437.44,442.21 454.08,442.08 470.72,441.17 487.36,444.04 504.00,448.15 520.64,447.09 537.28,448.47 553.92,449.29 570.56,450.67 587.20,451.05 603.84,446.59 620.48,456.04 637.12,451.30 653.76,453.10 670.40,455.52 687.04,457.94 703.68,457.51 720.32,459.42 736.96,457.64 753.60,459.52 770.24,456.03 786.88,458.86 803.52,459.24 820.16,460.42 836.80,458.58 853.44,463.03 870.08,460.59 886.72,460.92 903.36,461.65 920.00,458.88" fill="none" stroke="#2563eb" stroke-width="3"/>
+<line x1="104" y1="80" x2="128" y2="80" stroke="#2563eb" stroke-width="3"/>
+<text class="tick" x="134" y="85">SwiGLU</text>
+<polyline points="104.64,100.97 121.28,249.48 137.92,307.73 154.56,339.02 171.20,361.83 187.84,372.96 204.48,387.76 221.12,387.95 237.76,399.57 254.40,403.08 271.04,408.93 287.68,415.00 304.32,415.23 320.96,418.82 337.60,425.40 354.24,425.45 370.88,426.74 387.52,431.19 404.16,430.90 420.80,432.18 437.44,436.76 454.08,437.08 470.72,436.36 487.36,439.25 504.00,443.35 520.64,442.70 537.28,444.03 553.92,445.16 570.56,446.47 587.20,446.69 603.84,442.38 620.48,452.04 637.12,447.88 653.76,449.02 670.40,451.28 687.04,454.48 703.68,453.94 720.32,455.95 736.96,453.82 753.60,456.04 770.24,452.29 786.88,455.49 803.52,455.73 820.16,456.83 836.80,454.75 853.44,459.65 870.08,457.08 886.72,457.54 903.36,458.31 920.00,455.45" fill="none" stroke="#dc2626" stroke-width="3"/>
+<line x1="236" y1="80" x2="260" y2="80" stroke="#dc2626" stroke-width="3"/>
+<text class="tick" x="266" y="85">SiLU</text>
+<text x="480.0" y="550" text-anchor="middle" font-size="15">processed training tokens</text>
+<text x="22" y="285.0" text-anchor="middle" font-size="15" transform="rotate(-90 22 285.0)">validation cross-entropy loss (per token)</text>
+</svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="620" viewBox="0 0 1000 620">
+<rect width="100%" height="100%" fill="white"/>
+<text x="500.0" y="32" text-anchor="middle" font-family="sans-serif" font-size="22">TinyStories baseline: validation loss by wall clock</text>
+<line x1="90.0" y1="65" x2="90.0" y2="545" stroke="#e5e7eb"/>
+<text x="90.0" y="570" text-anchor="middle" font-family="sans-serif" font-size="12">13</text>
+<line x1="90" y1="65.0" x2="970" y2="65.0" stroke="#e5e7eb"/>
+<text x="78" y="69.0" text-anchor="end" font-family="sans-serif" font-size="12">2.5</text>
+<line x1="266.0" y1="65" x2="266.0" y2="545" stroke="#e5e7eb"/>
+<text x="266.0" y="570" text-anchor="middle" font-family="sans-serif" font-size="12">130</text>
+<line x1="90" y1="161.0" x2="970" y2="161.0" stroke="#e5e7eb"/>
+<text x="78" y="165.0" text-anchor="end" font-family="sans-serif" font-size="12">2.26</text>
+<line x1="442.0" y1="65" x2="442.0" y2="545" stroke="#e5e7eb"/>
+<text x="442.0" y="570" text-anchor="middle" font-family="sans-serif" font-size="12">247</text>
+<line x1="90" y1="257.0" x2="970" y2="257.0" stroke="#e5e7eb"/>
+<text x="78" y="261.0" text-anchor="end" font-family="sans-serif" font-size="12">2.02</text>
+<line x1="618.0" y1="65" x2="618.0" y2="545" stroke="#e5e7eb"/>
+<text x="618.0" y="570" text-anchor="middle" font-family="sans-serif" font-size="12">364</text>
+<line x1="90" y1="353.0" x2="970" y2="353.0" stroke="#e5e7eb"/>
+<text x="78" y="357.0" text-anchor="end" font-family="sans-serif" font-size="12">1.78</text>
+<line x1="794.0" y1="65" x2="794.0" y2="545" stroke="#e5e7eb"/>
+<text x="794.0" y="570" text-anchor="middle" font-family="sans-serif" font-size="12">481</text>
+<line x1="90" y1="449.0" x2="970" y2="449.0" stroke="#e5e7eb"/>
+<text x="78" y="453.0" text-anchor="end" font-family="sans-serif" font-size="12">1.54</text>
+<line x1="970.0" y1="65" x2="970.0" y2="545" stroke="#e5e7eb"/>
+<text x="970.0" y="570" text-anchor="middle" font-family="sans-serif" font-size="12">598</text>
+<line x1="90" y1="545.0" x2="970" y2="545.0" stroke="#e5e7eb"/>
+<text x="78" y="549.0" text-anchor="end" font-family="sans-serif" font-size="12">1.3</text>
+<line x1="90" y1="545" x2="970" y2="545" stroke="#111827" stroke-width="2"/>
+<line x1="90" y1="65" x2="90" y2="545" stroke="#111827" stroke-width="2"/>
+<text x="530.0" y="600" text-anchor="middle" font-family="sans-serif" font-size="15">wall_clock_sec</text>
+<text x="20" y="305.0" text-anchor="middle" transform="rotate(-90 20 305.0)" font-family="sans-serif" font-size="15">val_loss</text>
+<polyline points="90.0,65.0 109.0,181.2 127.1,259.0 145.0,292.4 163.0,321.5 180.9,343.9 198.9,359.5 216.8,375.4 234.8,385.8 252.7,397.4 270.6,402.2 288.6,409.4 306.5,412.3 324.4,419.7 342.4,422.9 360.3,428.0 378.3,433.6 396.2,438.7 414.1,443.6 432.1,447.9 450.0,451.6 467.9,455.9 485.8,456.1 503.7,461.6 521.6,463.2 539.6,462.7 557.5,470.9 575.4,474.3 593.3,473.7 611.3,477.8 629.3,482.3 647.3,483.8 665.2,487.6 683.2,490.8 701.1,489.5 719.0,493.2 737.0,492.9 754.9,495.5 772.8,500.0 790.8,501.7 808.7,502.3 826.6,503.4 844.5,506.5 862.5,507.3 880.4,509.0 898.3,508.6 916.2,508.8 934.1,510.6 952.1,509.8 970.0,510.0" fill="none" stroke="#2563eb" stroke-width="2.2"/>
+<line x1="102" y1="83" x2="126" y2="83" stroke="#2563eb" stroke-width="3"/>
+<text x="133" y="87" font-family="sans-serif" font-size="12">baseline</text>
+</svg>

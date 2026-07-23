@@ -1,0 +1,13 @@
+nohup: ignoring input
+{"chunks": 20, "tokens": 5855646, "elapsed_sec": 1.0, "tokens_per_sec": 5741797.2}
+{"chunks": 40, "tokens": 11725063, "elapsed_sec": 1.5, "tokens_per_sec": 7942812.3}
+{"chunks": 60, "tokens": 17539775, "elapsed_sec": 1.9, "tokens_per_sec": 9118999.9}
+{"chunks": 80, "tokens": 23157553, "elapsed_sec": 2.2, "tokens_per_sec": 10310845.8}
+{"chunks": 100, "tokens": 28888783, "elapsed_sec": 2.7, "tokens_per_sec": 10593818.8}
+{"chunks": 120, "tokens": 34673308, "elapsed_sec": 3.1, "tokens_per_sec": 11207158.2}
+{"chunks": 140, "tokens": 40440037, "elapsed_sec": 3.5, "tokens_per_sec": 11640769.9}
+{"chunks": 160, "tokens": 46192441, "elapsed_sec": 3.9, "tokens_per_sec": 11874187.2}
+{"chunks": 180, "tokens": 51984077, "elapsed_sec": 4.3, "tokens_per_sec": 12086239.8}
+{"chunks": 200, "tokens": 57662066, "elapsed_sec": 4.6, "tokens_per_sec": 12635759.8}
+{"chunks": 220, "tokens": 63392518, "elapsed_sec": 4.9, "tokens_per_sec": 12897090.7}
+{"output": "artifacts/owt_val.npy", "chunks": 231, "tokens": 66401098, "elapsed_sec": 7.5, "tokens_per_sec": 8836459.8}

@@ -1,0 +1,17 @@
+{
+  "final_val_loss": 1.3316232085227966,
+  "total_training_time_sec": 3229.725201368332,
+  "d_model": 512,
+  "num_layers": 4,
+  "num_heads": 16,
+  "context_length": 256,
+  "batch_size": 256,
+  "steps": 10000,
+  "vocab_size": 10000,
+  "norm_mode": "pre",
+  "use_rmsnorm": true,
+  "use_rope": true,
+  "ffn_type": "swiglu",
+  "checkpoint": "runs/batch_size_256/checkpoint.pt",
+  "sample": "Once upon a time, there was a little boy named Tim. Tim loved to play outside in the sun. One day, he saw a big tree with a hole in it. Tim was very curious about the hole.\nTim's mom saw him looking at the hole. She told him not to go near the hole. But Tim was ignorant and wanted to see what was inside. So, he walked to the hole and looked inside.\nInside the hole, Tim found a big, shiny ball. He was so happy! He played with the ball all day long. Tim learned that sometimes, it is good to listen to mom and dad. And that is how Tim found a new friend in the big tree.\n<|endoftext|>"
+}

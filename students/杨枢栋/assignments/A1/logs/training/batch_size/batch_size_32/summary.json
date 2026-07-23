@@ -1,0 +1,17 @@
+{
+  "final_val_loss": 1.5092252731323241,
+  "total_training_time_sec": 460.3595232963562,
+  "d_model": 512,
+  "num_layers": 4,
+  "num_heads": 16,
+  "context_length": 256,
+  "batch_size": 32,
+  "steps": 10000,
+  "vocab_size": 10000,
+  "norm_mode": "pre",
+  "use_rmsnorm": true,
+  "use_rope": true,
+  "ffn_type": "swiglu",
+  "checkpoint": "runs/batch_size_32/checkpoint.pt",
+  "sample": "Once upon a time, there was a little boy named Tim. Tim was very enthusiastic about finding a toy called an automobile. He loved to play with it all day long. One day, Tim went to the park with his mom and dad. He took his automobile with him.\nAt the park, Tim saw a girl named Sue. Sue was sad because she lost her toy. Tim wanted to help Sue. He asked, \"Why are you sad?\" Sue said, \"I lost my toy.\" Tim wanted to help Sue. They looked for the toy together.\nThey looked in the park, the park, and the sandbox. Then, they found the toy! Sue was so happy. She hugged Tim and said, \"Thank you for helping me find my toy!\" Tim felt proud that he could help Sue. They played together in the park all day.\n<|endoftext|>"
+}

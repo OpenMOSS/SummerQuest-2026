@@ -1,0 +1,78 @@
+{
+  "special_token": "<|endoftext|>",
+  "seed": 2026,
+  "sample_docs": 10,
+  "throughput_target_bytes": 4194304,
+  "throughput_warmup": 1,
+  "throughput_repeats": 3,
+  "pile_bytes": 825000000000,
+  "output_dir": "logs/tokenizer_experiments",
+  "tokenizers": {
+    "tinystories_10k": {
+      "name": "TinyStories 10K",
+      "vocab_path": "artifacts/TinyStories_train_bpe/vocab.json",
+      "merges_path": "artifacts/TinyStories_train_bpe/merges.json"
+    },
+    "owt_32k": {
+      "name": "OWT 32K",
+      "vocab_path": "artifacts/owt_train_bpe/vocab.json",
+      "merges_path": "artifacts/owt_train_bpe/merges.json"
+    }
+  },
+  "compression": [
+    {
+      "name": "TinyStories train",
+      "input_path": "data/TinyStoriesV2-GPT4-train.txt",
+      "tokenizers": ["tinystories_10k"]
+    },
+    {
+      "name": "OpenWebText train",
+      "input_path": "data/owt_train.txt",
+      "tokenizers": ["owt_32k", "tinystories_10k"]
+    }
+  ],
+  "throughput": [
+    {
+      "name": "TinyStories 10K",
+      "input_path": "data/TinyStoriesV2-GPT4-train.txt",
+      "tokenizer": "tinystories_10k"
+    },
+    {
+      "name": "OWT 32K",
+      "input_path": "data/owt_train.txt",
+      "tokenizer": "owt_32k"
+    }
+  ],
+  "encoded_arrays": [
+    {
+      "name": "TinyStories train",
+      "input_path": "data/TinyStoriesV2-GPT4-train.txt",
+      "output_path": "artifacts/token_ids/tinystories_train.npy",
+      "tokenizer": "tinystories_10k"
+    },
+    {
+      "name": "TinyStories valid",
+      "input_path": "data/TinyStoriesV2-GPT4-valid.txt",
+      "output_path": "artifacts/token_ids/tinystories_valid.npy",
+      "tokenizer": "tinystories_10k"
+    },
+    {
+      "name": "OWT train",
+      "input_path": "data/owt_train.txt",
+      "output_path": "artifacts/token_ids/owt_train.npy",
+      "tokenizer": "owt_32k"
+    },
+    {
+      "name": "OWT valid",
+      "input_path": "data/owt_valid.txt",
+      "output_path": "artifacts/token_ids/owt_valid.npy",
+      "tokenizer": "owt_32k"
+    }
+  ],
+  "encoding": {
+    "workers": 10,
+    "batch_bytes": 8388608,
+    "max_inflight_batches": 10,
+    "progress_every_batches": 10
+  }
+}
