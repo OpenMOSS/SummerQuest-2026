@@ -1,0 +1,153 @@
+{
+  "artifact_type": "benchmark",
+  "command": "profiling/benchmark.py --model-size medium --batch-size 4 --context-length 512 --mode forward_backward --warmup 5 --steps 10 --dtype fp32 --seed 42 --enable-nvtx --output results/benchmark/main/medium_forward_backward_fp32_ctx512.json",
+  "cwd": ".",
+  "environment": {
+    "cuda_runtime": "12.8",
+    "cudnn": 91002,
+    "git_commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+    "gpu_count": 1,
+    "gpu_name": "NVIDIA H200",
+    "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.35",
+    "python": "3.13.11",
+    "pytorch": "2.9.0+cu128",
+    "total_memory_bytes": 150121545728
+  },
+  "model_config": {
+    "d_ff": 4096,
+    "d_model": 1024,
+    "num_heads": 16,
+    "num_layers": 24
+  },
+  "output_path": "results/benchmark/main/medium_forward_backward_fp32_ctx512.json",
+  "run_config": {
+    "batch_size": 4,
+    "context_length": 512,
+    "dtype": "fp32",
+    "enable_nvtx": true,
+    "learning_rate": 0.001,
+    "mode": "forward_backward",
+    "model_size": "medium",
+    "optimizer_betas": [
+      0.9,
+      0.999
+    ],
+    "optimizer_eps": 1e-08,
+    "seed": 42,
+    "steps": 10,
+    "torch_compile": false,
+    "vocab_size": 10000,
+    "warmup": 5,
+    "weight_decay": 0.01
+  },
+  "summaries": {
+    "backward_ms": {
+      "cv": 0.001813218660607003,
+      "max_ms": 108.80039539188147,
+      "mean_ms": 108.400506246835,
+      "min_ms": 108.10867045074701,
+      "std_ms": 0.19655382074600722
+    },
+    "forward_ms": {
+      "cv": 0.0031507053461940137,
+      "max_ms": 54.14262041449547,
+      "mean_ms": 53.93926752731204,
+      "min_ms": 53.5874767228961,
+      "std_ms": 0.1699467385680912
+    },
+    "loss": {
+      "cv": 0.0,
+      "max_ms": 9.296735763549805,
+      "mean_ms": 9.296735763549805,
+      "min_ms": 9.296735763549805,
+      "std_ms": 0.0
+    },
+    "optimizer_ms": {
+      "cv": 0.0,
+      "max_ms": 0.0,
+      "mean_ms": 0.0,
+      "min_ms": 0.0,
+      "std_ms": 0.0
+    },
+    "total_ms": {
+      "cv": 0.002068818449449053,
+      "max_ms": 162.84949611872435,
+      "mean_ms": 162.34332965686917,
+      "min_ms": 161.83378640562296,
+      "std_ms": 0.3358588755391205
+    }
+  },
+  "timing_records": [
+    {
+      "backward_ms": 108.10867045074701,
+      "forward_ms": 53.88518422842026,
+      "loss": 9.296735763549805,
+      "optimizer_ms": 0.0,
+      "total_ms": 161.99640929698944
+    },
+    {
+      "backward_ms": 108.17195754498243,
+      "forward_ms": 53.70334256440401,
+      "loss": 9.296735763549805,
+      "optimizer_ms": 0.0,
+      "total_ms": 161.8782663717866
+    },
+    {
+      "backward_ms": 108.24236739426851,
+      "forward_ms": 53.5874767228961,
+      "loss": 9.296735763549805,
+      "optimizer_ms": 0.0,
+      "total_ms": 161.83378640562296
+    },
+    {
+      "backward_ms": 108.80039539188147,
+      "forward_ms": 54.043940268456936,
+      "loss": 9.296735763549805,
+      "optimizer_ms": 0.0,
+      "total_ms": 162.84949611872435
+    },
+    {
+      "backward_ms": 108.41868352144957,
+      "forward_ms": 54.08473312854767,
+      "loss": 9.296735763549805,
+      "optimizer_ms": 0.0,
+      "total_ms": 162.5073766335845
+    },
+    {
+      "backward_ms": 108.36010053753853,
+      "forward_ms": 53.988778963685036,
+      "loss": 9.296735763549805,
+      "optimizer_ms": 0.0,
+      "total_ms": 162.3521838337183
+    },
+    {
+      "backward_ms": 108.41435939073563,
+      "forward_ms": 53.99978253990412,
+      "loss": 9.296735763549805,
+      "optimizer_ms": 0.0,
+      "total_ms": 162.41784673184156
+    },
+    {
+      "backward_ms": 108.50273258984089,
+      "forward_ms": 54.14262041449547,
+      "loss": 9.296735763549805,
+      "optimizer_ms": 0.0,
+      "total_ms": 162.64905408024788
+    },
+    {
+      "backward_ms": 108.6239218711853,
+      "forward_ms": 54.0875643491745,
+      "loss": 9.296735763549805,
+      "optimizer_ms": 0.0,
+      "total_ms": 162.71438263356686
+    },
+    {
+      "backward_ms": 108.3618737757206,
+      "forward_ms": 53.86925209313631,
+      "loss": 9.296735763549805,
+      "optimizer_ms": 0.0,
+      "total_ms": 162.2344944626093
+    }
+  ],
+  "torch_profiler": null
+}

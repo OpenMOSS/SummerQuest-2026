@@ -7,11 +7,11 @@ from collections.abc import Iterable, Iterator
 from typing import BinaryIO
 
 import regex
-import tiktoken
 
 GPT2_PATTERN = (
     r"""'(?:[sdmt]|ll|ve|re)| ?\p{L}+| ?\p{N}+| ?[^\s\p{L}\p{N}]+|\s+(?!\S)|\s+"""
 )
+GPT2_REGEX = regex.compile(GPT2_PATTERN)
 
 
 def find_chunk_boundaries(
@@ -148,36 +148,59 @@ class BPETokenizer:
         self.id_to_token = dict(vocab)
         self.token_to_id = {token: token_id for token_id, token in vocab.items()}
         self.merge_ranks = {pair: rank for rank, pair in enumerate(merges)}
-
-        special_token_to_id: dict[str, int] = {}
-        special_token_bytes = {token.encode("utf-8") for token in self.special_tokens}
-        for token in self.special_tokens:
-            token_bytes = token.encode("utf-8")
-            if token_bytes in self.token_to_id:
-                special_token_to_id[token] = self.token_to_id[token_bytes]
-
-        mergeable_ranks = {
-            token_bytes: token_id
-            for token_id, token_bytes in vocab.items()
-            if token_bytes not in special_token_bytes
+        self.special_token_to_id = {
+            token: self.token_to_id[token.encode("utf-8")]
+            for token in self.special_tokens
+            if token.encode("utf-8") in self.token_to_id
         }
-        self.encoding = tiktoken.Encoding(
-            name="cs336_bpe",
-            pat_str=GPT2_PATTERN,
-            mergeable_ranks=mergeable_ranks,
-            special_tokens=special_token_to_id,
-            explicit_n_vocab=len(vocab),
-        )
+
+    def _encode_pretoken(self, pretoken: str) -> list[int]:
+        token_pieces = [bytes([byte]) for byte in pretoken.encode("utf-8")]
+        if not token_pieces:
+            return []
+
+        while len(token_pieces) > 1:
+            best_pair_index: int | None = None
+            best_pair_rank: int | None = None
+            for idx in range(len(token_pieces) - 1):
+                rank = self.merge_ranks.get((token_pieces[idx], token_pieces[idx + 1]))
+                if rank is None:
+                    continue
+                if best_pair_rank is None or rank < best_pair_rank:
+                    best_pair_rank = rank
+                    best_pair_index = idx
+
+            if best_pair_index is None:
+                break
+
+            merged = token_pieces[best_pair_index] + token_pieces[best_pair_index + 1]
+            token_pieces = (
+                token_pieces[:best_pair_index]
+                + [merged]
+                + token_pieces[best_pair_index + 2 :]
+            )
+
+        return [self.token_to_id[token_bytes] for token_bytes in token_pieces]
 
     def encode(self, text: str) -> list[int]:
-        return self.encoding.encode(text, allowed_special=set(self.special_tokens))
+        encoded: list[int] = []
+        for is_special, part in _split_on_special_tokens(text, self.special_tokens):
+            if not part:
+                continue
+            if is_special:
+                encoded.append(self.special_token_to_id[part])
+                continue
+            for pretoken in GPT2_REGEX.findall(part):
+                encoded.extend(self._encode_pretoken(pretoken))
+        return encoded
 
     def encode_iterable(self, texts: Iterable[str]) -> Iterator[int]:
         for text in texts:
             yield from self.encode(text)
 
     def decode(self, token_ids: list[int]) -> str:
-        return self.encoding.decode(token_ids)
+        decoded_bytes = b"".join(self.id_to_token[token_id] for token_id in token_ids)
+        return decoded_bytes.decode("utf-8", errors="replace")
 
 
 def train_bpe(
