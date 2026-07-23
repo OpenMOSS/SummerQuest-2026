@@ -82,8 +82,9 @@ scores `21.691 ms`（24 calls）、softmax `180.451 ms`（24 calls）、value
 `218.896 ms`）、attention softmax（24 calls，约 `180.451 ms`）以及
 `MmBackward0`（169 calls，`132.385 ms`）。这与 Transformer 中线性层矩阵乘和显式
 attention 的二次方 score/softmax 代价一致。`torch.profiler` 能给出框架 op、CUDA
-activity、shape/memory 和 Chrome/Perfetto 视图；它不是 Nsight Systems 的替代品，不在
-本报告中伪造 CUDA API 到 kernel 的系统级关联字段。
+activity、shape/memory 和 Chrome/Perfetto 视图。本作业按题面二选一采用
+`torch.profiler`，未运行 Nsight Systems；因此只报告 profiler 实际提供的证据，不添加
+CUDA API 到 kernel 的 Nsight 专属关联字段。
 
 ## 3. Mixed Precision
 
@@ -203,7 +204,7 @@ python -m profiling.benchmark \
 
 六个 profiler 命令由 `profiling.run_a2p` 以独立子进程串行编排；memory snapshot 和
 完整 Chrome trace 仅保留在个人工作目录，公开目录只保留轻量 CSV/JSON 与图。公开
-`results/` 与 `assets/` 合计约 `1.44 MiB`，未提交 `.pickle`、完整 `.trace`、模型、
+`results/` 与 `assets/` 合计约 `1.16 MiB`，未提交 `.pickle`、完整 `.trace`、模型、
 数据、依赖锁、主机名、UUID、进程信息或凭据。
 
 ## 自检
