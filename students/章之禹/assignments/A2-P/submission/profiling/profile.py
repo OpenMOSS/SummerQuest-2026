@@ -160,30 +160,6 @@ def run_profile(args: argparse.Namespace) -> dict[str, Any]:
 
     args.trace_output.parent.mkdir(parents=True, exist_ok=True)
     profiler.export_chrome_trace(str(args.trace_output))
-    rows: list[dict[str, Any]] = []
-    for event in profiler.key_averages():
-        # PyTorch 2.8 exposes device timings through ``device_time_total``;
-        # older releases used the CUDA-specific alias.  Keep both paths so
-        # the public summary has real GPU timings instead of silently writing
-        # zeros when the profiler API changes.
-        cuda_total = getattr(event, "device_time_total", None)
-        if cuda_total is None:
-            cuda_total = getattr(event, "cuda_time_total", 0.0)
-        cuda_self = getattr(event, "self_device_time_total", None)
-        if cuda_self is None:
-            cuda_self = getattr(event, "self_cuda_time_total", 0.0)
-        rows.append(
-            {
-                "name": event.key,
-                "calls": int(event.count),
-                "cpu_total_us": float(event.cpu_time_total),
-                "cpu_self_us": float(event.self_cpu_time_total),
-                "cuda_total_us": float(cuda_total),
-                "cuda_self_us": float(cuda_self),
-                "cpu_memory_bytes": int(getattr(event, "cpu_memory_usage", 0)),
-                "cuda_memory_bytes": int(getattr(event, "cuda_memory_usage", 0)),
-            }
-        )
     stage_names = (
         "profile/warmup",
         "profile/measure",
@@ -196,6 +172,40 @@ def run_profile(args: argparse.Namespace) -> dict[str, Any]:
         "attention/softmax",
         "attention/value",
     )
+    rows: list[dict[str, Any]] = []
+    for event in profiler.key_averages():
+        # PyTorch 2.8 exposes device timings through ``device_time_total``;
+        # older releases used the CUDA-specific alias.  Keep both paths so
+        # the public summary has real GPU timings instead of silently writing
+        # zeros when the profiler API changes.
+        cuda_total = getattr(event, "device_time_total", None)
+        if cuda_total is None:
+            cuda_total = getattr(event, "cuda_time_total", 0.0)
+        cuda_self = getattr(event, "self_device_time_total", None)
+        if cuda_self is None:
+            cuda_self = getattr(event, "self_cuda_time_total", 0.0)
+        cpu_total = float(event.cpu_time_total)
+        cuda_total = float(cuda_total)
+        record_type = "operator"
+        if event.key in stage_names:
+            record_type = (
+                "cpu_range"
+                if cpu_total > 0.0
+                else "gpu_annotation"
+            )
+        rows.append(
+            {
+                "name": event.key,
+                "calls": int(event.count),
+                "record_type": record_type,
+                "cpu_total_us": cpu_total,
+                "cpu_self_us": float(event.self_cpu_time_total),
+                "cuda_total_us": cuda_total,
+                "cuda_self_us": float(cuda_self),
+                "cpu_memory_bytes": int(getattr(event, "cpu_memory_usage", 0)),
+                "cuda_memory_bytes": int(getattr(event, "cuda_memory_usage", 0)),
+            }
+        )
 
     def stage_for(name: str) -> str:
         if name in stage_names:

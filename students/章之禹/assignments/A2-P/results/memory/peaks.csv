@@ -1,11 +1,11 @@
-source,status,model_size,context_length,mode,dtype,autocast,peak_allocated_mib,peak_reserved_mib,snapshot,failure_phase,error_type,largest_allocation_mib,largest_allocation_op,snapshot_final_active_mib,error
-large_ctx2048_b4_forward.json,complete,large,2048,forward,fp32,False,13320.2783203125,14472.0,large_ctx2048_b4_forward.pickle,,,2560.0,softmax/reduction,3832.2,
-large_ctx2048_b4_train_step.json,failed,large,2048,train_step,fp32,False,47414.2470703125,47756.0,,warmup,OutOfMemoryError,,,,OutOfMemoryError during warmup
-xl_ctx1024_b4_forward.json,complete,xl,1024,forward,fp32,False,17059.048828125,17576.0,xl_ctx1024_b4_forward.pickle,,,1024.0,softmax/reduction,13142.791,
-xl_ctx1024_b4_train_step.json,failed,xl,1024,train_step,fp32,False,46719.689453125,47782.0,,warmup,OutOfMemoryError,,,,OutOfMemoryError during warmup
-xl_ctx128_b4_forward.json,complete,xl,128,forward,fp32,False,13218.4365234375,13244.0,xl_ctx128_b4_forward.pickle,,,20.0,matmul,13134.014,
-xl_ctx128_b4_train_step.json,failed,xl,128,train_step,fp32,False,47615.79345703125,47788.0,,warmup,OutOfMemoryError,,,,OutOfMemoryError during warmup
-xl_ctx2048_b1_forward.json,complete,xl,2048,forward,fp32,False,16970.416015625,17414.0,xl_ctx2048_b1_forward.pickle,,,1024.0,softmax/reduction,13152.775,
-xl_ctx2048_b1_train_step.json,failed,xl,2048,train_step,fp32,False,47077.111328125,47672.0,,warmup,OutOfMemoryError,,,,OutOfMemoryError during warmup
-xl_ctx2048_b4_forward.json,complete,xl,2048,forward,fp32,False,28411.337890625,30196.0,xl_ctx2048_b4_forward.pickle,,,4096.0,softmax/reduction,13152.822,
-xl_ctx2048_b4_train_step.json,failed,xl,2048,train_step,fp32,False,45601.806640625,46670.0,,warmup,OutOfMemoryError,,,,OutOfMemoryError during warmup
+source,status,model_size,batch_size,context_length,mode,dtype,autocast,peak_allocated_mib,peak_reserved_mib,snapshot,failure_phase,error_type,largest_allocation_mib,largest_allocation_op,snapshot_final_active_mib,error
+large_ctx2048_b4_forward.json,complete,large,4,2048,forward,fp32,False,13320.2783203125,14472.0,large_ctx2048_b4_forward.pickle,,,2560.0,softmax/reduction,3832.2,
+large_ctx2048_b4_train_step.json,failed,large,4,2048,train_step,fp32,False,47414.2470703125,47756.0,,warmup,OutOfMemoryError,,,,OutOfMemoryError during warmup
+xl_ctx1024_b4_forward.json,complete,xl,4,1024,forward,fp32,False,17059.048828125,17576.0,xl_ctx1024_b4_forward.pickle,,,1024.0,softmax/reduction,13142.791,
+xl_ctx1024_b4_train_step.json,failed,xl,4,1024,train_step,fp32,False,46719.689453125,47782.0,,warmup,OutOfMemoryError,,,,OutOfMemoryError during warmup
+xl_ctx128_b4_forward.json,complete,xl,4,128,forward,fp32,False,13218.4365234375,13244.0,xl_ctx128_b4_forward.pickle,,,20.0,matmul,13134.014,
+xl_ctx128_b4_train_step.json,failed,xl,4,128,train_step,fp32,False,47615.79345703125,47788.0,,warmup,OutOfMemoryError,,,,OutOfMemoryError during warmup
+xl_ctx2048_b1_forward.json,complete,xl,1,2048,forward,fp32,False,16970.416015625,17414.0,xl_ctx2048_b1_forward.pickle,,,1024.0,softmax/reduction,13152.775,
+xl_ctx2048_b1_train_step.json,failed,xl,1,2048,train_step,fp32,False,47077.111328125,47672.0,,warmup,OutOfMemoryError,,,,OutOfMemoryError during warmup
+xl_ctx2048_b4_forward.json,complete,xl,4,2048,forward,fp32,False,28411.337890625,30196.0,xl_ctx2048_b4_forward.pickle,,,4096.0,softmax/reduction,13152.822,
+xl_ctx2048_b4_train_step.json,failed,xl,4,2048,train_step,fp32,False,45601.806640625,46670.0,,warmup,OutOfMemoryError,,,,OutOfMemoryError during warmup

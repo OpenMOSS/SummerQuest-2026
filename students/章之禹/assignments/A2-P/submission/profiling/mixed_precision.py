@@ -110,6 +110,8 @@ def main() -> int:
     model_sizes = args.model_sizes or ["small", "medium", "large", "xl", "10b"]
     for model_size in model_sizes:
         for autocast in (False, True):
+            dtype = "bf16" if autocast else "fp32"
+            output_stem = f"mixed_precision_{model_size}_{dtype}.json"
             namespace = argparse.Namespace(
                 model_size=model_size,
                 vocab_size=10_000,
@@ -118,15 +120,43 @@ def main() -> int:
                 mode="forward_backward",
                 warmup=args.warmup,
                 steps=args.steps,
-                dtype="bf16",
+                dtype=dtype,
                 autocast=autocast,
                 device=args.device,
                 seed=1337,
                 annotate_attention=False,
                 output=None,
             )
-            benchmark = run_benchmark(namespace)
+            benchmark_argv = [
+                "--model-size",
+                model_size,
+                "--vocab-size",
+                "10000",
+                "--batch-size",
+                str(args.batch_size),
+                "--context-length",
+                str(args.context_length),
+                "--mode",
+                "forward_backward",
+                "--warmup",
+                str(args.warmup),
+                "--steps",
+                str(args.steps),
+                "--dtype",
+                dtype,
+                "--device",
+                args.device,
+                "--seed",
+                "1337",
+                "--output",
+                output_stem,
+            ]
+            if autocast:
+                benchmark_argv.append("--autocast")
+            benchmark = run_benchmark(namespace, command_argv=benchmark_argv)
             benchmark["mixed_precision"] = autocast
+            benchmark["execution"] = "in_process"
+            benchmark["output_file"] = output_stem
             result["benchmarks"].append(benchmark)
             if benchmark.get("status") != "complete":
                 result["status"] = "partial"

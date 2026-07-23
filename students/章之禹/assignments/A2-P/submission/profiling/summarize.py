@@ -11,6 +11,20 @@ from pathlib import Path
 from typing import Any
 
 
+PROFILE_STAGE_NAMES = {
+    "profile/warmup",
+    "profile/measure",
+    "zero_grad",
+    "forward",
+    "loss",
+    "backward",
+    "optimizer",
+    "attention/scores",
+    "attention/softmax",
+    "attention/value",
+}
+
+
 def public_config(config: Any) -> dict[str, Any]:
     if not isinstance(config, dict):
         return {}
@@ -143,6 +157,7 @@ def profile_rows(paths: list[Path]) -> list[dict[str, Any]]:
             "source": path.name,
             "status": payload.get("status"),
             "model_size": config.get("model_size"),
+            "batch_size": config.get("batch_size"),
             "context_length": config.get("context_length"),
             "dtype": config.get("dtype"),
             "tool": payload.get("tool"),
@@ -159,11 +174,22 @@ def profile_rows(paths: list[Path]) -> list[dict[str, Any]]:
         for operator in operator_summary:
             if not isinstance(operator, dict):
                 continue
+            name = str(operator.get("name", ""))
+            record_type = operator.get("record_type")
+            if not isinstance(record_type, str):
+                record_type = "operator"
+                if name in PROFILE_STAGE_NAMES:
+                    record_type = (
+                        "cpu_range"
+                        if float(operator.get("cpu_total_us", 0.0)) > 0.0
+                        else "gpu_annotation"
+                    )
             rows.append(
                 {
                     **common,
                     "stage": operator.get("stage", "operator"),
-                    "name": operator.get("name"),
+                    "name": name,
+                    "record_type": record_type,
                     "calls": operator.get("calls"),
                     "cpu_total_us": operator.get("cpu_total_us"),
                     "cpu_self_us": operator.get("cpu_self_us"),
@@ -173,7 +199,142 @@ def profile_rows(paths: list[Path]) -> list[dict[str, Any]]:
                     "cuda_memory_bytes": operator.get("cuda_memory_bytes"),
                 }
             )
+        rows.extend(profile_kernel_overlap_rows(path, payload, common))
     return rows
+
+
+def profile_kernel_overlap_rows(
+    profile_path: Path, payload: dict[str, Any], common: dict[str, Any]
+) -> list[dict[str, Any]]:
+    """Summarize CUDA kernel time inside CPU stage ranges from a local trace."""
+
+    trace_output = payload.get("trace_output")
+    if not trace_output:
+        return []
+    trace_path = Path(str(trace_output))
+    if not trace_path.exists() and not trace_path.is_absolute():
+        trace_path = profile_path.parent / trace_path
+    try:
+        trace = read_json(trace_path)
+    except (OSError, json.JSONDecodeError):
+        return []
+    events = trace.get("traceEvents", [])
+    if not isinstance(events, list):
+        return []
+
+    kernels = [
+        event
+        for event in events
+        if isinstance(event, dict)
+        and event.get("cat") == "kernel"
+        and event.get("ph") == "X"
+    ]
+    if not kernels:
+        return []
+
+    def overlap(left: float, right: float, start: float, end: float) -> float:
+        return max(0.0, min(right, end) - max(left, start))
+
+    totals: dict[str, dict[str, float]] = {}
+    for event in events:
+        if (
+            not isinstance(event, dict)
+            or event.get("cat") != "user_annotation"
+            or event.get("ph") != "X"
+            or event.get("name") not in PROFILE_STAGE_NAMES
+        ):
+            continue
+        start = float(event.get("ts", 0.0))
+        duration = float(event.get("dur", 0.0))
+        end = start + duration
+        overlaps = [
+            overlap(
+                start,
+                end,
+                float(kernel.get("ts", 0.0)),
+                float(kernel.get("ts", 0.0)) + float(kernel.get("dur", 0.0)),
+            )
+            for kernel in kernels
+        ]
+        kernel_count = sum(value > 0.0 for value in overlaps)
+        if kernel_count == 0:
+            continue
+        stage = str(event["name"])
+        current = totals.setdefault(
+            stage,
+            {"cpu_total_us": 0.0, "calls": 0.0, "cuda_total_us": 0.0},
+        )
+        current["cpu_total_us"] += duration
+        current["calls"] += kernel_count
+        current["cuda_total_us"] += sum(overlaps)
+
+    rows: list[dict[str, Any]] = []
+    for stage, values in totals.items():
+        rows.append(
+            {
+                **common,
+                "stage": stage,
+                "name": "CUDA kernels overlapping CPU range",
+                "record_type": "kernel_overlap",
+                "calls": int(values["calls"]),
+                "cpu_total_us": values["cpu_total_us"],
+                "cpu_self_us": None,
+                "cuda_total_us": values["cuda_total_us"],
+                "cuda_self_us": None,
+                "cpu_memory_bytes": None,
+                "cuda_memory_bytes": None,
+            }
+        )
+    return rows
+
+
+def public_mixed_benchmark(benchmark: dict[str, Any]) -> dict[str, Any]:
+    """Repair legacy in-process benchmark metadata from its measured config."""
+
+    clean = dict(benchmark)
+    config = dict(clean.get("config", {}))
+    autocast = bool(config.get("autocast"))
+    if not autocast and config.get("compute_dtype") == "torch.float32":
+        config["dtype"] = "fp32"
+    clean["config"] = config
+    model_size = config.get("model_size")
+    dtype = config.get("dtype")
+    output_file = clean.get("output_file")
+    if not isinstance(output_file, str) or not output_file:
+        output_file = f"mixed_precision_{model_size}_{dtype}.json"
+    clean["output_file"] = output_file
+    if model_size and dtype:
+        command = [
+            "python profiling/benchmark.py",
+            "--model-size",
+            str(model_size),
+            "--vocab-size",
+            str(config.get("vocab_size")),
+            "--batch-size",
+            str(config.get("batch_size")),
+            "--context-length",
+            str(config.get("context_length")),
+            "--mode",
+            str(config.get("mode")),
+            "--warmup",
+            str(config.get("warmup_steps")),
+            "--steps",
+            str(config.get("measurement_steps")),
+            "--dtype",
+            str(dtype),
+            "--device",
+            "cuda",
+            "--seed",
+            str(config.get("seed")),
+            "--output",
+            output_file,
+        ]
+        if autocast:
+            command.append("--autocast")
+        clean["command"] = " ".join(command)
+    clean["execution"] = "in_process"
+    clean["error"] = public_error(clean)
+    return clean
 
 
 def memory_rows(paths: list[Path]) -> list[dict[str, Any]]:
@@ -188,6 +349,7 @@ def memory_rows(paths: list[Path]) -> list[dict[str, Any]]:
                 "source": path.name,
                 "status": payload.get("status"),
                 "model_size": config.get("model_size"),
+                "batch_size": config.get("batch_size"),
                 "context_length": config.get("context_length"),
                 "mode": config.get("mode"),
                 "dtype": config.get("dtype"),
@@ -339,29 +501,14 @@ def main() -> int:
     write_csv(output_dir / "benchmark.csv", b_rows)
     write_csv(output_dir / "profile" / "trace_summary.csv", p_rows)
     write_csv(output_dir / "memory" / "peaks.csv", m_rows)
-    metadata: dict[str, Any] = {
+    profile_metadata: dict[str, Any] = {
         "schema_version": 1,
-        "benchmark_files": [path.name for path in benchmark_paths],
         "profile_files": [path.name for path in profile_paths],
-        "memory_files": [path.name for path in memory_paths],
-        "benchmark_runs": [],
         "profile_runs": [],
-        "memory_runs": [],
     }
-    for path in benchmark_paths:
-        payload = read_json(path)
-        metadata["benchmark_runs"].append(
-            {
-                "source": path.name,
-                "config": public_config(payload.get("config")),
-                "hardware": payload.get("hardware"),
-                "command": payload.get("command"),
-                "status": payload.get("status"),
-            }
-        )
     for path in profile_paths:
         payload = read_json(path)
-        metadata["profile_runs"].append(
+        profile_metadata["profile_runs"].append(
             {
                 "source": path.name,
                 "config": public_config(payload.get("config")),
@@ -372,9 +519,15 @@ def main() -> int:
                 "operator_count": payload.get("event_count"),
             }
         )
+
+    memory_metadata: dict[str, Any] = {
+        "schema_version": 1,
+        "memory_files": [path.name for path in memory_paths],
+        "memory_runs": [],
+    }
     for path in memory_paths:
         payload = read_json(path)
-        metadata["memory_runs"].append(
+        memory_metadata["memory_runs"].append(
             {
                 "source": path.name,
                 "config": payload.get("config"),
@@ -403,9 +556,7 @@ def main() -> int:
             for benchmark in payload.get("benchmarks", []):
                 if not isinstance(benchmark, dict):
                     continue
-                clean = dict(benchmark)
-                clean["error"] = public_error(benchmark)
-                merged["benchmarks"].append(clean)
+                merged["benchmarks"].append(public_mixed_benchmark(benchmark))
             merged["runs"].append(
                 {
                     "hardware": payload.get("hardware"),
@@ -420,17 +571,16 @@ def main() -> int:
                 for item in payload.get("benchmarks", [])
             ):
                 merged["status"] = "partial"
-        metadata["mixed_precision"] = merged
         (output_dir / "mixed_precision.json").write_text(
             json.dumps(merged, indent=2, ensure_ascii=False, allow_nan=False) + "\n",
             encoding="utf-8",
         )
     (output_dir / "profile" / "run_metadata.json").write_text(
-        json.dumps(metadata, indent=2, ensure_ascii=False) + "\n",
+        json.dumps(profile_metadata, indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8",
     )
     (output_dir / "memory" / "run_metadata.json").write_text(
-        json.dumps(metadata, indent=2, ensure_ascii=False) + "\n",
+        json.dumps(memory_metadata, indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8",
     )
     assets = args.assets_dir or (output_dir / "assets")

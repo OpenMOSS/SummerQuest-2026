@@ -48,11 +48,17 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def run_benchmark(args: argparse.Namespace) -> dict[str, Any]:
+def run_benchmark(
+    args: argparse.Namespace, *, command_argv: list[str] | None = None
+) -> dict[str, Any]:
     if args.warmup < 0 or args.steps <= 0:
         raise ValueError("warmup must be non-negative and steps must be positive")
     device = resolve_device(args.device)
     amp_dtype = dtype_from_name(args.dtype)
+    command = sanitized_command(
+        "python profiling/benchmark.py",
+        command_argv if command_argv is not None else sys.argv[1:],
+    )
     # Autocast changes selected operations, not the stored model parameters.
     # Keep parameters in FP32 for both sides of the mixed-precision comparison.
     parameter_dtype = torch.float32
@@ -106,7 +112,8 @@ def run_benchmark(args: argparse.Namespace) -> dict[str, Any]:
             "error": str(error),
             "config": config,
             "hardware": hardware_metadata(device),
-            "command": sanitized_command("python profiling/benchmark.py", sys.argv[1:]),
+            "command": command,
+            "phase": "initialization",
             "peak_allocated_mib": peak_memory_mib(device)[0],
             "peak_reserved_mib": peak_memory_mib(device)[1],
         }
@@ -144,7 +151,7 @@ def run_benchmark(args: argparse.Namespace) -> dict[str, Any]:
             "status": "complete",
             "config": config,
             "hardware": hardware_metadata(device),
-            "command": sanitized_command("python profiling/benchmark.py", sys.argv[1:]),
+            "command": command,
             "timings_ms": timings,
             "stats": finite_stats(timings),
             "peak_allocated_mib": peak_allocated,
@@ -159,7 +166,8 @@ def run_benchmark(args: argparse.Namespace) -> dict[str, Any]:
             "error": str(error),
             "config": config,
             "hardware": hardware_metadata(device),
-            "command": sanitized_command("python profiling/benchmark.py", sys.argv[1:]),
+            "command": command,
+            "phase": "warmup_or_measurement",
             "peak_allocated_mib": peak_memory_mib(device)[0],
             "peak_reserved_mib": peak_memory_mib(device)[1],
         }
