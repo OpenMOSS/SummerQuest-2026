@@ -1,0 +1,344 @@
+[
+  {
+    "status": "success",
+    "config": {
+      "model_size": "medium",
+      "batch_size": 1,
+      "context_length": 1024,
+      "mode": "train_step",
+      "warmup": 5,
+      "steps": 1,
+      "dtype": "fp32",
+      "device": "cuda",
+      "seed": 0
+    },
+    "tool": {
+      "name": "torch.profiler",
+      "activities": [
+        "CPU",
+        "CUDA"
+      ],
+      "captures_one_measurement_step": true,
+      "trace_file": "medium_train_step_s1024.json"
+    },
+    "command": [
+      "python",
+      "-m",
+      "profiling.compute_profile",
+      "--model-size",
+      "medium",
+      "--batch-size",
+      "1",
+      "--context-length",
+      "1024",
+      "--warmup",
+      "5",
+      "--dtype",
+      "fp32",
+      "--device",
+      "cuda",
+      "--trace",
+      "results/a2p/profile/traces/medium_train_step_s1024.json",
+      "--summary",
+      "results/a2p/profile/summaries/medium_train_step_s1024.json"
+    ],
+    "environment": {
+      "python": "3.13.14",
+      "pytorch": "2.7.1+cu126",
+      "cuda_runtime": "12.6",
+      "cudnn": 90501,
+      "device_type": "cuda",
+      "gpu": "NVIDIA GeForce RTX 4090",
+      "gpu_total_memory_mib": 24111.06,
+      "compute_capability": "8.9",
+      "driver": "560.28.03"
+    },
+    "trace_file": "medium_train_step_s1024.json",
+    "error": null
+  },
+  {
+    "status": "success",
+    "config": {
+      "model_size": "medium",
+      "batch_size": 1,
+      "context_length": 256,
+      "mode": "train_step",
+      "warmup": 5,
+      "steps": 1,
+      "dtype": "fp32",
+      "device": "cuda",
+      "seed": 0
+    },
+    "tool": {
+      "name": "torch.profiler",
+      "activities": [
+        "CPU",
+        "CUDA"
+      ],
+      "captures_one_measurement_step": true,
+      "trace_file": "medium_train_step_s256.json"
+    },
+    "command": [
+      "python",
+      "-m",
+      "profiling.compute_profile",
+      "--model-size",
+      "medium",
+      "--batch-size",
+      "1",
+      "--context-length",
+      "256",
+      "--warmup",
+      "5",
+      "--dtype",
+      "fp32",
+      "--device",
+      "cuda",
+      "--trace",
+      "results/a2p/profile/traces/medium_train_step_s256.json",
+      "--summary",
+      "results/a2p/profile/summaries/medium_train_step_s256.json"
+    ],
+    "environment": {
+      "python": "3.13.14",
+      "pytorch": "2.7.1+cu126",
+      "cuda_runtime": "12.6",
+      "cudnn": 90501,
+      "device_type": "cuda",
+      "gpu": "NVIDIA GeForce RTX 4090",
+      "gpu_total_memory_mib": 24111.06,
+      "compute_capability": "8.9",
+      "driver": "560.28.03"
+    },
+    "trace_file": "medium_train_step_s256.json",
+    "error": null
+  },
+  {
+    "status": "success",
+    "config": {
+      "model_size": "medium",
+      "batch_size": 1,
+      "context_length": 512,
+      "mode": "train_step",
+      "warmup": 5,
+      "steps": 1,
+      "dtype": "fp32",
+      "device": "cuda",
+      "seed": 0
+    },
+    "tool": {
+      "name": "torch.profiler",
+      "activities": [
+        "CPU",
+        "CUDA"
+      ],
+      "captures_one_measurement_step": true,
+      "trace_file": "medium_train_step_s512.json"
+    },
+    "command": [
+      "python",
+      "-m",
+      "profiling.compute_profile",
+      "--model-size",
+      "medium",
+      "--batch-size",
+      "1",
+      "--context-length",
+      "512",
+      "--warmup",
+      "5",
+      "--dtype",
+      "fp32",
+      "--device",
+      "cuda",
+      "--trace",
+      "results/a2p/profile/traces/medium_train_step_s512.json",
+      "--summary",
+      "results/a2p/profile/summaries/medium_train_step_s512.json"
+    ],
+    "environment": {
+      "python": "3.13.14",
+      "pytorch": "2.7.1+cu126",
+      "cuda_runtime": "12.6",
+      "cudnn": 90501,
+      "device_type": "cuda",
+      "gpu": "NVIDIA GeForce RTX 4090",
+      "gpu_total_memory_mib": 24111.06,
+      "compute_capability": "8.9",
+      "driver": "560.28.03"
+    },
+    "trace_file": "medium_train_step_s512.json",
+    "error": null
+  },
+  {
+    "status": "success",
+    "config": {
+      "model_size": "small",
+      "batch_size": 1,
+      "context_length": 1024,
+      "mode": "train_step",
+      "warmup": 5,
+      "steps": 1,
+      "dtype": "fp32",
+      "device": "cuda",
+      "seed": 0
+    },
+    "tool": {
+      "name": "torch.profiler",
+      "activities": [
+        "CPU",
+        "CUDA"
+      ],
+      "captures_one_measurement_step": true,
+      "trace_file": "small_train_step_s1024.json"
+    },
+    "command": [
+      "python",
+      "-m",
+      "profiling.compute_profile",
+      "--model-size",
+      "small",
+      "--batch-size",
+      "1",
+      "--context-length",
+      "1024",
+      "--warmup",
+      "5",
+      "--dtype",
+      "fp32",
+      "--device",
+      "cuda",
+      "--trace",
+      "results/a2p/profile/traces/small_train_step_s1024.json",
+      "--summary",
+      "results/a2p/profile/summaries/small_train_step_s1024.json"
+    ],
+    "environment": {
+      "python": "3.13.14",
+      "pytorch": "2.7.1+cu126",
+      "cuda_runtime": "12.6",
+      "cudnn": 90501,
+      "device_type": "cuda",
+      "gpu": "NVIDIA GeForce RTX 4090",
+      "gpu_total_memory_mib": 24111.06,
+      "compute_capability": "8.9",
+      "driver": "560.28.03"
+    },
+    "trace_file": "small_train_step_s1024.json",
+    "error": null
+  },
+  {
+    "status": "success",
+    "config": {
+      "model_size": "small",
+      "batch_size": 1,
+      "context_length": 256,
+      "mode": "train_step",
+      "warmup": 5,
+      "steps": 1,
+      "dtype": "fp32",
+      "device": "cuda",
+      "seed": 0
+    },
+    "tool": {
+      "name": "torch.profiler",
+      "activities": [
+        "CPU",
+        "CUDA"
+      ],
+      "captures_one_measurement_step": true,
+      "trace_file": "small_train_step_s256.json"
+    },
+    "command": [
+      "python",
+      "-m",
+      "profiling.compute_profile",
+      "--model-size",
+      "small",
+      "--batch-size",
+      "1",
+      "--context-length",
+      "256",
+      "--warmup",
+      "5",
+      "--dtype",
+      "fp32",
+      "--device",
+      "cuda",
+      "--trace",
+      "results/a2p/profile/traces/small_train_step_s256.json",
+      "--summary",
+      "results/a2p/profile/summaries/small_train_step_s256.json"
+    ],
+    "environment": {
+      "python": "3.13.14",
+      "pytorch": "2.7.1+cu126",
+      "cuda_runtime": "12.6",
+      "cudnn": 90501,
+      "device_type": "cuda",
+      "gpu": "NVIDIA GeForce RTX 4090",
+      "gpu_total_memory_mib": 24111.06,
+      "compute_capability": "8.9",
+      "driver": "560.28.03"
+    },
+    "trace_file": "small_train_step_s256.json",
+    "error": null
+  },
+  {
+    "status": "success",
+    "config": {
+      "model_size": "small",
+      "batch_size": 1,
+      "context_length": 512,
+      "mode": "train_step",
+      "warmup": 5,
+      "steps": 1,
+      "dtype": "fp32",
+      "device": "cuda",
+      "seed": 0
+    },
+    "tool": {
+      "name": "torch.profiler",
+      "activities": [
+        "CPU",
+        "CUDA"
+      ],
+      "captures_one_measurement_step": true,
+      "trace_file": "small_train_step_s512.json"
+    },
+    "command": [
+      "python",
+      "-m",
+      "profiling.compute_profile",
+      "--model-size",
+      "small",
+      "--batch-size",
+      "1",
+      "--context-length",
+      "512",
+      "--warmup",
+      "5",
+      "--dtype",
+      "fp32",
+      "--device",
+      "cuda",
+      "--trace",
+      "results/a2p/profile/traces/small_train_step_s512.json",
+      "--summary",
+      "results/a2p/profile/summaries/small_train_step_s512.json"
+    ],
+    "environment": {
+      "python": "3.13.14",
+      "pytorch": "2.7.1+cu126",
+      "cuda_runtime": "12.6",
+      "cudnn": 90501,
+      "device_type": "cuda",
+      "gpu": "NVIDIA GeForce RTX 4090",
+      "gpu_total_memory_mib": 24111.06,
+      "compute_capability": "8.9",
+      "driver": "560.28.03"
+    },
+    "trace_file": "small_train_step_s512.json",
+    "error": null
+  }
+]
