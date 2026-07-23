@@ -1,11 +1,5 @@
 # A2-P 公开提交：王扬
 
-> 本文件和同目录代码、汇总、图片公开可见。只提交允许公开且已经脱敏的内容；大型 profiler
-> 原始文件留在个人工作目录，组织内差量材料放入飞书补充文档。密钥和访问凭据不进入任何提交材料。
-
-> 正式要求见
-> [`assignments/A2-P/README.md`](../../../../assignments/A2-P/README.md)，评分说明见
-> [`assignments/A2-P/EVALUATION.md`](../../../../assignments/A2-P/EVALUATION.md)。
 
 ## 基本信息
 
