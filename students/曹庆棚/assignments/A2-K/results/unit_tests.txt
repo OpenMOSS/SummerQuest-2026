@@ -1,0 +1,13 @@
+Post-revision RTX 4090 GPU run (de-identified output):
+  commit: ca8bc81a59b70516f7ebb2da4808daade877c736
+  command: uv run pytest tests/test_attention.py -v
+  GPU: NVIDIA GeForce RTX 4090
+  tests/test_attention.py::test_flash_forward_pass_pytorch PASSED
+  tests/test_attention.py::test_flash_forward_pass_triton[False] PASSED
+  tests/test_attention.py::test_flash_forward_pass_triton[True] PASSED
+  tests/test_attention.py::test_flash_backward_pytorch PASSED
+  tests/test_attention.py::test_flash_backward_triton[False] PASSED
+  tests/test_attention.py::test_flash_backward_triton[True] PASSED
+  6 passed, 0 failed, 0 skipped
+  elapsed: 4.78s
+  kernel: BLOCK_M=32, BLOCK_N=64, num_warps=4, num_stages=1
