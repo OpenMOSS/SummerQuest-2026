@@ -75,6 +75,6 @@
   ],
   "stage_range": "measure@profile",
   "stage_summary_file": "results/profile/stage_summary.csv",
-  "summary_source": "results/summary/nsys_kernel_summary.csv",
+  "summary_source": "results/nsys_kernel_summary.csv",
   "tool": "nsys"
 }

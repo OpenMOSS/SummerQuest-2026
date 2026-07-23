@@ -90,13 +90,13 @@
 | large | forward | 119.69942320138216 | 39.532746002078056 | 3.03x | 更大的矩阵乘更容易吃到 BF16 Tensor Core 收益。 |
 | xl | forward | 332.0808389224112 | 65.04515446722507 | 5.10x | 该配置下 BF16 速度优势最明显。 |
 
-当前公开结果里，ToyModel 的 dtype、时间和数值趋势已经完整记录；峰值显存对比在 `results/memory/*.json` 的 XL 矩阵里给出同一低精度/全精度口径的参考，便于交叉核对低精度对 allocator 峰值的影响。
+当前公开结果里，ToyModel 的 dtype、时间和数值趋势已经完整记录；同一机器上的显存峰值也已经在 `results/memory/peaks.csv` 中按 `xl / ctx=128,2048 / forward, train_step / fp32, bf16` 逐项列出。对照这组结果可以直接看到：`forward` 下 `bf16` 的峰值高于 `fp32`，而 `train_step` 下 `ctx=2048` 的 `bf16` 峰值低于 `fp32`，说明 BF16 的显存收益会随阶段和缓存行为变化，不应简单概括为“总是更省显存”。
 
 ## 4. Memory Profiling
 
 ### 配置、峰值与 fallback
 
-`results/memory/peaks.csv` 记录了 8 个 memory snapshot。XL 在 `ctx=128` 与 `ctx=2048` 的 forward / train_step 均已成功采集 fp32 与 bf16 结果。
+`results/memory/peaks.csv` 记录了 8 个 memory snapshot。XL 在 `ctx=128` 与 `ctx=2048` 的 forward / train_step 均已成功采集 fp32 与 bf16 结果，且公开的 `results/memory/*.json` 保存了同一批 run 的 `active`、`allocated`、`reserved` 和 `requested` 峰值，能逐项回查。
 
 | model | ctx | mode | dtype | active peak bytes | allocated peak bytes | reserved peak bytes | requested peak bytes |
 | --- | ---: | --- | --- | ---: | ---: | ---: | ---: |
@@ -113,7 +113,7 @@
 
 已保留的图包括 `assets/memory_xl_ctx128_forward_fp32_timeline.png`、`assets/memory_xl_ctx128_train_step_fp32_timeline.png` 和 `assets/memory_xl_ctx128_forward_fp32_detail10.png`。`results/memory/*.json` 中给出了 `active`、`allocated`、`reserved` 和峰值字节数，可用来对照 residual stream tensor 在 forward 与 backward 阶段的释放和梯度生成。
 
-XL 的 residual stream 理论规模可按 `batch_size × context_length × d_model × bytes_per_elem` 估算；对本次配置，`d_model = 2560`，因此 `ctx=128` 与 `ctx=2048` 的理论量级会按 context 成比例放大。实际观测中，forward 的峰值更接近 activation / residual 的堆积，而 train_step 的峰值还叠加了 backward 保存张量、梯度和 optimizer 相关缓冲，因此 `train_step` 明显高于 `forward`。`reserved` 一般高于 `allocated`，反映的是缓存分配器保留而非正在活跃使用的显存。
+XL 的 residual stream 理论规模可按 `batch_size × context_length × d_model × bytes_per_elem` 估算；对本次配置，`d_model = 2560`，因此 `ctx=2048` 的 residual 量级是 `ctx=128` 的 16 倍。这个线性关系能解释 forward 里 `bf16` 的峰值高于 `fp32`：例如 `ctx=128` 下 `forward` 的 `bf16` active peak 为 `20,564,021,248` 字节，而 `fp32` 为 `13,818,056,704` 字节。`train_step` 则同时叠加了 backward 保存张量、梯度和 optimizer 相关缓冲，所以峰值显著抬升；在 `ctx=2048` 下，`bf16` active peak 为 `88,640,547,840` 字节，低于 `fp32` 的 `97,935,502,336` 字节，说明 BF16 对最终峰值的影响还取决于 allocator 缓存、阶段内临时张量和释放时点，而不只是单个张量的元素大小。`reserved` 普遍高于 `allocated`，反映的是缓存分配器保留而非正在活跃使用的显存。
 
 ## 5. 限制与复现
 
