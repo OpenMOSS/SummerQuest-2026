@@ -1,0 +1,101 @@
+{
+  "status": "success",
+  "accumulation": {
+    "fp32_fp32": 10.000133514404297,
+    "fp16_fp16": 9.953125,
+    "fp32_fp16": 10.00213623046875,
+    "fp32_cast_fp16": 10.00213623046875
+  },
+  "toy_model": {
+    "parameters": "torch.float32",
+    "first_layer": "torch.bfloat16",
+    "layernorm": "torch.float32",
+    "logits": "torch.bfloat16",
+    "loss": "torch.float32",
+    "gradients": [
+      "torch.float32"
+    ]
+  },
+  "benchmarks": [
+    {
+      "status": "success",
+      "config": {
+        "model_size": "small",
+        "batch_size": 4,
+        "context_length": 512,
+        "mode": "forward_backward",
+        "warmup": 5,
+        "steps": 10,
+        "dtype": "fp32",
+        "seed": 2026,
+        "device": "cuda",
+        "output": "mixed_fp32.json"
+      },
+      "environment": {
+        "python": "3.12.13",
+        "pytorch": "2.10.0+cu128",
+        "cuda_runtime": "12.8",
+        "gpu": "NVIDIA GeForce RTX 4090",
+        "gpu_memory_mib": 48639.3
+      },
+      "timer": "time.perf_counter with CUDA sync before/after",
+      "raw_timings_ms": [
+        72.64002785086632,
+        73.28848168253899,
+        72.59976118803024,
+        72.65842705965042,
+        72.90218025445938,
+        72.81630113720894,
+        73.01381230354309,
+        74.32607188820839,
+        73.01721349358559,
+        72.77842983603477
+      ],
+      "mean_ms": 73.00407066941261,
+      "sample_std_ms": 0.5099956595848947,
+      "cv": 0.0069858523628679465,
+      "peak_allocated_mib": 4744.88037109375,
+      "peak_reserved_mib": 4922.0
+    },
+    {
+      "status": "success",
+      "config": {
+        "model_size": "small",
+        "batch_size": 4,
+        "context_length": 512,
+        "mode": "forward_backward",
+        "warmup": 5,
+        "steps": 10,
+        "dtype": "bf16",
+        "seed": 2026,
+        "device": "cuda",
+        "output": "mixed_bf16.json"
+      },
+      "environment": {
+        "python": "3.12.13",
+        "pytorch": "2.10.0+cu128",
+        "cuda_runtime": "12.8",
+        "gpu": "NVIDIA GeForce RTX 4090",
+        "gpu_memory_mib": 48639.3
+      },
+      "timer": "time.perf_counter with CUDA sync before/after",
+      "raw_timings_ms": [
+        55.634040385484695,
+        58.605704456567764,
+        56.13963305950165,
+        56.49375915527344,
+        55.69878965616226,
+        55.8709055185318,
+        61.229076236486435,
+        56.38045445084572,
+        55.593524128198624,
+        55.33872917294502
+      ],
+      "mean_ms": 56.69846162199974,
+      "sample_std_ms": 1.841083918320849,
+      "cv": 0.03247149685638886,
+      "peak_allocated_mib": 3768.58154296875,
+      "peak_reserved_mib": 3996.0
+    }
+  ]
+}
