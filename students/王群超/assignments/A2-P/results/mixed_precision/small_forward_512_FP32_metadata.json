@@ -1,0 +1,19 @@
+{
+  "command": "uv run --no-sync python profiling/benchmark.py --model-size small --context-length 512 --mode forward --dtype FP32 --output results/mixed_precision --warmup 5 --steps 10",
+  "model_size": "small",
+  "batch_size": 4,
+  "context_length": 512,
+  "mode": "forward",
+  "dtype": {
+    "logits_dtype": "torch.float32",
+    "loss_dtype": "N/A",
+    "param_dtype": "torch.float32",
+    "first_block_output_dtype": "torch.float32",
+    "first_layernorm_output_dtype": "torch.float32"
+  },
+  "warmup": 5,
+  "steps": 10,
+  "mean_ms": 23.702937889099122,
+  "std_ms": 0.041884163398162234,
+  "peak_mb": 806.8271484375
+}
