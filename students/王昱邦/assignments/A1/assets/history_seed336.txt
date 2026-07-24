@@ -1,0 +1,11 @@
+The history of machine learning began in 1980. A year after the formation of our first science university, the English department began to investigate the complexity of machine learning in the hands of IBM, and the idea of machine learning. The universe was never fully developed; the mathematics that emerged in the U.S. was now focused on engineering; the fact that IBM was actually a big company, and the engineering team's engineers and engineers would work to create and refine the machine learning.
+
+The experiment was entirely successful. A team of engineers, led by Peter Lam, worked with IBM to develop and integrate several new technologies. All the software engineers were building software on the machine learning plant. The machine learning was a real breakthrough, but IBM didn't take the machine learning seriously.
+
+Blueprints [ edit ]
+
+The following is a piece of software which began with IBM's Core Computer Research Lab, which has pioneered the MSA with a computational technology.
+
+In 2008, IBM published a paper outlining the evolution of machine learning (AI), using the software to determine what machines that can read and understand these machines.
+
+Lumigation is also well documented in the C.I.A. Times and is the application of the machine learning (C.I.A.C

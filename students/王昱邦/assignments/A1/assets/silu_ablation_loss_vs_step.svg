@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="650" viewBox="0 0 1000 650">
+<rect width="100%" height="100%" fill="white"/>
+<text x="500.0" y="32" text-anchor="middle" font-family="sans-serif" font-size="22">TinyStories SwiGLU versus parameter-matched SiLU</text>
+<line x1="90.00" y1="70.0" x2="90.00" y2="570.0" stroke="#e5e7eb"/>
+<text x="90.00" y="595.0" text-anchor="middle" font-family="sans-serif" font-size="12">25</text>
+<line x1="90.0" y1="70.00" x2="740.0" y2="70.00" stroke="#e5e7eb"/>
+<text x="78.0" y="74.00" text-anchor="end" font-family="sans-serif" font-size="12">5.746</text>
+<line x1="220.00" y1="70.0" x2="220.00" y2="570.0" stroke="#e5e7eb"/>
+<text x="220.00" y="595.0" text-anchor="middle" font-family="sans-serif" font-size="12">270</text>
+<line x1="90.0" y1="170.00" x2="740.0" y2="170.00" stroke="#e5e7eb"/>
+<text x="78.0" y="174.00" text-anchor="end" font-family="sans-serif" font-size="12">4.882</text>
+<line x1="350.00" y1="70.0" x2="350.00" y2="570.0" stroke="#e5e7eb"/>
+<text x="350.00" y="595.0" text-anchor="middle" font-family="sans-serif" font-size="12">515</text>
+<line x1="90.0" y1="270.00" x2="740.0" y2="270.00" stroke="#e5e7eb"/>
+<text x="78.0" y="274.00" text-anchor="end" font-family="sans-serif" font-size="12">4.019</text>
+<line x1="480.00" y1="70.0" x2="480.00" y2="570.0" stroke="#e5e7eb"/>
+<text x="480.00" y="595.0" text-anchor="middle" font-family="sans-serif" font-size="12">760</text>
+<line x1="90.0" y1="370.00" x2="740.0" y2="370.00" stroke="#e5e7eb"/>
+<text x="78.0" y="374.00" text-anchor="end" font-family="sans-serif" font-size="12">3.155</text>
+<line x1="610.00" y1="70.0" x2="610.00" y2="570.0" stroke="#e5e7eb"/>
+<text x="610.00" y="595.0" text-anchor="middle" font-family="sans-serif" font-size="12">1005</text>
+<line x1="90.0" y1="470.00" x2="740.0" y2="470.00" stroke="#e5e7eb"/>
+<text x="78.0" y="474.00" text-anchor="end" font-family="sans-serif" font-size="12">2.291</text>
+<line x1="740.00" y1="70.0" x2="740.00" y2="570.0" stroke="#e5e7eb"/>
+<text x="740.00" y="595.0" text-anchor="middle" font-family="sans-serif" font-size="12">1250</text>
+<line x1="90.0" y1="570.00" x2="740.0" y2="570.00" stroke="#e5e7eb"/>
+<text x="78.0" y="574.00" text-anchor="end" font-family="sans-serif" font-size="12">1.428</text>
+<line x1="90.0" y1="570.0" x2="740.0" y2="570.0" stroke="#111827" stroke-width="1.5"/>
+<line x1="90.0" y1="70.0" x2="90.0" y2="570.0" stroke="#111827" stroke-width="1.5"/>
+<text x="415.0" y="628" text-anchor="middle" font-family="sans-serif" font-size="15">Optimizer step</text>
+<text x="24" y="320.0" text-anchor="middle" transform="rotate(-90 24 320.0)" font-family="sans-serif" font-size="15">Cross-entropy loss</text>
+<polyline points="90.00,101.08 103.27,283.71 116.53,341.03 129.80,385.16 143.06,408.32 156.33,431.76 169.59,447.01 182.86,441.45 196.12,451.96 209.39,463.30 222.65,472.57 235.92,481.84 249.18,488.89 262.45,488.98 275.71,494.25 288.98,494.14 302.24,499.98 315.51,507.17 328.78,509.55 342.04,507.71 355.31,510.56 368.57,511.43 381.84,517.44 395.10,512.00 408.37,516.75 421.63,514.66 434.90,519.60 448.16,517.26 461.43,526.93 474.69,524.83 487.96,528.51 501.22,527.53 514.49,533.18 527.76,528.11 541.02,526.76 554.29,529.24 567.55,537.27 580.82,531.15 594.08,538.28 607.35,533.80 620.61,535.30 633.88,532.21 647.14,541.24 660.41,544.22 673.67,535.99 686.94,543.93 700.20,539.15 713.47,535.08 726.73,544.24 740.00,547.27" fill="none" stroke="#2563eb" stroke-width="2.2"/>
+<line x1="768.0" y1="70.0" x2="804.0" y2="70.0" stroke="#2563eb" stroke-width="2.2"/>
+<text x="812.0" y="74.0" font-family="sans-serif" font-size="12">SwiGLU — train</text>
+<polyline points="129.80,389.54 182.86,455.16 235.92,482.61 288.98,497.49 342.04,507.97 395.10,516.35 448.16,523.26 501.22,528.73 554.29,533.60 607.35,537.46 660.41,540.20 713.47,542.11 740.00,542.70" fill="none" stroke="#2563eb" stroke-width="2.2" stroke-dasharray="8 5"/>
+<circle cx="129.80" cy="389.54" r="3.2" fill="#2563eb"/>
+<circle cx="182.86" cy="455.16" r="3.2" fill="#2563eb"/>
+<circle cx="235.92" cy="482.61" r="3.2" fill="#2563eb"/>
+<circle cx="288.98" cy="497.49" r="3.2" fill="#2563eb"/>
+<circle cx="342.04" cy="507.97" r="3.2" fill="#2563eb"/>
+<circle cx="395.10" cy="516.35" r="3.2" fill="#2563eb"/>
+<circle cx="448.16" cy="523.26" r="3.2" fill="#2563eb"/>
+<circle cx="501.22" cy="528.73" r="3.2" fill="#2563eb"/>
+<circle cx="554.29" cy="533.60" r="3.2" fill="#2563eb"/>
+<circle cx="607.35" cy="537.46" r="3.2" fill="#2563eb"/>
+<circle cx="660.41" cy="540.20" r="3.2" fill="#2563eb"/>
+<circle cx="713.47" cy="542.11" r="3.2" fill="#2563eb"/>
+<circle cx="740.00" cy="542.70" r="3.2" fill="#2563eb"/>
+<line x1="768.0" y1="94.0" x2="804.0" y2="94.0" stroke="#2563eb" stroke-width="2.2" stroke-dasharray="8 5"/>
+<text x="812.0" y="98.0" font-family="sans-serif" font-size="12">SwiGLU — validation</text>
+<polyline points="90.00,92.73 103.27,272.54 116.53,332.46 129.80,373.24 143.06,396.92 156.33,418.61 169.59,434.85 182.86,427.82 196.12,441.46 209.39,451.51 222.65,461.59 235.92,472.89 249.18,480.50 262.45,481.70 275.71,486.84 288.98,487.29 302.24,494.12 315.51,501.44 328.78,503.65 342.04,503.24 355.31,505.64 368.57,506.62 381.84,512.53 395.10,506.83 408.37,512.31 421.63,510.39 434.90,515.91 448.16,513.75 461.43,523.23 474.69,520.22 487.96,525.36 501.22,524.15 514.49,529.18 527.76,524.41 541.02,522.93 554.29,526.52 567.55,533.86 580.82,528.65 594.08,535.23 607.35,531.15 620.61,533.39 633.88,529.86 647.14,538.14 660.41,542.11 673.67,532.48 686.94,541.24 700.20,536.30 713.47,532.62 726.73,541.03 740.00,545.29" fill="none" stroke="#dc2626" stroke-width="2.2"/>
+<line x1="768.0" y1="118.0" x2="804.0" y2="118.0" stroke="#dc2626" stroke-width="2.2"/>
+<text x="812.0" y="122.0" font-family="sans-serif" font-size="12">SiLU_dff2048 — train</text>
+<polyline points="129.80,377.93 182.86,444.78 235.92,473.57 288.98,491.11 342.04,502.70 395.10,511.86 448.16,519.30 501.22,525.52 554.29,530.34 607.35,534.56 660.41,537.37 713.47,539.44 740.00,540.11" fill="none" stroke="#dc2626" stroke-width="2.2" stroke-dasharray="8 5"/>
+<circle cx="129.80" cy="377.93" r="3.2" fill="#dc2626"/>
+<circle cx="182.86" cy="444.78" r="3.2" fill="#dc2626"/>
+<circle cx="235.92" cy="473.57" r="3.2" fill="#dc2626"/>
+<circle cx="288.98" cy="491.11" r="3.2" fill="#dc2626"/>
+<circle cx="342.04" cy="502.70" r="3.2" fill="#dc2626"/>
+<circle cx="395.10" cy="511.86" r="3.2" fill="#dc2626"/>
+<circle cx="448.16" cy="519.30" r="3.2" fill="#dc2626"/>
+<circle cx="501.22" cy="525.52" r="3.2" fill="#dc2626"/>
+<circle cx="554.29" cy="530.34" r="3.2" fill="#dc2626"/>
+<circle cx="607.35" cy="534.56" r="3.2" fill="#dc2626"/>
+<circle cx="660.41" cy="537.37" r="3.2" fill="#dc2626"/>
+<circle cx="713.47" cy="539.44" r="3.2" fill="#dc2626"/>
+<circle cx="740.00" cy="540.11" r="3.2" fill="#dc2626"/>
+<line x1="768.0" y1="142.0" x2="804.0" y2="142.0" stroke="#dc2626" stroke-width="2.2" stroke-dasharray="8 5"/>
+<text x="812.0" y="146.0" font-family="sans-serif" font-size="12">SiLU_dff2048 — validation</text>
+</svg>
