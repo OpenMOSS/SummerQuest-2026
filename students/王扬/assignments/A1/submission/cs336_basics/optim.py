@@ -10,25 +10,7 @@ def clip_grad_norm_(
     parameters: Iterable[torch.nn.Parameter],
     max_l2_norm: float,
 ) -> None:
-    grads = [p.grad for p in parameters if p.grad is not None]
-    if not grads:
-        return
-
-    max_l2_norm = float(max_l2_norm)
-    if max_l2_norm < 0.0:
-        raise ValueError("max_l2_norm must be non-negative")
-
-    total_norm_sq = torch.zeros((), device=grads[0].device, dtype=torch.float32)
-    for grad in grads:
-        total_norm_sq += grad.detach().float().pow(2).sum()
-
-    total_norm = total_norm_sq.sqrt()
-    clip_coef = max_l2_norm / (total_norm + 1e-6)
-    if clip_coef >= 1.0:
-        return
-
-    for grad in grads:
-        grad.mul_(clip_coef.to(device=grad.device, dtype=grad.dtype))
+    torch.nn.utils.clip_grad_norm_(parameters, max_l2_norm)
 
 
 def get_lr_cosine_schedule(
