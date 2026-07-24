@@ -1,0 +1,576 @@
+[
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.checkpoint_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/checkpointing.csv",
+      "--metadata-output",
+      "results/checkpointing_metadata.json",
+      "--context-length",
+      "1024",
+      "--checkpoint-block-size",
+      "0",
+      "--warmup-steps",
+      "3",
+      "--measurement-steps",
+      "5",
+      "--batch-size",
+      "1",
+      "--vocab-size",
+      "10000"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "config": {
+      "batch_size": 1,
+      "checkpoint_block_size": "",
+      "config_id": "medium-ctx1024-baseline-bf16",
+      "context_length": 1024,
+      "dtype": "bf16",
+      "measurement_steps": 5,
+      "model_size": "medium",
+      "nested": false,
+      "num_layers": 24,
+      "warmup_steps": 3
+    },
+    "experiment": "checkpointing",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P8",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "steps": 5
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 10064.7197265625,
+      "peak_reserved_mib": 10172.0,
+      "status": "success"
+    },
+    "run_id": "medium-ctx1024-baseline-bf16",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "perf_counter with CUDA synchronization",
+    "warmup": {
+      "steps": 3
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.checkpoint_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/checkpointing.csv",
+      "--metadata-output",
+      "results/checkpointing_metadata.json",
+      "--context-length",
+      "1024",
+      "--checkpoint-block-size",
+      "1",
+      "--warmup-steps",
+      "3",
+      "--measurement-steps",
+      "5",
+      "--batch-size",
+      "1",
+      "--vocab-size",
+      "10000"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "config": {
+      "batch_size": 1,
+      "checkpoint_block_size": 1,
+      "config_id": "medium-ctx1024-block1-bf16",
+      "context_length": 1024,
+      "dtype": "bf16",
+      "measurement_steps": 5,
+      "model_size": "medium",
+      "nested": false,
+      "num_layers": 24,
+      "warmup_steps": 3
+    },
+    "experiment": "checkpointing",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P5",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "steps": 5
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 8116.53564453125,
+      "peak_reserved_mib": 8170.0,
+      "status": "success"
+    },
+    "run_id": "medium-ctx1024-block1-bf16",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "perf_counter with CUDA synchronization",
+    "warmup": {
+      "steps": 3
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.checkpoint_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/checkpointing.csv",
+      "--metadata-output",
+      "results/checkpointing_metadata.json",
+      "--context-length",
+      "1024",
+      "--checkpoint-block-size",
+      "2",
+      "--warmup-steps",
+      "3",
+      "--measurement-steps",
+      "5",
+      "--batch-size",
+      "1",
+      "--vocab-size",
+      "10000"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "config": {
+      "batch_size": 1,
+      "checkpoint_block_size": 2,
+      "config_id": "medium-ctx1024-block2-bf16",
+      "context_length": 1024,
+      "dtype": "bf16",
+      "measurement_steps": 5,
+      "model_size": "medium",
+      "nested": false,
+      "num_layers": 24,
+      "warmup_steps": 3
+    },
+    "experiment": "checkpointing",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P5",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "steps": 5
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 8117.47314453125,
+      "peak_reserved_mib": 8202.0,
+      "status": "success"
+    },
+    "run_id": "medium-ctx1024-block2-bf16",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "perf_counter with CUDA synchronization",
+    "warmup": {
+      "steps": 3
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.checkpoint_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/checkpointing.csv",
+      "--metadata-output",
+      "results/checkpointing_metadata.json",
+      "--context-length",
+      "1024",
+      "--checkpoint-block-size",
+      "4",
+      "--warmup-steps",
+      "3",
+      "--measurement-steps",
+      "5",
+      "--batch-size",
+      "1",
+      "--vocab-size",
+      "10000"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "config": {
+      "batch_size": 1,
+      "checkpoint_block_size": 4,
+      "config_id": "medium-ctx1024-block4-bf16",
+      "context_length": 1024,
+      "dtype": "bf16",
+      "measurement_steps": 5,
+      "model_size": "medium",
+      "nested": false,
+      "num_layers": 24,
+      "warmup_steps": 3
+    },
+    "experiment": "checkpointing",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P5",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "steps": 5
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 8117.47314453125,
+      "peak_reserved_mib": 8220.0,
+      "status": "success"
+    },
+    "run_id": "medium-ctx1024-block4-bf16",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "perf_counter with CUDA synchronization",
+    "warmup": {
+      "steps": 3
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.checkpoint_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/checkpointing.csv",
+      "--metadata-output",
+      "results/checkpointing_metadata.json",
+      "--context-length",
+      "1024",
+      "--checkpoint-block-size",
+      "8",
+      "--warmup-steps",
+      "3",
+      "--measurement-steps",
+      "5",
+      "--batch-size",
+      "1",
+      "--vocab-size",
+      "10000"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "config": {
+      "batch_size": 1,
+      "checkpoint_block_size": 8,
+      "config_id": "medium-ctx1024-block8-bf16",
+      "context_length": 1024,
+      "dtype": "bf16",
+      "measurement_steps": 5,
+      "model_size": "medium",
+      "nested": false,
+      "num_layers": 24,
+      "warmup_steps": 3
+    },
+    "experiment": "checkpointing",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P3",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "steps": 5
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 8117.47314453125,
+      "peak_reserved_mib": 8178.0,
+      "status": "success"
+    },
+    "run_id": "medium-ctx1024-block8-bf16",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "perf_counter with CUDA synchronization",
+    "warmup": {
+      "steps": 3
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.checkpoint_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/checkpointing.csv",
+      "--metadata-output",
+      "results/checkpointing_metadata.json",
+      "--context-length",
+      "2048",
+      "--checkpoint-block-size",
+      "0",
+      "--warmup-steps",
+      "3",
+      "--measurement-steps",
+      "5",
+      "--batch-size",
+      "1",
+      "--vocab-size",
+      "10000"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "config": {
+      "batch_size": 1,
+      "checkpoint_block_size": "",
+      "config_id": "medium-ctx2048-baseline-bf16",
+      "context_length": 2048,
+      "dtype": "bf16",
+      "measurement_steps": 5,
+      "model_size": "medium",
+      "nested": false,
+      "num_layers": 24,
+      "warmup_steps": 3
+    },
+    "experiment": "checkpointing",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P3",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "steps": 5
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 19664.3876953125,
+      "peak_reserved_mib": 20240.0,
+      "status": "success"
+    },
+    "run_id": "medium-ctx2048-baseline-bf16",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "perf_counter with CUDA synchronization",
+    "warmup": {
+      "steps": 3
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.checkpoint_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/checkpointing.csv",
+      "--metadata-output",
+      "results/checkpointing_metadata.json",
+      "--context-length",
+      "2048",
+      "--checkpoint-block-size",
+      "1",
+      "--warmup-steps",
+      "3",
+      "--measurement-steps",
+      "5",
+      "--batch-size",
+      "1",
+      "--vocab-size",
+      "10000"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "config": {
+      "batch_size": 1,
+      "checkpoint_block_size": 1,
+      "config_id": "medium-ctx2048-block1-bf16",
+      "context_length": 2048,
+      "dtype": "bf16",
+      "measurement_steps": 5,
+      "model_size": "medium",
+      "nested": false,
+      "num_layers": 24,
+      "warmup_steps": 3
+    },
+    "experiment": "checkpointing",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P0",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "steps": 5
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 8136.80126953125,
+      "peak_reserved_mib": 9690.0,
+      "status": "success"
+    },
+    "run_id": "medium-ctx2048-block1-bf16",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "perf_counter with CUDA synchronization",
+    "warmup": {
+      "steps": 3
+    }
+  }
+]
