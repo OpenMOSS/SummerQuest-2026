@@ -1,0 +1,12 @@
+{
+  "command": "uv run --no-sync python profiling/benchmark.py --mode=forward --dtype=FP32 --output=results/benchmark --warmup=0 --steps=10",
+  "model_size": "small",
+  "batch_size": 4,
+  "context_length": 512,
+  "mode": "forward",
+  "dtype": "FP32",
+  "warmup": 0,
+  "steps": 10,
+  "mean_ms": 42.900786781311034,
+  "std_ms": 57.181605393460664
+}
