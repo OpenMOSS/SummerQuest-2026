@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="420" viewBox="0 0 760 420">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="380.0" y="30" text-anchor="middle" font-family="Arial" font-size="20">A2-P Peak Reserved Memory</text>
+<text x="22" y="205.0" transform="rotate(-90 22 205.0)" text-anchor="middle" font-family="Arial" font-size="13">MiB</text>
+<line x1="90" y1="350" x2="730" y2="350" stroke="#222"/>
+<line x1="90" y1="60" x2="90" y2="350" stroke="#222"/>
+<rect x="111.3" y="302.6" width="66.1" height="47.4" fill="#2f7f91"/>
+<text x="144.4" y="296.6" text-anchor="middle" font-family="Arial" font-size="11">7834.0</text>
+<text x="144.4" y="374" text-anchor="middle" font-family="Arial" font-size="11">xl-128-forward</text>
+<rect x="218.0" y="110.9" width="66.1" height="239.1" fill="#2f7f91"/>
+<text x="251.1" y="104.9" text-anchor="middle" font-family="Arial" font-size="11">39550.0</text>
+<text x="251.1" y="374" text-anchor="middle" font-family="Arial" font-size="11">xl-128-train_step</text>
+<rect x="324.7" y="290.0" width="66.1" height="60.0" fill="#2f7f91"/>
+<text x="357.7" y="284.0" text-anchor="middle" font-family="Arial" font-size="11">9930.0</text>
+<text x="357.7" y="374" text-anchor="middle" font-family="Arial" font-size="11">xl-2048-forward</text>
+<rect x="431.3" y="60.0" width="66.1" height="290.0" fill="#2f7f91"/>
+<text x="464.4" y="54.0" text-anchor="middle" font-family="Arial" font-size="11">47964.0</text>
+<text x="464.4" y="374" text-anchor="middle" font-family="Arial" font-size="11">xl-2048-train_step</text>
+<rect x="538.0" y="86.1" width="66.1" height="263.9" fill="#2f7f91"/>
+<text x="571.1" y="80.1" text-anchor="middle" font-family="Arial" font-size="11">43646.0</text>
+<text x="571.1" y="374" text-anchor="middle" font-family="Arial" font-size="11">xl-1024-train_step</text>
+<rect x="644.7" y="64.8" width="66.1" height="285.2" fill="#2f7f91"/>
+<text x="677.7" y="58.8" text-anchor="middle" font-family="Arial" font-size="11">47168.0</text>
+<text x="677.7" y="374" text-anchor="middle" font-family="Arial" font-size="11">large-2048-train_step</text>
+</svg>
