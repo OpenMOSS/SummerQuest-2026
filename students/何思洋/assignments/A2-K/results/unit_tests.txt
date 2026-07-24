@@ -1,0 +1,16 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.13, pytest-9.0.2, pluggy-1.6.0 -- /inspire/qb-ilm/project/exploration-topic/hesiyang-CZXS25210137/2026summer/assignment2-systems/../assignment1-basics/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /inspire/qb-ilm/project/exploration-topic/hesiyang-CZXS25210137/2026summer/assignment2-systems
+configfile: pyproject.toml
+plugins: timeout-2.4.0, jaxtyping-0.3.9
+collecting ... collected 6 items
+
+tests/test_attention.py::test_flash_forward_pass_pytorch PASSED
+tests/test_attention.py::test_flash_forward_pass_triton[False] PASSED
+tests/test_attention.py::test_flash_forward_pass_triton[True] PASSED
+tests/test_attention.py::test_flash_backward_pytorch PASSED
+tests/test_attention.py::test_flash_backward_triton[False] PASSED
+tests/test_attention.py::test_flash_backward_triton[True] PASSED
+
+============================== 6 passed in 1.95s ===============================
