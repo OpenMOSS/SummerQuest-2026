@@ -1,0 +1,33 @@
+{
+  "format": "summerquest-a1-public-environment-log-v1",
+  "checked_at_utc": "2026-07-12",
+  "starter_commit": "a158843b20107949f1a8d7df1b05cd33b9166712",
+  "correctness_environment": {
+    "python": "3.13.7",
+    "pytorch": "2.11.0+cu130",
+    "numpy": "2.4.4",
+    "regex": "2026.3.32",
+    "platform": "Linux x86_64"
+  },
+  "gpu_experiment_environment": {
+    "python": "3.12.3",
+    "pytorch": "2.7.1+cu128",
+    "cuda_runtime": "12.8",
+    "gpu_model": "NVIDIA GeForce RTX 4090",
+    "gpu_count": 2,
+    "visible_memory_per_gpu_mib": 49140,
+    "training_precision": "bfloat16",
+    "tf32_matmul": true
+  },
+  "validation": {
+    "pytest": {
+      "passed": 47,
+      "xpassed": 1,
+      "failed": 0
+    },
+    "ruff_check": "passed",
+    "ruff_format_check": "passed",
+    "json_configs_parsed": 11
+  },
+  "environment_note": "Correctness tests used the locked dependency environment. GPU experiments used a driver-compatible PyTorch build with the same source and public configurations. Internal host, account, and path identifiers are intentionally omitted."
+}

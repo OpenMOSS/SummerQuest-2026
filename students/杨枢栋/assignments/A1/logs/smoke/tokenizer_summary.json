@@ -1,0 +1,24 @@
+{
+  "vocab_size": 512,
+  "num_merges": 255,
+  "special_tokens": [
+    "<|endoftext|>"
+  ],
+  "train_text": "train.txt",
+  "valid_text": "valid.txt",
+  "train": {
+    "tokens": 2152635,
+    "bytes": 5234688,
+    "bytes_per_token": 2.4317582869367076,
+    "tokens_per_sec": 217864.3121557777
+  },
+  "valid": {
+    "tokens": 3391,
+    "bytes": 8192,
+    "bytes_per_token": 2.4158065467413743,
+    "tokens_per_sec": 193421.79516679587
+  },
+  "longest_token_bytes": 13,
+  "longest_token_preview": "<|endoftext|>",
+  "wall_clock_sec": 11.3239107131958
+}

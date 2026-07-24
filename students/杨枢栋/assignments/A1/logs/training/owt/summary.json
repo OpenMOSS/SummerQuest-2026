@@ -1,0 +1,17 @@
+{
+  "final_val_loss": 4.011238098144531,
+  "total_training_time_sec": 2271.594458580017,
+  "d_model": 512,
+  "num_layers": 4,
+  "num_heads": 16,
+  "context_length": 256,
+  "batch_size": 128,
+  "steps": 10000,
+  "vocab_size": 32000,
+  "norm_mode": "pre",
+  "use_rmsnorm": true,
+  "use_rope": true,
+  "ffn_type": "swiglu",
+  "checkpoint": "runs/owt_small/checkpoint.pt",
+  "sample": "The meaning of life is that the view of life is only just as reflected in the way that it may be as a parent, not as a child, but as a mother, it is not in the sense that it is the way of life itself, but to be born, as that is not a family, for that. The attitude is not a word of heart, but a word of it, a child, a mother, and the child, as the child, who is quite simply a matter of the power and not a parent, the child will be the true way of life.\n\nIs there any plausible evidence of a mother or child with a child, or is it the child who has been a child? Is it a child? Is it a child? Is it a parent? Is it an accident or something? Is it a child or something? Is it a child who is being a child? Is it a parent? Is it a child? Is it an age? Is it a child? Is it a parent or another child? Is it an adult or an adult? Is it a child who is a child? Is it a parent? Is it a parent? Is it a parent? Is it a parent? Is it a parent? Is it a parent? Is"
+}

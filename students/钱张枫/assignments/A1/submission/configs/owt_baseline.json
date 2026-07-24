@@ -1,0 +1,23 @@
+{
+    "extends": "tinystories_baseline.json",
+    "experiment_name": "owt_baseline",
+    "data": {
+        "train_path": "artifacts/tokenizer_experiments/owt_train_uint16.npy",
+        "validation_path": "artifacts/tokenizer_experiments/owt_dev_uint16.npy"
+    },
+    "tokenizer": {
+        "vocab_path": "artifacts/owt_bpe/vocab.json",
+        "merges_path": "artifacts/owt_bpe/merges.json",
+        "special_tokens": [
+            "<|endoftext|>"
+        ],
+        "eot_token_id": 256
+    },
+    "model": {
+        "vocab_size": 32000
+    },
+    "training": {
+        "log_dir": "logs/owt_baseline",
+        "checkpoint_dir": "artifacts/checkpoints/owt_baseline"
+    }
+}

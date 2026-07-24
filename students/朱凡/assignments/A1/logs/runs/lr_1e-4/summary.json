@@ -1,0 +1,13 @@
+{
+  "best_validation_iteration": 1000,
+  "best_validation_loss": 2.7140533924102783,
+  "final_iteration": 1000,
+  "final_train_loss": 2.6865100860595703,
+  "final_validation_loss": 2.7140533924102783,
+  "has_non_finite_metric": false,
+  "process_elapsed_seconds": 330.682520843111,
+  "processed_tokens": 65536000,
+  "run_name": "lr_1e-4",
+  "status": "completed",
+  "training_elapsed_seconds": 327.1552552143112
+}

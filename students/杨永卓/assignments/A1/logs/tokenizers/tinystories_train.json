@@ -1,0 +1,7 @@
+{
+  "elapsed_sec": 535.7076371349394,
+  "input_bytes": 2227753162,
+  "merge_count": 9743,
+  "output": "data/tinystories_tokenizer.json",
+  "vocab_size": 10000
+}

@@ -1,0 +1,41 @@
+{
+  "sample_documents": 10,
+  "benchmark_bytes": 2097152,
+  "compression": {
+    "tinystories_sample_with_tinystories_10k": {
+      "bytes": 7435,
+      "tokens": 1808,
+      "bytes_per_token": 4.112278761061947
+    },
+    "owt_sample_with_owt_32k": {
+      "bytes": 31487,
+      "tokens": 6712,
+      "bytes_per_token": 4.691150178784267
+    },
+    "owt_sample_with_tinystories_10k": {
+      "bytes": 31487,
+      "tokens": 9873,
+      "bytes_per_token": 3.1892028765319558
+    }
+  },
+  "throughput": {
+    "tinystories_10k_on_tinystories_prefix": {
+      "bytes": 2097152,
+      "tokens": 510486,
+      "seconds": 2.155065660364926,
+      "bytes_per_second": 973126.730461141,
+      "tokens_per_second": 236877.23738011648
+    },
+    "owt_32k_on_owt_prefix": {
+      "bytes": 2097152,
+      "tokens": 473783,
+      "seconds": 2.6747267907485366,
+      "bytes_per_second": 784062.13571185,
+      "tokens_per_second": 177133.23156545992
+    }
+  },
+  "pile_estimate": {
+    "pile_bytes": 825000000000,
+    "hours_using_owt_32k_throughput": 292.2812570952763
+  }
+}

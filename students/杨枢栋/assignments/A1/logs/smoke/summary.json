@@ -1,0 +1,13 @@
+{
+  "final_val_loss": 6.081082344055176,
+  "total_training_time_sec": 92.60946869850159,
+  "d_model": 64,
+  "num_layers": 2,
+  "num_heads": 4,
+  "context_length": 32,
+  "batch_size": 8,
+  "steps": 20,
+  "vocab_size": 512,
+  "checkpoint": "runs/smoke_train/checkpoint.pt",
+  "sample": "Once upon a time@ B, me�ir� wantird namedwayor�Gent k�umow\u0011 namedal pl youNul BerpͿ� sheh can ro went wanted)other and\u000e� want�ou loved be;oo didTvor9� nam gir(� tree\u0005h�"
+}

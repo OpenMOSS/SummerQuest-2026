@@ -1,0 +1,51 @@
+{
+  "assignment": "A2-P",
+  "topic": "Profiling and performance analysis",
+  "source_commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+  "tool": "Nsight Systems",
+  "tool_version": "Nsight Systems CLI 2026.3.1 (from stats logs)",
+  "trace_policy": "Full .nsys-rep/.sqlite files kept locally and not submitted to GitHub.",
+  "hardware": {
+    "gpu_name": "NVIDIA H200",
+    "gpu_total_memory_gib": 139.81,
+    "driver_version": "570.124.06"
+  },
+  "software": {
+    "python": "3.10.20",
+    "torch": "2.11.0+cu128",
+    "cuda_runtime": "12.8",
+    "os": "Linux"
+  },
+  "required_trace_matrix": {
+    "models": [
+      "small",
+      "large"
+    ],
+    "context_lengths": [
+      256,
+      512,
+      1024
+    ],
+    "mode": "train_step",
+    "dtype": "fp32",
+    "batch_size": 4,
+    "warmup_steps": 5,
+    "measurement_steps_per_trace": 1
+  },
+  "stage_markers": [
+    "profile/warmup",
+    "profile/measure",
+    "forward",
+    "backward",
+    "optimizer",
+    "attention/scores",
+    "attention/softmax",
+    "attention/value"
+  ],
+  "commands_redacted": [
+    "PYTHON_CMD=python NSYS_CMD=nsys bash profiling/run_nsys_suite.sh",
+    "PYTHON_CMD=python bash profiling/run_torch_profiler_suite.sh"
+  ],
+  "stage_summary_file": "results/profile/stage_summary.csv",
+  "stage_summary_policy": "Stage durations are extracted from NVTX_EVENTS within the profile/measure range in local Nsight SQLite files. SQLite files are retained locally and not submitted."
+}

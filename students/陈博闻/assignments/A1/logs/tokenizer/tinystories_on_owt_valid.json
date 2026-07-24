@@ -1,0 +1,12 @@
+{
+  "input": "data/owt_valid.txt",
+  "byte_count": 289998753,
+  "token_count": 91369576,
+  "compression_ratio_bytes_per_token": 3.1739093656295396,
+  "throughput_bytes_per_sec": 4316880.212029779,
+  "throughput_tokens_per_sec": 1360114.5195819205,
+  "elapsed_sec": 67.17785501480103,
+  "longest_token_id": 7160,
+  "longest_token_num_bytes": 15,
+  "longest_token_utf8_preview": " accomplishment"
+}

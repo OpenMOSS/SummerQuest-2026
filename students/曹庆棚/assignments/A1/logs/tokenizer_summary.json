@@ -1,0 +1,189 @@
+{
+  "tinystories_10k": {
+    "training": {
+      "input_name": "TinyStoriesV2-GPT4-train.txt",
+      "vocab_size": 10000,
+      "num_merges": 9743,
+      "special_tokens": [
+        "<|endoftext|>"
+      ],
+      "elapsed_sec": 749.5937246447429,
+      "output_name": "tinystories_tokenizer.json"
+    },
+    "validation_metrics": {
+      "input_name": "TinyStoriesV2-GPT4-valid.txt",
+      "bytes": 22502601,
+      "tokens": 5461210,
+      "bytes_per_token": 4.120442356181139,
+      "tokens_per_sec": 219674.5609793042,
+      "megabytes_per_sec": 0.9051563656346215,
+      "longest_token_id": 7160,
+      "longest_token_bytes": 15,
+      "longest_token_preview": " accomplishment",
+      "elapsed_sec": 24.86045710369
+    },
+    "training_metrics": {
+      "input_name": "TinyStoriesV2-GPT4-train.txt",
+      "workers": 8,
+      "bytes": 2227753162,
+      "tokens": 540796778,
+      "bytes_per_token": 4.11939059666513,
+      "tokens_per_sec": 805545.6339731255,
+      "megabytes_per_sec": 3.3183571097735443,
+      "longest_token_id": 7160,
+      "longest_token_bytes": 15,
+      "longest_token_preview": " accomplishment",
+      "elapsed_sec": 671.342199861072
+    },
+    "encoding": {
+      "train": {
+        "input_name": "TinyStoriesV2-GPT4-train.txt",
+        "output_name": "tinystories_train.npy",
+        "tokens": 540796778,
+        "dtype": "uint16",
+        "elapsed_sec": 5060.165741001256,
+        "tokens_per_sec": 106873.33294600593
+      },
+      "validation": {
+        "input_name": "TinyStoriesV2-GPT4-valid.txt",
+        "output_name": "tinystories_validation.npy",
+        "tokens": 5461210,
+        "dtype": "uint16",
+        "elapsed_sec": 52.17183865234256,
+        "tokens_per_sec": 104677.35355067436
+      }
+    }
+  },
+  "owt_32k": {
+    "training": {
+      "input_name": "owt_train.txt",
+      "vocab_size": 32000,
+      "num_merges": 31743,
+      "special_tokens": [
+        "<|endoftext|>"
+      ],
+      "workers": 8,
+      "chunk_size_mb": 256,
+      "elapsed_sec": 474.9704035129398,
+      "output_name": "owt_tokenizer.json"
+    },
+    "validation_metrics": {
+      "input_name": "owt_valid.txt",
+      "workers": 8,
+      "cache_size": 32768,
+      "bytes": 289998753,
+      "tokens": 66401098,
+      "bytes_per_token": 4.367378879789006,
+      "tokens_per_sec": 2149120.212358932,
+      "megabytes_per_sec": 9.386022225584064,
+      "longest_token_id": 25822,
+      "longest_token_bytes": 64,
+      "longest_token_preview": "ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ",
+      "elapsed_sec": 30.89687473885715
+    },
+    "encoding": {
+      "train": {
+        "input_name": "owt_train.txt",
+        "output_name": "owt_train.npy",
+        "tokens": 2727120452,
+        "dtype": "uint16",
+        "cache_size": 32768,
+        "elapsed_sec": 8942.055870140903,
+        "tokens_per_sec": 304976.89699147764
+      },
+      "validation": {
+        "input_name": "owt_valid.txt",
+        "output_name": "owt_validation.npy",
+        "tokens": 66401098,
+        "dtype": "uint16",
+        "cache_size": 32768,
+        "elapsed_sec": 218.76156165916473,
+        "tokens_per_sec": 303531.833912643
+      }
+    }
+  },
+  "cross_domain_comparison": {
+    "tinystories_documents": {
+      "input_name": "TinyStoriesV2-GPT4-train.txt",
+      "sample_strategy": "approximately evenly spaced documents aligned to delimiter boundaries",
+      "document_count": 10,
+      "tokenizers": {
+        "tinystories_10k": {
+          "tokenizer_name": "tinystories_tokenizer.json",
+          "total_bytes": 6912,
+          "total_tokens": 1708,
+          "bytes_per_token": 4.046838407494145,
+          "sample_elapsed_sec": 0.003507888875901699,
+          "sample_tokens_per_sec": 486902.53894116316
+        },
+        "owt_32k": {
+          "tokenizer_name": "owt_tokenizer.json",
+          "total_bytes": 6912,
+          "total_tokens": 1744,
+          "bytes_per_token": 3.963302752293578,
+          "sample_elapsed_sec": 0.003742491826415062,
+          "sample_tokens_per_sec": 465999.68173359515
+        }
+      },
+      "throughput_extrapolations": {
+        "tinystories_10k": {
+          "benchmark_name": "tinystories_train_tokenizer_metrics.json",
+          "bytes_per_second": 3318357.109773544,
+          "target_gb": 825,
+          "estimated_seconds": 248617.00314596362,
+          "estimated_hours": 69.06027865165656,
+          "estimated_days": 2.87751161048569
+        },
+        "owt_32k": {
+          "benchmark_name": "owt_validation_tokenizer_metrics.json",
+          "bytes_per_second": 9386022.225584064,
+          "target_gb": 825,
+          "estimated_seconds": 87896.65954031584,
+          "estimated_hours": 24.415738761198845,
+          "estimated_days": 1.0173224483832852
+        }
+      }
+    },
+    "owt_documents": {
+      "input_name": "owt_train.txt",
+      "sample_strategy": "approximately evenly spaced documents aligned to delimiter boundaries",
+      "document_count": 10,
+      "tokenizers": {
+        "tinystories_10k": {
+          "tokenizer_name": "tinystories_tokenizer.json",
+          "total_bytes": 42021,
+          "total_tokens": 13075,
+          "bytes_per_token": 3.213843212237094,
+          "sample_elapsed_sec": 0.026556150056421757,
+          "sample_tokens_per_sec": 492352.9943994359
+        },
+        "owt_32k": {
+          "tokenizer_name": "owt_tokenizer.json",
+          "total_bytes": 42021,
+          "total_tokens": 9788,
+          "bytes_per_token": 4.293114017163874,
+          "sample_elapsed_sec": 0.028647299855947495,
+          "sample_tokens_per_sec": 341672.68989464303
+        }
+      },
+      "throughput_extrapolations": {
+        "tinystories_10k": {
+          "benchmark_name": "tinystories_train_tokenizer_metrics.json",
+          "bytes_per_second": 3318357.109773544,
+          "target_gb": 825,
+          "estimated_seconds": 248617.00314596362,
+          "estimated_hours": 69.06027865165656,
+          "estimated_days": 2.87751161048569
+        },
+        "owt_32k": {
+          "benchmark_name": "owt_validation_tokenizer_metrics.json",
+          "bytes_per_second": 9386022.225584064,
+          "target_gb": 825,
+          "estimated_seconds": 87896.65954031584,
+          "estimated_hours": 24.415738761198845,
+          "estimated_days": 1.0173224483832852
+        }
+      }
+    }
+  }
+}

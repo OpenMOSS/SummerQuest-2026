@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="620" viewBox="0 0 1000 620">
+<rect width="100%" height="100%" fill="white"/>
+<text x="500.0" y="36" text-anchor="middle" font-family="sans-serif" font-size="22">OpenWebText baseline validation loss by wall-clock time</text>
+<line x1="90.00" y1="70" x2="90.00" y2="540" stroke="#e5e7eb"/>
+<text x="90.00" y="568" text-anchor="middle" font-family="sans-serif" font-size="12">7.17</text>
+<line x1="90" y1="540.00" x2="750" y2="540.00" stroke="#e5e7eb"/>
+<text x="78" y="544.00" text-anchor="end" font-family="sans-serif" font-size="12">4.09</text>
+<line x1="222.00" y1="70" x2="222.00" y2="540" stroke="#e5e7eb"/>
+<text x="222.00" y="568" text-anchor="middle" font-family="sans-serif" font-size="12">412</text>
+<line x1="90" y1="446.00" x2="750" y2="446.00" stroke="#e5e7eb"/>
+<text x="78" y="450.00" text-anchor="end" font-family="sans-serif" font-size="12">5.09</text>
+<line x1="354.00" y1="70" x2="354.00" y2="540" stroke="#e5e7eb"/>
+<text x="354.00" y="568" text-anchor="middle" font-family="sans-serif" font-size="12">816</text>
+<line x1="90" y1="352.00" x2="750" y2="352.00" stroke="#e5e7eb"/>
+<text x="78" y="356.00" text-anchor="end" font-family="sans-serif" font-size="12">6.08</text>
+<line x1="486.00" y1="70" x2="486.00" y2="540" stroke="#e5e7eb"/>
+<text x="486.00" y="568" text-anchor="middle" font-family="sans-serif" font-size="12">1221</text>
+<line x1="90" y1="258.00" x2="750" y2="258.00" stroke="#e5e7eb"/>
+<text x="78" y="262.00" text-anchor="end" font-family="sans-serif" font-size="12">7.08</text>
+<line x1="618.00" y1="70" x2="618.00" y2="540" stroke="#e5e7eb"/>
+<text x="618.00" y="568" text-anchor="middle" font-family="sans-serif" font-size="12">1625</text>
+<line x1="90" y1="164.00" x2="750" y2="164.00" stroke="#e5e7eb"/>
+<text x="78" y="168.00" text-anchor="end" font-family="sans-serif" font-size="12">8.08</text>
+<line x1="750.00" y1="70" x2="750.00" y2="540" stroke="#e5e7eb"/>
+<text x="750.00" y="568" text-anchor="middle" font-family="sans-serif" font-size="12">2030</text>
+<line x1="90" y1="70.00" x2="750" y2="70.00" stroke="#e5e7eb"/>
+<text x="78" y="74.00" text-anchor="end" font-family="sans-serif" font-size="12">9.07</text>
+<line x1="90" y1="540" x2="750" y2="540" stroke="#111827" stroke-width="1.5"/>
+<line x1="90" y1="70" x2="90" y2="540" stroke="#111827" stroke-width="1.5"/>
+<text x="420.00" y="596" text-anchor="middle" font-family="sans-serif" font-size="14">wall_clock_sec</text>
+<text x="24" y="305.00" text-anchor="middle" transform="rotate(-90 24 305.00)" font-family="sans-serif" font-size="14">loss</text>
+<polyline points="120.00,91.36 128.43,247.88 134.56,307.34 140.56,338.05 146.56,359.47 152.55,375.92 158.55,388.77 164.54,399.03 170.54,408.17 176.54,416.22 182.85,423.23 188.85,429.23 194.85,434.48 200.85,439.48 206.86,443.32 212.87,447.49 218.87,450.96 224.87,454.16 230.88,456.99 236.88,459.57 243.17,461.91 249.18,464.30 255.19,466.43 261.19,468.55 267.20,470.55 273.21,472.28 279.22,473.93 285.22,475.56 291.23,477.20 297.24,478.78 303.54,479.94 309.55,481.15 315.55,482.80 321.56,484.10 327.56,485.20 333.56,486.53 339.57,487.34 345.58,488.86 351.59,489.95 357.60,491.16 363.92,492.06 369.93,493.08 375.94,494.09 381.96,495.16 387.97,496.25 393.98,497.06 399.98,497.87 405.99,498.92 412.00,499.64 418.00,500.62 424.36,501.34 430.36,502.14 436.36,502.84 442.37,503.62 448.37,504.32 454.38,505.09 460.38,505.66 466.39,506.16 472.39,506.83 478.39,507.34 484.72,507.93 490.72,508.39 496.73,508.91 502.73,509.48 508.74,509.94 514.74,510.41 520.75,510.77 526.75,511.32 532.76,511.61 538.76,512.10 545.05,512.51 551.06,512.84 557.07,513.23 563.08,513.56 569.08,513.89 575.10,514.21 581.11,514.51 587.12,514.86 593.13,515.08 599.15,515.40 605.47,515.64 611.49,515.89 617.50,516.12 623.51,516.34 629.52,516.53 635.54,516.73 641.55,516.92 647.56,517.10 653.57,517.26 659.59,517.41 665.89,517.56 671.91,517.73 677.92,517.83 683.93,518.00 689.94,518.13 695.95,518.26 701.96,518.37 707.98,518.44 713.99,518.55 720.00,518.64" fill="none" stroke="#1f77b4" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="778" y1="70" x2="802" y2="70" stroke="#1f77b4" stroke-width="3"/>
+<text x="810" y="74" font-family="sans-serif" font-size="12">owt_baseline</text>
+</svg>

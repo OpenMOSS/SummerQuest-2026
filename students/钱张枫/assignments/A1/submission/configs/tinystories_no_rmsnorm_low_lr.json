@@ -1,0 +1,12 @@
+{
+    "extends": "tinystories_no_rmsnorm.json",
+    "experiment_name": "tinystories_no_rmsnorm_low_lr",
+    "optimizer": {
+        "max_learning_rate": 0.0001,
+        "min_learning_rate": 0.00001
+    },
+    "training": {
+        "log_dir": "logs/ablations/tinystories_no_rmsnorm_low_lr",
+        "checkpoint_dir": "artifacts/checkpoints/ablations/tinystories_no_rmsnorm_low_lr"
+    }
+}

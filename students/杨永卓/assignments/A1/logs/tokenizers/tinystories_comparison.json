@@ -1,0 +1,22 @@
+{
+  "results": [
+    {
+      "compression_ratio_bytes_per_token": 4.117627439539847,
+      "longest_token_bytes": 15,
+      "longest_token_utf8": " accomplishment",
+      "sample_bytes": 10000000,
+      "sample_tokens": 2428583,
+      "throughput_bytes_per_sec": 609168.937244418,
+      "tokenizer": "data/tinystories_tokenizer.json"
+    },
+    {
+      "compression_ratio_bytes_per_token": 4.019438002178536,
+      "longest_token_bytes": 64,
+      "longest_token_utf8": "________________________________________________________________",
+      "sample_bytes": 10000000,
+      "sample_tokens": 2487910,
+      "throughput_bytes_per_sec": 588330.2741905961,
+      "tokenizer": "data/owt_tokenizer.json"
+    }
+  ]
+}

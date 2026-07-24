@@ -1,0 +1,18 @@
+{
+    "extends": "owt_baseline.json",
+    "experiment_name": "owt_leaderboard_candidate",
+    "optimizer": {
+        "max_learning_rate": 0.0004,
+        "min_learning_rate": 0.00004,
+        "warmup_steps": 500,
+        "cosine_cycle_steps": 100000
+    },
+    "training": {
+        "max_steps": 100000,
+        "max_wall_clock_sec": 2640.0,
+        "eval_interval": 100,
+        "checkpoint_interval": 1000,
+        "log_dir": "logs/leaderboard/owt_candidate",
+        "checkpoint_dir": "artifacts/checkpoints/leaderboard/owt_candidate"
+    }
+}

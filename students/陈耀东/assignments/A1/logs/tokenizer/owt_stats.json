@@ -1,0 +1,35 @@
+{
+  "tokenizer_train_seconds": 2934.0516587272286,
+  "peak_process_rss_after_bpe_bytes": 9712889856,
+  "bpe_profile_file": "bpe_profile.txt",
+  "actual_vocab_size": 32000,
+  "bpe_num_processes": 32,
+  "encoding_num_processes": 32,
+  "special_tokens": [
+    "<|endoftext|>"
+  ],
+  "longest_token": {
+    "hex": "c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382",
+    "utf8_with_replacement": "ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ",
+    "byte_length": 64
+  },
+  "longest_ordinary_token": {
+    "hex": "c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382",
+    "utf8_with_replacement": "ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ",
+    "byte_length": 64
+  },
+  "train": {
+    "byte_count": 11920511059,
+    "token_count": 2727120452,
+    "encode_seconds": 324.95511000882834,
+    "bytes_per_token": 4.37109811202428,
+    "bytes_per_second": 36683562.41167017
+  },
+  "valid": {
+    "byte_count": 289998753,
+    "token_count": 66401098,
+    "encode_seconds": 12.108630327507854,
+    "bytes_per_token": 4.367378879789006,
+    "bytes_per_second": 23949756.92182076
+  }
+}

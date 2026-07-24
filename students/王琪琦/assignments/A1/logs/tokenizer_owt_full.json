@@ -1,0 +1,9 @@
+{
+  "input_bytes": 11920511059,
+  "input_description": "complete OWT training text",
+  "vocab_size": 32000,
+  "merges": 31743,
+  "training_time_sec": 26450.180775875226,
+  "status": "completed",
+  "scope": "complete OWT tokenizer"
+}

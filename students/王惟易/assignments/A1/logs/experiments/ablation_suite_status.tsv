@@ -1,0 +1,13 @@
+2026-07-16T15:53:24+08:00	SUITE	started
+2026-07-16T15:53:24+08:00	tinystories_ablation_control	started
+2026-07-16T16:11:26+08:00	tinystories_ablation_control	succeeded
+2026-07-16T16:11:26+08:00	tinystories_ablation_no_norm	started
+2026-07-16T16:28:13+08:00	tinystories_ablation_no_norm	succeeded
+2026-07-16T16:28:13+08:00	tinystories_ablation_no_norm_low_lr	started
+2026-07-16T16:45:02+08:00	tinystories_ablation_no_norm_low_lr	succeeded
+2026-07-16T16:45:02+08:00	tinystories_ablation_post_norm	started
+2026-07-16T17:03:03+08:00	tinystories_ablation_post_norm	succeeded
+2026-07-16T17:03:03+08:00	tinystories_ablation_nope	started
+2026-07-16T17:19:59+08:00	tinystories_ablation_nope	succeeded
+2026-07-16T17:19:59+08:00	tinystories_ablation_silu	started
+2026-07-16T17:37:56+08:00	tinystories_ablation_silu	succeeded

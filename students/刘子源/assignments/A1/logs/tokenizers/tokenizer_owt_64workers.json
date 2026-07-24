@@ -1,0 +1,13 @@
+{
+  "input": "data/owt_train.txt",
+  "vocab_size": 32000,
+  "num_merges": 31743,
+  "special_tokens": [
+    "<|endoftext|>"
+  ],
+  "requested_num_workers": 64,
+  "chunks_per_worker": 4,
+  "training_time_sec": 2100.0443309769034,
+  "longest_token_bytes_hex": "c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382",
+  "longest_token_decoded": "ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ"
+}

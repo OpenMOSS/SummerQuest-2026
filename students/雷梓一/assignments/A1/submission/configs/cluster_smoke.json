@@ -1,0 +1,22 @@
+{
+  "base_config": "tinystories_baseline.json",
+  "description": "A800 end-to-end CUDA/compile/autocast smoke test using encoded TinyStories validation data.",
+  "train_path": "data/encoded/tinystories_valid.bin",
+  "val_path": "data/encoded/tinystories_valid.bin",
+  "model_overrides": {
+    "context_length": 64,
+    "d_model": 128,
+    "num_layers": 2,
+    "num_heads": 4,
+    "d_ff": 384
+  },
+  "training_overrides": {
+    "batch_size": 8,
+    "max_steps": 10,
+    "warmup_steps": 1,
+    "min_lr": 0.0001,
+    "eval_interval": 5,
+    "eval_batches": 2,
+    "checkpoint_interval": 10
+  }
+}

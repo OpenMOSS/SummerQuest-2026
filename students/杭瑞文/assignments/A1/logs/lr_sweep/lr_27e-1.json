@@ -1,0 +1,21 @@
+{
+  "status": "diverged",
+  "divergence_reason": "training loss 32.5253 exceeded threshold 27.753 at step 141",
+  "device": "mps",
+  "torch_version": "2.11.0",
+  "parameter_count": 22696448,
+  "max_steps": 5000,
+  "completed_steps": 140,
+  "tokens_per_step": 8192,
+  "tokens_processed": 1146880,
+  "requested_total_tokens": 40960000,
+  "initial_validation_loss": 9.251003551483155,
+  "final_train_loss": 32.52531814575195,
+  "final_validation_loss": null,
+  "best_validation_loss": 9.251003551483155,
+  "elapsed_seconds": 50.02402041701134,
+  "mean_tokens_per_second": 22926.585876931793,
+  "learning_rate": 2.7,
+  "effective_divergence_threshold": 27.753010654449465,
+  "seed": 42
+}

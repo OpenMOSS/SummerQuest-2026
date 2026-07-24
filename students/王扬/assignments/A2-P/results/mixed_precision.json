@@ -1,0 +1,67 @@
+{
+  "accumulation": {
+    "artifact_type": "mixed_precision_accumulation",
+    "cases": [
+      {
+        "absolute_error": 0.000133514404296875,
+        "accumulator_dtype": "fp32",
+        "case_id": "case_1",
+        "input_dtype": "fp32",
+        "output_dtype": "float32",
+        "result": 10.000133514404297
+      },
+      {
+        "absolute_error": 0.046875,
+        "accumulator_dtype": "fp16",
+        "case_id": "case_2",
+        "input_dtype": "fp16",
+        "output_dtype": "float16",
+        "result": 9.953125
+      },
+      {
+        "absolute_error": 0.00213623046875,
+        "accumulator_dtype": "fp32",
+        "case_id": "case_3",
+        "input_dtype": "fp16",
+        "output_dtype": "float32",
+        "result": 10.00213623046875
+      },
+      {
+        "absolute_error": 0.00213623046875,
+        "accumulator_dtype": "fp32",
+        "case_id": "case_4",
+        "input_dtype": "fp16_then_cast_to_fp32",
+        "output_dtype": "float32",
+        "result": 10.00213623046875
+      }
+    ],
+    "device": "cuda",
+    "exact_value": 10.0,
+    "iters": 1000
+  },
+  "artifact_type": "mixed_precision",
+  "toy_dtype_inspection": [
+    {
+      "artifact_type": "toy_autocast_dtype_inspection",
+      "autocast_dtype": "fp16",
+      "device": "cuda",
+      "fc1_output_dtype": "float16",
+      "gradient_dtype": "float32",
+      "layernorm_output_dtype": "float32",
+      "logits_dtype": "float16",
+      "loss_dtype": "float32",
+      "parameter_dtype": "float32"
+    },
+    {
+      "artifact_type": "toy_autocast_dtype_inspection",
+      "autocast_dtype": "bf16",
+      "device": "cuda",
+      "fc1_output_dtype": "bfloat16",
+      "gradient_dtype": "float32",
+      "layernorm_output_dtype": "float32",
+      "logits_dtype": "bfloat16",
+      "loss_dtype": "float32",
+      "parameter_dtype": "float32"
+    }
+  ]
+}

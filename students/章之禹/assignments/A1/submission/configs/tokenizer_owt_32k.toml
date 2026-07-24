@@ -1,0 +1,30 @@
+[metadata]
+status = "deferred_cpu_memory"
+purpose = "Train, benchmark, and encode the required OpenWebText 32K byte-level BPE tokenizer."
+deferred_reason = "The 16-worker run reached the current CPU environment's memory limit during pre-tokenization; retry on a host with more RAM."
+
+[tokenizer]
+input_path = "data/owt_train.txt"
+vocab_size = 32000
+special_tokens = ["<|endoftext|>"]
+num_workers = 16
+output_dir = "artifacts/tokenizers/owt_32k"
+
+[benchmark]
+input_path = "data/owt_valid.txt"
+vocab_path = "artifacts/tokenizers/owt_32k/vocab.json"
+merges_path = "artifacts/tokenizers/owt_32k/merges.json"
+special_tokens = ["<|endoftext|>"]
+json_output = "artifacts/tokenizers/owt_32k/valid_benchmark.json"
+
+# This section encodes the training split. Encode the validation split with:
+# python scripts/encode_corpus.py data/owt_valid.txt data/encoded/owt_valid.npy \
+#   --vocab artifacts/tokenizers/owt_32k/vocab.json \
+#   --merges artifacts/tokenizers/owt_32k/merges.json \
+#   --special-token '<|endoftext|>'
+[encoding]
+input_path = "data/owt_train.txt"
+output_path = "data/encoded/owt_train.npy"
+vocab_path = "artifacts/tokenizers/owt_32k/vocab.json"
+merges_path = "artifacts/tokenizers/owt_32k/merges.json"
+special_tokens = ["<|endoftext|>"]

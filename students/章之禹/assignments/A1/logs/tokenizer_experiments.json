@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "tinystories_10k": {
+    "status": "completed_cpu",
+    "training": {
+      "elapsed_seconds": 53.34407507721335,
+      "vocab_size": 10000,
+      "merge_count": 9743,
+      "peak_parent_rss_bytes": 125722624,
+      "peak_process_tree_rss_bytes": 10432872448,
+      "memory_sampling_interval_seconds": 0.05,
+      "memory_measurement": "maximum sampled aggregate RSS of the parent and all recursive child processes",
+      "longest_token_bytes": 15,
+      "longest_tokens_utf8": [
+        " accomplishment",
+        " disappointment",
+        " responsibility"
+      ],
+      "deterministic_rerun_hash_match": true
+    },
+    "profile": {
+      "total_seconds": 50.528,
+      "pretokenization_and_result_collection_seconds": 42.598,
+      "fraction": 0.8431
+    },
+    "sample_10_documents": {
+      "split": "validation",
+      "sampling": "uniform reservoir sample over end-of-text-delimited documents",
+      "seed": 1337,
+      "population_documents": 27631,
+      "sampled_document_indices": [
+        967,
+        1521,
+        5909,
+        9675,
+        11874,
+        13827,
+        21372,
+        24962,
+        25684,
+        25755
+      ],
+      "bytes": 8485,
+      "tokens": 2105,
+      "bytes_per_token": 4.0308788598574825
+    },
+    "full_validation_benchmark": {
+      "bytes": 22502601,
+      "tokens": 5465883,
+      "bytes_per_token": 4.116919626709902,
+      "bytes_per_second": 790905.5401634194,
+      "elapsed_seconds": 28.451692215166986,
+      "estimated_pile_seconds": 1043108.1312561496
+    },
+    "corpus_encoding": {
+      "train": {
+        "status": "completed_cpu",
+        "dtype": "uint16",
+        "token_count": 541229347,
+        "min_token_id": 9,
+        "max_token_id": 9999,
+        "fresh_mmap_verification": true
+      },
+      "validation": {
+        "status": "completed_cpu",
+        "dtype": "uint16",
+        "token_count": 5465883,
+        "min_token_id": 10,
+        "max_token_id": 9999,
+        "fresh_mmap_verification": true
+      }
+    }
+  },
+  "openwebtext_32k": {
+    "status": "completed_gpu_host_2tb_ram",
+    "training": {
+      "elapsed_seconds": 970.1761483252048,
+      "vocab_size": 32000,
+      "merge_count": 31743,
+      "peak_parent_rss_bytes": 11645120512,
+      "peak_process_tree_rss_bytes": 84190535680,
+      "memory_sampling_interval_seconds": 0.05,
+      "memory_measurement": "maximum sampled aggregate RSS of parent and all recursive children",
+      "longest_token_bytes": 64
+    },
+    "full_validation_benchmark": {
+      "bytes": 289998753,
+      "tokens": 66401098,
+      "bytes_per_token": 4.367378879789006,
+      "bytes_per_second": 696874.7430187647
+    },
+    "sample_10_documents_with_tinystories_10k": {
+      "split": "validation",
+      "seed": 1337,
+      "bytes": 51393,
+      "tokens": 19178,
+      "bytes_per_token": 2.6797893419543226,
+      "note": "out-of-domain TinyStories tokenizer fragments OWT text"
+    },
+    "sample_10_documents_with_openwebtext_32k": {
+      "split": "validation",
+      "seed": 1337,
+      "bytes": 51393,
+      "tokens": 13010,
+      "bytes_per_token": 3.9502690238278246,
+      "note": "domain-matched 32K tokenizer compresses OWT better"
+    },
+    "corpus_encoding": {
+      "train_tokens_uint16": 2727120452,
+      "validation_tokens_uint16": 66401098,
+      "method": "sharded parallel encode at <|endoftext|> boundaries (96 workers)"
+    }
+  }
+}

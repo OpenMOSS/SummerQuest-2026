@@ -1,0 +1,14 @@
+{
+  "checkpoint": "artifacts/checkpoints/owt_baseline/step_00010000.pt",
+  "config": "configs/owt_baseline.json",
+  "eot_token_id": 256,
+  "experiment_name": "owt_baseline",
+  "generated_token_count": 256,
+  "max_new_tokens": 256,
+  "prompt": "The",
+  "prompt_token_count": 1,
+  "seed": 42,
+  "stopped_on_eot": false,
+  "temperature": 0.8,
+  "top_p": 0.95
+}

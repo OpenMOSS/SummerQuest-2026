@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-07-13T09:03:34.529336+00:00",
+  "source": {
+    "path": "data/owt_valid.txt",
+    "source_bytes": 289998753,
+    "sample_limit_bytes": null,
+    "sample_was_limited": false,
+    "bytes_read": 289998753,
+    "bytes_processed": 289998753,
+    "incomplete_utf8_tail_bytes": 0,
+    "chunks": 70,
+    "chunk_bytes_target": 4194304,
+    "document_delimiter": "<|endoftext|>",
+    "boundary_policy": "document_delimiter_then_newline_then_utf8_safe_fixed_boundary"
+  },
+  "tokenizer": {
+    "vocab": "tokenizer_artifacts/tinystories/vocab.json",
+    "merges": "tokenizer_artifacts/tinystories/merges.txt",
+    "vocab_size": 10000,
+    "special_tokens": [
+      "<|endoftext|>"
+    ],
+    "longest_token": {
+      "including_special_tokens": {
+        "id": 7160,
+        "length_bytes": 15,
+        "bytes_hex": "206163636f6d706c6973686d656e74",
+        "text_utf8": " accomplishment"
+      },
+      "excluding_special_tokens": {
+        "id": 7160,
+        "length_bytes": 15,
+        "bytes_hex": "206163636f6d706c6973686d656e74",
+        "text_utf8": " accomplishment"
+      }
+    }
+  },
+  "metrics": {
+    "num_tokens": 91369966,
+    "compression_ratio_bytes_per_token": 3.1738958182385666,
+    "elapsed_seconds": 602.9548028744757,
+    "source_bytes_per_second": 480962.6718577984,
+    "source_megabytes_per_second": 0.48096267185779845,
+    "tokens_per_second": 151537.00669504673
+  }
+}

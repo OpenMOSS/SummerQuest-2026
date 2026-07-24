@@ -1,0 +1,21 @@
+{
+  "base": "../tinystories_baseline.json",
+  "run_name": "warmup_10pct",
+  "output_dir": "runs/warmup_10pct",
+  "optimizer": {
+    "max_lr": 0.003,
+    "min_lr": 0.00030000000000000003,
+    "warmup_iters": 100,
+    "cosine_cycle_iters": 1000
+  },
+  "training": {
+    "steps": 1000,
+    "batch_size": 128,
+    "eval_interval": 50,
+    "eval_batches": 20,
+    "checkpoint_interval": 1000,
+    "log_interval": 10,
+    "save_checkpoints": false,
+    "save_best": false
+  }
+}

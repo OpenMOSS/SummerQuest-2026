@@ -1,0 +1,20 @@
+{
+  "experiment": "tinystories_best_ctx512_15k",
+  "config": {
+    "vocab_size": 10000,
+    "context_length": 512,
+    "d_model": 512,
+    "num_layers": 4,
+    "num_heads": 16,
+    "d_ff": 1344,
+    "batch_size": 64,
+    "grad_accum_steps": 2,
+    "max_iters": 15000,
+    "learning_rate": 0.001,
+    "min_learning_rate": 6e-05,
+    "warmup_iters": 1500
+  },
+  "best_val_loss": 1.2465,
+  "total_time_sec": 3489.9,
+  "final_train_loss": 1.2172
+}

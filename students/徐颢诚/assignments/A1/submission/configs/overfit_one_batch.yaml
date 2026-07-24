@@ -1,0 +1,43 @@
+# 7.2.3 的单一小批量过拟合调试配置。
+run_name: overfit_one_batch
+
+data:
+  train_path: artifacts/token_ids/tinystories_train_uint16.npy
+  vocab_size: 10000
+
+model:
+  context_length: 256
+  d_model: 512
+  d_ff: 1344
+  num_layers: 4
+  num_heads: 16
+  rope_theta: 10000.0
+  dtype: float32
+
+optimizer:
+  # 固定 batch 的调试阶段不使用 weight decay，避免正则化妨碍 loss 降到接近零。
+  lr: 0.001
+  beta1: 0.9
+  beta2: 0.95
+  eps: 1.0e-8
+  weight_decay: 0.0
+  grad_clip_norm: 1.0
+
+training:
+  batch_size: 256
+  steps: 1000
+  log_interval: 10
+  checkpoint_name: overfit_one_batch.pt
+  device: auto
+  seed: 42
+
+logging:
+  backends:
+    - name: jsonl
+    - name: tensorboard
+
+hydra:
+  run:
+    dir: logs/${run_name}/${now:%Y-%m-%d}/${now:%H-%M-%S}
+  job:
+    chdir: false

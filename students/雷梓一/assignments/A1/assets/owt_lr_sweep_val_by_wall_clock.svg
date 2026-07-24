@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="620" viewBox="0 0 1000 620">
+<rect width="100%" height="100%" fill="white"/>
+<text x="500.0" y="32" text-anchor="middle" font-family="sans-serif" font-size="22">OpenWebText learning-rate sweep: validation loss by wall clock</text>
+<line x1="90.0" y1="65" x2="90.0" y2="545" stroke="#e5e7eb"/>
+<text x="90.0" y="570" text-anchor="middle" font-family="sans-serif" font-size="12">64.8</text>
+<line x1="90" y1="65.0" x2="970" y2="65.0" stroke="#e5e7eb"/>
+<text x="78" y="69.0" text-anchor="end" font-family="sans-serif" font-size="12">8</text>
+<line x1="266.0" y1="65" x2="266.0" y2="545" stroke="#e5e7eb"/>
+<text x="266.0" y="570" text-anchor="middle" font-family="sans-serif" font-size="12">109</text>
+<line x1="90" y1="161.0" x2="970" y2="161.0" stroke="#e5e7eb"/>
+<text x="78" y="165.0" text-anchor="end" font-family="sans-serif" font-size="12">7.16</text>
+<line x1="442.0" y1="65" x2="442.0" y2="545" stroke="#e5e7eb"/>
+<text x="442.0" y="570" text-anchor="middle" font-family="sans-serif" font-size="12">153</text>
+<line x1="90" y1="257.0" x2="970" y2="257.0" stroke="#e5e7eb"/>
+<text x="78" y="261.0" text-anchor="end" font-family="sans-serif" font-size="12">6.32</text>
+<line x1="618.0" y1="65" x2="618.0" y2="545" stroke="#e5e7eb"/>
+<text x="618.0" y="570" text-anchor="middle" font-family="sans-serif" font-size="12">197</text>
+<line x1="90" y1="353.0" x2="970" y2="353.0" stroke="#e5e7eb"/>
+<text x="78" y="357.0" text-anchor="end" font-family="sans-serif" font-size="12">5.48</text>
+<line x1="794.0" y1="65" x2="794.0" y2="545" stroke="#e5e7eb"/>
+<text x="794.0" y="570" text-anchor="middle" font-family="sans-serif" font-size="12">241</text>
+<line x1="90" y1="449.0" x2="970" y2="449.0" stroke="#e5e7eb"/>
+<text x="78" y="453.0" text-anchor="end" font-family="sans-serif" font-size="12">4.64</text>
+<line x1="970.0" y1="65" x2="970.0" y2="545" stroke="#e5e7eb"/>
+<text x="970.0" y="570" text-anchor="middle" font-family="sans-serif" font-size="12">286</text>
+<line x1="90" y1="545.0" x2="970" y2="545.0" stroke="#e5e7eb"/>
+<text x="78" y="549.0" text-anchor="end" font-family="sans-serif" font-size="12">3.8</text>
+<line x1="90" y1="545" x2="970" y2="545" stroke="#111827" stroke-width="2"/>
+<line x1="90" y1="65" x2="90" y2="545" stroke="#111827" stroke-width="2"/>
+<text x="530.0" y="600" text-anchor="middle" font-family="sans-serif" font-size="15">wall_clock_sec</text>
+<text x="20" y="305.0" text-anchor="middle" transform="rotate(-90 20 305.0)" font-family="sans-serif" font-size="15">val_loss</text>
+<polyline points="90.0,65.0 176.9,111.8 222.6,167.6 267.6,203.4 312.0,228.4 356.1,243.9 399.9,255.7 443.8,264.7 487.6,273.0 531.4,278.1 575.1,285.2 618.9,288.8 662.7,290.3 706.5,291.1 750.2,295.1 793.9,294.6 837.6,298.0 881.3,298.3 925.0,299.0 968.7,299.1" fill="none" stroke="#2563eb" stroke-width="2.2"/>
+<line x1="102" y1="83" x2="126" y2="83" stroke="#2563eb" stroke-width="3"/>
+<text x="133" y="87" font-family="sans-serif" font-size="12">1e-4</text>
+<polyline points="90.1,100.2 177.0,204.8 222.7,252.5 267.6,277.4 312.1,297.6 356.2,310.9 399.9,321.3 443.9,329.7 487.7,337.7 531.5,343.5 575.2,351.0 619.0,354.6 662.8,356.7 706.6,358.2 750.3,362.9 794.1,363.1 837.9,365.8 881.6,366.7 925.4,367.1 969.1,368.0" fill="none" stroke="#dc2626" stroke-width="2.2"/>
+<line x1="307" y1="83" x2="331" y2="83" stroke="#dc2626" stroke-width="3"/>
+<text x="338" y="87" font-family="sans-serif" font-size="12">3e-4</text>
+<polyline points="90.0,174.0 176.9,267.2 222.6,311.7 267.6,339.7 312.0,362.5 356.1,377.9 399.9,388.4 443.8,398.1 487.7,405.5 531.5,411.5 575.4,419.3 619.2,423.2 663.0,425.8 706.9,428.4 750.7,433.4 794.6,434.0 838.5,436.4 882.3,438.0 926.1,438.8 970.0,440.2" fill="none" stroke="#16a34a" stroke-width="2.2"/>
+<line x1="512" y1="83" x2="536" y2="83" stroke="#16a34a" stroke-width="3"/>
+<text x="543" y="87" font-family="sans-serif" font-size="12">1e-3</text>
+<polyline points="90.3,189.5 177.1,267.3 222.8,312.1 267.8,344.3 312.2,370.6 356.3,388.4 400.1,400.0 444.0,411.2 487.9,420.1 531.6,427.1 575.4,436.9 619.1,442.5 662.9,446.9 706.7,451.4 750.4,458.2 794.2,460.8 837.9,463.9 881.6,466.7 925.3,468.2 969.0,470.4" fill="none" stroke="#9333ea" stroke-width="2.2"/>
+<line x1="717" y1="83" x2="741" y2="83" stroke="#9333ea" stroke-width="3"/>
+<text x="748" y="87" font-family="sans-serif" font-size="12">3e-3</text>
+<polyline points="90.0,176.7 176.9,239.4 222.5,205.5 267.5,103.7 312.0,65.0 356.1,65.0 399.8,65.0 443.7,79.0 487.6,65.0 531.4,102.0 575.1,116.5 618.9,111.4 662.7,120.6 706.4,117.3 750.1,121.4 793.9,119.6 837.6,129.2 881.3,133.8 925.0,138.0 968.7,137.3" fill="none" stroke="#ea580c" stroke-width="2.2"/>
+<line x1="102" y1="105" x2="126" y2="105" stroke="#ea580c" stroke-width="3"/>
+<text x="133" y="109" font-family="sans-serif" font-size="12">1e-2</text>
+</svg>

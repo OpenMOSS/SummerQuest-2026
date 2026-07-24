@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="640" viewBox="0 0 1000 640">
+<style>
+text { font-family: ui-sans-serif, system-ui, sans-serif; fill: #172033; }
+.grid { stroke: #d8dee9; stroke-width: 1; }
+.axis { stroke: #475569; stroke-width: 1.4; }
+.series { fill: none; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+</style>
+<defs><clipPath id="plot-area"><rect x="90.0" y="65.0" width="880.0" height="401.0"/></clipPath></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="500.00" y="32.00" text-anchor="middle" font-size="20" font-weight="600">Removing RMSNorm: divergence and low-LR retune</text>
+<line class="grid" x1="90.00" y1="65.0" x2="90.00" y2="466.0"/>
+<text x="90.00" y="490.00" text-anchor="middle" font-size="12">3.3e+02K</text>
+<line class="grid" x1="90.0" y1="466.00" x2="970.0" y2="466.00"/>
+<text x="78.00" y="470.00" text-anchor="end" font-size="12">0</text>
+<line class="grid" x1="266.00" y1="65.0" x2="266.00" y2="466.0"/>
+<text x="266.00" y="490.00" text-anchor="middle" font-size="12">6.8M</text>
+<line class="grid" x1="90.0" y1="385.80" x2="970.0" y2="385.80"/>
+<text x="78.00" y="389.80" text-anchor="end" font-size="12">50</text>
+<line class="grid" x1="442.00" y1="65.0" x2="442.00" y2="466.0"/>
+<text x="442.00" y="490.00" text-anchor="middle" font-size="12">13M</text>
+<line class="grid" x1="90.0" y1="305.60" x2="970.0" y2="305.60"/>
+<text x="78.00" y="309.60" text-anchor="end" font-size="12">100</text>
+<line class="grid" x1="618.00" y1="65.0" x2="618.00" y2="466.0"/>
+<text x="618.00" y="490.00" text-anchor="middle" font-size="12">20M</text>
+<line class="grid" x1="90.0" y1="225.40" x2="970.0" y2="225.40"/>
+<text x="78.00" y="229.40" text-anchor="end" font-size="12">150</text>
+<line class="grid" x1="794.00" y1="65.0" x2="794.00" y2="466.0"/>
+<text x="794.00" y="490.00" text-anchor="middle" font-size="12">26M</text>
+<line class="grid" x1="90.0" y1="145.20" x2="970.0" y2="145.20"/>
+<text x="78.00" y="149.20" text-anchor="end" font-size="12">200</text>
+<line class="grid" x1="970.00" y1="65.0" x2="970.00" y2="466.0"/>
+<text x="970.00" y="490.00" text-anchor="middle" font-size="12">33M</text>
+<line class="grid" x1="90.0" y1="65.00" x2="970.0" y2="65.00"/>
+<text x="78.00" y="69.00" text-anchor="end" font-size="12">250</text>
+<line class="axis" x1="90.0" y1="65.0" x2="90.0" y2="466.0"/>
+<line class="axis" x1="90.0" y1="466.0" x2="970.0" y2="466.0"/>
+<text x="530.00" y="517.00" text-anchor="middle" font-size="14">processed tokens</text>
+<text x="20" y="265.50" text-anchor="middle" font-size="14" transform="rotate(-90 20 265.50)">loss</text>
+<polyline class="series" stroke="#2563eb" points="90.00,453.93 98.89,457.89 107.78,459.16 116.67,459.94 125.56,460.17 134.44,460.64 143.33,460.84 152.22,461.00 161.11,461.20 170.00,461.45 178.89,461.60 187.78,461.70 196.67,461.83 205.56,461.85 214.44,461.88 223.33,461.90 232.22,462.02 241.11,462.16 250.00,462.18 258.89,462.17 267.78,462.34 276.67,462.24 285.56,462.34 294.44,462.41 303.33,462.48 312.22,462.39 321.11,462.42 330.00,462.41 338.89,462.43 347.78,462.53 356.67,462.57 365.56,462.60 374.44,462.70 383.33,462.75 392.22,462.64 401.11,462.67 410.00,462.68 418.89,462.84 427.78,462.70 436.67,462.83 445.56,462.74 454.44,462.84 463.33,462.73 472.22,462.94 481.11,462.82 490.00,462.83 498.89,462.86 507.78,462.88 516.67,462.89 525.56,462.91 534.44,462.86 543.33,462.85 552.22,462.96 561.11,462.99 570.00,462.96 578.89,462.93 587.78,463.03 596.67,462.99 605.56,463.05 614.44,462.98 623.33,463.13 632.22,463.04 641.11,463.04 650.00,463.02 658.89,463.10 667.78,463.13 676.67,463.12 685.56,463.14 694.44,463.14 703.33,463.15 712.22,463.20 721.11,463.20 730.00,463.07 738.89,463.17 747.78,463.23 756.67,463.20 765.56,463.23 774.44,463.12 783.33,463.13 792.22,463.20 801.11,463.27 810.00,463.33 818.89,463.23 827.78,463.19 836.67,463.26 845.56,463.19 854.44,463.16 863.33,463.26 872.22,463.24 881.11,463.23 890.00,463.28 898.89,463.26 907.78,463.34 916.67,463.37 925.56,463.23 934.44,463.32 943.33,463.22 952.22,463.23 961.11,463.40 970.00,463.34" clip-path="url(#plot-area)"/>
+<polyline class="series" stroke="#2563eb" stroke-dasharray="7 5" points="170.00,461.45 258.89,462.15 347.78,462.54 436.67,462.75 525.56,462.93 614.44,463.07 703.33,463.14 792.22,463.22 881.11,463.28 970.00,463.30" clip-path="url(#plot-area)"/>
+<circle cx="170.00" cy="461.45" r="2.8" fill="#2563eb" clip-path="url(#plot-area)"><title>baseline, lr=3e-3 validation: 2.8377</title></circle>
+<circle cx="258.89" cy="462.15" r="2.8" fill="#2563eb" clip-path="url(#plot-area)"><title>baseline, lr=3e-3 validation: 2.40019</title></circle>
+<circle cx="347.78" cy="462.54" r="2.8" fill="#2563eb" clip-path="url(#plot-area)"><title>baseline, lr=3e-3 validation: 2.15528</title></circle>
+<circle cx="436.67" cy="462.75" r="2.8" fill="#2563eb" clip-path="url(#plot-area)"><title>baseline, lr=3e-3 validation: 2.02616</title></circle>
+<circle cx="525.56" cy="462.93" r="2.8" fill="#2563eb" clip-path="url(#plot-area)"><title>baseline, lr=3e-3 validation: 1.91378</title></circle>
+<circle cx="614.44" cy="463.07" r="2.8" fill="#2563eb" clip-path="url(#plot-area)"><title>baseline, lr=3e-3 validation: 1.82794</title></circle>
+<circle cx="703.33" cy="463.14" r="2.8" fill="#2563eb" clip-path="url(#plot-area)"><title>baseline, lr=3e-3 validation: 1.78121</title></circle>
+<circle cx="792.22" cy="463.22" r="2.8" fill="#2563eb" clip-path="url(#plot-area)"><title>baseline, lr=3e-3 validation: 1.73541</title></circle>
+<circle cx="881.11" cy="463.28" r="2.8" fill="#2563eb" clip-path="url(#plot-area)"><title>baseline, lr=3e-3 validation: 1.69699</title></circle>
+<circle cx="970.00" cy="463.30" r="2.8" fill="#2563eb" clip-path="url(#plot-area)"><title>baseline, lr=3e-3 validation: 1.68572</title></circle>
+<line x1="90.0" y1="541.0" x2="117.0" y2="541.0" stroke="#2563eb" stroke-width="2"/>
+<line x1="127.0" y1="541.0" x2="154.0" y2="541.0" stroke="#2563eb" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="165.00" y="545.00" font-size="12">baseline, lr=3e-3 (solid: train, dashed: validation)</text>
+<polyline class="series" stroke="#dc2626" points="90.00,452.55 98.89,457.35 107.78,459.02 116.67,459.81 125.56,460.08 134.44,460.65 143.33,460.70 152.22,460.94 161.11,82.71" clip-path="url(#plot-area)"/>
+<line x1="90.0" y1="569.0" x2="117.0" y2="569.0" stroke="#dc2626" stroke-width="2"/>
+<line x1="127.0" y1="569.0" x2="154.0" y2="569.0" stroke="#dc2626" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="165.00" y="573.00" font-size="12">remove RMSNorm, lr=3e-3 (solid: train, dashed: validation)</text>
+<polyline class="series" stroke="#059669" points="90.00,442.85 98.89,446.69 107.78,449.77 116.67,452.51 125.56,455.17 134.44,457.03 143.33,457.66 152.22,458.18 161.11,458.57 170.00,459.00 178.89,459.21 187.78,459.38 196.67,459.64 205.56,459.67 214.44,459.81 223.33,459.83 232.22,460.05 241.11,460.22 250.00,460.24 258.89,460.28 267.78,460.47 276.67,460.42 285.56,460.56 294.44,460.61 303.33,460.70 312.22,460.61 321.11,460.66 330.00,460.65 338.89,460.72 347.78,460.84 356.67,460.85 365.56,460.91 374.44,461.07 383.33,461.14 392.22,460.99 401.11,460.97 410.00,461.01 418.89,461.19 427.78,461.05 436.67,461.19 445.56,461.12 454.44,461.27 463.33,461.11 472.22,461.31 481.11,461.21 490.00,461.20 498.89,461.27 507.78,461.28 516.67,461.29 525.56,461.31 534.44,461.26 543.33,461.22 552.22,461.37 561.11,461.37 570.00,461.41 578.89,461.33 587.78,461.43 596.67,461.38 605.56,461.49 614.44,461.33 623.33,461.56 632.22,461.40 641.11,461.41 650.00,461.39 658.89,461.56 667.78,461.53 676.67,461.55 685.56,461.51 694.44,461.53 703.33,461.54 712.22,461.63 721.11,461.56 730.00,461.41 738.89,461.53 747.78,461.62 756.67,461.59 765.56,461.61 774.44,461.45 783.33,461.48 792.22,461.57 801.11,461.63 810.00,461.69 818.89,461.58 827.78,461.52 836.67,461.60 845.56,461.54 854.44,461.51 863.33,461.61 872.22,461.57 881.11,461.57 890.00,461.64 898.89,461.62 907.78,461.68 916.67,461.72 925.56,461.56 934.44,461.64 943.33,461.54 952.22,461.55 961.11,461.76 970.00,461.68" clip-path="url(#plot-area)"/>
+<polyline class="series" stroke="#059669" stroke-dasharray="7 5" points="170.00,458.95 258.89,460.25 347.78,460.86 436.67,461.12 525.56,461.33 614.44,461.46 703.33,461.49 792.22,461.60 881.11,461.66 970.00,461.64" clip-path="url(#plot-area)"/>
+<circle cx="170.00" cy="458.95" r="2.8" fill="#059669" clip-path="url(#plot-area)"><title>remove RMSNorm, lr=1e-4 validation: 4.39408</title></circle>
+<circle cx="258.89" cy="460.25" r="2.8" fill="#059669" clip-path="url(#plot-area)"><title>remove RMSNorm, lr=1e-4 validation: 3.58426</title></circle>
+<circle cx="347.78" cy="460.86" r="2.8" fill="#059669" clip-path="url(#plot-area)"><title>remove RMSNorm, lr=1e-4 validation: 3.20669</title></circle>
+<circle cx="436.67" cy="461.12" r="2.8" fill="#059669" clip-path="url(#plot-area)"><title>remove RMSNorm, lr=1e-4 validation: 3.04101</title></circle>
+<circle cx="525.56" cy="461.33" r="2.8" fill="#059669" clip-path="url(#plot-area)"><title>remove RMSNorm, lr=1e-4 validation: 2.91131</title></circle>
+<circle cx="614.44" cy="461.46" r="2.8" fill="#059669" clip-path="url(#plot-area)"><title>remove RMSNorm, lr=1e-4 validation: 2.83242</title></circle>
+<circle cx="703.33" cy="461.49" r="2.8" fill="#059669" clip-path="url(#plot-area)"><title>remove RMSNorm, lr=1e-4 validation: 2.81399</title></circle>
+<circle cx="792.22" cy="461.60" r="2.8" fill="#059669" clip-path="url(#plot-area)"><title>remove RMSNorm, lr=1e-4 validation: 2.74619</title></circle>
+<circle cx="881.11" cy="461.66" r="2.8" fill="#059669" clip-path="url(#plot-area)"><title>remove RMSNorm, lr=1e-4 validation: 2.70611</title></circle>
+<circle cx="970.00" cy="461.64" r="2.8" fill="#059669" clip-path="url(#plot-area)"><title>remove RMSNorm, lr=1e-4 validation: 2.71784</title></circle>
+<line x1="90.0" y1="597.0" x2="117.0" y2="597.0" stroke="#059669" stroke-width="2"/>
+<line x1="127.0" y1="597.0" x2="154.0" y2="597.0" stroke="#059669" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="165.00" y="601.00" font-size="12">remove RMSNorm, lr=1e-4 (solid: train, dashed: validation)</text>
+</svg>

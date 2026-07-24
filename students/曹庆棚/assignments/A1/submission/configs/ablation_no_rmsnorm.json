@@ -1,0 +1,8 @@
+{
+  "base": "tinystories_baseline.json",
+  "run_name": "ablation_no_rmsnorm",
+  "output_dir": "runs/ablation_no_rmsnorm",
+  "ablation": {
+    "remove_rmsnorm": true
+  }
+}

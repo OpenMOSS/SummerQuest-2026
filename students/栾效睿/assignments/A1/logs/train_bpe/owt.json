@@ -1,0 +1,38 @@
+{
+  "run_name": "owt",
+  "dataset": "OpenWebText",
+  "status": "completed",
+  "started_at_utc": "2026-07-15T08:30:15.167170+00:00",
+  "ended_at_utc": "2026-07-15T08:49:38.319067+00:00",
+  "wall_clock_sec": 1163.1102831250173,
+  "input_path": "data/owt_train.txt",
+  "input_bytes": 11920511059,
+  "vocab_size_requested": 32000,
+  "vocab_size_actual": 32000,
+  "merge_count": 31743,
+  "special_tokens": [
+    "<|endoftext|>"
+  ],
+  "workers": 10,
+  "target_batch_bytes": 67108864,
+  "output_dir": "artifacts/owt_train_bpe",
+  "vocab_path": "artifacts/owt_train_bpe/vocab.json",
+  "merges_path": "artifacts/owt_train_bpe/merges.json",
+  "vocab_sha256": "d828216c5748116ef376f6fc63467deade58c328d1f8a489415f57f27dc14af9",
+  "merges_sha256": "4de9bd36d03a50b6356436bf27d8e517da4b2c1fdbcf637ede70ee110a4de01e",
+  "max_rss_bytes": 6008422400,
+  "longest_tokens": [
+    {
+      "id": 25822,
+      "byte_length": 64,
+      "text": "ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ",
+      "hex": "c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382"
+    },
+    {
+      "id": 25836,
+      "byte_length": 64,
+      "text": "----------------------------------------------------------------",
+      "hex": "2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d"
+    }
+  ]
+}

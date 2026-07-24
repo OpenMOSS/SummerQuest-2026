@@ -1,0 +1,16 @@
+{
+  "batch_size": 128,
+  "batches": 168,
+  "checkpoint": "checkpoint/ablations/silu_ffn/best.pt",
+  "checkpoint_iteration": 10000,
+  "checkpoint_sha256": "54bf376d500ad29ea4fe93ab6a37f7b1ddcb1e0e12bc8cda79bd496dae35a53f",
+  "context_length": 256,
+  "device": "cuda",
+  "evaluated_tokens": 5465882,
+  "is_full_validation": true,
+  "run_name": "silu_ffn",
+  "timestamp_utc": "2026-07-15T04:23:29.868091+00:00",
+  "val_loss": 1.345112615059034,
+  "validation_tokens_total": 5465883,
+  "wall_clock_sec": 6.19608648866415
+}

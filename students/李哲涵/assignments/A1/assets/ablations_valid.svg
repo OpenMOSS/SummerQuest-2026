@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="500" viewBox="0 0 820 500">
+<rect width="100%" height="100%" fill="white"/>
+<text x="80" y="28" font-family="Arial" font-size="20" font-weight="700">TinyStories architecture ablations</text>
+<line x1="80" y1="430.0" x2="600" y2="430.0" stroke="#e5e7eb"/>
+<text x="70" y="434.0" text-anchor="end" font-family="Arial" font-size="12" fill="#374151">1.35</text>
+<line x1="80" y1="355.0" x2="600" y2="355.0" stroke="#e5e7eb"/>
+<text x="70" y="359.0" text-anchor="end" font-family="Arial" font-size="12" fill="#374151">1.81</text>
+<line x1="80" y1="280.0" x2="600" y2="280.0" stroke="#e5e7eb"/>
+<text x="70" y="284.0" text-anchor="end" font-family="Arial" font-size="12" fill="#374151">2.27</text>
+<line x1="80" y1="205.0" x2="600" y2="205.0" stroke="#e5e7eb"/>
+<text x="70" y="209.0" text-anchor="end" font-family="Arial" font-size="12" fill="#374151">2.73</text>
+<line x1="80" y1="130.0" x2="600" y2="130.0" stroke="#e5e7eb"/>
+<text x="70" y="134.0" text-anchor="end" font-family="Arial" font-size="12" fill="#374151">3.19</text>
+<line x1="80" y1="55.0" x2="600" y2="55.0" stroke="#e5e7eb"/>
+<text x="70" y="59.0" text-anchor="end" font-family="Arial" font-size="12" fill="#374151">3.65</text>
+<line x1="80.0" y1="55" x2="80.0" y2="430" stroke="#f3f4f6"/>
+<text x="80.0" y="452" text-anchor="middle" font-family="Arial" font-size="12" fill="#374151">500.0</text>
+<line x1="184.0" y1="55" x2="184.0" y2="430" stroke="#f3f4f6"/>
+<text x="184.0" y="452" text-anchor="middle" font-family="Arial" font-size="12" fill="#374151">2400</text>
+<line x1="288.0" y1="55" x2="288.0" y2="430" stroke="#f3f4f6"/>
+<text x="288.0" y="452" text-anchor="middle" font-family="Arial" font-size="12" fill="#374151">4300</text>
+<line x1="392.0" y1="55" x2="392.0" y2="430" stroke="#f3f4f6"/>
+<text x="392.0" y="452" text-anchor="middle" font-family="Arial" font-size="12" fill="#374151">6200</text>
+<line x1="496.0" y1="55" x2="496.0" y2="430" stroke="#f3f4f6"/>
+<text x="496.0" y="452" text-anchor="middle" font-family="Arial" font-size="12" fill="#374151">8100</text>
+<line x1="600.0" y1="55" x2="600.0" y2="430" stroke="#f3f4f6"/>
+<text x="600.0" y="452" text-anchor="middle" font-family="Arial" font-size="12" fill="#374151">10000</text>
+<line x1="80" y1="55" x2="80" y2="430" stroke="#111827"/>
+<line x1="80" y1="430" x2="600" y2="430" stroke="#111827"/>
+<text x="340.0" y="482" text-anchor="middle" font-family="Arial" font-size="14">gradient step</text>
+<text transform="translate(22 242.5) rotate(-90)" text-anchor="middle" font-family="Arial" font-size="14">loss</text>
+<polyline fill="none" stroke="#2563eb" stroke-width="2.4" points="80.0,147.0 107.4,264.8 134.7,314.2 162.1,338.5 189.5,353.0 216.8,362.8 244.2,371.0 271.6,376.2 298.9,381.3 326.3,387.3 353.7,389.9 381.1,392.0 408.4,395.0 435.8,397.2 463.2,399.7 490.5,400.9 517.9,401.8 545.3,401.6 572.6,403.1 600.0,404.1"/>
+<circle cx="80.0" cy="147.0" r="3" fill="#2563eb"/>
+<circle cx="107.4" cy="264.8" r="3" fill="#2563eb"/>
+<circle cx="134.7" cy="314.2" r="3" fill="#2563eb"/>
+<circle cx="162.1" cy="338.5" r="3" fill="#2563eb"/>
+<circle cx="189.5" cy="353.0" r="3" fill="#2563eb"/>
+<circle cx="216.8" cy="362.8" r="3" fill="#2563eb"/>
+<circle cx="244.2" cy="371.0" r="3" fill="#2563eb"/>
+<circle cx="271.6" cy="376.2" r="3" fill="#2563eb"/>
+<circle cx="298.9" cy="381.3" r="3" fill="#2563eb"/>
+<circle cx="326.3" cy="387.3" r="3" fill="#2563eb"/>
+<circle cx="353.7" cy="389.9" r="3" fill="#2563eb"/>
+<circle cx="381.1" cy="392.0" r="3" fill="#2563eb"/>
+<circle cx="408.4" cy="395.0" r="3" fill="#2563eb"/>
+<circle cx="435.8" cy="397.2" r="3" fill="#2563eb"/>
+<circle cx="463.2" cy="399.7" r="3" fill="#2563eb"/>
+<circle cx="490.5" cy="400.9" r="3" fill="#2563eb"/>
+<circle cx="517.9" cy="401.8" r="3" fill="#2563eb"/>
+<circle cx="545.3" cy="401.6" r="3" fill="#2563eb"/>
+<circle cx="572.6" cy="403.1" r="3" fill="#2563eb"/>
+<circle cx="600.0" cy="404.1" r="3" fill="#2563eb"/>
+<line x1="624" y1="68" x2="652" y2="68" stroke="#2563eb" stroke-width="3"/>
+<text x="660" y="73" font-family="Arial" font-size="13" fill="#111827">pre-norm RoPE SwiGLU</text>
+<polyline fill="none" stroke="#dc2626" stroke-width="2.4" points="80.0,133.2 107.4,240.7 134.7,294.9 162.1,315.2"/>
+<circle cx="80.0" cy="133.2" r="3" fill="#dc2626"/>
+<circle cx="107.4" cy="240.7" r="3" fill="#dc2626"/>
+<circle cx="134.7" cy="294.9" r="3" fill="#dc2626"/>
+<circle cx="162.1" cy="315.2" r="3" fill="#dc2626"/>
+<line x1="624" y1="92" x2="652" y2="92" stroke="#dc2626" stroke-width="3"/>
+<text x="660" y="97" font-family="Arial" font-size="13" fill="#111827">no RMSNorm</text>
+<polyline fill="none" stroke="#16a34a" stroke-width="2.4" points="80.0,149.4 107.4,261.1 134.7,307.4 162.1,323.3"/>
+<circle cx="80.0" cy="149.4" r="3" fill="#16a34a"/>
+<circle cx="107.4" cy="261.1" r="3" fill="#16a34a"/>
+<circle cx="134.7" cy="307.4" r="3" fill="#16a34a"/>
+<circle cx="162.1" cy="323.3" r="3" fill="#16a34a"/>
+<line x1="624" y1="116" x2="652" y2="116" stroke="#16a34a" stroke-width="3"/>
+<text x="660" y="121" font-family="Arial" font-size="13" fill="#111827">post-norm</text>
+<polyline fill="none" stroke="#9333ea" stroke-width="2.4" points="80.0,80.9 107.4,225.2 134.7,283.0 162.1,301.1"/>
+<circle cx="80.0" cy="80.9" r="3" fill="#9333ea"/>
+<circle cx="107.4" cy="225.2" r="3" fill="#9333ea"/>
+<circle cx="134.7" cy="283.0" r="3" fill="#9333ea"/>
+<circle cx="162.1" cy="301.1" r="3" fill="#9333ea"/>
+<line x1="624" y1="140" x2="652" y2="140" stroke="#9333ea" stroke-width="3"/>
+<text x="660" y="145" font-family="Arial" font-size="13" fill="#111827">NoPE</text>
+<polyline fill="none" stroke="#ea580c" stroke-width="2.4" points="80.0,132.2 107.4,247.7 134.7,296.5 162.1,312.2"/>
+<circle cx="80.0" cy="132.2" r="3" fill="#ea580c"/>
+<circle cx="107.4" cy="247.7" r="3" fill="#ea580c"/>
+<circle cx="134.7" cy="296.5" r="3" fill="#ea580c"/>
+<circle cx="162.1" cy="312.2" r="3" fill="#ea580c"/>
+<line x1="624" y1="164" x2="652" y2="164" stroke="#ea580c" stroke-width="3"/>
+<text x="660" y="169" font-family="Arial" font-size="13" fill="#111827">SiLU FFN</text>
+</svg>

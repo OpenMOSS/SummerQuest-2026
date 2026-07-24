@@ -1,0 +1,35 @@
+{
+  "seed": 42,
+  "device": "cuda",
+  "train_data": "artifacts/data/tinystories_train.bin",
+  "valid_data": "artifacts/data/tinystories_valid.bin",
+  "output_dir": "artifacts/runs/lr_sweep/lr_3e-4",
+  "model": {
+    "vocab_size": 10000,
+    "context_length": 256,
+    "d_model": 512,
+    "num_layers": 4,
+    "num_heads": 16,
+    "d_ff": 1344,
+    "rope_theta": 10000.0
+  },
+  "optimizer": {
+    "lr": 0.0003,
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0.1
+  },
+  "batch_size": 128,
+  "max_steps": 10000,
+  "max_lr": 0.0003,
+  "min_lr": 2.9999999999999997e-05,
+  "warmup_steps": 100,
+  "max_grad_norm": 1.0,
+  "log_every": 10,
+  "eval_every": 100,
+  "eval_batches": 20,
+  "checkpoint_every": 1000
+}

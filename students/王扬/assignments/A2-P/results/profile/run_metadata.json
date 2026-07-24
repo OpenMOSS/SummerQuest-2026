@@ -1,0 +1,80 @@
+{
+  "artifact_type": "profile_run_metadata",
+  "raw_benchmark_evidence": [
+    "results/benchmark/main/*.json",
+    "results/benchmark/warmup/*.json",
+    "results/benchmark/mixed_precision/*.json"
+  ],
+  "runs": [
+    {
+      "context_length": 256,
+      "mode": "train_step",
+      "model_size": "large",
+      "source_stats_file": "results/nsys/large_train_step_ctx256_nsys_stats.csv",
+      "stage_range": "measure@profile",
+      "tool": "nsys",
+      "top_kernel": "sm80_xmma_gemm_f32f32_f32f32_f32_nn_n_tilesize256x128x8_stage3_warpsize4x2x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas",
+      "top_kernel_calls": 217,
+      "top_kernel_time": 32869120.0
+    },
+    {
+      "context_length": 512,
+      "mode": "train_step",
+      "model_size": "large",
+      "source_stats_file": "results/nsys/large_train_step_ctx512_nsys_stats.csv",
+      "stage_range": "measure@profile",
+      "tool": "nsys",
+      "top_kernel": "void cutlass::Kernel2<cutlass_80_simt_sgemm_128x128_8x4_nt_align1>(T1::Params)",
+      "top_kernel_calls": 108,
+      "top_kernel_time": 64568236.0
+    },
+    {
+      "context_length": 1024,
+      "mode": "train_step",
+      "model_size": "large",
+      "source_stats_file": "results/nsys/large_train_step_ctx1024_nsys_stats.csv",
+      "stage_range": "measure@profile",
+      "tool": "nsys",
+      "top_kernel": "sm80_xmma_gemm_f32f32_f32f32_f32_tn_n_tilesize128x128x8_stage3_warpsize2x2x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas",
+      "top_kernel_calls": 181,
+      "top_kernel_time": 141592662.0
+    },
+    {
+      "context_length": 256,
+      "mode": "train_step",
+      "model_size": "xl",
+      "source_stats_file": "results/nsys/xl_train_step_ctx256_nsys_stats.csv",
+      "stage_range": "measure@profile",
+      "tool": "nsys",
+      "top_kernel": "void cutlass::Kernel2<cutlass_80_simt_sgemm_256x128_8x4_nn_align1>(T1::Params)",
+      "top_kernel_calls": 225,
+      "top_kernel_time": 151837281.0
+    },
+    {
+      "context_length": 512,
+      "mode": "train_step",
+      "model_size": "xl",
+      "source_stats_file": "results/nsys/xl_train_step_ctx512_nsys_stats.csv",
+      "stage_range": "measure@profile",
+      "tool": "nsys",
+      "top_kernel": "void cutlass::Kernel2<cutlass_80_simt_sgemm_256x128_8x4_nn_align1>(T1::Params)",
+      "top_kernel_calls": 97,
+      "top_kernel_time": 216929843.0
+    },
+    {
+      "context_length": 1024,
+      "mode": "train_step",
+      "model_size": "xl",
+      "source_stats_file": "results/nsys/xl_train_step_ctx1024_nsys_stats.csv",
+      "stage_range": "measure@profile",
+      "tool": "nsys",
+      "top_kernel": "void cutlass::Kernel2<cutlass_80_simt_sgemm_256x128_8x4_nt_align1>(T1::Params)",
+      "top_kernel_calls": 224,
+      "top_kernel_time": 553851061.0
+    }
+  ],
+  "stage_range": "measure@profile",
+  "stage_summary_file": "results/profile/stage_summary.csv",
+  "summary_source": "results/nsys_kernel_summary.csv",
+  "tool": "nsys"
+}

@@ -1,0 +1,16 @@
+{
+  "batch_size": 128,
+  "batches": 168,
+  "checkpoint": "checkpoint/ablations/post_norm/best.pt",
+  "checkpoint_iteration": 10000,
+  "checkpoint_sha256": "e359a658e81e0edef3d24c8e1527ccd7fff0dadaa53bb2519dd014568d73394c",
+  "context_length": 256,
+  "device": "cuda",
+  "evaluated_tokens": 5465882,
+  "is_full_validation": true,
+  "run_name": "post_norm",
+  "timestamp_utc": "2026-07-15T04:23:08.950714+00:00",
+  "val_loss": 1.3784197026553608,
+  "validation_tokens_total": 5465883,
+  "wall_clock_sec": 6.236445197835565
+}

@@ -1,0 +1,5 @@
+{
+  "description": "TinyStories architecture ablation: replace SwiGLU with a parameter-matched SiLU FFN.",
+  "base_config": "../tinystories_baseline.json",
+  "model_overrides": {"ffn_type": "silu", "d_ff": 2048}
+}

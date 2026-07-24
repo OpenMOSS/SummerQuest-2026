@@ -1,0 +1,20 @@
+{
+  "tinystories": {
+    "num_bytes": 500170,
+    "num_tokens": 121542,
+    "compression_ratio_bytes_per_token": 4.115202975103257,
+    "longest_token_bytes": 15,
+    "throughput_bytes_per_sec": 459320.68967344315
+  },
+  "owt": {
+    "num_bytes": 503943,
+    "num_tokens": 109652,
+    "compression_ratio_bytes_per_token": 4.59583956516981,
+    "longest_token_bytes": 142,
+    "throughput_bytes_per_sec": 393912.53313236
+  },
+  "slice_chars": {
+    "tinystories": 22493387,
+    "owt": 5000000
+  }
+}

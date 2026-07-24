@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="570" viewBox="0 0 960 570">
+<rect width="100%" height="100%" fill="white"/>
+<style>text{font-family:sans-serif;fill:#1f2937}.tick{font-size:13px}</style>
+<text x="480.0" y="32" text-anchor="middle" font-size="20" font-weight="bold">TinyStories learning-rate sweep</text>
+<line x1="88" y1="494" x2="920" y2="494" stroke="#374151"/>
+<line x1="88" y1="74" x2="88" y2="494" stroke="#374151"/>
+<line x1="88" y1="494.00" x2="920" y2="494.00" stroke="#e5e7eb"/>
+<text class="tick" x="78" y="498.00" text-anchor="end">1.421</text>
+<line x1="88" y1="410.00" x2="920" y2="410.00" stroke="#e5e7eb"/>
+<text class="tick" x="78" y="414.00" text-anchor="end">2.143</text>
+<line x1="88" y1="326.00" x2="920" y2="326.00" stroke="#e5e7eb"/>
+<text class="tick" x="78" y="330.00" text-anchor="end">2.865</text>
+<line x1="88" y1="242.00" x2="920" y2="242.00" stroke="#e5e7eb"/>
+<text class="tick" x="78" y="246.00" text-anchor="end">3.588</text>
+<line x1="88" y1="158.00" x2="920" y2="158.00" stroke="#e5e7eb"/>
+<text class="tick" x="78" y="162.00" text-anchor="end">4.310</text>
+<line x1="88" y1="74.00" x2="920" y2="74.00" stroke="#e5e7eb"/>
+<text class="tick" x="78" y="78.00" text-anchor="end">5.032</text>
+<line x1="88.00" y1="494" x2="88.00" y2="499" stroke="#374151"/>
+<text class="tick" x="88.00" y="520" text-anchor="middle">0</text>
+<line x1="254.40" y1="494" x2="254.40" y2="499" stroke="#374151"/>
+<text class="tick" x="254.40" y="520" text-anchor="middle">200</text>
+<line x1="420.80" y1="494" x2="420.80" y2="499" stroke="#374151"/>
+<text class="tick" x="420.80" y="520" text-anchor="middle">400</text>
+<line x1="587.20" y1="494" x2="587.20" y2="499" stroke="#374151"/>
+<text class="tick" x="587.20" y="520" text-anchor="middle">600</text>
+<line x1="753.60" y1="494" x2="753.60" y2="499" stroke="#374151"/>
+<text class="tick" x="753.60" y="520" text-anchor="middle">800</text>
+<line x1="920.00" y1="494" x2="920.00" y2="499" stroke="#374151"/>
+<text class="tick" x="920.00" y="520" text-anchor="middle">1000</text>
+<line x1="88" y1="490.64" x2="920" y2="490.64" stroke="#111827" stroke-dasharray="6 4"/>
+<text class="tick" x="916" y="484.64" text-anchor="end">target: 1.45</text>
+<polyline points="171.20,229.61 254.40,318.88 337.60,355.87 420.80,374.59 504.00,390.19 587.20,398.77 670.40,412.25 753.60,414.24 836.80,424.54 920.00,428.53" fill="none" stroke="#2563eb" stroke-width="3"/>
+<line x1="100" y1="69" x2="124" y2="69" stroke="#2563eb" stroke-width="3"/>
+<text class="tick" x="130" y="74">peak lr=3.0e-04</text>
+<polyline points="171.20,278.93 254.40,357.58 337.60,390.17 420.80,408.17 504.00,423.22 587.20,430.07 670.40,440.51 753.60,440.59 836.80,447.99 920.00,450.78" fill="none" stroke="#16a34a" stroke-width="3"/>
+<line x1="100" y1="89" x2="124" y2="89" stroke="#16a34a" stroke-width="3"/>
+<text class="tick" x="130" y="94">peak lr=6.0e-04</text>
+<polyline points="171.20,306.19 254.40,379.46 337.60,410.93 420.80,426.08 504.00,437.93 587.20,442.81 670.40,451.87 753.60,450.66 836.80,457.21 920.00,459.30" fill="none" stroke="#dc2626" stroke-width="3"/>
+<line x1="100" y1="109" x2="124" y2="109" stroke="#dc2626" stroke-width="3"/>
+<text class="tick" x="130" y="114">peak lr=1.0e-03</text>
+<polyline points="171.20,342.08 254.40,404.84 337.60,427.89 420.80,437.88 504.00,447.93 587.20,451.51 670.40,459.38 753.60,457.28 836.80,462.83 920.00,465.03" fill="none" stroke="#9333ea" stroke-width="3"/>
+<line x1="100" y1="129" x2="124" y2="129" stroke="#9333ea" stroke-width="3"/>
+<text class="tick" x="130" y="134">peak lr=3.0e-03</text>
+<polyline points="171.20,301.73 254.40,351.88 337.60,369.73 420.80,377.55 504.00,383.61 587.20,387.43 670.40,396.84 753.60,396.08 836.80,403.79 920.00,406.77" fill="none" stroke="#ea580c" stroke-width="3"/>
+<line x1="100" y1="149" x2="124" y2="149" stroke="#ea580c" stroke-width="3"/>
+<text class="tick" x="130" y="154">peak lr=1.0e-02</text>
+<polyline points="171.20,218.81 254.40,249.32 337.60,270.86 420.80,281.50 504.00,294.15 587.20,300.88 670.40,311.23 753.60,305.77 836.80,310.17 920.00,310.32" fill="none" stroke="#0891b2" stroke-width="3"/>
+<line x1="100" y1="169" x2="124" y2="169" stroke="#0891b2" stroke-width="3"/>
+<text class="tick" x="130" y="174">peak lr=3.0e-02</text>
+<polyline points="171.20,160.93 254.40,144.53 337.60,119.95 420.80,149.23 504.00,102.97 587.20,166.74 670.40,156.86 753.60,125.68 836.80,133.26 920.00,112.41" fill="none" stroke="#be123c" stroke-width="3"/>
+<line x1="100" y1="189" x2="124" y2="189" stroke="#be123c" stroke-width="3"/>
+<text class="tick" x="130" y="194">peak lr=1.0e-01</text>
+<text x="480.0" y="550" text-anchor="middle" font-size="15">optimizer updates</text>
+<text x="22" y="285.0" text-anchor="middle" font-size="15" transform="rotate(-90 22 285.0)">validation loss (per token)</text>
+</svg>

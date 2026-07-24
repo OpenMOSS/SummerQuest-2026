@@ -1,0 +1,11 @@
+{
+  "dataset": "TinyStories",
+  "vocab_size": 10000,
+  "num_workers": 64,
+  "training_time_sec": 21.73916568700224,
+  "elapsed_wall_clock_sec": 35.48,
+  "maximum_resident_set_kib": 449144,
+  "maximum_resident_set_mib": 438.6171875,
+  "measurement": "GNU time -v around a complete tokenizer-training rerun",
+  "status": "passed"
+}

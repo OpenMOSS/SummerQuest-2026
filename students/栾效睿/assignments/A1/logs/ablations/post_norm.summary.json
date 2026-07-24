@@ -1,0 +1,27 @@
+{
+  "best_val_loss": 1.3818646781146526,
+  "checkpoint_dir": "checkpoint/ablations/post_norm",
+  "final_step": 10000,
+  "final_train_loss": 1.349299430847168,
+  "final_val_loss": 1.3818646781146526,
+  "key_config": {
+    "batch_size": 128,
+    "context_length": 256,
+    "d_ff": 1344,
+    "d_model": 512,
+    "ffn_type": "swiglu",
+    "lr_max": 0.003,
+    "max_wall_clock_sec": null,
+    "norm_mode": "post",
+    "num_heads": 16,
+    "num_layers": 4,
+    "use_rope": true,
+    "vocab_size": 10000
+  },
+  "log_path": "logs/ablations/post_norm.jsonl",
+  "processed_tokens": 327680000,
+  "run_name": "post_norm",
+  "status": "completed",
+  "stop_reason": "max_steps",
+  "wall_clock_sec": 861.4161978624761
+}

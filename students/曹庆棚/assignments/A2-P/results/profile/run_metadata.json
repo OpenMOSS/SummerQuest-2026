@@ -1,0 +1,596 @@
+[
+  {
+    "autocast_dtype": null,
+    "batch_size": 4,
+    "command": "python profiling/compute_profile.py --run-id P1 --model-size small --batch-size 4 --context-length 256 --mode train_step --warmup 5 --steps 1 --dtype fp32 --schedule-policy visible_warmup --output-dir results/profile/raw",
+    "context_length": 256,
+    "cuda_event_stage_elapsed_us": {
+      "backward": 78645.46966552734,
+      "forward": 54222.015380859375,
+      "loss": 307.0400059223175,
+      "optimizer": 55686.84768676758,
+      "zero_grad": 638.8159990310669
+    },
+    "dtype": "fp32",
+    "environment": {
+      "bf16_supported": true,
+      "cuda_available": true,
+      "cuda_runtime": "13.0",
+      "cudnn_benchmark": false,
+      "deterministic_algorithms": false,
+      "driver_version": "580.159.03",
+      "gpu_compute_capability": "8.0",
+      "gpu_memory_mib": 81151.75,
+      "gpu_model": "NVIDIA A800-SXM4-80GB",
+      "python_version": "3.13.14",
+      "pytorch_version": "2.11.0+cu130",
+      "starter_commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+      "tf32_flags": {
+        "cudnn_allow_tf32": false,
+        "float32_matmul_precision": "highest",
+        "matmul_allow_tf32": false
+      },
+      "workspace_head": "ca8bc81a59b70516f7ebb2da4808daade877c736"
+    },
+    "error_summary": null,
+    "error_type": null,
+    "failure_stage": null,
+    "finished_at": "2026-07-22T04:55:33+00:00",
+    "learning_rate": 0.001,
+    "measurement_steps": 1,
+    "mode": "train_step",
+    "model_config": {
+      "d_ff": 3072,
+      "d_model": 768,
+      "num_heads": 12,
+      "num_layers": 12
+    },
+    "model_fingerprint": "51d24fe881356ae182e9e824301994595fc64a59f0b3ddb23d482e3f2ecc06d7",
+    "model_size": "small",
+    "optimizer": "cs336_basics.optimizer.AdamW",
+    "parameter_count": 128625408,
+    "run_id": "P1",
+    "run_name": "profile-P1_small_bs4_ctx256_train_step_fp32_torchprof",
+    "schema_version": "a2p-profiling-v1",
+    "seed": 42,
+    "stage_markers": [
+      "profile/warmup",
+      "profile/measure",
+      "zero_grad",
+      "forward",
+      "loss",
+      "backward",
+      "optimizer",
+      "attention/scores",
+      "attention/softmax",
+      "attention/value"
+    ],
+    "started_at": "2026-07-22T04:55:26+00:00",
+    "status": "success",
+    "tool": "torch.profiler",
+    "tool_config": {
+      "activities": [
+        "CPU",
+        "CUDA"
+      ],
+      "profile_memory": false,
+      "record_shapes": true,
+      "schedule_policy": "visible_warmup",
+      "with_stack": false
+    },
+    "trace_file": "results/profile/raw/profile-P1_small_bs4_ctx256_train_step_fp32_torchprof.trace.json",
+    "trace_validation": {
+      "kernel_attribution": "trace_timestamp_window",
+      "markers_seen": [
+        "attention/scores",
+        "attention/softmax",
+        "attention/value",
+        "backward",
+        "forward",
+        "loss",
+        "optimizer",
+        "profile/measure",
+        "profile/warmup",
+        "zero_grad"
+      ],
+      "measurement_event_count": 9758
+    },
+    "warmup_steps": 5,
+    "weight_decay": 0.01
+  },
+  {
+    "autocast_dtype": null,
+    "batch_size": 4,
+    "command": "python profiling/compute_profile.py --run-id P2 --model-size small --batch-size 4 --context-length 512 --mode train_step --warmup 5 --steps 1 --dtype fp32 --schedule-policy visible_warmup --output-dir results/profile/raw",
+    "context_length": 512,
+    "cuda_event_stage_elapsed_us": {
+      "backward": 90791.29791259766,
+      "forward": 44276.702880859375,
+      "loss": 559.7119927406311,
+      "optimizer": 36399.009704589844,
+      "zero_grad": 202.84800231456757
+    },
+    "dtype": "fp32",
+    "environment": {
+      "bf16_supported": true,
+      "cuda_available": true,
+      "cuda_runtime": "13.0",
+      "cudnn_benchmark": false,
+      "deterministic_algorithms": false,
+      "driver_version": "580.159.03",
+      "gpu_compute_capability": "8.0",
+      "gpu_memory_mib": 81151.75,
+      "gpu_model": "NVIDIA A800-SXM4-80GB",
+      "python_version": "3.13.14",
+      "pytorch_version": "2.11.0+cu130",
+      "starter_commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+      "tf32_flags": {
+        "cudnn_allow_tf32": false,
+        "float32_matmul_precision": "highest",
+        "matmul_allow_tf32": false
+      },
+      "workspace_head": "ca8bc81a59b70516f7ebb2da4808daade877c736"
+    },
+    "error_summary": null,
+    "error_type": null,
+    "failure_stage": null,
+    "finished_at": "2026-07-22T04:55:42+00:00",
+    "learning_rate": 0.001,
+    "measurement_steps": 1,
+    "mode": "train_step",
+    "model_config": {
+      "d_ff": 3072,
+      "d_model": 768,
+      "num_heads": 12,
+      "num_layers": 12
+    },
+    "model_fingerprint": "51d24fe881356ae182e9e824301994595fc64a59f0b3ddb23d482e3f2ecc06d7",
+    "model_size": "small",
+    "optimizer": "cs336_basics.optimizer.AdamW",
+    "parameter_count": 128625408,
+    "run_id": "P2",
+    "run_name": "profile-P2_small_bs4_ctx512_train_step_fp32_torchprof",
+    "schema_version": "a2p-profiling-v1",
+    "seed": 42,
+    "stage_markers": [
+      "profile/warmup",
+      "profile/measure",
+      "zero_grad",
+      "forward",
+      "loss",
+      "backward",
+      "optimizer",
+      "attention/scores",
+      "attention/softmax",
+      "attention/value"
+    ],
+    "started_at": "2026-07-22T04:55:36+00:00",
+    "status": "success",
+    "tool": "torch.profiler",
+    "tool_config": {
+      "activities": [
+        "CPU",
+        "CUDA"
+      ],
+      "profile_memory": false,
+      "record_shapes": true,
+      "schedule_policy": "visible_warmup",
+      "with_stack": false
+    },
+    "trace_file": "results/profile/raw/profile-P2_small_bs4_ctx512_train_step_fp32_torchprof.trace.json",
+    "trace_validation": {
+      "kernel_attribution": "trace_timestamp_window",
+      "markers_seen": [
+        "attention/scores",
+        "attention/softmax",
+        "attention/value",
+        "backward",
+        "forward",
+        "loss",
+        "optimizer",
+        "profile/measure",
+        "profile/warmup",
+        "zero_grad"
+      ],
+      "measurement_event_count": 9878
+    },
+    "warmup_steps": 5,
+    "weight_decay": 0.01
+  },
+  {
+    "autocast_dtype": null,
+    "batch_size": 4,
+    "command": "python profiling/compute_profile.py --run-id P3 --model-size small --batch-size 4 --context-length 1024 --mode train_step --warmup 5 --steps 1 --dtype fp32 --schedule-policy visible_warmup --output-dir results/profile/raw",
+    "context_length": 1024,
+    "cuda_event_stage_elapsed_us": {
+      "backward": 211472.83935546875,
+      "forward": 98603.80554199219,
+      "loss": 1062.432050704956,
+      "optimizer": 13993.535995483398,
+      "zero_grad": 196.51199877262115
+    },
+    "dtype": "fp32",
+    "environment": {
+      "bf16_supported": true,
+      "cuda_available": true,
+      "cuda_runtime": "13.0",
+      "cudnn_benchmark": false,
+      "deterministic_algorithms": false,
+      "driver_version": "580.159.03",
+      "gpu_compute_capability": "8.0",
+      "gpu_memory_mib": 81151.75,
+      "gpu_model": "NVIDIA A800-SXM4-80GB",
+      "python_version": "3.13.14",
+      "pytorch_version": "2.11.0+cu130",
+      "starter_commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+      "tf32_flags": {
+        "cudnn_allow_tf32": false,
+        "float32_matmul_precision": "highest",
+        "matmul_allow_tf32": false
+      },
+      "workspace_head": "ca8bc81a59b70516f7ebb2da4808daade877c736"
+    },
+    "error_summary": null,
+    "error_type": null,
+    "failure_stage": null,
+    "finished_at": "2026-07-22T04:55:53+00:00",
+    "learning_rate": 0.001,
+    "measurement_steps": 1,
+    "mode": "train_step",
+    "model_config": {
+      "d_ff": 3072,
+      "d_model": 768,
+      "num_heads": 12,
+      "num_layers": 12
+    },
+    "model_fingerprint": "51d24fe881356ae182e9e824301994595fc64a59f0b3ddb23d482e3f2ecc06d7",
+    "model_size": "small",
+    "optimizer": "cs336_basics.optimizer.AdamW",
+    "parameter_count": 128625408,
+    "run_id": "P3",
+    "run_name": "profile-P3_small_bs4_ctx1024_train_step_fp32_torchprof",
+    "schema_version": "a2p-profiling-v1",
+    "seed": 42,
+    "stage_markers": [
+      "profile/warmup",
+      "profile/measure",
+      "zero_grad",
+      "forward",
+      "loss",
+      "backward",
+      "optimizer",
+      "attention/scores",
+      "attention/softmax",
+      "attention/value"
+    ],
+    "started_at": "2026-07-22T04:55:45+00:00",
+    "status": "success",
+    "tool": "torch.profiler",
+    "tool_config": {
+      "activities": [
+        "CPU",
+        "CUDA"
+      ],
+      "profile_memory": false,
+      "record_shapes": true,
+      "schedule_policy": "visible_warmup",
+      "with_stack": false
+    },
+    "trace_file": "results/profile/raw/profile-P3_small_bs4_ctx1024_train_step_fp32_torchprof.trace.json",
+    "trace_validation": {
+      "kernel_attribution": "trace_timestamp_window",
+      "markers_seen": [
+        "attention/scores",
+        "attention/softmax",
+        "attention/value",
+        "backward",
+        "forward",
+        "loss",
+        "optimizer",
+        "profile/measure",
+        "profile/warmup",
+        "zero_grad"
+      ],
+      "measurement_event_count": 10316
+    },
+    "warmup_steps": 5,
+    "weight_decay": 0.01
+  },
+  {
+    "autocast_dtype": null,
+    "batch_size": 4,
+    "command": "python profiling/compute_profile.py --run-id P4 --model-size medium --batch-size 4 --context-length 256 --mode train_step --warmup 5 --steps 1 --dtype fp32 --schedule-policy visible_warmup --output-dir results/profile/raw",
+    "context_length": 256,
+    "cuda_event_stage_elapsed_us": {
+      "backward": 151677.978515625,
+      "forward": 66747.81036376953,
+      "loss": 307.2960078716278,
+      "optimizer": 72055.03845214844,
+      "zero_grad": 306.17600679397583
+    },
+    "dtype": "fp32",
+    "environment": {
+      "bf16_supported": true,
+      "cuda_available": true,
+      "cuda_runtime": "13.0",
+      "cudnn_benchmark": false,
+      "deterministic_algorithms": false,
+      "driver_version": "580.159.03",
+      "gpu_compute_capability": "8.0",
+      "gpu_memory_mib": 81151.75,
+      "gpu_model": "NVIDIA A800-SXM4-80GB",
+      "python_version": "3.13.14",
+      "pytorch_version": "2.11.0+cu130",
+      "starter_commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+      "tf32_flags": {
+        "cudnn_allow_tf32": false,
+        "float32_matmul_precision": "highest",
+        "matmul_allow_tf32": false
+      },
+      "workspace_head": "ca8bc81a59b70516f7ebb2da4808daade877c736"
+    },
+    "error_summary": null,
+    "error_type": null,
+    "failure_stage": null,
+    "finished_at": "2026-07-22T04:56:09+00:00",
+    "learning_rate": 0.001,
+    "measurement_steps": 1,
+    "mode": "train_step",
+    "model_config": {
+      "d_ff": 4096,
+      "d_model": 1024,
+      "num_heads": 16,
+      "num_layers": 24
+    },
+    "model_fingerprint": "51d24fe881356ae182e9e824301994595fc64a59f0b3ddb23d482e3f2ecc06d7",
+    "model_size": "medium",
+    "optimizer": "cs336_basics.optimizer.AdamW",
+    "parameter_count": 423183360,
+    "run_id": "P4",
+    "run_name": "profile-P4_medium_bs4_ctx256_train_step_fp32_torchprof",
+    "schema_version": "a2p-profiling-v1",
+    "seed": 42,
+    "stage_markers": [
+      "profile/warmup",
+      "profile/measure",
+      "zero_grad",
+      "forward",
+      "loss",
+      "backward",
+      "optimizer",
+      "attention/scores",
+      "attention/softmax",
+      "attention/value"
+    ],
+    "started_at": "2026-07-22T04:55:56+00:00",
+    "status": "success",
+    "tool": "torch.profiler",
+    "tool_config": {
+      "activities": [
+        "CPU",
+        "CUDA"
+      ],
+      "profile_memory": false,
+      "record_shapes": true,
+      "schedule_policy": "visible_warmup",
+      "with_stack": false
+    },
+    "trace_file": "results/profile/raw/profile-P4_medium_bs4_ctx256_train_step_fp32_torchprof.trace.json",
+    "trace_validation": {
+      "kernel_attribution": "trace_timestamp_window",
+      "markers_seen": [
+        "attention/scores",
+        "attention/softmax",
+        "attention/value",
+        "backward",
+        "forward",
+        "loss",
+        "optimizer",
+        "profile/measure",
+        "profile/warmup",
+        "zero_grad"
+      ],
+      "measurement_event_count": 19469
+    },
+    "warmup_steps": 5,
+    "weight_decay": 0.01
+  },
+  {
+    "autocast_dtype": null,
+    "batch_size": 4,
+    "command": "python profiling/compute_profile.py --run-id P5 --model-size medium --batch-size 4 --context-length 512 --mode train_step --warmup 5 --steps 1 --dtype fp32 --schedule-policy visible_warmup --output-dir results/profile/raw",
+    "context_length": 512,
+    "cuda_event_stage_elapsed_us": {
+      "backward": 274157.1960449219,
+      "forward": 132640.9912109375,
+      "loss": 565.1199817657471,
+      "optimizer": 46052.76870727539,
+      "zero_grad": 315.45600295066833
+    },
+    "dtype": "fp32",
+    "environment": {
+      "bf16_supported": true,
+      "cuda_available": true,
+      "cuda_runtime": "13.0",
+      "cudnn_benchmark": false,
+      "deterministic_algorithms": false,
+      "driver_version": "580.159.03",
+      "gpu_compute_capability": "8.0",
+      "gpu_memory_mib": 81151.75,
+      "gpu_model": "NVIDIA A800-SXM4-80GB",
+      "python_version": "3.13.14",
+      "pytorch_version": "2.11.0+cu130",
+      "starter_commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+      "tf32_flags": {
+        "cudnn_allow_tf32": false,
+        "float32_matmul_precision": "highest",
+        "matmul_allow_tf32": false
+      },
+      "workspace_head": "ca8bc81a59b70516f7ebb2da4808daade877c736"
+    },
+    "error_summary": null,
+    "error_type": null,
+    "failure_stage": null,
+    "finished_at": "2026-07-22T04:56:26+00:00",
+    "learning_rate": 0.001,
+    "measurement_steps": 1,
+    "mode": "train_step",
+    "model_config": {
+      "d_ff": 4096,
+      "d_model": 1024,
+      "num_heads": 16,
+      "num_layers": 24
+    },
+    "model_fingerprint": "51d24fe881356ae182e9e824301994595fc64a59f0b3ddb23d482e3f2ecc06d7",
+    "model_size": "medium",
+    "optimizer": "cs336_basics.optimizer.AdamW",
+    "parameter_count": 423183360,
+    "run_id": "P5",
+    "run_name": "profile-P5_medium_bs4_ctx512_train_step_fp32_torchprof",
+    "schema_version": "a2p-profiling-v1",
+    "seed": 42,
+    "stage_markers": [
+      "profile/warmup",
+      "profile/measure",
+      "zero_grad",
+      "forward",
+      "loss",
+      "backward",
+      "optimizer",
+      "attention/scores",
+      "attention/softmax",
+      "attention/value"
+    ],
+    "started_at": "2026-07-22T04:56:12+00:00",
+    "status": "success",
+    "tool": "torch.profiler",
+    "tool_config": {
+      "activities": [
+        "CPU",
+        "CUDA"
+      ],
+      "profile_memory": false,
+      "record_shapes": true,
+      "schedule_policy": "visible_warmup",
+      "with_stack": false
+    },
+    "trace_file": "results/profile/raw/profile-P5_medium_bs4_ctx512_train_step_fp32_torchprof.trace.json",
+    "trace_validation": {
+      "kernel_attribution": "trace_timestamp_window",
+      "markers_seen": [
+        "attention/scores",
+        "attention/softmax",
+        "attention/value",
+        "backward",
+        "forward",
+        "loss",
+        "optimizer",
+        "profile/measure",
+        "profile/warmup",
+        "zero_grad"
+      ],
+      "measurement_event_count": 20200
+    },
+    "warmup_steps": 5,
+    "weight_decay": 0.01
+  },
+  {
+    "autocast_dtype": null,
+    "batch_size": 4,
+    "command": "python profiling/compute_profile.py --run-id P6 --model-size medium --batch-size 4 --context-length 1024 --mode train_step --warmup 5 --steps 1 --dtype fp32 --schedule-policy visible_warmup --output-dir results/profile/raw",
+    "context_length": 1024,
+    "cuda_event_stage_elapsed_us": {
+      "backward": 621558.6547851562,
+      "forward": 293534.0576171875,
+      "loss": 1062.4959468841553,
+      "optimizer": 47827.26287841797,
+      "zero_grad": 325.98400115966797
+    },
+    "dtype": "fp32",
+    "environment": {
+      "bf16_supported": true,
+      "cuda_available": true,
+      "cuda_runtime": "13.0",
+      "cudnn_benchmark": false,
+      "deterministic_algorithms": false,
+      "driver_version": "580.159.03",
+      "gpu_compute_capability": "8.0",
+      "gpu_memory_mib": 81151.75,
+      "gpu_model": "NVIDIA A800-SXM4-80GB",
+      "python_version": "3.13.14",
+      "pytorch_version": "2.11.0+cu130",
+      "starter_commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+      "tf32_flags": {
+        "cudnn_allow_tf32": false,
+        "float32_matmul_precision": "highest",
+        "matmul_allow_tf32": false
+      },
+      "workspace_head": "ca8bc81a59b70516f7ebb2da4808daade877c736"
+    },
+    "error_summary": null,
+    "error_type": null,
+    "failure_stage": null,
+    "finished_at": "2026-07-22T04:56:46+00:00",
+    "learning_rate": 0.001,
+    "measurement_steps": 1,
+    "mode": "train_step",
+    "model_config": {
+      "d_ff": 4096,
+      "d_model": 1024,
+      "num_heads": 16,
+      "num_layers": 24
+    },
+    "model_fingerprint": "51d24fe881356ae182e9e824301994595fc64a59f0b3ddb23d482e3f2ecc06d7",
+    "model_size": "medium",
+    "optimizer": "cs336_basics.optimizer.AdamW",
+    "parameter_count": 423183360,
+    "run_id": "P6",
+    "run_name": "profile-P6_medium_bs4_ctx1024_train_step_fp32_torchprof",
+    "schema_version": "a2p-profiling-v1",
+    "seed": 42,
+    "stage_markers": [
+      "profile/warmup",
+      "profile/measure",
+      "zero_grad",
+      "forward",
+      "loss",
+      "backward",
+      "optimizer",
+      "attention/scores",
+      "attention/softmax",
+      "attention/value"
+    ],
+    "started_at": "2026-07-22T04:56:29+00:00",
+    "status": "success",
+    "tool": "torch.profiler",
+    "tool_config": {
+      "activities": [
+        "CPU",
+        "CUDA"
+      ],
+      "profile_memory": false,
+      "record_shapes": true,
+      "schedule_policy": "visible_warmup",
+      "with_stack": false
+    },
+    "trace_file": "results/profile/raw/profile-P6_medium_bs4_ctx1024_train_step_fp32_torchprof.trace.json",
+    "trace_validation": {
+      "kernel_attribution": "trace_timestamp_window",
+      "markers_seen": [
+        "attention/scores",
+        "attention/softmax",
+        "attention/value",
+        "backward",
+        "forward",
+        "loss",
+        "optimizer",
+        "profile/measure",
+        "profile/warmup",
+        "zero_grad"
+      ],
+      "measurement_event_count": 21011
+    },
+    "warmup_steps": 5,
+    "weight_decay": 0.01
+  }
+]

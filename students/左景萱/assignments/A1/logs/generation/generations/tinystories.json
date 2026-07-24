@@ -1,0 +1,10 @@
+{
+  "prompt": "Once upon a time",
+  "seed": 42,
+  "temperature": 0.8,
+  "top_p": 0.95,
+  "requested_new_tokens": 256,
+  "generated_new_tokens": 117,
+  "stopped_on_eos": true,
+  "text": "Once upon a time, there was a big, heavy rock. The rock was sad because it was so heavy. It needed to be fixed.\nA little bird lived in the rock. The bird could not fly very well. The bird wanted to help the rock. The bird had an idea. It would find a new battery for the rock.\nThe bird looked for a new battery. It found one in the ground. The bird gave the new battery to the rock. The rock was happy. The bird and the rock became good friends. They played together in the sky every day.\n<|endoftext|>"
+}

@@ -1,0 +1,54 @@
+[metadata]
+status = "deferred_gpu"
+purpose = "TinyStories ungated SiLU FFN ablation with a 4*d_model hidden size for approximate parameter matching."
+deferred_reason = "Formal ablation curves require a CUDA host; this file remains directly executable."
+
+[model]
+vocab_size = 10000
+context_length = 256
+d_model = 512
+num_layers = 4
+num_heads = 16
+d_ff = 1344
+rope_theta = 10000.0
+ffn_type = "silu"
+silu_d_ff = 2048
+
+[data]
+train_path = "data/encoded/tinystories_train.npy"
+validation_path = "data/encoded/tinystories_valid.npy"
+dtype = "uint16"
+validate_token_range = true
+strict_token_range = false
+
+[optimizer]
+lr = 0.001
+betas = [0.9, 0.95]
+eps = 1e-8
+weight_decay = 0.1
+separate_weight_decay = true
+
+[schedule]
+max_learning_rate = 0.001
+min_learning_rate = 0.0001
+warmup_iters = 200
+cosine_cycle_iters = 10000
+
+[training]
+device = "cuda"
+seed = 1337
+batch_size = 128
+max_iters = 10000
+max_grad_norm = 1.0
+compile = true
+log_interval = 10
+eval_interval = 250
+eval_iters = 20
+checkpoint_interval = 1000
+eval_at_start = true
+
+[run]
+output_dir = "runs/tinystories/ablations/silu_ffn"
+log_file = "metrics.jsonl"
+checkpoint_file = "latest.pt"
+keep_step_checkpoints = false

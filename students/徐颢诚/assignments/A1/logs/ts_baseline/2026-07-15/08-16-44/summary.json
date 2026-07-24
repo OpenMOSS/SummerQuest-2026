@@ -1,0 +1,16 @@
+{
+  "run_name": "ts_4gpu_5k_lr1e3-6e5",
+  "final_val_loss": 1.4308572173118592,
+  "total_training_time_sec": 791.1796453930438,
+  "d_model": 512,
+  "num_layers": 4,
+  "num_heads": 16,
+  "context_length": 256,
+  "batch_size_per_gpu": 64,
+  "global_batch_size": 256,
+  "world_size": 4,
+  "total_steps": 5000,
+  "processed_tokens": 327680000,
+  "device": "cuda:0",
+  "checkpoint_path": "not submitted (model weights excluded)"
+}

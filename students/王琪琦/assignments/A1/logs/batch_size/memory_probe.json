@@ -1,0 +1,24 @@
+{
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "total_memory_gib": 47.4993,
+  "context_length": 256,
+  "results": [
+    {
+      "batch_size": 128,
+      "status": "passed",
+      "peak_allocated_gib": 15.7613
+    },
+    {
+      "batch_size": 256,
+      "status": "passed",
+      "peak_allocated_gib": 31.6063
+    },
+    {
+      "batch_size": 512,
+      "status": "oom",
+      "allocated_before_failed_request_gib": 45.27,
+      "failed_allocation_gib": 2.0
+    }
+  ],
+  "conclusion": "Batch 256 is confirmed feasible; batch 512 exceeds available training memory. The interval between them requires a finer probe before claiming the exact maximum."
+}

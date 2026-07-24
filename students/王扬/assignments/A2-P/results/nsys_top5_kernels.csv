@@ -1,0 +1,91 @@
+source_stats_file,rank,kernel_name,kernel_kind,time_value,calls
+results/nsys/large_forward_backward_ctx1024_nsys_stats.csv,1,sm80_xmma_gemm_f32f32_f32f32_f32_tn_n_tilesize128x128x8_stage3_warpsize2x2x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,141655268.0,181
+results/nsys/large_forward_backward_ctx1024_nsys_stats.csv,2,void cutlass::Kernel2<cutlass_80_simt_sgemm_256x128_8x4_nn_align1>(T1::Params),matmul,85588781.0,73
+results/nsys/large_forward_backward_ctx1024_nsys_stats.csv,3,void cutlass::Kernel2<cutlass_80_simt_sgemm_128x256_8x4_nt_align1>(T1::Params),matmul,81907926.0,181
+results/nsys/large_forward_backward_ctx1024_nsys_stats.csv,4,void cutlass::Kernel2<cutlass_80_simt_sgemm_256x128_8x4_nt_align1>(T1::Params),matmul,81264832.0,72
+results/nsys/large_forward_backward_ctx1024_nsys_stats.csv,5,sm80_xmma_gemm_f32f32_f32f32_f32_nn_n_tilesize64x64x8_stage3_warpsize1x4x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,65283787.0,216
+results/nsys/large_forward_backward_ctx256_nsys_stats.csv,1,sm80_xmma_gemm_f32f32_f32f32_f32_nn_n_tilesize256x128x8_stage3_warpsize4x2x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,32901405.0,217
+results/nsys/large_forward_backward_ctx256_nsys_stats.csv,2,sm80_xmma_gemm_f32f32_f32f32_f32_tn_n_tilesize64x64x8_stage3_warpsize1x4x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,25335736.0,72
+results/nsys/large_forward_backward_ctx256_nsys_stats.csv,3,void cutlass::Kernel2<cutlass_80_simt_sgemm_128x256_8x4_nt_align1>(T1::Params),matmul,22777714.0,72
+results/nsys/large_forward_backward_ctx256_nsys_stats.csv,4,sm80_xmma_gemm_f32f32_f32f32_f32_tn_n_tilesize128x128x8_stage3_warpsize2x2x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,21231104.0,180
+results/nsys/large_forward_backward_ctx256_nsys_stats.csv,5,sm80_xmma_gemm_f32f32_f32f32_f32_nt_n_tilesize64x256x8_stage3_warpsize1x4x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,13377919.0,144
+results/nsys/large_forward_backward_ctx512_nsys_stats.csv,1,void cutlass::Kernel2<cutlass_80_simt_sgemm_128x128_8x4_nt_align1>(T1::Params),matmul,64583164.0,108
+results/nsys/large_forward_backward_ctx512_nsys_stats.csv,2,sm80_xmma_gemm_f32f32_f32f32_f32_tn_n_tilesize128x64x8_stage3_warpsize2x2x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,45022813.0,72
+results/nsys/large_forward_backward_ctx512_nsys_stats.csv,3,sm80_xmma_gemm_f32f32_f32f32_f32_tn_n_tilesize128x128x8_stage3_warpsize2x2x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,43098547.0,181
+results/nsys/large_forward_backward_ctx512_nsys_stats.csv,4,sm80_xmma_gemm_f32f32_f32f32_f32_nn_n_tilesize128x128x8_stage3_warpsize2x2x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,42273629.0,73
+results/nsys/large_forward_backward_ctx512_nsys_stats.csv,5,sm80_xmma_gemm_f32f32_f32f32_f32_nn_n_tilesize64x64x8_stage3_warpsize1x4x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,30322721.0,216
+results/nsys/large_forward_ctx1024_nsys_stats.csv,1,sm80_xmma_gemm_f32f32_f32f32_f32_tn_n_tilesize128x128x8_stage3_warpsize2x2x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,129366567.0,145
+results/nsys/large_forward_ctx1024_nsys_stats.csv,2,sm80_xmma_gemm_f32f32_f32f32_f32_tn_n_tilesize128x64x8_stage3_warpsize2x2x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,54177815.0,144
+results/nsys/large_forward_ctx1024_nsys_stats.csv,3,"void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::DivFunctor<float>>>(at::TensorIteratorBase &, const T1 &)::[lambda(int) (instance 1)]>(int, T3)",other,10581864.0,36
+results/nsys/large_forward_ctx1024_nsys_stats.csv,4,sm80_xmma_gemm_f32f32_f32f32_f32_nn_n_tilesize64x64x8_stage3_warpsize1x4x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,9505108.0,36
+results/nsys/large_forward_ctx1024_nsys_stats.csv,5,"void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<float>>(at::TensorIteratorBase &, const T1 &)::[lambda(int) (instance 1)]>(int, T3)",other,9198807.0,36
+results/nsys/large_forward_ctx256_nsys_stats.csv,1,sm80_xmma_gemm_f32f32_f32f32_f32_tn_n_tilesize64x64x8_stage3_warpsize1x4x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,25332181.0,72
+results/nsys/large_forward_ctx256_nsys_stats.csv,2,sm80_xmma_gemm_f32f32_f32f32_f32_tn_n_tilesize128x128x8_stage3_warpsize2x2x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,21216067.0,180
+results/nsys/large_forward_ctx256_nsys_stats.csv,3,"void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>>(at::TensorIteratorBase &, const T1 &)::[lambda(int) (instance 1)]>(int, T3)",other,2065286.0,434
+results/nsys/large_forward_ctx256_nsys_stats.csv,4,sm80_xmma_gemm_f32f32_f32f32_f32_tn_n_tilesize128x128x8_stage3_warpsize2x2x1_ffma_aligna4_alignc4_execute_split_k_kernel__5x_cublas,matmul,1273997.0,180
+results/nsys/large_forward_ctx256_nsys_stats.csv,5,sm80_xmma_gemm_f32f32_f32f32_f32_tn_n_tilesize64x128x8_stage3_warpsize1x4x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,1139567.0,36
+results/nsys/large_forward_ctx512_nsys_stats.csv,1,sm80_xmma_gemm_f32f32_f32f32_f32_tn_n_tilesize128x64x8_stage3_warpsize2x2x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,45005429.0,72
+results/nsys/large_forward_ctx512_nsys_stats.csv,2,sm80_xmma_gemm_f32f32_f32f32_f32_tn_n_tilesize128x128x8_stage3_warpsize2x2x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,43138376.0,181
+results/nsys/large_forward_ctx512_nsys_stats.csv,3,sm80_xmma_gemm_f32f32_f32f32_f32_tn_n_tilesize64x64x8_stage3_warpsize1x4x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,3545207.0,36
+results/nsys/large_forward_ctx512_nsys_stats.csv,4,"void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>>(at::TensorIteratorBase &, const T1 &)::[lambda(int) (instance 1)]>(int, T3)",other,3132408.0,434
+results/nsys/large_forward_ctx512_nsys_stats.csv,5,sm80_xmma_gemm_f32f32_f32f32_f32_nn_n_tilesize64x64x8_stage3_warpsize1x4x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,2872192.0,36
+results/nsys/large_train_step_ctx1024_nsys_stats.csv,1,sm80_xmma_gemm_f32f32_f32f32_f32_tn_n_tilesize128x128x8_stage3_warpsize2x2x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,141592662.0,181
+results/nsys/large_train_step_ctx1024_nsys_stats.csv,2,void cutlass::Kernel2<cutlass_80_simt_sgemm_256x128_8x4_nn_align1>(T1::Params),matmul,85573200.0,73
+results/nsys/large_train_step_ctx1024_nsys_stats.csv,3,void cutlass::Kernel2<cutlass_80_simt_sgemm_128x256_8x4_nt_align1>(T1::Params),matmul,81925334.0,181
+results/nsys/large_train_step_ctx1024_nsys_stats.csv,4,void cutlass::Kernel2<cutlass_80_simt_sgemm_256x128_8x4_nt_align1>(T1::Params),matmul,81255099.0,72
+results/nsys/large_train_step_ctx1024_nsys_stats.csv,5,sm80_xmma_gemm_f32f32_f32f32_f32_nn_n_tilesize64x64x8_stage3_warpsize1x4x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,65273538.0,216
+results/nsys/large_train_step_ctx256_nsys_stats.csv,1,sm80_xmma_gemm_f32f32_f32f32_f32_nn_n_tilesize256x128x8_stage3_warpsize4x2x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,32869120.0,217
+results/nsys/large_train_step_ctx256_nsys_stats.csv,2,sm80_xmma_gemm_f32f32_f32f32_f32_tn_n_tilesize64x64x8_stage3_warpsize1x4x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,25300120.0,72
+results/nsys/large_train_step_ctx256_nsys_stats.csv,3,void cutlass::Kernel2<cutlass_80_simt_sgemm_128x256_8x4_nt_align1>(T1::Params),matmul,22725368.0,72
+results/nsys/large_train_step_ctx256_nsys_stats.csv,4,sm80_xmma_gemm_f32f32_f32f32_f32_tn_n_tilesize128x128x8_stage3_warpsize2x2x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,21211053.0,180
+results/nsys/large_train_step_ctx256_nsys_stats.csv,5,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::CUDAFunctor_add<float>, std::array<char *, (unsigned long)3>>(int, T2, T3)",other,14172162.0,1993
+results/nsys/large_train_step_ctx512_nsys_stats.csv,1,void cutlass::Kernel2<cutlass_80_simt_sgemm_128x128_8x4_nt_align1>(T1::Params),matmul,64568236.0,108
+results/nsys/large_train_step_ctx512_nsys_stats.csv,2,sm80_xmma_gemm_f32f32_f32f32_f32_tn_n_tilesize128x64x8_stage3_warpsize2x2x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,45065377.0,72
+results/nsys/large_train_step_ctx512_nsys_stats.csv,3,sm80_xmma_gemm_f32f32_f32f32_f32_tn_n_tilesize128x128x8_stage3_warpsize2x2x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,43126444.0,181
+results/nsys/large_train_step_ctx512_nsys_stats.csv,4,sm80_xmma_gemm_f32f32_f32f32_f32_nn_n_tilesize128x128x8_stage3_warpsize2x2x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,42291364.0,73
+results/nsys/large_train_step_ctx512_nsys_stats.csv,5,sm80_xmma_gemm_f32f32_f32f32_f32_nn_n_tilesize64x64x8_stage3_warpsize1x4x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,30323348.0,216
+results/nsys/xl_forward_backward_ctx1024_nsys_stats.csv,1,void cutlass::Kernel2<cutlass_80_simt_sgemm_256x128_8x4_nt_align1>(T1::Params),matmul,553827064.0,224
+results/nsys/xl_forward_backward_ctx1024_nsys_stats.csv,2,void cutlass::Kernel2<cutlass_80_simt_sgemm_256x128_8x4_nn_align1>(T1::Params),matmul,437837617.0,193
+results/nsys/xl_forward_backward_ctx1024_nsys_stats.csv,3,sm80_xmma_gemm_f32f32_f32f32_f32_tn_n_tilesize128x128x8_stage3_warpsize2x2x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,311177043.0,129
+results/nsys/xl_forward_backward_ctx1024_nsys_stats.csv,4,sm80_xmma_gemm_f32f32_f32f32_f32_tn_n_tilesize256x64x8_stage3_warpsize2x2x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,162249560.0,32
+results/nsys/xl_forward_backward_ctx1024_nsys_stats.csv,5,sm80_xmma_gemm_f32f32_f32f32_f32_tn_n_tilesize128x64x8_stage3_warpsize2x2x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,158265885.0,128
+results/nsys/xl_forward_backward_ctx256_nsys_stats.csv,1,void cutlass::Kernel2<cutlass_80_simt_sgemm_256x128_8x4_nn_align1>(T1::Params),matmul,151811033.0,225
+results/nsys/xl_forward_backward_ctx256_nsys_stats.csv,2,sm80_xmma_gemm_f32f32_f32f32_f32_tn_n_tilesize128x64x8_stage3_warpsize2x2x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,79776976.0,65
+results/nsys/xl_forward_backward_ctx256_nsys_stats.csv,3,void cutlass::Kernel2<cutlass_80_simt_sgemm_128x256_8x4_nt_align1>(T1::Params),matmul,77472996.0,160
+results/nsys/xl_forward_backward_ctx256_nsys_stats.csv,4,void cutlass::Kernel2<cutlass_80_simt_sgemm_256x128_8x4_nt_align1>(T1::Params),matmul,74177325.0,64
+results/nsys/xl_forward_backward_ctx256_nsys_stats.csv,5,sm80_xmma_gemm_f32f32_f32f32_f32_tn_n_tilesize128x128x8_stage3_warpsize2x2x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,71045264.0,160
+results/nsys/xl_forward_backward_ctx512_nsys_stats.csv,1,void cutlass::Kernel2<cutlass_80_simt_sgemm_256x128_8x4_nn_align1>(T1::Params),matmul,216939010.0,97
+results/nsys/xl_forward_backward_ctx512_nsys_stats.csv,2,sm80_xmma_gemm_f32f32_f32f32_f32_tn_n_tilesize128x128x8_stage3_warpsize2x2x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,215679025.0,161
+results/nsys/xl_forward_backward_ctx512_nsys_stats.csv,3,void cutlass::Kernel2<cutlass_80_simt_sgemm_256x128_8x4_nt_align1>(T1::Params),matmul,212770419.0,96
+results/nsys/xl_forward_backward_ctx512_nsys_stats.csv,4,sm80_xmma_gemm_f32f32_f32f32_f32_nn_n_tilesize64x128x8_stage3_warpsize1x4x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,85709636.0,128
+results/nsys/xl_forward_backward_ctx512_nsys_stats.csv,5,void cutlass::Kernel2<cutlass_80_simt_sgemm_128x128_8x4_nt_align1>(T1::Params),matmul,81942666.0,160
+results/nsys/xl_forward_ctx1024_nsys_stats.csv,1,sm80_xmma_gemm_f32f32_f32f32_f32_tn_n_tilesize128x128x8_stage3_warpsize2x2x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,291645415.0,97
+results/nsys/xl_forward_ctx1024_nsys_stats.csv,2,sm80_xmma_gemm_f32f32_f32f32_f32_tn_n_tilesize256x64x8_stage3_warpsize2x2x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,162246148.0,32
+results/nsys/xl_forward_ctx1024_nsys_stats.csv,3,sm80_xmma_gemm_f32f32_f32f32_f32_tn_n_tilesize128x64x8_stage3_warpsize2x2x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,158288496.0,128
+results/nsys/xl_forward_ctx1024_nsys_stats.csv,4,sm80_xmma_gemm_f32f32_f32f32_f32_nn_n_tilesize128x32x8_stage3_warpsize2x2x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,22093235.0,32
+results/nsys/xl_forward_ctx1024_nsys_stats.csv,5,"void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::DivFunctor<float>>>(at::TensorIteratorBase &, const T1 &)::[lambda(int) (instance 1)]>(int, T3)",other,15025857.0,32
+results/nsys/xl_forward_ctx256_nsys_stats.csv,1,sm80_xmma_gemm_f32f32_f32f32_f32_tn_n_tilesize128x64x8_stage3_warpsize2x2x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,79887307.0,65
+results/nsys/xl_forward_ctx256_nsys_stats.csv,2,sm80_xmma_gemm_f32f32_f32f32_f32_tn_n_tilesize128x128x8_stage3_warpsize2x2x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,71108996.0,160
+results/nsys/xl_forward_ctx256_nsys_stats.csv,3,"void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>>(at::TensorIteratorBase &, const T1 &)::[lambda(int) (instance 1)]>(int, T3)",other,2773563.0,386
+results/nsys/xl_forward_ctx256_nsys_stats.csv,4,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned long)3>>(int, T2, T3)",other,1940902.0,64
+results/nsys/xl_forward_ctx256_nsys_stats.csv,5,void cutlass::Kernel2<cutlass_80_simt_sgemm_256x128_8x4_tn_align1>(T1::Params),matmul,1623084.0,32
+results/nsys/xl_forward_ctx512_nsys_stats.csv,1,sm80_xmma_gemm_f32f32_f32f32_f32_tn_n_tilesize128x128x8_stage3_warpsize2x2x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,210498432.0,129
+results/nsys/xl_forward_ctx512_nsys_stats.csv,2,sm80_xmma_gemm_f32f32_f32f32_f32_tn_n_tilesize256x64x8_stage3_warpsize2x2x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,77139325.0,128
+results/nsys/xl_forward_ctx512_nsys_stats.csv,3,sm80_xmma_gemm_f32f32_f32f32_f32_nn_n_tilesize128x32x8_stage3_warpsize2x2x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,5776543.0,32
+results/nsys/xl_forward_ctx512_nsys_stats.csv,4,"void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>>(at::TensorIteratorBase &, const T1 &)::[lambda(int) (instance 1)]>(int, T3)",other,4963046.0,386
+results/nsys/xl_forward_ctx512_nsys_stats.csv,5,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned long)3>>(int, T2, T3)",other,3794390.0,64
+results/nsys/xl_train_step_ctx1024_nsys_stats.csv,1,void cutlass::Kernel2<cutlass_80_simt_sgemm_256x128_8x4_nt_align1>(T1::Params),matmul,553851061.0,224
+results/nsys/xl_train_step_ctx1024_nsys_stats.csv,2,void cutlass::Kernel2<cutlass_80_simt_sgemm_256x128_8x4_nn_align1>(T1::Params),matmul,437994966.0,193
+results/nsys/xl_train_step_ctx1024_nsys_stats.csv,3,sm80_xmma_gemm_f32f32_f32f32_f32_tn_n_tilesize128x128x8_stage3_warpsize2x2x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,311056456.0,129
+results/nsys/xl_train_step_ctx1024_nsys_stats.csv,4,sm80_xmma_gemm_f32f32_f32f32_f32_tn_n_tilesize256x64x8_stage3_warpsize2x2x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,162226810.0,32
+results/nsys/xl_train_step_ctx1024_nsys_stats.csv,5,sm80_xmma_gemm_f32f32_f32f32_f32_tn_n_tilesize128x64x8_stage3_warpsize2x2x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,158188702.0,128
+results/nsys/xl_train_step_ctx256_nsys_stats.csv,1,void cutlass::Kernel2<cutlass_80_simt_sgemm_256x128_8x4_nn_align1>(T1::Params),matmul,151837281.0,225
+results/nsys/xl_train_step_ctx256_nsys_stats.csv,2,sm80_xmma_gemm_f32f32_f32f32_f32_tn_n_tilesize128x64x8_stage3_warpsize2x2x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,79769264.0,65
+results/nsys/xl_train_step_ctx256_nsys_stats.csv,3,void cutlass::Kernel2<cutlass_80_simt_sgemm_128x256_8x4_nt_align1>(T1::Params),matmul,77467757.0,160
+results/nsys/xl_train_step_ctx256_nsys_stats.csv,4,void cutlass::Kernel2<cutlass_80_simt_sgemm_256x128_8x4_nt_align1>(T1::Params),matmul,74161552.0,64
+results/nsys/xl_train_step_ctx256_nsys_stats.csv,5,sm80_xmma_gemm_f32f32_f32f32_f32_tn_n_tilesize128x128x8_stage3_warpsize2x2x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,71033752.0,160
+results/nsys/xl_train_step_ctx512_nsys_stats.csv,1,void cutlass::Kernel2<cutlass_80_simt_sgemm_256x128_8x4_nn_align1>(T1::Params),matmul,216929843.0,97
+results/nsys/xl_train_step_ctx512_nsys_stats.csv,2,sm80_xmma_gemm_f32f32_f32f32_f32_tn_n_tilesize128x128x8_stage3_warpsize2x2x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,215775113.0,161
+results/nsys/xl_train_step_ctx512_nsys_stats.csv,3,void cutlass::Kernel2<cutlass_80_simt_sgemm_256x128_8x4_nt_align1>(T1::Params),matmul,212742527.0,96
+results/nsys/xl_train_step_ctx512_nsys_stats.csv,4,sm80_xmma_gemm_f32f32_f32f32_f32_nn_n_tilesize64x128x8_stage3_warpsize1x4x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas,matmul,85697756.0,128
+results/nsys/xl_train_step_ctx512_nsys_stats.csv,5,void cutlass::Kernel2<cutlass_80_simt_sgemm_128x128_8x4_nt_align1>(T1::Params),matmul,81927834.0,160

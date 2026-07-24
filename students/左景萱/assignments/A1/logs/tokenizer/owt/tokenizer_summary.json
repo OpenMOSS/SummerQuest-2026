@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "artifact_format": "gpt2_byte_level_bpe",
+  "started_at_utc": "2026-07-13T08:16:05.322122+00:00",
+  "finished_at_utc": "2026-07-13T08:26:36.075627+00:00",
+  "corpus": {
+    "path": "data/owt_train.txt",
+    "bytes": 11920511059
+  },
+  "configuration": {
+    "vocab_size_requested": 32000,
+    "special_tokens": [
+      "<|endoftext|>"
+    ],
+    "num_processes": 48
+  },
+  "result": {
+    "vocab_size": 32000,
+    "num_merges": 31743,
+    "elapsed_seconds": 630.6584276091307,
+    "corpus_bytes_per_second": 18901691.529266443,
+    "longest_token": {
+      "including_special_tokens": {
+        "id": 25822,
+        "length_bytes": 64,
+        "bytes_hex": "c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382",
+        "text_utf8": "ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ"
+      },
+      "excluding_special_tokens": {
+        "id": 25822,
+        "length_bytes": 64,
+        "bytes_hex": "c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382c383c382",
+        "text_utf8": "ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ"
+      }
+    }
+  },
+  "artifacts": {
+    "vocab": "tokenizer_artifacts/owt/vocab.json",
+    "merges": "tokenizer_artifacts/owt/merges.txt",
+    "summary": "tokenizer_artifacts/owt/tokenizer_summary.json"
+  }
+}

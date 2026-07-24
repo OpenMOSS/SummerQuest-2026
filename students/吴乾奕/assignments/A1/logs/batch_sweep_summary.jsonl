@@ -1,0 +1,5 @@
+{"batch_size":1,"steps":40960,"processed_tokens":10485760,"max_learning_rate":0.001,"status":"completed","best_validation_loss":2.384012055,"peak_step_tokens_per_second":23212.812,"peak_cuda_memory_bytes":883994112}
+{"batch_size":16,"steps":2560,"processed_tokens":10485760,"max_learning_rate":0.001,"status":"completed","best_validation_loss":2.005611348,"peak_step_tokens_per_second":269539.244,"peak_cuda_memory_bytes":1967596032}
+{"batch_size":64,"steps":640,"processed_tokens":10485760,"max_learning_rate":0.001,"status":"completed","best_validation_loss":2.162244648,"peak_step_tokens_per_second":376223.355,"peak_cuda_memory_bytes":6703571456}
+{"batch_size":128,"steps":320,"processed_tokens":10485760,"max_learning_rate":0.001,"status":"completed","best_validation_loss":2.418166554,"peak_step_tokens_per_second":402732.214,"peak_cuda_memory_bytes":13028402176}
+{"batch_size":256,"steps":160,"processed_tokens":10485760,"max_learning_rate":0.001,"status":"completed","memory_probe":true,"best_validation_loss":2.823779130,"peak_step_tokens_per_second":421439.457,"peak_cuda_memory_bytes":25664333824}
