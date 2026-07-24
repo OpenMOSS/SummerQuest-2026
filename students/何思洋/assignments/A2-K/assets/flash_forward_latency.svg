@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="420" viewBox="0 0 760 420">
+<rect width="100%" height="100%" fill="#fff"/>
+<text x="380.0" y="30" text-anchor="middle" font-family="Arial" font-size="20">FlashAttention Forward p50 Latency</text>
+<line x1="80" y1="330" x2="730" y2="330" stroke="#222"/>
+<line x1="80" y1="55" x2="80" y2="330" stroke="#222"/>
+<rect x="90.8" y="311.6" width="32.5" height="18.4" fill="#497b5a"/>
+<text x="107.1" y="306.6" text-anchor="middle" font-family="Arial" font-size="11">1.2</text>
+<text x="107.1" y="354" transform="rotate(35 107.1 354)" font-family="Arial" font-size="10">eager-512-64</text>
+<rect x="145.0" y="55.0" width="32.5" height="275.0" fill="#497b5a"/>
+<text x="161.2" y="50.0" text-anchor="middle" font-family="Arial" font-size="11">18.4</text>
+<text x="161.2" y="354" transform="rotate(35 161.2 354)" font-family="Arial" font-size="10">compiled-512-64</text>
+<rect x="199.2" y="325.9" width="32.5" height="4.1" fill="#497b5a"/>
+<text x="215.4" y="320.9" text-anchor="middle" font-family="Arial" font-size="11">0.3</text>
+<text x="215.4" y="354" transform="rotate(35 215.4 354)" font-family="Arial" font-size="10">triton-512-64</text>
+<rect x="253.3" y="320.3" width="32.5" height="9.7" fill="#497b5a"/>
+<text x="269.6" y="315.3" text-anchor="middle" font-family="Arial" font-size="11">0.6</text>
+<text x="269.6" y="354" transform="rotate(35 269.6 354)" font-family="Arial" font-size="10">eager-512-128</text>
+<rect x="307.5" y="264.3" width="32.5" height="65.7" fill="#497b5a"/>
+<text x="323.7" y="259.3" text-anchor="middle" font-family="Arial" font-size="11">4.4</text>
+<text x="323.7" y="354" transform="rotate(35 323.7 354)" font-family="Arial" font-size="10">compiled-512-128</text>
+<rect x="361.7" y="327.0" width="32.5" height="3.0" fill="#497b5a"/>
+<text x="377.9" y="322.0" text-anchor="middle" font-family="Arial" font-size="11">0.2</text>
+<text x="377.9" y="354" transform="rotate(35 377.9 354)" font-family="Arial" font-size="10">triton-512-128</text>
+<rect x="415.8" y="315.3" width="32.5" height="14.7" fill="#497b5a"/>
+<text x="432.1" y="310.3" text-anchor="middle" font-family="Arial" font-size="11">1.0</text>
+<text x="432.1" y="354" transform="rotate(35 432.1 354)" font-family="Arial" font-size="10">eager-2048-64</text>
+<rect x="470.0" y="261.1" width="32.5" height="68.9" fill="#497b5a"/>
+<text x="486.2" y="256.1" text-anchor="middle" font-family="Arial" font-size="11">4.6</text>
+<text x="486.2" y="354" transform="rotate(35 486.2 354)" font-family="Arial" font-size="10">compiled-2048-64</text>
+<rect x="524.2" y="326.5" width="32.5" height="3.5" fill="#497b5a"/>
+<text x="540.4" y="321.5" text-anchor="middle" font-family="Arial" font-size="11">0.2</text>
+<text x="540.4" y="354" transform="rotate(35 540.4 354)" font-family="Arial" font-size="10">triton-2048-64</text>
+<rect x="578.3" y="314.6" width="32.5" height="15.4" fill="#497b5a"/>
+<text x="594.6" y="309.6" text-anchor="middle" font-family="Arial" font-size="11">1.0</text>
+<text x="594.6" y="354" transform="rotate(35 594.6 354)" font-family="Arial" font-size="10">eager-2048-128</text>
+<rect x="632.5" y="262.7" width="32.5" height="67.3" fill="#497b5a"/>
+<text x="648.8" y="257.7" text-anchor="middle" font-family="Arial" font-size="11">4.5</text>
+<text x="648.8" y="354" transform="rotate(35 648.8 354)" font-family="Arial" font-size="10">compiled-2048-128</text>
+<rect x="686.7" y="323.9" width="32.5" height="6.1" fill="#497b5a"/>
+<text x="702.9" y="318.9" text-anchor="middle" font-family="Arial" font-size="11">0.4</text>
+<text x="702.9" y="354" transform="rotate(35 702.9 354)" font-family="Arial" font-size="10">triton-2048-128</text>
+</svg>

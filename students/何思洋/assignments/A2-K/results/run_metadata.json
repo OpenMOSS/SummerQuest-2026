@@ -1,0 +1,28 @@
+{
+  "timestamp_utc": "2026-07-24T10:59:35Z",
+  "python": "3.12.13",
+  "platform": "Linux-5.15.0-141-generic-x86_64-with-glibc2.39",
+  "torch": "2.11.0+cu126",
+  "cuda_runtime": "12.6",
+  "cuda_available": true,
+  "args": {
+    "output": "local_results/a2k/flash_benchmark_16384.csv",
+    "metadata_output": "local_results/a2k/run_metadata_16384.json",
+    "warmup": 1,
+    "steps": 1,
+    "max_seq": 16384,
+    "sequence_length": [
+      16384
+    ],
+    "allocator_limit_mib": 23552
+  },
+  "gpu": {
+    "name": "NVIDIA GeForce RTX 4090",
+    "total_memory_mib": 48518.0625
+  },
+  "nvidia_smi": "NVIDIA GeForce RTX 4090, 49140 MiB, 47499 MiB, 570.195.03, 450.00 W, P0",
+  "allocator": {
+    "allocator_fraction": 0.48542746322568014,
+    "allocator_limit_mib": 23552
+  }
+}
