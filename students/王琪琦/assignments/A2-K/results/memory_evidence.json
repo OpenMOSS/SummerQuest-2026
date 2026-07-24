@@ -1,0 +1,11 @@
+{
+  "allocator": {
+    "allocator_fraction": 0.48421737046550567,
+    "allocator_limit_mib": 23552
+  },
+  "hard_limit_mib": 24576,
+  "pytorch_peak_allocated_mib": 23372.14453125,
+  "pytorch_peak_reserved_mib": 23504.0,
+  "within_24gib": true,
+  "physical_gpu_note": "development GPU has 48 GiB; PyTorch allocator was capped at 23 GiB"
+}
