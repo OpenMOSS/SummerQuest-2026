@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="420" viewBox="0 0 760 420">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="380.0" y="30" text-anchor="middle" font-family="Arial" font-size="20">A2-P Profile Top CUDA Events</text>
+<text x="22" y="205.0" transform="rotate(-90 22 205.0)" text-anchor="middle" font-family="Arial" font-size="13">CUDA ms</text>
+<line x1="90" y1="350" x2="730" y2="350" stroke="#222"/>
+<line x1="90" y1="60" x2="90" y2="350" stroke="#222"/>
+<rect x="106.0" y="60.0" width="49.6" height="290.0" fill="#2f7f91"/>
+<text x="130.8" y="54.0" text-anchor="middle" font-family="Arial" font-size="11">31.4</text>
+<text x="130.8" y="374" text-anchor="middle" font-family="Arial" font-size="11">forward</text>
+<rect x="186.0" y="221.0" width="49.6" height="129.0" fill="#2f7f91"/>
+<text x="210.8" y="215.0" text-anchor="middle" font-family="Arial" font-size="11">14.0</text>
+<text x="210.8" y="374" text-anchor="middle" font-family="Arial" font-size="11">profile/measure</text>
+<rect x="266.0" y="245.9" width="49.6" height="104.1" fill="#2f7f91"/>
+<text x="290.8" y="239.9" text-anchor="middle" font-family="Arial" font-size="11">11.3</text>
+<text x="290.8" y="374" text-anchor="middle" font-family="Arial" font-size="11">Optimizer.step#Ada</text>
+<rect x="346.0" y="246.3" width="49.6" height="103.7" fill="#2f7f91"/>
+<text x="370.8" y="240.3" text-anchor="middle" font-family="Arial" font-size="11">11.2</text>
+<text x="370.8" y="374" text-anchor="middle" font-family="Arial" font-size="11">optimizer</text>
+<rect x="426.0" y="246.3" width="49.6" height="103.7" fill="#2f7f91"/>
+<text x="450.8" y="240.3" text-anchor="middle" font-family="Arial" font-size="11">11.2</text>
+<text x="450.8" y="374" text-anchor="middle" font-family="Arial" font-size="11">Optimizer.step#Ada</text>
+<rect x="506.0" y="350.0" width="49.6" height="0.0" fill="#2f7f91"/>
+<text x="530.8" y="344.0" text-anchor="middle" font-family="Arial" font-size="11">0.0</text>
+<text x="530.8" y="374" text-anchor="middle" font-family="Arial" font-size="11">cudaLaunchKernel</text>
+<rect x="586.0" y="350.0" width="49.6" height="0.0" fill="#2f7f91"/>
+<text x="610.8" y="344.0" text-anchor="middle" font-family="Arial" font-size="11">0.0</text>
+<text x="610.8" y="374" text-anchor="middle" font-family="Arial" font-size="11">cudaDeviceSynchron</text>
+<rect x="666.0" y="350.0" width="49.6" height="0.0" fill="#2f7f91"/>
+<text x="690.8" y="344.0" text-anchor="middle" font-family="Arial" font-size="11">0.0</text>
+<text x="690.8" y="374" text-anchor="middle" font-family="Arial" font-size="11">autograd::engine::</text>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="420" viewBox="0 0 760 420">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="380.0" y="30" text-anchor="middle" font-family="Arial" font-size="20">A2-P Benchmark Latency</text>
+<text x="22" y="205.0" transform="rotate(-90 22 205.0)" text-anchor="middle" font-family="Arial" font-size="13">mean ms</text>
+<line x1="90" y1="350" x2="730" y2="350" stroke="#222"/>
+<line x1="90" y1="60" x2="90" y2="350" stroke="#222"/>
+<rect x="122.0" y="308.4" width="99.2" height="41.6" fill="#2f7f91"/>
+<text x="171.6" y="302.4" text-anchor="middle" font-family="Arial" font-size="11">16.9</text>
+<text x="171.6" y="374" text-anchor="middle" font-family="Arial" font-size="11">forward\nwu5</text>
+<rect x="282.0" y="188.9" width="99.2" height="161.1" fill="#2f7f91"/>
+<text x="331.6" y="182.9" text-anchor="middle" font-family="Arial" font-size="11">65.2</text>
+<text x="331.6" y="374" text-anchor="middle" font-family="Arial" font-size="11">forward_backward\nwu5</text>
+<rect x="442.0" y="163.5" width="99.2" height="186.5" fill="#2f7f91"/>
+<text x="491.6" y="157.5" text-anchor="middle" font-family="Arial" font-size="11">75.5</text>
+<text x="491.6" y="374" text-anchor="middle" font-family="Arial" font-size="11">train_step\nwu5</text>
+<rect x="602.0" y="60.0" width="99.2" height="290.0" fill="#2f7f91"/>
+<text x="651.6" y="54.0" text-anchor="middle" font-family="Arial" font-size="11">117.4</text>
+<text x="651.6" y="374" text-anchor="middle" font-family="Arial" font-size="11">train_step\nwu0</text>
+</svg>
