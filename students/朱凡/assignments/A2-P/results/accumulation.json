@@ -1,2 +1,1 @@
-2026-07-23T19:05:20+00:00 START accumulation
-2026-07-23T19:05:21+00:00 PASS accumulation
+{"fp16_accumulator_fp16_value": 9.953125, "fp32_accumulator_cast_fp16_value": 10.00213623046875, "fp32_accumulator_fp16_value": 10.00213623046875, "fp32_accumulator_fp32_value": 10.000133514404297}

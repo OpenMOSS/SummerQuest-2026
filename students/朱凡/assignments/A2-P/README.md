@@ -7,7 +7,7 @@
 版本为 12.6。计时使用 CUDA event，并在每个测量步骤前后同步 CUDA。
 模型构造、optimizer 构造和输入生成均不计入测量区间。
 
-课程补充文档：https://acnc6zeentra.feishu.cn/docx/D3omdgl6NocdKNxNvc5cW7KJnHd
+课程补充文档：https://fudan-nlp.feishu.cn/wiki/OGctwjk0RimDmskRbA6cHEyenLh
 
 ## 端到端 benchmark
 
@@ -54,7 +54,21 @@ _这里只展示 1057 行中的 12 行，完整表格见 `results/`。_
 
 ## 混合精度
 
-累加实验位于 `results/accumulation.json`。混合精度实验记录了参数存储
+累加实验位于 `results/accumulation.json`。四种写法的实际输出如下：
+
+| 写法 | 实际输出 |
+| --- | ---: |
+| FP16 accumulator + FP16 value | 9.953125 |
+| FP32 accumulator + cast FP16 value | 10.00213623046875 |
+| FP32 accumulator + FP16 value | 10.00213623046875 |
+| FP32 accumulator + FP32 value | 10.000133514404297 |
+
+FP16 accumulator 在每次加法后都会发生低精度舍入，因此误差最大。将
+accumulator 改为 FP32 后，累加误差显著降低；当输入仍为 FP16 时，剩余误差
+主要来自输入量化，而不是累加器。FP32 输入与 FP32 accumulator 的结果最接近
+高精度参考值。
+
+混合精度实验记录了参数存储
 类型、第一层输出、LayerNorm 输出、logits、loss、梯度 dtype、原始计时
 样本和 loss 变化趋势，完整结果位于 `results/mixed_precision.json`。
 FP32 累加可以避免反复低精度舍入；BF16 autocast 在保持敏感归约使用
