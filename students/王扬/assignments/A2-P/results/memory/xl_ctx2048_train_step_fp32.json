@@ -1,0 +1,69 @@
+{
+  "artifact_type": "memory_snapshot",
+  "command": "profiling/memory_snapshot.py --model-size xl --batch-size 1 --context-length 2048 --mode train_step --warmup 5 --dtype fp32 --seed 42 --enable-nvtx --max-entries 10000 --snapshot-dump-mode builtin --snapshot-output results/memory/xl_ctx2048_train_step_fp32.pickle --summary-output results/memory/xl_ctx2048_train_step_fp32.json",
+  "cwd": ".",
+  "environment": {
+    "cuda_runtime": "12.8",
+    "cudnn": 91002,
+    "git_commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+    "gpu_count": 1,
+    "gpu_name": "NVIDIA H200",
+    "hostname": "summer-quest-01--9fd1c0a6b824-brcye3gjre",
+    "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.35",
+    "python": "3.13.11",
+    "pytorch": "2.10.0+cu128",
+    "total_memory_bytes": 150121545728
+  },
+  "memory": {
+    "active_peak_bytes": 97935502336,
+    "allocated_peak_bytes": 97935502336,
+    "max_memory_allocated_bytes": 97935502336,
+    "max_memory_reserved_bytes": 99723771904,
+    "num_alloc_retries": 0,
+    "num_ooms": 0,
+    "requested_peak_bytes": 97792075784,
+    "reserved_peak_bytes": 99723771904
+  },
+  "model_config": {
+    "d_ff": 10240,
+    "d_model": 2560,
+    "num_heads": 32,
+    "num_layers": 32
+  },
+  "run_config": {
+    "batch_size": 1,
+    "context_length": 2048,
+    "dtype": "fp32",
+    "enable_nvtx": true,
+    "learning_rate": 0.001,
+    "mode": "train_step",
+    "model_size": "xl",
+    "optimizer_betas": [
+      0.9,
+      0.999
+    ],
+    "optimizer_eps": 1e-08,
+    "seed": 42,
+    "steps": 1,
+    "torch_compile": false,
+    "vocab_size": 10000,
+    "warmup": 5,
+    "weight_decay": 0.01
+  },
+  "snapshot_dump": {
+    "mode": "builtin",
+    "pickle_seconds": null,
+    "snapshot_seconds": 0.020746465772390366,
+    "stats": null,
+    "synchronize_seconds": 3.9286911487579346e-05
+  },
+  "snapshot_path": "results/memory/xl_ctx2048_train_step_fp32.pickle",
+  "summary_path": "results/memory/xl_ctx2048_train_step_fp32.json",
+  "timing": {
+    "backward_ms": 882.262572646141,
+    "forward_ms": 408.99646282196045,
+    "loss": 7.662227153778076,
+    "optimizer_ms": 123.6655917018652,
+    "total_ms": 1414.9327911436558
+  }
+}

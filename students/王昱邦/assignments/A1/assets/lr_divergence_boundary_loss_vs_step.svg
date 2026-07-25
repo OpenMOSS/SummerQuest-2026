@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="650" viewBox="0 0 1000 650">
+<rect width="100%" height="100%" fill="white"/>
+<text x="500.0" y="32" text-anchor="middle" font-family="sans-serif" font-size="22">TinyStories learning-rate stability boundary</text>
+<line x1="90.00" y1="70.0" x2="90.00" y2="570.0" stroke="#e5e7eb"/>
+<text x="90.00" y="595.0" text-anchor="middle" font-family="sans-serif" font-size="12">10</text>
+<line x1="90.0" y1="70.00" x2="740.0" y2="70.00" stroke="#e5e7eb"/>
+<text x="78.0" y="74.00" text-anchor="end" font-family="sans-serif" font-size="12">5231</text>
+<line x1="220.00" y1="70.0" x2="220.00" y2="570.0" stroke="#e5e7eb"/>
+<text x="220.00" y="595.0" text-anchor="middle" font-family="sans-serif" font-size="12">58</text>
+<line x1="90.0" y1="170.00" x2="740.0" y2="170.00" stroke="#e5e7eb"/>
+<text x="78.0" y="174.00" text-anchor="end" font-family="sans-serif" font-size="12">4136</text>
+<line x1="350.00" y1="70.0" x2="350.00" y2="570.0" stroke="#e5e7eb"/>
+<text x="350.00" y="595.0" text-anchor="middle" font-family="sans-serif" font-size="12">106</text>
+<line x1="90.0" y1="270.00" x2="740.0" y2="270.00" stroke="#e5e7eb"/>
+<text x="78.0" y="274.00" text-anchor="end" font-family="sans-serif" font-size="12">3040</text>
+<line x1="480.00" y1="70.0" x2="480.00" y2="570.0" stroke="#e5e7eb"/>
+<text x="480.00" y="595.0" text-anchor="middle" font-family="sans-serif" font-size="12">154</text>
+<line x1="90.0" y1="370.00" x2="740.0" y2="370.00" stroke="#e5e7eb"/>
+<text x="78.0" y="374.00" text-anchor="end" font-family="sans-serif" font-size="12">1945</text>
+<line x1="610.00" y1="70.0" x2="610.00" y2="570.0" stroke="#e5e7eb"/>
+<text x="610.00" y="595.0" text-anchor="middle" font-family="sans-serif" font-size="12">202</text>
+<line x1="90.0" y1="470.00" x2="740.0" y2="470.00" stroke="#e5e7eb"/>
+<text x="78.0" y="474.00" text-anchor="end" font-family="sans-serif" font-size="12">850.1</text>
+<line x1="740.00" y1="70.0" x2="740.00" y2="570.0" stroke="#e5e7eb"/>
+<text x="740.00" y="595.0" text-anchor="middle" font-family="sans-serif" font-size="12">250</text>
+<line x1="90.0" y1="570.00" x2="740.0" y2="570.00" stroke="#e5e7eb"/>
+<text x="78.0" y="574.00" text-anchor="end" font-family="sans-serif" font-size="12">-245.1</text>
+<line x1="90.0" y1="570.0" x2="740.0" y2="570.0" stroke="#111827" stroke-width="1.5"/>
+<line x1="90.0" y1="70.0" x2="90.0" y2="570.0" stroke="#111827" stroke-width="1.5"/>
+<text x="415.0" y="628" text-anchor="middle" font-family="sans-serif" font-size="15">Optimizer step</text>
+<text x="24" y="320.0" text-anchor="middle" transform="rotate(-90 24 320.0)" font-family="sans-serif" font-size="15">Cross-entropy loss</text>
+<polyline points="90.00,546.94 117.08,546.99 144.17,547.07 171.25,547.18 198.33,547.20 225.42,547.23 252.50,547.23 279.58,547.23 306.67,547.25 333.75,547.25 360.83,547.24 387.92,547.25 415.00,547.25 442.08,547.26 469.17,547.25 496.25,547.26 523.33,547.26 550.42,547.27 577.50,547.26 604.58,547.26 631.67,547.27 658.75,547.27 685.83,547.27 712.92,547.27 740.00,547.27" fill="none" stroke="#2563eb" stroke-width="2.2"/>
+<line x1="768.0" y1="70.0" x2="804.0" y2="70.0" stroke="#2563eb" stroke-width="2.2"/>
+<text x="812.0" y="74.0" font-family="sans-serif" font-size="12">3e-2 — train</text>
+<polyline points="198.33,547.21 333.75,547.25 469.17,547.26 604.58,547.27 740.00,547.27" fill="none" stroke="#2563eb" stroke-width="2.2" stroke-dasharray="8 5"/>
+<circle cx="198.33" cy="547.21" r="3.2" fill="#2563eb"/>
+<circle cx="333.75" cy="547.25" r="3.2" fill="#2563eb"/>
+<circle cx="469.17" cy="547.26" r="3.2" fill="#2563eb"/>
+<circle cx="604.58" cy="547.27" r="3.2" fill="#2563eb"/>
+<circle cx="740.00" cy="547.27" r="3.2" fill="#2563eb"/>
+<line x1="768.0" y1="94.0" x2="804.0" y2="94.0" stroke="#2563eb" stroke-width="2.2" stroke-dasharray="8 5"/>
+<text x="812.0" y="98.0" font-family="sans-serif" font-size="12">3e-2 — validation</text>
+<polyline points="90.00,546.48 117.08,546.59 144.17,547.09 171.25,547.06 198.33,547.13 225.42,547.17 252.50,547.16 279.58,547.17 306.67,547.18 333.75,547.19 360.83,547.16 387.92,547.19 415.00,547.19 442.08,547.20 469.17,547.19 496.25,547.20 523.33,547.21 550.42,547.21 577.50,547.20 604.58,547.20 631.67,547.21 658.75,547.21 685.83,547.21 712.92,547.21 740.00,547.21" fill="none" stroke="#dc2626" stroke-width="2.2"/>
+<line x1="768.0" y1="118.0" x2="804.0" y2="118.0" stroke="#dc2626" stroke-width="2.2"/>
+<text x="812.0" y="122.0" font-family="sans-serif" font-size="12">1e-1 — train</text>
+<polyline points="198.33,547.14 333.75,547.18 469.17,547.20 604.58,547.21 740.00,547.21" fill="none" stroke="#dc2626" stroke-width="2.2" stroke-dasharray="8 5"/>
+<circle cx="198.33" cy="547.14" r="3.2" fill="#dc2626"/>
+<circle cx="333.75" cy="547.18" r="3.2" fill="#dc2626"/>
+<circle cx="469.17" cy="547.20" r="3.2" fill="#dc2626"/>
+<circle cx="604.58" cy="547.21" r="3.2" fill="#dc2626"/>
+<circle cx="740.00" cy="547.21" r="3.2" fill="#dc2626"/>
+<line x1="768.0" y1="142.0" x2="804.0" y2="142.0" stroke="#dc2626" stroke-width="2.2" stroke-dasharray="8 5"/>
+<text x="812.0" y="146.0" font-family="sans-serif" font-size="12">1e-1 — validation</text>
+<polyline points="90.00,545.51 117.08,545.94 144.17,545.59 171.25,546.17 198.33,545.99 225.42,546.15 252.50,546.40 279.58,546.43 306.67,546.74 333.75,546.66 360.83,546.69 387.92,546.81 415.00,546.92 442.08,546.99 469.17,547.01 496.25,547.06 523.33,547.03 550.42,547.05 577.50,547.06 604.58,547.05 631.67,547.09 658.75,547.08 685.83,547.08 712.92,547.10 740.00,547.09" fill="none" stroke="#16a34a" stroke-width="2.2"/>
+<line x1="768.0" y1="166.0" x2="804.0" y2="166.0" stroke="#16a34a" stroke-width="2.2"/>
+<text x="812.0" y="170.0" font-family="sans-serif" font-size="12">3e-1 — train</text>
+<polyline points="198.33,546.40 333.75,546.85 469.17,547.00 604.58,547.07 740.00,547.10" fill="none" stroke="#16a34a" stroke-width="2.2" stroke-dasharray="8 5"/>
+<circle cx="198.33" cy="546.40" r="3.2" fill="#16a34a"/>
+<circle cx="333.75" cy="546.85" r="3.2" fill="#16a34a"/>
+<circle cx="469.17" cy="547.00" r="3.2" fill="#16a34a"/>
+<circle cx="604.58" cy="547.07" r="3.2" fill="#16a34a"/>
+<circle cx="740.00" cy="547.10" r="3.2" fill="#16a34a"/>
+<line x1="768.0" y1="190.0" x2="804.0" y2="190.0" stroke="#16a34a" stroke-width="2.2" stroke-dasharray="8 5"/>
+<text x="812.0" y="194.0" font-family="sans-serif" font-size="12">3e-1 — validation</text>
+<polyline points="90.00,537.82 117.08,531.41 144.17,521.36 171.25,518.60 198.33,501.06 225.42,514.49 252.50,495.57 279.58,517.25 306.67,516.49 333.75,513.19 360.83,504.62 387.92,512.42 415.00,517.30 442.08,509.36 469.17,508.23 496.25,501.64 523.33,493.85 550.42,521.83 577.50,514.54 604.58,511.34 631.67,501.06 658.75,509.13 685.83,510.44 712.92,511.06 740.00,525.34" fill="none" stroke="#9333ea" stroke-width="2.2"/>
+<line x1="768.0" y1="214.0" x2="804.0" y2="214.0" stroke="#9333ea" stroke-width="2.2"/>
+<text x="812.0" y="218.0" font-family="sans-serif" font-size="12">1e0 — train</text>
+<polyline points="198.33,490.68 333.75,524.98 469.17,507.55 604.58,505.40 740.00,526.32" fill="none" stroke="#9333ea" stroke-width="2.2" stroke-dasharray="8 5"/>
+<circle cx="198.33" cy="490.68" r="3.2" fill="#9333ea"/>
+<circle cx="333.75" cy="524.98" r="3.2" fill="#9333ea"/>
+<circle cx="469.17" cy="507.55" r="3.2" fill="#9333ea"/>
+<circle cx="604.58" cy="505.40" r="3.2" fill="#9333ea"/>
+<circle cx="740.00" cy="526.32" r="3.2" fill="#9333ea"/>
+<line x1="768.0" y1="238.0" x2="804.0" y2="238.0" stroke="#9333ea" stroke-width="2.2" stroke-dasharray="8 5"/>
+<text x="812.0" y="242.0" font-family="sans-serif" font-size="12">1e0 — validation</text>
+<polyline points="90.00,521.39 117.08,416.20 144.17,372.11 171.25,400.01 198.33,372.27 225.42,352.89 252.50,342.09 279.58,301.09 306.67,302.15 333.75,92.73 360.83,171.29 387.92,346.83 415.00,290.11 442.08,124.43 469.17,336.79 496.25,273.81 523.33,312.71 550.42,310.01 577.50,372.72 604.58,298.17 631.67,301.46 658.75,322.89 685.83,293.59 712.92,274.15 740.00,260.24" fill="none" stroke="#ea580c" stroke-width="2.2"/>
+<line x1="768.0" y1="262.0" x2="804.0" y2="262.0" stroke="#ea580c" stroke-width="2.2"/>
+<text x="812.0" y="266.0" font-family="sans-serif" font-size="12">3e0 — train</text>
+<polyline points="198.33,374.00 333.75,202.71 469.17,295.22 604.58,333.07 740.00,350.09" fill="none" stroke="#ea580c" stroke-width="2.2" stroke-dasharray="8 5"/>
+<circle cx="198.33" cy="374.00" r="3.2" fill="#ea580c"/>
+<circle cx="333.75" cy="202.71" r="3.2" fill="#ea580c"/>
+<circle cx="469.17" cy="295.22" r="3.2" fill="#ea580c"/>
+<circle cx="604.58" cy="333.07" r="3.2" fill="#ea580c"/>
+<circle cx="740.00" cy="350.09" r="3.2" fill="#ea580c"/>
+<line x1="768.0" y1="286.0" x2="804.0" y2="286.0" stroke="#ea580c" stroke-width="2.2" stroke-dasharray="8 5"/>
+<text x="812.0" y="290.0" font-family="sans-serif" font-size="12">3e0 — validation</text>
+</svg>

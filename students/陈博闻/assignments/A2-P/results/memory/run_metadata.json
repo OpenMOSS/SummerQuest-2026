@@ -1,0 +1,189 @@
+{
+  "active_memory_visualizer_evidence": [
+    {
+      "active_peak_visible_gib_approx": 21.2,
+      "asset": "assets/memory_forward_timeline_ctx2048.webp",
+      "largest_allocation_visible_gib": 2.0,
+      "run_name": "xl_ctx2048_bs4_forward_fp32_memory",
+      "stack_summary": "CUDACachingAllocator::malloc -> empty_cuda -> empty_strided_cuda -> div_Tensor"
+    },
+    {
+      "active_peak_visible_gib_approx": 51.3,
+      "asset": "assets/memory_train_step_timeline_ctx128.webp",
+      "representative_allocation_visible_mib": 25.0,
+      "run_name": "xl_ctx128_bs4_train_step_fp32_memory",
+      "stack_summary": "CUDACachingAllocator::allocate -> empty_strided_cuda -> native_layer_norm_backward_cuda -> autograd wrapper"
+    }
+  ],
+  "active_peak_evidence": [
+    {
+      "active_peak_gib": 19.167749,
+      "active_peak_mib": 19627.775391,
+      "event_count": 6654,
+      "final_active_mib": 13156.681641,
+      "largest_peak_event_alloc_mib": 9.765625,
+      "run_name": "xl_ctx128_bs4_forward_bf16_memory",
+      "source": "archived PyTorch memory history snapshot"
+    },
+    {
+      "active_peak_gib": 12.93133,
+      "active_peak_mib": 13241.681641,
+      "event_count": 5112,
+      "final_active_mib": 13156.681641,
+      "largest_peak_event_alloc_mib": 20.0,
+      "run_name": "xl_ctx128_bs4_forward_fp32_memory",
+      "source": "archived PyTorch memory history snapshot"
+    },
+    {
+      "active_peak_gib": 51.451454,
+      "active_peak_mib": 52686.289066,
+      "event_count": 29871,
+      "final_active_mib": 52176.523438,
+      "largest_peak_event_alloc_mib": 100.0,
+      "run_name": "xl_ctx128_bs4_train_step_bf16_memory",
+      "source": "archived PyTorch memory history snapshot"
+    },
+    {
+      "active_peak_gib": 51.461327,
+      "active_peak_mib": 52696.398441,
+      "event_count": 26010,
+      "final_active_mib": 52176.867188,
+      "largest_peak_event_alloc_mib": 100.0,
+      "run_name": "xl_ctx128_bs4_train_step_fp32_memory",
+      "source": "archived PyTorch memory history snapshot"
+    },
+    {
+      "active_peak_gib": 82.529139,
+      "active_peak_mib": 84509.837898,
+      "event_count": 30069,
+      "final_active_mib": 52184.054688,
+      "largest_peak_event_alloc_mib": 512.0,
+      "run_name": "xl_ctx2048_bs1_train_step_bf16_memory",
+      "source": "memory_fallback.tar.gz PyTorch memory history snapshot"
+    },
+    {
+      "active_peak_gib": 91.201944,
+      "active_peak_mib": 93390.791023,
+      "event_count": 26208,
+      "final_active_mib": 52177.445312,
+      "largest_peak_event_alloc_mib": 512.0,
+      "run_name": "xl_ctx2048_bs1_train_step_fp32_memory",
+      "source": "memory_fallback.tar.gz PyTorch memory history snapshot"
+    },
+    {
+      "active_peak_gib": 25.374903,
+      "active_peak_mib": 25983.900391,
+      "event_count": 6654,
+      "final_active_mib": 13157.384766,
+      "largest_peak_event_alloc_mib": 2048.0,
+      "run_name": "xl_ctx2048_bs4_forward_bf16_memory",
+      "source": "archived PyTorch memory history snapshot"
+    },
+    {
+      "active_peak_gib": 21.322657,
+      "active_peak_mib": 21834.400391,
+      "event_count": 5112,
+      "final_active_mib": 13157.384766,
+      "largest_peak_event_alloc_mib": 2048.0,
+      "run_name": "xl_ctx2048_bs4_forward_fp32_memory",
+      "source": "archived PyTorch memory history snapshot"
+    }
+  ],
+  "active_peak_method": "Replayed PyTorch CUDA memory history device_traces from local snapshot pickle files: start from final active size, invert net alloc/free_completed delta to recover start active, then scan alloc/free_completed events for peak active bytes. Pickle snapshots are raw artifacts and are not submitted.",
+  "fallback": "XL context 2048 train_step failed with CUDA OOM for fp32 and bf16 at batch size 4. Following the assignment fallback rule, XL context 2048 train_step was retried at batch size 1 and succeeded for both fp32 and bf16; the lightweight rows are included in results/memory/peaks.csv. Full pickle snapshots remain local and are not submitted.",
+  "fallback_retry_evidence": [
+    {
+      "batch_size": 1,
+      "context_length": 2048,
+      "dtype": "fp32",
+      "mean_seconds": 0.597609,
+      "mode": "train_step",
+      "model_size": "xl",
+      "peak_allocated_mib": 93397.823242,
+      "peak_reserved_mib": 95284.0,
+      "run_name": "xl_ctx2048_bs1_train_step_fp32_memory",
+      "status": "OK",
+      "steps": 1,
+      "warmup": 5
+    },
+    {
+      "batch_size": 1,
+      "context_length": 2048,
+      "dtype": "bf16",
+      "mean_seconds": 0.506695,
+      "mode": "train_step",
+      "model_size": "xl",
+      "peak_allocated_mib": 84529.213867,
+      "peak_reserved_mib": 86330.0,
+      "run_name": "xl_ctx2048_bs1_train_step_bf16_memory",
+      "status": "OK",
+      "steps": 1,
+      "warmup": 5
+    }
+  ],
+  "hardware": {
+    "driver_version": "570.124.06",
+    "gpu_name": "NVIDIA H200",
+    "gpu_total_memory_gib": 139.81
+  },
+  "matrix": {
+    "batch_size": 4,
+    "context_lengths": [
+      128,
+      2048
+    ],
+    "dtypes": [
+      "fp32",
+      "bf16"
+    ],
+    "model_size": "xl",
+    "modes": [
+      "forward",
+      "train_step"
+    ],
+    "warmup": 5
+  },
+  "oom_failure_evidence": [
+    {
+      "batch_size": "4",
+      "context_length": "2048",
+      "dtype": "bf16",
+      "failure_exception": "torch.OutOfMemoryError",
+      "failure_peak_summary": "tried_allocate=2.00 GiB; gpu_free=452.00 MiB; process_memory=139.36 GiB; pytorch_allocated=138.36 GiB; pytorch_reserved_unallocated=343.94 MiB",
+      "failure_stage": "forward attention/softmax",
+      "fallback_or_note": "XL context 2048 train_step OOM in naive attention at batch size 4; retried XL context 2048 train_step at batch size 1 successfully.",
+      "mode": "train_step",
+      "model_size": "xl",
+      "run_name": "xl_ctx2048_bs4_train_step_bf16_memory",
+      "status": "FAILED_1"
+    },
+    {
+      "batch_size": "4",
+      "context_length": "2048",
+      "dtype": "fp32",
+      "failure_exception": "torch.OutOfMemoryError",
+      "failure_peak_summary": "tried_allocate=2.00 GiB; gpu_free=1.61 GiB; process_memory=138.20 GiB; pytorch_allocated=135.98 GiB; pytorch_reserved_unallocated=1.55 GiB",
+      "failure_stage": "forward attention/scores",
+      "fallback_or_note": "XL context 2048 train_step OOM in naive attention at batch size 4; retried XL context 2048 train_step at batch size 1 successfully.",
+      "mode": "train_step",
+      "model_size": "xl",
+      "run_name": "xl_ctx2048_bs4_train_step_fp32_memory",
+      "status": "FAILED_1"
+    }
+  ],
+  "residual_stream_theory": {
+    "batch_size": 4,
+    "context_length": 2048,
+    "d_model": 2560,
+    "formula": "4 * 2048 * 2560 * 4 / 1024^2",
+    "fp32_mib": 80.0
+  },
+  "snapshot_policy": "Pickle snapshots and .nsys-rep files kept locally and not submitted to GitHub.",
+  "software": {
+    "cuda_runtime": "12.8",
+    "os": "Linux",
+    "python": "3.10.20",
+    "torch": "2.11.0+cu128"
+  },
+  "tool": "PyTorch CUDA memory history and Nsight Systems memory trace"
+}

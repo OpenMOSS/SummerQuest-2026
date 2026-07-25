@@ -1,0 +1,104 @@
+{
+  "artifact_type": "memory_run_metadata",
+  "runs": [
+    {
+      "active_peak_bytes": 20564021248,
+      "allocated_peak_bytes": 20564021248,
+      "context_length": 128,
+      "dtype": "bf16",
+      "mode": "forward",
+      "model_size": "xl",
+      "requested_peak_bytes": 20428759040,
+      "reserved_peak_bytes": 20778582016,
+      "source_file": "results/memory/xl_ctx128_forward_bf16.json",
+      "status": "completed"
+    },
+    {
+      "active_peak_bytes": 13818056704,
+      "allocated_peak_bytes": 13818056704,
+      "context_length": 128,
+      "dtype": "fp32",
+      "mode": "forward",
+      "model_size": "xl",
+      "requested_peak_bytes": 13683118080,
+      "reserved_peak_bytes": 13841203200,
+      "source_file": "results/memory/xl_ctx128_forward_fp32.json",
+      "status": "completed"
+    },
+    {
+      "active_peak_bytes": 55238613504,
+      "allocated_peak_bytes": 55238613504,
+      "context_length": 128,
+      "dtype": "bf16",
+      "mode": "train_step",
+      "model_size": "xl",
+      "requested_peak_bytes": 55102953476,
+      "reserved_peak_bytes": 57921241088,
+      "source_file": "results/memory/xl_ctx128_train_step_bf16.json",
+      "status": "completed"
+    },
+    {
+      "active_peak_bytes": 55241533952,
+      "allocated_peak_bytes": 55241533952,
+      "context_length": 128,
+      "dtype": "fp32",
+      "mode": "train_step",
+      "model_size": "xl",
+      "requested_peak_bytes": 55105513476,
+      "reserved_peak_bytes": 56161730560,
+      "source_file": "results/memory/xl_ctx128_train_step_fp32.json",
+      "status": "completed"
+    },
+    {
+      "active_peak_bytes": 22067865600,
+      "allocated_peak_bytes": 22067865600,
+      "context_length": 2048,
+      "dtype": "bf16",
+      "mode": "forward",
+      "model_size": "xl",
+      "requested_peak_bytes": 21932402688,
+      "reserved_peak_bytes": 22588424192,
+      "source_file": "results/memory/xl_ctx2048_forward_bf16.json",
+      "status": "completed"
+    },
+    {
+      "active_peak_bytes": 16074205184,
+      "allocated_peak_bytes": 16074205184,
+      "context_length": 2048,
+      "dtype": "fp32",
+      "mode": "forward",
+      "model_size": "xl",
+      "requested_peak_bytes": 15939266560,
+      "reserved_peak_bytes": 16651386880,
+      "source_file": "results/memory/xl_ctx2048_forward_fp32.json",
+      "status": "completed"
+    },
+    {
+      "active_peak_bytes": 88640547840,
+      "allocated_peak_bytes": 88640547840,
+      "context_length": 2048,
+      "dtype": "bf16",
+      "mode": "train_step",
+      "model_size": "xl",
+      "requested_peak_bytes": 88472791048,
+      "reserved_peak_bytes": 90269810688,
+      "source_file": "results/memory/xl_ctx2048_train_step_bf16.json",
+      "status": "completed"
+    },
+    {
+      "active_peak_bytes": 97935502336,
+      "allocated_peak_bytes": 97935502336,
+      "context_length": 2048,
+      "dtype": "fp32",
+      "mode": "train_step",
+      "model_size": "xl",
+      "requested_peak_bytes": 97792075784,
+      "reserved_peak_bytes": 99723771904,
+      "source_file": "results/memory/xl_ctx2048_train_step_fp32.json",
+      "status": "completed"
+    }
+  ],
+  "summary_sources": [
+    "results/memory/*.json"
+  ]
+}
