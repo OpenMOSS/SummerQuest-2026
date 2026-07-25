@@ -200,6 +200,11 @@ Large/context 2048 被标记为 fallback 行，而不是用来替换失败配置
 - ![memory peak](assets/memory_peak.svg)
 - ![checkpoint timing](assets/checkpoint_time.svg)
 
+Active Memory Timeline 截图：
+
+- ![XL context 128 Active Memory Timeline](assets/memory_timeline_xl_c128.png)
+- ![XL context 2048 Active Memory Timeline](assets/memory_timeline_xl_c2048.png)
+
 ## 证据与复现实验命令
 
 - `results/benchmark.csv`
