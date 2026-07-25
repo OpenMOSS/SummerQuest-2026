@@ -1,0 +1,11 @@
+{
+  "allocator": {
+    "allocator_fraction": 0.9768130292889415,
+    "allocator_limit_mib": 23552
+  },
+  "hard_limit_mib": 24576,
+  "pytorch_peak_allocated_mib": 21021.666015625,
+  "pytorch_peak_reserved_mib": 22032.0,
+  "source_rows": 152,
+  "within_24gib": true
+}
