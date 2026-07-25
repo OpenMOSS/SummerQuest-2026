@@ -1,0 +1,59 @@
+{
+  "runs": [
+    {
+      "context_length": 256,
+      "cuda": "12.6",
+      "dtype": "fp32",
+      "mode": "train_step",
+      "model_size": "medium",
+      "peak_allocated_mib": 8731.0869140625,
+      "peak_reserved_mib": 8756.0,
+      "tool": "torch.profiler",
+      "torch": "2.11.0+cu126"
+    },
+    {
+      "context_length": 512,
+      "cuda": "12.6",
+      "dtype": "fp32",
+      "mode": "train_step",
+      "model_size": "medium",
+      "peak_allocated_mib": 14126.9736328125,
+      "peak_reserved_mib": 14614.0,
+      "tool": "torch.profiler",
+      "torch": "2.11.0+cu126"
+    },
+    {
+      "context_length": 1024,
+      "cuda": "12.6",
+      "dtype": "fp32",
+      "mode": "train_step",
+      "model_size": "small",
+      "peak_allocated_mib": 11265.033203125,
+      "peak_reserved_mib": 11942.0,
+      "tool": "torch.profiler",
+      "torch": "2.11.0+cu126"
+    },
+    {
+      "context_length": 256,
+      "cuda": "12.6",
+      "dtype": "fp32",
+      "mode": "train_step",
+      "model_size": "small",
+      "peak_allocated_mib": 3122.873046875,
+      "peak_reserved_mib": 3312.0,
+      "tool": "torch.profiler",
+      "torch": "2.11.0+cu126"
+    },
+    {
+      "context_length": 512,
+      "cuda": "12.6",
+      "dtype": "fp32",
+      "mode": "train_step",
+      "model_size": "small",
+      "peak_allocated_mib": 5222.556640625,
+      "peak_reserved_mib": 5414.0,
+      "tool": "torch.profiler",
+      "torch": "2.11.0+cu126"
+    }
+  ]
+}
