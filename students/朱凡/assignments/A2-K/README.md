@@ -290,7 +290,7 @@ uv run pytest tests/test_attention.py -v
 
 飞书补充文档（组织内公开，不开启互联网公开访问）：
 
-https://acnc6zeentra.feishu.cn/docx/D3omdgl6NocdKNxNvc5cW7KJnHd
+https://fudan-nlp.feishu.cn/wiki/J2mvwOwo4iwxvlksa5WcQ0cJnrd
 
 ## 10. 提交自检
 
