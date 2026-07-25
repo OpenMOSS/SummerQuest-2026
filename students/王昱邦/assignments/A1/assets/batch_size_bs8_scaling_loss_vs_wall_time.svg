@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="650" viewBox="0 0 1000 650">
+<rect width="100%" height="100%" fill="white"/>
+<text x="500.0" y="32" text-anchor="middle" font-family="sans-serif" font-size="22">Batch 8 learning-rate scaling</text>
+<line x1="90.00" y1="70.0" x2="90.00" y2="570.0" stroke="#e5e7eb"/>
+<text x="90.00" y="595.0" text-anchor="middle" font-family="sans-serif" font-size="12">6.499</text>
+<line x1="90.0" y1="70.00" x2="740.0" y2="70.00" stroke="#e5e7eb"/>
+<text x="78.0" y="74.00" text-anchor="end" font-family="sans-serif" font-size="12">5.101</text>
+<line x1="220.00" y1="70.0" x2="220.00" y2="570.0" stroke="#e5e7eb"/>
+<text x="220.00" y="595.0" text-anchor="middle" font-family="sans-serif" font-size="12">31.17</text>
+<line x1="90.0" y1="170.00" x2="740.0" y2="170.00" stroke="#e5e7eb"/>
+<text x="78.0" y="174.00" text-anchor="end" font-family="sans-serif" font-size="12">4.459</text>
+<line x1="350.00" y1="70.0" x2="350.00" y2="570.0" stroke="#e5e7eb"/>
+<text x="350.00" y="595.0" text-anchor="middle" font-family="sans-serif" font-size="12">55.85</text>
+<line x1="90.0" y1="270.00" x2="740.0" y2="270.00" stroke="#e5e7eb"/>
+<text x="78.0" y="274.00" text-anchor="end" font-family="sans-serif" font-size="12">3.818</text>
+<line x1="480.00" y1="70.0" x2="480.00" y2="570.0" stroke="#e5e7eb"/>
+<text x="480.00" y="595.0" text-anchor="middle" font-family="sans-serif" font-size="12">80.53</text>
+<line x1="90.0" y1="370.00" x2="740.0" y2="370.00" stroke="#e5e7eb"/>
+<text x="78.0" y="374.00" text-anchor="end" font-family="sans-serif" font-size="12">3.176</text>
+<line x1="610.00" y1="70.0" x2="610.00" y2="570.0" stroke="#e5e7eb"/>
+<text x="610.00" y="595.0" text-anchor="middle" font-family="sans-serif" font-size="12">105.2</text>
+<line x1="90.0" y1="470.00" x2="740.0" y2="470.00" stroke="#e5e7eb"/>
+<text x="78.0" y="474.00" text-anchor="end" font-family="sans-serif" font-size="12">2.535</text>
+<line x1="740.00" y1="70.0" x2="740.00" y2="570.0" stroke="#e5e7eb"/>
+<text x="740.00" y="595.0" text-anchor="middle" font-family="sans-serif" font-size="12">129.9</text>
+<line x1="90.0" y1="570.00" x2="740.0" y2="570.00" stroke="#e5e7eb"/>
+<text x="78.0" y="574.00" text-anchor="end" font-family="sans-serif" font-size="12">1.893</text>
+<line x1="90.0" y1="570.0" x2="740.0" y2="570.0" stroke="#111827" stroke-width="1.5"/>
+<line x1="90.0" y1="70.0" x2="90.0" y2="570.0" stroke="#111827" stroke-width="1.5"/>
+<text x="415.0" y="628" text-anchor="middle" font-family="sans-serif" font-size="15">Cumulative wall-clock time (seconds)</text>
+<text x="24" y="320.0" text-anchor="middle" transform="rotate(-90 24 320.0)" font-family="sans-serif" font-size="15">Cross-entropy loss</text>
+<polyline points="92.18,316.46 125.62,328.33 159.62,382.62 194.08,388.40 231.16,399.62 265.81,423.50 299.40,377.20 333.31,392.87 371.07,412.47 404.74,428.93 436.27,436.21 468.75,447.24 504.31,452.34 536.63,468.33 568.77,463.12 600.79,411.00 636.23,403.28 668.95,434.85 701.69,396.44 734.43,401.22" fill="none" stroke="#2563eb" stroke-width="2.2"/>
+<line x1="768.0" y1="70.0" x2="804.0" y2="70.0" stroke="#2563eb" stroke-width="2.2"/>
+<text x="812.0" y="74.0" font-family="sans-serif" font-size="12">bs8 fixed — train</text>
+<polyline points="197.70,393.83 336.90,415.07 472.00,426.87 604.04,431.05 737.67,435.88" fill="none" stroke="#2563eb" stroke-width="2.2" stroke-dasharray="8 5"/>
+<circle cx="197.70" cy="393.83" r="3.2" fill="#2563eb"/>
+<circle cx="336.90" cy="415.07" r="3.2" fill="#2563eb"/>
+<circle cx="472.00" cy="426.87" r="3.2" fill="#2563eb"/>
+<circle cx="604.04" cy="431.05" r="3.2" fill="#2563eb"/>
+<circle cx="737.67" cy="435.88" r="3.2" fill="#2563eb"/>
+<line x1="768.0" y1="94.0" x2="804.0" y2="94.0" stroke="#2563eb" stroke-width="2.2" stroke-dasharray="8 5"/>
+<text x="812.0" y="98.0" font-family="sans-serif" font-size="12">bs8 fixed — validation</text>
+<polyline points="90.00,268.21 122.99,349.33 156.40,415.86 186.94,434.33 220.90,458.95 251.41,484.20 282.05,444.40 312.93,465.78 345.94,481.48 376.03,505.17 406.43,513.01 436.10,527.73 469.97,540.12 501.49,547.15 534.21,547.27 568.78,507.86 605.25,499.94 637.60,538.69 670.32,491.52 703.32,506.28" fill="none" stroke="#dc2626" stroke-width="2.2"/>
+<line x1="768.0" y1="118.0" x2="804.0" y2="118.0" stroke="#dc2626" stroke-width="2.2"/>
+<text x="812.0" y="122.0" font-family="sans-serif" font-size="12">bs8 sqrt — train</text>
+<polyline points="190.18,436.93 316.09,484.35 439.34,509.55 572.29,524.15 706.79,536.76" fill="none" stroke="#dc2626" stroke-width="2.2" stroke-dasharray="8 5"/>
+<circle cx="190.18" cy="436.93" r="3.2" fill="#dc2626"/>
+<circle cx="316.09" cy="484.35" r="3.2" fill="#dc2626"/>
+<circle cx="439.34" cy="509.55" r="3.2" fill="#dc2626"/>
+<circle cx="572.29" cy="524.15" r="3.2" fill="#dc2626"/>
+<circle cx="706.79" cy="536.76" r="3.2" fill="#dc2626"/>
+<line x1="768.0" y1="142.0" x2="804.0" y2="142.0" stroke="#dc2626" stroke-width="2.2" stroke-dasharray="8 5"/>
+<text x="812.0" y="146.0" font-family="sans-serif" font-size="12">bs8 sqrt — validation</text>
+<polyline points="90.88,92.73 123.76,279.67 156.27,353.19 188.58,382.49 224.69,408.00 257.94,441.70 291.35,402.73 324.67,421.53 361.21,441.09 394.08,468.14 426.82,478.59 459.57,493.60 495.88,505.78 528.67,517.70 562.23,522.49 595.42,478.57 633.51,463.61 668.90,501.86 702.60,471.84 736.48,479.56" fill="none" stroke="#16a34a" stroke-width="2.2"/>
+<line x1="768.0" y1="166.0" x2="804.0" y2="166.0" stroke="#16a34a" stroke-width="2.2"/>
+<text x="812.0" y="170.0" font-family="sans-serif" font-size="12">bs8 linear — train</text>
+<polyline points="192.05,384.27 328.13,446.33 463.07,475.66 598.91,495.38 740.00,510.70" fill="none" stroke="#16a34a" stroke-width="2.2" stroke-dasharray="8 5"/>
+<circle cx="192.05" cy="384.27" r="3.2" fill="#16a34a"/>
+<circle cx="328.13" cy="446.33" r="3.2" fill="#16a34a"/>
+<circle cx="463.07" cy="475.66" r="3.2" fill="#16a34a"/>
+<circle cx="598.91" cy="495.38" r="3.2" fill="#16a34a"/>
+<circle cx="740.00" cy="510.70" r="3.2" fill="#16a34a"/>
+<line x1="768.0" y1="190.0" x2="804.0" y2="190.0" stroke="#16a34a" stroke-width="2.2" stroke-dasharray="8 5"/>
+<text x="812.0" y="194.0" font-family="sans-serif" font-size="12">bs8 linear — validation</text>
+</svg>

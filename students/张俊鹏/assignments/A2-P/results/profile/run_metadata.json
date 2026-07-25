@@ -1,0 +1,264 @@
+{
+  "experiment": "A2-P compute profiling",
+  "runs": [
+    {
+      "run_name": "medium_c1024",
+      "metadata": {
+        "timestamp_utc": "2026-07-23T06:52:37.002781+00:00",
+        "command": ".venv/bin/python profiling/profile_train_step.py --model-size medium --batch-size 4 --context-length 1024 --warmup 5 --seed 42 --output-dir results/profile/medium_c1024 --run-name medium_c1024",
+        "model_size": "medium",
+        "model_config": {
+          "d_model": 1024,
+          "d_ff": 4096,
+          "num_layers": 24,
+          "num_heads": 16
+        },
+        "batch_size": 4,
+        "context_length": 1024,
+        "vocab_size": 10000,
+        "mode": "train_step",
+        "dtype": "fp32",
+        "warmup": 5,
+        "profiled_steps": 1,
+        "seed": 42,
+        "learning_rate": 0.001,
+        "profiler": "torch.profiler",
+        "activities": [
+          "CPU",
+          "CUDA"
+        ],
+        "record_shapes": true,
+        "profile_memory": false,
+        "pytorch_version": "2.6.0+cu124",
+        "cuda_runtime": "12.4",
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "trace_files": [
+          "medium_c1024.1784789551187950335.pt.trace.json"
+        ],
+        "loss_after_profile_step": 7.669983863830566
+      }
+    },
+    {
+      "run_name": "medium_c256",
+      "metadata": {
+        "timestamp_utc": "2026-07-23T06:51:49.570250+00:00",
+        "command": ".venv/bin/python profiling/profile_train_step.py --model-size medium --batch-size 4 --context-length 256 --warmup 5 --seed 42 --output-dir results/profile/medium_c256 --run-name medium_c256",
+        "model_size": "medium",
+        "model_config": {
+          "d_model": 1024,
+          "d_ff": 4096,
+          "num_layers": 24,
+          "num_heads": 16
+        },
+        "batch_size": 4,
+        "context_length": 256,
+        "vocab_size": 10000,
+        "mode": "train_step",
+        "dtype": "fp32",
+        "warmup": 5,
+        "profiled_steps": 1,
+        "seed": 42,
+        "learning_rate": 0.001,
+        "profiler": "torch.profiler",
+        "activities": [
+          "CPU",
+          "CUDA"
+        ],
+        "record_shapes": true,
+        "profile_memory": false,
+        "pytorch_version": "2.6.0+cu124",
+        "cuda_runtime": "12.4",
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "trace_files": [
+          "medium_c256.1784789503958053603.pt.trace.json"
+        ],
+        "loss_after_profile_step": 6.5093159675598145
+      }
+    },
+    {
+      "run_name": "medium_c512",
+      "metadata": {
+        "timestamp_utc": "2026-07-23T06:52:11.700069+00:00",
+        "command": ".venv/bin/python profiling/profile_train_step.py --model-size medium --batch-size 4 --context-length 512 --warmup 5 --seed 42 --output-dir results/profile/medium_c512 --run-name medium_c512",
+        "model_size": "medium",
+        "model_config": {
+          "d_model": 1024,
+          "d_ff": 4096,
+          "num_layers": 24,
+          "num_heads": 16
+        },
+        "batch_size": 4,
+        "context_length": 512,
+        "vocab_size": 10000,
+        "mode": "train_step",
+        "dtype": "fp32",
+        "warmup": 5,
+        "profiled_steps": 1,
+        "seed": 42,
+        "learning_rate": 0.001,
+        "profiler": "torch.profiler",
+        "activities": [
+          "CPU",
+          "CUDA"
+        ],
+        "record_shapes": true,
+        "profile_memory": false,
+        "pytorch_version": "2.6.0+cu124",
+        "cuda_runtime": "12.4",
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "trace_files": [
+          "medium_c512.1784789526032407360.pt.trace.json"
+        ],
+        "loss_after_profile_step": 7.025041580200195
+      }
+    },
+    {
+      "run_name": "small_c1024",
+      "metadata": {
+        "timestamp_utc": "2026-07-23T06:51:29.203455+00:00",
+        "command": ".venv/bin/python profiling/profile_train_step.py --model-size small --batch-size 4 --context-length 1024 --warmup 5 --seed 42 --output-dir results/profile/small_c1024 --run-name small_c1024",
+        "model_size": "small",
+        "model_config": {
+          "d_model": 768,
+          "d_ff": 3072,
+          "num_layers": 12,
+          "num_heads": 12
+        },
+        "batch_size": 4,
+        "context_length": 1024,
+        "vocab_size": 10000,
+        "mode": "train_step",
+        "dtype": "fp32",
+        "warmup": 5,
+        "profiled_steps": 1,
+        "seed": 42,
+        "learning_rate": 0.001,
+        "profiler": "torch.profiler",
+        "activities": [
+          "CPU",
+          "CUDA"
+        ],
+        "record_shapes": true,
+        "profile_memory": false,
+        "pytorch_version": "2.6.0+cu124",
+        "cuda_runtime": "12.4",
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "trace_files": [
+          "small_c1024.1784789486309688688.pt.trace.json"
+        ],
+        "loss_after_profile_step": 7.571314334869385
+      }
+    },
+    {
+      "run_name": "small_c256",
+      "metadata": {
+        "timestamp_utc": "2026-07-23T06:51:03.242659+00:00",
+        "command": ".venv/bin/python profiling/profile_train_step.py --model-size small --batch-size 4 --context-length 256 --warmup 5 --seed 42 --output-dir results/profile/small_c256 --run-name small_c256",
+        "model_size": "small",
+        "model_config": {
+          "d_model": 768,
+          "d_ff": 3072,
+          "num_layers": 12,
+          "num_heads": 12
+        },
+        "batch_size": 4,
+        "context_length": 256,
+        "vocab_size": 10000,
+        "mode": "train_step",
+        "dtype": "fp32",
+        "warmup": 5,
+        "profiled_steps": 1,
+        "seed": 42,
+        "learning_rate": 0.001,
+        "profiler": "torch.profiler",
+        "activities": [
+          "CPU",
+          "CUDA"
+        ],
+        "record_shapes": true,
+        "profile_memory": false,
+        "pytorch_version": "2.6.0+cu124",
+        "cuda_runtime": "12.4",
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "trace_files": [
+          "small_c256.1784789460350056929.pt.trace.json"
+        ],
+        "loss_after_profile_step": 5.479974746704102
+      }
+    },
+    {
+      "run_name": "small_c512",
+      "metadata": {
+        "timestamp_utc": "2026-07-23T06:51:15.931874+00:00",
+        "command": ".venv/bin/python profiling/profile_train_step.py --model-size small --batch-size 4 --context-length 512 --warmup 5 --seed 42 --output-dir results/profile/small_c512 --run-name small_c512",
+        "model_size": "small",
+        "model_config": {
+          "d_model": 768,
+          "d_ff": 3072,
+          "num_layers": 12,
+          "num_heads": 12
+        },
+        "batch_size": 4,
+        "context_length": 512,
+        "vocab_size": 10000,
+        "mode": "train_step",
+        "dtype": "fp32",
+        "warmup": 5,
+        "profiled_steps": 1,
+        "seed": 42,
+        "learning_rate": 0.001,
+        "profiler": "torch.profiler",
+        "activities": [
+          "CPU",
+          "CUDA"
+        ],
+        "record_shapes": true,
+        "profile_memory": false,
+        "pytorch_version": "2.6.0+cu124",
+        "cuda_runtime": "12.4",
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "trace_files": [
+          "small_c512.1784789473123438380.pt.trace.json"
+        ],
+        "loss_after_profile_step": 6.549951553344727
+      }
+    },
+    {
+      "run_name": "smoke_small_c256",
+      "metadata": {
+        "timestamp_utc": "2026-07-23T06:38:29.578633+00:00",
+        "command": ".venv/bin/python profiling/profile_train_step.py --model-size small --batch-size 4 --context-length 256 --warmup 5 --seed 42 --output-dir results/profile/smoke_small_c256 --run-name smoke_small_c256",
+        "model_size": "small",
+        "model_config": {
+          "d_model": 768,
+          "d_ff": 3072,
+          "num_layers": 12,
+          "num_heads": 12
+        },
+        "batch_size": 4,
+        "context_length": 256,
+        "vocab_size": 10000,
+        "mode": "train_step",
+        "dtype": "fp32",
+        "warmup": 5,
+        "profiled_steps": 1,
+        "seed": 42,
+        "learning_rate": 0.001,
+        "profiler": "torch.profiler",
+        "activities": [
+          "CPU",
+          "CUDA"
+        ],
+        "record_shapes": true,
+        "profile_memory": false,
+        "pytorch_version": "2.6.0+cu124",
+        "cuda_runtime": "12.4",
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "trace_files": [
+          "smoke_small_c256.1784788706616914423.pt.trace.json"
+        ],
+        "loss_after_profile_step": 5.479974746704102
+      }
+    }
+  ]
+}

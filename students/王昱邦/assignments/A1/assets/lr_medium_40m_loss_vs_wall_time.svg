@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="650" viewBox="0 0 1000 650">
+<rect width="100%" height="100%" fill="white"/>
+<text x="500.0" y="32" text-anchor="middle" font-family="sans-serif" font-size="22">TinyStories 40.96M-token constant-LR comparison</text>
+<line x1="90.00" y1="70.0" x2="90.00" y2="570.0" stroke="#e5e7eb"/>
+<text x="90.00" y="595.0" text-anchor="middle" font-family="sans-serif" font-size="12">6.704</text>
+<line x1="90.0" y1="70.00" x2="740.0" y2="70.00" stroke="#e5e7eb"/>
+<text x="78.0" y="74.00" text-anchor="end" font-family="sans-serif" font-size="12">4.517</text>
+<line x1="220.00" y1="70.0" x2="220.00" y2="570.0" stroke="#e5e7eb"/>
+<text x="220.00" y="595.0" text-anchor="middle" font-family="sans-serif" font-size="12">71.47</text>
+<line x1="90.0" y1="170.00" x2="740.0" y2="170.00" stroke="#e5e7eb"/>
+<text x="78.0" y="174.00" text-anchor="end" font-family="sans-serif" font-size="12">3.932</text>
+<line x1="350.00" y1="70.0" x2="350.00" y2="570.0" stroke="#e5e7eb"/>
+<text x="350.00" y="595.0" text-anchor="middle" font-family="sans-serif" font-size="12">136.2</text>
+<line x1="90.0" y1="270.00" x2="740.0" y2="270.00" stroke="#e5e7eb"/>
+<text x="78.0" y="274.00" text-anchor="end" font-family="sans-serif" font-size="12">3.346</text>
+<line x1="480.00" y1="70.0" x2="480.00" y2="570.0" stroke="#e5e7eb"/>
+<text x="480.00" y="595.0" text-anchor="middle" font-family="sans-serif" font-size="12">201</text>
+<line x1="90.0" y1="370.00" x2="740.0" y2="370.00" stroke="#e5e7eb"/>
+<text x="78.0" y="374.00" text-anchor="end" font-family="sans-serif" font-size="12">2.76</text>
+<line x1="610.00" y1="70.0" x2="610.00" y2="570.0" stroke="#e5e7eb"/>
+<text x="610.00" y="595.0" text-anchor="middle" font-family="sans-serif" font-size="12">265.8</text>
+<line x1="90.0" y1="470.00" x2="740.0" y2="470.00" stroke="#e5e7eb"/>
+<text x="78.0" y="474.00" text-anchor="end" font-family="sans-serif" font-size="12">2.175</text>
+<line x1="740.00" y1="70.0" x2="740.00" y2="570.0" stroke="#e5e7eb"/>
+<text x="740.00" y="595.0" text-anchor="middle" font-family="sans-serif" font-size="12">330.6</text>
+<line x1="90.0" y1="570.00" x2="740.0" y2="570.00" stroke="#e5e7eb"/>
+<text x="78.0" y="574.00" text-anchor="end" font-family="sans-serif" font-size="12">1.589</text>
+<line x1="90.0" y1="570.0" x2="740.0" y2="570.0" stroke="#111827" stroke-width="1.5"/>
+<line x1="90.0" y1="70.0" x2="90.0" y2="570.0" stroke="#111827" stroke-width="1.5"/>
+<text x="415.0" y="628" text-anchor="middle" font-family="sans-serif" font-size="15">Cumulative wall-clock time (seconds)</text>
+<text x="24" y="320.0" text-anchor="middle" transform="rotate(-90 24 320.0)" font-family="sans-serif" font-size="15">Cross-entropy loss</text>
+<polyline points="90.50,92.73 103.73,214.57 116.69,276.57 129.48,328.43 143.81,365.22 156.66,391.57 169.48,417.10 182.35,429.77 196.68,437.32 209.43,453.25 222.23,456.53 235.16,463.86 249.55,478.28 262.47,475.48 275.37,487.98 288.23,492.80 302.65,485.44 315.50,492.75 328.38,502.59 341.24,505.41 355.63,506.75 368.44,510.61 381.34,514.35 394.18,519.52 408.47,515.79 421.37,508.41 434.18,511.33 447.03,510.42 461.36,526.90 474.20,537.44 487.07,528.08 499.93,528.89 514.31,515.97 527.07,528.33 539.93,530.52 552.79,535.92 567.15,529.74 580.01,521.81 592.83,530.48 605.67,531.11 619.97,545.94 632.83,535.29 645.65,544.53 658.51,543.26 672.81,543.71 685.64,545.76 698.47,543.29 711.29,544.97 725.64,540.09 738.40,543.06" fill="none" stroke="#2563eb" stroke-width="2.2"/>
+<line x1="768.0" y1="70.0" x2="804.0" y2="70.0" stroke="#2563eb" stroke-width="2.2"/>
+<text x="812.0" y="74.0" font-family="sans-serif" font-size="12">1.5e-3 — train</text>
+<polyline points="130.99,330.36 183.83,428.91 236.67,463.96 289.73,488.46 342.72,502.66 395.69,511.12 448.52,518.66 501.40,524.41 554.29,530.99 607.17,537.81 659.99,540.62 712.79,542.69 739.90,546.60" fill="none" stroke="#2563eb" stroke-width="2.2" stroke-dasharray="8 5"/>
+<circle cx="130.99" cy="330.36" r="3.2" fill="#2563eb"/>
+<circle cx="183.83" cy="428.91" r="3.2" fill="#2563eb"/>
+<circle cx="236.67" cy="463.96" r="3.2" fill="#2563eb"/>
+<circle cx="289.73" cy="488.46" r="3.2" fill="#2563eb"/>
+<circle cx="342.72" cy="502.66" r="3.2" fill="#2563eb"/>
+<circle cx="395.69" cy="511.12" r="3.2" fill="#2563eb"/>
+<circle cx="448.52" cy="518.66" r="3.2" fill="#2563eb"/>
+<circle cx="501.40" cy="524.41" r="3.2" fill="#2563eb"/>
+<circle cx="554.29" cy="530.99" r="3.2" fill="#2563eb"/>
+<circle cx="607.17" cy="537.81" r="3.2" fill="#2563eb"/>
+<circle cx="659.99" cy="540.62" r="3.2" fill="#2563eb"/>
+<circle cx="712.79" cy="542.69" r="3.2" fill="#2563eb"/>
+<circle cx="739.90" cy="546.60" r="3.2" fill="#2563eb"/>
+<line x1="768.0" y1="94.0" x2="804.0" y2="94.0" stroke="#2563eb" stroke-width="2.2" stroke-dasharray="8 5"/>
+<text x="812.0" y="98.0" font-family="sans-serif" font-size="12">1.5e-3 — validation</text>
+<polyline points="90.00,124.53 102.86,224.89 115.72,284.30 128.56,335.81 142.91,370.05 155.75,394.57 168.55,416.10 181.42,431.06 195.74,437.44 208.59,454.04 221.39,456.24 234.21,462.97 248.51,475.34 261.38,471.29 274.23,485.27 287.10,490.99 301.43,483.66 314.23,490.87 327.03,501.75 339.79,502.11 354.13,503.13 366.93,510.99 379.80,512.26 392.66,516.52 406.94,513.75 419.75,506.01 433.06,509.29 446.36,509.94 461.23,526.05 474.24,535.91 487.05,526.65 499.91,528.17 514.21,514.53 527.08,528.05 539.85,529.83 552.69,536.02 567.03,529.73 579.86,521.19 592.62,529.61 605.88,531.64 620.14,546.65 632.95,536.60 645.79,544.97 658.61,543.75 672.92,544.00 685.76,545.47 698.54,544.40 711.39,546.27 725.67,539.86 738.49,545.48" fill="none" stroke="#dc2626" stroke-width="2.2"/>
+<line x1="768.0" y1="118.0" x2="804.0" y2="118.0" stroke="#dc2626" stroke-width="2.2"/>
+<text x="812.0" y="122.0" font-family="sans-serif" font-size="12">2.5e-3 — train</text>
+<polyline points="130.07,338.09 182.91,429.62 235.71,462.62 288.61,485.34 341.29,500.33 394.14,509.75 447.90,517.33 501.42,524.20 554.20,531.01 607.38,538.05 660.13,540.49 712.89,542.83 740.00,547.27" fill="none" stroke="#dc2626" stroke-width="2.2" stroke-dasharray="8 5"/>
+<circle cx="130.07" cy="338.09" r="3.2" fill="#dc2626"/>
+<circle cx="182.91" cy="429.62" r="3.2" fill="#dc2626"/>
+<circle cx="235.71" cy="462.62" r="3.2" fill="#dc2626"/>
+<circle cx="288.61" cy="485.34" r="3.2" fill="#dc2626"/>
+<circle cx="341.29" cy="500.33" r="3.2" fill="#dc2626"/>
+<circle cx="394.14" cy="509.75" r="3.2" fill="#dc2626"/>
+<circle cx="447.90" cy="517.33" r="3.2" fill="#dc2626"/>
+<circle cx="501.42" cy="524.20" r="3.2" fill="#dc2626"/>
+<circle cx="554.20" cy="531.01" r="3.2" fill="#dc2626"/>
+<circle cx="607.38" cy="538.05" r="3.2" fill="#dc2626"/>
+<circle cx="660.13" cy="540.49" r="3.2" fill="#dc2626"/>
+<circle cx="712.89" cy="542.83" r="3.2" fill="#dc2626"/>
+<circle cx="740.00" cy="547.27" r="3.2" fill="#dc2626"/>
+<line x1="768.0" y1="142.0" x2="804.0" y2="142.0" stroke="#dc2626" stroke-width="2.2" stroke-dasharray="8 5"/>
+<text x="812.0" y="146.0" font-family="sans-serif" font-size="12">2.5e-3 — validation</text>
+</svg>

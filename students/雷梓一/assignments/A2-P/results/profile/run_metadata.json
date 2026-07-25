@@ -1,0 +1,233 @@
+{
+  "runs": [
+    {
+      "command": "python profiling/profile_runner.py --model-size medium --batch-size 1 --context-length 1024 --mode train_step --warmup 5 --steps 1 --dtype fp32 --device cuda --output results/profile/medium_ctx1024_unused.json --trace-output results/profile/medium_ctx1024.json --summary-output results/profile/medium_ctx1024_summary.json",
+      "config": {
+        "batch_size": 1,
+        "context_length": 1024,
+        "d_ff": 4096,
+        "d_model": 1024,
+        "dtype": "fp32",
+        "mode": "train_step",
+        "model_size": "medium",
+        "num_heads": 16,
+        "num_layers": 24,
+        "profiled_steps": 1,
+        "seed": 1337,
+        "vocab_size": 10000,
+        "warmup": 5
+      },
+      "software": {
+        "compute_capability": "8.9",
+        "cuda_runtime": "12.6",
+        "cudnn": 91002,
+        "device_type": "cuda",
+        "driver": "560.28.03",
+        "gpu_memory_bytes": 25282281472,
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "python": "3.13.14",
+        "pytorch": "2.11.0+cu126"
+      },
+      "stage_cuda_ms": {
+        "backward": 126.74934387207031,
+        "forward": 65.18080139160156,
+        "optimizer": 75.54902648925781
+      },
+      "summary_file": "medium_ctx1024_summary.json",
+      "timestamp_utc": "2026-07-22T05:41:49.976814+00:00",
+      "tool": "torch.profiler",
+      "trace_file": "medium_ctx1024.json"
+    },
+    {
+      "command": "python profiling/profile_runner.py --model-size medium --batch-size 1 --context-length 256 --mode train_step --warmup 5 --steps 1 --dtype fp32 --device cuda --output results/profile/medium_ctx256_unused.json --trace-output results/profile/medium_ctx256.json --summary-output results/profile/medium_ctx256_summary.json",
+      "config": {
+        "batch_size": 1,
+        "context_length": 256,
+        "d_ff": 4096,
+        "d_model": 1024,
+        "dtype": "fp32",
+        "mode": "train_step",
+        "model_size": "medium",
+        "num_heads": 16,
+        "num_layers": 24,
+        "profiled_steps": 1,
+        "seed": 1337,
+        "vocab_size": 10000,
+        "warmup": 5
+      },
+      "software": {
+        "compute_capability": "8.9",
+        "cuda_runtime": "12.6",
+        "cudnn": 91002,
+        "device_type": "cuda",
+        "driver": "560.28.03",
+        "gpu_memory_bytes": 25282281472,
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "python": "3.13.14",
+        "pytorch": "2.11.0+cu126"
+      },
+      "stage_cuda_ms": {
+        "backward": 128.86463928222656,
+        "forward": 65.96768188476562,
+        "optimizer": 74.11622619628906
+      },
+      "summary_file": "medium_ctx256_summary.json",
+      "timestamp_utc": "2026-07-22T05:41:25.054240+00:00",
+      "tool": "torch.profiler",
+      "trace_file": "medium_ctx256.json"
+    },
+    {
+      "command": "python profiling/profile_runner.py --model-size medium --batch-size 1 --context-length 512 --mode train_step --warmup 5 --steps 1 --dtype fp32 --device cuda --output results/profile/medium_ctx512_unused.json --trace-output results/profile/medium_ctx512.json --summary-output results/profile/medium_ctx512_summary.json",
+      "config": {
+        "batch_size": 1,
+        "context_length": 512,
+        "d_ff": 4096,
+        "d_model": 1024,
+        "dtype": "fp32",
+        "mode": "train_step",
+        "model_size": "medium",
+        "num_heads": 16,
+        "num_layers": 24,
+        "profiled_steps": 1,
+        "seed": 1337,
+        "vocab_size": 10000,
+        "warmup": 5
+      },
+      "software": {
+        "compute_capability": "8.9",
+        "cuda_runtime": "12.6",
+        "cudnn": 91002,
+        "device_type": "cuda",
+        "driver": "560.28.03",
+        "gpu_memory_bytes": 25282281472,
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "python": "3.13.14",
+        "pytorch": "2.11.0+cu126"
+      },
+      "stage_cuda_ms": {
+        "backward": 134.6395263671875,
+        "forward": 64.76310729980469,
+        "optimizer": 72.23168182373047
+      },
+      "summary_file": "medium_ctx512_summary.json",
+      "timestamp_utc": "2026-07-22T05:41:37.519317+00:00",
+      "tool": "torch.profiler",
+      "trace_file": "medium_ctx512.json"
+    },
+    {
+      "command": "python profiling/profile_runner.py --model-size small --batch-size 1 --context-length 1024 --mode train_step --warmup 5 --steps 1 --dtype fp32 --device cuda --output results/profile/small_ctx1024_unused.json --trace-output results/profile/small_ctx1024.json --summary-output results/profile/small_ctx1024_summary.json",
+      "config": {
+        "batch_size": 1,
+        "context_length": 1024,
+        "d_ff": 3072,
+        "d_model": 768,
+        "dtype": "fp32",
+        "mode": "train_step",
+        "model_size": "small",
+        "num_heads": 12,
+        "num_layers": 12,
+        "profiled_steps": 1,
+        "seed": 1337,
+        "vocab_size": 10000,
+        "warmup": 5
+      },
+      "software": {
+        "compute_capability": "8.9",
+        "cuda_runtime": "12.6",
+        "cudnn": 91002,
+        "device_type": "cuda",
+        "driver": "560.28.03",
+        "gpu_memory_bytes": 25282281472,
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "python": "3.13.14",
+        "pytorch": "2.11.0+cu126"
+      },
+      "stage_cuda_ms": {
+        "backward": 72.16973114013672,
+        "forward": 34.59539031982422,
+        "optimizer": 48.22025680541992
+      },
+      "summary_file": "small_ctx1024_summary.json",
+      "timestamp_utc": "2026-07-22T05:41:12.678360+00:00",
+      "tool": "torch.profiler",
+      "trace_file": "small_ctx1024.json"
+    },
+    {
+      "command": "python profiling/profile_runner.py --model-size small --batch-size 1 --context-length 256 --mode train_step --warmup 5 --steps 1 --dtype fp32 --device cuda --output results/profile/small_ctx256_unused.json --trace-output results/profile/small_ctx256.json --summary-output results/profile/small_ctx256_summary.json",
+      "config": {
+        "batch_size": 1,
+        "context_length": 256,
+        "d_ff": 3072,
+        "d_model": 768,
+        "dtype": "fp32",
+        "mode": "train_step",
+        "model_size": "small",
+        "num_heads": 12,
+        "num_layers": 12,
+        "profiled_steps": 1,
+        "seed": 1337,
+        "vocab_size": 10000,
+        "warmup": 5
+      },
+      "software": {
+        "compute_capability": "8.9",
+        "cuda_runtime": "12.6",
+        "cudnn": 91002,
+        "device_type": "cuda",
+        "driver": "560.28.03",
+        "gpu_memory_bytes": 25282281472,
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "python": "3.13.14",
+        "pytorch": "2.11.0+cu126"
+      },
+      "stage_cuda_ms": {
+        "backward": 73.43247985839844,
+        "forward": 33.840641021728516,
+        "optimizer": 34.5975341796875
+      },
+      "summary_file": "small_ctx256_summary.json",
+      "timestamp_utc": "2026-07-22T05:40:57.991136+00:00",
+      "tool": "torch.profiler",
+      "trace_file": "small_ctx256.json"
+    },
+    {
+      "command": "python profiling/profile_runner.py --model-size small --batch-size 1 --context-length 512 --mode train_step --warmup 5 --steps 1 --dtype fp32 --device cuda --output results/profile/small_ctx512_unused.json --trace-output results/profile/small_ctx512.json --summary-output results/profile/small_ctx512_summary.json",
+      "config": {
+        "batch_size": 1,
+        "context_length": 512,
+        "d_ff": 3072,
+        "d_model": 768,
+        "dtype": "fp32",
+        "mode": "train_step",
+        "model_size": "small",
+        "num_heads": 12,
+        "num_layers": 12,
+        "profiled_steps": 1,
+        "seed": 1337,
+        "vocab_size": 10000,
+        "warmup": 5
+      },
+      "software": {
+        "compute_capability": "8.9",
+        "cuda_runtime": "12.6",
+        "cudnn": 91002,
+        "device_type": "cuda",
+        "driver": "560.28.03",
+        "gpu_memory_bytes": 25282281472,
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "python": "3.13.14",
+        "pytorch": "2.11.0+cu126"
+      },
+      "stage_cuda_ms": {
+        "backward": 76.3109130859375,
+        "forward": 33.12470245361328,
+        "optimizer": 42.54025650024414
+      },
+      "summary_file": "small_ctx512_summary.json",
+      "timestamp_utc": "2026-07-22T05:41:05.208299+00:00",
+      "tool": "torch.profiler",
+      "trace_file": "small_ctx512.json"
+    }
+  ],
+  "schema_version": 1
+}

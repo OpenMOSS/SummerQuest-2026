@@ -1,0 +1,338 @@
+[
+  {
+    "run": "fallback_large_train_step_bf16_s2048",
+    "status": "oom",
+    "config": {
+      "model_size": "large",
+      "mode": "train_step",
+      "dtype": "bf16",
+      "batch_size": 1,
+      "context_length": 2048,
+      "warmup": 1,
+      "warmup_mode": "forward",
+      "seed": 0
+    },
+    "environment": {
+      "python": "3.13.14",
+      "pytorch": "2.7.1+cu126",
+      "cuda_runtime": "12.6",
+      "cudnn": 90501,
+      "device_type": "cuda",
+      "gpu": "NVIDIA GeForce RTX 4090",
+      "gpu_total_memory_mib": 24111.06,
+      "compute_capability": "8.9",
+      "driver": "560.28.03"
+    },
+    "snapshot_file": "fallback_large_train_step_bf16_s2048.pickle",
+    "failed_stage": "forward",
+    "error": "CUDA out of memory. Tried to allocate 320.00 MiB. GPU 0 has a total capacity of 23.55 GiB of which 145.75 MiB is free. Including non-PyTorch memory, this process has 23.39 GiB memory in use. Of the allocated memory 22.75 GiB is allocated by PyTorch, and 202.65 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)"
+  },
+  {
+    "run": "fallback_large_train_step_fp32_s2048",
+    "status": "oom",
+    "config": {
+      "model_size": "large",
+      "mode": "train_step",
+      "dtype": "fp32",
+      "batch_size": 1,
+      "context_length": 2048,
+      "warmup": 1,
+      "warmup_mode": "forward",
+      "seed": 0
+    },
+    "environment": {
+      "python": "3.13.14",
+      "pytorch": "2.7.1+cu126",
+      "cuda_runtime": "12.6",
+      "cudnn": 90501,
+      "device_type": "cuda",
+      "gpu": "NVIDIA GeForce RTX 4090",
+      "gpu_total_memory_mib": 24111.06,
+      "compute_capability": "8.9",
+      "driver": "560.28.03"
+    },
+    "snapshot_file": "fallback_large_train_step_fp32_s2048.pickle",
+    "failed_stage": "forward",
+    "error": "CUDA out of memory. Tried to allocate 320.00 MiB. GPU 0 has a total capacity of 23.55 GiB of which 155.75 MiB is free. Including non-PyTorch memory, this process has 23.38 GiB memory in use. Of the allocated memory 22.57 GiB is allocated by PyTorch, and 382.62 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)"
+  },
+  {
+    "run": "fallback_xl_train_step_bf16_s1024",
+    "status": "oom",
+    "config": {
+      "model_size": "xl",
+      "mode": "train_step",
+      "dtype": "bf16",
+      "batch_size": 1,
+      "context_length": 1024,
+      "warmup": 1,
+      "warmup_mode": "forward",
+      "seed": 0
+    },
+    "environment": {
+      "python": "3.13.14",
+      "pytorch": "2.7.1+cu126",
+      "cuda_runtime": "12.6",
+      "cudnn": 90501,
+      "device_type": "cuda",
+      "gpu": "NVIDIA GeForce RTX 4090",
+      "gpu_total_memory_mib": 24111.06,
+      "compute_capability": "8.9",
+      "driver": "560.28.03"
+    },
+    "snapshot_file": "fallback_xl_train_step_bf16_s1024.pickle",
+    "failed_stage": "forward",
+    "error": "CUDA out of memory. Tried to allocate 128.00 MiB. GPU 0 has a total capacity of 23.55 GiB of which 121.75 MiB is free. Including non-PyTorch memory, this process has 23.42 GiB memory in use. Of the allocated memory 22.80 GiB is allocated by PyTorch, and 172.64 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)"
+  },
+  {
+    "run": "fallback_xl_train_step_fp32_s1024",
+    "status": "oom",
+    "config": {
+      "model_size": "xl",
+      "mode": "train_step",
+      "dtype": "fp32",
+      "batch_size": 1,
+      "context_length": 1024,
+      "warmup": 1,
+      "warmup_mode": "forward",
+      "seed": 0
+    },
+    "environment": {
+      "python": "3.13.14",
+      "pytorch": "2.7.1+cu126",
+      "cuda_runtime": "12.6",
+      "cudnn": 90501,
+      "device_type": "cuda",
+      "gpu": "NVIDIA GeForce RTX 4090",
+      "gpu_total_memory_mib": 24111.06,
+      "compute_capability": "8.9",
+      "driver": "560.28.03"
+    },
+    "snapshot_file": "fallback_xl_train_step_fp32_s1024.pickle",
+    "failed_stage": "forward",
+    "error": "CUDA out of memory. Tried to allocate 128.00 MiB. GPU 0 has a total capacity of 23.55 GiB of which 119.75 MiB is free. Including non-PyTorch memory, this process has 23.42 GiB memory in use. Of the allocated memory 22.68 GiB is allocated by PyTorch, and 299.01 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)"
+  },
+  {
+    "run": "xl_forward_bf16_s128",
+    "status": "success",
+    "config": {
+      "model_size": "xl",
+      "mode": "forward",
+      "dtype": "bf16",
+      "batch_size": 1,
+      "context_length": 128,
+      "warmup": 1,
+      "warmup_mode": "forward",
+      "seed": 0
+    },
+    "environment": {
+      "python": "3.13.14",
+      "pytorch": "2.7.1+cu126",
+      "cuda_runtime": "12.6",
+      "cudnn": 90501,
+      "device_type": "cuda",
+      "gpu": "NVIDIA GeForce RTX 4090",
+      "gpu_total_memory_mib": 24111.06,
+      "compute_capability": "8.9",
+      "driver": "560.28.03"
+    },
+    "snapshot_file": "xl_forward_bf16_s128.pickle",
+    "failed_stage": null,
+    "error": null
+  },
+  {
+    "run": "xl_forward_bf16_s2048",
+    "status": "success",
+    "config": {
+      "model_size": "xl",
+      "mode": "forward",
+      "dtype": "bf16",
+      "batch_size": 1,
+      "context_length": 2048,
+      "warmup": 1,
+      "warmup_mode": "forward",
+      "seed": 0
+    },
+    "environment": {
+      "python": "3.13.14",
+      "pytorch": "2.7.1+cu126",
+      "cuda_runtime": "12.6",
+      "cudnn": 90501,
+      "device_type": "cuda",
+      "gpu": "NVIDIA GeForce RTX 4090",
+      "gpu_total_memory_mib": 24111.06,
+      "compute_capability": "8.9",
+      "driver": "560.28.03"
+    },
+    "snapshot_file": "xl_forward_bf16_s2048.pickle",
+    "failed_stage": null,
+    "error": null
+  },
+  {
+    "run": "xl_forward_fp32_s128",
+    "status": "success",
+    "config": {
+      "model_size": "xl",
+      "mode": "forward",
+      "dtype": "fp32",
+      "batch_size": 1,
+      "context_length": 128,
+      "warmup": 1,
+      "warmup_mode": "forward",
+      "seed": 0
+    },
+    "environment": {
+      "python": "3.13.14",
+      "pytorch": "2.7.1+cu126",
+      "cuda_runtime": "12.6",
+      "cudnn": 90501,
+      "device_type": "cuda",
+      "gpu": "NVIDIA GeForce RTX 4090",
+      "gpu_total_memory_mib": 24111.06,
+      "compute_capability": "8.9",
+      "driver": "560.28.03"
+    },
+    "snapshot_file": "xl_forward_fp32_s128.pickle",
+    "failed_stage": null,
+    "error": null
+  },
+  {
+    "run": "xl_forward_fp32_s2048",
+    "status": "success",
+    "config": {
+      "model_size": "xl",
+      "mode": "forward",
+      "dtype": "fp32",
+      "batch_size": 1,
+      "context_length": 2048,
+      "warmup": 1,
+      "warmup_mode": "forward",
+      "seed": 0
+    },
+    "environment": {
+      "python": "3.13.14",
+      "pytorch": "2.7.1+cu126",
+      "cuda_runtime": "12.6",
+      "cudnn": 90501,
+      "device_type": "cuda",
+      "gpu": "NVIDIA GeForce RTX 4090",
+      "gpu_total_memory_mib": 24111.06,
+      "compute_capability": "8.9",
+      "driver": "560.28.03"
+    },
+    "snapshot_file": "xl_forward_fp32_s2048.pickle",
+    "failed_stage": null,
+    "error": null
+  },
+  {
+    "run": "xl_train_step_bf16_s128",
+    "status": "oom",
+    "config": {
+      "model_size": "xl",
+      "mode": "train_step",
+      "dtype": "bf16",
+      "batch_size": 1,
+      "context_length": 128,
+      "warmup": 1,
+      "warmup_mode": "forward",
+      "seed": 0
+    },
+    "environment": {
+      "python": "3.13.14",
+      "pytorch": "2.7.1+cu126",
+      "cuda_runtime": "12.6",
+      "cudnn": 90501,
+      "device_type": "cuda",
+      "gpu": "NVIDIA GeForce RTX 4090",
+      "gpu_total_memory_mib": 24111.06,
+      "compute_capability": "8.9",
+      "driver": "560.28.03"
+    },
+    "snapshot_file": "xl_train_step_bf16_s128.pickle",
+    "failed_stage": "backward",
+    "error": "CUDA out of memory. Tried to allocate 100.00 MiB. GPU 0 has a total capacity of 23.55 GiB of which 83.75 MiB is free. Including non-PyTorch memory, this process has 23.46 GiB memory in use. Of the allocated memory 22.78 GiB is allocated by PyTorch, and 224.54 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)"
+  },
+  {
+    "run": "xl_train_step_bf16_s2048",
+    "status": "oom",
+    "config": {
+      "model_size": "xl",
+      "mode": "train_step",
+      "dtype": "bf16",
+      "batch_size": 1,
+      "context_length": 2048,
+      "warmup": 1,
+      "warmup_mode": "forward",
+      "seed": 0
+    },
+    "environment": {
+      "python": "3.13.14",
+      "pytorch": "2.7.1+cu126",
+      "cuda_runtime": "12.6",
+      "cudnn": 90501,
+      "device_type": "cuda",
+      "gpu": "NVIDIA GeForce RTX 4090",
+      "gpu_total_memory_mib": 24111.06,
+      "compute_capability": "8.9",
+      "driver": "560.28.03"
+    },
+    "snapshot_file": "xl_train_step_bf16_s2048.pickle",
+    "failed_stage": "forward",
+    "error": "CUDA out of memory. Tried to allocate 512.00 MiB. GPU 0 has a total capacity of 23.55 GiB of which 321.75 MiB is free. Including non-PyTorch memory, this process has 23.22 GiB memory in use. Of the allocated memory 22.71 GiB is allocated by PyTorch, and 64.70 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)"
+  },
+  {
+    "run": "xl_train_step_fp32_s128",
+    "status": "oom",
+    "config": {
+      "model_size": "xl",
+      "mode": "train_step",
+      "dtype": "fp32",
+      "batch_size": 1,
+      "context_length": 128,
+      "warmup": 1,
+      "warmup_mode": "forward",
+      "seed": 0
+    },
+    "environment": {
+      "python": "3.13.14",
+      "pytorch": "2.7.1+cu126",
+      "cuda_runtime": "12.6",
+      "cudnn": 90501,
+      "device_type": "cuda",
+      "gpu": "NVIDIA GeForce RTX 4090",
+      "gpu_total_memory_mib": 24111.06,
+      "compute_capability": "8.9",
+      "driver": "560.28.03"
+    },
+    "snapshot_file": "xl_train_step_fp32_s128.pickle",
+    "failed_stage": "backward",
+    "error": "CUDA out of memory. Tried to allocate 100.00 MiB. GPU 0 has a total capacity of 23.55 GiB of which 33.75 MiB is free. Including non-PyTorch memory, this process has 23.50 GiB memory in use. Of the allocated memory 22.91 GiB is allocated by PyTorch, and 141.96 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)"
+  },
+  {
+    "run": "xl_train_step_fp32_s2048",
+    "status": "oom",
+    "config": {
+      "model_size": "xl",
+      "mode": "train_step",
+      "dtype": "fp32",
+      "batch_size": 1,
+      "context_length": 2048,
+      "warmup": 1,
+      "warmup_mode": "forward",
+      "seed": 0
+    },
+    "environment": {
+      "python": "3.13.14",
+      "pytorch": "2.7.1+cu126",
+      "cuda_runtime": "12.6",
+      "cudnn": 90501,
+      "device_type": "cuda",
+      "gpu": "NVIDIA GeForce RTX 4090",
+      "gpu_total_memory_mib": 24111.06,
+      "compute_capability": "8.9",
+      "driver": "560.28.03"
+    },
+    "snapshot_file": "xl_train_step_fp32_s2048.pickle",
+    "failed_stage": "forward",
+    "error": "CUDA out of memory. Tried to allocate 512.00 MiB. GPU 0 has a total capacity of 23.55 GiB of which 105.75 MiB is free. Including non-PyTorch memory, this process has 23.43 GiB memory in use. Of the allocated memory 22.40 GiB is allocated by PyTorch, and 601.98 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)"
+  }
+]

@@ -1,0 +1,9 @@
+source_file,model_size,context_length,mode,dtype,status,active_peak_bytes,allocated_peak_bytes,reserved_peak_bytes,requested_peak_bytes
+results/memory/xl_ctx128_forward_bf16.json,xl,128,forward,bf16,completed,20564021248,20564021248,20778582016,20428759040
+results/memory/xl_ctx128_forward_fp32.json,xl,128,forward,fp32,completed,13818056704,13818056704,13841203200,13683118080
+results/memory/xl_ctx128_train_step_bf16.json,xl,128,train_step,bf16,completed,55238613504,55238613504,57921241088,55102953476
+results/memory/xl_ctx128_train_step_fp32.json,xl,128,train_step,fp32,completed,55241533952,55241533952,56161730560,55105513476
+results/memory/xl_ctx2048_forward_bf16.json,xl,2048,forward,bf16,completed,22067865600,22067865600,22588424192,21932402688
+results/memory/xl_ctx2048_forward_fp32.json,xl,2048,forward,fp32,completed,16074205184,16074205184,16651386880,15939266560
+results/memory/xl_ctx2048_train_step_bf16.json,xl,2048,train_step,bf16,completed,88640547840,88640547840,90269810688,88472791048
+results/memory/xl_ctx2048_train_step_fp32.json,xl,2048,train_step,fp32,completed,97935502336,97935502336,99723771904,97792075784

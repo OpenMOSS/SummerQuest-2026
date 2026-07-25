@@ -1,0 +1,259 @@
+{
+  "schema_version": 1,
+  "profile_files": [
+    "medium_ctx1024.json",
+    "medium_ctx256.json",
+    "medium_ctx512.json",
+    "small_ctx1024.json",
+    "small_ctx256.json",
+    "small_ctx512.json"
+  ],
+  "profile_runs": [
+    {
+      "source": "medium_ctx1024.json",
+      "config": {
+        "model_size": "medium",
+        "vocab_size": 10000,
+        "batch_size": 4,
+        "context_length": 1024,
+        "mode": "train_step",
+        "warmup_steps": 5,
+        "measurement_steps": 1,
+        "dtype": "fp32",
+        "autocast": false,
+        "parameter_dtype": "torch.float32",
+        "compute_dtype": "torch.float32",
+        "seed": 1337
+      },
+      "hardware": {
+        "device": "cuda",
+        "torch_version": "2.8.0+cu128",
+        "cuda_available": true,
+        "python": "3.12.11",
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "gpu_total_memory_bytes": 50875924480,
+        "cuda_version": "12.8",
+        "cudnn_version": 91002,
+        "tf32_matmul": false,
+        "tf32_cudnn": true,
+        "nvidia_smi": {
+          "gpu_name": "NVIDIA GeForce RTX 4090",
+          "memory_total_mib": "49140",
+          "memory_free_mib_at_query": "10830",
+          "driver_version": "570.124.06",
+          "power_limit_w": "450.00",
+          "pstate": "P2"
+        }
+      },
+      "tool": "torch.profiler",
+      "command": "python profiling/profile.py --model-size medium --batch-size 4 --context-length 1024 --warmup 5 --dtype fp32 --device cuda --output medium_ctx1024.json --trace-output medium_ctx1024.json.trace --table-output medium_ctx1024.operators.csv",
+      "trace_file": "medium_ctx1024.json.trace",
+      "operator_count": 244
+    },
+    {
+      "source": "medium_ctx256.json",
+      "config": {
+        "model_size": "medium",
+        "vocab_size": 10000,
+        "batch_size": 4,
+        "context_length": 256,
+        "mode": "train_step",
+        "warmup_steps": 5,
+        "measurement_steps": 1,
+        "dtype": "fp32",
+        "autocast": false,
+        "parameter_dtype": "torch.float32",
+        "compute_dtype": "torch.float32",
+        "seed": 1337
+      },
+      "hardware": {
+        "device": "cuda",
+        "torch_version": "2.8.0+cu128",
+        "cuda_available": true,
+        "python": "3.12.11",
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "gpu_total_memory_bytes": 50875924480,
+        "cuda_version": "12.8",
+        "cudnn_version": 91002,
+        "tf32_matmul": false,
+        "tf32_cudnn": true,
+        "nvidia_smi": {
+          "gpu_name": "NVIDIA GeForce RTX 4090",
+          "memory_total_mib": "49140",
+          "memory_free_mib_at_query": "38914",
+          "driver_version": "570.124.06",
+          "power_limit_w": "450.00",
+          "pstate": "P2"
+        }
+      },
+      "tool": "torch.profiler",
+      "command": "python profiling/profile.py --model-size medium --batch-size 4 --context-length 256 --warmup 5 --dtype fp32 --device cuda --output medium_ctx256.json --trace-output medium_ctx256.json.trace --table-output medium_ctx256.operators.csv",
+      "trace_file": "medium_ctx256.json.trace",
+      "operator_count": 240
+    },
+    {
+      "source": "medium_ctx512.json",
+      "config": {
+        "model_size": "medium",
+        "vocab_size": 10000,
+        "batch_size": 4,
+        "context_length": 512,
+        "mode": "train_step",
+        "warmup_steps": 5,
+        "measurement_steps": 1,
+        "dtype": "fp32",
+        "autocast": false,
+        "parameter_dtype": "torch.float32",
+        "compute_dtype": "torch.float32",
+        "seed": 1337
+      },
+      "hardware": {
+        "device": "cuda",
+        "torch_version": "2.8.0+cu128",
+        "cuda_available": true,
+        "python": "3.12.11",
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "gpu_total_memory_bytes": 50875924480,
+        "cuda_version": "12.8",
+        "cudnn_version": 91002,
+        "tf32_matmul": false,
+        "tf32_cudnn": true,
+        "nvidia_smi": {
+          "gpu_name": "NVIDIA GeForce RTX 4090",
+          "memory_total_mib": "49140",
+          "memory_free_mib_at_query": "32220",
+          "driver_version": "570.124.06",
+          "power_limit_w": "450.00",
+          "pstate": "P2"
+        }
+      },
+      "tool": "torch.profiler",
+      "command": "python profiling/profile.py --model-size medium --batch-size 4 --context-length 512 --warmup 5 --dtype fp32 --device cuda --output medium_ctx512.json --trace-output medium_ctx512.json.trace --table-output medium_ctx512.operators.csv",
+      "trace_file": "medium_ctx512.json.trace",
+      "operator_count": 242
+    },
+    {
+      "source": "small_ctx1024.json",
+      "config": {
+        "model_size": "small",
+        "vocab_size": 10000,
+        "batch_size": 4,
+        "context_length": 1024,
+        "mode": "train_step",
+        "warmup_steps": 5,
+        "measurement_steps": 1,
+        "dtype": "fp32",
+        "autocast": false,
+        "parameter_dtype": "torch.float32",
+        "compute_dtype": "torch.float32",
+        "seed": 1337
+      },
+      "hardware": {
+        "device": "cuda",
+        "torch_version": "2.8.0+cu128",
+        "cuda_available": true,
+        "python": "3.12.11",
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "gpu_total_memory_bytes": 50875924480,
+        "cuda_version": "12.8",
+        "cudnn_version": 91002,
+        "tf32_matmul": false,
+        "tf32_cudnn": true,
+        "nvidia_smi": {
+          "gpu_name": "NVIDIA GeForce RTX 4090",
+          "memory_total_mib": "49140",
+          "memory_free_mib_at_query": "34134",
+          "driver_version": "570.124.06",
+          "power_limit_w": "450.00",
+          "pstate": "P2"
+        }
+      },
+      "tool": "torch.profiler",
+      "command": "python profiling/profile.py --model-size small --batch-size 4 --context-length 1024 --warmup 5 --dtype fp32 --device cuda --output small_ctx1024.json --trace-output small_ctx1024.json.trace --table-output small_ctx1024.operators.csv",
+      "trace_file": "small_ctx1024.json.trace",
+      "operator_count": 244
+    },
+    {
+      "source": "small_ctx256.json",
+      "config": {
+        "model_size": "small",
+        "vocab_size": 10000,
+        "batch_size": 4,
+        "context_length": 256,
+        "mode": "train_step",
+        "warmup_steps": 5,
+        "measurement_steps": 1,
+        "dtype": "fp32",
+        "autocast": false,
+        "parameter_dtype": "torch.float32",
+        "compute_dtype": "torch.float32",
+        "seed": 1337
+      },
+      "hardware": {
+        "device": "cuda",
+        "torch_version": "2.8.0+cu128",
+        "cuda_available": true,
+        "python": "3.12.11",
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "gpu_total_memory_bytes": 50875924480,
+        "cuda_version": "12.8",
+        "cudnn_version": 91002,
+        "tf32_matmul": false,
+        "tf32_cudnn": true,
+        "nvidia_smi": {
+          "gpu_name": "NVIDIA GeForce RTX 4090",
+          "memory_total_mib": "49140",
+          "memory_free_mib_at_query": "44690",
+          "driver_version": "570.124.06",
+          "power_limit_w": "450.00",
+          "pstate": "P2"
+        }
+      },
+      "tool": "torch.profiler",
+      "command": "python profiling/profile.py --model-size small --batch-size 4 --context-length 256 --warmup 5 --dtype fp32 --device cuda --output small_ctx256.json --trace-output small_ctx256.json.trace --table-output small_ctx256.operators.csv",
+      "trace_file": "small_ctx256.json.trace",
+      "operator_count": 241
+    },
+    {
+      "source": "small_ctx512.json",
+      "config": {
+        "model_size": "small",
+        "vocab_size": 10000,
+        "batch_size": 4,
+        "context_length": 512,
+        "mode": "train_step",
+        "warmup_steps": 5,
+        "measurement_steps": 1,
+        "dtype": "fp32",
+        "autocast": false,
+        "parameter_dtype": "torch.float32",
+        "compute_dtype": "torch.float32",
+        "seed": 1337
+      },
+      "hardware": {
+        "device": "cuda",
+        "torch_version": "2.8.0+cu128",
+        "cuda_available": true,
+        "python": "3.12.11",
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "gpu_total_memory_bytes": 50875924480,
+        "cuda_version": "12.8",
+        "cudnn_version": 91002,
+        "tf32_matmul": false,
+        "tf32_cudnn": true,
+        "nvidia_smi": {
+          "gpu_name": "NVIDIA GeForce RTX 4090",
+          "memory_total_mib": "49140",
+          "memory_free_mib_at_query": "41984",
+          "driver_version": "570.124.06",
+          "power_limit_w": "450.00",
+          "pstate": "P2"
+        }
+      },
+      "tool": "torch.profiler",
+      "command": "python profiling/profile.py --model-size small --batch-size 4 --context-length 512 --warmup 5 --dtype fp32 --device cuda --output small_ctx512.json --trace-output small_ctx512.json.trace --table-output small_ctx512.operators.csv",
+      "trace_file": "small_ctx512.json.trace",
+      "operator_count": 241
+    }
+  ]
+}
