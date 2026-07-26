@@ -1,0 +1,44 @@
+{
+  "assignment": "A2-K",
+  "task_version": "26.1.4-k-rc.3",
+  "starter_commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+  "seed": [
+    3,
+    17,
+    29
+  ],
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "gpu_memory_mib": 24564,
+  "gpu_free_start_mib": 24110,
+  "driver": "560.28.03",
+  "cuda": "12.6",
+  "pytorch": "2.11.0+cu126",
+  "triton": "3.6.0",
+  "power_limit_w": 450.0,
+  "pstate": "P8",
+  "tf32": "disabled for FP32 correctness",
+  "measurement": {
+    "warmup_ms": 100,
+    "rep_ms": 300,
+    "quantiles": [
+      0.2,
+      0.5,
+      0.8
+    ]
+  },
+  "allocator_limit_mib": 23552,
+  "execution_status": {
+    "unit_tests": "passed",
+    "correctness": "18/18 passed",
+    "attention": "12/12 attention and 6/6 model compile passed",
+    "flash": "22/22 passed",
+    "checkpoint": "7/7 passed"
+  },
+  "commands": [
+    "python -m student_scripts.a2k.run_formal --suite correctness --run-dir <private-results>",
+    "python -m student_scripts.a2k.run_formal --suite attention --run-dir <private-results>",
+    "python -m student_scripts.a2k.run_formal --suite flash --run-dir <private-results>",
+    "python -m student_scripts.a2k.run_formal --suite checkpoint --run-dir <private-results>",
+    "python -m pytest tests/test_attention.py -v"
+  ]
+}
