@@ -1,0 +1,5 @@
+{
+  "matrix": "XL context 128/2048, inference and train_step; fallback XL/1024 then Large/2048",
+  "snapshot_policy": "one snapshot for each successful inference case; snapshots remain private",
+  "measurement": "active, allocated, reserved and peak allocator statistics"
+}

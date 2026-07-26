@@ -1,0 +1,137 @@
+case_id,model_size,context_length,mode,dtype,tool,status,trace_file,kind,stage,op_or_kernel,calls,total_cpu_time,total_cuda_time
+medium-s1024-train_step,medium,1024,train_step,fp32,nsys,oom,trace.nsys-rep (private),kernel,,ampere_sgemm_128x64_tn,150,,73.958324
+medium-s1024-train_step,medium,1024,train_step,fp32,nsys,oom,trace.nsys-rep (private),kernel,,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::BUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned long)2>>(int, T2, T3)",22,,12.543904
+medium-s1024-train_step,medium,1024,train_step,fp32,nsys,oom,trace.nsys-rep (private),kernel,,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::exp_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 2)]::operator ()() const::[lambda() (instance 2)]::operator ()() const::[lambda(float) (instance 1)], std::array<char *, (unsigned long)2>>(int, T2, T3)",22,,12.477218
+medium-s1024-train_step,medium,1024,train_step,fp32,nsys,oom,trace.nsys-rep (private),kernel,,"void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<float>>(at::TensorIteratorBase &, const T1 &)::[lambda(int) (instance 1)]>(int, T3)",22,,11.464001
+medium-s1024-train_step,medium,1024,train_step,fp32,nsys,oom,trace.nsys-rep (private),kernel,,"void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::DivFunctor<float>>>(at::TensorIteratorBase &, const T1 &)::[lambda(int) (instance 1)]>(int, T3)",21,,11.014627
+medium-s1024-train_step,medium,1024,train_step,fp32,nsys,oom,trace.nsys-rep (private),kernel,,"void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::<unnamed>::where_kernel_impl(at::TensorIterator &)::[lambda() (instance 1)]::operator ()() const::[lambda() (instance 11)]::operator ()() const::[lambda(bool, float, float) (instance 1)]>(at::TensorIteratorBase &, const T1 &)::[lambda(int) (instance 1)]>(int, T3)",22,,9.532836
+medium-s1024-train_step,medium,1024,train_step,fp32,nsys,oom,trace.nsys-rep (private),kernel,,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned long)3>>(int, T2, T3)",42,,8.854880
+medium-s1024-train_step,medium,1024,train_step,fp32,nsys,oom,trace.nsys-rep (private),kernel,,ampere_sgemm_128x128_nn,21,,8.183840
+medium-s1024-train_step,medium,1024,train_step,fp32,nsys,oom,trace.nsys-rep (private),kernel,,"void at::native::reduce_kernel<(int)512, (int)1, at::native::ReduceOp<float, at::native::MaxOps<float>, unsigned int, float, (int)4, (int)4>>(T3)",22,,7.334690
+medium-s1024-train_step,medium,1024,train_step,fp32,nsys,oom,trace.nsys-rep (private),kernel,,"void at::native::reduce_kernel<(int)512, (int)1, at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::sum_functor<float, float, float>::operator ()(at::TensorIterator &)::[lambda(float, float) (instance 1)]>, unsigned int, float, (int)4, (int)4>>(T3)",22,,7.267332
+medium-s256-train_step,medium,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,ampere_sgemm_128x64_tn,1014,,137.016702
+medium-s256-train_step,medium,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned long)2>>(int, T2, T3)",8642,,88.586786
+medium-s256-train_step,medium,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,void cutlass::Kernel2<cutlass_80_simt_sgemm_256x128_8x4_nn_align1>(T1::Params),438,,84.219227
+medium-s256-train_step,medium,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,void cutlass::Kernel2<cutlass_80_simt_sgemm_128x256_8x4_nt_align1>(T1::Params),438,,67.980461
+medium-s256-train_step,medium,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::CUDAFunctor_add<float>, std::array<char *, (unsigned long)3>>(int, T2, T3)",8010,,60.459719
+medium-s256-train_step,medium,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,"void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 3)]::operator ()() const::[lambda() (instance 7)]::operator ()() const::[lambda(float) (instance 1)]>(at::TensorIteratorBase &, const T1 &)::[lambda(int) (instance 1)]>(int, T3)",2166,,41.310555
+medium-s256-train_step,medium,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned long)3>>(int, T2, T3)",2328,,36.134439
+medium-s256-train_step,medium,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,void cutlass::Kernel2<cutlass_80_simt_sgemm_64x64_8x5_nt_align1>(T1::Params),576,,31.848114
+medium-s256-train_step,medium,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,void cutlass::Kernel2<cutlass_80_simt_sgemm_128x64_8x5_nn_align1>(T1::Params),576,,28.209339
+medium-s256-train_step,medium,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,"void at::native::vectorized_elementwise_kernel<(int)4, void at::native::<unnamed>::pow_tensor_scalar_kernel_impl<float, float>(at::TensorIteratorBase &, T2)::[lambda(float) (instance 1)], std::array<char *, (unsigned long)2>>(int, T2, T3)",1608,,15.567471
+medium-s256-train_step,medium,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cudaLaunchKernel,41984,630.794246,
+medium-s256-train_step,medium,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cudaMalloc,498,60.102149,
+medium-s256-train_step,medium,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cuLibraryLoadData,4,18.441534,
+medium-s256-train_step,medium,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cudaMemsetAsync,2328,14.242513,
+medium-s256-train_step,medium,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cuLaunchKernel,2198,14.171822,
+medium-s256-train_step,medium,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cudaMemcpyAsync,307,4.177938,
+medium-s256-train_step,medium,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cuKernelGetFunction,2028,3.809010,
+medium-s256-train_step,medium,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cudaDeviceSynchronize,18,2.422264,
+medium-s256-train_step,medium,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cudaFree,2,2.129504,
+medium-s256-train_step,medium,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cudaHostAlloc,1,1.060329,
+medium-s256-train_step,medium,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cudaStreamIsCapturing_v10000,843,0.741852,
+medium-s256-train_step,medium,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cudaStreamSynchronize,13,0.264757,
+medium-s256-train_step,medium,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cuGetProcAddress_v2,810,0.142042,
+medium-s256-train_step,medium,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cuModuleLoadData,1,0.074290,
+medium-s256-train_step,medium,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cudaEventCreateWithFlags,36,0.047638,
+medium-s256-train_step,medium,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cuLibraryGetKernel,8,0.009185,
+medium-s256-train_step,medium,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cuInit,3,0.004269,
+medium-s256-train_step,medium,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cuModuleGetLoadingMode,3,0.001585,
+medium-s256-train_step,medium,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cudaGetDriverEntryPoint_v11030,2,0.001577,
+medium-s512-train_step,medium,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,ampere_sgemm_128x64_tn,1008,,247.346441
+medium-s512-train_step,medium,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned long)3>>(int, T2, T3)",2328,,150.904620
+medium-s512-train_step,medium,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,void cutlass::Kernel2<cutlass_80_simt_sgemm_256x128_8x4_nn_align1>(T1::Params),438,,148.994195
+medium-s512-train_step,medium,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,void cutlass::Kernel2<cutlass_80_simt_sgemm_256x128_8x4_nt_align1>(T1::Params),432,,131.727889
+medium-s512-train_step,medium,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::CUDAFunctor_add<float>, std::array<char *, (unsigned long)3>>(int, T2, T3)",8010,,104.740785
+medium-s512-train_step,medium,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned long)2>>(int, T2, T3)",8642,,90.200561
+medium-s512-train_step,medium,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,"void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::DivFunctor<float>>>(at::TensorIteratorBase &, const T1 &)::[lambda(int) (instance 1)]>(int, T3)",576,,77.245512
+medium-s512-train_step,medium,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,ampere_sgemm_128x64_nn,576,,60.780717
+medium-s512-train_step,medium,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,void cutlass::Kernel2<cutlass_80_simt_sgemm_64x64_8x5_nt_align1>(T1::Params),576,,60.463798
+medium-s512-train_step,medium,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,"void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 3)]::operator ()() const::[lambda() (instance 7)]::operator ()() const::[lambda(float) (instance 1)]>(at::TensorIteratorBase &, const T1 &)::[lambda(int) (instance 1)]>(int, T3)",2166,,46.264855
+medium-s512-train_step,medium,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cudaLaunchKernel,42560,880.254971,
+medium-s512-train_step,medium,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cudaMalloc,404,50.490961,
+medium-s512-train_step,medium,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cuLaunchKernel,1622,50.258218,
+medium-s512-train_step,medium,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cudaMemsetAsync,3048,41.626514,
+medium-s512-train_step,medium,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cuLibraryLoadData,4,18.354238,
+medium-s512-train_step,medium,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cudaMemcpyAsync,307,4.174213,
+medium-s512-train_step,medium,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cuKernelGetFunction,1452,3.697309,
+medium-s512-train_step,medium,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cudaDeviceSynchronize,18,2.639760,
+medium-s512-train_step,medium,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cudaFree,2,2.219353,
+medium-s512-train_step,medium,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cudaStreamSynchronize,13,1.568812,
+medium-s512-train_step,medium,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cudaHostAlloc,1,1.078089,
+medium-s512-train_step,medium,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cudaStreamIsCapturing_v10000,749,0.642198,
+medium-s512-train_step,medium,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cuGetProcAddress_v2,810,0.140060,
+medium-s512-train_step,medium,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cuModuleLoadData,1,0.073104,
+medium-s512-train_step,medium,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cudaEventCreateWithFlags,36,0.052674,
+medium-s512-train_step,medium,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cuLibraryGetKernel,8,0.009509,
+medium-s512-train_step,medium,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cuInit,3,0.004265,
+medium-s512-train_step,medium,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cuModuleGetLoadingMode,3,0.002878,
+medium-s512-train_step,medium,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cudaGetDriverEntryPoint_v11030,2,0.001031,
+small-s1024-train_step,small,1024,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned long)3>>(int, T2, T3)",1176,,164.736973
+small-s1024-train_step,small,1024,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,ampere_sgemm_128x64_tn,504,,150.891795
+small-s1024-train_step,small,1024,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,"void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::DivFunctor<float>>>(at::TensorIteratorBase &, const T1 &)::[lambda(int) (instance 1)]>(int, T3)",288,,119.418751
+small-s1024-train_step,small,1024,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,void cutlass::Kernel2<cutlass_80_simt_sgemm_256x128_8x4_nn_align1>(T1::Params),438,,92.768199
+small-s1024-train_step,small,1024,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::CUDAFunctor_add<float>, std::array<char *, (unsigned long)3>>(int, T2, T3)",4050,,89.627750
+small-s1024-train_step,small,1024,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,void cutlass::Kernel2<cutlass_80_simt_sgemm_128x256_8x4_nt_align1>(T1::Params),222,,89.122111
+small-s1024-train_step,small,1024,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::neg_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 2)]::operator ()() const::[lambda() (instance 7)]::operator ()() const::[lambda(float) (instance 1)], std::array<char *, (unsigned long)2>>(int, T2, T3)",169,,69.168022
+small-s1024-train_step,small,1024,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::BUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned long)2>>(int, T2, T3)",144,,61.280597
+small-s1024-train_step,small,1024,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,"void at::native::reduce_kernel<(int)512, (int)1, at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::sum_functor<float, float, float>::operator ()(at::TensorIterator &)::[lambda(float, float) (instance 1)]>, unsigned int, float, (int)4, (int)4>>(T3)",384,,61.016358
+small-s1024-train_step,small,1024,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,"void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<float>>(at::TensorIteratorBase &, const T1 &)::[lambda(int) (instance 1)]>(int, T3)",156,,57.595727
+small-s256-train_step,small,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,ampere_sgemm_128x64_tn,510,,43.843438
+small-s256-train_step,small,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,void cutlass::Kernel2<cutlass_80_simt_sgemm_128x256_8x4_nt_align1>(T1::Params),222,,31.213478
+small-s256-train_step,small,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,ampere_sgemm_128x64_nn,432,,30.010301
+small-s256-train_step,small,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned long)2>>(int, T2, T3)",4382,,26.241968
+small-s256-train_step,small,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::CUDAFunctor_add<float>, std::array<char *, (unsigned long)3>>(int, T2, T3)",4050,,21.243199
+small-s256-train_step,small,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,"void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 3)]::operator ()() const::[lambda() (instance 7)]::operator ()() const::[lambda(float) (instance 1)]>(at::TensorIteratorBase &, const T1 &)::[lambda(int) (instance 1)]>(int, T3)",1086,,13.585645
+small-s256-train_step,small,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,ampere_sgemm_128x32_nt,288,,13.218943
+small-s256-train_step,small,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned long)3>>(int, T2, T3)",1176,,12.704471
+small-s256-train_step,small,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,void cutlass::Kernel2<cutlass_80_simt_sgemm_256x128_8x4_nn_align1>(T1::Params),78,,10.061600
+small-s256-train_step,small,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,"void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>>(at::TensorIteratorBase &, const T1 &)::[lambda(int) (instance 1)]>(int, T3)",1758,,6.753854
+small-s256-train_step,small,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cudaLaunchKernel,22256,513.047694,
+small-s256-train_step,small,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cudaMalloc,208,24.591001,
+small-s256-train_step,small,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cuLibraryLoadData,4,18.285742,
+small-s256-train_step,small,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cudaMemsetAsync,1248,6.863010,
+small-s256-train_step,small,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cuKernelGetFunction,300,2.812247,
+small-s256-train_step,small,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cuLaunchKernel,386,2.469259,
+small-s256-train_step,small,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cudaFree,2,2.229531,
+small-s256-train_step,small,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cudaMemcpyAsync,163,2.138954,
+small-s256-train_step,small,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cudaDeviceSynchronize,18,1.521907,
+small-s256-train_step,small,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cudaHostAlloc,1,1.050196,
+small-s256-train_step,small,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cudaStreamIsCapturing_v10000,385,0.362082,
+small-s256-train_step,small,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cudaStreamSynchronize,13,0.341616,
+small-s256-train_step,small,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cuGetProcAddress_v2,810,0.160993,
+small-s256-train_step,small,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cuModuleLoadData,1,0.076593,
+small-s256-train_step,small,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cudaEventCreateWithFlags,36,0.052019,
+small-s256-train_step,small,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cuLibraryGetKernel,6,0.006069,
+small-s256-train_step,small,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cuInit,3,0.004236,
+small-s256-train_step,small,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cuModuleGetLoadingMode,3,0.001540,
+small-s256-train_step,small,256,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cudaGetDriverEntryPoint_v11030,2,0.001475,
+small-s512-train_step,small,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,ampere_sgemm_128x64_tn,504,,78.604350
+small-s512-train_step,small,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,ampere_sgemm_128x64_nn,432,,52.476212
+small-s512-train_step,small,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned long)3>>(int, T2, T3)",1176,,49.612337
+small-s512-train_step,small,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,void cutlass::Kernel2<cutlass_80_simt_sgemm_256x128_8x4_nt_align1>(T1::Params),216,,43.107976
+small-s512-train_step,small,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::CUDAFunctor_add<float>, std::array<char *, (unsigned long)3>>(int, T2, T3)",4050,,36.731567
+small-s512-train_step,small,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,"void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::DivFunctor<float>>>(at::TensorIteratorBase &, const T1 &)::[lambda(int) (instance 1)]>(int, T3)",288,,26.277126
+small-s512-train_step,small,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned long)2>>(int, T2, T3)",4382,,26.243393
+small-s512-train_step,small,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,ampere_sgemm_128x32_nt,288,,25.680934
+small-s512-train_step,small,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,void cutlass::Kernel2<cutlass_80_simt_sgemm_256x128_8x4_nn_align1>(T1::Params),78,,19.703589
+small-s512-train_step,small,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),kernel,,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::neg_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 2)]::operator ()() const::[lambda() (instance 7)]::operator ()() const::[lambda(float) (instance 1)], std::array<char *, (unsigned long)2>>(int, T2, T3)",169,,16.732743
+small-s512-train_step,small,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cudaLaunchKernel,22040,509.984703,
+small-s512-train_step,small,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cudaMalloc,167,21.059635,
+small-s512-train_step,small,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cuLibraryLoadData,4,18.160200,
+small-s512-train_step,small,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cudaMemsetAsync,1098,6.123375,
+small-s512-train_step,small,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cudaFree,2,3.087699,
+small-s512-train_step,small,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cuKernelGetFunction,300,3.005200,
+small-s512-train_step,small,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cuLaunchKernel,386,2.340708,
+small-s512-train_step,small,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cudaMemcpyAsync,163,2.201676,
+small-s512-train_step,small,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cudaDeviceSynchronize,18,1.773674,
+small-s512-train_step,small,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cudaStreamSynchronize,13,1.734950,
+small-s512-train_step,small,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cudaHostAlloc,1,1.117319,
+small-s512-train_step,small,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cudaStreamIsCapturing_v10000,344,0.298243,
+small-s512-train_step,small,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cuGetProcAddress_v2,810,0.222089,
+small-s512-train_step,small,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cuModuleLoadData,1,0.072085,
+small-s512-train_step,small,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cudaEventCreateWithFlags,36,0.048042,
+small-s512-train_step,small,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cuLibraryGetKernel,7,0.008553,
+small-s512-train_step,small,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cuInit,3,0.004883,
+small-s512-train_step,small,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cudaGetDriverEntryPoint_v11030,2,0.001590,
+small-s512-train_step,small,512,train_step,fp32,nsys,passed,trace.nsys-rep (private),cuda_api,,cuModuleGetLoadingMode,3,0.001001,
