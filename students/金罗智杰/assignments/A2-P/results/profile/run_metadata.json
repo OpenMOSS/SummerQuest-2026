@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "primary_tool": "Nsight Systems",
+  "tool_version": "NVIDIA Nsight Systems version 2025.3.1.90-253135822126v0",
+  "capture_scope": "one post-warm-up measurement step per run",
+  "submitted_trace_files": false,
+  "local_raw_artifact_types": [
+    ".nsys-rep",
+    "SQLite"
+  ],
+  "runs": [
+    {
+      "run_name": "small_ctx256_train_step_fp32",
+      "model_size": "small",
+      "context_length": 256,
+      "batch_size": 4,
+      "mode": "train_step",
+      "dtype": "fp32",
+      "tool": "Nsight Systems",
+      "warmup_steps": 5,
+      "captured_measurement_steps": 1,
+      "trace_filename_local_only": "small_ctx256_train_step_fp32.nsys-rep",
+      "command": "nsys profile --trace=cuda,cudnn,cublas,osrt,nvtx --pytorch=autograd-shapes-nvtx --capture-range=nvtx --capture-range-end=stop --nvtx-capture='profile/measure@*' --env-var=NSYS_NVTX_PROFILER_REGISTER_ONLY=0 --output=results/nsys/small_ctx256_train_step_fp32 -- python profiling/benchmark.py --model-size small --batch-size 4 --context-length 256 --mode train_step --warmup 5 --steps 1 --dtype fp32 --nvtx-attention --output results/nsys/small_ctx256_train_step_fp32.timings.csv",
+      "environment": {
+        "python_version": "3.12.12",
+        "torch_version": "2.11.0+cu128",
+        "cuda_runtime_version": "12.8",
+        "cudnn_version": 91900,
+        "gpu_name": "NVIDIA H100 80GB HBM3",
+        "gpu_compute_capability": [
+          9,
+          0
+        ],
+        "gpu_total_memory_bytes": 85029158912
+      }
+    },
+    {
+      "run_name": "small_ctx512_train_step_fp32",
+      "model_size": "small",
+      "context_length": 512,
+      "batch_size": 4,
+      "mode": "train_step",
+      "dtype": "fp32",
+      "tool": "Nsight Systems",
+      "warmup_steps": 5,
+      "captured_measurement_steps": 1,
+      "trace_filename_local_only": "small_ctx512_train_step_fp32.nsys-rep",
+      "command": "nsys profile --trace=cuda,cudnn,cublas,osrt,nvtx --pytorch=autograd-shapes-nvtx --capture-range=nvtx --capture-range-end=stop --nvtx-capture='profile/measure@*' --env-var=NSYS_NVTX_PROFILER_REGISTER_ONLY=0 --output=results/nsys/small_ctx512_train_step_fp32 -- python profiling/benchmark.py --model-size small --batch-size 4 --context-length 512 --mode train_step --warmup 5 --steps 1 --dtype fp32 --nvtx-attention --output results/nsys/small_ctx512_train_step_fp32.timings.csv",
+      "environment": {
+        "python_version": "3.12.12",
+        "torch_version": "2.11.0+cu128",
+        "cuda_runtime_version": "12.8",
+        "cudnn_version": 91900,
+        "gpu_name": "NVIDIA H100 80GB HBM3",
+        "gpu_compute_capability": [
+          9,
+          0
+        ],
+        "gpu_total_memory_bytes": 85029158912
+      }
+    },
+    {
+      "run_name": "small_ctx1024_train_step_fp32",
+      "model_size": "small",
+      "context_length": 1024,
+      "batch_size": 4,
+      "mode": "train_step",
+      "dtype": "fp32",
+      "tool": "Nsight Systems",
+      "warmup_steps": 5,
+      "captured_measurement_steps": 1,
+      "trace_filename_local_only": "small_ctx1024_train_step_fp32.nsys-rep",
+      "command": "nsys profile --trace=cuda,cudnn,cublas,osrt,nvtx --pytorch=autograd-shapes-nvtx --capture-range=nvtx --capture-range-end=stop --nvtx-capture='profile/measure@*' --env-var=NSYS_NVTX_PROFILER_REGISTER_ONLY=0 --output=results/nsys/small_ctx1024_train_step_fp32 -- python profiling/benchmark.py --model-size small --batch-size 4 --context-length 1024 --mode train_step --warmup 5 --steps 1 --dtype fp32 --nvtx-attention --output results/nsys/small_ctx1024_train_step_fp32.timings.csv",
+      "environment": {
+        "python_version": "3.12.12",
+        "torch_version": "2.11.0+cu128",
+        "cuda_runtime_version": "12.8",
+        "cudnn_version": 91900,
+        "gpu_name": "NVIDIA H100 80GB HBM3",
+        "gpu_compute_capability": [
+          9,
+          0
+        ],
+        "gpu_total_memory_bytes": 85029158912
+      }
+    },
+    {
+      "run_name": "large_ctx256_train_step_fp32",
+      "model_size": "large",
+      "context_length": 256,
+      "batch_size": 4,
+      "mode": "train_step",
+      "dtype": "fp32",
+      "tool": "Nsight Systems",
+      "warmup_steps": 5,
+      "captured_measurement_steps": 1,
+      "trace_filename_local_only": "large_ctx256_train_step_fp32.nsys-rep",
+      "command": "nsys profile --trace=cuda,cudnn,cublas,osrt,nvtx --pytorch=autograd-shapes-nvtx --capture-range=nvtx --capture-range-end=stop --nvtx-capture='profile/measure@*' --env-var=NSYS_NVTX_PROFILER_REGISTER_ONLY=0 --output=results/nsys/large_ctx256_train_step_fp32 -- python profiling/benchmark.py --model-size large --batch-size 4 --context-length 256 --mode train_step --warmup 5 --steps 1 --dtype fp32 --nvtx-attention --output results/nsys/large_ctx256_train_step_fp32.timings.csv",
+      "environment": {
+        "python_version": "3.12.12",
+        "torch_version": "2.11.0+cu128",
+        "cuda_runtime_version": "12.8",
+        "cudnn_version": 91900,
+        "gpu_name": "NVIDIA H100 80GB HBM3",
+        "gpu_compute_capability": [
+          9,
+          0
+        ],
+        "gpu_total_memory_bytes": 85029158912
+      }
+    },
+    {
+      "run_name": "large_ctx512_train_step_fp32",
+      "model_size": "large",
+      "context_length": 512,
+      "batch_size": 4,
+      "mode": "train_step",
+      "dtype": "fp32",
+      "tool": "Nsight Systems",
+      "warmup_steps": 5,
+      "captured_measurement_steps": 1,
+      "trace_filename_local_only": "large_ctx512_train_step_fp32.nsys-rep",
+      "command": "nsys profile --trace=cuda,cudnn,cublas,osrt,nvtx --pytorch=autograd-shapes-nvtx --capture-range=nvtx --capture-range-end=stop --nvtx-capture='profile/measure@*' --env-var=NSYS_NVTX_PROFILER_REGISTER_ONLY=0 --output=results/nsys/large_ctx512_train_step_fp32 -- python profiling/benchmark.py --model-size large --batch-size 4 --context-length 512 --mode train_step --warmup 5 --steps 1 --dtype fp32 --nvtx-attention --output results/nsys/large_ctx512_train_step_fp32.timings.csv",
+      "environment": {
+        "python_version": "3.12.12",
+        "torch_version": "2.11.0+cu128",
+        "cuda_runtime_version": "12.8",
+        "cudnn_version": 91900,
+        "gpu_name": "NVIDIA H100 80GB HBM3",
+        "gpu_compute_capability": [
+          9,
+          0
+        ],
+        "gpu_total_memory_bytes": 85029158912
+      }
+    },
+    {
+      "run_name": "large_ctx1024_train_step_fp32",
+      "model_size": "large",
+      "context_length": 1024,
+      "batch_size": 4,
+      "mode": "train_step",
+      "dtype": "fp32",
+      "tool": "Nsight Systems",
+      "warmup_steps": 5,
+      "captured_measurement_steps": 1,
+      "trace_filename_local_only": "large_ctx1024_train_step_fp32.nsys-rep",
+      "command": "nsys profile --trace=cuda,cudnn,cublas,osrt,nvtx --pytorch=autograd-shapes-nvtx --capture-range=nvtx --capture-range-end=stop --nvtx-capture='profile/measure@*' --env-var=NSYS_NVTX_PROFILER_REGISTER_ONLY=0 --output=results/nsys/large_ctx1024_train_step_fp32 -- python profiling/benchmark.py --model-size large --batch-size 4 --context-length 1024 --mode train_step --warmup 5 --steps 1 --dtype fp32 --nvtx-attention --output results/nsys/large_ctx1024_train_step_fp32.timings.csv",
+      "environment": {
+        "python_version": "3.12.12",
+        "torch_version": "2.11.0+cu128",
+        "cuda_runtime_version": "12.8",
+        "cudnn_version": 91900,
+        "gpu_name": "NVIDIA H100 80GB HBM3",
+        "gpu_compute_capability": [
+          9,
+          0
+        ],
+        "gpu_total_memory_bytes": 85029158912
+      }
+    }
+  ]
+}
