@@ -1,0 +1,12 @@
+{
+  "assignment": "A2-P",
+  "task_version": "26.1.4-rc.3",
+  "starter_commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "gpu_memory_mib": 24564,
+  "driver": "560.28.03",
+  "cuda": "12.6",
+  "pytorch": "2.11.0+cu126",
+  "nsight_systems": "2024.3.0.0",
+  "execution_status": "two failed Nsight CLI diagnostics followed by one successful formal matrix"
+}

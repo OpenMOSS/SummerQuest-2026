@@ -1,0 +1,20 @@
+{
+  "command": "uv run --no-sync python profiling/benchmark.py --model-size large --context-length 128 --mode train_step --dtype autocast --batch-size 1 --warmup 5 --steps 1 --snapshot results/memory/large_train_128.pickle --output=results/memory",
+  "model_size": "large",
+  "batch_size": 1,
+  "context_length": 128,
+  "mode": "train_step",
+  "dtype": {
+    "logits_dtype": "torch.bfloat16",
+    "loss_dtype": "torch.float32",
+    "param_dtype": "torch.float32",
+    "first_block_output_dtype": "torch.float32",
+    "first_layernorm_output_dtype": "torch.float32",
+    "grad_dtype": "torch.float32"
+  },
+  "warmup": 5,
+  "steps": 1,
+  "mean_ms": 265.0521545410156,
+  "std_ms": 0.0,
+  "peak_mb": 15509.91650390625
+}

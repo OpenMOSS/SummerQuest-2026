@@ -1,0 +1,15 @@
+{
+  "tool": "NVIDIA Nsight Systems",
+  "tool_version": "2024.3.0.0",
+  "trace_count": 6,
+  "configuration": "two model sizes x context 256/512/1024, full train_step, FP32",
+  "status_by_case": {
+    "small-s256-train_step": "passed",
+    "small-s512-train_step": "passed",
+    "small-s1024-train_step": "passed",
+    "medium-s256-train_step": "passed",
+    "medium-s512-train_step": "passed",
+    "medium-s1024-train_step": "oom"
+  },
+  "private_artifacts": ".nsys-rep and SQLite are retained outside the submission"
+}

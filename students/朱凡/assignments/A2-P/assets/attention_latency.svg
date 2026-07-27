@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520">
+<rect width="100%" height="100%" fill="white"/>
+<text x="450.0" y="32" text-anchor="middle" font-size="22">Attention latency on the formal matrix</text>
+<line x1="90" y1="70" x2="90" y2="440" stroke="black"/>
+<line x1="90" y1="440" x2="870" y2="440" stroke="black"/>
+<line x1="90" y1="440.0" x2="870" y2="440.0" stroke="#ddd"/>
+<text x="80" y="445.0" text-anchor="end" font-size="13">0.00</text>
+<line x1="90" y1="366.0" x2="870" y2="366.0" stroke="#ddd"/>
+<text x="80" y="371.0" text-anchor="end" font-size="13">3.56</text>
+<line x1="90" y1="292.0" x2="870" y2="292.0" stroke="#ddd"/>
+<text x="80" y="297.0" text-anchor="end" font-size="13">7.12</text>
+<line x1="90" y1="218.0" x2="870" y2="218.0" stroke="#ddd"/>
+<text x="80" y="223.0" text-anchor="end" font-size="13">10.69</text>
+<line x1="90" y1="144.0" x2="870" y2="144.0" stroke="#ddd"/>
+<text x="80" y="149.0" text-anchor="end" font-size="13">14.25</text>
+<line x1="90" y1="70.0" x2="870" y2="70.0" stroke="#ddd"/>
+<text x="80" y="75.0" text-anchor="end" font-size="13">17.81</text>
+<text x="90.0" y="465" text-anchor="middle" font-size="13">512</text>
+<text x="350.0" y="465" text-anchor="middle" font-size="13">2048</text>
+<text x="610.0" y="465" text-anchor="middle" font-size="13">8192</text>
+<text x="870.0" y="465" text-anchor="middle" font-size="13">16384</text>
+<text x="22" y="255.0" text-anchor="middle" transform="rotate(-90 22 255.0)" font-size="15">p50 latency (ms)</text>
+<text x="480.0" y="500" text-anchor="middle" font-size="15">Sequence length</text>
+<polyline points="90.0,428.2 350.0,428.3 610.0,355.6 870.0,104.0" fill="none" stroke="#2563eb" stroke-width="3"/>
+<circle cx="90.0" cy="428.2" r="4" fill="#2563eb"/>
+<circle cx="350.0" cy="428.3" r="4" fill="#2563eb"/>
+<circle cx="610.0" cy="355.6" r="4" fill="#2563eb"/>
+<circle cx="870.0" cy="104.0" r="4" fill="#2563eb"/>
+<line x1="720" y1="48" x2="750" y2="48" stroke="#2563eb" stroke-width="3"/>
+<text x="760" y="53" font-size="13">eager d=128 backward</text>
+<polyline points="90.0,436.2 350.0,436.3 610.0,405.3 870.0,303.6" fill="none" stroke="#dc2626" stroke-width="3"/>
+<circle cx="90.0" cy="436.2" r="4" fill="#dc2626"/>
+<circle cx="350.0" cy="436.3" r="4" fill="#dc2626"/>
+<circle cx="610.0" cy="405.3" r="4" fill="#dc2626"/>
+<circle cx="870.0" cy="303.6" r="4" fill="#dc2626"/>
+<line x1="720" y1="70" x2="750" y2="70" stroke="#dc2626" stroke-width="3"/>
+<text x="760" y="75" font-size="13">eager d=128 forward</text>
+<polyline points="90.0,428.0 350.0,428.1 610.0,355.5 870.0,103.6" fill="none" stroke="#16a34a" stroke-width="3"/>
+<circle cx="90.0" cy="428.0" r="4" fill="#16a34a"/>
+<circle cx="350.0" cy="428.1" r="4" fill="#16a34a"/>
+<circle cx="610.0" cy="355.5" r="4" fill="#16a34a"/>
+<circle cx="870.0" cy="103.6" r="4" fill="#16a34a"/>
+<line x1="720" y1="92" x2="750" y2="92" stroke="#16a34a" stroke-width="3"/>
+<text x="760" y="97" font-size="13">eager d=128 forward_backward</text>
+<polyline points="90.0,428.2 350.0,428.2 610.0,357.2 870.0,108.2" fill="none" stroke="#9333ea" stroke-width="3"/>
+<circle cx="90.0" cy="428.2" r="4" fill="#9333ea"/>
+<circle cx="350.0" cy="428.2" r="4" fill="#9333ea"/>
+<circle cx="610.0" cy="357.2" r="4" fill="#9333ea"/>
+<circle cx="870.0" cy="108.2" r="4" fill="#9333ea"/>
+<line x1="720" y1="114" x2="750" y2="114" stroke="#9333ea" stroke-width="3"/>
+<text x="760" y="119" font-size="13">eager d=64 backward</text>
+<polyline points="90.0,436.2 350.0,436.2 610.0,405.8 870.0,304.6" fill="none" stroke="#2563eb" stroke-width="3"/>
+<circle cx="90.0" cy="436.2" r="4" fill="#2563eb"/>
+<circle cx="350.0" cy="436.2" r="4" fill="#2563eb"/>
+<circle cx="610.0" cy="405.8" r="4" fill="#2563eb"/>
+<circle cx="870.0" cy="304.6" r="4" fill="#2563eb"/>
+<line x1="720" y1="136" x2="750" y2="136" stroke="#2563eb" stroke-width="3"/>
+<text x="760" y="141" font-size="13">eager d=64 forward</text>
+<polyline points="90.0,428.0 350.0,428.0 610.0,357.2 870.0,108.1" fill="none" stroke="#dc2626" stroke-width="3"/>
+<circle cx="90.0" cy="428.0" r="4" fill="#dc2626"/>
+<circle cx="350.0" cy="428.0" r="4" fill="#dc2626"/>
+<circle cx="610.0" cy="357.2" r="4" fill="#dc2626"/>
+<circle cx="870.0" cy="108.1" r="4" fill="#dc2626"/>
+<line x1="720" y1="158" x2="750" y2="158" stroke="#dc2626" stroke-width="3"/>
+<text x="760" y="163" font-size="13">eager d=64 forward_backward</text>
+<polyline points="90.0,427.9 350.0,427.9 610.0,386.7 870.0,233.8" fill="none" stroke="#16a34a" stroke-width="3"/>
+<circle cx="90.0" cy="427.9" r="4" fill="#16a34a"/>
+<circle cx="350.0" cy="427.9" r="4" fill="#16a34a"/>
+<circle cx="610.0" cy="386.7" r="4" fill="#16a34a"/>
+<circle cx="870.0" cy="233.8" r="4" fill="#16a34a"/>
+<line x1="720" y1="180" x2="750" y2="180" stroke="#16a34a" stroke-width="3"/>
+<text x="760" y="185" font-size="13">flash-triton d=128 backward</text>
+<polyline points="90.0,437.4 350.0,435.9 610.0,429.6 870.0,404.4" fill="none" stroke="#9333ea" stroke-width="3"/>
+<circle cx="90.0" cy="437.4" r="4" fill="#9333ea"/>
+<circle cx="350.0" cy="435.9" r="4" fill="#9333ea"/>
+<circle cx="610.0" cy="429.6" r="4" fill="#9333ea"/>
+<circle cx="870.0" cy="404.4" r="4" fill="#9333ea"/>
+<line x1="720" y1="202" x2="750" y2="202" stroke="#9333ea" stroke-width="3"/>
+<text x="760" y="207" font-size="13">flash-triton d=128 forward</text>
+<polyline points="90.0,427.9 350.0,427.9 610.0,386.7 870.0,233.8" fill="none" stroke="#2563eb" stroke-width="3"/>
+<circle cx="90.0" cy="427.9" r="4" fill="#2563eb"/>
+<circle cx="350.0" cy="427.9" r="4" fill="#2563eb"/>
+<circle cx="610.0" cy="386.7" r="4" fill="#2563eb"/>
+<circle cx="870.0" cy="233.8" r="4" fill="#2563eb"/>
+<line x1="720" y1="224" x2="750" y2="224" stroke="#2563eb" stroke-width="3"/>
+<text x="760" y="229" font-size="13">flash-triton d=128 forward_backward</text>
+<polyline points="90.0,428.5 350.0,427.8 610.0,391.8 870.0,259.4" fill="none" stroke="#dc2626" stroke-width="3"/>
+<circle cx="90.0" cy="428.5" r="4" fill="#dc2626"/>
+<circle cx="350.0" cy="427.8" r="4" fill="#dc2626"/>
+<circle cx="610.0" cy="391.8" r="4" fill="#dc2626"/>
+<circle cx="870.0" cy="259.4" r="4" fill="#dc2626"/>
+<line x1="720" y1="246" x2="750" y2="246" stroke="#dc2626" stroke-width="3"/>
+<text x="760" y="251" font-size="13">flash-triton d=64 backward</text>
+<polyline points="90.0,437.4 350.0,437.1 610.0,433.8 870.0,426.6" fill="none" stroke="#16a34a" stroke-width="3"/>
+<circle cx="90.0" cy="437.4" r="4" fill="#16a34a"/>
+<circle cx="350.0" cy="437.1" r="4" fill="#16a34a"/>
+<circle cx="610.0" cy="433.8" r="4" fill="#16a34a"/>
+<circle cx="870.0" cy="426.6" r="4" fill="#16a34a"/>
+<line x1="720" y1="268" x2="750" y2="268" stroke="#16a34a" stroke-width="3"/>
+<text x="760" y="273" font-size="13">flash-triton d=64 forward</text>
+<polyline points="90.0,428.5 350.0,427.8 610.0,391.9 870.0,259.4" fill="none" stroke="#9333ea" stroke-width="3"/>
+<circle cx="90.0" cy="428.5" r="4" fill="#9333ea"/>
+<circle cx="350.0" cy="427.8" r="4" fill="#9333ea"/>
+<circle cx="610.0" cy="391.9" r="4" fill="#9333ea"/>
+<circle cx="870.0" cy="259.4" r="4" fill="#9333ea"/>
+<line x1="720" y1="290" x2="750" y2="290" stroke="#9333ea" stroke-width="3"/>
+<text x="760" y="295" font-size="13">flash-triton d=64 forward_backward</text>
+</svg>

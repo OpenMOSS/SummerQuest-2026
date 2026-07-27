@@ -1,0 +1,40 @@
+{
+  "dtype": "bf16",
+  "fallback_rows": [
+    {
+      "context_length": 1024,
+      "mode": "forward",
+      "model_size": "xl"
+    },
+    {
+      "context_length": 2048,
+      "mode": "forward",
+      "model_size": "large"
+    }
+  ],
+  "measurement_steps": 1,
+  "required_rows": [
+    {
+      "context_length": 128,
+      "mode": "forward",
+      "model_size": "xl"
+    },
+    {
+      "context_length": 128,
+      "mode": "train_step",
+      "model_size": "xl"
+    },
+    {
+      "context_length": 2048,
+      "mode": "forward",
+      "model_size": "xl"
+    },
+    {
+      "context_length": 2048,
+      "mode": "train_step",
+      "model_size": "xl"
+    }
+  ],
+  "seed": 0,
+  "warmup_steps": 1
+}

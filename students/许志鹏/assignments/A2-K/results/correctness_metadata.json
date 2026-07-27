@@ -1,0 +1,54 @@
+{
+  "command": [
+    "python",
+    "-m",
+    "student_scripts.a2k.correctness",
+    "--device",
+    "cuda",
+    "--output",
+    "results/correctness.json",
+    "--metadata-output",
+    "results/correctness_metadata.json"
+  ],
+  "commit": "0369c94eb51bcfe86b997a52cb1133a9233825aa",
+  "experiment": "correctness",
+  "metadata": {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "causal_values": [
+      false,
+      true
+    ],
+    "commit": "0369c94eb51bcfe86b997a52cb1133a9233825aa",
+    "device": "NVIDIA GeForce RTX 4090",
+    "dtypes": [
+      "fp32",
+      "bf16"
+    ],
+    "fields": [
+      "output",
+      "lse",
+      "dq",
+      "dk",
+      "dv"
+    ],
+    "head_dims": [
+      32,
+      64,
+      128
+    ],
+    "seed_start": 42,
+    "seed_values": [
+      42,
+      43,
+      44
+    ],
+    "sequence_length": 128,
+    "tf32_enabled": false,
+    "timer": "CUDA synchronization around each candidate evaluation"
+  }
+}

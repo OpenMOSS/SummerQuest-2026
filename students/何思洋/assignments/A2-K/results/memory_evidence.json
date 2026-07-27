@@ -1,0 +1,85 @@
+{
+  "allocator": {
+    "allocator_fraction": 0.47928367928367926,
+    "allocator_limit_mib": 23552
+  },
+  "hard_limit_mib": 24576,
+  "pytorch_peak_allocated_mib": 19664.12255859375,
+  "pytorch_peak_reserved_mib": 20192.0,
+  "within_24gib": true,
+  "note": "Runs used a 23552 MiB PyTorch allocator cap on a GPU that reports 49140 MiB total memory.",
+  "peaks": [
+    {
+      "source": "checkpointing.csv:medium_ctx2048_ckptnone",
+      "peak_allocated_mib": 19664.12255859375,
+      "peak_reserved_mib": 20192.0,
+      "status": "ok"
+    },
+    {
+      "source": "checkpointing.csv:medium_ctx2048_ckpt8",
+      "peak_allocated_mib": 11593.65380859375,
+      "peak_reserved_mib": 11994.0,
+      "status": "ok"
+    },
+    {
+      "source": "checkpointing.csv:medium_ctx1024_ckptnone",
+      "peak_allocated_mib": 10066.58740234375,
+      "peak_reserved_mib": 10244.0,
+      "status": "ok"
+    },
+    {
+      "source": "checkpointing.csv:medium_ctx1024_ckpt8",
+      "peak_allocated_mib": 8117.8095703125,
+      "peak_reserved_mib": 8206.0,
+      "status": "ok"
+    },
+    {
+      "source": "checkpointing.csv:medium_ctx1024_ckpt2",
+      "peak_allocated_mib": 8117.8095703125,
+      "peak_reserved_mib": 8202.0,
+      "status": "ok"
+    },
+    {
+      "source": "checkpointing.csv:medium_ctx1024_ckpt4",
+      "peak_allocated_mib": 8117.8095703125,
+      "peak_reserved_mib": 8184.0,
+      "status": "ok"
+    },
+    {
+      "source": "checkpointing.csv:medium_ctx1024_ckpt1",
+      "peak_allocated_mib": 8117.8095703125,
+      "peak_reserved_mib": 8150.0,
+      "status": "ok"
+    },
+    {
+      "source": "flash_benchmark.csv:triton",
+      "peak_allocated_mib": 5406.375,
+      "peak_reserved_mib": 6678.0,
+      "status": "ok"
+    },
+    {
+      "source": "flash_benchmark.csv:triton",
+      "peak_allocated_mib": 5406.375,
+      "peak_reserved_mib": 6678.0,
+      "status": "ok"
+    },
+    {
+      "source": "flash_benchmark.csv:triton",
+      "peak_allocated_mib": 5420.375,
+      "peak_reserved_mib": 6678.0,
+      "status": "ok"
+    },
+    {
+      "source": "flash_benchmark.csv:triton",
+      "peak_allocated_mib": 5420.375,
+      "peak_reserved_mib": 6678.0,
+      "status": "ok"
+    },
+    {
+      "source": "flash_benchmark.csv:eager",
+      "peak_allocated_mib": 4380.25,
+      "peak_reserved_mib": 5654.0,
+      "status": "ok"
+    }
+  ]
+}

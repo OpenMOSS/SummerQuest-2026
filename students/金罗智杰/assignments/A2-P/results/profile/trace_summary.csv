@@ -1,0 +1,157 @@
+run_name,model_size,context_length,mode,dtype,tool,record_type,phase_range,name,calls,range_total_ms,cpu_total_ms,cuda_total_ms,time_percent
+small_ctx256_train_step_fp32,small,256,train_step,fp32,Nsight Systems,nvtx_range,profile/measure,profile/measure,1,137.211212,,,20.6
+small_ctx256_train_step_fp32,small,256,train_step,fp32,Nsight Systems,nvtx_range,measurement/step_1,measurement/step_1,1,137.125562,,,20.5
+small_ctx256_train_step_fp32,small,256,train_step,fp32,Nsight Systems,nvtx_range,backward,backward,1,67.179833,,,10.1
+small_ctx256_train_step_fp32,small,256,train_step,fp32,Nsight Systems,nvtx_range,forward,forward,1,36.799969,,,5.5
+small_ctx256_train_step_fp32,small,256,train_step,fp32,Nsight Systems,nvtx_range,optimizer,optimizer,1,31.803747,,,4.8
+small_ctx256_train_step_fp32,small,256,train_step,fp32,Nsight Systems,nvtx_range,attention/scores,attention/scores,12,3.262836,,,0.5
+small_ctx256_train_step_fp32,small,256,train_step,fp32,Nsight Systems,nvtx_range,attention/value,attention/value,12,2.306776,,,0.3
+small_ctx256_train_step_fp32,small,256,train_step,fp32,Nsight Systems,nvtx_range,attention/softmax,attention/softmax,12,1.538036,,,0.2
+small_ctx256_train_step_fp32,small,256,train_step,fp32,Nsight Systems,cuda_api,profile/measure,cudaLaunchKernel,3376,,14.242805,,85.4
+small_ctx256_train_step_fp32,small,256,train_step,fp32,Nsight Systems,cuda_api,profile/measure,cudaLaunchKernelExC_v11060,195,,1.072329,,6.4
+small_ctx256_train_step_fp32,small,256,train_step,fp32,Nsight Systems,cuda_api,profile/measure,cuLaunchKernel,132,,0.608556,,3.6
+small_ctx256_train_step_fp32,small,256,train_step,fp32,Nsight Systems,cuda_api,profile/measure,cudaMemcpyAsync,25,,0.331456,,2.0
+small_ctx256_train_step_fp32,small,256,train_step,fp32,Nsight Systems,cuda_api,profile/measure,cudaMemsetAsync,38,,0.229410,,1.4
+small_ctx256_train_step_fp32,small,256,train_step,fp32,Nsight Systems,cuda_api,profile/measure,cudaDeviceSynchronize,10,,0.117825,,0.7
+small_ctx256_train_step_fp32,small,256,train_step,fp32,Nsight Systems,cuda_api,profile/measure,cuKernelGetFunction,132,,0.079827,,0.5
+small_ctx256_train_step_fp32,small,256,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned…",716,,,2.935201,13.2
+small_ctx256_train_step_fp32,small,256,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::CUDAFunctor_add<float>, std::array<char *, (unsigned long)3>>(int, T2, T3)",675,,,2.777408,12.5
+small_ctx256_train_step_fp32,small,256,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,"void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 3)…",181,,,1.583201,7.1
+small_ctx256_train_step_fp32,small,256,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned…",196,,,1.355904,6.1
+small_ctx256_train_step_fp32,small,256,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,sm90_xmma_gemm_f32f32_tf32f32_f32_nn_n_tilesize64x128x32_warpgroupsize1x1x1_execute_segment_k_off_kernel__5x_cublas,73,,,1.317728,5.9
+small_ctx256_train_step_fp32,small,256,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,"void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFuncto…",293,,,1.163712,5.2
+small_ctx256_train_step_fp32,small,256,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,sm90_xmma_gemm_f32f32_tf32f32_f32_nt_n_tilesize256x128x32_warpgroupsize2x1x1_execute_segment_k_off_kernel__5x_cublas,24,,,1.008929,4.5
+small_ctx256_train_step_fp32,small,256,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,sm90_xmma_gemm_f32f32_tf32f32_f32_tn_n_tilesize64x128x32_warpgroupsize1x1x1_execute_segment_k_off_kernel__5x_cublas,60,,,0.738144,3.3
+small_ctx256_train_step_fp32,small,256,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::FillFunctor<float>, std::array<char *, (unsigned long)1>>(int, T2, T3)",262,,,0.672256,3.0
+small_ctx256_train_step_fp32,small,256,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,void cutlass::Kernel2<cutlass_80_tensorop_s1688gemm_64x256_32x4_nt_align4>(T1::Params),48,,,0.639296,2.9
+small_ctx512_train_step_fp32,small,512,train_step,fp32,Nsight Systems,nvtx_range,profile/measure,profile/measure,1,143.899137,,,20.6
+small_ctx512_train_step_fp32,small,512,train_step,fp32,Nsight Systems,nvtx_range,measurement/step_1,measurement/step_1,1,143.805502,,,20.6
+small_ctx512_train_step_fp32,small,512,train_step,fp32,Nsight Systems,nvtx_range,backward,backward,1,69.489421,,,10.0
+small_ctx512_train_step_fp32,small,512,train_step,fp32,Nsight Systems,nvtx_range,forward,forward,1,40.514299,,,5.8
+small_ctx512_train_step_fp32,small,512,train_step,fp32,Nsight Systems,nvtx_range,optimizer,optimizer,1,32.088101,,,4.6
+small_ctx512_train_step_fp32,small,512,train_step,fp32,Nsight Systems,nvtx_range,attention/scores,attention/scores,12,3.470487,,,0.5
+small_ctx512_train_step_fp32,small,512,train_step,fp32,Nsight Systems,nvtx_range,attention/value,attention/value,12,2.693519,,,0.4
+small_ctx512_train_step_fp32,small,512,train_step,fp32,Nsight Systems,nvtx_range,attention/softmax,attention/softmax,12,1.660468,,,0.2
+small_ctx512_train_step_fp32,small,512,train_step,fp32,Nsight Systems,cuda_api,profile/measure,cudaLaunchKernel,3376,,14.207933,,83.6
+small_ctx512_train_step_fp32,small,512,train_step,fp32,Nsight Systems,cuda_api,profile/measure,cudaLaunchKernelExC_v11060,231,,1.238875,,7.3
+small_ctx512_train_step_fp32,small,512,train_step,fp32,Nsight Systems,cuda_api,profile/measure,cudaMemsetAsync,98,,0.487916,,2.9
+small_ctx512_train_step_fp32,small,512,train_step,fp32,Nsight Systems,cuda_api,profile/measure,cuLaunchKernel,96,,0.448020,,2.6
+small_ctx512_train_step_fp32,small,512,train_step,fp32,Nsight Systems,cuda_api,profile/measure,cudaMemcpyAsync,25,,0.349967,,2.1
+small_ctx512_train_step_fp32,small,512,train_step,fp32,Nsight Systems,cuda_api,profile/measure,cudaDeviceSynchronize,10,,0.195953,,1.2
+small_ctx512_train_step_fp32,small,512,train_step,fp32,Nsight Systems,cuda_api,profile/measure,cuKernelGetFunction,96,,0.070448,,0.4
+small_ctx512_train_step_fp32,small,512,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::CUDAFunctor_add<float>, std::array<char *, (unsigned long)3>>(int, T2, T3)",675,,,3.861730,10.4
+small_ctx512_train_step_fp32,small,512,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned…",196,,,3.498691,9.4
+small_ctx512_train_step_fp32,small,512,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned…",716,,,2.959585,8.0
+small_ctx512_train_step_fp32,small,512,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,sm90_xmma_gemm_f32f32_tf32f32_f32_nt_n_tilesize128x128x32_warpgroupsize1x1x1_execute_segment_k_on_kernel__5x_cublas,36,,,2.382050,6.4
+small_ctx512_train_step_fp32,small,512,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,"void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::DivFuncto…",48,,,2.367586,6.4
+small_ctx512_train_step_fp32,small,512,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,"void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 3)…",181,,,1.810050,4.9
+small_ctx512_train_step_fp32,small,512,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,"void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFuncto…",293,,,1.702752,4.6
+small_ctx512_train_step_fp32,small,512,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,sm90_xmma_gemm_f32f32_tf32f32_f32_nn_n_tilesize64x128x32_warpgroupsize1x1x1_execute_segment_k_off_kernel__5x_cublas,72,,,1.523040,4.1
+small_ctx512_train_step_fp32,small,512,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,"void at::native::reduce_kernel<(int)512, (int)1, at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::sum_functor<float, float, float>::operator ()(at::Tensor…",64,,,1.204576,3.3
+small_ctx512_train_step_fp32,small,512,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,sm90_xmma_gemm_f32f32_tf32f32_f32_tn_n_tilesize64x256x32_warpgroupsize1x1x1_execute_segment_k_off_kernel__5x_cublas,60,,,1.136705,3.1
+small_ctx1024_train_step_fp32,small,1024,train_step,fp32,Nsight Systems,nvtx_range,profile/measure,profile/measure,1,143.328243,,,20.6
+small_ctx1024_train_step_fp32,small,1024,train_step,fp32,Nsight Systems,nvtx_range,measurement/step_1,measurement/step_1,1,143.241414,,,20.6
+small_ctx1024_train_step_fp32,small,1024,train_step,fp32,Nsight Systems,nvtx_range,backward,backward,1,70.035408,,,10.1
+small_ctx1024_train_step_fp32,small,1024,train_step,fp32,Nsight Systems,nvtx_range,forward,forward,1,38.909072,,,5.6
+small_ctx1024_train_step_fp32,small,1024,train_step,fp32,Nsight Systems,nvtx_range,optimizer,optimizer,1,32.285628,,,4.6
+small_ctx1024_train_step_fp32,small,1024,train_step,fp32,Nsight Systems,nvtx_range,attention/scores,attention/scores,12,3.635138,,,0.5
+small_ctx1024_train_step_fp32,small,1024,train_step,fp32,Nsight Systems,nvtx_range,attention/value,attention/value,12,2.660791,,,0.4
+small_ctx1024_train_step_fp32,small,1024,train_step,fp32,Nsight Systems,nvtx_range,attention/softmax,attention/softmax,12,1.590928,,,0.2
+small_ctx1024_train_step_fp32,small,1024,train_step,fp32,Nsight Systems,cuda_api,profile/measure,cudaLaunchKernel,3379,,14.365186,,78.4
+small_ctx1024_train_step_fp32,small,1024,train_step,fp32,Nsight Systems,cuda_api,profile/measure,cudaLaunchKernelExC_v11060,255,,1.382552,,7.5
+small_ctx1024_train_step_fp32,small,1024,train_step,fp32,Nsight Systems,cuda_api,profile/measure,cudaMemsetAsync,223,,0.955407,,5.2
+small_ctx1024_train_step_fp32,small,1024,train_step,fp32,Nsight Systems,cuda_api,profile/measure,cudaDeviceSynchronize,10,,0.600097,,3.3
+small_ctx1024_train_step_fp32,small,1024,train_step,fp32,Nsight Systems,cuda_api,profile/measure,cudaMemcpyAsync,25,,0.351214,,1.9
+small_ctx1024_train_step_fp32,small,1024,train_step,fp32,Nsight Systems,cuda_api,profile/measure,cuLaunchKernel,72,,0.327576,,1.8
+small_ctx1024_train_step_fp32,small,1024,train_step,fp32,Nsight Systems,cuda_api,profile/measure,cudaMalloc,1,,0.301086,,1.6
+small_ctx1024_train_step_fp32,small,1024,train_step,fp32,Nsight Systems,cuda_api,profile/measure,cuKernelGetFunction,72,,0.048520,,0.3
+small_ctx1024_train_step_fp32,small,1024,train_step,fp32,Nsight Systems,cuda_api,profile/measure,cudaStreamIsCapturing_v10000,1,,0.001565,,0.0
+small_ctx1024_train_step_fp32,small,1024,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned…",196,,,9.375335,11.6
+small_ctx1024_train_step_fp32,small,1024,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,"void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::DivFuncto…",48,,,9.097125,11.2
+small_ctx1024_train_step_fp32,small,1024,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::CUDAFunctor_add<float>, std::array<char *, (unsigned long)3>>(int, T2, T3)",675,,,6.845732,8.5
+small_ctx1024_train_step_fp32,small,1024,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,"void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<float>>(at::TensorIteratorBase &, const T1 &)::[lambda(in…",26,,,4.380578,5.4
+small_ctx1024_train_step_fp32,small,1024,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,sm90_xmma_gemm_f32f32_tf32f32_f32_nt_n_tilesize128x128x32_warpgroupsize1x1x1_execute_segment_k_on_kernel__5x_cublas,36,,,4.087393,5.0
+small_ctx1024_train_step_fp32,small,1024,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,"void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::<unnamed>::where_kernel_impl(at::TensorIterator &)::[lambda() (instance 1…",24,,,3.700033,4.6
+small_ctx1024_train_step_fp32,small,1024,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::neg_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 2)]::operator ()() const::[lambda() (instance 7)]…",28,,,3.631490,4.5
+small_ctx1024_train_step_fp32,small,1024,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,sm90_xmma_gemm_f32f32_tf32f32_f32_nn_n_tilesize128x128x32_warpgroupsize1x1x1_execute_segment_k_on_kernel__5x_cublas,72,,,3.316451,4.1
+small_ctx1024_train_step_fp32,small,1024,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::BUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned…",24,,,3.234627,4.0
+small_ctx1024_train_step_fp32,small,1024,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,"void at::native::reduce_kernel<(int)512, (int)1, at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::sum_functor<float, float, float>::operator ()(at::Tensor…",64,,,3.224864,4.0
+large_ctx256_train_step_fp32,large,256,train_step,fp32,Nsight Systems,nvtx_range,profile/measure,profile/measure,1,432.408073,,,20.7
+large_ctx256_train_step_fp32,large,256,train_step,fp32,Nsight Systems,nvtx_range,measurement/step_1,measurement/step_1,1,432.328365,,,20.7
+large_ctx256_train_step_fp32,large,256,train_step,fp32,Nsight Systems,nvtx_range,backward,backward,1,202.267842,,,9.7
+large_ctx256_train_step_fp32,large,256,train_step,fp32,Nsight Systems,nvtx_range,forward,forward,1,128.871242,,,6.2
+large_ctx256_train_step_fp32,large,256,train_step,fp32,Nsight Systems,nvtx_range,optimizer,optimizer,1,95.380523,,,4.6
+large_ctx256_train_step_fp32,large,256,train_step,fp32,Nsight Systems,nvtx_range,attention/scores,attention/scores,36,11.681039,,,0.6
+large_ctx256_train_step_fp32,large,256,train_step,fp32,Nsight Systems,nvtx_range,attention/value,attention/value,36,8.330519,,,0.4
+large_ctx256_train_step_fp32,large,256,train_step,fp32,Nsight Systems,nvtx_range,attention/softmax,attention/softmax,36,5.395565,,,0.3
+large_ctx256_train_step_fp32,large,256,train_step,fp32,Nsight Systems,cuda_api,profile/measure,cudaLaunchKernel,9784,,42.796386,,83.8
+large_ctx256_train_step_fp32,large,256,train_step,fp32,Nsight Systems,cuda_api,profile/measure,cudaLaunchKernelExC_v11060,615,,3.675088,,7.2
+large_ctx256_train_step_fp32,large,256,train_step,fp32,Nsight Systems,cuda_api,profile/measure,cuLaunchKernel,360,,1.811716,,3.5
+large_ctx256_train_step_fp32,large,256,train_step,fp32,Nsight Systems,cuda_api,profile/measure,cudaMemsetAsync,183,,1.176829,,2.3
+large_ctx256_train_step_fp32,large,256,train_step,fp32,Nsight Systems,cuda_api,profile/measure,cudaMemcpyAsync,73,,1.044417,,2.0
+large_ctx256_train_step_fp32,large,256,train_step,fp32,Nsight Systems,cuda_api,profile/measure,cudaDeviceSynchronize,10,,0.342357,,0.7
+large_ctx256_train_step_fp32,large,256,train_step,fp32,Nsight Systems,cuda_api,profile/measure,cuKernelGetFunction,360,,0.253250,,0.5
+large_ctx256_train_step_fp32,large,256,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::CUDAFunctor_add<float>, std::array<char *, (unsigned long)3>>(int, T2, T3)",1995,,,18.065456,14.8
+large_ctx256_train_step_fp32,large,256,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned…",2108,,,17.297999,14.1
+large_ctx256_train_step_fp32,large,256,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,"void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 3)…",541,,,10.033894,8.2
+large_ctx256_train_step_fp32,large,256,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,sm90_xmma_gemm_f32f32_tf32f32_f32_tn_n_tilesize128x128x32_warpgroupsize1x1x1_execute_segment_k_off_kernel__5x_cublas,253,,,9.168870,7.5
+large_ctx256_train_step_fp32,large,256,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,sm90_xmma_gemm_f32f32_tf32f32_f32_nt_n_tilesize128x256x32_warpgroupsize2x1x1_execute_segment_k_off_kernel__5x_cublas,108,,,8.643916,7.1
+large_ctx256_train_step_fp32,large,256,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,sm90_xmma_gemm_f32f32_tf32f32_f32_nn_n_tilesize128x128x32_warpgroupsize1x1x1_execute_segment_k_off_kernel__5x_cublas,108,,,7.139394,5.8
+large_ctx256_train_step_fp32,large,256,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned…",580,,,6.875077,5.6
+large_ctx256_train_step_fp32,large,256,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,"void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFuncto…",869,,,4.415207,3.6
+large_ctx256_train_step_fp32,large,256,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,void cutlass::Kernel2<cutlass_80_tensorop_s1688gemm_128x128_32x5_nt_align4>(T1::Params),144,,,3.984164,3.3
+large_ctx256_train_step_fp32,large,256,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::DivFunctor<float>>, std::array<char *, (unsigned…",328,,,3.671458,3.0
+large_ctx512_train_step_fp32,large,512,train_step,fp32,Nsight Systems,nvtx_range,profile/measure,profile/measure,1,428.525024,,,20.5
+large_ctx512_train_step_fp32,large,512,train_step,fp32,Nsight Systems,nvtx_range,measurement/step_1,measurement/step_1,1,428.418496,,,20.5
+large_ctx512_train_step_fp32,large,512,train_step,fp32,Nsight Systems,nvtx_range,backward,backward,1,206.613077,,,9.9
+large_ctx512_train_step_fp32,large,512,train_step,fp32,Nsight Systems,nvtx_range,forward,forward,1,120.416365,,,5.8
+large_ctx512_train_step_fp32,large,512,train_step,fp32,Nsight Systems,nvtx_range,optimizer,optimizer,1,96.183849,,,4.6
+large_ctx512_train_step_fp32,large,512,train_step,fp32,Nsight Systems,nvtx_range,attention/scores,attention/scores,36,11.396285,,,0.5
+large_ctx512_train_step_fp32,large,512,train_step,fp32,Nsight Systems,nvtx_range,attention/value,attention/value,36,9.010036,,,0.4
+large_ctx512_train_step_fp32,large,512,train_step,fp32,Nsight Systems,nvtx_range,attention/softmax,attention/softmax,36,5.008784,,,0.2
+large_ctx512_train_step_fp32,large,512,train_step,fp32,Nsight Systems,cuda_api,profile/measure,cudaLaunchKernel,9784,,40.766554,,79.9
+large_ctx512_train_step_fp32,large,512,train_step,fp32,Nsight Systems,cuda_api,profile/measure,cudaLaunchKernelExC_v11060,903,,4.800993,,9.4
+large_ctx512_train_step_fp32,large,512,train_step,fp32,Nsight Systems,cuda_api,profile/measure,cudaMemsetAsync,723,,3.068540,,6.0
+large_ctx512_train_step_fp32,large,512,train_step,fp32,Nsight Systems,cuda_api,profile/measure,cudaMemcpyAsync,73,,1.005156,,2.0
+large_ctx512_train_step_fp32,large,512,train_step,fp32,Nsight Systems,cuda_api,profile/measure,cudaMalloc,1,,0.480313,,0.9
+large_ctx512_train_step_fp32,large,512,train_step,fp32,Nsight Systems,cuda_api,profile/measure,cudaDeviceSynchronize,10,,0.451521,,0.9
+large_ctx512_train_step_fp32,large,512,train_step,fp32,Nsight Systems,cuda_api,profile/measure,cuLaunchKernel,72,,0.366471,,0.7
+large_ctx512_train_step_fp32,large,512,train_step,fp32,Nsight Systems,cuda_api,profile/measure,cuKernelGetFunction,72,,0.074433,,0.1
+large_ctx512_train_step_fp32,large,512,train_step,fp32,Nsight Systems,cuda_api,profile/measure,cudaStreamIsCapturing_v10000,1,,0.001420,,0.0
+large_ctx512_train_step_fp32,large,512,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::CUDAFunctor_add<float>, std::array<char *, (unsigned long)3>>(int, T2, T3)",1995,,,23.372054,11.7
+large_ctx512_train_step_fp32,large,512,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned…",2108,,,17.475310,8.7
+large_ctx512_train_step_fp32,large,512,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned…",580,,,17.458444,8.7
+large_ctx512_train_step_fp32,large,512,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,"void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::DivFuncto…",144,,,11.541514,5.8
+large_ctx512_train_step_fp32,large,512,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,"void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 3)…",541,,,11.422117,5.7
+large_ctx512_train_step_fp32,large,512,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,sm90_xmma_gemm_f32f32_tf32f32_f32_nt_n_tilesize128x256x32_warpgroupsize2x1x1_execute_segment_k_off_kernel__5x_cublas,72,,,10.358863,5.2
+large_ctx512_train_step_fp32,large,512,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,sm90_xmma_gemm_f32f32_tf32f32_f32_tn_n_tilesize128x128x32_warpgroupsize1x1x1_execute_segment_k_off_kernel__5x_cublas,145,,,8.645383,4.3
+large_ctx512_train_step_fp32,large,512,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,sm90_xmma_gemm_f32f32_tf32f32_f32_nn_n_tilesize64x128x32_warpgroupsize1x1x1_execute_segment_k_off_kernel__5x_cublas,216,,,7.964201,4.0
+large_ctx512_train_step_fp32,large,512,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,sm90_xmma_gemm_f32f32_tf32f32_f32_nn_n_tilesize128x128x32_warpgroupsize1x1x1_execute_segment_k_on_kernel__5x_cublas,72,,,7.286087,3.6
+large_ctx512_train_step_fp32,large,512,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,sm90_xmma_gemm_f32f32_tf32f32_f32_nt_n_tilesize128x128x32_warpgroupsize1x1x1_execute_segment_k_off_kernel__5x_cublas,144,,,6.861794,3.4
+large_ctx1024_train_step_fp32,large,1024,train_step,fp32,Nsight Systems,nvtx_range,profile/measure,profile/measure,1,500.359932,,,22.3
+large_ctx1024_train_step_fp32,large,1024,train_step,fp32,Nsight Systems,nvtx_range,measurement/step_1,measurement/step_1,1,500.287728,,,22.3
+large_ctx1024_train_step_fp32,large,1024,train_step,fp32,Nsight Systems,nvtx_range,backward,backward,1,211.865576,,,9.5
+large_ctx1024_train_step_fp32,large,1024,train_step,fp32,Nsight Systems,nvtx_range,forward,forward,1,114.254151,,,5.1
+large_ctx1024_train_step_fp32,large,1024,train_step,fp32,Nsight Systems,nvtx_range,optimizer,optimizer,1,98.474738,,,4.4
+large_ctx1024_train_step_fp32,large,1024,train_step,fp32,Nsight Systems,nvtx_range,attention/scores,attention/scores,36,10.886529,,,0.5
+large_ctx1024_train_step_fp32,large,1024,train_step,fp32,Nsight Systems,nvtx_range,attention/value,attention/value,36,7.934880,,,0.4
+large_ctx1024_train_step_fp32,large,1024,train_step,fp32,Nsight Systems,nvtx_range,attention/softmax,attention/softmax,36,5.226777,,,0.2
+large_ctx1024_train_step_fp32,large,1024,train_step,fp32,Nsight Systems,cuda_api,profile/measure,cudaDeviceSynchronize,10,,71.698268,,55.8
+large_ctx1024_train_step_fp32,large,1024,train_step,fp32,Nsight Systems,cuda_api,profile/measure,cudaLaunchKernel,9787,,46.140643,,35.9
+large_ctx1024_train_step_fp32,large,1024,train_step,fp32,Nsight Systems,cuda_api,profile/measure,cudaLaunchKernelExC_v11060,903,,4.874741,,3.8
+large_ctx1024_train_step_fp32,large,1024,train_step,fp32,Nsight Systems,cuda_api,profile/measure,cudaMemsetAsync,728,,3.566538,,2.8
+large_ctx1024_train_step_fp32,large,1024,train_step,fp32,Nsight Systems,cuda_api,profile/measure,cudaMemcpyAsync,73,,0.983484,,0.8
+large_ctx1024_train_step_fp32,large,1024,train_step,fp32,Nsight Systems,cuda_api,profile/measure,cudaMalloc,1,,0.687001,,0.5
+large_ctx1024_train_step_fp32,large,1024,train_step,fp32,Nsight Systems,cuda_api,profile/measure,cuLaunchKernel,72,,0.361610,,0.3
+large_ctx1024_train_step_fp32,large,1024,train_step,fp32,Nsight Systems,cuda_api,profile/measure,cuKernelGetFunction,72,,0.074738,,0.1
+large_ctx1024_train_step_fp32,large,1024,train_step,fp32,Nsight Systems,cuda_api,profile/measure,cudaStreamIsCapturing_v10000,1,,0.001671,,0.0
+large_ctx1024_train_step_fp32,large,1024,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned…",580,,,46.203006,10.8
+large_ctx1024_train_step_fp32,large,1024,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,"void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::DivFuncto…",144,,,45.217631,10.6
+large_ctx1024_train_step_fp32,large,1024,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::CUDAFunctor_add<float>, std::array<char *, (unsigned long)3>>(int, T2, T3)",1995,,,38.182326,9.0
+large_ctx1024_train_step_fp32,large,1024,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,sm90_xmma_gemm_f32f32_tf32f32_f32_nt_n_tilesize128x256x32_warpgroupsize2x1x1_execute_segment_k_off_kernel__5x_cublas,108,,,29.024102,6.8
+large_ctx1024_train_step_fp32,large,1024,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,"void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<float>>(at::TensorIteratorBase &, const T1 &)::[lambda(in…",74,,,20.870107,4.9
+large_ctx1024_train_step_fp32,large,1024,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,"void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::<unnamed>::where_kernel_impl(at::TensorIterator &)::[lambda() (instance 1…",72,,,18.292666,4.3
+large_ctx1024_train_step_fp32,large,1024,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned…",2108,,,17.970936,4.2
+large_ctx1024_train_step_fp32,large,1024,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,sm90_xmma_gemm_f32f32_tf32f32_f32_tn_n_tilesize64x256x32_warpgroupsize1x1x1_execute_segment_k_off_kernel__5x_cublas,216,,,16.495546,3.9
+large_ctx1024_train_step_fp32,large,1024,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::neg_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 2)]::operator ()() const::[lambda() (instance 7)]…",76,,,16.355092,3.8
+large_ctx1024_train_step_fp32,large,1024,train_step,fp32,Nsight Systems,cuda_kernel,profile/measure,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::BUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned…",72,,,16.021844,3.8

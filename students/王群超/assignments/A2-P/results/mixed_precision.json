@@ -1,0 +1,72 @@
+{
+  "accumulation_experiment": {
+    "outputs": [
+      "tensor(10.0001)",
+      "tensor(9.9531, dtype=torch.float16)",
+      "tensor(10.0021)",
+      "tensor(10.0021)"
+    ],
+    "results": [
+      {"accumulator_dtype": "FP32", "input_dtype": "FP32", "output": 10.0001, "relative_error": "~1e-5"},
+      {"accumulator_dtype": "FP16", "input_dtype": "FP16", "output": 9.9531, "relative_error": "~4.7e-3"},
+      {"accumulator_dtype": "FP32", "input_dtype": "FP16", "output": 10.0021, "relative_error": "~2.1e-4"},
+      {"accumulator_dtype": "FP32", "input_dtype": "FP16->FP32", "output": 10.0021, "relative_error": "~2.1e-4"}
+    ]
+  },
+  "autocast_comparison": {
+    "batch_size": 4,
+    "context_length": 512,
+    "warmup_steps": 5,
+    "measurement_steps": 10,
+    "dtype_table": {
+      "模型参数": {"FP32": "float32", "BF16 autocast": "float32"},
+      "第一层 block 输出": {"FP32": "float32", "BF16 autocast": "float32"},
+      "LayerNorm 输出": {"FP32": "float32", "BF16 autocast": "float32"},
+      "logits": {"FP32": "float32", "BF16 autocast": "bfloat16"},
+      "loss": {"FP32": "float32", "BF16 autocast": "float32"},
+      "gradients": {"FP32": "float32", "BF16 autocast": "float32"}
+    },
+    "results": [
+      {
+        "model_size": "small",
+        "mode": "forward_backward",
+        "dtype": "FP32",
+        "mean_time_ms": 79.25,
+        "std_ms": 0.29,
+        "speedup": "1.00x",
+        "peak_allocated_mib": 4236,
+        "memory_saving": null
+      },
+      {
+        "model_size": "small",
+        "mode": "forward_backward",
+        "dtype": "autocast",
+        "mean_time_ms": 59.83,
+        "std_ms": 3.30,
+        "speedup": "1.32x",
+        "peak_allocated_mib": 3358,
+        "memory_saving": "20.6%"
+      },
+      {
+        "model_size": "medium",
+        "mode": "forward_backward",
+        "dtype": "FP32",
+        "mean_time_ms": 226.91,
+        "std_ms": 0.39,
+        "speedup": "1.00x",
+        "peak_allocated_mib": 10895,
+        "memory_saving": null
+      },
+      {
+        "model_size": "medium",
+        "mode": "forward_backward",
+        "dtype": "autocast",
+        "mean_time_ms": 127.57,
+        "std_ms": 2.67,
+        "speedup": "1.78x",
+        "peak_allocated_mib": 8664,
+        "memory_saving": "20.3%"
+      }
+    ]
+  }
+}

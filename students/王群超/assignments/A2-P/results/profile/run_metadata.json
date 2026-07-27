@@ -1,0 +1,19 @@
+{
+  "profiler": "Nsight Systems 2024.4.2",
+  "trace_flags": "cuda,cublas,osrt,nvtx",
+  "gpu": "NVIDIA GeForce RTX 4090 24GB",
+  "driver": "560.28.03",
+  "cuda": "12.6",
+  "pytorch": "2.5.1",
+  "models": ["small", "large"],
+  "contexts": [256, 512, 1024],
+  "modes": ["forward", "forward_backward", "train_step"],
+  "dtype": "FP32",
+  "warmup_steps": 5,
+  "measurement_steps": 1,
+  "nvtx_ranges": ["profile/warmup", "profile/measure", "forward", "backward", "optimizer"],
+  "export_commands": {
+    "nvtx_sum": "nsys stats --report nvtx_sum results/nsys/${NAME}.nsys-rep",
+    "cuda_gpu_kern_sum": "nsys stats --report cuda_gpu_kern_sum --format csv results/nsys/${NAME}.nsys-rep -o results/nsys/"
+  }
+}

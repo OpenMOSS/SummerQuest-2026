@@ -1,0 +1,524 @@
+{
+  "environment": {
+    "bf16_supported": true,
+    "compute_capability": "8.9",
+    "compute_profiler": "torch.profiler 2.6.0+cu124",
+    "driver": "550.163.01",
+    "gpu_model": "NVIDIA GeForce RTX 4090",
+    "gpu_total_memory_mib": 48639.31,
+    "python": "3.12.13",
+    "pytorch": "2.6.0+cu124",
+    "pytorch_compiled_cuda": "12.4"
+  },
+  "experiment": "memory_profiling",
+  "fallback_order": [
+    "xl/context=2048/batch=1",
+    "xl/context=1024/batch=1",
+    "large/context=2048/batch=1"
+  ],
+  "history": {
+    "context": "all",
+    "enabled": "all",
+    "implementation": "torch.cuda.memory._record_memory_history",
+    "max_entries": 200000,
+    "stacks": "python"
+  },
+  "isolation": "one fresh process per configuration",
+  "raw_policy": "snapshot pickle and full timeline HTML retained locally",
+  "runs": [
+    {
+      "attempted_allocation": null,
+      "config": {
+        "batch_size": 1,
+        "context_length": 128,
+        "dtype": "fp32",
+        "measurement_steps": 1,
+        "mode": "forward",
+        "model_size": "xl",
+        "seed": 42,
+        "warmup_steps": 1
+      },
+      "error_type": null,
+      "failure_stage": null,
+      "local_snapshot": {
+        "bytes": 566654,
+        "committed": false,
+        "file": "xl-b1-c128-forward-fp32-w1-n1.snapshot.pickle",
+        "sha256": "0d104cbb96f4341069fc37953345037618b7d506b53f274b24e05fc7637dabd6"
+      },
+      "local_timeline": {
+        "bytes": 755856,
+        "committed": false,
+        "file": "xl-b1-c128-forward-fp32-w1-n1.timeline.html",
+        "sha256": "5cbd6821bbe8490b3c140e24c9dfa5c17897c025ac3e26ebc81f5efe41e6f6e5"
+      },
+      "loss": null,
+      "memory": {
+        "active_current_mib": 13132.801,
+        "active_peak_mib": 13154.051,
+        "allocated_current_mib": 13132.801,
+        "allocated_peak_mib": 13154.051,
+        "reserved_current_mib": 13168.0,
+        "reserved_peak_mib": 13168.0
+      },
+      "memory_points": {
+        "after_forward": {
+          "active_current_mib": 13137.684,
+          "active_peak_mib": 13154.051,
+          "allocated_current_mib": 13137.684,
+          "allocated_peak_mib": 13154.051,
+          "reserved_current_mib": 13168.0,
+          "reserved_peak_mib": 13168.0
+        },
+        "after_model_and_warmup": {
+          "active_current_mib": 13132.801,
+          "active_peak_mib": 13154.051,
+          "allocated_current_mib": 13132.801,
+          "allocated_peak_mib": 13154.051,
+          "reserved_current_mib": 13168.0,
+          "reserved_peak_mib": 13168.0
+        }
+      },
+      "residual_stream_theoretical_mib": 1.25,
+      "run_id": "xl-b1-c128-forward-fp32-w1-n1",
+      "snapshot_summary": {
+        "allocation_events": 1672,
+        "largest_final_active_block_mib": 100.0,
+        "largest_final_active_block_stack": [],
+        "largest_trace_allocation_mib": 5.0,
+        "largest_trace_allocation_stack": [
+          "functional.py:einsum",
+          "_backends.py:einsum",
+          "einops.py:einsum",
+          "model.py:forward",
+          "module.py:_call_impl",
+          "module.py:_wrapped_call_impl"
+        ],
+        "segments": 230
+      },
+      "status": "success",
+      "warmup": {
+        "completed_before_memory_history": true,
+        "mode": "forward",
+        "steps": 1
+      }
+    },
+    {
+      "attempted_allocation": "100.00 MiB",
+      "config": {
+        "batch_size": 1,
+        "context_length": 128,
+        "dtype": "fp32",
+        "measurement_steps": 1,
+        "mode": "train_step",
+        "model_size": "xl",
+        "seed": 42,
+        "warmup_steps": 1
+      },
+      "error_type": "OutOfMemoryError",
+      "failure_stage": "optimizer",
+      "local_snapshot": {
+        "bytes": 1655167,
+        "committed": false,
+        "file": "xl-b1-c128-train_step-fp32-w1-n1.snapshot.pickle",
+        "sha256": "ba9ea4887e9b71a3a7aed10e01da4f843d4df7bff7e106d69c5973ff9b00d72e"
+      },
+      "local_timeline": {
+        "bytes": 2207208,
+        "committed": false,
+        "file": "xl-b1-c128-train_step-fp32-w1-n1.timeline.html",
+        "sha256": "ee319f595f3a4ec42256fe25f32280c02b4d414cb615381fcd074ef83bd4aa31"
+      },
+      "loss": null,
+      "memory": {
+        "active_current_mib": 47334.576,
+        "active_peak_mib": 47739.459,
+        "allocated_current_mib": 47334.576,
+        "allocated_peak_mib": 47739.459,
+        "reserved_current_mib": 48068.0,
+        "reserved_peak_mib": 48068.0
+      },
+      "memory_points": {
+        "after_backward": {
+          "active_current_mib": 26142.444,
+          "active_peak_mib": 26240.444,
+          "allocated_current_mib": 26142.444,
+          "allocated_peak_mib": 26240.444,
+          "reserved_current_mib": 27722.0,
+          "reserved_peak_mib": 27722.0
+        },
+        "after_forward": {
+          "active_current_mib": 14513.858,
+          "active_peak_mib": 14518.741,
+          "allocated_current_mib": 14513.858,
+          "allocated_peak_mib": 14518.741,
+          "reserved_current_mib": 14530.0,
+          "reserved_peak_mib": 14530.0
+        },
+        "after_model_and_warmup": {
+          "active_current_mib": 13132.801,
+          "active_peak_mib": 13154.051,
+          "allocated_current_mib": 13132.801,
+          "allocated_peak_mib": 13154.051,
+          "reserved_current_mib": 13168.0,
+          "reserved_peak_mib": 13168.0
+        }
+      },
+      "residual_stream_theoretical_mib": 1.25,
+      "run_id": "xl-b1-c128-train_step-fp32-w1-n1",
+      "snapshot_summary": {
+        "allocation_events": 7885,
+        "largest_final_active_block_mib": 100.0,
+        "largest_final_active_block_stack": [
+          "optimizer.py:step",
+          "optimizer.py:wrapper",
+          "memory_snapshot.py:measured_memory_step",
+          "memory_snapshot.py:single_run",
+          "memory_snapshot.py:main",
+          "memory_snapshot.py:<module>"
+        ],
+        "largest_trace_allocation_mib": 100.0,
+        "largest_trace_allocation_stack": [],
+        "segments": 580
+      },
+      "status": "oom",
+      "warmup": {
+        "completed_before_memory_history": true,
+        "mode": "forward",
+        "steps": 1
+      }
+    },
+    {
+      "attempted_allocation": null,
+      "config": {
+        "batch_size": 1,
+        "context_length": 2048,
+        "dtype": "fp32",
+        "measurement_steps": 1,
+        "mode": "forward",
+        "model_size": "xl",
+        "seed": 42,
+        "warmup_steps": 1
+      },
+      "error_type": null,
+      "failure_stage": null,
+      "local_snapshot": {
+        "bytes": 568703,
+        "committed": false,
+        "file": "xl-b1-c2048-forward-fp32-w1-n1.snapshot.pickle",
+        "sha256": "809642fc3cb92808ee9cc62c5af98f515adce83b66052abb9d9785c888cfa8c3"
+      },
+      "local_timeline": {
+        "bytes": 758588,
+        "committed": false,
+        "file": "xl-b1-c2048-forward-fp32-w1-n1.timeline.html",
+        "sha256": "6f3a2f076cc6b750ea578129f35facafbd44632efc4800df97bf7ab9a8a460ef"
+      },
+      "loss": null,
+      "memory": {
+        "active_current_mib": 13133.416,
+        "active_peak_mib": 15305.682,
+        "allocated_current_mib": 13133.416,
+        "allocated_peak_mib": 15305.682,
+        "reserved_current_mib": 15858.0,
+        "reserved_peak_mib": 15858.0
+      },
+      "memory_points": {
+        "after_forward": {
+          "active_current_mib": 13211.541,
+          "active_peak_mib": 15305.682,
+          "allocated_current_mib": 13211.541,
+          "allocated_peak_mib": 15305.682,
+          "reserved_current_mib": 15858.0,
+          "reserved_peak_mib": 15858.0
+        },
+        "after_model_and_warmup": {
+          "active_current_mib": 13133.416,
+          "active_peak_mib": 15305.682,
+          "allocated_current_mib": 13133.416,
+          "allocated_peak_mib": 15305.682,
+          "reserved_current_mib": 15858.0,
+          "reserved_peak_mib": 15858.0
+        }
+      },
+      "residual_stream_theoretical_mib": 20.0,
+      "run_id": "xl-b1-c2048-forward-fp32-w1-n1",
+      "snapshot_summary": {
+        "allocation_events": 1672,
+        "largest_final_active_block_mib": 100.0,
+        "largest_final_active_block_stack": [],
+        "largest_trace_allocation_mib": 512.0,
+        "largest_trace_allocation_stack": [
+          "functional.py:einsum",
+          "_backends.py:einsum",
+          "einops.py:einsum",
+          "model.py:scaled_dot_product_attention",
+          "model.py:forward",
+          "module.py:_call_impl"
+        ],
+        "segments": 243
+      },
+      "status": "success",
+      "warmup": {
+        "completed_before_memory_history": true,
+        "mode": "forward",
+        "steps": 1
+      }
+    },
+    {
+      "attempted_allocation": "512.00 MiB",
+      "config": {
+        "batch_size": 1,
+        "context_length": 2048,
+        "dtype": "fp32",
+        "measurement_steps": 1,
+        "mode": "train_step",
+        "model_size": "xl",
+        "seed": 42,
+        "warmup_steps": 1
+      },
+      "error_type": "OutOfMemoryError",
+      "failure_stage": "forward",
+      "local_snapshot": {
+        "bytes": 301471,
+        "committed": false,
+        "file": "xl-b1-c2048-train_step-fp32-w1-n1.snapshot.pickle",
+        "sha256": "ee70c41ca8790f5aa80c75f5085f19383606ae1c7fa4e79269f1a53ff616942a"
+      },
+      "local_timeline": {
+        "bytes": 402280,
+        "committed": false,
+        "file": "xl-b1-c2048-train_step-fp32-w1-n1.timeline.html",
+        "sha256": "32a56eaf624f7b6c2b58055d93806e5403c5150402d45ade8756bb3067738dda"
+      },
+      "loss": null,
+      "memory": {
+        "active_current_mib": 13133.416,
+        "active_peak_mib": 46857.502,
+        "allocated_current_mib": 13133.416,
+        "allocated_peak_mib": 46857.502,
+        "reserved_current_mib": 47616.0,
+        "reserved_peak_mib": 47616.0
+      },
+      "memory_points": {
+        "after_model_and_warmup": {
+          "active_current_mib": 13133.416,
+          "active_peak_mib": 15305.682,
+          "allocated_current_mib": 13133.416,
+          "allocated_peak_mib": 15305.682,
+          "reserved_current_mib": 15858.0,
+          "reserved_peak_mib": 15858.0
+        }
+      },
+      "residual_stream_theoretical_mib": 20.0,
+      "run_id": "xl-b1-c2048-train_step-fp32-w1-n1",
+      "snapshot_summary": {
+        "allocation_events": 1073,
+        "largest_final_active_block_mib": 100.0,
+        "largest_final_active_block_stack": [],
+        "largest_trace_allocation_mib": 512.0,
+        "largest_trace_allocation_stack": [
+          "functional.py:einsum",
+          "_backends.py:einsum",
+          "einops.py:einsum",
+          "model.py:scaled_dot_product_attention",
+          "model.py:forward",
+          "module.py:_call_impl"
+        ],
+        "segments": 312
+      },
+      "status": "oom",
+      "warmup": {
+        "completed_before_memory_history": true,
+        "mode": "forward",
+        "steps": 1
+      }
+    },
+    {
+      "attempted_allocation": "100.00 MiB",
+      "config": {
+        "batch_size": 1,
+        "context_length": 1024,
+        "dtype": "fp32",
+        "measurement_steps": 1,
+        "mode": "train_step",
+        "model_size": "xl",
+        "seed": 42,
+        "warmup_steps": 1
+      },
+      "error_type": "OutOfMemoryError",
+      "failure_stage": "optimizer",
+      "local_snapshot": {
+        "bytes": 1673301,
+        "committed": false,
+        "file": "xl-b1-c1024-train_step-fp32-w1-n1.snapshot.pickle",
+        "sha256": "eeb20bc4006c06be87fe79d849dc69418b82db45bd7070c100af14cd6103d7e1"
+      },
+      "local_timeline": {
+        "bytes": 2231388,
+        "committed": false,
+        "file": "xl-b1-c1024-train_step-fp32-w1-n1.timeline.html",
+        "sha256": "762ed398a84cb7af02ec563bc859df6c1aa18369998e686d6e617e7b205d78e8"
+      },
+      "loss": null,
+      "memory": {
+        "active_current_mib": 46733.793,
+        "active_peak_mib": 47373.793,
+        "allocated_current_mib": 46733.793,
+        "allocated_peak_mib": 47373.793,
+        "reserved_current_mib": 48010.0,
+        "reserved_peak_mib": 48062.0
+      },
+      "memory_points": {
+        "after_backward": {
+          "active_current_mib": 26177.504,
+          "active_peak_mib": 31722.479,
+          "allocated_current_mib": 26177.504,
+          "allocated_peak_mib": 31722.479,
+          "reserved_current_mib": 32562.0,
+          "reserved_peak_mib": 32562.0
+        },
+        "after_forward": {
+          "active_current_mib": 31119.354,
+          "active_peak_mib": 31159.361,
+          "allocated_current_mib": 31119.354,
+          "allocated_peak_mib": 31159.361,
+          "reserved_current_mib": 31682.0,
+          "reserved_peak_mib": 31682.0
+        },
+        "after_model_and_warmup": {
+          "active_current_mib": 13133.088,
+          "active_peak_mib": 13706.221,
+          "allocated_current_mib": 13133.088,
+          "allocated_peak_mib": 13706.221,
+          "reserved_current_mib": 13858.0,
+          "reserved_peak_mib": 13858.0
+        }
+      },
+      "residual_stream_theoretical_mib": 10.0,
+      "run_id": "xl-b1-c1024-train_step-fp32-w1-n1",
+      "snapshot_summary": {
+        "allocation_events": 7910,
+        "largest_final_active_block_mib": 100.0,
+        "largest_final_active_block_stack": [
+          "optimizer.py:step",
+          "optimizer.py:wrapper",
+          "memory_snapshot.py:measured_memory_step",
+          "memory_snapshot.py:single_run",
+          "memory_snapshot.py:main",
+          "memory_snapshot.py:<module>"
+        ],
+        "largest_trace_allocation_mib": 128.0,
+        "largest_trace_allocation_stack": [
+          "functional.py:einsum",
+          "_backends.py:einsum",
+          "einops.py:einsum",
+          "model.py:scaled_dot_product_attention",
+          "model.py:forward",
+          "module.py:_call_impl"
+        ],
+        "segments": 548
+      },
+      "status": "oom",
+      "warmup": {
+        "completed_before_memory_history": true,
+        "mode": "forward",
+        "steps": 1
+      }
+    },
+    {
+      "attempted_allocation": null,
+      "config": {
+        "batch_size": 1,
+        "context_length": 2048,
+        "dtype": "fp32",
+        "measurement_steps": 1,
+        "mode": "train_step",
+        "model_size": "large",
+        "seed": 42,
+        "warmup_steps": 1
+      },
+      "error_type": null,
+      "failure_stage": null,
+      "local_snapshot": {
+        "bytes": 1997888,
+        "committed": false,
+        "file": "large-b1-c2048-train_step-fp32-w1-n1.snapshot.pickle",
+        "sha256": "8ad5d03d57140013c7ce4d604624f32a452391d55671ca7875fe42894b22071b"
+      },
+      "local_timeline": {
+        "bytes": 2664168,
+        "committed": false,
+        "file": "large-b1-c2048-train_step-fp32-w1-n1.timeline.html",
+        "sha256": "73de80845919478b8bb6e4710b3be3a51142a55687123518941dca0a2d10c1a2"
+      },
+      "loss": 9.321122169494629,
+      "memory": {
+        "active_current_mib": 14917.457,
+        "active_peak_mib": 39116.438,
+        "allocated_current_mib": 14917.457,
+        "allocated_peak_mib": 39116.438,
+        "reserved_current_mib": 39498.0,
+        "reserved_peak_mib": 39498.0
+      },
+      "memory_points": {
+        "after_backward": {
+          "active_current_mib": 7599.557,
+          "active_peak_mib": 39116.438,
+          "allocated_current_mib": 7599.557,
+          "allocated_peak_mib": 39116.438,
+          "reserved_current_mib": 39498.0,
+          "reserved_peak_mib": 39498.0
+        },
+        "after_forward": {
+          "active_current_mib": 38114.513,
+          "active_peak_mib": 38250.114,
+          "allocated_current_mib": 38114.513,
+          "allocated_peak_mib": 38250.114,
+          "reserved_current_mib": 38538.0,
+          "reserved_peak_mib": 38538.0
+        },
+        "after_model_and_warmup": {
+          "active_current_mib": 3814.669,
+          "active_peak_mib": 5158.841,
+          "allocated_current_mib": 3814.669,
+          "allocated_peak_mib": 5158.841,
+          "reserved_current_mib": 5560.0,
+          "reserved_peak_mib": 5560.0
+        },
+        "after_optimizer": {
+          "active_current_mib": 14995.583,
+          "active_peak_mib": 39116.438,
+          "allocated_current_mib": 14995.583,
+          "allocated_peak_mib": 39116.438,
+          "reserved_current_mib": 39498.0,
+          "reserved_peak_mib": 39498.0
+        }
+      },
+      "residual_stream_theoretical_mib": 10.0,
+      "run_id": "large-b1-c2048-train_step-fp32-w1-n1",
+      "snapshot_summary": {
+        "allocation_events": 9818,
+        "largest_final_active_block_mib": 48.828,
+        "largest_final_active_block_stack": [],
+        "largest_trace_allocation_mib": 320.0,
+        "largest_trace_allocation_stack": [
+          "functional.py:einsum",
+          "_backends.py:einsum",
+          "einops.py:einsum",
+          "model.py:scaled_dot_product_attention",
+          "model.py:forward",
+          "module.py:_call_impl"
+        ],
+        "segments": 286
+      },
+      "status": "success",
+      "warmup": {
+        "completed_before_memory_history": true,
+        "mode": "forward",
+        "steps": 1
+      }
+    }
+  ],
+  "schema_version": 1
+}

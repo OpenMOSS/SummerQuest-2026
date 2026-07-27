@@ -1,0 +1,39 @@
+{
+  "allocator": {
+    "allocator_fraction": 0.4854174583443363,
+    "allocator_limit_mib": 23552
+  },
+  "benchmark_timer": "triton.testing.do_bench or CUDA events",
+  "commands": [
+    "uv run pytest tests/test_attention.py -v",
+    "uv run python -m student_scripts.a2k.run_correctness --device cuda",
+    "uv run python -m student_scripts.a2k.run_checkpointing",
+    "uv run python -m student_scripts.a2k.run_attention_benchmarks --mode baseline",
+    "uv run python -m student_scripts.a2k.run_compile_comparison",
+    "uv run python -m student_scripts.a2k.run_attention_benchmarks --mode flash",
+    "uv run python -m student_scripts.a2k.summarize_memory",
+    "uv run python -m student_scripts.a2k.make_figures"
+  ],
+  "commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+  "compile_config": {
+    "backend": "inductor",
+    "cache_policy": "cold compile measured separately from steady-state",
+    "dynamic": null,
+    "fullgraph": null,
+    "mode": null
+  },
+  "cuda_available": true,
+  "cuda_version": "12.8",
+  "gpu_model": "NVIDIA GeForce RTX 4090",
+  "gpu_total_memory_mib": 48519.0625,
+  "measurement": "attention do_bench rep=300 ms; checkpoint measurement_steps=5",
+  "nvidia_smi_sanitized": "NVIDIA GeForce RTX 4090, 49140 MiB, 48077 MiB, 570.124.06, 450.00 W, P0",
+  "platform": "Linux-5.15.0-141-generic-x86_64-with-glibc2.39",
+  "python": "3.12.3",
+  "seed": 0,
+  "tf32_cudnn": true,
+  "tf32_matmul": true,
+  "torch_version": "2.10.0+cu128",
+  "triton_version": "3.6.0",
+  "warmup": "attention do_bench warmup=100 ms; checkpoint warmup_steps=3"
+}

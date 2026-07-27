@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520">
+<rect width="100%" height="100%" fill="white"/>
+<text x="450.0" y="32" text-anchor="middle" font-size="22">Peak allocated memory</text>
+<line x1="90" y1="70" x2="90" y2="440" stroke="black"/>
+<line x1="90" y1="440" x2="870" y2="440" stroke="black"/>
+<line x1="90" y1="440.0" x2="870" y2="440.0" stroke="#ddd"/>
+<text x="80" y="445.0" text-anchor="end" font-size="13">0.00</text>
+<line x1="90" y1="366.0" x2="870" y2="366.0" stroke="#ddd"/>
+<text x="80" y="371.0" text-anchor="end" font-size="13">4624.77</text>
+<line x1="90" y1="292.0" x2="870" y2="292.0" stroke="#ddd"/>
+<text x="80" y="297.0" text-anchor="end" font-size="13">9249.53</text>
+<line x1="90" y1="218.0" x2="870" y2="218.0" stroke="#ddd"/>
+<text x="80" y="223.0" text-anchor="end" font-size="13">13874.30</text>
+<line x1="90" y1="144.0" x2="870" y2="144.0" stroke="#ddd"/>
+<text x="80" y="149.0" text-anchor="end" font-size="13">18499.07</text>
+<line x1="90" y1="70.0" x2="870" y2="70.0" stroke="#ddd"/>
+<text x="80" y="75.0" text-anchor="end" font-size="13">23123.83</text>
+<text x="90.0" y="465" text-anchor="middle" font-size="13">128</text>
+<text x="480.0" y="465" text-anchor="middle" font-size="13">1024</text>
+<text x="870.0" y="465" text-anchor="middle" font-size="13">2048</text>
+<text x="22" y="255.0" text-anchor="middle" transform="rotate(-90 22 255.0)" font-size="15">Peak allocated (MiB)</text>
+<text x="480.0" y="500" text-anchor="middle" font-size="15">Context length</text>
+<polyline points="870.0,334.2" fill="none" stroke="#2563eb" stroke-width="3"/>
+<circle cx="870.0" cy="334.2" r="4" fill="#2563eb"/>
+<line x1="720" y1="48" x2="750" y2="48" stroke="#2563eb" stroke-width="3"/>
+<text x="760" y="53" font-size="13">large forward</text>
+<polyline points="90.0,126.6 480.0,123.0 870.0,103.6" fill="none" stroke="#dc2626" stroke-width="3"/>
+<circle cx="90.0" cy="126.6" r="4" fill="#dc2626"/>
+<circle cx="480.0" cy="123.0" r="4" fill="#dc2626"/>
+<circle cx="870.0" cy="103.6" r="4" fill="#dc2626"/>
+<line x1="720" y1="70" x2="750" y2="70" stroke="#dc2626" stroke-width="3"/>
+<text x="760" y="75" font-size="13">xl forward</text>
+</svg>

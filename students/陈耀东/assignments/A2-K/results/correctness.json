@@ -1,0 +1,1556 @@
+{
+  "summary": {
+    "passed": 18,
+    "total": 18
+  },
+  "cases": [
+    {
+      "case_id": "seed3-d32-noncausal",
+      "seed": 3,
+      "dtype": "float32",
+      "batch_size": 1,
+      "sequence_length": 128,
+      "head_dimension": 32,
+      "causal": false,
+      "status": "passed",
+      "implementations": {
+        "pytorch": {
+          "status": "passed",
+          "errors": {
+            "O": {
+              "max_abs_error": 5.066394805908203e-07,
+              "max_rel_error": 0.0019869497045874596
+            },
+            "L": {
+              "max_abs_error": 4.76837158203125e-07,
+              "max_rel_error": 9.183861493511358e-08
+            },
+            "dQ": {
+              "max_abs_error": 3.2782554626464844e-07,
+              "max_rel_error": 0.0005313451983965933
+            },
+            "dK": {
+              "max_abs_error": 3.2782554626464844e-07,
+              "max_rel_error": 0.0004092980525456369
+            },
+            "dV": {
+              "max_abs_error": 2.384185791015625e-07,
+              "max_rel_error": 0.0018290398875251412
+            }
+          },
+          "tensor_pass": {
+            "O": true,
+            "L": true,
+            "dQ": true,
+            "dK": true,
+            "dV": true
+          },
+          "tolerance": {
+            "atol": 0.01,
+            "rtol": 0.01
+          },
+          "all_finite": true
+        },
+        "triton": {
+          "status": "passed",
+          "errors": {
+            "O": {
+              "max_abs_error": 0.002465188503265381,
+              "max_rel_error": 4.704767227172852
+            },
+            "L": {
+              "max_abs_error": 0.0017442703247070312,
+              "max_rel_error": 0.0003112804552074522
+            },
+            "dQ": {
+              "max_abs_error": 0.0008645057678222656,
+              "max_rel_error": 0.5451420545578003
+            },
+            "dK": {
+              "max_abs_error": 0.0006759464740753174,
+              "max_rel_error": 1.3729575872421265
+            },
+            "dV": {
+              "max_abs_error": 0.000920712947845459,
+              "max_rel_error": 2.144336223602295
+            }
+          },
+          "tensor_pass": {
+            "O": true,
+            "L": true,
+            "dQ": true,
+            "dK": true,
+            "dV": true
+          },
+          "tolerance": {
+            "atol": 0.01,
+            "rtol": 0.01
+          },
+          "all_finite": true
+        }
+      }
+    },
+    {
+      "case_id": "seed3-d32-causal",
+      "seed": 3,
+      "dtype": "float32",
+      "batch_size": 1,
+      "sequence_length": 128,
+      "head_dimension": 32,
+      "causal": true,
+      "status": "passed",
+      "implementations": {
+        "pytorch": {
+          "status": "passed",
+          "errors": {
+            "O": {
+              "max_abs_error": 4.731118679046631e-07,
+              "max_rel_error": 0.0001592158223502338
+            },
+            "L": {
+              "max_abs_error": 4.76837158203125e-07,
+              "max_rel_error": 1.2946536287472554e-07
+            },
+            "dQ": {
+              "max_abs_error": 7.66149639730429e-07,
+              "max_rel_error": 76.6149673461914
+            },
+            "dK": {
+              "max_abs_error": 1.0728836059570312e-06,
+              "max_rel_error": 0.05738724395632744
+            },
+            "dV": {
+              "max_abs_error": 7.450580596923828e-07,
+              "max_rel_error": 0.0013978228671476245
+            }
+          },
+          "tensor_pass": {
+            "O": true,
+            "L": true,
+            "dQ": true,
+            "dK": true,
+            "dV": true
+          },
+          "tolerance": {
+            "atol": 0.01,
+            "rtol": 0.01
+          },
+          "all_finite": true
+        },
+        "triton": {
+          "status": "passed",
+          "errors": {
+            "O": {
+              "max_abs_error": 0.0016640424728393555,
+              "max_rel_error": 0.7589696645736694
+            },
+            "L": {
+              "max_abs_error": 0.0014595985412597656,
+              "max_rel_error": 0.0006938498700037599
+            },
+            "dQ": {
+              "max_abs_error": 0.0012551546096801758,
+              "max_rel_error": 89278.3359375
+            },
+            "dK": {
+              "max_abs_error": 0.002329587936401367,
+              "max_rel_error": 280.8935852050781
+            },
+            "dV": {
+              "max_abs_error": 0.0028582215309143066,
+              "max_rel_error": 3.2542195320129395
+            }
+          },
+          "tensor_pass": {
+            "O": true,
+            "L": true,
+            "dQ": true,
+            "dK": true,
+            "dV": true
+          },
+          "tolerance": {
+            "atol": 0.01,
+            "rtol": 0.01
+          },
+          "all_finite": true
+        }
+      }
+    },
+    {
+      "case_id": "seed3-d64-noncausal",
+      "seed": 3,
+      "dtype": "float32",
+      "batch_size": 1,
+      "sequence_length": 128,
+      "head_dimension": 64,
+      "causal": false,
+      "status": "passed",
+      "implementations": {
+        "pytorch": {
+          "status": "passed",
+          "errors": {
+            "O": {
+              "max_abs_error": 3.2782554626464844e-07,
+              "max_rel_error": 0.0016254757065325975
+            },
+            "L": {
+              "max_abs_error": 4.76837158203125e-07,
+              "max_rel_error": 9.255565913690589e-08
+            },
+            "dQ": {
+              "max_abs_error": 2.980232238769531e-07,
+              "max_rel_error": 0.009020295925438404
+            },
+            "dK": {
+              "max_abs_error": 2.980232238769531e-07,
+              "max_rel_error": 0.00040791905485093594
+            },
+            "dV": {
+              "max_abs_error": 3.5762786865234375e-07,
+              "max_rel_error": 0.0019400733290240169
+            }
+          },
+          "tensor_pass": {
+            "O": true,
+            "L": true,
+            "dQ": true,
+            "dK": true,
+            "dV": true
+          },
+          "tolerance": {
+            "atol": 0.01,
+            "rtol": 0.01
+          },
+          "all_finite": true
+        },
+        "triton": {
+          "status": "passed",
+          "errors": {
+            "O": {
+              "max_abs_error": 0.0019797682762145996,
+              "max_rel_error": 4.67075777053833
+            },
+            "L": {
+              "max_abs_error": 0.0012030601501464844,
+              "max_rel_error": 0.00021219422342255712
+            },
+            "dQ": {
+              "max_abs_error": 0.0015068650245666504,
+              "max_rel_error": 1.4868453741073608
+            },
+            "dK": {
+              "max_abs_error": 0.0011510252952575684,
+              "max_rel_error": 0.923285961151123
+            },
+            "dV": {
+              "max_abs_error": 0.0012520551681518555,
+              "max_rel_error": 1.1192677021026611
+            }
+          },
+          "tensor_pass": {
+            "O": true,
+            "L": true,
+            "dQ": true,
+            "dK": true,
+            "dV": true
+          },
+          "tolerance": {
+            "atol": 0.01,
+            "rtol": 0.01
+          },
+          "all_finite": true
+        }
+      }
+    },
+    {
+      "case_id": "seed3-d64-causal",
+      "seed": 3,
+      "dtype": "float32",
+      "batch_size": 1,
+      "sequence_length": 128,
+      "head_dimension": 64,
+      "causal": true,
+      "status": "passed",
+      "implementations": {
+        "pytorch": {
+          "status": "passed",
+          "errors": {
+            "O": {
+              "max_abs_error": 7.152557373046875e-07,
+              "max_rel_error": 0.0007618807139806449
+            },
+            "L": {
+              "max_abs_error": 4.76837158203125e-07,
+              "max_rel_error": 4.667748783049319e-07
+            },
+            "dQ": {
+              "max_abs_error": 5.417495572146436e-07,
+              "max_rel_error": 54.174957275390625
+            },
+            "dK": {
+              "max_abs_error": 7.152557373046875e-07,
+              "max_rel_error": 0.00299294525757432
+            },
+            "dV": {
+              "max_abs_error": 1.1920928955078125e-06,
+              "max_rel_error": 0.004439511802047491
+            }
+          },
+          "tensor_pass": {
+            "O": true,
+            "L": true,
+            "dQ": true,
+            "dK": true,
+            "dV": true
+          },
+          "tolerance": {
+            "atol": 0.01,
+            "rtol": 0.01
+          },
+          "all_finite": true
+        },
+        "triton": {
+          "status": "passed",
+          "errors": {
+            "O": {
+              "max_abs_error": 0.002714395523071289,
+              "max_rel_error": 0.8278059363365173
+            },
+            "L": {
+              "max_abs_error": 0.0017375946044921875,
+              "max_rel_error": 0.0009719030931591988
+            },
+            "dQ": {
+              "max_abs_error": 0.0020270347595214844,
+              "max_rel_error": 74246.2265625
+            },
+            "dK": {
+              "max_abs_error": 0.0022977590560913086,
+              "max_rel_error": 5.5341339111328125
+            },
+            "dV": {
+              "max_abs_error": 0.002868175506591797,
+              "max_rel_error": 7.8601555824279785
+            }
+          },
+          "tensor_pass": {
+            "O": true,
+            "L": true,
+            "dQ": true,
+            "dK": true,
+            "dV": true
+          },
+          "tolerance": {
+            "atol": 0.01,
+            "rtol": 0.01
+          },
+          "all_finite": true
+        }
+      }
+    },
+    {
+      "case_id": "seed3-d128-noncausal",
+      "seed": 3,
+      "dtype": "float32",
+      "batch_size": 1,
+      "sequence_length": 128,
+      "head_dimension": 128,
+      "causal": false,
+      "status": "passed",
+      "implementations": {
+        "pytorch": {
+          "status": "passed",
+          "errors": {
+            "O": {
+              "max_abs_error": 6.556510925292969e-07,
+              "max_rel_error": 0.0016275972593575716
+            },
+            "L": {
+              "max_abs_error": 4.76837158203125e-07,
+              "max_rel_error": 9.412937629349472e-08
+            },
+            "dQ": {
+              "max_abs_error": 3.5762786865234375e-07,
+              "max_rel_error": 0.0010413246927782893
+            },
+            "dK": {
+              "max_abs_error": 3.5762786865234375e-07,
+              "max_rel_error": 0.0005353838205337524
+            },
+            "dV": {
+              "max_abs_error": 2.086162567138672e-07,
+              "max_rel_error": 0.0019792180974036455
+            }
+          },
+          "tensor_pass": {
+            "O": true,
+            "L": true,
+            "dQ": true,
+            "dK": true,
+            "dV": true
+          },
+          "tolerance": {
+            "atol": 0.01,
+            "rtol": 0.01
+          },
+          "all_finite": true
+        },
+        "triton": {
+          "status": "passed",
+          "errors": {
+            "O": {
+              "max_abs_error": 0.0012807250022888184,
+              "max_rel_error": 5.575904846191406
+            },
+            "L": {
+              "max_abs_error": 0.001529693603515625,
+              "max_rel_error": 0.00026310846442356706
+            },
+            "dQ": {
+              "max_abs_error": 0.0010840296745300293,
+              "max_rel_error": 0.8434979319572449
+            },
+            "dK": {
+              "max_abs_error": 0.0009505152702331543,
+              "max_rel_error": 1.705447793006897
+            },
+            "dV": {
+              "max_abs_error": 0.0011350512504577637,
+              "max_rel_error": 0.9930727481842041
+            }
+          },
+          "tensor_pass": {
+            "O": true,
+            "L": true,
+            "dQ": true,
+            "dK": true,
+            "dV": true
+          },
+          "tolerance": {
+            "atol": 0.01,
+            "rtol": 0.01
+          },
+          "all_finite": true
+        }
+      }
+    },
+    {
+      "case_id": "seed3-d128-causal",
+      "seed": 3,
+      "dtype": "float32",
+      "batch_size": 1,
+      "sequence_length": 128,
+      "head_dimension": 128,
+      "causal": true,
+      "status": "passed",
+      "implementations": {
+        "pytorch": {
+          "status": "passed",
+          "errors": {
+            "O": {
+              "max_abs_error": 8.344650268554688e-07,
+              "max_rel_error": 0.008205837570130825
+            },
+            "L": {
+              "max_abs_error": 4.76837158203125e-07,
+              "max_rel_error": 2.134176071422189e-07
+            },
+            "dQ": {
+              "max_abs_error": 5.364418029785156e-07,
+              "max_rel_error": 0.011199318803846836
+            },
+            "dK": {
+              "max_abs_error": 7.748603820800781e-07,
+              "max_rel_error": 0.0010534864850342274
+            },
+            "dV": {
+              "max_abs_error": 5.960464477539062e-07,
+              "max_rel_error": 0.00479233218356967
+            }
+          },
+          "tensor_pass": {
+            "O": true,
+            "L": true,
+            "dQ": true,
+            "dK": true,
+            "dV": true
+          },
+          "tolerance": {
+            "atol": 0.01,
+            "rtol": 0.01
+          },
+          "all_finite": true
+        },
+        "triton": {
+          "status": "passed",
+          "errors": {
+            "O": {
+              "max_abs_error": 0.003840208053588867,
+              "max_rel_error": 4.755041122436523
+            },
+            "L": {
+              "max_abs_error": 0.0013294219970703125,
+              "max_rel_error": 0.003216416807845235
+            },
+            "dQ": {
+              "max_abs_error": 0.002194344997406006,
+              "max_rel_error": 28470.56640625
+            },
+            "dK": {
+              "max_abs_error": 0.0022461414337158203,
+              "max_rel_error": 1.4190137386322021
+            },
+            "dV": {
+              "max_abs_error": 0.00328826904296875,
+              "max_rel_error": 4.736421585083008
+            }
+          },
+          "tensor_pass": {
+            "O": true,
+            "L": true,
+            "dQ": true,
+            "dK": true,
+            "dV": true
+          },
+          "tolerance": {
+            "atol": 0.01,
+            "rtol": 0.01
+          },
+          "all_finite": true
+        }
+      }
+    },
+    {
+      "case_id": "seed17-d32-noncausal",
+      "seed": 17,
+      "dtype": "float32",
+      "batch_size": 1,
+      "sequence_length": 128,
+      "head_dimension": 32,
+      "causal": false,
+      "status": "passed",
+      "implementations": {
+        "pytorch": {
+          "status": "passed",
+          "errors": {
+            "O": {
+              "max_abs_error": 3.725290298461914e-07,
+              "max_rel_error": 0.0004937985795550048
+            },
+            "L": {
+              "max_abs_error": 4.76837158203125e-07,
+              "max_rel_error": 9.268996592481926e-08
+            },
+            "dQ": {
+              "max_abs_error": 3.8743019104003906e-07,
+              "max_rel_error": 0.000991622218862176
+            },
+            "dK": {
+              "max_abs_error": 3.5762786865234375e-07,
+              "max_rel_error": 0.008222753182053566
+            },
+            "dV": {
+              "max_abs_error": 2.980232238769531e-07,
+              "max_rel_error": 0.00014760364138055593
+            }
+          },
+          "tensor_pass": {
+            "O": true,
+            "L": true,
+            "dQ": true,
+            "dK": true,
+            "dV": true
+          },
+          "tolerance": {
+            "atol": 0.01,
+            "rtol": 0.01
+          },
+          "all_finite": true
+        },
+        "triton": {
+          "status": "passed",
+          "errors": {
+            "O": {
+              "max_abs_error": 0.0014390945434570312,
+              "max_rel_error": 0.844659149646759
+            },
+            "L": {
+              "max_abs_error": 0.0013632774353027344,
+              "max_rel_error": 0.00023812457220628858
+            },
+            "dQ": {
+              "max_abs_error": 0.0014877915382385254,
+              "max_rel_error": 0.39524325728416443
+            },
+            "dK": {
+              "max_abs_error": 0.001335740089416504,
+              "max_rel_error": 14.438615798950195
+            },
+            "dV": {
+              "max_abs_error": 0.0010371804237365723,
+              "max_rel_error": 0.27141767740249634
+            }
+          },
+          "tensor_pass": {
+            "O": true,
+            "L": true,
+            "dQ": true,
+            "dK": true,
+            "dV": true
+          },
+          "tolerance": {
+            "atol": 0.01,
+            "rtol": 0.01
+          },
+          "all_finite": true
+        }
+      }
+    },
+    {
+      "case_id": "seed17-d32-causal",
+      "seed": 17,
+      "dtype": "float32",
+      "batch_size": 1,
+      "sequence_length": 128,
+      "head_dimension": 32,
+      "causal": true,
+      "status": "passed",
+      "implementations": {
+        "pytorch": {
+          "status": "passed",
+          "errors": {
+            "O": {
+              "max_abs_error": 5.960464477539062e-07,
+              "max_rel_error": 0.0005757473991252482
+            },
+            "L": {
+              "max_abs_error": 4.76837158203125e-07,
+              "max_rel_error": 2.575235953372612e-07
+            },
+            "dQ": {
+              "max_abs_error": 5.662441253662109e-07,
+              "max_rel_error": 18.813709259033203
+            },
+            "dK": {
+              "max_abs_error": 9.5367431640625e-07,
+              "max_rel_error": 0.00020895128545816988
+            },
+            "dV": {
+              "max_abs_error": 5.960464477539062e-07,
+              "max_rel_error": 0.0004627589660231024
+            }
+          },
+          "tensor_pass": {
+            "O": true,
+            "L": true,
+            "dQ": true,
+            "dK": true,
+            "dV": true
+          },
+          "tolerance": {
+            "atol": 0.01,
+            "rtol": 0.01
+          },
+          "all_finite": true
+        },
+        "triton": {
+          "status": "passed",
+          "errors": {
+            "O": {
+              "max_abs_error": 0.0018500089645385742,
+              "max_rel_error": 0.9676626920700073
+            },
+            "L": {
+              "max_abs_error": 0.0018000602722167969,
+              "max_rel_error": 0.0019464276265352964
+            },
+            "dQ": {
+              "max_abs_error": 0.0023571252822875977,
+              "max_rel_error": 63852.59375
+            },
+            "dK": {
+              "max_abs_error": 0.0022104978561401367,
+              "max_rel_error": 0.5114078521728516
+            },
+            "dV": {
+              "max_abs_error": 0.0015921872109174728,
+              "max_rel_error": 0.223544642329216
+            }
+          },
+          "tensor_pass": {
+            "O": true,
+            "L": true,
+            "dQ": true,
+            "dK": true,
+            "dV": true
+          },
+          "tolerance": {
+            "atol": 0.01,
+            "rtol": 0.01
+          },
+          "all_finite": true
+        }
+      }
+    },
+    {
+      "case_id": "seed17-d64-noncausal",
+      "seed": 17,
+      "dtype": "float32",
+      "batch_size": 1,
+      "sequence_length": 128,
+      "head_dimension": 64,
+      "causal": false,
+      "status": "passed",
+      "implementations": {
+        "pytorch": {
+          "status": "passed",
+          "errors": {
+            "O": {
+              "max_abs_error": 3.5762786865234375e-07,
+              "max_rel_error": 0.03252376616001129
+            },
+            "L": {
+              "max_abs_error": 4.76837158203125e-07,
+              "max_rel_error": 9.282020130285673e-08
+            },
+            "dQ": {
+              "max_abs_error": 2.384185791015625e-07,
+              "max_rel_error": 0.0005400938680395484
+            },
+            "dK": {
+              "max_abs_error": 2.384185791015625e-07,
+              "max_rel_error": 0.00333874742500484
+            },
+            "dV": {
+              "max_abs_error": 2.384185791015625e-07,
+              "max_rel_error": 0.005083596799522638
+            }
+          },
+          "tensor_pass": {
+            "O": true,
+            "L": true,
+            "dQ": true,
+            "dK": true,
+            "dV": true
+          },
+          "tolerance": {
+            "atol": 0.01,
+            "rtol": 0.01
+          },
+          "all_finite": true
+        },
+        "triton": {
+          "status": "passed",
+          "errors": {
+            "O": {
+              "max_abs_error": 0.0014104247093200684,
+              "max_rel_error": 51.08557891845703
+            },
+            "L": {
+              "max_abs_error": 0.0013833045959472656,
+              "max_rel_error": 0.0002416493953205645
+            },
+            "dQ": {
+              "max_abs_error": 0.0008628368377685547,
+              "max_rel_error": 1.1106760501861572
+            },
+            "dK": {
+              "max_abs_error": 0.000705420970916748,
+              "max_rel_error": 5.721612930297852
+            },
+            "dV": {
+              "max_abs_error": 0.0006740093231201172,
+              "max_rel_error": 1.6714195013046265
+            }
+          },
+          "tensor_pass": {
+            "O": true,
+            "L": true,
+            "dQ": true,
+            "dK": true,
+            "dV": true
+          },
+          "tolerance": {
+            "atol": 0.01,
+            "rtol": 0.01
+          },
+          "all_finite": true
+        }
+      }
+    },
+    {
+      "case_id": "seed17-d64-causal",
+      "seed": 17,
+      "dtype": "float32",
+      "batch_size": 1,
+      "sequence_length": 128,
+      "head_dimension": 64,
+      "causal": true,
+      "status": "passed",
+      "implementations": {
+        "pytorch": {
+          "status": "passed",
+          "errors": {
+            "O": {
+              "max_abs_error": 7.152557373046875e-07,
+              "max_rel_error": 0.0022783505264669657
+            },
+            "L": {
+              "max_abs_error": 4.76837158203125e-07,
+              "max_rel_error": 1.173055181880045e-07
+            },
+            "dQ": {
+              "max_abs_error": 5.364418029785156e-07,
+              "max_rel_error": 13.303300857543945
+            },
+            "dK": {
+              "max_abs_error": 5.960464477539062e-07,
+              "max_rel_error": 0.0002320964413229376
+            },
+            "dV": {
+              "max_abs_error": 5.364418029785156e-07,
+              "max_rel_error": 0.000364029488991946
+            }
+          },
+          "tensor_pass": {
+            "O": true,
+            "L": true,
+            "dQ": true,
+            "dK": true,
+            "dV": true
+          },
+          "tolerance": {
+            "atol": 0.01,
+            "rtol": 0.01
+          },
+          "all_finite": true
+        },
+        "triton": {
+          "status": "passed",
+          "errors": {
+            "O": {
+              "max_abs_error": 0.0019217729568481445,
+              "max_rel_error": 3.3221945762634277
+            },
+            "L": {
+              "max_abs_error": 0.0013613700866699219,
+              "max_rel_error": 0.0005884640268050134
+            },
+            "dQ": {
+              "max_abs_error": 0.001908421516418457,
+              "max_rel_error": 60573.4609375
+            },
+            "dK": {
+              "max_abs_error": 0.002464115619659424,
+              "max_rel_error": 2.022845506668091
+            },
+            "dV": {
+              "max_abs_error": 0.002449512481689453,
+              "max_rel_error": 0.2584168016910553
+            }
+          },
+          "tensor_pass": {
+            "O": true,
+            "L": true,
+            "dQ": true,
+            "dK": true,
+            "dV": true
+          },
+          "tolerance": {
+            "atol": 0.01,
+            "rtol": 0.01
+          },
+          "all_finite": true
+        }
+      }
+    },
+    {
+      "case_id": "seed17-d128-noncausal",
+      "seed": 17,
+      "dtype": "float32",
+      "batch_size": 1,
+      "sequence_length": 128,
+      "head_dimension": 128,
+      "causal": false,
+      "status": "passed",
+      "implementations": {
+        "pytorch": {
+          "status": "passed",
+          "errors": {
+            "O": {
+              "max_abs_error": 4.023313522338867e-07,
+              "max_rel_error": 0.0027608887758105993
+            },
+            "L": {
+              "max_abs_error": 4.76837158203125e-07,
+              "max_rel_error": 9.436109138505344e-08
+            },
+            "dQ": {
+              "max_abs_error": 3.5762786865234375e-07,
+              "max_rel_error": 0.004030367825180292
+            },
+            "dK": {
+              "max_abs_error": 4.76837158203125e-07,
+              "max_rel_error": 0.005357224494218826
+            },
+            "dV": {
+              "max_abs_error": 3.5762786865234375e-07,
+              "max_rel_error": 0.0016402812907472253
+            }
+          },
+          "tensor_pass": {
+            "O": true,
+            "L": true,
+            "dQ": true,
+            "dK": true,
+            "dV": true
+          },
+          "tolerance": {
+            "atol": 0.01,
+            "rtol": 0.01
+          },
+          "all_finite": true
+        },
+        "triton": {
+          "status": "passed",
+          "errors": {
+            "O": {
+              "max_abs_error": 0.0011268854141235352,
+              "max_rel_error": 4.653525352478027
+            },
+            "L": {
+              "max_abs_error": 0.0011458396911621094,
+              "max_rel_error": 0.00020713097183033824
+            },
+            "dQ": {
+              "max_abs_error": 0.0010153651237487793,
+              "max_rel_error": 7.8954644203186035
+            },
+            "dK": {
+              "max_abs_error": 0.0012979507446289062,
+              "max_rel_error": 3.069303274154663
+            },
+            "dV": {
+              "max_abs_error": 0.0006675124168395996,
+              "max_rel_error": 0.4979517459869385
+            }
+          },
+          "tensor_pass": {
+            "O": true,
+            "L": true,
+            "dQ": true,
+            "dK": true,
+            "dV": true
+          },
+          "tolerance": {
+            "atol": 0.01,
+            "rtol": 0.01
+          },
+          "all_finite": true
+        }
+      }
+    },
+    {
+      "case_id": "seed17-d128-causal",
+      "seed": 17,
+      "dtype": "float32",
+      "batch_size": 1,
+      "sequence_length": 128,
+      "head_dimension": 128,
+      "causal": true,
+      "status": "passed",
+      "implementations": {
+        "pytorch": {
+          "status": "passed",
+          "errors": {
+            "O": {
+              "max_abs_error": 7.152557373046875e-07,
+              "max_rel_error": 0.0024021626450121403
+            },
+            "L": {
+              "max_abs_error": 4.76837158203125e-07,
+              "max_rel_error": 1.363535915288594e-07
+            },
+            "dQ": {
+              "max_abs_error": 4.76837158203125e-07,
+              "max_rel_error": 37.627418518066406
+            },
+            "dK": {
+              "max_abs_error": 8.344650268554688e-07,
+              "max_rel_error": 0.0069286031648516655
+            },
+            "dV": {
+              "max_abs_error": 9.834766387939453e-07,
+              "max_rel_error": 0.0039666797965765
+            }
+          },
+          "tensor_pass": {
+            "O": true,
+            "L": true,
+            "dQ": true,
+            "dK": true,
+            "dV": true
+          },
+          "tolerance": {
+            "atol": 0.01,
+            "rtol": 0.01
+          },
+          "all_finite": true
+        },
+        "triton": {
+          "status": "passed",
+          "errors": {
+            "O": {
+              "max_abs_error": 0.0020161867141723633,
+              "max_rel_error": 12.628204345703125
+            },
+            "L": {
+              "max_abs_error": 0.0013403892517089844,
+              "max_rel_error": 0.0009074276895262301
+            },
+            "dQ": {
+              "max_abs_error": 0.0023808032274246216,
+              "max_rel_error": 146887.578125
+            },
+            "dK": {
+              "max_abs_error": 0.0025186538696289062,
+              "max_rel_error": 6.947752475738525
+            },
+            "dV": {
+              "max_abs_error": 0.0021681785583496094,
+              "max_rel_error": 5.2078537940979
+            }
+          },
+          "tensor_pass": {
+            "O": true,
+            "L": true,
+            "dQ": true,
+            "dK": true,
+            "dV": true
+          },
+          "tolerance": {
+            "atol": 0.01,
+            "rtol": 0.01
+          },
+          "all_finite": true
+        }
+      }
+    },
+    {
+      "case_id": "seed29-d32-noncausal",
+      "seed": 29,
+      "dtype": "float32",
+      "batch_size": 1,
+      "sequence_length": 128,
+      "head_dimension": 32,
+      "causal": false,
+      "status": "passed",
+      "implementations": {
+        "pytorch": {
+          "status": "passed",
+          "errors": {
+            "O": {
+              "max_abs_error": 4.172325134277344e-07,
+              "max_rel_error": 0.004634878598153591
+            },
+            "L": {
+              "max_abs_error": 4.76837158203125e-07,
+              "max_rel_error": 9.327269623327084e-08
+            },
+            "dQ": {
+              "max_abs_error": 4.172325134277344e-07,
+              "max_rel_error": 0.0004275216779205948
+            },
+            "dK": {
+              "max_abs_error": 2.980232238769531e-07,
+              "max_rel_error": 0.0034952787682414055
+            },
+            "dV": {
+              "max_abs_error": 2.384185791015625e-07,
+              "max_rel_error": 0.0008107998291961849
+            }
+          },
+          "tensor_pass": {
+            "O": true,
+            "L": true,
+            "dQ": true,
+            "dK": true,
+            "dV": true
+          },
+          "tolerance": {
+            "atol": 0.01,
+            "rtol": 0.01
+          },
+          "all_finite": true
+        },
+        "triton": {
+          "status": "passed",
+          "errors": {
+            "O": {
+              "max_abs_error": 0.0012805461883544922,
+              "max_rel_error": 6.33649206161499
+            },
+            "L": {
+              "max_abs_error": 0.0015192031860351562,
+              "max_rel_error": 0.0002678442979231477
+            },
+            "dQ": {
+              "max_abs_error": 0.0010333657264709473,
+              "max_rel_error": 0.36375346779823303
+            },
+            "dK": {
+              "max_abs_error": 0.0007630586624145508,
+              "max_rel_error": 1.9508498907089233
+            },
+            "dV": {
+              "max_abs_error": 0.001252889633178711,
+              "max_rel_error": 1.5922893285751343
+            }
+          },
+          "tensor_pass": {
+            "O": true,
+            "L": true,
+            "dQ": true,
+            "dK": true,
+            "dV": true
+          },
+          "tolerance": {
+            "atol": 0.01,
+            "rtol": 0.01
+          },
+          "all_finite": true
+        }
+      }
+    },
+    {
+      "case_id": "seed29-d32-causal",
+      "seed": 29,
+      "dtype": "float32",
+      "batch_size": 1,
+      "sequence_length": 128,
+      "head_dimension": 32,
+      "causal": true,
+      "status": "passed",
+      "implementations": {
+        "pytorch": {
+          "status": "passed",
+          "errors": {
+            "O": {
+              "max_abs_error": 7.152557373046875e-07,
+              "max_rel_error": 0.0006924536428414285
+            },
+            "L": {
+              "max_abs_error": 4.76837158203125e-07,
+              "max_rel_error": 2.0323086573625915e-06
+            },
+            "dQ": {
+              "max_abs_error": 6.556510925292969e-07,
+              "max_rel_error": 11.52238941192627
+            },
+            "dK": {
+              "max_abs_error": 8.344650268554688e-07,
+              "max_rel_error": 0.0032492573373019695
+            },
+            "dV": {
+              "max_abs_error": 7.152557373046875e-07,
+              "max_rel_error": 0.0007735518738627434
+            }
+          },
+          "tensor_pass": {
+            "O": true,
+            "L": true,
+            "dQ": true,
+            "dK": true,
+            "dV": true
+          },
+          "tolerance": {
+            "atol": 0.01,
+            "rtol": 0.01
+          },
+          "all_finite": true
+        },
+        "triton": {
+          "status": "passed",
+          "errors": {
+            "O": {
+              "max_abs_error": 0.0018286705017089844,
+              "max_rel_error": 1.0951634645462036
+            },
+            "L": {
+              "max_abs_error": 0.001983642578125,
+              "max_rel_error": 0.007123513147234917
+            },
+            "dQ": {
+              "max_abs_error": 0.002882242202758789,
+              "max_rel_error": 53012.23828125
+            },
+            "dK": {
+              "max_abs_error": 0.0035096406936645508,
+              "max_rel_error": 1.8748043775558472
+            },
+            "dV": {
+              "max_abs_error": 0.0030732154846191406,
+              "max_rel_error": 0.3649691641330719
+            }
+          },
+          "tensor_pass": {
+            "O": true,
+            "L": true,
+            "dQ": true,
+            "dK": true,
+            "dV": true
+          },
+          "tolerance": {
+            "atol": 0.01,
+            "rtol": 0.01
+          },
+          "all_finite": true
+        }
+      }
+    },
+    {
+      "case_id": "seed29-d64-noncausal",
+      "seed": 29,
+      "dtype": "float32",
+      "batch_size": 1,
+      "sequence_length": 128,
+      "head_dimension": 64,
+      "causal": false,
+      "status": "passed",
+      "implementations": {
+        "pytorch": {
+          "status": "passed",
+          "errors": {
+            "O": {
+              "max_abs_error": 1.1920928955078125e-06,
+              "max_rel_error": 0.00099661061540246
+            },
+            "L": {
+              "max_abs_error": 9.5367431640625e-07,
+              "max_rel_error": 1.6784501610800362e-07
+            },
+            "dQ": {
+              "max_abs_error": 4.172325134277344e-07,
+              "max_rel_error": 0.0011398176429793239
+            },
+            "dK": {
+              "max_abs_error": 4.76837158203125e-07,
+              "max_rel_error": 0.004030358977615833
+            },
+            "dV": {
+              "max_abs_error": 5.960464477539062e-07,
+              "max_rel_error": 0.0005979480338282883
+            }
+          },
+          "tensor_pass": {
+            "O": true,
+            "L": true,
+            "dQ": true,
+            "dK": true,
+            "dV": true
+          },
+          "tolerance": {
+            "atol": 0.01,
+            "rtol": 0.01
+          },
+          "all_finite": true
+        },
+        "triton": {
+          "status": "passed",
+          "errors": {
+            "O": {
+              "max_abs_error": 0.002365589141845703,
+              "max_rel_error": 1.3304824829101562
+            },
+            "L": {
+              "max_abs_error": 0.0012502670288085938,
+              "max_rel_error": 0.00022004482161719352
+            },
+            "dQ": {
+              "max_abs_error": 0.0008780956268310547,
+              "max_rel_error": 0.7674772143363953
+            },
+            "dK": {
+              "max_abs_error": 0.0008150935173034668,
+              "max_rel_error": 3.523421287536621
+            },
+            "dV": {
+              "max_abs_error": 0.0011893510818481445,
+              "max_rel_error": 0.5723326802253723
+            }
+          },
+          "tensor_pass": {
+            "O": true,
+            "L": true,
+            "dQ": true,
+            "dK": true,
+            "dV": true
+          },
+          "tolerance": {
+            "atol": 0.01,
+            "rtol": 0.01
+          },
+          "all_finite": true
+        }
+      }
+    },
+    {
+      "case_id": "seed29-d64-causal",
+      "seed": 29,
+      "dtype": "float32",
+      "batch_size": 1,
+      "sequence_length": 128,
+      "head_dimension": 64,
+      "causal": true,
+      "status": "passed",
+      "implementations": {
+        "pytorch": {
+          "status": "passed",
+          "errors": {
+            "O": {
+              "max_abs_error": 5.066394805908203e-07,
+              "max_rel_error": 0.0007677912944927812
+            },
+            "L": {
+              "max_abs_error": 4.76837158203125e-07,
+              "max_rel_error": 1.9504821580085263e-07
+            },
+            "dQ": {
+              "max_abs_error": 1.0728836059570312e-06,
+              "max_rel_error": 0.0007264000014401972
+            },
+            "dK": {
+              "max_abs_error": 7.152557373046875e-07,
+              "max_rel_error": 0.004676539450883865
+            },
+            "dV": {
+              "max_abs_error": 9.5367431640625e-07,
+              "max_rel_error": 0.0005849406006745994
+            }
+          },
+          "tensor_pass": {
+            "O": true,
+            "L": true,
+            "dQ": true,
+            "dK": true,
+            "dV": true
+          },
+          "tolerance": {
+            "atol": 0.01,
+            "rtol": 0.01
+          },
+          "all_finite": true
+        },
+        "triton": {
+          "status": "passed",
+          "errors": {
+            "O": {
+              "max_abs_error": 0.00223386287689209,
+              "max_rel_error": 4.183006763458252
+            },
+            "L": {
+              "max_abs_error": 0.0016584396362304688,
+              "max_rel_error": 0.0011875758646056056
+            },
+            "dQ": {
+              "max_abs_error": 0.004000663757324219,
+              "max_rel_error": 119382.796875
+            },
+            "dK": {
+              "max_abs_error": 0.0035005807876586914,
+              "max_rel_error": 51.341224670410156
+            },
+            "dV": {
+              "max_abs_error": 0.003728628158569336,
+              "max_rel_error": 0.5592992305755615
+            }
+          },
+          "tensor_pass": {
+            "O": true,
+            "L": true,
+            "dQ": true,
+            "dK": true,
+            "dV": true
+          },
+          "tolerance": {
+            "atol": 0.01,
+            "rtol": 0.01
+          },
+          "all_finite": true
+        }
+      }
+    },
+    {
+      "case_id": "seed29-d128-noncausal",
+      "seed": 29,
+      "dtype": "float32",
+      "batch_size": 1,
+      "sequence_length": 128,
+      "head_dimension": 128,
+      "causal": false,
+      "status": "passed",
+      "implementations": {
+        "pytorch": {
+          "status": "passed",
+          "errors": {
+            "O": {
+              "max_abs_error": 4.172325134277344e-07,
+              "max_rel_error": 0.00751965818926692
+            },
+            "L": {
+              "max_abs_error": 4.76837158203125e-07,
+              "max_rel_error": 9.231717257307537e-08
+            },
+            "dQ": {
+              "max_abs_error": 4.470348358154297e-07,
+              "max_rel_error": 0.00236948998644948
+            },
+            "dK": {
+              "max_abs_error": 4.470348358154297e-07,
+              "max_rel_error": 0.0013626425061374903
+            },
+            "dV": {
+              "max_abs_error": 2.384185791015625e-07,
+              "max_rel_error": 0.0008419280056841671
+            }
+          },
+          "tensor_pass": {
+            "O": true,
+            "L": true,
+            "dQ": true,
+            "dK": true,
+            "dV": true
+          },
+          "tolerance": {
+            "atol": 0.01,
+            "rtol": 0.01
+          },
+          "all_finite": true
+        },
+        "triton": {
+          "status": "passed",
+          "errors": {
+            "O": {
+              "max_abs_error": 0.0014945268630981445,
+              "max_rel_error": 20.00225830078125
+            },
+            "L": {
+              "max_abs_error": 0.0012059211730957031,
+              "max_rel_error": 0.00021474897221196443
+            },
+            "dQ": {
+              "max_abs_error": 0.0013266205787658691,
+              "max_rel_error": 2.4390430450439453
+            },
+            "dK": {
+              "max_abs_error": 0.0011019110679626465,
+              "max_rel_error": 1.8421244621276855
+            },
+            "dV": {
+              "max_abs_error": 0.0007107257843017578,
+              "max_rel_error": 1.1605207920074463
+            }
+          },
+          "tensor_pass": {
+            "O": true,
+            "L": true,
+            "dQ": true,
+            "dK": true,
+            "dV": true
+          },
+          "tolerance": {
+            "atol": 0.01,
+            "rtol": 0.01
+          },
+          "all_finite": true
+        }
+      }
+    },
+    {
+      "case_id": "seed29-d128-causal",
+      "seed": 29,
+      "dtype": "float32",
+      "batch_size": 1,
+      "sequence_length": 128,
+      "head_dimension": 128,
+      "causal": true,
+      "status": "passed",
+      "implementations": {
+        "pytorch": {
+          "status": "passed",
+          "errors": {
+            "O": {
+              "max_abs_error": 1.0728836059570312e-06,
+              "max_rel_error": 0.001780719612725079
+            },
+            "L": {
+              "max_abs_error": 7.152557373046875e-07,
+              "max_rel_error": 5.887156362405221e-07
+            },
+            "dQ": {
+              "max_abs_error": 2.9802322387695312e-06,
+              "max_rel_error": 49.10479736328125
+            },
+            "dK": {
+              "max_abs_error": 2.9802322387695312e-06,
+              "max_rel_error": 0.0011548319598659873
+            },
+            "dV": {
+              "max_abs_error": 1.1920928955078125e-06,
+              "max_rel_error": 0.0034355036914348602
+            }
+          },
+          "tensor_pass": {
+            "O": true,
+            "L": true,
+            "dQ": true,
+            "dK": true,
+            "dV": true
+          },
+          "tolerance": {
+            "atol": 0.01,
+            "rtol": 0.01
+          },
+          "all_finite": true
+        },
+        "triton": {
+          "status": "passed",
+          "errors": {
+            "O": {
+              "max_abs_error": 0.0021762847900390625,
+              "max_rel_error": 8.563495635986328
+            },
+            "L": {
+              "max_abs_error": 0.002247333526611328,
+              "max_rel_error": 0.0032134060747921467
+            },
+            "dQ": {
+              "max_abs_error": 0.008189678192138672,
+              "max_rel_error": 256530.890625
+            },
+            "dK": {
+              "max_abs_error": 0.0072574615478515625,
+              "max_rel_error": 3.0339512825012207
+            },
+            "dV": {
+              "max_abs_error": 0.004306674003601074,
+              "max_rel_error": 1.247463583946228
+            }
+          },
+          "tensor_pass": {
+            "O": true,
+            "L": true,
+            "dQ": true,
+            "dK": true,
+            "dV": true
+          },
+          "tolerance": {
+            "atol": 0.01,
+            "rtol": 0.01
+          },
+          "all_finite": true
+        }
+      }
+    }
+  ]
+}

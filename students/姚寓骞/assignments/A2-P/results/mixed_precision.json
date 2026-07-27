@@ -1,0 +1,149 @@
+{
+  "accumulation": {
+    "operation": "sequentially add 0.01 1000 times",
+    "expected": 10.0,
+    "experiments": [
+      {
+        "name": "fp32_accumulator_fp32_addend",
+        "result": 10.000133514404297,
+        "result_dtype": "torch.float32",
+        "absolute_error": 0.000133514404296875
+      },
+      {
+        "name": "fp16_accumulator_fp16_addend",
+        "result": 9.953125,
+        "result_dtype": "torch.float16",
+        "absolute_error": 0.046875
+      },
+      {
+        "name": "fp32_accumulator_fp16_addend",
+        "result": 10.00213623046875,
+        "result_dtype": "torch.float32",
+        "absolute_error": 0.00213623046875
+      },
+      {
+        "name": "fp32_accumulator_explicit_fp16_to_fp32",
+        "result": 10.00213623046875,
+        "result_dtype": "torch.float32",
+        "absolute_error": 0.00213623046875
+      }
+    ]
+  },
+  "toy_model": {
+    "experiment": "ToyModel FP32 versus CUDA BF16 autocast",
+    "config": {
+      "batch_size": 4096,
+      "in_features": 4096,
+      "out_features": 4096,
+      "warmup": 5,
+      "steps": 10,
+      "seed": 0,
+      "output": "results/a2p_raw/mixed_precision/toy_model.json"
+    },
+    "environment": {
+      "python": "3.12.3",
+      "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.39",
+      "torch": "2.11.0+cu128",
+      "device": "cuda",
+      "cuda_runtime": "12.8",
+      "gpu": "NVIDIA H100 80GB HBM3",
+      "gpu_capability": [
+        9,
+        0
+      ],
+      "driver": "570.124.06",
+      "nsight_systems": "NVIDIA Nsight Systems version 2025.1.1.65-251135387579v0"
+    },
+    "command": "profiling/mixed_precision_benchmark.py --batch-size 4096 --in-features 4096 --out-features 4096 --warmup 5 --steps 10 --output results/a2p_raw/mixed_precision/toy_model.json",
+    "runs": [
+      {
+        "dtype": "fp32",
+        "observed_dtypes": {
+          "fc1_output": "torch.float32",
+          "layernorm_output": "torch.float32",
+          "parameters": [
+            "torch.float32"
+          ],
+          "logits": "torch.float32",
+          "loss": "torch.float32",
+          "gradients": [
+            "torch.float32"
+          ]
+        },
+        "timings_ms": [
+          1.5766378492116928,
+          0.890364870429039,
+          0.8162464946508408,
+          0.779988244175911,
+          0.7623657584190369,
+          0.7717069238424301,
+          0.7934235036373138,
+          0.7997378706932068,
+          0.7857363671064377,
+          0.7637310773134232
+        ],
+        "mean_ms": 0.8739938959479332,
+        "std_ms": 0.24967192929702095,
+        "cv": 0.2856678181101333,
+        "losses": [
+          1.2951972484588623,
+          1.2902212142944336,
+          1.2856167554855347,
+          1.2812787294387817,
+          1.276855230331421,
+          1.2727291584014893,
+          1.268788456916809,
+          1.2648804187774658,
+          1.2610443830490112,
+          1.2571988105773926
+        ],
+        "peak_allocated_bytes": 404327936,
+        "peak_reserved_bytes": 404750336
+      },
+      {
+        "dtype": "bf16",
+        "observed_dtypes": {
+          "fc1_output": "torch.bfloat16",
+          "layernorm_output": "torch.float32",
+          "parameters": [
+            "torch.float32"
+          ],
+          "logits": "torch.bfloat16",
+          "loss": "torch.float32",
+          "gradients": [
+            "torch.float32"
+          ]
+        },
+        "timings_ms": [
+          1.9155684858560562,
+          0.9759403765201569,
+          0.9543411433696747,
+          0.8839163929224014,
+          0.8652564138174057,
+          0.8688159286975861,
+          0.9234696626663208,
+          0.9639058262109756,
+          0.9434949606657028,
+          0.9252764284610748
+        ],
+        "mean_ms": 1.0219985619187355,
+        "std_ms": 0.31637995680988096,
+        "cv": 0.3095698649672249,
+        "losses": [
+          1.2954084873199463,
+          1.2903878688812256,
+          1.2859156131744385,
+          1.2811684608459473,
+          1.2768263816833496,
+          1.2727391719818115,
+          1.2686675786972046,
+          1.2648121118545532,
+          1.2609930038452148,
+          1.2572767734527588
+        ],
+        "peak_allocated_bytes": 471275520,
+        "peak_reserved_bytes": 471859200
+      }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "allocator": {
+    "allocator_fraction": 0.9768130292889415,
+    "allocator_limit_mib": 23552
+  },
+  "hard_limit_mib": 24576,
+  "pytorch_peak_allocated_mib": 19352.6845703125,
+  "pytorch_peak_reserved_mib": 19696.0,
+  "within_allocator_limit": true,
+  "within_24gib": true,
+  "note": "Maximum across checkpoint, explicit attention and Flash formal processes; each matrix used isolated serial processes."
+}

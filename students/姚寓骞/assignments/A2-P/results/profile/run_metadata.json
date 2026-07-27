@@ -1,0 +1,238 @@
+{
+  "runs": [
+    {
+      "run_name": "small_c256_train_step_fp32",
+      "config": {
+        "model_size": "small",
+        "batch_size": 4,
+        "context_length": 256,
+        "vocab_size": 10000,
+        "mode": "train_step",
+        "warmup": 5,
+        "steps": 1,
+        "dtype": "fp32",
+        "device": "cuda",
+        "seed": 0
+      },
+      "model": {
+        "d_model": 768,
+        "num_layers": 12,
+        "num_heads": 12,
+        "d_ff": 3072
+      },
+      "environment": {
+        "python": "3.12.3",
+        "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.39",
+        "torch": "2.11.0+cu128",
+        "device": "cuda",
+        "cuda_runtime": "12.8",
+        "gpu": "NVIDIA H100 80GB HBM3",
+        "gpu_capability": [
+          9,
+          0
+        ],
+        "driver": "570.124.06",
+        "nsight_systems": "NVIDIA Nsight Systems version 2025.1.1.65-251135387579v0"
+      },
+      "command": "profiling/benchmark.py --model-size small --batch-size 4 --context-length 256 --mode train_step --warmup 5 --steps 1 --dtype fp32 --cuda-profiler-api --output=results/a2p_raw/profile/small_c256_train_step_fp32.json",
+      "local_trace_file": "small_c256_train_step_fp32.nsys-rep",
+      "submitted_trace": false,
+      "tool": "Nsight Systems"
+    },
+    {
+      "run_name": "small_c512_train_step_fp32",
+      "config": {
+        "model_size": "small",
+        "batch_size": 4,
+        "context_length": 512,
+        "vocab_size": 10000,
+        "mode": "train_step",
+        "warmup": 5,
+        "steps": 1,
+        "dtype": "fp32",
+        "device": "cuda",
+        "seed": 0
+      },
+      "model": {
+        "d_model": 768,
+        "num_layers": 12,
+        "num_heads": 12,
+        "d_ff": 3072
+      },
+      "environment": {
+        "python": "3.12.3",
+        "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.39",
+        "torch": "2.11.0+cu128",
+        "device": "cuda",
+        "cuda_runtime": "12.8",
+        "gpu": "NVIDIA H100 80GB HBM3",
+        "gpu_capability": [
+          9,
+          0
+        ],
+        "driver": "570.124.06",
+        "nsight_systems": "NVIDIA Nsight Systems version 2025.1.1.65-251135387579v0"
+      },
+      "command": "profiling/benchmark.py --model-size small --batch-size 4 --context-length 512 --mode train_step --warmup 5 --steps 1 --dtype fp32 --cuda-profiler-api --output=results/a2p_raw/profile/small_c512_train_step_fp32.json",
+      "local_trace_file": "small_c512_train_step_fp32.nsys-rep",
+      "submitted_trace": false,
+      "tool": "Nsight Systems"
+    },
+    {
+      "run_name": "small_c1024_train_step_fp32",
+      "config": {
+        "model_size": "small",
+        "batch_size": 4,
+        "context_length": 1024,
+        "vocab_size": 10000,
+        "mode": "train_step",
+        "warmup": 5,
+        "steps": 1,
+        "dtype": "fp32",
+        "device": "cuda",
+        "seed": 0
+      },
+      "model": {
+        "d_model": 768,
+        "num_layers": 12,
+        "num_heads": 12,
+        "d_ff": 3072
+      },
+      "environment": {
+        "python": "3.12.3",
+        "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.39",
+        "torch": "2.11.0+cu128",
+        "device": "cuda",
+        "cuda_runtime": "12.8",
+        "gpu": "NVIDIA H100 80GB HBM3",
+        "gpu_capability": [
+          9,
+          0
+        ],
+        "driver": "570.124.06",
+        "nsight_systems": "NVIDIA Nsight Systems version 2025.1.1.65-251135387579v0"
+      },
+      "command": "profiling/benchmark.py --model-size small --batch-size 4 --context-length 1024 --mode train_step --warmup 5 --steps 1 --dtype fp32 --cuda-profiler-api --output=results/a2p_raw/profile/small_c1024_train_step_fp32.json",
+      "local_trace_file": "small_c1024_train_step_fp32.nsys-rep",
+      "submitted_trace": false,
+      "tool": "Nsight Systems"
+    },
+    {
+      "run_name": "large_c256_train_step_fp32",
+      "config": {
+        "model_size": "large",
+        "batch_size": 4,
+        "context_length": 256,
+        "vocab_size": 10000,
+        "mode": "train_step",
+        "warmup": 5,
+        "steps": 1,
+        "dtype": "fp32",
+        "device": "cuda",
+        "seed": 0
+      },
+      "model": {
+        "d_model": 1280,
+        "num_layers": 36,
+        "num_heads": 20,
+        "d_ff": 5120
+      },
+      "environment": {
+        "python": "3.12.3",
+        "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.39",
+        "torch": "2.11.0+cu128",
+        "device": "cuda",
+        "cuda_runtime": "12.8",
+        "gpu": "NVIDIA H100 80GB HBM3",
+        "gpu_capability": [
+          9,
+          0
+        ],
+        "driver": "570.124.06",
+        "nsight_systems": "NVIDIA Nsight Systems version 2025.1.1.65-251135387579v0"
+      },
+      "command": "profiling/benchmark.py --model-size large --batch-size 4 --context-length 256 --mode train_step --warmup 5 --steps 1 --dtype fp32 --cuda-profiler-api --output=results/a2p_raw/profile/large_c256_train_step_fp32.json",
+      "local_trace_file": "large_c256_train_step_fp32.nsys-rep",
+      "submitted_trace": false,
+      "tool": "Nsight Systems"
+    },
+    {
+      "run_name": "large_c512_train_step_fp32",
+      "config": {
+        "model_size": "large",
+        "batch_size": 4,
+        "context_length": 512,
+        "vocab_size": 10000,
+        "mode": "train_step",
+        "warmup": 5,
+        "steps": 1,
+        "dtype": "fp32",
+        "device": "cuda",
+        "seed": 0
+      },
+      "model": {
+        "d_model": 1280,
+        "num_layers": 36,
+        "num_heads": 20,
+        "d_ff": 5120
+      },
+      "environment": {
+        "python": "3.12.3",
+        "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.39",
+        "torch": "2.11.0+cu128",
+        "device": "cuda",
+        "cuda_runtime": "12.8",
+        "gpu": "NVIDIA H100 80GB HBM3",
+        "gpu_capability": [
+          9,
+          0
+        ],
+        "driver": "570.124.06",
+        "nsight_systems": "NVIDIA Nsight Systems version 2025.1.1.65-251135387579v0"
+      },
+      "command": "profiling/benchmark.py --model-size large --batch-size 4 --context-length 512 --mode train_step --warmup 5 --steps 1 --dtype fp32 --cuda-profiler-api --output=results/a2p_raw/profile/large_c512_train_step_fp32.json",
+      "local_trace_file": "large_c512_train_step_fp32.nsys-rep",
+      "submitted_trace": false,
+      "tool": "Nsight Systems"
+    },
+    {
+      "run_name": "large_c1024_train_step_fp32",
+      "config": {
+        "model_size": "large",
+        "batch_size": 4,
+        "context_length": 1024,
+        "vocab_size": 10000,
+        "mode": "train_step",
+        "warmup": 5,
+        "steps": 1,
+        "dtype": "fp32",
+        "device": "cuda",
+        "seed": 0
+      },
+      "model": {
+        "d_model": 1280,
+        "num_layers": 36,
+        "num_heads": 20,
+        "d_ff": 5120
+      },
+      "environment": {
+        "python": "3.12.3",
+        "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.39",
+        "torch": "2.11.0+cu128",
+        "device": "cuda",
+        "cuda_runtime": "12.8",
+        "gpu": "NVIDIA H100 80GB HBM3",
+        "gpu_capability": [
+          9,
+          0
+        ],
+        "driver": "570.124.06",
+        "nsight_systems": "NVIDIA Nsight Systems version 2025.1.1.65-251135387579v0"
+      },
+      "command": "profiling/benchmark.py --model-size large --batch-size 4 --context-length 1024 --mode train_step --warmup 5 --steps 1 --dtype fp32 --cuda-profiler-api --output=results/a2p_raw/profile/large_c1024_train_step_fp32.json",
+      "local_trace_file": "large_c1024_train_step_fp32.nsys-rep",
+      "submitted_trace": false,
+      "tool": "Nsight Systems"
+    }
+  ]
+}

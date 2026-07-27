@@ -1,0 +1,635 @@
+{
+  "device": "cuda",
+  "cases": [
+    {
+      "seed": 0,
+      "head_dim": 32,
+      "is_causal": false,
+      "dtype": "torch.float32",
+      "shape": [
+        2,
+        128,
+        32
+      ],
+      "tolerance_abs": 0.005,
+      "checks": {
+        "output": {
+          "max_abs": 0.0020960569381713867,
+          "max_rel": 2.603083610534668
+        },
+        "lse": {
+          "max_abs": 0.0017766952514648438,
+          "max_rel": 0.0002928799076471478
+        },
+        "dq": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        },
+        "dk": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        },
+        "dv": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        }
+      },
+      "pass": true
+    },
+    {
+      "seed": 0,
+      "head_dim": 32,
+      "is_causal": true,
+      "dtype": "torch.float32",
+      "shape": [
+        2,
+        128,
+        32
+      ],
+      "tolerance_abs": 0.005,
+      "checks": {
+        "output": {
+          "max_abs": 0.0025275349617004395,
+          "max_rel": 8.53103256225586
+        },
+        "lse": {
+          "max_abs": 0.0018634796142578125,
+          "max_rel": 0.0037282900884747505
+        },
+        "dq": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        },
+        "dk": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        },
+        "dv": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        }
+      },
+      "pass": true
+    },
+    {
+      "seed": 0,
+      "head_dim": 64,
+      "is_causal": false,
+      "dtype": "torch.float32",
+      "shape": [
+        2,
+        128,
+        64
+      ],
+      "tolerance_abs": 0.005,
+      "checks": {
+        "output": {
+          "max_abs": 0.0012049376964569092,
+          "max_rel": 6.956525802612305
+        },
+        "lse": {
+          "max_abs": 0.0013971328735351562,
+          "max_rel": 0.00023913595941849053
+        },
+        "dq": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        },
+        "dk": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        },
+        "dv": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        }
+      },
+      "pass": true
+    },
+    {
+      "seed": 0,
+      "head_dim": 64,
+      "is_causal": true,
+      "dtype": "torch.float32",
+      "shape": [
+        2,
+        128,
+        64
+      ],
+      "tolerance_abs": 0.005,
+      "checks": {
+        "output": {
+          "max_abs": 0.002743244171142578,
+          "max_rel": 7.128067970275879
+        },
+        "lse": {
+          "max_abs": 0.002943754196166992,
+          "max_rel": 0.004653334151953459
+        },
+        "dq": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        },
+        "dk": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        },
+        "dv": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        }
+      },
+      "pass": true
+    },
+    {
+      "seed": 0,
+      "head_dim": 128,
+      "is_causal": false,
+      "dtype": "torch.float32",
+      "shape": [
+        2,
+        128,
+        128
+      ],
+      "tolerance_abs": 0.005,
+      "checks": {
+        "output": {
+          "max_abs": 0.0020669102668762207,
+          "max_rel": 18.88291358947754
+        },
+        "lse": {
+          "max_abs": 0.001476287841796875,
+          "max_rel": 0.00026282426551915705
+        },
+        "dq": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        },
+        "dk": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        },
+        "dv": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        }
+      },
+      "pass": true
+    },
+    {
+      "seed": 0,
+      "head_dim": 128,
+      "is_causal": true,
+      "dtype": "torch.float32",
+      "shape": [
+        2,
+        128,
+        128
+      ],
+      "tolerance_abs": 0.005,
+      "checks": {
+        "output": {
+          "max_abs": 0.0027898550033569336,
+          "max_rel": 17.598800659179688
+        },
+        "lse": {
+          "max_abs": 0.002454519271850586,
+          "max_rel": 0.001512398710474372
+        },
+        "dq": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        },
+        "dk": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        },
+        "dv": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        }
+      },
+      "pass": true
+    },
+    {
+      "seed": 1,
+      "head_dim": 32,
+      "is_causal": false,
+      "dtype": "torch.bfloat16",
+      "shape": [
+        2,
+        128,
+        32
+      ],
+      "tolerance_abs": 0.03,
+      "checks": {
+        "output": {
+          "max_abs": 0.0078125,
+          "max_rel": 33.715084075927734
+        },
+        "lse": {
+          "max_abs": 0.003379344940185547,
+          "max_rel": 0.0006003024172969162
+        },
+        "dq": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        },
+        "dk": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        },
+        "dv": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        }
+      },
+      "pass": true
+    },
+    {
+      "seed": 1,
+      "head_dim": 32,
+      "is_causal": true,
+      "dtype": "torch.bfloat16",
+      "shape": [
+        2,
+        128,
+        32
+      ],
+      "tolerance_abs": 0.03,
+      "checks": {
+        "output": {
+          "max_abs": 0.0078125,
+          "max_rel": 44.04854202270508
+        },
+        "lse": {
+          "max_abs": 0.006161928176879883,
+          "max_rel": 0.002383106155321002
+        },
+        "dq": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        },
+        "dk": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        },
+        "dv": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        }
+      },
+      "pass": true
+    },
+    {
+      "seed": 1,
+      "head_dim": 64,
+      "is_causal": false,
+      "dtype": "torch.bfloat16",
+      "shape": [
+        2,
+        128,
+        64
+      ],
+      "tolerance_abs": 0.03,
+      "checks": {
+        "output": {
+          "max_abs": 0.0078125,
+          "max_rel": 17.616352081298828
+        },
+        "lse": {
+          "max_abs": 0.0021562576293945312,
+          "max_rel": 0.0003775647492147982
+        },
+        "dq": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        },
+        "dk": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        },
+        "dv": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        }
+      },
+      "pass": true
+    },
+    {
+      "seed": 1,
+      "head_dim": 64,
+      "is_causal": true,
+      "dtype": "torch.bfloat16",
+      "shape": [
+        2,
+        128,
+        64
+      ],
+      "tolerance_abs": 0.03,
+      "checks": {
+        "output": {
+          "max_abs": 0.015625,
+          "max_rel": 5.432432651519775
+        },
+        "lse": {
+          "max_abs": 0.00394749641418457,
+          "max_rel": 0.003163817571476102
+        },
+        "dq": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        },
+        "dk": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        },
+        "dv": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        }
+      },
+      "pass": true
+    },
+    {
+      "seed": 1,
+      "head_dim": 128,
+      "is_causal": false,
+      "dtype": "torch.bfloat16",
+      "shape": [
+        2,
+        128,
+        128
+      ],
+      "tolerance_abs": 0.03,
+      "checks": {
+        "output": {
+          "max_abs": 0.0078125,
+          "max_rel": 778.8837280273438
+        },
+        "lse": {
+          "max_abs": 0.003559589385986328,
+          "max_rel": 0.0006330963224172592
+        },
+        "dq": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        },
+        "dk": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        },
+        "dv": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        }
+      },
+      "pass": true
+    },
+    {
+      "seed": 1,
+      "head_dim": 128,
+      "is_causal": true,
+      "dtype": "torch.bfloat16",
+      "shape": [
+        2,
+        128,
+        128
+      ],
+      "tolerance_abs": 0.03,
+      "checks": {
+        "output": {
+          "max_abs": 0.015625,
+          "max_rel": 29.0930233001709
+        },
+        "lse": {
+          "max_abs": 0.006804466247558594,
+          "max_rel": 0.0032524762209504843
+        },
+        "dq": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        },
+        "dk": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        },
+        "dv": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        }
+      },
+      "pass": true
+    },
+    {
+      "seed": 2,
+      "head_dim": 32,
+      "is_causal": false,
+      "dtype": "torch.bfloat16",
+      "shape": [
+        2,
+        128,
+        32
+      ],
+      "tolerance_abs": 0.03,
+      "checks": {
+        "output": {
+          "max_abs": 0.01171875,
+          "max_rel": 33.28571319580078
+        },
+        "lse": {
+          "max_abs": 0.004121303558349609,
+          "max_rel": 0.0007402818300761282
+        },
+        "dq": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        },
+        "dk": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        },
+        "dv": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        }
+      },
+      "pass": true
+    },
+    {
+      "seed": 2,
+      "head_dim": 32,
+      "is_causal": true,
+      "dtype": "torch.bfloat16",
+      "shape": [
+        2,
+        128,
+        32
+      ],
+      "tolerance_abs": 0.03,
+      "checks": {
+        "output": {
+          "max_abs": 0.0078125,
+          "max_rel": 20.065420150756836
+        },
+        "lse": {
+          "max_abs": 0.006971597671508789,
+          "max_rel": 0.004489365965127945
+        },
+        "dq": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        },
+        "dk": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        },
+        "dv": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        }
+      },
+      "pass": true
+    },
+    {
+      "seed": 2,
+      "head_dim": 64,
+      "is_causal": false,
+      "dtype": "torch.bfloat16",
+      "shape": [
+        2,
+        128,
+        64
+      ],
+      "tolerance_abs": 0.03,
+      "checks": {
+        "output": {
+          "max_abs": 0.005859375,
+          "max_rel": 465.4888916015625
+        },
+        "lse": {
+          "max_abs": 0.0025043487548828125,
+          "max_rel": 0.00043577185715548694
+        },
+        "dq": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        },
+        "dk": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        },
+        "dv": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        }
+      },
+      "pass": true
+    },
+    {
+      "seed": 2,
+      "head_dim": 64,
+      "is_causal": true,
+      "dtype": "torch.bfloat16",
+      "shape": [
+        2,
+        128,
+        64
+      ],
+      "tolerance_abs": 0.03,
+      "checks": {
+        "output": {
+          "max_abs": 0.015625,
+          "max_rel": 133.32098388671875
+        },
+        "lse": {
+          "max_abs": 0.0034623146057128906,
+          "max_rel": 0.008108597248792648
+        },
+        "dq": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        },
+        "dk": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        },
+        "dv": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        }
+      },
+      "pass": true
+    },
+    {
+      "seed": 2,
+      "head_dim": 128,
+      "is_causal": false,
+      "dtype": "torch.bfloat16",
+      "shape": [
+        2,
+        128,
+        128
+      ],
+      "tolerance_abs": 0.03,
+      "checks": {
+        "output": {
+          "max_abs": 0.01171875,
+          "max_rel": 554.2207641601562
+        },
+        "lse": {
+          "max_abs": 0.002879619598388672,
+          "max_rel": 0.0005041687400080264
+        },
+        "dq": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        },
+        "dk": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        },
+        "dv": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        }
+      },
+      "pass": true
+    },
+    {
+      "seed": 2,
+      "head_dim": 128,
+      "is_causal": true,
+      "dtype": "torch.bfloat16",
+      "shape": [
+        2,
+        128,
+        128
+      ],
+      "tolerance_abs": 0.03,
+      "checks": {
+        "output": {
+          "max_abs": 0.0234375,
+          "max_rel": 24.7939395904541
+        },
+        "lse": {
+          "max_abs": 0.008921623229980469,
+          "max_rel": 0.01734381541609764
+        },
+        "dq": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        },
+        "dk": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        },
+        "dv": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        }
+      },
+      "pass": true
+    }
+  ]
+}

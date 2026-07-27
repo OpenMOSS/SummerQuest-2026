@@ -1,0 +1,48 @@
+{
+  "timestamp_utc": "2026-07-24T09:16:17Z",
+  "python": "3.12.13",
+  "platform": "Linux-5.15.0-141-generic-x86_64-with-glibc2.39",
+  "torch": "2.11.0+cu126",
+  "cuda_available": true,
+  "cuda_runtime": "12.6",
+  "args": {
+    "model_size": "large",
+    "batch_size": 1,
+    "context_length": 2048,
+    "dtype": "fp32",
+    "seed": 2026,
+    "device": "cuda",
+    "output": "local_results/a2p/memory/peaks.csv",
+    "metadata_output": null,
+    "mode": "train_step",
+    "warmup": 2,
+    "lr": 0.001,
+    "snapshot_output": "local_results/a2p/memory/large_2048_train_step_snapshot.pickle"
+  },
+  "gpu": {
+    "name": "NVIDIA GeForce RTX 4090",
+    "total_memory_mib": 48518.0625
+  },
+  "nvidia_smi": {
+    "name": "NVIDIA GeForce RTX 4090",
+    "memory_total": "49140 MiB",
+    "memory_free": "869 MiB",
+    "driver_version": "570.195.03",
+    "power_limit": "450.00 W",
+    "pstate": "P0"
+  },
+  "row": {
+    "model_size": "large",
+    "batch_size": 1,
+    "context_length": 2048,
+    "mode": "train_step",
+    "dtype": "fp32",
+    "warmup": 2,
+    "seed": 2026,
+    "peak_allocated_mib": 46433.79150390625,
+    "peak_reserved_mib": 47168.0,
+    "snapshot_file": "large_2048_train_step_snapshot.pickle",
+    "status": "ok",
+    "error": ""
+  }
+}

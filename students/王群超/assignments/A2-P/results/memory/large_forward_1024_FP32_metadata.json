@@ -1,0 +1,19 @@
+{
+  "command": "uv run --no-sync python profiling/benchmark.py --model-size large --context-length 1024 --mode forward --dtype FP32 --batch-size 1 --warmup 5 --steps 1 --snapshot results/memory/large_forward_1024_fp32.pickle --output=results/memory",
+  "model_size": "large",
+  "batch_size": 1,
+  "context_length": 1024,
+  "mode": "forward",
+  "dtype": {
+    "logits_dtype": "torch.float32",
+    "loss_dtype": "N/A",
+    "param_dtype": "torch.float32",
+    "first_block_output_dtype": "torch.float32",
+    "first_layernorm_output_dtype": "torch.float32"
+  },
+  "warmup": 5,
+  "steps": 1,
+  "mean_ms": 106.82061004638672,
+  "std_ms": 0.0,
+  "peak_mb": 4165.4892578125
+}

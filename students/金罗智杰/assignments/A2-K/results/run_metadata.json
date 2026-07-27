@@ -1,0 +1,54 @@
+{
+  "starter_commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+  "seed": 42,
+  "environment": {
+    "gpu_name": "NVIDIA GeForce RTX 4090",
+    "memory_total_mib": 49140.0,
+    "driver_version": "550.163.01",
+    "cuda_runtime": "12.8",
+    "torch_version": "2.11.0+cu128",
+    "triton_version": "3.6.0",
+    "power_limit_w": "450.00",
+    "pstate": "P8",
+    "allocator_limit_mib": 23552,
+    "tf32_matmul": true,
+    "tf32_cudnn": true,
+    "minimum_starting_free_memory_mib": 48625.0,
+    "allocator_fraction_samples": [
+      0.484217370466
+    ]
+  },
+  "measurement": {
+    "checkpointing": {
+      "warmup_steps": 3,
+      "measurement_steps": 5
+    },
+    "attention": {
+      "timer": "triton.testing.do_bench",
+      "warmup_ms": 100,
+      "rep_ms": 300
+    },
+    "attention_quantiles": [
+      0.2,
+      0.5,
+      0.8
+    ],
+    "synchronization": "CUDA synchronization at cold-start and step timing boundaries",
+    "compile_config": {
+      "torch_functorch_donated_buffer": false
+    },
+    "tf32": {
+      "performance": "enabled",
+      "fp32_correctness": "disabled with matmul.fp32_precision=ieee",
+      "bf16_correctness": "not applicable"
+    }
+  },
+  "commands": [
+    "python student_scripts/a2k/run_official_attention_tests.py",
+    "python student_scripts/a2k/run_correctness.py",
+    "python student_scripts/a2k/benchmark_checkpointing.py",
+    "python student_scripts/a2k/benchmark_attention_baseline.py",
+    "python student_scripts/a2k/benchmark_compile.py",
+    "python student_scripts/a2k/benchmark_flash.py"
+  ]
+}

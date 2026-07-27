@@ -1,0 +1,18 @@
+{
+  "starter_commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+  "seed": 0,
+  "command": "python -m student_scripts.a2k.write_metadata",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "total_memory_mib": 48639.3125,
+  "free_memory_mib_at_start": 48237.6875,
+  "driver": "550.163.01",
+  "power_limit_w": "450.00",
+  "pstate": "P2",
+  "cuda_runtime": "12.8",
+  "pytorch": "2.11.0+cu128",
+  "triton": "3.6.0",
+  "tf32_matmul": true,
+  "allocator_limit_mib": 23552.0,
+  "allocator_fraction": 0.48421737046550567,
+  "timing": "triton.testing.do_bench(warmup=100ms, rep=300ms, quantiles=0.2/0.5/0.8)"
+}

@@ -1,0 +1,34 @@
+{
+  "timestamp_utc": "2026-07-24T09:22:03Z",
+  "python": "3.12.13",
+  "platform": "Linux-5.15.0-141-generic-x86_64-with-glibc2.39",
+  "torch": "2.11.0+cu126",
+  "cuda_available": true,
+  "cuda_runtime": "12.6",
+  "args": {
+    "model_size": "medium",
+    "batch_size": 1,
+    "context_length": 1024,
+    "dtype": "fp32",
+    "seed": 2026,
+    "device": "cuda",
+    "output": "local_results/a2p/profile/medium_1024.json",
+    "metadata_output": null,
+    "warmup": 3,
+    "lr": 0.001,
+    "trace_output": "local_results/a2p/profile/medium_1024_trace.json"
+  },
+  "gpu": {
+    "name": "NVIDIA GeForce RTX 4090",
+    "total_memory_mib": 48518.0625
+  },
+  "nvidia_smi": {
+    "name": "NVIDIA GeForce RTX 4090",
+    "memory_total": "49140 MiB",
+    "memory_free": "38243 MiB",
+    "driver_version": "570.195.03",
+    "power_limit": "450.00 W",
+    "pstate": "P0"
+  },
+  "tool": "torch.profiler"
+}

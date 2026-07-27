@@ -1,0 +1,56 @@
+{
+  "experiments": [
+    {
+      "event": "mixed_precision_accumulation",
+      "status": "passed",
+      "cases": {
+        "fp32_value_fp32_accumulator": {
+          "value_dtype": "torch.float32",
+          "accumulator_dtype": "torch.float32",
+          "result": 10.000133514404297,
+          "absolute_error_from_10": 0.000133514404296875
+        },
+        "fp16_value_fp16_accumulator": {
+          "value_dtype": "torch.float16",
+          "accumulator_dtype": "torch.float16",
+          "result": 9.953125,
+          "absolute_error_from_10": 0.046875
+        },
+        "fp16_value_fp32_inplace_accumulator": {
+          "value_dtype": "torch.float16",
+          "accumulator_dtype": "torch.float32",
+          "result": 10.00213623046875,
+          "absolute_error_from_10": 0.00213623046875
+        },
+        "fp16_value_explicit_fp32_accumulator": {
+          "value_dtype": "torch.float16",
+          "accumulator_dtype": "torch.float32",
+          "result": 10.00213623046875,
+          "absolute_error_from_10": 0.00213623046875
+        }
+      },
+      "case_id": "accumulation"
+    },
+    {
+      "event": "mixed_precision_toy_dtypes",
+      "status": "passed",
+      "autocast_dtype": "torch.bfloat16",
+      "parameter_dtypes": [
+        "torch.float32"
+      ],
+      "activation_dtypes": {
+        "fc1": "torch.bfloat16",
+        "layer_norm": "torch.float32",
+        "fc2": "torch.bfloat16"
+      },
+      "logits_dtype": "torch.bfloat16",
+      "loss_dtype": "torch.float32",
+      "gradient_dtypes": [
+        "torch.float32"
+      ],
+      "gpu": "NVIDIA GeForce RTX 4090",
+      "torch": "2.11.0+cu126",
+      "case_id": "toy-bf16"
+    }
+  ]
+}

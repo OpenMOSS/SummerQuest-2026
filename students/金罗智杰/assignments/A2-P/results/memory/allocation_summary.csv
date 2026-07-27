@@ -1,0 +1,5 @@
+run_name,largest_allocation_mib,largest_allocation_count,stack_operator_categories
+xl_ctx128_forward_fp32,20.000,160,bmm;mul;sigmoid
+xl_ctx2048_forward_fp32,2048.000,192,bmm;div
+xl_ctx128_train_step_fp32,100.000,1536,bmm;div;empty_strided;mul
+xl_ctx2048_train_step_b1_fp32,512.000,145,bmm;div
