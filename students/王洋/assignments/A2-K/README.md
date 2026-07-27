@@ -165,7 +165,7 @@ forward kernel 和 backward 实现的显存边界不同。
 ## 飞书补充文档
 
 - 链接：https://fudan-nlp.feishu.cn/wiki/KTU3wC1TaiFXjRkLF7vcAm3Lnid
-- 状态说明：暂沿用已登记的组织内文档入口；正式发布前会确认是否需要新建 A2-K 专属补充文档。
+- 文档用途：A2-K 组织内公开的补充材料；不重复 GitHub 主报告，只保存确有审核必要的差量证据。
 
 ## 自检
 
@@ -175,4 +175,4 @@ forward kernel 和 backward 实现的显存边界不同。
 - [x] 两张图片均被正文引用，`results/` 与 `assets/` 合计低于 2 MiB。
 - [x] 未提交缓存、binary、trace、权重、数据、内部地址或凭据。
 - [ ] 节点显存容量与题面物理 24GB 不一致，未将其虚假勾选为标准正式环境。
-- [ ] 题面状态仍为“发布候选、请勿提交”，因此当前分支未 push、未创建 PR。
+- [x] 题面已发布；分支已合并最新 `upstream/main` 并 push，PR 待创建。
