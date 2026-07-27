@@ -1,0 +1,298 @@
+{
+  "activities": [
+    "CPU",
+    "CUDA"
+  ],
+  "annotation_ranges": [
+    "profile/warmup",
+    "profile/measure",
+    "zero_grad",
+    "forward",
+    "backward",
+    "optimizer",
+    "attention/scores",
+    "attention/softmax",
+    "attention/value"
+  ],
+  "environment": {
+    "bf16_supported": true,
+    "compute_capability": "8.9",
+    "compute_profiler": "torch.profiler 2.6.0+cu124",
+    "driver": "550.163.01",
+    "gpu_model": "NVIDIA GeForce RTX 4090",
+    "gpu_total_memory_mib": 48639.31,
+    "python": "3.12.13",
+    "pytorch": "2.6.0+cu124",
+    "pytorch_compiled_cuda": "12.4"
+  },
+  "experiment": "compute_profiling",
+  "runs": [
+    {
+      "captured_measurement_steps": 1,
+      "config": {
+        "batch_size": 4,
+        "context_length": 256,
+        "dtype": "fp32",
+        "measurement_steps": 1,
+        "mode": "train_step",
+        "model_size": "small",
+        "seed": 42,
+        "warmup_steps": 5
+      },
+      "local_trace": {
+        "bytes": 9967486,
+        "committed": false,
+        "file": "small-b4-c256-train_step-fp32-w5-n1.trace.json",
+        "sha256": "797c82dde60f03ee268ce0f2c99e3d5fa93015ebcc4679ba9dd3750615ab4844"
+      },
+      "loss": 5.988995552062988,
+      "memory": {
+        "active_current_mib": 2077.059,
+        "active_peak_mib": 3094.899,
+        "allocated_current_mib": 2077.059,
+        "allocated_peak_mib": 3094.899,
+        "reserved_current_mib": 3226.0,
+        "reserved_peak_mib": 3226.0
+      },
+      "parameter_count": 128625408,
+      "profile_warmup_range": "zero-work boundary marker; warm-up ran before capture",
+      "profiler_schedule": {
+        "active": 1,
+        "external_warmup_steps": 5,
+        "repeat": 1,
+        "wait": 0,
+        "warmup": 1
+      },
+      "run_id": "small-b4-c256-train_step-fp32-w5-n1",
+      "stage_cuda_ms": {
+        "backward": 52.306686,
+        "forward": 27.584801,
+        "optimizer": 30.210655,
+        "profile/measure": 110.102142
+      }
+    },
+    {
+      "captured_measurement_steps": 1,
+      "config": {
+        "batch_size": 4,
+        "context_length": 512,
+        "dtype": "fp32",
+        "measurement_steps": 1,
+        "mode": "train_step",
+        "model_size": "small",
+        "seed": 42,
+        "warmup_steps": 5
+      },
+      "local_trace": {
+        "bytes": 9979190,
+        "committed": false,
+        "file": "small-b4-c512-train_step-fp32-w5-n1.trace.json",
+        "sha256": "8990dd26894caa88339955ec19d15fc910922fe05bd66ce6f07ebd65ffaf517e"
+      },
+      "loss": 6.748353004455566,
+      "memory": {
+        "active_current_mib": 2001.496,
+        "active_peak_mib": 5148.142,
+        "allocated_current_mib": 2001.496,
+        "allocated_peak_mib": 5148.142,
+        "reserved_current_mib": 5446.0,
+        "reserved_peak_mib": 5446.0
+      },
+      "parameter_count": 128625408,
+      "profile_warmup_range": "zero-work boundary marker; warm-up ran before capture",
+      "profiler_schedule": {
+        "active": 1,
+        "external_warmup_steps": 5,
+        "repeat": 1,
+        "wait": 0,
+        "warmup": 1
+      },
+      "run_id": "small-b4-c512-train_step-fp32-w5-n1",
+      "stage_cuda_ms": {
+        "backward": 56.430592,
+        "forward": 29.007809,
+        "optimizer": 27.218431,
+        "profile/measure": 112.656832
+      }
+    },
+    {
+      "captured_measurement_steps": 1,
+      "config": {
+        "batch_size": 4,
+        "context_length": 1024,
+        "dtype": "fp32",
+        "measurement_steps": 1,
+        "mode": "train_step",
+        "model_size": "small",
+        "seed": 42,
+        "warmup_steps": 5
+      },
+      "local_trace": {
+        "bytes": 10130496,
+        "committed": false,
+        "file": "small-b4-c1024-train_step-fp32-w5-n1.trace.json",
+        "sha256": "4e866f716a2c84b2caf985f8e6d5db24589eceff0cfac46dff6d5cbe5afde9bc"
+      },
+      "loss": 7.832145690917969,
+      "memory": {
+        "active_current_mib": 2012.09,
+        "active_peak_mib": 11165.195,
+        "allocated_current_mib": 2012.09,
+        "allocated_peak_mib": 11165.195,
+        "reserved_current_mib": 11978.0,
+        "reserved_peak_mib": 11978.0
+      },
+      "parameter_count": 128625408,
+      "profile_warmup_range": "zero-work boundary marker; warm-up ran before capture",
+      "profiler_schedule": {
+        "active": 1,
+        "external_warmup_steps": 5,
+        "repeat": 1,
+        "wait": 0,
+        "warmup": 1
+      },
+      "run_id": "small-b4-c1024-train_step-fp32-w5-n1",
+      "stage_cuda_ms": {
+        "backward": 153.990845,
+        "forward": 75.257668,
+        "optimizer": 15.054848,
+        "profile/measure": 244.303361
+      }
+    },
+    {
+      "captured_measurement_steps": 1,
+      "config": {
+        "batch_size": 4,
+        "context_length": 256,
+        "dtype": "fp32",
+        "measurement_steps": 1,
+        "mode": "train_step",
+        "model_size": "medium",
+        "seed": 42,
+        "warmup_steps": 5
+      },
+      "local_trace": {
+        "bytes": 19773447,
+        "committed": false,
+        "file": "medium-b4-c256-train_step-fp32-w5-n1.trace.json",
+        "sha256": "06ca87000e3b12665d3acc5158d64d0eaa0cd716b4769f8460452943e4e48a03"
+      },
+      "loss": 6.376149654388428,
+      "memory": {
+        "active_current_mib": 6481.094,
+        "active_peak_mib": 8691.113,
+        "allocated_current_mib": 6481.094,
+        "allocated_peak_mib": 8691.113,
+        "reserved_current_mib": 8796.0,
+        "reserved_peak_mib": 8796.0
+      },
+      "parameter_count": 423183360,
+      "profile_warmup_range": "zero-work boundary marker; warm-up ran before capture",
+      "profiler_schedule": {
+        "active": 1,
+        "external_warmup_steps": 5,
+        "repeat": 1,
+        "wait": 0,
+        "warmup": 1
+      },
+      "run_id": "medium-b4-c256-train_step-fp32-w5-n1",
+      "stage_cuda_ms": {
+        "backward": 106.093315,
+        "forward": 54.17984,
+        "optimizer": 59.276417,
+        "profile/measure": 219.549572
+      }
+    },
+    {
+      "captured_measurement_steps": 1,
+      "config": {
+        "batch_size": 4,
+        "context_length": 512,
+        "dtype": "fp32",
+        "measurement_steps": 1,
+        "mode": "train_step",
+        "model_size": "medium",
+        "seed": 42,
+        "warmup_steps": 5
+      },
+      "local_trace": {
+        "bytes": 20023570,
+        "committed": false,
+        "file": "medium-b4-c512-train_step-fp32-w5-n1.trace.json",
+        "sha256": "1b9149bdd704bf3b967921cc68a6fc6a365b9bd5a0f2e4daffb54424aeaeb403"
+      },
+      "loss": 7.018910884857178,
+      "memory": {
+        "active_current_mib": 6479.297,
+        "active_peak_mib": 14048.902,
+        "allocated_current_mib": 6479.297,
+        "allocated_peak_mib": 14048.902,
+        "reserved_current_mib": 14534.0,
+        "reserved_peak_mib": 14534.0
+      },
+      "parameter_count": 423183360,
+      "profile_warmup_range": "zero-work boundary marker; warm-up ran before capture",
+      "profiler_schedule": {
+        "active": 1,
+        "external_warmup_steps": 5,
+        "repeat": 1,
+        "wait": 0,
+        "warmup": 1
+      },
+      "run_id": "medium-b4-c512-train_step-fp32-w5-n1",
+      "stage_cuda_ms": {
+        "backward": 158.794724,
+        "forward": 79.141411,
+        "optimizer": 44.064159,
+        "profile/measure": 282.000294
+      }
+    },
+    {
+      "captured_measurement_steps": 1,
+      "config": {
+        "batch_size": 4,
+        "context_length": 1024,
+        "dtype": "fp32",
+        "measurement_steps": 1,
+        "mode": "train_step",
+        "model_size": "medium",
+        "seed": 42,
+        "warmup_steps": 5
+      },
+      "local_trace": {
+        "bytes": 20169931,
+        "committed": false,
+        "file": "medium-b4-c1024-train_step-fp32-w5-n1.trace.json",
+        "sha256": "981876c00475ebe59d209376dc9f41918d0ee4fd55d1e25a9ad21ab9b49655c1"
+      },
+      "loss": 7.3640594482421875,
+      "memory": {
+        "active_current_mib": 6481.578,
+        "active_peak_mib": 29619.192,
+        "allocated_current_mib": 6481.578,
+        "allocated_peak_mib": 29619.192,
+        "reserved_current_mib": 30334.0,
+        "reserved_peak_mib": 30334.0
+      },
+      "parameter_count": 423183360,
+      "profile_warmup_range": "zero-work boundary marker; warm-up ran before capture",
+      "profiler_schedule": {
+        "active": 1,
+        "external_warmup_steps": 5,
+        "repeat": 1,
+        "wait": 0,
+        "warmup": 1
+      },
+      "run_id": "medium-b4-c1024-train_step-fp32-w5-n1",
+      "stage_cuda_ms": {
+        "backward": 429.26059,
+        "forward": 213.608704,
+        "optimizer": 42.884575,
+        "profile/measure": 685.753869
+      }
+    }
+  ],
+  "schema_version": 1,
+  "tool": "torch.profiler",
+  "trace_policy": "raw Chrome traces retained locally and not committed"
+}

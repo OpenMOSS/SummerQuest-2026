@@ -1,0 +1,22 @@
+{
+  "allocator_limit_mib": 23552,
+  "command": "scripts/write_run_metadata.py --output results/run_metadata.json --seed 0 --warmup 100 --steps 300 --dtype bf16 --allocator-limit-mib 23552",
+  "commit": "ec070562f565aa63495930ac9845e94d51b3fee9",
+  "cuda": "12.6",
+  "cuda_available": true,
+  "driver_version": "560.28.03",
+  "dtype": "bf16",
+  "measurement_steps": 300,
+  "memory_free_mib": "24108",
+  "memory_total_mib": "24564",
+  "name": "NVIDIA GeForce RTX 4090",
+  "power_limit_w": "450.00",
+  "pstate": "P8",
+  "seed": 0,
+  "starter_commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+  "tf32": false,
+  "timer": "CUDA events with torch.cuda.synchronize",
+  "torch": "2.11.0+cu126",
+  "triton": "3.4.0",
+  "warmup_steps": 100
+}

@@ -1,0 +1,537 @@
+{
+  "schema_version": 1,
+  "environment": {
+    "python_version": "3.12.12",
+    "torch_version": "2.11.0+cu128",
+    "cuda_runtime_version": "12.8",
+    "gpu_name": "NVIDIA H100 80GB HBM3"
+  },
+  "accumulation": [
+    {
+      "name": "fp32_accumulator_fp32_input",
+      "accumulator_dtype": "torch.float32",
+      "input_dtype": "torch.float32",
+      "explicit_input_cast": false,
+      "result": 10.000133514404297,
+      "absolute_error_from_10": 0.000133514404296875
+    },
+    {
+      "name": "fp16_accumulator_fp16_input",
+      "accumulator_dtype": "torch.float16",
+      "input_dtype": "torch.float16",
+      "explicit_input_cast": false,
+      "result": 9.953125,
+      "absolute_error_from_10": 0.046875
+    },
+    {
+      "name": "fp32_accumulator_fp16_input",
+      "accumulator_dtype": "torch.float32",
+      "input_dtype": "torch.float16",
+      "explicit_input_cast": false,
+      "result": 10.00213623046875,
+      "absolute_error_from_10": 0.00213623046875
+    },
+    {
+      "name": "fp32_accumulator_explicit_fp16_to_fp32_input",
+      "accumulator_dtype": "torch.float32",
+      "input_dtype": "torch.float16",
+      "explicit_input_cast": true,
+      "result": 10.00213623046875,
+      "absolute_error_from_10": 0.00213623046875
+    }
+  ],
+  "toy_model_bf16_autocast": {
+    "autocast_dtype": "torch.bfloat16",
+    "input_dtype": "torch.float32",
+    "parameter_dtypes_before_autocast": [
+      "torch.float32"
+    ],
+    "parameter_dtype_inside_autocast": "torch.float32",
+    "fc1_output": "torch.bfloat16",
+    "layer_norm_output": "torch.float32",
+    "logits_dtype": "torch.bfloat16",
+    "loss_dtype": "torch.float32",
+    "gradient_dtypes": [
+      "torch.float32"
+    ]
+  },
+  "benchmark_comparisons": [
+    {
+      "model_size": "small",
+      "mode": "forward",
+      "fp32": {
+        "run_name": "timings_small_forward_fp32",
+        "config": {
+          "model_size": "small",
+          "batch_size": 4,
+          "context_length": 512,
+          "mode": "forward",
+          "warmup": 5,
+          "steps": 10,
+          "dtype": "fp32",
+          "seed": 0
+        },
+        "total_ms": {
+          "count": 10,
+          "mean_ms": 11.541077122092247,
+          "sample_std_ms": 0.08735035563669954,
+          "cv": 0.00756864846431804,
+          "min_ms": 11.415699496865273,
+          "max_ms": 11.664144694805145
+        },
+        "peak_allocated_mib": 752.5771484375,
+        "peak_reserved_mib": 906.0,
+        "command": "python profiling/benchmark.py --model-size small --batch-size 4 --context-length 512 --mode forward --warmup 5 --steps 10 --dtype fp32 --output results/timings_small_forward_fp32.csv"
+      },
+      "bf16": {
+        "run_name": "timings_small_forward_bf16",
+        "config": {
+          "model_size": "small",
+          "batch_size": 4,
+          "context_length": 512,
+          "mode": "forward",
+          "warmup": 5,
+          "steps": 10,
+          "dtype": "bf16",
+          "seed": 0
+        },
+        "total_ms": {
+          "count": 10,
+          "mean_ms": 12.336587347090244,
+          "sample_std_ms": 0.09569680657470385,
+          "cv": 0.007757153893720476,
+          "min_ms": 12.166266329586506,
+          "max_ms": 12.45170459151268
+        },
+        "peak_allocated_mib": 934.0771484375,
+        "peak_reserved_mib": 970.0,
+        "command": "python profiling/benchmark.py --model-size small --batch-size 4 --context-length 512 --mode forward --warmup 5 --steps 10 --dtype bf16 --output results/timings_small_forward_bf16.csv"
+      },
+      "bf16_speedup": 0.935516184288548
+    },
+    {
+      "model_size": "small",
+      "mode": "forward_backward",
+      "fp32": {
+        "run_name": "timings_small_forward_backward_fp32",
+        "config": {
+          "model_size": "small",
+          "batch_size": 4,
+          "context_length": 512,
+          "mode": "forward_backward",
+          "warmup": 5,
+          "steps": 10,
+          "dtype": "fp32",
+          "seed": 0
+        },
+        "total_ms": {
+          "count": 10,
+          "mean_ms": 37.62938370928168,
+          "sample_std_ms": 0.10988790242134448,
+          "cv": 0.002920268460156563,
+          "min_ms": 37.4022675678134,
+          "max_ms": 37.73856442421675
+        },
+        "peak_allocated_mib": 4206.0419921875,
+        "peak_reserved_mib": 4408.0,
+        "command": "python profiling/benchmark.py --model-size small --batch-size 4 --context-length 512 --mode forward_backward --warmup 5 --steps 10 --dtype fp32 --output results/timings_small_forward_backward_fp32.csv"
+      },
+      "bf16": {
+        "run_name": "timings_small_forward_backward_bf16",
+        "config": {
+          "model_size": "small",
+          "batch_size": 4,
+          "context_length": 512,
+          "mode": "forward_backward",
+          "warmup": 5,
+          "steps": 10,
+          "dtype": "bf16",
+          "seed": 0
+        },
+        "total_ms": {
+          "count": 10,
+          "mean_ms": 42.5608417019248,
+          "sample_std_ms": 0.12338309319827805,
+          "cv": 0.0028989815112772568,
+          "min_ms": 42.39637590944767,
+          "max_ms": 42.7942955866456
+        },
+        "peak_allocated_mib": 3367.48046875,
+        "peak_reserved_mib": 3608.0,
+        "command": "python profiling/benchmark.py --model-size small --batch-size 4 --context-length 512 --mode forward_backward --warmup 5 --steps 10 --dtype bf16 --output results/timings_small_forward_backward_bf16.csv"
+      },
+      "bf16_speedup": 0.8841315679990395
+    },
+    {
+      "model_size": "medium",
+      "mode": "forward",
+      "fp32": {
+        "run_name": "timings_medium_forward_fp32",
+        "config": {
+          "model_size": "medium",
+          "batch_size": 4,
+          "context_length": 512,
+          "mode": "forward",
+          "warmup": 5,
+          "steps": 10,
+          "dtype": "fp32",
+          "seed": 0
+        },
+        "total_ms": {
+          "count": 10,
+          "mean_ms": 23.706321232020855,
+          "sample_std_ms": 0.04393328324910187,
+          "cv": 0.0018532307404052146,
+          "min_ms": 23.62086158245802,
+          "max_ms": 23.755963891744614
+        },
+        "peak_allocated_mib": 1952.7265625,
+        "peak_reserved_mib": 2066.0,
+        "command": "python profiling/benchmark.py --model-size medium --batch-size 4 --context-length 512 --mode forward --warmup 5 --steps 10 --dtype fp32 --output results/timings_medium_forward_fp32.csv"
+      },
+      "bf16": {
+        "run_name": "timings_medium_forward_bf16",
+        "config": {
+          "model_size": "medium",
+          "batch_size": 4,
+          "context_length": 512,
+          "mode": "forward",
+          "warmup": 5,
+          "steps": 10,
+          "dtype": "bf16",
+          "seed": 0
+        },
+        "total_ms": {
+          "count": 10,
+          "mean_ms": 25.889043137431145,
+          "sample_std_ms": 1.9653129518142103,
+          "cv": 0.07591292352449684,
+          "min_ms": 24.870052933692932,
+          "max_ms": 30.072050169110298
+        },
+        "peak_allocated_mib": 2626.7265625,
+        "peak_reserved_mib": 2690.0,
+        "command": "python profiling/benchmark.py --model-size medium --batch-size 4 --context-length 512 --mode forward --warmup 5 --steps 10 --dtype bf16 --output results/timings_medium_forward_bf16.csv"
+      },
+      "bf16_speedup": 0.9156893557701851
+    },
+    {
+      "model_size": "medium",
+      "mode": "forward_backward",
+      "fp32": {
+        "run_name": "timings_medium_forward_backward_fp32",
+        "config": {
+          "model_size": "medium",
+          "batch_size": 4,
+          "context_length": 512,
+          "mode": "forward_backward",
+          "warmup": 5,
+          "steps": 10,
+          "dtype": "fp32",
+          "seed": 0
+        },
+        "total_ms": {
+          "count": 10,
+          "mean_ms": 85.19754260778427,
+          "sample_std_ms": 0.09204790762757564,
+          "cv": 0.001080405664413676,
+          "min_ms": 85.03452874720097,
+          "max_ms": 85.36099083721638
+        },
+        "peak_allocated_mib": 10865.20703125,
+        "peak_reserved_mib": 11288.0,
+        "command": "python profiling/benchmark.py --model-size medium --batch-size 4 --context-length 512 --mode forward_backward --warmup 5 --steps 10 --dtype fp32 --output results/timings_medium_forward_backward_fp32.csv"
+      },
+      "bf16": {
+        "run_name": "timings_medium_forward_backward_bf16",
+        "config": {
+          "model_size": "medium",
+          "batch_size": 4,
+          "context_length": 512,
+          "mode": "forward_backward",
+          "warmup": 5,
+          "steps": 10,
+          "dtype": "bf16",
+          "seed": 0
+        },
+        "total_ms": {
+          "count": 10,
+          "mean_ms": 81.81716660037637,
+          "sample_std_ms": 0.47705763144874286,
+          "cv": 0.0058307767339201445,
+          "min_ms": 81.48686587810516,
+          "max_ms": 83.13239924609661
+        },
+        "peak_allocated_mib": 8672.2626953125,
+        "peak_reserved_mib": 8940.0,
+        "command": "python profiling/benchmark.py --model-size medium --batch-size 4 --context-length 512 --mode forward_backward --warmup 5 --steps 10 --dtype bf16 --output results/timings_medium_forward_backward_bf16.csv"
+      },
+      "bf16_speedup": 1.0413162194178496
+    },
+    {
+      "model_size": "large",
+      "mode": "forward",
+      "fp32": {
+        "run_name": "timings_large_forward_fp32",
+        "config": {
+          "model_size": "large",
+          "batch_size": 4,
+          "context_length": 512,
+          "mode": "forward",
+          "warmup": 5,
+          "steps": 10,
+          "dtype": "fp32",
+          "seed": 0
+        },
+        "total_ms": {
+          "count": 10,
+          "mean_ms": 45.29421925544739,
+          "sample_std_ms": 0.06264315874710706,
+          "cv": 0.0013830276749846654,
+          "min_ms": 45.23152764886618,
+          "max_ms": 45.41883245110512
+        },
+        "peak_allocated_mib": 4218.5791015625,
+        "peak_reserved_mib": 4382.0,
+        "command": "python profiling/benchmark.py --model-size large --batch-size 4 --context-length 512 --mode forward --warmup 5 --steps 10 --dtype fp32 --output results/timings_large_forward_fp32.csv"
+      },
+      "bf16": {
+        "run_name": "timings_large_forward_bf16",
+        "config": {
+          "model_size": "large",
+          "batch_size": 4,
+          "context_length": 512,
+          "mode": "forward",
+          "warmup": 5,
+          "steps": 10,
+          "dtype": "bf16",
+          "seed": 0
+        },
+        "total_ms": {
+          "count": 10,
+          "mean_ms": 41.73503927886486,
+          "sample_std_ms": 0.3029740718919395,
+          "cv": 0.007259465358772749,
+          "min_ms": 41.602530516684055,
+          "max_ms": 42.59089846163988
+        },
+        "peak_allocated_mib": 5902.3291015625,
+        "peak_reserved_mib": 6152.0,
+        "command": "python profiling/benchmark.py --model-size large --batch-size 4 --context-length 512 --mode forward --warmup 5 --steps 10 --dtype bf16 --output results/timings_large_forward_bf16.csv"
+      },
+      "bf16_speedup": 1.0852803792228594
+    },
+    {
+      "model_size": "large",
+      "mode": "forward_backward",
+      "fp32": {
+        "run_name": "timings_large_forward_backward_fp32",
+        "config": {
+          "model_size": "large",
+          "batch_size": 4,
+          "context_length": 512,
+          "mode": "forward_backward",
+          "warmup": 5,
+          "steps": 10,
+          "dtype": "fp32",
+          "seed": 0
+        },
+        "total_ms": {
+          "count": 10,
+          "mean_ms": 164.39090352505445,
+          "sample_std_ms": 0.030315062887395012,
+          "cv": 0.00018440839631235896,
+          "min_ms": 164.33446016162634,
+          "max_ms": 164.44807033985853
+        },
+        "peak_allocated_mib": 20799.1533203125,
+        "peak_reserved_mib": 20998.0,
+        "command": "python profiling/benchmark.py --model-size large --batch-size 4 --context-length 512 --mode forward_backward --warmup 5 --steps 10 --dtype fp32 --output results/timings_large_forward_backward_fp32.csv"
+      },
+      "bf16": {
+        "run_name": "timings_large_forward_backward_bf16",
+        "config": {
+          "model_size": "large",
+          "batch_size": 4,
+          "context_length": 512,
+          "mode": "forward_backward",
+          "warmup": 5,
+          "steps": 10,
+          "dtype": "bf16",
+          "seed": 0
+        },
+        "total_ms": {
+          "count": 10,
+          "mean_ms": 133.1600164063275,
+          "sample_std_ms": 0.5223085757446998,
+          "cv": 0.0039224129723063085,
+          "min_ms": 132.59665109217167,
+          "max_ms": 134.01995413005352
+        },
+        "peak_allocated_mib": 17045.9609375,
+        "peak_reserved_mib": 17658.0,
+        "command": "python profiling/benchmark.py --model-size large --batch-size 4 --context-length 512 --mode forward_backward --warmup 5 --steps 10 --dtype bf16 --output results/timings_large_forward_backward_bf16.csv"
+      },
+      "bf16_speedup": 1.2345365220099427
+    },
+    {
+      "model_size": "xl",
+      "mode": "forward",
+      "fp32": {
+        "run_name": "timings_xl_forward_fp32",
+        "config": {
+          "model_size": "xl",
+          "batch_size": 4,
+          "context_length": 512,
+          "mode": "forward",
+          "warmup": 5,
+          "steps": 10,
+          "dtype": "fp32",
+          "seed": 0
+        },
+        "total_ms": {
+          "count": 10,
+          "mean_ms": 84.8174368031323,
+          "sample_std_ms": 0.1343679100056114,
+          "cv": 0.001584201492878045,
+          "min_ms": 84.71694216132164,
+          "max_ms": 85.18066257238388
+        },
+        "peak_allocated_mib": 13789.326171875,
+        "peak_reserved_mib": 13958.0,
+        "command": "python profiling/benchmark.py --model-size xl --batch-size 4 --context-length 512 --mode forward --warmup 5 --steps 10 --dtype fp32 --output results/timings_xl_forward_fp32.csv"
+      },
+      "bf16": {
+        "run_name": "timings_xl_forward_bf16",
+        "config": {
+          "model_size": "xl",
+          "batch_size": 4,
+          "context_length": 512,
+          "mode": "forward",
+          "warmup": 5,
+          "steps": 10,
+          "dtype": "bf16",
+          "seed": 0
+        },
+        "total_ms": {
+          "count": 10,
+          "mean_ms": 73.31796018406749,
+          "sample_std_ms": 0.1011204948288028,
+          "cv": 0.0013792049666266765,
+          "min_ms": 73.23877792805433,
+          "max_ms": 73.5839195549488
+        },
+        "peak_allocated_mib": 19891.826171875,
+        "peak_reserved_mib": 20390.0,
+        "command": "python profiling/benchmark.py --model-size xl --batch-size 4 --context-length 512 --mode forward --warmup 5 --steps 10 --dtype bf16 --output results/timings_xl_forward_bf16.csv"
+      },
+      "bf16_speedup": 1.1568439246017612
+    },
+    {
+      "model_size": "xl",
+      "mode": "forward_backward",
+      "fp32": {
+        "run_name": "timings_xl_forward_backward_fp32",
+        "config": {
+          "model_size": "xl",
+          "batch_size": 4,
+          "context_length": 512,
+          "mode": "forward_backward",
+          "warmup": 5,
+          "steps": 10,
+          "dtype": "fp32",
+          "seed": 0
+        },
+        "total_ms": {
+          "count": 10,
+          "mean_ms": 321.3764922693372,
+          "sample_std_ms": 0.13929316406829226,
+          "cv": 0.00043342673599024265,
+          "min_ms": 321.14786375314,
+          "max_ms": 321.61574345082045
+        },
+        "peak_allocated_mib": 41166.1162109375,
+        "peak_reserved_mib": 42534.0,
+        "command": "python profiling/benchmark.py --model-size xl --batch-size 4 --context-length 512 --mode forward_backward --warmup 5 --steps 10 --dtype fp32 --output results/timings_xl_forward_backward_fp32.csv"
+      },
+      "bf16": {
+        "run_name": "timings_xl_forward_backward_bf16",
+        "config": {
+          "model_size": "xl",
+          "batch_size": 4,
+          "context_length": 512,
+          "mode": "forward_backward",
+          "warmup": 5,
+          "steps": 10,
+          "dtype": "bf16",
+          "seed": 0
+        },
+        "total_ms": {
+          "count": 10,
+          "mean_ms": 243.211280554533,
+          "sample_std_ms": 0.1640971102879982,
+          "cv": 0.0006747101117754455,
+          "min_ms": 243.01880784332752,
+          "max_ms": 243.43459960073233
+        },
+        "peak_allocated_mib": 38230.5537109375,
+        "peak_reserved_mib": 44344.0,
+        "command": "python profiling/benchmark.py --model-size xl --batch-size 4 --context-length 512 --mode forward_backward --warmup 5 --steps 10 --dtype bf16 --output results/timings_xl_forward_backward_bf16.csv"
+      },
+      "bf16_speedup": 1.3213881014753257
+    },
+    {
+      "model_size": "10b",
+      "mode": "forward",
+      "fp32": {
+        "run_name": "timings_10b_forward_fp32",
+        "config": {
+          "model_size": "10b",
+          "batch_size": 4,
+          "context_length": 512,
+          "mode": "forward",
+          "warmup": 5,
+          "steps": 10,
+          "dtype": "fp32",
+          "seed": 0
+        },
+        "total_ms": {
+          "count": 10,
+          "mean_ms": 242.17362711206079,
+          "sample_std_ms": 3.698203293036569,
+          "cv": 0.01527087543403437,
+          "min_ms": 237.62203380465508,
+          "max_ms": 247.57196195423603
+        },
+        "peak_allocated_mib": 49978.591796875,
+        "peak_reserved_mib": 50196.0,
+        "command": "python profiling/benchmark.py --model-size 10b --batch-size 4 --context-length 512 --mode forward --warmup 5 --steps 10 --dtype fp32 --output results/timings_10b_forward_fp32.csv"
+      },
+      "bf16": {
+        "run_name": "timings_10b_forward_bf16",
+        "config": {
+          "model_size": "10b",
+          "batch_size": 4,
+          "context_length": 512,
+          "mode": "forward",
+          "warmup": 5,
+          "steps": 10,
+          "dtype": "bf16",
+          "seed": 0
+        },
+        "total_ms": {
+          "count": 10,
+          "mean_ms": 191.22510300949216,
+          "sample_std_ms": 0.1797404044636917,
+          "cv": 0.0009399414702094297,
+          "min_ms": 191.09176844358444,
+          "max_ms": 191.6927993297577
+        },
+        "peak_allocated_mib": 73752.091796875,
+        "peak_reserved_mib": 80380.0,
+        "command": "python profiling/benchmark.py --model-size 10b --batch-size 4 --context-length 512 --mode forward --warmup 5 --steps 10 --dtype bf16 --output results/timings_10b_forward_bf16.csv"
+      },
+      "bf16_speedup": 1.2664321958819371
+    }
+  ]
+}

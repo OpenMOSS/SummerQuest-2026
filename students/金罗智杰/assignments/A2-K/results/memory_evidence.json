@@ -1,0 +1,29 @@
+{
+  "allocator": {
+    "allocator_fraction": 0.48421737046550567,
+    "allocator_limit_mib": 23552,
+    "applied_before_first_cuda_tensor_allocation": true
+  },
+  "hard_limit_mib": 24576,
+  "pytorch_peak_allocated_mib": 19660.5126953125,
+  "pytorch_peak_reserved_mib": 20164.0,
+  "within_24gib": true,
+  "per_experiment_maximum": {
+    "checkpointing": {
+      "peak_allocated_mib": 19660.5126953125,
+      "peak_reserved_mib": 20164.0
+    },
+    "attention_baseline": {
+      "peak_allocated_mib": 860.25,
+      "peak_reserved_mib": 938.0
+    },
+    "compile_comparison": {
+      "peak_allocated_mib": 2764.01513671875,
+      "peak_reserved_mib": 3108.0
+    },
+    "flash_benchmark": {
+      "peak_allocated_mib": 3388.375,
+      "peak_reserved_mib": 4178.0
+    }
+  }
+}

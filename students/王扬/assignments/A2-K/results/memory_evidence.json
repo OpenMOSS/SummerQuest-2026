@@ -1,0 +1,16 @@
+{
+  "allocator": {
+    "allocator_fraction": 0.4854174583443363,
+    "allocator_limit_mib": 23552
+  },
+  "covered_files": [
+    "results/checkpointing.csv",
+    "results/attention_baseline.csv",
+    "results/compile_comparison.csv",
+    "results/flash_benchmark.csv"
+  ],
+  "hard_limit_mib": 24576,
+  "pytorch_peak_allocated_mib": 19665.0751953125,
+  "pytorch_peak_reserved_mib": 20668.0,
+  "within_24gib": true
+}

@@ -1,0 +1,11 @@
+run_name,model_size,batch_size,context_length,mode,dtype,warmup,status,peak_allocated_mib,peak_reserved_mib,failure_type,failure_stage,snapshot_saved_locally
+xl_ctx128_forward_fp32,xl,4,128,forward,fp32,1,success,13241.682,13258.000,,,True
+xl_ctx128_forward_bf16,xl,4,128,forward,bf16,1,success,19628.010,19866.000,,,True
+xl_ctx128_train_step_fp32,xl,4,128,train_step,fp32,1,success,52696.868,58734.000,,,True
+xl_ctx128_train_step_bf16,xl,4,128,train_step,bf16,1,success,52686.977,59794.000,,,True
+xl_ctx2048_forward_fp32,xl,4,2048,forward,fp32,1,success,21834.400,24040.000,,,True
+xl_ctx2048_forward_bf16,xl,4,2048,forward,bf16,1,success,25984.400,28136.000,,,True
+xl_ctx2048_train_step_fp32,xl,4,2048,train_step,fp32,0,oom,78315.994,79424.000,torch.OutOfMemoryError,train_step,True
+xl_ctx2048_train_step_bf16,xl,4,2048,train_step,bf16,0,oom,77763.244,78526.000,torch.OutOfMemoryError,train_step,True
+xl_ctx2048_train_step_b1_fp32,xl,1,2048,train_step,fp32,1,oom,78911.896,79924.000,torch.OutOfMemoryError,train_step,True
+xl_ctx1024_train_step_b1_fp32,xl,1,1024,train_step,fp32,1,success,57762.124,58672.000,,,True

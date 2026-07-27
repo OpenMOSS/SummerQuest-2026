@@ -1,0 +1,8 @@
+model_size,batch_size,context_length,mode,dtype,status,phase,active_peak_bytes,allocated_peak_bytes,reserved_peak_bytes,error_type
+large,1,2048,train_step,fp32,success,,48810387456,48810387456,49482301440,
+xl,1,1024,train_step,fp32,success,,68781181440,68781181440,69245861888,
+xl,1,2048,train_step,fp32,oom,warmup,82740828160,,,OutOfMemoryError
+xl,4,128,forward,fp32,success,,13884909568,13884909568,13902020608,
+xl,4,128,train_step,fp32,success,,68836985344,68836985344,69166170112,
+xl,4,2048,forward,fp32,success,,22895028224,22895028224,25207767040,
+xl,4,2048,train_step,fp32,oom,warmup,82120271872,,,OutOfMemoryError

@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "environment": {
+    "python_version": "3.12.12",
+    "torch_version": "2.11.0+cu128",
+    "cuda_runtime_version": "12.8",
+    "cudnn_version": 91900,
+    "gpu_name": "NVIDIA H100 80GB HBM3",
+    "gpu_compute_capability": [
+      9,
+      0
+    ],
+    "gpu_total_memory_bytes": 85029158912
+  },
+  "measurement_boundary": "Warm-up completed before CUDA memory history was enabled; one independent forward or train step was then captured.",
+  "submitted_snapshots": false,
+  "supplemental_nsys_memory_trace": {
+    "configuration": {
+      "model_size": "xl",
+      "batch_size": 4,
+      "context_length": 128,
+      "mode": "train_step",
+      "dtype": "fp32",
+      "warmup": 0
+    },
+    "purpose": "A separate cold first-step trace exposes optimizer-state creation and CUDA allocation requests; it is not used as a steady-state latency result.",
+    "local_trace_filename": "memory_xl_ctx128_train_step_fp32.nsys-rep",
+    "trace_submitted": false
+  },
+  "runs": [
+    {
+      "run_name": "xl_ctx128_forward_fp32",
+      "command": "python profiling/memory_snapshot.py --model-size xl --batch-size 4 --context-length 128 --mode forward --warmup 1 --dtype fp32 --output results/memory/xl_ctx128_forward_fp32.pickle",
+      "local_snapshot_filename": "xl_ctx128_forward_fp32.pickle",
+      "snapshot_submitted": false
+    },
+    {
+      "run_name": "xl_ctx128_forward_bf16",
+      "command": "python profiling/memory_snapshot.py --model-size xl --batch-size 4 --context-length 128 --mode forward --warmup 1 --dtype bf16 --output results/memory/xl_ctx128_forward_bf16.pickle",
+      "local_snapshot_filename": "xl_ctx128_forward_bf16.pickle",
+      "snapshot_submitted": false
+    },
+    {
+      "run_name": "xl_ctx128_train_step_fp32",
+      "command": "python profiling/memory_snapshot.py --model-size xl --batch-size 4 --context-length 128 --mode train_step --warmup 1 --dtype fp32 --output results/memory/xl_ctx128_train_step_fp32.pickle",
+      "local_snapshot_filename": "xl_ctx128_train_step_fp32.pickle",
+      "snapshot_submitted": false
+    },
+    {
+      "run_name": "xl_ctx128_train_step_bf16",
+      "command": "python profiling/memory_snapshot.py --model-size xl --batch-size 4 --context-length 128 --mode train_step --warmup 1 --dtype bf16 --output results/memory/xl_ctx128_train_step_bf16.pickle",
+      "local_snapshot_filename": "xl_ctx128_train_step_bf16.pickle",
+      "snapshot_submitted": false
+    },
+    {
+      "run_name": "xl_ctx2048_forward_fp32",
+      "command": "python profiling/memory_snapshot.py --model-size xl --batch-size 4 --context-length 2048 --mode forward --warmup 1 --dtype fp32 --output results/memory/xl_ctx2048_forward_fp32.pickle",
+      "local_snapshot_filename": "xl_ctx2048_forward_fp32.pickle",
+      "snapshot_submitted": false
+    },
+    {
+      "run_name": "xl_ctx2048_forward_bf16",
+      "command": "python profiling/memory_snapshot.py --model-size xl --batch-size 4 --context-length 2048 --mode forward --warmup 1 --dtype bf16 --output results/memory/xl_ctx2048_forward_bf16.pickle",
+      "local_snapshot_filename": "xl_ctx2048_forward_bf16.pickle",
+      "snapshot_submitted": false
+    },
+    {
+      "run_name": "xl_ctx2048_train_step_fp32",
+      "command": "python profiling/memory_snapshot.py --model-size xl --batch-size 4 --context-length 2048 --mode train_step --warmup 0 --dtype fp32 --output results/memory/xl_ctx2048_train_step_fp32.pickle",
+      "local_snapshot_filename": "xl_ctx2048_train_step_fp32.pickle",
+      "snapshot_submitted": false
+    },
+    {
+      "run_name": "xl_ctx2048_train_step_bf16",
+      "command": "python profiling/memory_snapshot.py --model-size xl --batch-size 4 --context-length 2048 --mode train_step --warmup 0 --dtype bf16 --output results/memory/xl_ctx2048_train_step_bf16.pickle",
+      "local_snapshot_filename": "xl_ctx2048_train_step_bf16.pickle",
+      "snapshot_submitted": false
+    },
+    {
+      "run_name": "xl_ctx2048_train_step_b1_fp32",
+      "command": "python profiling/memory_snapshot.py --model-size xl --batch-size 1 --context-length 2048 --mode train_step --warmup 1 --dtype fp32 --output results/memory/xl_ctx2048_train_step_b1_fp32.pickle",
+      "local_snapshot_filename": "xl_ctx2048_train_step_b1_fp32.pickle",
+      "snapshot_submitted": false
+    },
+    {
+      "run_name": "xl_ctx1024_train_step_b1_fp32",
+      "command": "python profiling/memory_snapshot.py --model-size xl --batch-size 1 --context-length 1024 --mode train_step --warmup 1 --dtype fp32 --output results/memory/xl_ctx1024_train_step_b1_fp32.pickle",
+      "local_snapshot_filename": "xl_ctx1024_train_step_b1_fp32.pickle",
+      "snapshot_submitted": false
+    }
+  ]
+}

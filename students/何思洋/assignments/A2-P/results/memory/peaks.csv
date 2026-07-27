@@ -1,0 +1,7 @@
+model_size,batch_size,context_length,mode,dtype,warmup,seed,peak_allocated_mib,peak_reserved_mib,snapshot_file,status,error
+xl,1,128,forward,fp32,2,2026,7826.0546875,7834.0,xl_128_forward_snapshot.pickle,ok,
+xl,1,128,train_step,fp32,2,2026,39037.48681640625,39550.0,xl_128_train_step_snapshot.pickle,ok,
+xl,1,2048,forward,fp32,2,2026,9492.4677734375,9930.0,xl_2048_forward_snapshot.pickle,ok,
+xl,1,2048,train_step,fp32,2,2026,47619.7177734375,47964.0,,oom,"CUDA out of memory. Tried to allocate 400.00 MiB. GPU 0 has a total capacity of 47.38 GiB of which 80.94 MiB is free. Process 1676267 has 47.29 GiB memory in use. Of the allocated memory 46.50 GiB is allocated by PyTorch, and 344.48 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)"
+xl,1,1024,train_step,fp32,2,2026,42287.638671875,43646.0,xl_1024_train_step_snapshot.pickle,ok,
+large,1,2048,train_step,fp32,2,2026,46433.79150390625,47168.0,large_2048_train_step_snapshot.pickle,ok,

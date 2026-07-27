@@ -1,0 +1,5084 @@
+[
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "compiled",
+      "--sequence-length",
+      "2048",
+      "--head-dim",
+      "128",
+      "--phase",
+      "backward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P3",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 292.25,
+      "peak_reserved_mib": 372.0,
+      "status": "success"
+    },
+    "run_id": "flash-compiled-seq2048-d128-bf16-backward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "compiled",
+      "--sequence-length",
+      "2048",
+      "--head-dim",
+      "128",
+      "--phase",
+      "forward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P2",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 274.625,
+      "peak_reserved_mib": 372.0,
+      "status": "success"
+    },
+    "run_id": "flash-compiled-seq2048-d128-bf16-forward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "compiled",
+      "--sequence-length",
+      "2048",
+      "--head-dim",
+      "128",
+      "--phase",
+      "forward_backward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P0",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 291.25,
+      "peak_reserved_mib": 372.0,
+      "status": "success"
+    },
+    "run_id": "flash-compiled-seq2048-d128-bf16-forward-backward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "compiled",
+      "--sequence-length",
+      "2048",
+      "--head-dim",
+      "64",
+      "--phase",
+      "backward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P3",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 290.25,
+      "peak_reserved_mib": 370.0,
+      "status": "success"
+    },
+    "run_id": "flash-compiled-seq2048-d64-bf16-backward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "compiled",
+      "--sequence-length",
+      "2048",
+      "--head-dim",
+      "64",
+      "--phase",
+      "forward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P0",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 273.375,
+      "peak_reserved_mib": 370.0,
+      "status": "success"
+    },
+    "run_id": "flash-compiled-seq2048-d64-bf16-forward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "compiled",
+      "--sequence-length",
+      "2048",
+      "--head-dim",
+      "64",
+      "--phase",
+      "forward_backward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P0",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 289.75,
+      "peak_reserved_mib": 370.0,
+      "status": "success"
+    },
+    "run_id": "flash-compiled-seq2048-d64-bf16-forward-backward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "compiled",
+      "--sequence-length",
+      "512",
+      "--head-dim",
+      "128",
+      "--phase",
+      "backward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P2",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 274.25,
+      "peak_reserved_mib": 278.0,
+      "status": "success"
+    },
+    "run_id": "flash-compiled-seq512-d128-bf16-backward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "compiled",
+      "--sequence-length",
+      "512",
+      "--head-dim",
+      "128",
+      "--phase",
+      "forward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P0",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 265.25,
+      "peak_reserved_mib": 278.0,
+      "status": "success"
+    },
+    "run_id": "flash-compiled-seq512-d128-bf16-forward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "compiled",
+      "--sequence-length",
+      "512",
+      "--head-dim",
+      "128",
+      "--phase",
+      "forward_backward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P3",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 274.0,
+      "peak_reserved_mib": 278.0,
+      "status": "success"
+    },
+    "run_id": "flash-compiled-seq512-d128-bf16-forward-backward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "compiled",
+      "--sequence-length",
+      "512",
+      "--head-dim",
+      "64",
+      "--phase",
+      "backward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P3",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 273.75,
+      "peak_reserved_mib": 278.0,
+      "status": "success"
+    },
+    "run_id": "flash-compiled-seq512-d64-bf16-backward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "compiled",
+      "--sequence-length",
+      "512",
+      "--head-dim",
+      "64",
+      "--phase",
+      "forward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P0",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 264.9375,
+      "peak_reserved_mib": 278.0,
+      "status": "success"
+    },
+    "run_id": "flash-compiled-seq512-d64-bf16-forward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "compiled",
+      "--sequence-length",
+      "512",
+      "--head-dim",
+      "64",
+      "--phase",
+      "forward_backward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P2",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 273.625,
+      "peak_reserved_mib": 278.0,
+      "status": "success"
+    },
+    "run_id": "flash-compiled-seq512-d64-bf16-forward-backward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "compiled",
+      "--sequence-length",
+      "8192",
+      "--head-dim",
+      "128",
+      "--phase",
+      "backward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P0",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 544.25,
+      "peak_reserved_mib": 662.0,
+      "status": "success"
+    },
+    "run_id": "flash-compiled-seq8192-d128-bf16-backward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "compiled",
+      "--sequence-length",
+      "8192",
+      "--head-dim",
+      "128",
+      "--phase",
+      "forward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P3",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 402.125,
+      "peak_reserved_mib": 662.0,
+      "status": "success"
+    },
+    "run_id": "flash-compiled-seq8192-d128-bf16-forward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "compiled",
+      "--sequence-length",
+      "8192",
+      "--head-dim",
+      "128",
+      "--phase",
+      "forward_backward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P3",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 540.25,
+      "peak_reserved_mib": 662.0,
+      "status": "success"
+    },
+    "run_id": "flash-compiled-seq8192-d128-bf16-forward-backward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "compiled",
+      "--sequence-length",
+      "8192",
+      "--head-dim",
+      "64",
+      "--phase",
+      "backward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P3",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 536.25,
+      "peak_reserved_mib": 668.0,
+      "status": "success"
+    },
+    "run_id": "flash-compiled-seq8192-d64-bf16-backward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "compiled",
+      "--sequence-length",
+      "8192",
+      "--head-dim",
+      "64",
+      "--phase",
+      "forward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P2",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 397.125,
+      "peak_reserved_mib": 666.0,
+      "status": "success"
+    },
+    "run_id": "flash-compiled-seq8192-d64-bf16-forward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "compiled",
+      "--sequence-length",
+      "8192",
+      "--head-dim",
+      "64",
+      "--phase",
+      "forward_backward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P3",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 534.25,
+      "peak_reserved_mib": 668.0,
+      "status": "success"
+    },
+    "run_id": "flash-compiled-seq8192-d64-bf16-forward-backward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "eager",
+      "--sequence-length",
+      "16384",
+      "--head-dim",
+      "128",
+      "--phase",
+      "backward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P5",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 2600.25,
+      "peak_reserved_mib": 3114.0,
+      "status": "success"
+    },
+    "run_id": "flash-eager-seq16384-d128-bf16-backward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "eager",
+      "--sequence-length",
+      "16384",
+      "--head-dim",
+      "128",
+      "--phase",
+      "forward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P2",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 1564.125,
+      "peak_reserved_mib": 2090.0,
+      "status": "success"
+    },
+    "run_id": "flash-eager-seq16384-d128-bf16-forward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "eager",
+      "--sequence-length",
+      "16384",
+      "--head-dim",
+      "128",
+      "--phase",
+      "forward_backward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P0",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 2600.25,
+      "peak_reserved_mib": 3114.0,
+      "status": "success"
+    },
+    "run_id": "flash-eager-seq16384-d128-bf16-forward-backward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "eager",
+      "--sequence-length",
+      "16384",
+      "--head-dim",
+      "64",
+      "--phase",
+      "backward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P3",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 2588.25,
+      "peak_reserved_mib": 3094.0,
+      "status": "success"
+    },
+    "run_id": "flash-eager-seq16384-d64-bf16-backward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "eager",
+      "--sequence-length",
+      "16384",
+      "--head-dim",
+      "64",
+      "--phase",
+      "forward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P2",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 1554.125,
+      "peak_reserved_mib": 2070.0,
+      "status": "success"
+    },
+    "run_id": "flash-eager-seq16384-d64-bf16-forward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "eager",
+      "--sequence-length",
+      "16384",
+      "--head-dim",
+      "64",
+      "--phase",
+      "forward_backward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P5",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 2588.25,
+      "peak_reserved_mib": 3094.0,
+      "status": "success"
+    },
+    "run_id": "flash-eager-seq16384-d64-bf16-forward-backward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "eager",
+      "--sequence-length",
+      "2048",
+      "--head-dim",
+      "128",
+      "--phase",
+      "backward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P3",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 311.25,
+      "peak_reserved_mib": 340.0,
+      "status": "success"
+    },
+    "run_id": "flash-eager-seq2048-d128-bf16-backward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "eager",
+      "--sequence-length",
+      "2048",
+      "--head-dim",
+      "128",
+      "--phase",
+      "forward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P8",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 286.625,
+      "peak_reserved_mib": 300.0,
+      "status": "success"
+    },
+    "run_id": "flash-eager-seq2048-d128-bf16-forward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "eager",
+      "--sequence-length",
+      "2048",
+      "--head-dim",
+      "128",
+      "--phase",
+      "forward_backward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P5",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 311.25,
+      "peak_reserved_mib": 340.0,
+      "status": "success"
+    },
+    "run_id": "flash-eager-seq2048-d128-bf16-forward-backward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "eager",
+      "--sequence-length",
+      "2048",
+      "--head-dim",
+      "64",
+      "--phase",
+      "backward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P2",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 309.75,
+      "peak_reserved_mib": 338.0,
+      "status": "success"
+    },
+    "run_id": "flash-eager-seq2048-d64-bf16-backward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "eager",
+      "--sequence-length",
+      "2048",
+      "--head-dim",
+      "64",
+      "--phase",
+      "forward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P2",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 285.375,
+      "peak_reserved_mib": 298.0,
+      "status": "success"
+    },
+    "run_id": "flash-eager-seq2048-d64-bf16-forward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "eager",
+      "--sequence-length",
+      "2048",
+      "--head-dim",
+      "64",
+      "--phase",
+      "forward_backward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P5",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 309.75,
+      "peak_reserved_mib": 338.0,
+      "status": "success"
+    },
+    "run_id": "flash-eager-seq2048-d64-bf16-forward-backward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "eager",
+      "--sequence-length",
+      "512",
+      "--head-dim",
+      "128",
+      "--phase",
+      "backward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P5",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 275.25,
+      "peak_reserved_mib": 280.0,
+      "status": "success"
+    },
+    "run_id": "flash-eager-seq512-d128-bf16-backward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "eager",
+      "--sequence-length",
+      "512",
+      "--head-dim",
+      "128",
+      "--phase",
+      "forward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P8",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 266.0,
+      "peak_reserved_mib": 278.0,
+      "status": "success"
+    },
+    "run_id": "flash-eager-seq512-d128-bf16-forward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "eager",
+      "--sequence-length",
+      "512",
+      "--head-dim",
+      "128",
+      "--phase",
+      "forward_backward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P5",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 275.25,
+      "peak_reserved_mib": 280.0,
+      "status": "success"
+    },
+    "run_id": "flash-eager-seq512-d128-bf16-forward-backward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "eager",
+      "--sequence-length",
+      "512",
+      "--head-dim",
+      "64",
+      "--phase",
+      "backward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P2",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 274.875,
+      "peak_reserved_mib": 280.0,
+      "status": "success"
+    },
+    "run_id": "flash-eager-seq512-d64-bf16-backward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "eager",
+      "--sequence-length",
+      "512",
+      "--head-dim",
+      "64",
+      "--phase",
+      "forward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P0",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 265.6875,
+      "peak_reserved_mib": 278.0,
+      "status": "success"
+    },
+    "run_id": "flash-eager-seq512-d64-bf16-forward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "eager",
+      "--sequence-length",
+      "512",
+      "--head-dim",
+      "64",
+      "--phase",
+      "forward_backward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P5",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 274.875,
+      "peak_reserved_mib": 280.0,
+      "status": "success"
+    },
+    "run_id": "flash-eager-seq512-d64-bf16-forward-backward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "eager",
+      "--sequence-length",
+      "8192",
+      "--head-dim",
+      "128",
+      "--phase",
+      "backward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P2",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 860.25,
+      "peak_reserved_mib": 918.0,
+      "status": "success"
+    },
+    "run_id": "flash-eager-seq8192-d128-bf16-backward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "eager",
+      "--sequence-length",
+      "8192",
+      "--head-dim",
+      "128",
+      "--phase",
+      "forward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P5",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 594.125,
+      "peak_reserved_mib": 662.0,
+      "status": "success"
+    },
+    "run_id": "flash-eager-seq8192-d128-bf16-forward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "eager",
+      "--sequence-length",
+      "8192",
+      "--head-dim",
+      "128",
+      "--phase",
+      "forward_backward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P5",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 860.25,
+      "peak_reserved_mib": 1046.0,
+      "status": "success"
+    },
+    "run_id": "flash-eager-seq8192-d128-bf16-forward-backward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "eager",
+      "--sequence-length",
+      "8192",
+      "--head-dim",
+      "64",
+      "--phase",
+      "backward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P3",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 854.25,
+      "peak_reserved_mib": 924.0,
+      "status": "success"
+    },
+    "run_id": "flash-eager-seq8192-d64-bf16-backward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "eager",
+      "--sequence-length",
+      "8192",
+      "--head-dim",
+      "64",
+      "--phase",
+      "forward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P0",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 589.125,
+      "peak_reserved_mib": 666.0,
+      "status": "success"
+    },
+    "run_id": "flash-eager-seq8192-d64-bf16-forward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "eager",
+      "--sequence-length",
+      "8192",
+      "--head-dim",
+      "64",
+      "--phase",
+      "forward_backward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P0",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 854.25,
+      "peak_reserved_mib": 924.0,
+      "status": "success"
+    },
+    "run_id": "flash-eager-seq8192-d64-bf16-forward-backward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "triton",
+      "--sequence-length",
+      "16384",
+      "--head-dim",
+      "128",
+      "--phase",
+      "backward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P5",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 3380.25,
+      "peak_reserved_mib": 4282.0,
+      "status": "success"
+    },
+    "run_id": "flash-triton-seq16384-d128-bf16-backward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "triton",
+      "--sequence-length",
+      "16384",
+      "--head-dim",
+      "128",
+      "--phase",
+      "forward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P5",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 276.0625,
+      "peak_reserved_mib": 278.0,
+      "status": "success"
+    },
+    "run_id": "flash-triton-seq16384-d128-bf16-forward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "triton",
+      "--sequence-length",
+      "16384",
+      "--head-dim",
+      "128",
+      "--phase",
+      "forward_backward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P0",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 3380.25,
+      "peak_reserved_mib": 4178.0,
+      "status": "success"
+    },
+    "run_id": "flash-triton-seq16384-d128-bf16-forward-backward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "triton",
+      "--sequence-length",
+      "16384",
+      "--head-dim",
+      "64",
+      "--phase",
+      "backward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P0",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 3358.25,
+      "peak_reserved_mib": 4210.0,
+      "status": "success"
+    },
+    "run_id": "flash-triton-seq16384-d64-bf16-backward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "triton",
+      "--sequence-length",
+      "16384",
+      "--head-dim",
+      "64",
+      "--phase",
+      "forward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P2",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 266.0625,
+      "peak_reserved_mib": 278.0,
+      "status": "success"
+    },
+    "run_id": "flash-triton-seq16384-d64-bf16-forward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "triton",
+      "--sequence-length",
+      "16384",
+      "--head-dim",
+      "64",
+      "--phase",
+      "forward_backward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P5",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 3358.25,
+      "peak_reserved_mib": 4138.0,
+      "status": "success"
+    },
+    "run_id": "flash-triton-seq16384-d64-bf16-forward-backward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "triton",
+      "--sequence-length",
+      "2048",
+      "--head-dim",
+      "128",
+      "--phase",
+      "backward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P3",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 317.640625,
+      "peak_reserved_mib": 424.0,
+      "status": "success"
+    },
+    "run_id": "flash-triton-seq2048-d128-bf16-backward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "triton",
+      "--sequence-length",
+      "2048",
+      "--head-dim",
+      "128",
+      "--phase",
+      "forward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P3",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 258.5078125,
+      "peak_reserved_mib": 260.0,
+      "status": "success"
+    },
+    "run_id": "flash-triton-seq2048-d128-bf16-forward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "triton",
+      "--sequence-length",
+      "2048",
+      "--head-dim",
+      "128",
+      "--phase",
+      "forward_backward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P2",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 317.640625,
+      "peak_reserved_mib": 332.0,
+      "status": "success"
+    },
+    "run_id": "flash-triton-seq2048-d128-bf16-forward-backward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "triton",
+      "--sequence-length",
+      "2048",
+      "--head-dim",
+      "64",
+      "--phase",
+      "backward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P3",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 314.890625,
+      "peak_reserved_mib": 420.0,
+      "status": "success"
+    },
+    "run_id": "flash-triton-seq2048-d64-bf16-backward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "triton",
+      "--sequence-length",
+      "2048",
+      "--head-dim",
+      "64",
+      "--phase",
+      "forward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P3",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 257.2578125,
+      "peak_reserved_mib": 258.0,
+      "status": "success"
+    },
+    "run_id": "flash-triton-seq2048-d64-bf16-forward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "triton",
+      "--sequence-length",
+      "2048",
+      "--head-dim",
+      "64",
+      "--phase",
+      "forward_backward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P5",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 314.890625,
+      "peak_reserved_mib": 328.0,
+      "status": "success"
+    },
+    "run_id": "flash-triton-seq2048-d64-bf16-forward-backward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "triton",
+      "--sequence-length",
+      "512",
+      "--head-dim",
+      "128",
+      "--phase",
+      "backward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P2",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 268.50390625,
+      "peak_reserved_mib": 406.0,
+      "status": "success"
+    },
+    "run_id": "flash-triton-seq512-d128-bf16-backward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "triton",
+      "--sequence-length",
+      "512",
+      "--head-dim",
+      "128",
+      "--phase",
+      "forward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P2",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 256.626953125,
+      "peak_reserved_mib": 258.0,
+      "status": "success"
+    },
+    "run_id": "flash-triton-seq512-d128-bf16-forward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "triton",
+      "--sequence-length",
+      "512",
+      "--head-dim",
+      "128",
+      "--phase",
+      "forward_backward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P5",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 268.50390625,
+      "peak_reserved_mib": 282.0,
+      "status": "success"
+    },
+    "run_id": "flash-triton-seq512-d128-bf16-forward-backward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "triton",
+      "--sequence-length",
+      "512",
+      "--head-dim",
+      "64",
+      "--phase",
+      "backward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P2",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 267.81640625,
+      "peak_reserved_mib": 406.0,
+      "status": "success"
+    },
+    "run_id": "flash-triton-seq512-d64-bf16-backward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "triton",
+      "--sequence-length",
+      "512",
+      "--head-dim",
+      "64",
+      "--phase",
+      "forward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P3",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 256.314453125,
+      "peak_reserved_mib": 258.0,
+      "status": "success"
+    },
+    "run_id": "flash-triton-seq512-d64-bf16-forward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "triton",
+      "--sequence-length",
+      "512",
+      "--head-dim",
+      "64",
+      "--phase",
+      "forward_backward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P5",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 267.81640625,
+      "peak_reserved_mib": 280.0,
+      "status": "success"
+    },
+    "run_id": "flash-triton-seq512-d64-bf16-forward-backward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "triton",
+      "--sequence-length",
+      "8192",
+      "--head-dim",
+      "128",
+      "--phase",
+      "backward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P5",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 1054.1875,
+      "peak_reserved_mib": 1190.0,
+      "status": "success"
+    },
+    "run_id": "flash-triton-seq8192-d128-bf16-backward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "triton",
+      "--sequence-length",
+      "8192",
+      "--head-dim",
+      "128",
+      "--phase",
+      "forward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P2",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 266.03125,
+      "peak_reserved_mib": 278.0,
+      "status": "success"
+    },
+    "run_id": "flash-triton-seq8192-d128-bf16-forward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "triton",
+      "--sequence-length",
+      "8192",
+      "--head-dim",
+      "128",
+      "--phase",
+      "forward_backward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P8",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 1054.1875,
+      "peak_reserved_mib": 1066.0,
+      "status": "success"
+    },
+    "run_id": "flash-triton-seq8192-d128-bf16-forward-backward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "triton",
+      "--sequence-length",
+      "8192",
+      "--head-dim",
+      "64",
+      "--phase",
+      "backward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P8",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 1043.1875,
+      "peak_reserved_mib": 1126.0,
+      "status": "success"
+    },
+    "run_id": "flash-triton-seq8192-d64-bf16-backward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "triton",
+      "--sequence-length",
+      "8192",
+      "--head-dim",
+      "64",
+      "--phase",
+      "forward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P8",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 261.03125,
+      "peak_reserved_mib": 262.0,
+      "status": "success"
+    },
+    "run_id": "flash-triton-seq8192-d64-bf16-forward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  },
+  {
+    "allocator": {
+      "allocator_fraction": 0.4854174583443363,
+      "allocator_limit_mib": 23552,
+      "device": 0,
+      "total_memory_mib": 48519.0625
+    },
+    "command": [
+      "python",
+      "-m",
+      "student_scripts.a2k.flash_benchmark",
+      "run",
+      "--device",
+      "cuda",
+      "--allocator-limit-mib",
+      "23552",
+      "--minimum-free-mib",
+      "22528",
+      "--seed",
+      "42",
+      "--output",
+      "results/flash_benchmark.csv",
+      "--metadata-output",
+      "results/flash_benchmark_metadata.json",
+      "--implementation",
+      "triton",
+      "--sequence-length",
+      "8192",
+      "--head-dim",
+      "64",
+      "--phase",
+      "forward_backward",
+      "--dtype",
+      "bf16",
+      "--warmup-ms",
+      "100",
+      "--rep-ms",
+      "300"
+    ],
+    "commit": "63b86f0072663ef777425b0f835bc6d83f5632e4",
+    "experiment": "flash_benchmark",
+    "free_memory_mib_at_start": 48125.8125,
+    "gpu": {
+      "driver_version": "570.124.06",
+      "free_memory_mib_at_start": 48126.0,
+      "name": "NVIDIA GeForce RTX 4090",
+      "power_limit_w": 450.0,
+      "pstate": "P8",
+      "total_memory_mib": 49140.0
+    },
+    "measurement": {
+      "milliseconds": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ]
+    },
+    "result": {
+      "error": "",
+      "peak_allocated_mib": 1043.1875,
+      "peak_reserved_mib": 1054.0,
+      "status": "success"
+    },
+    "run_id": "flash-triton-seq8192-d64-bf16-forward-backward",
+    "seed": 42,
+    "software": {
+      "cuda": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "triton": "3.6.0"
+    },
+    "tf32_enabled": false,
+    "timer": "triton.testing.do_bench",
+    "warmup": {
+      "milliseconds": 100
+    }
+  }
+]

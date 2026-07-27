@@ -1,0 +1,226 @@
+{
+  "runs": [
+    {
+      "model_size": "large",
+      "batch_size": 1,
+      "context_length": 2048,
+      "mode": "train_step",
+      "dtype": "fp32",
+      "warmup": 2,
+      "gpu": "NVIDIA H100 80GB HBM3",
+      "gpu_total_bytes": 85029158912,
+      "torch": "2.11.0+cu128",
+      "cuda_runtime": "12.8",
+      "environment": {
+        "python": "3.12.3",
+        "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.39",
+        "torch": "2.11.0+cu128",
+        "device": "cuda",
+        "cuda_runtime": "12.8",
+        "gpu": "NVIDIA H100 80GB HBM3",
+        "gpu_capability": [
+          9,
+          0
+        ],
+        "driver": "570.124.06",
+        "nsight_systems": "NVIDIA Nsight Systems version 2025.1.1.65-251135387579v0"
+      },
+      "command": "profiling/memory_snapshot.py --model-size large --batch-size 1 --context-length 2048 --mode train_step --dtype fp32 --output results/a2p_raw/memory/official_fallback_large_b1_c2048_train_step_fp32.pickle",
+      "status": "success",
+      "allocated_peak_bytes": 48810387456,
+      "reserved_peak_bytes": 49482301440,
+      "active_peak_bytes": 48810387456
+    },
+    {
+      "model_size": "xl",
+      "batch_size": 1,
+      "context_length": 1024,
+      "mode": "train_step",
+      "dtype": "fp32",
+      "warmup": 2,
+      "gpu": "NVIDIA H100 80GB HBM3",
+      "gpu_total_bytes": 85029158912,
+      "torch": "2.11.0+cu128",
+      "cuda_runtime": "12.8",
+      "environment": {
+        "python": "3.12.3",
+        "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.39",
+        "torch": "2.11.0+cu128",
+        "device": "cuda",
+        "cuda_runtime": "12.8",
+        "gpu": "NVIDIA H100 80GB HBM3",
+        "gpu_capability": [
+          9,
+          0
+        ],
+        "driver": "570.124.06",
+        "nsight_systems": "NVIDIA Nsight Systems version 2025.1.1.65-251135387579v0"
+      },
+      "command": "profiling/memory_snapshot.py --model-size xl --batch-size 1 --context-length 1024 --mode train_step --dtype fp32 --output results/a2p_raw/memory/official_fallback_xl_b1_c1024_train_step_fp32.pickle",
+      "status": "success",
+      "allocated_peak_bytes": 68781181440,
+      "reserved_peak_bytes": 69245861888,
+      "active_peak_bytes": 68781181440
+    },
+    {
+      "model_size": "xl",
+      "batch_size": 1,
+      "context_length": 2048,
+      "mode": "train_step",
+      "dtype": "fp32",
+      "warmup": 2,
+      "gpu": "NVIDIA H100 80GB HBM3",
+      "gpu_total_bytes": 85029158912,
+      "torch": "2.11.0+cu128",
+      "cuda_runtime": "12.8",
+      "environment": {
+        "python": "3.12.3",
+        "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.39",
+        "torch": "2.11.0+cu128",
+        "device": "cuda",
+        "cuda_runtime": "12.8",
+        "gpu": "NVIDIA H100 80GB HBM3",
+        "gpu_capability": [
+          9,
+          0
+        ],
+        "driver": "570.124.06",
+        "nsight_systems": "NVIDIA Nsight Systems version 2025.1.1.65-251135387579v0"
+      },
+      "command": "profiling/memory_snapshot.py --model-size xl --batch-size 1 --context-length 2048 --mode train_step --dtype fp32 --output results/a2p_raw/memory/official_retry_xl_b1_c2048_train_step_fp32.pickle",
+      "status": "oom",
+      "phase": "warmup",
+      "allocated_bytes_at_oom": 82203957248,
+      "reserved_bytes_at_oom": 83800096768,
+      "active_peak_bytes": 82740828160,
+      "error_type": "OutOfMemoryError"
+    },
+    {
+      "model_size": "xl",
+      "batch_size": 4,
+      "context_length": 128,
+      "mode": "forward",
+      "dtype": "fp32",
+      "warmup": 2,
+      "gpu": "NVIDIA H100 80GB HBM3",
+      "gpu_total_bytes": 85029158912,
+      "torch": "2.11.0+cu128",
+      "cuda_runtime": "12.8",
+      "environment": {
+        "python": "3.12.3",
+        "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.39",
+        "torch": "2.11.0+cu128",
+        "device": "cuda",
+        "cuda_runtime": "12.8",
+        "gpu": "NVIDIA H100 80GB HBM3",
+        "gpu_capability": [
+          9,
+          0
+        ],
+        "driver": "570.124.06",
+        "nsight_systems": "NVIDIA Nsight Systems version 2025.1.1.65-251135387579v0"
+      },
+      "command": "profiling/memory_snapshot.py --model-size xl --batch-size 4 --context-length 128 --mode forward --dtype fp32 --output results/a2p_raw/memory/official_xl_b4_c128_forward_fp32.pickle",
+      "status": "success",
+      "allocated_peak_bytes": 13884909568,
+      "reserved_peak_bytes": 13902020608,
+      "active_peak_bytes": 13884909568
+    },
+    {
+      "model_size": "xl",
+      "batch_size": 4,
+      "context_length": 128,
+      "mode": "train_step",
+      "dtype": "fp32",
+      "warmup": 2,
+      "gpu": "NVIDIA H100 80GB HBM3",
+      "gpu_total_bytes": 85029158912,
+      "torch": "2.11.0+cu128",
+      "cuda_runtime": "12.8",
+      "environment": {
+        "python": "3.12.3",
+        "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.39",
+        "torch": "2.11.0+cu128",
+        "device": "cuda",
+        "cuda_runtime": "12.8",
+        "gpu": "NVIDIA H100 80GB HBM3",
+        "gpu_capability": [
+          9,
+          0
+        ],
+        "driver": "570.124.06",
+        "nsight_systems": "NVIDIA Nsight Systems version 2025.1.1.65-251135387579v0"
+      },
+      "command": "profiling/memory_snapshot.py --model-size xl --batch-size 4 --context-length 128 --mode train_step --dtype fp32 --output results/a2p_raw/memory/official_xl_b4_c128_train_step_fp32.pickle",
+      "status": "success",
+      "allocated_peak_bytes": 68836985344,
+      "reserved_peak_bytes": 69166170112,
+      "active_peak_bytes": 68836985344
+    },
+    {
+      "model_size": "xl",
+      "batch_size": 4,
+      "context_length": 2048,
+      "mode": "forward",
+      "dtype": "fp32",
+      "warmup": 2,
+      "gpu": "NVIDIA H100 80GB HBM3",
+      "gpu_total_bytes": 85029158912,
+      "torch": "2.11.0+cu128",
+      "cuda_runtime": "12.8",
+      "environment": {
+        "python": "3.12.3",
+        "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.39",
+        "torch": "2.11.0+cu128",
+        "device": "cuda",
+        "cuda_runtime": "12.8",
+        "gpu": "NVIDIA H100 80GB HBM3",
+        "gpu_capability": [
+          9,
+          0
+        ],
+        "driver": "570.124.06",
+        "nsight_systems": "NVIDIA Nsight Systems version 2025.1.1.65-251135387579v0"
+      },
+      "command": "profiling/memory_snapshot.py --model-size xl --batch-size 4 --context-length 2048 --mode forward --dtype fp32 --output results/a2p_raw/memory/official_xl_b4_c2048_forward_fp32.pickle",
+      "status": "success",
+      "allocated_peak_bytes": 22895028224,
+      "reserved_peak_bytes": 25207767040,
+      "active_peak_bytes": 22895028224
+    },
+    {
+      "model_size": "xl",
+      "batch_size": 4,
+      "context_length": 2048,
+      "mode": "train_step",
+      "dtype": "fp32",
+      "warmup": 2,
+      "gpu": "NVIDIA H100 80GB HBM3",
+      "gpu_total_bytes": 85029158912,
+      "torch": "2.11.0+cu128",
+      "cuda_runtime": "12.8",
+      "environment": {
+        "python": "3.12.3",
+        "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.39",
+        "torch": "2.11.0+cu128",
+        "device": "cuda",
+        "cuda_runtime": "12.8",
+        "gpu": "NVIDIA H100 80GB HBM3",
+        "gpu_capability": [
+          9,
+          0
+        ],
+        "driver": "570.124.06",
+        "nsight_systems": "NVIDIA Nsight Systems version 2025.1.1.65-251135387579v0"
+      },
+      "command": "profiling/memory_snapshot.py --model-size xl --batch-size 4 --context-length 2048 --mode train_step --dtype fp32 --output results/a2p_raw/memory/official_xl_b4_c2048_train_step_fp32.pickle",
+      "status": "oom",
+      "phase": "warmup",
+      "allocated_bytes_at_oom": 82119223296,
+      "reserved_bytes_at_oom": 83198214144,
+      "active_peak_bytes": 82120271872,
+      "error_type": "OutOfMemoryError"
+    }
+  ],
+  "large_binary_policy": "Snapshots remain local and are not submitted."
+}
