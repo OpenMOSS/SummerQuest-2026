@@ -138,7 +138,7 @@ BF16 forward 的峰值反而高于 FP32，是因为 autocast 保留 FP32 参数�
 ## 飞书补充文档
 
 - 链接：https://fudan-nlp.feishu.cn/wiki/KTU3wC1TaiFXjRkLF7vcAm3Lnid
-- 状态说明：暂沿用已登记的组织内文档入口；正式发布前会确认是否需要新建 A2-P 专属补充文档。
+- 文档用途：A2-P 组织内公开的补充材料；不重复 GitHub 主报告，只保存确有审核必要的差量证据。
 
 ## 自检
 
@@ -146,4 +146,4 @@ BF16 forward 的峰值反而高于 FP32，是因为 autocast 保留 FP32 参数�
 - [x] 六个 `train_step` trace、三种 benchmark mode、mixed precision 与 memory fallback 齐全。
 - [x] 五张图片均被正文引用，`results/` 与 `assets/` 合计低于 2 MiB。
 - [x] 未提交 trace、snapshot、权重、数据、压缩包、内部地址或凭据。
-- [ ] 题面状态仍为“发布候选、请勿提交”，因此当前分支未 push、未创建 PR。
+- [x] 题面已发布；分支已合并最新 `upstream/main` 并 push，PR 待创建。
