@@ -1,0 +1,957 @@
+{
+  "allocator": {
+    "allocator_fraction": 0.48421737046550567,
+    "allocator_limit_mib": 23552
+  },
+  "hard_limit_mib": 24576,
+  "pytorch_peak_allocated_mib": 19685.6376953125,
+  "pytorch_peak_reserved_mib": 20164.0,
+  "within_24gib": true,
+  "runs": [
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "eager",
+      "sequence_length": "512",
+      "head_dim": "64",
+      "phase": "forward",
+      "peak_allocated_mib": 267.1328125,
+      "peak_reserved_mib": 280.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "compiled",
+      "sequence_length": "512",
+      "head_dim": "64",
+      "phase": "forward",
+      "peak_allocated_mib": 265.44140625,
+      "peak_reserved_mib": 278.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "triton",
+      "sequence_length": "512",
+      "head_dim": "64",
+      "phase": "forward",
+      "peak_allocated_mib": 256.314453125,
+      "peak_reserved_mib": 258.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "eager",
+      "sequence_length": "512",
+      "head_dim": "64",
+      "phase": "backward",
+      "peak_allocated_mib": 277.375,
+      "peak_reserved_mib": 282.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "triton",
+      "sequence_length": "512",
+      "head_dim": "64",
+      "phase": "backward",
+      "peak_allocated_mib": 265.51806640625,
+      "peak_reserved_mib": 278.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "eager",
+      "sequence_length": "512",
+      "head_dim": "64",
+      "phase": "forward_backward",
+      "peak_allocated_mib": 276.875,
+      "peak_reserved_mib": 282.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "compiled",
+      "sequence_length": "512",
+      "head_dim": "64",
+      "phase": "forward_backward",
+      "peak_allocated_mib": 273.62890625,
+      "peak_reserved_mib": 278.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "triton",
+      "sequence_length": "512",
+      "head_dim": "64",
+      "phase": "forward_backward",
+      "peak_allocated_mib": 265.51806640625,
+      "peak_reserved_mib": 278.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "eager",
+      "sequence_length": "512",
+      "head_dim": "128",
+      "phase": "forward",
+      "peak_allocated_mib": 267.3828125,
+      "peak_reserved_mib": 280.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "compiled",
+      "sequence_length": "512",
+      "head_dim": "128",
+      "phase": "forward",
+      "peak_allocated_mib": 265.75390625,
+      "peak_reserved_mib": 278.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "triton",
+      "sequence_length": "512",
+      "head_dim": "128",
+      "phase": "forward",
+      "peak_allocated_mib": 256.626953125,
+      "peak_reserved_mib": 258.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "eager",
+      "sequence_length": "512",
+      "head_dim": "128",
+      "phase": "backward",
+      "peak_allocated_mib": 277.75,
+      "peak_reserved_mib": 282.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "compiled",
+      "sequence_length": "512",
+      "head_dim": "128",
+      "phase": "backward",
+      "peak_allocated_mib": 274.75390625,
+      "peak_reserved_mib": 280.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "triton",
+      "sequence_length": "512",
+      "head_dim": "128",
+      "phase": "backward",
+      "peak_allocated_mib": 266.37744140625,
+      "peak_reserved_mib": 280.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "eager",
+      "sequence_length": "512",
+      "head_dim": "128",
+      "phase": "forward_backward",
+      "peak_allocated_mib": 277.25,
+      "peak_reserved_mib": 282.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "compiled",
+      "sequence_length": "512",
+      "head_dim": "128",
+      "phase": "forward_backward",
+      "peak_allocated_mib": 274.00390625,
+      "peak_reserved_mib": 278.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "triton",
+      "sequence_length": "512",
+      "head_dim": "128",
+      "phase": "forward_backward",
+      "peak_allocated_mib": 266.37744140625,
+      "peak_reserved_mib": 280.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "eager",
+      "sequence_length": "2048",
+      "head_dim": "64",
+      "phase": "forward",
+      "peak_allocated_mib": 309.15625,
+      "peak_reserved_mib": 330.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "compiled",
+      "sequence_length": "2048",
+      "head_dim": "64",
+      "phase": "forward",
+      "peak_allocated_mib": 281.390625,
+      "peak_reserved_mib": 298.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "triton",
+      "sequence_length": "2048",
+      "head_dim": "64",
+      "phase": "forward",
+      "peak_allocated_mib": 257.2578125,
+      "peak_reserved_mib": 258.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "eager",
+      "sequence_length": "2048",
+      "head_dim": "64",
+      "phase": "backward",
+      "peak_allocated_mib": 349.75,
+      "peak_reserved_mib": 368.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "compiled",
+      "sequence_length": "2048",
+      "head_dim": "64",
+      "phase": "backward",
+      "peak_allocated_mib": 298.265625,
+      "peak_reserved_mib": 320.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "triton",
+      "sequence_length": "2048",
+      "head_dim": "64",
+      "phase": "backward",
+      "peak_allocated_mib": 269.64892578125,
+      "peak_reserved_mib": 282.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "eager",
+      "sequence_length": "2048",
+      "head_dim": "64",
+      "phase": "forward_backward",
+      "peak_allocated_mib": 341.75,
+      "peak_reserved_mib": 364.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "compiled",
+      "sequence_length": "2048",
+      "head_dim": "64",
+      "phase": "forward_backward",
+      "peak_allocated_mib": 289.765625,
+      "peak_reserved_mib": 300.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "triton",
+      "sequence_length": "2048",
+      "head_dim": "64",
+      "phase": "forward_backward",
+      "peak_allocated_mib": 269.64892578125,
+      "peak_reserved_mib": 282.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "eager",
+      "sequence_length": "2048",
+      "head_dim": "128",
+      "phase": "forward",
+      "peak_allocated_mib": 310.15625,
+      "peak_reserved_mib": 332.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "compiled",
+      "sequence_length": "2048",
+      "head_dim": "128",
+      "phase": "forward",
+      "peak_allocated_mib": 282.640625,
+      "peak_reserved_mib": 300.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "triton",
+      "sequence_length": "2048",
+      "head_dim": "128",
+      "phase": "forward",
+      "peak_allocated_mib": 258.5078125,
+      "peak_reserved_mib": 260.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "eager",
+      "sequence_length": "2048",
+      "head_dim": "128",
+      "phase": "backward",
+      "peak_allocated_mib": 351.25,
+      "peak_reserved_mib": 370.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "triton",
+      "sequence_length": "2048",
+      "head_dim": "128",
+      "phase": "backward",
+      "peak_allocated_mib": 273.13330078125,
+      "peak_reserved_mib": 288.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "eager",
+      "sequence_length": "2048",
+      "head_dim": "128",
+      "phase": "forward_backward",
+      "peak_allocated_mib": 343.25,
+      "peak_reserved_mib": 366.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "compiled",
+      "sequence_length": "2048",
+      "head_dim": "128",
+      "phase": "forward_backward",
+      "peak_allocated_mib": 291.265625,
+      "peak_reserved_mib": 302.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "triton",
+      "sequence_length": "2048",
+      "head_dim": "128",
+      "phase": "forward_backward",
+      "peak_allocated_mib": 273.13330078125,
+      "peak_reserved_mib": 288.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "eager",
+      "sequence_length": "8192",
+      "head_dim": "64",
+      "phase": "forward",
+      "peak_allocated_mib": 972.25,
+      "peak_reserved_mib": 1178.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "compiled",
+      "sequence_length": "8192",
+      "head_dim": "64",
+      "phase": "forward",
+      "peak_allocated_mib": 525.1875,
+      "peak_reserved_mib": 610.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "triton",
+      "sequence_length": "8192",
+      "head_dim": "64",
+      "phase": "forward",
+      "peak_allocated_mib": 261.03125,
+      "peak_reserved_mib": 262.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "eager",
+      "sequence_length": "8192",
+      "head_dim": "64",
+      "phase": "backward",
+      "peak_allocated_mib": 1494.25,
+      "peak_reserved_mib": 1694.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "compiled",
+      "sequence_length": "8192",
+      "head_dim": "64",
+      "phase": "backward",
+      "peak_allocated_mib": 664.3125,
+      "peak_reserved_mib": 742.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "triton",
+      "sequence_length": "8192",
+      "head_dim": "64",
+      "phase": "backward",
+      "peak_allocated_mib": 286.17236328125,
+      "peak_reserved_mib": 306.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "eager",
+      "sequence_length": "8192",
+      "head_dim": "64",
+      "phase": "forward_backward",
+      "peak_allocated_mib": 1366.25,
+      "peak_reserved_mib": 1694.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "compiled",
+      "sequence_length": "8192",
+      "head_dim": "64",
+      "phase": "forward_backward",
+      "peak_allocated_mib": 534.3125,
+      "peak_reserved_mib": 614.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "triton",
+      "sequence_length": "8192",
+      "head_dim": "64",
+      "phase": "forward_backward",
+      "peak_allocated_mib": 286.17236328125,
+      "peak_reserved_mib": 306.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "eager",
+      "sequence_length": "8192",
+      "head_dim": "128",
+      "phase": "forward",
+      "peak_allocated_mib": 976.25,
+      "peak_reserved_mib": 1174.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "compiled",
+      "sequence_length": "8192",
+      "head_dim": "128",
+      "phase": "forward",
+      "peak_allocated_mib": 530.1875,
+      "peak_reserved_mib": 606.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "triton",
+      "sequence_length": "8192",
+      "head_dim": "128",
+      "phase": "forward",
+      "peak_allocated_mib": 266.03125,
+      "peak_reserved_mib": 278.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "eager",
+      "sequence_length": "8192",
+      "head_dim": "128",
+      "phase": "backward",
+      "peak_allocated_mib": 1500.25,
+      "peak_reserved_mib": 1684.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "triton",
+      "sequence_length": "8192",
+      "head_dim": "128",
+      "phase": "backward",
+      "peak_allocated_mib": 300.15673828125,
+      "peak_reserved_mib": 318.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "eager",
+      "sequence_length": "8192",
+      "head_dim": "128",
+      "phase": "forward_backward",
+      "peak_allocated_mib": 1372.25,
+      "peak_reserved_mib": 1686.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "compiled",
+      "sequence_length": "8192",
+      "head_dim": "128",
+      "phase": "forward_backward",
+      "peak_allocated_mib": 540.3125,
+      "peak_reserved_mib": 678.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "triton",
+      "sequence_length": "8192",
+      "head_dim": "128",
+      "phase": "forward_backward",
+      "peak_allocated_mib": 300.15673828125,
+      "peak_reserved_mib": 318.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "eager",
+      "sequence_length": "16384",
+      "head_dim": "64",
+      "phase": "forward",
+      "peak_allocated_mib": 3088.375,
+      "peak_reserved_mib": 3606.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "triton",
+      "sequence_length": "16384",
+      "head_dim": "64",
+      "phase": "forward",
+      "peak_allocated_mib": 266.0625,
+      "peak_reserved_mib": 278.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "eager",
+      "sequence_length": "16384",
+      "head_dim": "64",
+      "phase": "backward",
+      "peak_allocated_mib": 5148.25,
+      "peak_reserved_mib": 5652.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "triton",
+      "sequence_length": "16384",
+      "head_dim": "64",
+      "phase": "backward",
+      "peak_allocated_mib": 308.20361328125,
+      "peak_reserved_mib": 318.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "eager",
+      "sequence_length": "16384",
+      "head_dim": "64",
+      "phase": "forward_backward",
+      "peak_allocated_mib": 4636.25,
+      "peak_reserved_mib": 5654.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "triton",
+      "sequence_length": "16384",
+      "head_dim": "64",
+      "phase": "forward_backward",
+      "peak_allocated_mib": 308.20361328125,
+      "peak_reserved_mib": 318.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "eager",
+      "sequence_length": "16384",
+      "head_dim": "128",
+      "phase": "forward",
+      "peak_allocated_mib": 3096.375,
+      "peak_reserved_mib": 3626.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "triton",
+      "sequence_length": "16384",
+      "head_dim": "128",
+      "phase": "forward",
+      "peak_allocated_mib": 276.0625,
+      "peak_reserved_mib": 278.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "eager",
+      "sequence_length": "16384",
+      "head_dim": "128",
+      "phase": "backward",
+      "peak_allocated_mib": 5160.25,
+      "peak_reserved_mib": 5672.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "triton",
+      "sequence_length": "16384",
+      "head_dim": "128",
+      "phase": "backward",
+      "peak_allocated_mib": 336.18798828125,
+      "peak_reserved_mib": 358.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "eager",
+      "sequence_length": "16384",
+      "head_dim": "128",
+      "phase": "forward_backward",
+      "peak_allocated_mib": 4648.25,
+      "peak_reserved_mib": 5674.0
+    },
+    {
+      "source": "flash_benchmark.csv",
+      "implementation": "triton",
+      "sequence_length": "16384",
+      "head_dim": "128",
+      "phase": "forward_backward",
+      "peak_allocated_mib": 336.18798828125,
+      "peak_reserved_mib": 358.0
+    },
+    {
+      "source": "compile_comparison.csv",
+      "implementation": "eager",
+      "sequence_length": "512",
+      "head_dim": "64",
+      "phase": "forward",
+      "peak_allocated_mib": 267.1328125,
+      "peak_reserved_mib": 280.0
+    },
+    {
+      "source": "compile_comparison.csv",
+      "implementation": "eager",
+      "sequence_length": "512",
+      "head_dim": "64",
+      "phase": "forward_backward",
+      "peak_allocated_mib": 276.875,
+      "peak_reserved_mib": 282.0
+    },
+    {
+      "source": "compile_comparison.csv",
+      "implementation": "compiled",
+      "sequence_length": "512",
+      "head_dim": "64",
+      "phase": "forward",
+      "peak_allocated_mib": 265.44140625,
+      "peak_reserved_mib": 278.0
+    },
+    {
+      "source": "compile_comparison.csv",
+      "implementation": "compiled",
+      "sequence_length": "512",
+      "head_dim": "64",
+      "phase": "forward_backward",
+      "peak_allocated_mib": 273.62890625,
+      "peak_reserved_mib": 278.0
+    },
+    {
+      "source": "compile_comparison.csv",
+      "implementation": "eager",
+      "sequence_length": "2048",
+      "head_dim": "128",
+      "phase": "forward",
+      "peak_allocated_mib": 310.15625,
+      "peak_reserved_mib": 332.0
+    },
+    {
+      "source": "compile_comparison.csv",
+      "implementation": "eager",
+      "sequence_length": "2048",
+      "head_dim": "128",
+      "phase": "forward_backward",
+      "peak_allocated_mib": 343.25,
+      "peak_reserved_mib": 366.0
+    },
+    {
+      "source": "compile_comparison.csv",
+      "implementation": "compiled",
+      "sequence_length": "2048",
+      "head_dim": "128",
+      "phase": "forward",
+      "peak_allocated_mib": 282.640625,
+      "peak_reserved_mib": 300.0
+    },
+    {
+      "source": "compile_comparison.csv",
+      "implementation": "compiled",
+      "sequence_length": "2048",
+      "head_dim": "128",
+      "phase": "forward_backward",
+      "peak_allocated_mib": 291.265625,
+      "peak_reserved_mib": 302.0
+    },
+    {
+      "source": "compile_comparison.csv",
+      "implementation": "eager",
+      "sequence_length": "8192",
+      "head_dim": "128",
+      "phase": "forward",
+      "peak_allocated_mib": 976.25,
+      "peak_reserved_mib": 1174.0
+    },
+    {
+      "source": "compile_comparison.csv",
+      "implementation": "eager",
+      "sequence_length": "8192",
+      "head_dim": "128",
+      "phase": "forward_backward",
+      "peak_allocated_mib": 1372.25,
+      "peak_reserved_mib": 1686.0
+    },
+    {
+      "source": "compile_comparison.csv",
+      "implementation": "compiled",
+      "sequence_length": "8192",
+      "head_dim": "128",
+      "phase": "forward",
+      "peak_allocated_mib": 530.1875,
+      "peak_reserved_mib": 606.0
+    },
+    {
+      "source": "compile_comparison.csv",
+      "implementation": "compiled",
+      "sequence_length": "8192",
+      "head_dim": "128",
+      "phase": "forward_backward",
+      "peak_allocated_mib": 540.3125,
+      "peak_reserved_mib": 678.0
+    },
+    {
+      "source": "compile_comparison.csv",
+      "implementation": "eager",
+      "sequence_length": "512",
+      "phase": "forward",
+      "peak_allocated_mib": 544.2333984375,
+      "peak_reserved_mib": 612.0
+    },
+    {
+      "source": "compile_comparison.csv",
+      "implementation": "eager",
+      "sequence_length": "512",
+      "phase": "forward_backward",
+      "peak_allocated_mib": 1398.990234375,
+      "peak_reserved_mib": 1516.0
+    },
+    {
+      "source": "compile_comparison.csv",
+      "implementation": "eager",
+      "sequence_length": "512",
+      "phase": "train_step",
+      "peak_allocated_mib": 2511.01513671875,
+      "peak_reserved_mib": 2836.0
+    },
+    {
+      "source": "compile_comparison.csv",
+      "implementation": "compiled",
+      "sequence_length": "512",
+      "phase": "forward",
+      "peak_allocated_mib": 526.8701171875,
+      "peak_reserved_mib": 694.0
+    },
+    {
+      "source": "compile_comparison.csv",
+      "implementation": "compiled",
+      "sequence_length": "512",
+      "phase": "forward_backward",
+      "peak_allocated_mib": 1184.935546875,
+      "peak_reserved_mib": 1356.0
+    },
+    {
+      "source": "compile_comparison.csv",
+      "implementation": "compiled",
+      "sequence_length": "512",
+      "phase": "train_step",
+      "peak_allocated_mib": 2498.15576171875,
+      "peak_reserved_mib": 2812.0
+    },
+    {
+      "source": "checkpointing.csv",
+      "config_id": "medium_c1024_block_none",
+      "peak_allocated_mib": 10078.3447265625,
+      "peak_reserved_mib": 10270.0
+    },
+    {
+      "source": "checkpointing.csv",
+      "config_id": "medium_c1024_block_1",
+      "peak_allocated_mib": 8123.09814453125,
+      "peak_reserved_mib": 8168.0
+    },
+    {
+      "source": "checkpointing.csv",
+      "config_id": "medium_c1024_block_2",
+      "peak_allocated_mib": 8123.56689453125,
+      "peak_reserved_mib": 8178.0
+    },
+    {
+      "source": "checkpointing.csv",
+      "config_id": "medium_c1024_block_4",
+      "peak_allocated_mib": 8122.62939453125,
+      "peak_reserved_mib": 8230.0
+    },
+    {
+      "source": "checkpointing.csv",
+      "config_id": "medium_c1024_block_8",
+      "peak_allocated_mib": 8122.62939453125,
+      "peak_reserved_mib": 8226.0
+    },
+    {
+      "source": "checkpointing.csv",
+      "config_id": "medium_c2048_block_none",
+      "peak_allocated_mib": 19685.6376953125,
+      "peak_reserved_mib": 20164.0
+    },
+    {
+      "source": "checkpointing.csv",
+      "config_id": "medium_c2048_block_1",
+      "peak_allocated_mib": 8148.17626953125,
+      "peak_reserved_mib": 9186.0
+    },
+    {
+      "source": "checkpointing.csv",
+      "config_id": "medium_c2048_block_2",
+      "peak_allocated_mib": 8582.5595703125,
+      "peak_reserved_mib": 9976.0
+    },
+    {
+      "source": "checkpointing.csv",
+      "config_id": "medium_c2048_block_4",
+      "peak_allocated_mib": 9588.7001953125,
+      "peak_reserved_mib": 10882.0
+    },
+    {
+      "source": "checkpointing.csv",
+      "config_id": "medium_c2048_block_8",
+      "peak_allocated_mib": 11607.6376953125,
+      "peak_reserved_mib": 11936.0
+    },
+    {
+      "source": "attention_baseline.csv",
+      "implementation": "eager",
+      "sequence_length": "512",
+      "head_dim": "64",
+      "phase": "forward",
+      "peak_allocated_mib": 267.1328125,
+      "peak_reserved_mib": 280.0
+    },
+    {
+      "source": "attention_baseline.csv",
+      "implementation": "eager",
+      "sequence_length": "512",
+      "head_dim": "64",
+      "phase": "backward",
+      "peak_allocated_mib": 277.375,
+      "peak_reserved_mib": 282.0
+    },
+    {
+      "source": "attention_baseline.csv",
+      "implementation": "eager",
+      "sequence_length": "512",
+      "head_dim": "64",
+      "phase": "forward_backward",
+      "peak_allocated_mib": 276.875,
+      "peak_reserved_mib": 282.0
+    },
+    {
+      "source": "attention_baseline.csv",
+      "implementation": "eager",
+      "sequence_length": "512",
+      "head_dim": "128",
+      "phase": "forward",
+      "peak_allocated_mib": 267.3828125,
+      "peak_reserved_mib": 280.0
+    },
+    {
+      "source": "attention_baseline.csv",
+      "implementation": "eager",
+      "sequence_length": "512",
+      "head_dim": "128",
+      "phase": "backward",
+      "peak_allocated_mib": 277.75,
+      "peak_reserved_mib": 282.0
+    },
+    {
+      "source": "attention_baseline.csv",
+      "implementation": "eager",
+      "sequence_length": "512",
+      "head_dim": "128",
+      "phase": "forward_backward",
+      "peak_allocated_mib": 277.25,
+      "peak_reserved_mib": 282.0
+    },
+    {
+      "source": "attention_baseline.csv",
+      "implementation": "eager",
+      "sequence_length": "2048",
+      "head_dim": "64",
+      "phase": "forward",
+      "peak_allocated_mib": 309.15625,
+      "peak_reserved_mib": 330.0
+    },
+    {
+      "source": "attention_baseline.csv",
+      "implementation": "eager",
+      "sequence_length": "2048",
+      "head_dim": "64",
+      "phase": "backward",
+      "peak_allocated_mib": 349.75,
+      "peak_reserved_mib": 368.0
+    },
+    {
+      "source": "attention_baseline.csv",
+      "implementation": "eager",
+      "sequence_length": "2048",
+      "head_dim": "64",
+      "phase": "forward_backward",
+      "peak_allocated_mib": 341.75,
+      "peak_reserved_mib": 364.0
+    },
+    {
+      "source": "attention_baseline.csv",
+      "implementation": "eager",
+      "sequence_length": "2048",
+      "head_dim": "128",
+      "phase": "forward",
+      "peak_allocated_mib": 310.15625,
+      "peak_reserved_mib": 332.0
+    },
+    {
+      "source": "attention_baseline.csv",
+      "implementation": "eager",
+      "sequence_length": "2048",
+      "head_dim": "128",
+      "phase": "backward",
+      "peak_allocated_mib": 351.25,
+      "peak_reserved_mib": 370.0
+    },
+    {
+      "source": "attention_baseline.csv",
+      "implementation": "eager",
+      "sequence_length": "2048",
+      "head_dim": "128",
+      "phase": "forward_backward",
+      "peak_allocated_mib": 343.25,
+      "peak_reserved_mib": 366.0
+    },
+    {
+      "source": "attention_baseline.csv",
+      "implementation": "eager",
+      "sequence_length": "8192",
+      "head_dim": "64",
+      "phase": "forward",
+      "peak_allocated_mib": 972.25,
+      "peak_reserved_mib": 1178.0
+    },
+    {
+      "source": "attention_baseline.csv",
+      "implementation": "eager",
+      "sequence_length": "8192",
+      "head_dim": "64",
+      "phase": "backward",
+      "peak_allocated_mib": 1494.25,
+      "peak_reserved_mib": 1694.0
+    },
+    {
+      "source": "attention_baseline.csv",
+      "implementation": "eager",
+      "sequence_length": "8192",
+      "head_dim": "64",
+      "phase": "forward_backward",
+      "peak_allocated_mib": 1366.25,
+      "peak_reserved_mib": 1694.0
+    },
+    {
+      "source": "attention_baseline.csv",
+      "implementation": "eager",
+      "sequence_length": "8192",
+      "head_dim": "128",
+      "phase": "forward",
+      "peak_allocated_mib": 976.25,
+      "peak_reserved_mib": 1174.0
+    },
+    {
+      "source": "attention_baseline.csv",
+      "implementation": "eager",
+      "sequence_length": "8192",
+      "head_dim": "128",
+      "phase": "backward",
+      "peak_allocated_mib": 1500.25,
+      "peak_reserved_mib": 1684.0
+    },
+    {
+      "source": "attention_baseline.csv",
+      "implementation": "eager",
+      "sequence_length": "8192",
+      "head_dim": "128",
+      "phase": "forward_backward",
+      "peak_allocated_mib": 1372.25,
+      "peak_reserved_mib": 1686.0
+    }
+  ]
+}

@@ -1,0 +1,1318 @@
+{
+  "metadata": {
+    "starter_commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+    "seed": 0,
+    "command": "python -m student_scripts.a2k.run_correctness --output local_results/a2k/correctness.json",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "total_memory_mib": 48639.3125,
+    "free_memory_mib_at_start": 48127.6875,
+    "driver": "550.163.01",
+    "power_limit_w": "450.00",
+    "pstate": "P2",
+    "cuda_runtime": "12.8",
+    "pytorch": "2.11.0+cu128",
+    "triton": "3.6.0",
+    "tf32_matmul": false,
+    "allocator_limit_mib": 23552.0,
+    "allocator_fraction": 0.48421737046550567,
+    "timing": "triton.testing.do_bench(warmup=100ms, rep=300ms, quantiles=0.2/0.5/0.8)"
+  },
+  "cases": [
+    {
+      "seed": 0,
+      "shape": [
+        1,
+        257,
+        32
+      ],
+      "dtype": "torch.float32",
+      "causal": false,
+      "implementation": "pytorch_tiled",
+      "atol": 0.0003,
+      "rtol": 0.0003,
+      "errors": {
+        "output": {
+          "max_abs": 2.086162567138672e-07,
+          "max_rel": 0.0017404720420017838
+        },
+        "lse": {
+          "max_abs": 9.5367431640625e-07,
+          "max_rel": 1.621689875719312e-07
+        },
+        "dq": {
+          "max_abs": 5.364418029785156e-07,
+          "max_rel": 0.01713838428258896
+        },
+        "dk": {
+          "max_abs": 5.662441253662109e-07,
+          "max_rel": 0.003460743697360158
+        },
+        "dv": {
+          "max_abs": 4.1350722312927246e-07,
+          "max_rel": 0.0021451145876199007
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 0,
+      "shape": [
+        1,
+        257,
+        32
+      ],
+      "dtype": "torch.float32",
+      "causal": false,
+      "implementation": "triton",
+      "atol": 0.0003,
+      "rtol": 0.0003,
+      "errors": {
+        "output": {
+          "max_abs": 3.725290298461914e-07,
+          "max_rel": 0.0018065989715978503
+        },
+        "lse": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 8.218822955541327e-08
+        },
+        "dq": {
+          "max_abs": 5.960464477539062e-07,
+          "max_rel": 0.011270230636000633
+        },
+        "dk": {
+          "max_abs": 5.364418029785156e-07,
+          "max_rel": 0.0006664281827397645
+        },
+        "dv": {
+          "max_abs": 3.0174851417541504e-07,
+          "max_rel": 0.0069986614398658276
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 0,
+      "shape": [
+        1,
+        257,
+        32
+      ],
+      "dtype": "torch.float32",
+      "causal": true,
+      "implementation": "pytorch_tiled",
+      "atol": 0.0003,
+      "rtol": 0.0003,
+      "errors": {
+        "output": {
+          "max_abs": 5.066394805908203e-07,
+          "max_rel": 0.0009590564877726138
+        },
+        "lse": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 2.624919659410807e-07
+        },
+        "dq": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 0.15615227818489075
+        },
+        "dk": {
+          "max_abs": 5.960464477539062e-07,
+          "max_rel": 0.00124895921908319
+        },
+        "dv": {
+          "max_abs": 1.1920928955078125e-06,
+          "max_rel": 0.0005954767111688852
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 0,
+      "shape": [
+        1,
+        257,
+        32
+      ],
+      "dtype": "torch.float32",
+      "causal": true,
+      "implementation": "triton",
+      "atol": 0.0003,
+      "rtol": 0.0003,
+      "errors": {
+        "output": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 0.003462259890511632
+        },
+        "lse": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 2.624919659410807e-07
+        },
+        "dq": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 0.15615227818489075
+        },
+        "dk": {
+          "max_abs": 8.344650268554688e-07,
+          "max_rel": 0.0015265056863427162
+        },
+        "dv": {
+          "max_abs": 8.344650268554688e-07,
+          "max_rel": 0.0007033948204480112
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 0,
+      "shape": [
+        1,
+        257,
+        64
+      ],
+      "dtype": "torch.bfloat16",
+      "causal": false,
+      "implementation": "pytorch_tiled",
+      "atol": 0.04,
+      "rtol": 0.02,
+      "errors": {
+        "output": {
+          "max_abs": 0.0048828125,
+          "max_rel": 1007.080078125
+        },
+        "lse": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 8.192419187480482e-08
+        },
+        "dq": {
+          "max_abs": 0.0078125,
+          "max_rel": 888.824462890625
+        },
+        "dk": {
+          "max_abs": 0.0078125,
+          "max_rel": 762.939453125
+        },
+        "dv": {
+          "max_abs": 0.00390625,
+          "max_rel": 423.431396484375
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 0,
+      "shape": [
+        1,
+        257,
+        64
+      ],
+      "dtype": "torch.bfloat16",
+      "causal": false,
+      "implementation": "triton",
+      "atol": 0.04,
+      "rtol": 0.02,
+      "errors": {
+        "output": {
+          "max_abs": 0.0048828125,
+          "max_rel": 1235.9619140625
+        },
+        "lse": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 8.192419187480482e-08
+        },
+        "dq": {
+          "max_abs": 0.0078125,
+          "max_rel": 930.7861328125
+        },
+        "dk": {
+          "max_abs": 0.0078125,
+          "max_rel": 762.939453125
+        },
+        "dv": {
+          "max_abs": 0.00390625,
+          "max_rel": 423.431396484375
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 0,
+      "shape": [
+        1,
+        257,
+        64
+      ],
+      "dtype": "torch.bfloat16",
+      "causal": true,
+      "implementation": "pytorch_tiled",
+      "atol": 0.04,
+      "rtol": 0.02,
+      "errors": {
+        "output": {
+          "max_abs": 0.0078125,
+          "max_rel": 341.4154052734375
+        },
+        "lse": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 1.5633401062586927e-07
+        },
+        "dq": {
+          "max_abs": 0.015625,
+          "max_rel": 356.6741943359375
+        },
+        "dk": {
+          "max_abs": 0.015625,
+          "max_rel": 709.53369140625
+        },
+        "dv": {
+          "max_abs": 0.03125,
+          "max_rel": 926.971435546875
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 0,
+      "shape": [
+        1,
+        257,
+        64
+      ],
+      "dtype": "torch.bfloat16",
+      "causal": true,
+      "implementation": "triton",
+      "atol": 0.04,
+      "rtol": 0.02,
+      "errors": {
+        "output": {
+          "max_abs": 0.0078125,
+          "max_rel": 617.98095703125
+        },
+        "lse": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 1.1869832405864145e-07
+        },
+        "dq": {
+          "max_abs": 0.015625,
+          "max_rel": 436.7828369140625
+        },
+        "dk": {
+          "max_abs": 0.015625,
+          "max_rel": 961.3037109375
+        },
+        "dv": {
+          "max_abs": 0.03125,
+          "max_rel": 926.971435546875
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 0,
+      "shape": [
+        1,
+        257,
+        128
+      ],
+      "dtype": "torch.bfloat16",
+      "causal": false,
+      "implementation": "pytorch_tiled",
+      "atol": 0.04,
+      "rtol": 0.02,
+      "errors": {
+        "output": {
+          "max_abs": 0.0078125,
+          "max_rel": 1693.7255859375
+        },
+        "lse": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 8.132717255193711e-08
+        },
+        "dq": {
+          "max_abs": 0.0078125,
+          "max_rel": 1243.59130859375
+        },
+        "dk": {
+          "max_abs": 0.015625,
+          "max_rel": 732.421875
+        },
+        "dv": {
+          "max_abs": 0.0078125,
+          "max_rel": 1800.537109375
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 0,
+      "shape": [
+        1,
+        257,
+        128
+      ],
+      "dtype": "torch.bfloat16",
+      "causal": false,
+      "implementation": "triton",
+      "atol": 0.04,
+      "rtol": 0.02,
+      "errors": {
+        "output": {
+          "max_abs": 0.0078125,
+          "max_rel": 1686.09619140625
+        },
+        "lse": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 8.153926245313414e-08
+        },
+        "dq": {
+          "max_abs": 0.0078125,
+          "max_rel": 1243.59130859375
+        },
+        "dk": {
+          "max_abs": 0.015625,
+          "max_rel": 732.421875
+        },
+        "dv": {
+          "max_abs": 0.0078125,
+          "max_rel": 1800.537109375
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 0,
+      "shape": [
+        1,
+        257,
+        128
+      ],
+      "dtype": "torch.bfloat16",
+      "causal": true,
+      "implementation": "pytorch_tiled",
+      "atol": 0.04,
+      "rtol": 0.02,
+      "errors": {
+        "output": {
+          "max_abs": 0.015625,
+          "max_rel": 610.3515625
+        },
+        "lse": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 1.7901439264278451e-07
+        },
+        "dq": {
+          "max_abs": 0.01171875,
+          "max_rel": 862.12158203125
+        },
+        "dk": {
+          "max_abs": 0.015625,
+          "max_rel": 667.572021484375
+        },
+        "dv": {
+          "max_abs": 0.03125,
+          "max_rel": 2258.30078125
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 0,
+      "shape": [
+        1,
+        257,
+        128
+      ],
+      "dtype": "torch.bfloat16",
+      "causal": true,
+      "implementation": "triton",
+      "atol": 0.04,
+      "rtol": 0.02,
+      "errors": {
+        "output": {
+          "max_abs": 0.015625,
+          "max_rel": 724.79248046875
+        },
+        "lse": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 1.2108031910429418e-07
+        },
+        "dq": {
+          "max_abs": 0.01171875,
+          "max_rel": 953.67431640625
+        },
+        "dk": {
+          "max_abs": 0.015625,
+          "max_rel": 698.089599609375
+        },
+        "dv": {
+          "max_abs": 0.03125,
+          "max_rel": 2258.30078125
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 1,
+      "shape": [
+        1,
+        257,
+        32
+      ],
+      "dtype": "torch.bfloat16",
+      "causal": false,
+      "implementation": "pytorch_tiled",
+      "atol": 0.04,
+      "rtol": 0.02,
+      "errors": {
+        "output": {
+          "max_abs": 0.00390625,
+          "max_rel": 1083.3740234375
+        },
+        "lse": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 8.233775616872663e-08
+        },
+        "dq": {
+          "max_abs": 0.00390625,
+          "max_rel": 1129.150390625
+        },
+        "dk": {
+          "max_abs": 0.0078125,
+          "max_rel": 221.25244140625
+        },
+        "dv": {
+          "max_abs": 0.005859375,
+          "max_rel": 839.2333984375
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 1,
+      "shape": [
+        1,
+        257,
+        32
+      ],
+      "dtype": "torch.bfloat16",
+      "causal": false,
+      "implementation": "triton",
+      "atol": 0.04,
+      "rtol": 0.02,
+      "errors": {
+        "output": {
+          "max_abs": 0.00390625,
+          "max_rel": 1106.26220703125
+        },
+        "lse": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 8.271084794841954e-08
+        },
+        "dq": {
+          "max_abs": 0.00390625,
+          "max_rel": 1113.8916015625
+        },
+        "dk": {
+          "max_abs": 0.00390625,
+          "max_rel": 465.39306640625
+        },
+        "dv": {
+          "max_abs": 0.005859375,
+          "max_rel": 839.2333984375
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 1,
+      "shape": [
+        1,
+        257,
+        32
+      ],
+      "dtype": "torch.bfloat16",
+      "causal": true,
+      "implementation": "pytorch_tiled",
+      "atol": 0.04,
+      "rtol": 0.02,
+      "errors": {
+        "output": {
+          "max_abs": 0.01171875,
+          "max_rel": 907.89794921875
+        },
+        "lse": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 1.5150547483244736e-07
+        },
+        "dq": {
+          "max_abs": 0.015625,
+          "max_rel": 316.619873046875
+        },
+        "dk": {
+          "max_abs": 0.015625,
+          "max_rel": 191.68853759765625
+        },
+        "dv": {
+          "max_abs": 0.015625,
+          "max_rel": 289.9169921875
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 1,
+      "shape": [
+        1,
+        257,
+        32
+      ],
+      "dtype": "torch.bfloat16",
+      "causal": true,
+      "implementation": "triton",
+      "atol": 0.04,
+      "rtol": 0.02,
+      "errors": {
+        "output": {
+          "max_abs": 0.01171875,
+          "max_rel": 915.52734375
+        },
+        "lse": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 1.1416747724979359e-07
+        },
+        "dq": {
+          "max_abs": 0.015625,
+          "max_rel": 261.3067626953125
+        },
+        "dk": {
+          "max_abs": 0.015625,
+          "max_rel": 191.68853759765625
+        },
+        "dv": {
+          "max_abs": 0.015625,
+          "max_rel": 289.9169921875
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 1,
+      "shape": [
+        1,
+        257,
+        64
+      ],
+      "dtype": "torch.bfloat16",
+      "causal": false,
+      "implementation": "pytorch_tiled",
+      "atol": 0.04,
+      "rtol": 0.02,
+      "errors": {
+        "output": {
+          "max_abs": 0.00390625,
+          "max_rel": 869.7509765625
+        },
+        "lse": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 8.112873217669403e-08
+        },
+        "dq": {
+          "max_abs": 0.00390625,
+          "max_rel": 385.284423828125
+        },
+        "dk": {
+          "max_abs": 0.00390625,
+          "max_rel": 823.974609375
+        },
+        "dv": {
+          "max_abs": 0.005859375,
+          "max_rel": 171.661376953125
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 1,
+      "shape": [
+        1,
+        257,
+        64
+      ],
+      "dtype": "torch.bfloat16",
+      "causal": false,
+      "implementation": "triton",
+      "atol": 0.04,
+      "rtol": 0.02,
+      "errors": {
+        "output": {
+          "max_abs": 0.00390625,
+          "max_rel": 732.421875
+        },
+        "lse": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 8.213492463937655e-08
+        },
+        "dq": {
+          "max_abs": 0.00390625,
+          "max_rel": 381.4697265625
+        },
+        "dk": {
+          "max_abs": 0.00390625,
+          "max_rel": 823.974609375
+        },
+        "dv": {
+          "max_abs": 0.005859375,
+          "max_rel": 171.661376953125
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 1,
+      "shape": [
+        1,
+        257,
+        64
+      ],
+      "dtype": "torch.bfloat16",
+      "causal": true,
+      "implementation": "pytorch_tiled",
+      "atol": 0.04,
+      "rtol": 0.02,
+      "errors": {
+        "output": {
+          "max_abs": 0.015625,
+          "max_rel": 1266.4794921875
+        },
+        "lse": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 1.0272610495576373e-07
+        },
+        "dq": {
+          "max_abs": 0.0078125,
+          "max_rel": 984.19189453125
+        },
+        "dk": {
+          "max_abs": 0.015625,
+          "max_rel": 1785.2783203125
+        },
+        "dv": {
+          "max_abs": 0.015625,
+          "max_rel": 976.5625
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 1,
+      "shape": [
+        1,
+        257,
+        64
+      ],
+      "dtype": "torch.bfloat16",
+      "causal": true,
+      "implementation": "triton",
+      "atol": 0.04,
+      "rtol": 0.02,
+      "errors": {
+        "output": {
+          "max_abs": 0.015625,
+          "max_rel": 1403.80859375
+        },
+        "lse": {
+          "max_abs": 9.5367431640625e-07,
+          "max_rel": 1.7177656275180198e-07
+        },
+        "dq": {
+          "max_abs": 0.0078125,
+          "max_rel": 1060.48583984375
+        },
+        "dk": {
+          "max_abs": 0.015625,
+          "max_rel": 1785.2783203125
+        },
+        "dv": {
+          "max_abs": 0.015625,
+          "max_rel": 976.5625
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 1,
+      "shape": [
+        1,
+        257,
+        128
+      ],
+      "dtype": "torch.bfloat16",
+      "causal": false,
+      "implementation": "pytorch_tiled",
+      "atol": 0.04,
+      "rtol": 0.02,
+      "errors": {
+        "output": {
+          "max_abs": 0.0078125,
+          "max_rel": 1197.81494140625
+        },
+        "lse": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 8.096886006114801e-08
+        },
+        "dq": {
+          "max_abs": 0.0078125,
+          "max_rel": 633.23974609375
+        },
+        "dk": {
+          "max_abs": 0.0078125,
+          "max_rel": 907.89794921875
+        },
+        "dv": {
+          "max_abs": 0.0078125,
+          "max_rel": 579.833984375
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 1,
+      "shape": [
+        1,
+        257,
+        128
+      ],
+      "dtype": "torch.bfloat16",
+      "causal": false,
+      "implementation": "triton",
+      "atol": 0.04,
+      "rtol": 0.02,
+      "errors": {
+        "output": {
+          "max_abs": 0.0078125,
+          "max_rel": 1106.26220703125
+        },
+        "lse": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 8.241504900752261e-08
+        },
+        "dq": {
+          "max_abs": 0.0078125,
+          "max_rel": 633.23974609375
+        },
+        "dk": {
+          "max_abs": 0.0078125,
+          "max_rel": 907.89794921875
+        },
+        "dv": {
+          "max_abs": 0.0078125,
+          "max_rel": 579.833984375
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 1,
+      "shape": [
+        1,
+        257,
+        128
+      ],
+      "dtype": "torch.bfloat16",
+      "causal": true,
+      "implementation": "pytorch_tiled",
+      "atol": 0.04,
+      "rtol": 0.02,
+      "errors": {
+        "output": {
+          "max_abs": 0.015625,
+          "max_rel": 1480.1025390625
+        },
+        "lse": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 1.1523025733595205e-07
+        },
+        "dq": {
+          "max_abs": 0.009765625,
+          "max_rel": 1388.5498046875
+        },
+        "dk": {
+          "max_abs": 0.015625,
+          "max_rel": 2441.40625
+        },
+        "dv": {
+          "max_abs": 0.03125,
+          "max_rel": 640.869140625
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 1,
+      "shape": [
+        1,
+        257,
+        128
+      ],
+      "dtype": "torch.bfloat16",
+      "causal": true,
+      "implementation": "triton",
+      "atol": 0.04,
+      "rtol": 0.02,
+      "errors": {
+        "output": {
+          "max_abs": 0.015625,
+          "max_rel": 1174.9267578125
+        },
+        "lse": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 1.1054724780024117e-07
+        },
+        "dq": {
+          "max_abs": 0.009765625,
+          "max_rel": 1380.92041015625
+        },
+        "dk": {
+          "max_abs": 0.015625,
+          "max_rel": 3417.96875
+        },
+        "dv": {
+          "max_abs": 0.03125,
+          "max_rel": 640.869140625
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 2,
+      "shape": [
+        1,
+        257,
+        32
+      ],
+      "dtype": "torch.bfloat16",
+      "causal": false,
+      "implementation": "pytorch_tiled",
+      "atol": 0.04,
+      "rtol": 0.02,
+      "errors": {
+        "output": {
+          "max_abs": 0.005859375,
+          "max_rel": 1304.62646484375
+        },
+        "lse": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 8.354022185130816e-08
+        },
+        "dq": {
+          "max_abs": 0.0078125,
+          "max_rel": 1342.7734375
+        },
+        "dk": {
+          "max_abs": 0.0078125,
+          "max_rel": 900.2685546875
+        },
+        "dv": {
+          "max_abs": 0.01171875,
+          "max_rel": 366.2109375
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 2,
+      "shape": [
+        1,
+        257,
+        32
+      ],
+      "dtype": "torch.bfloat16",
+      "causal": false,
+      "implementation": "triton",
+      "atol": 0.04,
+      "rtol": 0.02,
+      "errors": {
+        "output": {
+          "max_abs": 0.005859375,
+          "max_rel": 1502.99072265625
+        },
+        "lse": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 8.209572399664467e-08
+        },
+        "dq": {
+          "max_abs": 0.0078125,
+          "max_rel": 1327.5146484375
+        },
+        "dk": {
+          "max_abs": 0.0078125,
+          "max_rel": 900.2685546875
+        },
+        "dv": {
+          "max_abs": 0.01171875,
+          "max_rel": 366.2109375
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 2,
+      "shape": [
+        1,
+        257,
+        32
+      ],
+      "dtype": "torch.bfloat16",
+      "causal": true,
+      "implementation": "pytorch_tiled",
+      "atol": 0.04,
+      "rtol": 0.02,
+      "errors": {
+        "output": {
+          "max_abs": 0.009765625,
+          "max_rel": 45.7763671875
+        },
+        "lse": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 1.165170644412683e-07
+        },
+        "dq": {
+          "max_abs": 0.01171875,
+          "max_rel": 144.95849609375
+        },
+        "dk": {
+          "max_abs": 0.01171875,
+          "max_rel": 244.140625
+        },
+        "dv": {
+          "max_abs": 0.03125,
+          "max_rel": 3601.07421875
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 2,
+      "shape": [
+        1,
+        257,
+        32
+      ],
+      "dtype": "torch.bfloat16",
+      "causal": true,
+      "implementation": "triton",
+      "atol": 0.04,
+      "rtol": 0.02,
+      "errors": {
+        "output": {
+          "max_abs": 0.0078125,
+          "max_rel": 135.4217529296875
+        },
+        "lse": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 1.165170644412683e-07
+        },
+        "dq": {
+          "max_abs": 0.01171875,
+          "max_rel": 144.95849609375
+        },
+        "dk": {
+          "max_abs": 0.01171875,
+          "max_rel": 488.28125
+        },
+        "dv": {
+          "max_abs": 0.03125,
+          "max_rel": 3601.07421875
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 2,
+      "shape": [
+        1,
+        257,
+        64
+      ],
+      "dtype": "torch.bfloat16",
+      "causal": false,
+      "implementation": "pytorch_tiled",
+      "atol": 0.04,
+      "rtol": 0.02,
+      "errors": {
+        "output": {
+          "max_abs": 0.00390625,
+          "max_rel": 200.2716064453125
+        },
+        "lse": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 8.250039940094211e-08
+        },
+        "dq": {
+          "max_abs": 0.00390625,
+          "max_rel": 503.5400390625
+        },
+        "dk": {
+          "max_abs": 0.005859375,
+          "max_rel": 534.0576171875
+        },
+        "dv": {
+          "max_abs": 0.0078125,
+          "max_rel": 297.54638671875
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 2,
+      "shape": [
+        1,
+        257,
+        64
+      ],
+      "dtype": "torch.bfloat16",
+      "causal": false,
+      "implementation": "triton",
+      "atol": 0.04,
+      "rtol": 0.02,
+      "errors": {
+        "output": {
+          "max_abs": 0.00390625,
+          "max_rel": 147.81951904296875
+        },
+        "lse": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 8.250039940094211e-08
+        },
+        "dq": {
+          "max_abs": 0.00390625,
+          "max_rel": 499.725341796875
+        },
+        "dk": {
+          "max_abs": 0.005859375,
+          "max_rel": 534.0576171875
+        },
+        "dv": {
+          "max_abs": 0.0078125,
+          "max_rel": 297.54638671875
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 2,
+      "shape": [
+        1,
+        257,
+        64
+      ],
+      "dtype": "torch.bfloat16",
+      "causal": true,
+      "implementation": "pytorch_tiled",
+      "atol": 0.04,
+      "rtol": 0.02,
+      "errors": {
+        "output": {
+          "max_abs": 0.015625,
+          "max_rel": 1037.59765625
+        },
+        "lse": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 1.2190986353743938e-06
+        },
+        "dq": {
+          "max_abs": 0.0078125,
+          "max_rel": 652.313232421875
+        },
+        "dk": {
+          "max_abs": 0.015625,
+          "max_rel": 469.207763671875
+        },
+        "dv": {
+          "max_abs": 0.03125,
+          "max_rel": 427.24609375
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 2,
+      "shape": [
+        1,
+        257,
+        64
+      ],
+      "dtype": "torch.bfloat16",
+      "causal": true,
+      "implementation": "triton",
+      "atol": 0.04,
+      "rtol": 0.02,
+      "errors": {
+        "output": {
+          "max_abs": 0.015625,
+          "max_rel": 984.19189453125
+        },
+        "lse": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 1.2190986353743938e-06
+        },
+        "dq": {
+          "max_abs": 0.0078125,
+          "max_rel": 549.31640625
+        },
+        "dk": {
+          "max_abs": 0.015625,
+          "max_rel": 469.207763671875
+        },
+        "dv": {
+          "max_abs": 0.03125,
+          "max_rel": 427.24609375
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 2,
+      "shape": [
+        1,
+        257,
+        128
+      ],
+      "dtype": "torch.bfloat16",
+      "causal": false,
+      "implementation": "pytorch_tiled",
+      "atol": 0.04,
+      "rtol": 0.02,
+      "errors": {
+        "output": {
+          "max_abs": 0.0078125,
+          "max_rel": 789.642333984375
+        },
+        "lse": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 8.10107749771305e-08
+        },
+        "dq": {
+          "max_abs": 0.005859375,
+          "max_rel": 1373.291015625
+        },
+        "dk": {
+          "max_abs": 0.005859375,
+          "max_rel": 1045.22705078125
+        },
+        "dv": {
+          "max_abs": 0.0087890625,
+          "max_rel": 961.3037109375
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 2,
+      "shape": [
+        1,
+        257,
+        128
+      ],
+      "dtype": "torch.bfloat16",
+      "causal": false,
+      "implementation": "triton",
+      "atol": 0.04,
+      "rtol": 0.02,
+      "errors": {
+        "output": {
+          "max_abs": 0.0078125,
+          "max_rel": 823.974609375
+        },
+        "lse": {
+          "max_abs": 9.5367431640625e-07,
+          "max_rel": 1.5722648072369338e-07
+        },
+        "dq": {
+          "max_abs": 0.005859375,
+          "max_rel": 1373.291015625
+        },
+        "dk": {
+          "max_abs": 0.005859375,
+          "max_rel": 885.009765625
+        },
+        "dv": {
+          "max_abs": 0.0087890625,
+          "max_rel": 961.3037109375
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 2,
+      "shape": [
+        1,
+        257,
+        128
+      ],
+      "dtype": "torch.bfloat16",
+      "causal": true,
+      "implementation": "pytorch_tiled",
+      "atol": 0.04,
+      "rtol": 0.02,
+      "errors": {
+        "output": {
+          "max_abs": 0.015625,
+          "max_rel": 1007.080078125
+        },
+        "lse": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 1.1092475915575051e-07
+        },
+        "dq": {
+          "max_abs": 0.015625,
+          "max_rel": 1510.6201171875
+        },
+        "dk": {
+          "max_abs": 0.015625,
+          "max_rel": 579.833984375
+        },
+        "dv": {
+          "max_abs": 0.0234375,
+          "max_rel": 1342.7734375
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 2,
+      "shape": [
+        1,
+        257,
+        128
+      ],
+      "dtype": "torch.bfloat16",
+      "causal": true,
+      "implementation": "triton",
+      "atol": 0.04,
+      "rtol": 0.02,
+      "errors": {
+        "output": {
+          "max_abs": 0.015625,
+          "max_rel": 1152.03857421875
+        },
+        "lse": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 1.348151101865369e-07
+        },
+        "dq": {
+          "max_abs": 0.015625,
+          "max_rel": 1548.76708984375
+        },
+        "dk": {
+          "max_abs": 0.015625,
+          "max_rel": 579.833984375
+        },
+        "dv": {
+          "max_abs": 0.0234375,
+          "max_rel": 1342.7734375
+        }
+      },
+      "passed": true
+    }
+  ]
+}
