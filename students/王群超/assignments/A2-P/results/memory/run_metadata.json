@@ -1,0 +1,27 @@
+{
+  "gpu": "NVIDIA GeForce RTX 4090 24GB",
+  "driver": "560.28.03",
+  "cuda": "12.6",
+  "pytorch": "2.5.1",
+  "model": "large",
+  "model_config": {
+    "d_model": 1280,
+    "num_layers": 36,
+    "num_heads": 20,
+    "d_ff": 5120
+  },
+  "context_lengths": [128, 1024],
+  "dtypes": ["FP32", "autocast"],
+  "modes": ["forward", "train_step"],
+  "batch_size": 1,
+  "warmup_steps": 5,
+  "measurement_steps": 1,
+  "measurement_metrics": ["max_memory_allocated", "max_memory_reserved"],
+  "profiler": "Nsight Systems",
+  "trace_flags": "cuda,nvtx --cuda-memory-usage=true",
+  "nvtx_ranges": ["profile/warmup", "profile/measure", "forward", "backward", "optimizer"],
+  "notes": {
+    "forward-only": "forward mode wrapped in torch.no_grad()",
+    "fallback": "XL model OOM on RTX 4090, used large instead; 2048 context OOM, used 128 and 1024 instead"
+  }
+}

@@ -1,0 +1,9 @@
+config_id,model_size,num_layers,context_length,batch_size,dtype,mode,warmup_steps,measurement_steps,peak_allocated_mib,peak_reserved_mib,status
+large_forward_128_FP32,large,36,128,1,FP32,forward,5,1,3825,,success
+large_forward_128_autocast,large,36,128,1,autocast,forward,5,1,5644,,success
+large_forward_1024_FP32,large,36,1024,1,FP32,forward,5,1,4165,,success
+large_forward_1024_autocast,large,36,1024,1,autocast,forward,5,1,5856,,success
+large_train_step_128_FP32,large,36,128,1,FP32,train_step,5,1,15574,,success
+large_train_step_128_autocast,large,36,128,1,autocast,train_step,5,1,15510,,success
+large_train_step_1024_FP32,large,36,1024,1,FP32,train_step,5,1,22808,,success
+large_train_step_1024_autocast,large,36,1024,1,autocast,train_step,5,1,21196,,success
