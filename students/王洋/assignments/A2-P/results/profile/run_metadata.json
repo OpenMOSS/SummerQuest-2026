@@ -1,0 +1,368 @@
+[
+  {
+    "status": "ok",
+    "run": "medium_ctx1024_bf16",
+    "model_size": "medium",
+    "batch_size": 1,
+    "context_length": 1024,
+    "mode": "train_step",
+    "dtype": "bf16",
+    "seed": 2026,
+    "vocab_size": 10000,
+    "learning_rate": 0.001,
+    "d_model": 1024,
+    "d_ff": 4096,
+    "num_layers": 24,
+    "num_heads": 16,
+    "tool": "torch.profiler",
+    "external_warmup_steps": 5,
+    "captured_warmup_steps": 0,
+    "captured_measurement_steps": 1,
+    "local_trace_file": "medium_ctx1024_bf16.trace.json",
+    "stage_timings_ms": {
+      "forward": [
+        33.22582244873047,
+        32.95232009887695,
+        33.41823959350586,
+        33.19295883178711,
+        33.61075210571289
+      ],
+      "backward": [
+        54.65087890625,
+        53.488800048828125,
+        52.814849853515625,
+        52.92646408081055,
+        52.992000579833984
+      ],
+      "optimizer": [
+        42.171390533447266,
+        41.37392044067383,
+        41.89593505859375,
+        41.89798355102539,
+        41.79148864746094
+      ],
+      "train_step": [
+        130.06991577148438,
+        127.82182312011719,
+        128.13311767578125,
+        128.0235595703125,
+        128.4014129638672
+      ]
+    },
+    "command": "python profiling/compute_profile.py --model-size medium --context-length 1024 --batch-size 1 --dtype bf16 --warmup 5 --seed 2026 --output-dir local_results/a2p/profile",
+    "environment": {
+      "gpu_name": "NVIDIA GeForce RTX 4090",
+      "gpu_total_memory_mib": 48639.3,
+      "driver_version": "550.163.01",
+      "cuda_runtime": "12.8",
+      "torch_version": "2.7.1+cu128",
+      "python_version": "3.12.3",
+      "tf32_matmul_allowed": false
+    }
+  },
+  {
+    "status": "ok",
+    "run": "medium_ctx256_bf16",
+    "model_size": "medium",
+    "batch_size": 1,
+    "context_length": 256,
+    "mode": "train_step",
+    "dtype": "bf16",
+    "seed": 2026,
+    "vocab_size": 10000,
+    "learning_rate": 0.001,
+    "d_model": 1024,
+    "d_ff": 4096,
+    "num_layers": 24,
+    "num_heads": 16,
+    "tool": "torch.profiler",
+    "external_warmup_steps": 5,
+    "captured_warmup_steps": 0,
+    "captured_measurement_steps": 1,
+    "local_trace_file": "medium_ctx256_bf16.trace.json",
+    "stage_timings_ms": {
+      "forward": [
+        33.80940628051758,
+        33.55238342285156,
+        35.00032043457031,
+        34.04390335083008,
+        34.383872985839844
+      ],
+      "backward": [
+        52.7196159362793,
+        53.10464096069336,
+        53.44768142700195,
+        54.48806381225586,
+        53.175296783447266
+      ],
+      "optimizer": [
+        42.19392013549805,
+        42.20518493652344,
+        42.17753601074219,
+        42.224639892578125,
+        42.21440124511719
+      ],
+      "train_step": [
+        128.7446746826172,
+        128.86732482910156,
+        130.6306610107422,
+        130.7606964111328,
+        129.78073120117188
+      ]
+    },
+    "command": "python profiling/compute_profile.py --model-size medium --context-length 256 --batch-size 1 --dtype bf16 --warmup 5 --seed 2026 --output-dir local_results/a2p/profile",
+    "environment": {
+      "gpu_name": "NVIDIA GeForce RTX 4090",
+      "gpu_total_memory_mib": 48639.3,
+      "driver_version": "550.163.01",
+      "cuda_runtime": "12.8",
+      "torch_version": "2.7.1+cu128",
+      "python_version": "3.12.3",
+      "tf32_matmul_allowed": false
+    }
+  },
+  {
+    "status": "ok",
+    "run": "medium_ctx512_bf16",
+    "model_size": "medium",
+    "batch_size": 1,
+    "context_length": 512,
+    "mode": "train_step",
+    "dtype": "bf16",
+    "seed": 2026,
+    "vocab_size": 10000,
+    "learning_rate": 0.001,
+    "d_model": 1024,
+    "d_ff": 4096,
+    "num_layers": 24,
+    "num_heads": 16,
+    "tool": "torch.profiler",
+    "external_warmup_steps": 5,
+    "captured_warmup_steps": 0,
+    "captured_measurement_steps": 1,
+    "local_trace_file": "medium_ctx512_bf16.trace.json",
+    "stage_timings_ms": {
+      "forward": [
+        33.92268753051758,
+        33.88518524169922,
+        34.938880920410156,
+        33.494014739990234,
+        38.27302551269531
+      ],
+      "backward": [
+        55.376895904541016,
+        53.48249435424805,
+        53.568511962890625,
+        53.02169418334961,
+        52.7902717590332
+      ],
+      "optimizer": [
+        42.21440124511719,
+        42.23283386230469,
+        42.26457595825195,
+        42.15705490112305,
+        42.191871643066406
+      ],
+      "train_step": [
+        131.53858947753906,
+        129.6056365966797,
+        130.77708435058594,
+        128.679931640625,
+        133.2613067626953
+      ]
+    },
+    "command": "python profiling/compute_profile.py --model-size medium --context-length 512 --batch-size 1 --dtype bf16 --warmup 5 --seed 2026 --output-dir local_results/a2p/profile",
+    "environment": {
+      "gpu_name": "NVIDIA GeForce RTX 4090",
+      "gpu_total_memory_mib": 48639.3,
+      "driver_version": "550.163.01",
+      "cuda_runtime": "12.8",
+      "torch_version": "2.7.1+cu128",
+      "python_version": "3.12.3",
+      "tf32_matmul_allowed": false
+    }
+  },
+  {
+    "status": "ok",
+    "run": "small_ctx1024_bf16",
+    "model_size": "small",
+    "batch_size": 1,
+    "context_length": 1024,
+    "mode": "train_step",
+    "dtype": "bf16",
+    "seed": 2026,
+    "vocab_size": 10000,
+    "learning_rate": 0.001,
+    "d_model": 768,
+    "d_ff": 3072,
+    "num_layers": 12,
+    "num_heads": 12,
+    "tool": "torch.profiler",
+    "external_warmup_steps": 5,
+    "captured_warmup_steps": 0,
+    "captured_measurement_steps": 1,
+    "local_trace_file": "small_ctx1024_bf16.trace.json",
+    "stage_timings_ms": {
+      "forward": [
+        16.891103744506836,
+        17.67731285095215,
+        18.192384719848633,
+        16.889856338500977,
+        17.508352279663086
+      ],
+      "backward": [
+        26.832895278930664,
+        26.93631935119629,
+        26.696704864501953,
+        26.68134307861328,
+        26.613759994506836
+      ],
+      "optimizer": [
+        13.17683219909668,
+        13.063167572021484,
+        13.072383880615234,
+        13.083647727966309,
+        13.08687973022461
+      ],
+      "train_step": [
+        56.92115020751953,
+        57.68191909790039,
+        57.9686393737793,
+        56.659969329833984,
+        57.21702575683594
+      ]
+    },
+    "command": "python profiling/compute_profile.py --model-size small --context-length 1024 --batch-size 1 --dtype bf16 --warmup 5 --seed 2026 --output-dir local_results/a2p/profile",
+    "environment": {
+      "gpu_name": "NVIDIA GeForce RTX 4090",
+      "gpu_total_memory_mib": 48639.3,
+      "driver_version": "550.163.01",
+      "cuda_runtime": "12.8",
+      "torch_version": "2.7.1+cu128",
+      "python_version": "3.12.3",
+      "tf32_matmul_allowed": false
+    }
+  },
+  {
+    "status": "ok",
+    "run": "small_ctx256_bf16",
+    "model_size": "small",
+    "batch_size": 1,
+    "context_length": 256,
+    "mode": "train_step",
+    "dtype": "bf16",
+    "seed": 2026,
+    "vocab_size": 10000,
+    "learning_rate": 0.001,
+    "d_model": 768,
+    "d_ff": 3072,
+    "num_layers": 12,
+    "num_heads": 12,
+    "tool": "torch.profiler",
+    "external_warmup_steps": 5,
+    "captured_warmup_steps": 0,
+    "captured_measurement_steps": 1,
+    "local_trace_file": "small_ctx256_bf16.trace.json",
+    "stage_timings_ms": {
+      "forward": [
+        17.228960037231445,
+        19.47648048400879,
+        17.740800857543945,
+        17.309696197509766,
+        17.537023544311523
+      ],
+      "backward": [
+        26.31679916381836,
+        26.991615295410156,
+        26.88921546936035,
+        26.71820831298828,
+        27.252735137939453
+      ],
+      "optimizer": [
+        13.06112003326416,
+        13.081600189208984,
+        13.080575942993164,
+        13.228032112121582,
+        13.241344451904297
+      ],
+      "train_step": [
+        56.76121520996094,
+        59.55481719970703,
+        57.71468734741211,
+        57.264129638671875,
+        58.03724670410156
+      ]
+    },
+    "command": "python profiling/compute_profile.py --model-size small --context-length 256 --batch-size 1 --dtype bf16 --warmup 5 --seed 2026 --output-dir local_results/a2p/profile",
+    "environment": {
+      "gpu_name": "NVIDIA GeForce RTX 4090",
+      "gpu_total_memory_mib": 48639.3,
+      "driver_version": "550.163.01",
+      "cuda_runtime": "12.8",
+      "torch_version": "2.7.1+cu128",
+      "python_version": "3.12.3",
+      "tf32_matmul_allowed": false
+    }
+  },
+  {
+    "status": "ok",
+    "run": "small_ctx512_bf16",
+    "model_size": "small",
+    "batch_size": 1,
+    "context_length": 512,
+    "mode": "train_step",
+    "dtype": "bf16",
+    "seed": 2026,
+    "vocab_size": 10000,
+    "learning_rate": 0.001,
+    "d_model": 768,
+    "d_ff": 3072,
+    "num_layers": 12,
+    "num_heads": 12,
+    "tool": "torch.profiler",
+    "external_warmup_steps": 5,
+    "captured_warmup_steps": 0,
+    "captured_measurement_steps": 1,
+    "local_trace_file": "small_ctx512_bf16.trace.json",
+    "stage_timings_ms": {
+      "forward": [
+        17.024288177490234,
+        18.06438446044922,
+        17.733631134033203,
+        17.328128814697266,
+        17.503231048583984
+      ],
+      "backward": [
+        26.256383895874023,
+        27.030527114868164,
+        26.672128677368164,
+        26.793983459472656,
+        26.90662384033203
+      ],
+      "optimizer": [
+        13.137920379638672,
+        13.030400276184082,
+        13.083647727966309,
+        13.041664123535156,
+        13.029439926147461
+      ],
+      "train_step": [
+        56.443294525146484,
+        58.12940979003906,
+        57.49350357055664,
+        57.169921875,
+        57.44435119628906
+      ]
+    },
+    "command": "python profiling/compute_profile.py --model-size small --context-length 512 --batch-size 1 --dtype bf16 --warmup 5 --seed 2026 --output-dir local_results/a2p/profile",
+    "environment": {
+      "gpu_name": "NVIDIA GeForce RTX 4090",
+      "gpu_total_memory_mib": 48639.3,
+      "driver_version": "550.163.01",
+      "cuda_runtime": "12.8",
+      "torch_version": "2.7.1+cu128",
+      "python_version": "3.12.3",
+      "tf32_matmul_allowed": false
+    }
+  }
+]

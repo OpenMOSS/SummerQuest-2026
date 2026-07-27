@@ -1,0 +1,272 @@
+{
+  "accumulation": [
+    {
+      "name": "fp32_input_fp32_accumulator",
+      "input_dtype": "torch.float32",
+      "accumulator_dtype": "torch.float32",
+      "value": 10.000133514404297,
+      "absolute_error_from_10": 0.000133514404296875
+    },
+    {
+      "name": "fp16_input_fp16_accumulator",
+      "input_dtype": "torch.float16",
+      "accumulator_dtype": "torch.float16",
+      "value": 9.953125,
+      "absolute_error_from_10": 0.046875
+    },
+    {
+      "name": "fp16_input_fp32_accumulator_implicit",
+      "input_dtype": "torch.float16",
+      "accumulator_dtype": "torch.float32",
+      "value": 10.00213623046875,
+      "absolute_error_from_10": 0.00213623046875
+    },
+    {
+      "name": "fp16_input_fp32_accumulator_explicit",
+      "input_dtype": "torch.float16",
+      "accumulator_dtype": "torch.float32",
+      "value": 10.00213623046875,
+      "absolute_error_from_10": 0.00213623046875
+    }
+  ],
+  "toy_model_bf16_autocast": {
+    "fc1_output": "torch.bfloat16",
+    "layer_norm_output": "torch.float32",
+    "logits": "torch.bfloat16",
+    "parameters_inside_autocast": [
+      "torch.float32"
+    ],
+    "loss": "torch.float32",
+    "gradients": [
+      "torch.float32"
+    ]
+  },
+  "language_model": [
+    {
+      "status": "ok",
+      "model_size": "small",
+      "batch_size": 4,
+      "context_length": 512,
+      "mode": "forward_backward",
+      "dtype": "fp32",
+      "seed": 2026,
+      "vocab_size": 10000,
+      "learning_rate": 0.001,
+      "d_model": 768,
+      "d_ff": 3072,
+      "num_layers": 12,
+      "num_heads": 12,
+      "warmup_steps": 2,
+      "measurement_steps": 5,
+      "raw_ms": [
+        88.02521601319313,
+        88.20996806025505,
+        88.46703544259071,
+        88.67250010371208,
+        88.52657675743103
+      ],
+      "mean_ms": 88.3802592754364,
+      "peak_allocated_mib": 4157.55078125,
+      "peak_reserved_mib": 4288.0
+    },
+    {
+      "status": "ok",
+      "model_size": "small",
+      "batch_size": 4,
+      "context_length": 512,
+      "mode": "forward_backward",
+      "dtype": "bf16",
+      "seed": 2026,
+      "vocab_size": 10000,
+      "learning_rate": 0.001,
+      "d_model": 768,
+      "d_ff": 3072,
+      "num_layers": 12,
+      "num_heads": 12,
+      "warmup_steps": 2,
+      "measurement_steps": 5,
+      "raw_ms": [
+        51.47363618016243,
+        51.32104828953743,
+        51.26845836639404,
+        51.50964856147766,
+        51.267243921756744
+      ],
+      "mean_ms": 51.36800706386566,
+      "peak_allocated_mib": 3279.38671875,
+      "peak_reserved_mib": 3472.0
+    },
+    {
+      "status": "ok",
+      "model_size": "medium",
+      "batch_size": 4,
+      "context_length": 512,
+      "mode": "forward_backward",
+      "dtype": "fp32",
+      "seed": 2026,
+      "vocab_size": 10000,
+      "learning_rate": 0.001,
+      "d_model": 1024,
+      "d_ff": 4096,
+      "num_layers": 24,
+      "num_heads": 16,
+      "warmup_steps": 2,
+      "measurement_steps": 5,
+      "raw_ms": [
+        256.72170147299767,
+        257.79151543974876,
+        259.4026103615761,
+        258.5742734372616,
+        257.90897384285927
+      ],
+      "mean_ms": 258.0798149108887,
+      "peak_allocated_mib": 10816.4814453125,
+      "peak_reserved_mib": 11204.0
+    },
+    {
+      "status": "ok",
+      "model_size": "medium",
+      "batch_size": 4,
+      "context_length": 512,
+      "mode": "forward_backward",
+      "dtype": "bf16",
+      "seed": 2026,
+      "vocab_size": 10000,
+      "learning_rate": 0.001,
+      "d_model": 1024,
+      "d_ff": 4096,
+      "num_layers": 24,
+      "num_heads": 16,
+      "warmup_steps": 2,
+      "measurement_steps": 5,
+      "raw_ms": [
+        137.07802072167397,
+        137.0503567159176,
+        137.43340224027634,
+        137.04660907387733,
+        136.9861736893654
+      ],
+      "mean_ms": 137.11891248822212,
+      "peak_allocated_mib": 8584.9501953125,
+      "peak_reserved_mib": 8740.0
+    },
+    {
+      "status": "ok",
+      "model_size": "large",
+      "batch_size": 4,
+      "context_length": 512,
+      "mode": "forward_backward",
+      "dtype": "fp32",
+      "seed": 2026,
+      "vocab_size": 10000,
+      "learning_rate": 0.001,
+      "d_model": 1280,
+      "d_ff": 5120,
+      "num_layers": 36,
+      "num_heads": 20,
+      "warmup_steps": 2,
+      "measurement_steps": 5,
+      "raw_ms": [
+        573.7786553800106,
+        574.8927369713783,
+        572.8338249027729,
+        573.8976188004017,
+        572.8007927536964
+      ],
+      "mean_ms": 573.640725761652,
+      "peak_allocated_mib": 20715.115234375,
+      "peak_reserved_mib": 20944.0
+    },
+    {
+      "status": "ok",
+      "model_size": "large",
+      "batch_size": 4,
+      "context_length": 512,
+      "mode": "forward_backward",
+      "dtype": "bf16",
+      "seed": 2026,
+      "vocab_size": 10000,
+      "learning_rate": 0.001,
+      "d_model": 1280,
+      "d_ff": 5120,
+      "num_layers": 36,
+      "num_heads": 20,
+      "warmup_steps": 2,
+      "measurement_steps": 5,
+      "raw_ms": [
+        294.3832762539387,
+        293.7049940228462,
+        294.3567894399166,
+        294.9317991733551,
+        294.88246887922287
+      ],
+      "mean_ms": 294.4518655538559,
+      "peak_allocated_mib": 16987.171875,
+      "peak_reserved_mib": 17566.0
+    },
+    {
+      "status": "ok",
+      "model_size": "xl",
+      "batch_size": 4,
+      "context_length": 512,
+      "mode": "forward_backward",
+      "dtype": "fp32",
+      "seed": 2026,
+      "vocab_size": 10000,
+      "learning_rate": 0.001,
+      "d_model": 2560,
+      "d_ff": 10240,
+      "num_layers": 32,
+      "num_heads": 32,
+      "warmup_steps": 2,
+      "measurement_steps": 5,
+      "raw_ms": [
+        1425.7574900984764,
+        1424.042597413063,
+        1426.062174141407,
+        1427.2342026233673,
+        1427.8379753232002
+      ],
+      "mean_ms": 1426.1868879199028,
+      "peak_allocated_mib": 41059.3662109375,
+      "peak_reserved_mib": 44498.0
+    },
+    {
+      "status": "ok",
+      "model_size": "xl",
+      "batch_size": 4,
+      "context_length": 512,
+      "mode": "forward_backward",
+      "dtype": "bf16",
+      "seed": 2026,
+      "vocab_size": 10000,
+      "learning_rate": 0.001,
+      "d_model": 2560,
+      "d_ff": 10240,
+      "num_layers": 32,
+      "num_heads": 32,
+      "warmup_steps": 2,
+      "measurement_steps": 5,
+      "raw_ms": [
+        716.2063494324684,
+        715.7942354679108,
+        716.5723890066147,
+        716.867208480835,
+        717.6117263734341
+      ],
+      "mean_ms": 716.6103817522526,
+      "peak_allocated_mib": 38124.8037109375,
+      "peak_reserved_mib": 41520.0
+    }
+  ],
+  "command": "python profiling/mixed_precision.py --models small medium large xl --batch-size 4 --context-length 512 --warmup 2 --steps 5 --seed 2026 --output local_results/a2p/mixed_precision.json",
+  "environment": {
+    "gpu_name": "NVIDIA GeForce RTX 4090",
+    "gpu_total_memory_mib": 48639.3,
+    "driver_version": "550.163.01",
+    "cuda_runtime": "12.8",
+    "torch_version": "2.7.1+cu128",
+    "python_version": "3.12.3",
+    "tf32_matmul_allowed": false
+  }
+}

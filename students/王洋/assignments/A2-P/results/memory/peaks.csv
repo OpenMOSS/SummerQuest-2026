@@ -1,0 +1,10 @@
+status,model_size,batch_size,context_length,mode,dtype,peak_active_mib,peak_allocated_mib,peak_reserved_mib,largest_allocation_mib,local_timeline_file
+ok,large,1,2048,train_step,bf16,38626.55712890625,38626.55712890625,39368.0,320.0,large_ctx2048_train_step_bf16.timeline.json
+ok,xl,1,128,forward,bf16,19587.44482421875,19587.44482421875,19798.0,50.0,xl_ctx128_forward_bf16.timeline.json
+ok,xl,1,128,forward,fp32,13154.05029296875,13154.05029296875,13168.0,5.625,xl_ctx128_forward_fp32.timeline.json
+oom,xl,1,128,train_step,bf16,,47484.673828125,47558.0,,
+oom,xl,1,128,train_step,fp32,,47552.458984375,47616.0,,
+ok,xl,1,2048,forward,bf16,21021.66650390625,21021.66650390625,22032.0,512.0,xl_ctx2048_forward_bf16.timeline.json
+ok,xl,1,2048,forward,fp32,15305.66650390625,15305.66650390625,15858.0,512.0,xl_ctx2048_forward_fp32.timeline.json
+oom,xl,1,2048,train_step,bf16,,46890.56494140625,47446.0,,
+oom,xl,1,2048,train_step,fp32,,47369.23681640625,47636.0,,
