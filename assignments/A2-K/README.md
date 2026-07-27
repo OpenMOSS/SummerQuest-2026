@@ -1,6 +1,6 @@
 # A2-K：单卡显存优化与 GPU Kernels
 
-> 状态：发布候选稿，请勿提交。题面版本 `26.1.4-k-rc.3`。
+> 状态：已发布，可提交。题面版本 `26.1.4-k-rc.3`。
 >
 > `A2-K` 是 Stanford A2 的第二个子作业，覆盖 Single-GPU Memory 与 GPU Kernels。
 > 它不重复 `A2-P` 的 Profiling 任务，也不包含 DDP、optimizer state sharding、FSDP、

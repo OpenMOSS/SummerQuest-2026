@@ -37,8 +37,8 @@ App Secret、Verification Token、Encrypt Key、Webhook Secret、Access Token、
 
 - `assignments/<A编号>/README.md`：公开、脱敏的报告和公开代码说明，并在“飞书补充文档”一节填写组内文档链接。
 - 代码、日志、图表等其他提交文件：仅在对应正式题面规定的个人作业目录内提交。A1 的
-  固定目录和必交文件见 [A1 题面](../assignments/A1/README.md)；A2-P、A2-K 发布候选稿的
-  代码边界、附件大小和禁止文件分别见
+固定目录和必交文件见 [A1 题面](../assignments/A1/README.md)；A2-P、A2-K 的代码边界、
+附件大小和禁止文件分别见
   [A2-P 题面](../assignments/A2-P/README.md)与
   [A2-K 题面](../assignments/A2-K/README.md)。
 
@@ -78,7 +78,7 @@ A1 的官方工作仓库必须位于固定兄弟目录 `../assignment1-basics`�
 python3 scripts/sync_a1_submission.py --name '<同学真名>'
 ```
 
-A2-P 正式发布后使用固定兄弟目录 `../assignment2-systems`，只同步自己编写的
+A2-P 使用固定兄弟目录 `../assignment2-systems`，只同步自己编写的
 `profiling/**/*.py`：
 
 ```bash
@@ -91,9 +91,9 @@ A2-P 的 `results/` 与 `assets/` 公开附件合计不超过 2 MiB；Profile �
 结论的关键汇总和裁剪、压缩截图。
 报告引用 `assignment2-systems` 或其他仓库外资料时，必须使用 GitHub HTTPS 绝对 URL，
 并尽量固定到指定 commit；不得使用本机路径、`file://` 或跨出本仓库的相对链接。
-A2-P 当前为发布候选稿，在题面状态改为“已发布”前不接收学生 PR。
+A2-P 已正式发布，学生 PR 的代码边界、附件大小和验证要求以题面为准。
 
-A2-K 正式发布后复用固定兄弟目录 `../assignment2-systems`，但必须建立独立提交目录并只同步
+A2-K 复用固定兄弟目录 `../assignment2-systems`，但必须建立独立提交目录并只同步
 自己编写的 A2-K allowlist：
 
 ```bash
@@ -103,8 +103,8 @@ python3 scripts/sync_a2k_submission.py --name '<同学真名>'
 
 A2-K 的正式矩阵固定为单张 RTX 4090 24GB，每个正式进程在首次 CUDA allocation 前设置
 23 GiB allocator 上限，并串行执行。`results/` 与 `assets/` 公开附件合计不超过 2 MiB；
-完整 benchmark 日志、逐秒显存采样、compile cache 和 binary 不进入 GitHub。A2-K 当前为
-发布候选稿，在题面状态改为“已发布”前不接收学生 PR。
+完整 benchmark 日志、逐秒显存采样、compile cache 和 binary 不进入 GitHub。A2-K 已正式
+发布，学生 PR 的代码边界、附件大小和验证要求以题面为准。
 
 不要把整个 `assignment1-basics/`、`assignment2-systems/`、公共 tests/fixtures、数据、模型权重或
 依赖环境放进 SummerQuest 仓库。

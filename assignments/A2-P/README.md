@@ -1,6 +1,6 @@
 # A2-P：Profiling 与性能分析
 
-> 状态：发布候选稿，请勿提交。题面版本 `26.1.4-rc.3`。
+> 状态：已发布，可提交。题面版本 `26.1.4-rc.3`。
 >
 > `A2-P` 是 Stanford A2 的 Profiling 子作业，只覆盖 Profiling 相关内容，不包含
 > activation checkpointing、Triton kernel、DDP、optimizer state sharding、FSDP
