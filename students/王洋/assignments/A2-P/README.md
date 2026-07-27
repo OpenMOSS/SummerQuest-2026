@@ -137,7 +137,7 @@ BF16 forward 的峰值反而高于 FP32，是因为 autocast 保留 FP32 参数�
 
 ## 飞书补充文档
 
-- 链接：https://fudan-nlp.feishu.cn/wiki/KTU3wC1TaiFXjRkLF7vcAm3Lnid
+- 链接：https://fudan-nlp.feishu.cn/wiki/LrYuwDAxxifgYvkqdzHc2NTonRf
 - 文档用途：A2-P 组织内公开的补充材料；不重复 GitHub 主报告，只保存确有审核必要的差量证据。
 
 ## 自检
