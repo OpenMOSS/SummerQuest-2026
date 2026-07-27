@@ -1,0 +1,494 @@
+[
+  {
+    "artifacts": {
+      "peaks_csv": "results/memory/peaks.csv",
+      "snapshot": "results/memory/raw/large-bs1-ctx2048-train_step-fp32-memory.pickle"
+    },
+    "command": "python profiling/memory_snapshot.py --model-size large --batch-size 1 --context-length 2048 --mode train_step --warmup 5 --dtype fp32 --seed 42 --run-name large-bs1-ctx2048-train_step-fp32-memory --snapshot results/memory/raw/large-bs1-ctx2048-train_step-fp32-memory.pickle --peaks-output results/memory/peaks.csv --metadata-output results/memory/run_metadata.json",
+    "configuration": {
+      "batch_size": 1,
+      "context_length": 2048,
+      "d_ff": 5120,
+      "d_model": 1280,
+      "dtype": "fp32",
+      "mode": "train_step",
+      "model_size": "large",
+      "num_heads": 20,
+      "num_layers": 36,
+      "seed": 42,
+      "vocab_size": 10000,
+      "warmup": 5
+    },
+    "environment": {
+      "bf16_supported": true,
+      "compiled_cuda": "12.8",
+      "device": "cuda",
+      "driver_version": "570.124.06",
+      "git_commit": "3cc72b62ea395946c7a3a884d5c6c162de397df8",
+      "gpu_name": "NVIDIA GeForce RTX 4090",
+      "python_version": "3.12.3",
+      "torch_version": "2.11.0+cu128"
+    },
+    "error_type": null,
+    "failed_stage": null,
+    "largest_allocation": {
+      "bytes": 335544320,
+      "phase": "unknown",
+      "source": "device_trace",
+      "stack": [
+        {
+          "filename": "??",
+          "line": 0,
+          "name": "torch::unwind::unwind()"
+        },
+        {
+          "filename": "??",
+          "line": 0,
+          "name": "torch::CapturedTraceback::gather(bool, bool, bool)"
+        },
+        {
+          "filename": "memory_snapshot.cpp",
+          "line": 0,
+          "name": "torch::cuda::(anonymous namespace)::gather_with_cpp()"
+        },
+        {
+          "filename": "CUDACachingAllocator.cpp",
+          "line": 0,
+          "name": "c10::cuda::CUDACachingAllocator::Native::DeviceCachingAllocator::malloc(unsigned long, CUstream_st*)"
+        },
+        {
+          "filename": "",
+          "line": 0,
+          "name": "c10::cuda::CUDACachingAllocator::Native::NativeCachingAllocator::malloc(void**, signed char, unsigned long, CUstream_st*)"
+        },
+        {
+          "filename": "",
+          "line": 0,
+          "name": "c10::cuda::CUDACachingAllocator::Native::NativeCachingAllocator::allocate(unsigned long)"
+        },
+        {
+          "filename": "??",
+          "line": 0,
+          "name": "at::detail::empty_generic(c10::ArrayRef<long>, c10::Allocator*, c10::DispatchKeySet, c10::ScalarType, std::optional<c10::MemoryFormat>)"
+        },
+        {
+          "filename": "??",
+          "line": 0,
+          "name": "at::detail::empty_cuda(c10::ArrayRef<long>, c10::ScalarType, std::optional<c10::Device>, std::optional<c10::MemoryFormat>)"
+        },
+        {
+          "filename": "??",
+          "line": 0,
+          "name": "at::detail::empty_cuda(c10::ArrayRef<long>, std::optional<c10::ScalarType>, std::optional<c10::Layout>, std::optional<c10::Device>, std::optional<bool>, std::optional<c10::MemoryFormat>)"
+        },
+        {
+          "filename": "??",
+          "line": 0,
+          "name": "at::detail::empty_cuda(c10::ArrayRef<long>, c10::TensorOptions const&)"
+        },
+        {
+          "filename": "RegisterCUDA_0.cpp",
+          "line": 0,
+          "name": "at::(anonymous namespace)::create_out(c10::ArrayRef<long>, c10::ArrayRef<long>, c10::TensorOptions const&)"
+        },
+        {
+          "filename": "RegisterCUDA_0.cpp",
+          "line": 0,
+          "name": "at::(anonymous namespace)::structured_bmm_out_cuda_functional::set_output_raw_strided(long, c10::ArrayRef<long>, c10::ArrayRef<long>, c10::TensorOptions, c10::ArrayRef<at::Dimname>)"
+        }
+      ],
+      "state": "trace_alloc"
+    },
+    "metrics": {
+      "active_current_bytes": 15642169344,
+      "active_peak_bytes": 48756746240,
+      "allocated_current_bytes": 15642169344,
+      "allocated_peak_bytes": 48756746240,
+      "reserved_current_bytes": 49480204288,
+      "reserved_peak_bytes": 49480204288
+    },
+    "residual_stream_theoretical_bytes": 10485760,
+    "run_id": "large-bs1-ctx2048-train_step-fp32-memory",
+    "status": "success",
+    "timestamp_utc": "2026-07-22T15:19:28Z"
+  },
+  {
+    "artifacts": {
+      "peaks_csv": "results/memory/peaks.csv",
+      "snapshot": null
+    },
+    "command": "python profiling/memory_snapshot.py --model-size xl --batch-size 1 --context-length 1024 --mode train_step --warmup 5 --dtype fp32 --seed 42 --run-name xl-bs1-ctx1024-train_step-fp32-memory --snapshot results/memory/raw/xl-bs1-ctx1024-train_step-fp32-memory.pickle --peaks-output results/memory/peaks.csv --metadata-output results/memory/run_metadata.json",
+    "configuration": {
+      "batch_size": 1,
+      "context_length": 1024,
+      "d_ff": 10240,
+      "d_model": 2560,
+      "dtype": "fp32",
+      "mode": "train_step",
+      "model_size": "xl",
+      "num_heads": 32,
+      "num_layers": 32,
+      "seed": 42,
+      "vocab_size": 10000,
+      "warmup": 5
+    },
+    "environment": {
+      "bf16_supported": true,
+      "compiled_cuda": "12.8",
+      "device": "cuda",
+      "driver_version": "570.124.06",
+      "git_commit": "4bb57e8c430c9d3f0b0b48f02b383ab30144bb56",
+      "gpu_name": "NVIDIA GeForce RTX 4090",
+      "python_version": "3.12.3",
+      "torch_version": "2.11.0+cu128"
+    },
+    "error_type": "OutOfMemoryError",
+    "failed_stage": "optimizer",
+    "largest_allocation": {
+      "bytes": 0,
+      "phase": "unknown",
+      "stack": [],
+      "state": "unavailable"
+    },
+    "metrics": {
+      "active_current_bytes": 49759997952,
+      "active_peak_bytes": 49801941504,
+      "allocated_current_bytes": 49759997952,
+      "allocated_peak_bytes": 49801941504,
+      "reserved_current_bytes": 50361008128,
+      "reserved_peak_bytes": 50361008128
+    },
+    "residual_stream_theoretical_bytes": 10485760,
+    "run_id": "xl-bs1-ctx1024-train_step-fp32-memory",
+    "status": "oom",
+    "timestamp_utc": "2026-07-22T13:24:34Z"
+  },
+  {
+    "artifacts": {
+      "peaks_csv": "results/memory/peaks.csv",
+      "snapshot": "results/memory/raw/xl-bs1-ctx128-forward-fp32-memory.pickle"
+    },
+    "command": "python profiling/memory_snapshot.py --model-size xl --batch-size 1 --context-length 128 --mode forward --warmup 5 --dtype fp32 --seed 42 --run-name xl-bs1-ctx128-forward-fp32-memory --snapshot results/memory/raw/xl-bs1-ctx128-forward-fp32-memory.pickle --peaks-output results/memory/peaks.csv --metadata-output results/memory/run_metadata.json",
+    "configuration": {
+      "batch_size": 1,
+      "context_length": 128,
+      "d_ff": 10240,
+      "d_model": 2560,
+      "dtype": "fp32",
+      "mode": "forward",
+      "model_size": "xl",
+      "num_heads": 32,
+      "num_layers": 32,
+      "seed": 42,
+      "vocab_size": 10000,
+      "warmup": 5
+    },
+    "environment": {
+      "bf16_supported": true,
+      "compiled_cuda": "12.8",
+      "device": "cuda",
+      "driver_version": "570.124.06",
+      "git_commit": "3cc72b62ea395946c7a3a884d5c6c162de397df8",
+      "gpu_name": "NVIDIA GeForce RTX 4090",
+      "python_version": "3.12.3",
+      "torch_version": "2.11.0+cu128"
+    },
+    "error_type": null,
+    "failed_stage": null,
+    "largest_allocation": {
+      "bytes": 5242880,
+      "phase": "unknown",
+      "source": "device_trace",
+      "stack": [
+        {
+          "filename": "??",
+          "line": 0,
+          "name": "torch::unwind::unwind()"
+        },
+        {
+          "filename": "??",
+          "line": 0,
+          "name": "torch::CapturedTraceback::gather(bool, bool, bool)"
+        },
+        {
+          "filename": "memory_snapshot.cpp",
+          "line": 0,
+          "name": "torch::cuda::(anonymous namespace)::gather_with_cpp()"
+        },
+        {
+          "filename": "CUDACachingAllocator.cpp",
+          "line": 0,
+          "name": "c10::cuda::CUDACachingAllocator::Native::DeviceCachingAllocator::malloc(unsigned long, CUstream_st*)"
+        },
+        {
+          "filename": "",
+          "line": 0,
+          "name": "c10::cuda::CUDACachingAllocator::Native::NativeCachingAllocator::malloc(void**, signed char, unsigned long, CUstream_st*)"
+        },
+        {
+          "filename": "",
+          "line": 0,
+          "name": "c10::cuda::CUDACachingAllocator::Native::NativeCachingAllocator::allocate(unsigned long)"
+        },
+        {
+          "filename": "??",
+          "line": 0,
+          "name": "at::detail::empty_generic(c10::ArrayRef<long>, c10::Allocator*, c10::DispatchKeySet, c10::ScalarType, std::optional<c10::MemoryFormat>)"
+        },
+        {
+          "filename": "??",
+          "line": 0,
+          "name": "at::detail::empty_cuda(c10::ArrayRef<long>, c10::ScalarType, std::optional<c10::Device>, std::optional<c10::MemoryFormat>)"
+        },
+        {
+          "filename": "??",
+          "line": 0,
+          "name": "at::detail::empty_cuda(c10::ArrayRef<long>, std::optional<c10::ScalarType>, std::optional<c10::Layout>, std::optional<c10::Device>, std::optional<bool>, std::optional<c10::MemoryFormat>)"
+        },
+        {
+          "filename": "??",
+          "line": 0,
+          "name": "at::detail::empty_cuda(c10::ArrayRef<long>, c10::TensorOptions const&)"
+        },
+        {
+          "filename": "RegisterCUDA_0.cpp",
+          "line": 0,
+          "name": "at::(anonymous namespace)::create_out(c10::ArrayRef<long>, c10::ArrayRef<long>, c10::TensorOptions const&)"
+        },
+        {
+          "filename": "RegisterCUDA_0.cpp",
+          "line": 0,
+          "name": "at::(anonymous namespace)::structured_bmm_out_cuda_functional::set_output_raw_strided(long, c10::ArrayRef<long>, c10::ArrayRef<long>, c10::TensorOptions, c10::ArrayRef<at::Dimname>)"
+        }
+      ],
+      "state": "trace_alloc"
+    },
+    "metrics": {
+      "active_current_bytes": 13770739712,
+      "active_peak_bytes": 13793021952,
+      "allocated_current_bytes": 13770739712,
+      "allocated_peak_bytes": 13793021952,
+      "reserved_current_bytes": 13807648768,
+      "reserved_peak_bytes": 13807648768
+    },
+    "residual_stream_theoretical_bytes": 1310720,
+    "run_id": "xl-bs1-ctx128-forward-fp32-memory",
+    "status": "success",
+    "timestamp_utc": "2026-07-22T14:12:22Z"
+  },
+  {
+    "artifacts": {
+      "peaks_csv": "results/memory/peaks.csv",
+      "snapshot": null
+    },
+    "command": "python profiling/memory_snapshot.py --model-size xl --batch-size 1 --context-length 128 --mode train_step --warmup 5 --dtype fp32 --seed 42 --run-name xl-bs1-ctx128-train_step-fp32-memory --snapshot results/memory/raw/xl-bs1-ctx128-train_step-fp32-memory.pickle --peaks-output results/memory/peaks.csv --metadata-output results/memory/run_metadata.json",
+    "configuration": {
+      "batch_size": 1,
+      "context_length": 128,
+      "d_ff": 10240,
+      "d_model": 2560,
+      "dtype": "fp32",
+      "mode": "train_step",
+      "model_size": "xl",
+      "num_heads": 32,
+      "num_layers": 32,
+      "seed": 42,
+      "vocab_size": 10000,
+      "warmup": 5
+    },
+    "environment": {
+      "bf16_supported": true,
+      "compiled_cuda": "12.8",
+      "device": "cuda",
+      "driver_version": "570.124.06",
+      "git_commit": "4bb57e8c430c9d3f0b0b48f02b383ab30144bb56",
+      "gpu_name": "NVIDIA GeForce RTX 4090",
+      "python_version": "3.12.3",
+      "torch_version": "2.11.0+cu128"
+    },
+    "error_type": "OutOfMemoryError",
+    "failed_stage": "optimizer",
+    "largest_allocation": {
+      "bytes": 0,
+      "phase": "unknown",
+      "stack": [],
+      "state": "unavailable"
+    },
+    "metrics": {
+      "active_current_bytes": 50276677632,
+      "active_peak_bytes": 50281798144,
+      "allocated_current_bytes": 50276677632,
+      "allocated_peak_bytes": 50281798144,
+      "reserved_current_bytes": 50348425216,
+      "reserved_peak_bytes": 50352619520
+    },
+    "residual_stream_theoretical_bytes": 1310720,
+    "run_id": "xl-bs1-ctx128-train_step-fp32-memory",
+    "status": "oom",
+    "timestamp_utc": "2026-07-22T13:16:17Z"
+  },
+  {
+    "artifacts": {
+      "peaks_csv": "results/memory/peaks.csv",
+      "snapshot": "results/memory/raw/xl-bs1-ctx2048-forward-fp32-memory.pickle"
+    },
+    "command": "python profiling/memory_snapshot.py --model-size xl --batch-size 1 --context-length 2048 --mode forward --warmup 5 --dtype fp32 --seed 42 --run-name xl-bs1-ctx2048-forward-fp32-memory --snapshot results/memory/raw/xl-bs1-ctx2048-forward-fp32-memory.pickle --peaks-output results/memory/peaks.csv --metadata-output results/memory/run_metadata.json",
+    "configuration": {
+      "batch_size": 1,
+      "context_length": 2048,
+      "d_ff": 10240,
+      "d_model": 2560,
+      "dtype": "fp32",
+      "mode": "forward",
+      "model_size": "xl",
+      "num_heads": 32,
+      "num_layers": 32,
+      "seed": 42,
+      "vocab_size": 10000,
+      "warmup": 5
+    },
+    "environment": {
+      "bf16_supported": true,
+      "compiled_cuda": "12.8",
+      "device": "cuda",
+      "driver_version": "570.124.06",
+      "git_commit": "3cc72b62ea395946c7a3a884d5c6c162de397df8",
+      "gpu_name": "NVIDIA GeForce RTX 4090",
+      "python_version": "3.12.3",
+      "torch_version": "2.11.0+cu128"
+    },
+    "error_type": null,
+    "failed_stage": null,
+    "largest_allocation": {
+      "bytes": 536870912,
+      "phase": "unknown",
+      "source": "device_trace",
+      "stack": [
+        {
+          "filename": "??",
+          "line": 0,
+          "name": "torch::unwind::unwind()"
+        },
+        {
+          "filename": "??",
+          "line": 0,
+          "name": "torch::CapturedTraceback::gather(bool, bool, bool)"
+        },
+        {
+          "filename": "memory_snapshot.cpp",
+          "line": 0,
+          "name": "torch::cuda::(anonymous namespace)::gather_with_cpp()"
+        },
+        {
+          "filename": "CUDACachingAllocator.cpp",
+          "line": 0,
+          "name": "c10::cuda::CUDACachingAllocator::Native::DeviceCachingAllocator::malloc(unsigned long, CUstream_st*)"
+        },
+        {
+          "filename": "",
+          "line": 0,
+          "name": "c10::cuda::CUDACachingAllocator::Native::NativeCachingAllocator::malloc(void**, signed char, unsigned long, CUstream_st*)"
+        },
+        {
+          "filename": "",
+          "line": 0,
+          "name": "c10::cuda::CUDACachingAllocator::Native::NativeCachingAllocator::allocate(unsigned long)"
+        },
+        {
+          "filename": "??",
+          "line": 0,
+          "name": "at::detail::empty_generic(c10::ArrayRef<long>, c10::Allocator*, c10::DispatchKeySet, c10::ScalarType, std::optional<c10::MemoryFormat>)"
+        },
+        {
+          "filename": "??",
+          "line": 0,
+          "name": "at::detail::empty_cuda(c10::ArrayRef<long>, c10::ScalarType, std::optional<c10::Device>, std::optional<c10::MemoryFormat>)"
+        },
+        {
+          "filename": "??",
+          "line": 0,
+          "name": "at::detail::empty_cuda(c10::ArrayRef<long>, std::optional<c10::ScalarType>, std::optional<c10::Layout>, std::optional<c10::Device>, std::optional<bool>, std::optional<c10::MemoryFormat>)"
+        },
+        {
+          "filename": "??",
+          "line": 0,
+          "name": "at::detail::empty_cuda(c10::ArrayRef<long>, c10::TensorOptions const&)"
+        },
+        {
+          "filename": "RegisterCUDA_0.cpp",
+          "line": 0,
+          "name": "at::(anonymous namespace)::create_out(c10::ArrayRef<long>, c10::ArrayRef<long>, c10::TensorOptions const&)"
+        },
+        {
+          "filename": "RegisterCUDA_0.cpp",
+          "line": 0,
+          "name": "at::(anonymous namespace)::structured_bmm_out_cuda_functional::set_output_raw_strided(long, c10::ArrayRef<long>, c10::ArrayRef<long>, c10::TensorOptions, c10::ArrayRef<at::Dimname>)"
+        }
+      ],
+      "state": "trace_alloc"
+    },
+    "metrics": {
+      "active_current_bytes": 13771384832,
+      "active_peak_bytes": 16049170432,
+      "allocated_current_bytes": 13771384832,
+      "allocated_peak_bytes": 16049170432,
+      "reserved_current_bytes": 16628318208,
+      "reserved_peak_bytes": 16628318208
+    },
+    "residual_stream_theoretical_bytes": 20971520,
+    "run_id": "xl-bs1-ctx2048-forward-fp32-memory",
+    "status": "success",
+    "timestamp_utc": "2026-07-22T14:40:58Z"
+  },
+  {
+    "artifacts": {
+      "peaks_csv": "results/memory/peaks.csv",
+      "snapshot": null
+    },
+    "command": "python profiling/memory_snapshot.py --model-size xl --batch-size 1 --context-length 2048 --mode train_step --warmup 5 --dtype fp32 --seed 42 --run-name xl-bs1-ctx2048-train_step-fp32-memory --snapshot results/memory/raw/xl-bs1-ctx2048-train_step-fp32-memory.pickle --peaks-output results/memory/peaks.csv --metadata-output results/memory/run_metadata.json",
+    "configuration": {
+      "batch_size": 1,
+      "context_length": 2048,
+      "d_ff": 10240,
+      "d_model": 2560,
+      "dtype": "fp32",
+      "mode": "train_step",
+      "model_size": "xl",
+      "num_heads": 32,
+      "num_layers": 32,
+      "seed": 42,
+      "vocab_size": 10000,
+      "warmup": 5
+    },
+    "environment": {
+      "bf16_supported": true,
+      "compiled_cuda": "12.8",
+      "device": "cuda",
+      "driver_version": "570.124.06",
+      "git_commit": "4bb57e8c430c9d3f0b0b48f02b383ab30144bb56",
+      "gpu_name": "NVIDIA GeForce RTX 4090",
+      "python_version": "3.12.3",
+      "torch_version": "2.11.0+cu128"
+    },
+    "error_type": "OutOfMemoryError",
+    "failed_stage": "forward",
+    "largest_allocation": {
+      "bytes": 0,
+      "phase": "unknown",
+      "stack": [],
+      "state": "unavailable"
+    },
+    "metrics": {
+      "active_current_bytes": 13771384832,
+      "active_peak_bytes": 49670522880,
+      "allocated_current_bytes": 13771384832,
+      "allocated_peak_bytes": 49670522880,
+      "reserved_current_bytes": 49949966336,
+      "reserved_peak_bytes": 49949966336
+    },
+    "residual_stream_theoretical_bytes": 20971520,
+    "run_id": "xl-bs1-ctx2048-train_step-fp32-memory",
+    "status": "oom",
+    "timestamp_utc": "2026-07-22T13:21:27Z"
+  }
+]

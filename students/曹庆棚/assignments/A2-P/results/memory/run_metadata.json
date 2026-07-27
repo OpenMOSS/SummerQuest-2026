@@ -1,0 +1,1296 @@
+[
+  {
+    "actual_batch": 4,
+    "actual_context": 128,
+    "actual_model": "xl",
+    "command": "python profiling/memory_snapshot.py snapshot --run-id M-BF16-F --model-size xl --batch-size 4 --context-length 128 --mode forward --warmup 1 --steps 1 --dtype bf16 --output-dir results/memory/raw",
+    "dtype": "bf16",
+    "ending_allocated_mib": 13132.8066,
+    "ending_reserved_mib": 19848.0,
+    "environment": {
+      "bf16_supported": true,
+      "cuda_available": true,
+      "cuda_runtime": "13.0",
+      "cudnn_benchmark": false,
+      "deterministic_algorithms": false,
+      "driver_version": "580.159.03",
+      "gpu_compute_capability": "8.0",
+      "gpu_memory_mib": 81151.75,
+      "gpu_model": "NVIDIA A800-SXM4-80GB",
+      "python_version": "3.13.14",
+      "pytorch_version": "2.11.0+cu130",
+      "starter_commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+      "tf32_flags": {
+        "cudnn_allow_tf32": false,
+        "float32_matmul_precision": "highest",
+        "matmul_allow_tf32": false
+      },
+      "workspace_head": "ca8bc81a59b70516f7ebb2da4808daade877c736"
+    },
+    "error_summary": null,
+    "error_type": null,
+    "failure_stage": null,
+    "fallback_attempt": 0,
+    "fallback_parent_run_id": null,
+    "fallback_reason": null,
+    "finished_at": "2026-07-22T04:51:22+00:00",
+    "largest_allocation_mib": 50.0,
+    "largest_segment_allocation_mib": null,
+    "largest_tensor_allocation": {
+      "frames": [
+        {
+          "file": "torch/functional.py",
+          "line": 373,
+          "name": "einsum"
+        },
+        {
+          "file": "einops/_backends.py",
+          "line": 291,
+          "name": "einsum"
+        },
+        {
+          "file": "einops/einops.py",
+          "line": 939,
+          "name": "einsum"
+        },
+        {
+          "file": "cs336-basics/cs336_basics/model.py",
+          "line": 39,
+          "name": "forward"
+        },
+        {
+          "file": "torch/nn/modules/module.py",
+          "line": 1790,
+          "name": "_call_impl"
+        },
+        {
+          "file": "torch/nn/modules/module.py",
+          "line": 1779,
+          "name": "_wrapped_call_impl"
+        },
+        {
+          "file": "cs336-basics/cs336_basics/model.py",
+          "line": 399,
+          "name": "forward"
+        },
+        {
+          "file": "torch/nn/modules/module.py",
+          "line": 1790,
+          "name": "_call_impl"
+        },
+        {
+          "file": "torch/nn/modules/module.py",
+          "line": 1779,
+          "name": "_wrapped_call_impl"
+        },
+        {
+          "file": "cs336-basics/cs336_basics/model.py",
+          "line": 386,
+          "name": "forward"
+        },
+        {
+          "file": "torch/nn/modules/module.py",
+          "line": 1790,
+          "name": "_call_impl"
+        },
+        {
+          "file": "torch/nn/modules/module.py",
+          "line": 1779,
+          "name": "_wrapped_call_impl"
+        }
+      ],
+      "size_bytes": 52428800,
+      "size_mib": 50.0
+    },
+    "max_entries": 1000000,
+    "measurement_steps": 1,
+    "mode": "forward",
+    "model_config": {
+      "d_ff": 10240,
+      "d_model": 2560,
+      "num_heads": 32,
+      "num_layers": 32
+    },
+    "model_fingerprint": "51d24fe881356ae182e9e824301994595fc64a59f0b3ddb23d482e3f2ecc06d7",
+    "parameter_count": 3406809600,
+    "peak_active_mib": 19604.1348,
+    "peak_allocated_mib": 19604.1348,
+    "peak_reserved_mib": 19848.0,
+    "requested_batch": 4,
+    "requested_context": 128,
+    "requested_model": "xl",
+    "run_id": "M-BF16-F",
+    "run_name": "memory-M-BF16-F_xl_bs4_ctx128_forward_bf16_history",
+    "schema_version": "a2p-profiling-v1",
+    "seed": 42,
+    "started_at": "2026-07-22T04:51:20+00:00",
+    "status": "success",
+    "warmup_steps": 1
+  },
+  {
+    "actual_batch": 4,
+    "actual_context": 128,
+    "actual_model": "xl",
+    "command": "python profiling/memory_snapshot.py snapshot --run-id M-BF16-T --model-size xl --batch-size 4 --context-length 128 --mode train_step --warmup 1 --steps 1 --dtype bf16 --output-dir results/memory/raw",
+    "dtype": "bf16",
+    "ending_allocated_mib": 52130.1484,
+    "ending_reserved_mib": 59688.0,
+    "environment": {
+      "bf16_supported": true,
+      "cuda_available": true,
+      "cuda_runtime": "13.0",
+      "cudnn_benchmark": false,
+      "deterministic_algorithms": false,
+      "driver_version": "580.159.03",
+      "gpu_compute_capability": "8.0",
+      "gpu_memory_mib": 81151.75,
+      "gpu_model": "NVIDIA A800-SXM4-80GB",
+      "python_version": "3.13.14",
+      "pytorch_version": "2.11.0+cu130",
+      "starter_commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+      "tf32_flags": {
+        "cudnn_allow_tf32": false,
+        "float32_matmul_precision": "highest",
+        "matmul_allow_tf32": false
+      },
+      "workspace_head": "ca8bc81a59b70516f7ebb2da4808daade877c736"
+    },
+    "error_summary": null,
+    "error_type": null,
+    "failure_stage": null,
+    "fallback_attempt": 0,
+    "fallback_parent_run_id": null,
+    "fallback_reason": null,
+    "finished_at": "2026-07-22T04:51:23+00:00",
+    "largest_allocation_mib": 100.0,
+    "largest_segment_allocation_mib": 100.0,
+    "largest_tensor_allocation": {
+      "frames": [],
+      "size_bytes": 104857600,
+      "size_mib": 100.0
+    },
+    "max_entries": 1000000,
+    "measurement_steps": 1,
+    "mode": "train_step",
+    "model_config": {
+      "d_ff": 10240,
+      "d_model": 2560,
+      "num_heads": 32,
+      "num_layers": 32
+    },
+    "model_fingerprint": "51d24fe881356ae182e9e824301994595fc64a59f0b3ddb23d482e3f2ecc06d7",
+    "parameter_count": 3406809600,
+    "peak_active_mib": 52639.2271,
+    "peak_allocated_mib": 52639.2271,
+    "peak_reserved_mib": 59688.0,
+    "requested_batch": 4,
+    "requested_context": 128,
+    "requested_model": "xl",
+    "run_id": "M-BF16-T",
+    "run_name": "memory-M-BF16-T_xl_bs4_ctx128_train_step_bf16_history",
+    "schema_version": "a2p-profiling-v1",
+    "seed": 42,
+    "started_at": "2026-07-22T04:51:20+00:00",
+    "status": "success",
+    "warmup_steps": 1
+  },
+  {
+    "actual_batch": 4,
+    "actual_context": 128,
+    "actual_model": "xl",
+    "command": "python profiling/memory_snapshot.py snapshot --run-id M1 --model-size xl --batch-size 4 --context-length 128 --mode forward --warmup 1 --steps 1 --dtype fp32 --output-dir results/memory/raw",
+    "dtype": "fp32",
+    "ending_allocated_mib": 13132.8066,
+    "ending_reserved_mib": 13246.0,
+    "environment": {
+      "bf16_supported": true,
+      "cuda_available": true,
+      "cuda_runtime": "13.0",
+      "cudnn_benchmark": false,
+      "deterministic_algorithms": false,
+      "driver_version": "580.159.03",
+      "gpu_compute_capability": "8.0",
+      "gpu_memory_mib": 81151.75,
+      "gpu_model": "NVIDIA A800-SXM4-80GB",
+      "python_version": "3.13.14",
+      "pytorch_version": "2.11.0+cu130",
+      "starter_commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+      "tf32_flags": {
+        "cudnn_allow_tf32": false,
+        "float32_matmul_precision": "highest",
+        "matmul_allow_tf32": false
+      },
+      "workspace_head": "ca8bc81a59b70516f7ebb2da4808daade877c736"
+    },
+    "error_summary": null,
+    "error_type": null,
+    "failure_stage": null,
+    "fallback_attempt": 0,
+    "fallback_parent_run_id": null,
+    "fallback_reason": null,
+    "finished_at": "2026-07-22T04:38:05+00:00",
+    "largest_allocation_mib": 20.0,
+    "largest_segment_allocation_mib": null,
+    "largest_tensor_allocation": {
+      "frames": [
+        {
+          "file": "torch/functional.py",
+          "line": 373,
+          "name": "einsum"
+        },
+        {
+          "file": "einops/_backends.py",
+          "line": 291,
+          "name": "einsum"
+        },
+        {
+          "file": "einops/einops.py",
+          "line": 939,
+          "name": "einsum"
+        },
+        {
+          "file": "cs336-basics/cs336_basics/model.py",
+          "line": 39,
+          "name": "forward"
+        },
+        {
+          "file": "torch/nn/modules/module.py",
+          "line": 1790,
+          "name": "_call_impl"
+        },
+        {
+          "file": "torch/nn/modules/module.py",
+          "line": 1779,
+          "name": "_wrapped_call_impl"
+        },
+        {
+          "file": "cs336-basics/cs336_basics/model.py",
+          "line": 399,
+          "name": "forward"
+        },
+        {
+          "file": "torch/nn/modules/module.py",
+          "line": 1790,
+          "name": "_call_impl"
+        },
+        {
+          "file": "torch/nn/modules/module.py",
+          "line": 1779,
+          "name": "_wrapped_call_impl"
+        },
+        {
+          "file": "cs336-basics/cs336_basics/model.py",
+          "line": 386,
+          "name": "forward"
+        },
+        {
+          "file": "torch/nn/modules/module.py",
+          "line": 1790,
+          "name": "_call_impl"
+        },
+        {
+          "file": "torch/nn/modules/module.py",
+          "line": 1779,
+          "name": "_wrapped_call_impl"
+        }
+      ],
+      "size_bytes": 20971520,
+      "size_mib": 20.0
+    },
+    "max_entries": 1000000,
+    "measurement_steps": 1,
+    "mode": "forward",
+    "model_config": {
+      "d_ff": 10240,
+      "d_model": 2560,
+      "num_heads": 32,
+      "num_layers": 32
+    },
+    "model_fingerprint": "51d24fe881356ae182e9e824301994595fc64a59f0b3ddb23d482e3f2ecc06d7",
+    "parameter_count": 3406809600,
+    "peak_active_mib": 13217.8066,
+    "peak_allocated_mib": 13217.8066,
+    "peak_reserved_mib": 13246.0,
+    "requested_batch": 4,
+    "requested_context": 128,
+    "requested_model": "xl",
+    "run_id": "M1",
+    "run_name": "memory-M1_xl_bs4_ctx128_forward_fp32_history",
+    "schema_version": "a2p-profiling-v1",
+    "seed": 42,
+    "started_at": "2026-07-22T04:38:04+00:00",
+    "status": "success",
+    "warmup_steps": 1
+  },
+  {
+    "actual_batch": 4,
+    "actual_context": 128,
+    "actual_model": "xl",
+    "command": "python profiling/memory_snapshot.py snapshot --run-id M2 --model-size xl --batch-size 4 --context-length 128 --mode train_step --warmup 1 --steps 1 --dtype fp32 --output-dir results/memory/raw",
+    "dtype": "fp32",
+    "ending_allocated_mib": 52129.4609,
+    "ending_reserved_mib": 58670.0,
+    "environment": {
+      "bf16_supported": true,
+      "cuda_available": true,
+      "cuda_runtime": "13.0",
+      "cudnn_benchmark": false,
+      "deterministic_algorithms": false,
+      "driver_version": "580.159.03",
+      "gpu_compute_capability": "8.0",
+      "gpu_memory_mib": 81151.75,
+      "gpu_model": "NVIDIA A800-SXM4-80GB",
+      "python_version": "3.13.14",
+      "pytorch_version": "2.11.0+cu130",
+      "starter_commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+      "tf32_flags": {
+        "cudnn_allow_tf32": false,
+        "float32_matmul_precision": "highest",
+        "matmul_allow_tf32": false
+      },
+      "workspace_head": "ca8bc81a59b70516f7ebb2da4808daade877c736"
+    },
+    "error_summary": null,
+    "error_type": null,
+    "failure_stage": null,
+    "fallback_attempt": 0,
+    "fallback_parent_run_id": null,
+    "fallback_reason": null,
+    "finished_at": "2026-07-22T04:38:10+00:00",
+    "largest_allocation_mib": 100.0,
+    "largest_segment_allocation_mib": 100.0,
+    "largest_tensor_allocation": {
+      "frames": [],
+      "size_bytes": 104857600,
+      "size_mib": 100.0
+    },
+    "max_entries": 1000000,
+    "measurement_steps": 1,
+    "mode": "train_step",
+    "model_config": {
+      "d_ff": 10240,
+      "d_model": 2560,
+      "num_heads": 32,
+      "num_layers": 32
+    },
+    "model_fingerprint": "51d24fe881356ae182e9e824301994595fc64a59f0b3ddb23d482e3f2ecc06d7",
+    "parameter_count": 3406809600,
+    "peak_active_mib": 52649.1177,
+    "peak_allocated_mib": 52649.1177,
+    "peak_reserved_mib": 58670.0,
+    "requested_batch": 4,
+    "requested_context": 128,
+    "requested_model": "xl",
+    "run_id": "M2",
+    "run_name": "memory-M2_xl_bs4_ctx128_train_step_fp32_history",
+    "schema_version": "a2p-profiling-v1",
+    "seed": 42,
+    "started_at": "2026-07-22T04:38:08+00:00",
+    "status": "success",
+    "warmup_steps": 1
+  },
+  {
+    "actual_batch": 4,
+    "actual_context": 2048,
+    "actual_model": "xl",
+    "command": "python profiling/memory_snapshot.py snapshot --run-id M3 --model-size xl --batch-size 4 --context-length 2048 --mode forward --warmup 1 --steps 1 --dtype fp32 --output-dir results/memory/raw",
+    "dtype": "fp32",
+    "ending_allocated_mib": 13133.5098,
+    "ending_reserved_mib": 24028.0,
+    "environment": {
+      "bf16_supported": true,
+      "cuda_available": true,
+      "cuda_runtime": "13.0",
+      "cudnn_benchmark": false,
+      "deterministic_algorithms": false,
+      "driver_version": "580.159.03",
+      "gpu_compute_capability": "8.0",
+      "gpu_memory_mib": 81151.75,
+      "gpu_model": "NVIDIA A800-SXM4-80GB",
+      "python_version": "3.13.14",
+      "pytorch_version": "2.11.0+cu130",
+      "starter_commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+      "tf32_flags": {
+        "cudnn_allow_tf32": false,
+        "float32_matmul_precision": "highest",
+        "matmul_allow_tf32": false
+      },
+      "workspace_head": "ca8bc81a59b70516f7ebb2da4808daade877c736"
+    },
+    "error_summary": null,
+    "error_type": null,
+    "failure_stage": null,
+    "fallback_attempt": 0,
+    "fallback_parent_run_id": null,
+    "fallback_reason": null,
+    "finished_at": "2026-07-22T04:38:22+00:00",
+    "largest_allocation_mib": 2048.0,
+    "largest_segment_allocation_mib": null,
+    "largest_tensor_allocation": {
+      "frames": [
+        {
+          "file": "torch/functional.py",
+          "line": 373,
+          "name": "einsum"
+        },
+        {
+          "file": "einops/_backends.py",
+          "line": 291,
+          "name": "einsum"
+        },
+        {
+          "file": "einops/einops.py",
+          "line": 939,
+          "name": "einsum"
+        },
+        {
+          "file": "profiling/nvtx_ranges.py",
+          "line": 40,
+          "name": "annotated_scaled_dot_product_attention"
+        },
+        {
+          "file": "cs336-basics/cs336_basics/model.py",
+          "line": 520,
+          "name": "forward"
+        },
+        {
+          "file": "torch/nn/modules/module.py",
+          "line": 1790,
+          "name": "_call_impl"
+        },
+        {
+          "file": "torch/nn/modules/module.py",
+          "line": 1779,
+          "name": "_wrapped_call_impl"
+        },
+        {
+          "file": "cs336-basics/cs336_basics/model.py",
+          "line": 382,
+          "name": "forward"
+        },
+        {
+          "file": "torch/nn/modules/module.py",
+          "line": 1790,
+          "name": "_call_impl"
+        },
+        {
+          "file": "torch/nn/modules/module.py",
+          "line": 1779,
+          "name": "_wrapped_call_impl"
+        },
+        {
+          "file": "cs336-basics/cs336_basics/model.py",
+          "line": 253,
+          "name": "forward"
+        },
+        {
+          "file": "torch/nn/modules/module.py",
+          "line": 1790,
+          "name": "_call_impl"
+        }
+      ],
+      "size_bytes": 2147483648,
+      "size_mib": 2048.0
+    },
+    "max_entries": 1000000,
+    "measurement_steps": 1,
+    "mode": "forward",
+    "model_config": {
+      "d_ff": 10240,
+      "d_model": 2560,
+      "num_heads": 32,
+      "num_layers": 32
+    },
+    "model_fingerprint": "51d24fe881356ae182e9e824301994595fc64a59f0b3ddb23d482e3f2ecc06d7",
+    "parameter_count": 3406809600,
+    "peak_active_mib": 21810.5254,
+    "peak_allocated_mib": 21810.5254,
+    "peak_reserved_mib": 24028.0,
+    "requested_batch": 4,
+    "requested_context": 2048,
+    "requested_model": "xl",
+    "run_id": "M3",
+    "run_name": "memory-M3_xl_bs4_ctx2048_forward_fp32_history",
+    "schema_version": "a2p-profiling-v1",
+    "seed": 42,
+    "started_at": "2026-07-22T04:38:13+00:00",
+    "status": "success",
+    "warmup_steps": 1
+  },
+  {
+    "actual_batch": 4,
+    "actual_context": 2048,
+    "actual_model": "xl",
+    "command": "python profiling/memory_snapshot.py snapshot --run-id M4-VERIFY --model-size xl --batch-size 4 --context-length 2048 --mode train_step --warmup 1 --steps 1 --dtype fp32 --output-dir results/memory/raw",
+    "dtype": "fp32",
+    "ending_allocated_mib": 78291.1191,
+    "ending_reserved_mib": 79332.0,
+    "environment": {
+      "bf16_supported": true,
+      "cuda_available": true,
+      "cuda_runtime": "13.0",
+      "cudnn_benchmark": false,
+      "deterministic_algorithms": false,
+      "driver_version": "580.159.03",
+      "gpu_compute_capability": "8.0",
+      "gpu_memory_mib": 81151.75,
+      "gpu_model": "NVIDIA A800-SXM4-80GB",
+      "python_version": "3.13.14",
+      "pytorch_version": "2.11.0+cu130",
+      "starter_commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+      "tf32_flags": {
+        "cudnn_allow_tf32": false,
+        "float32_matmul_precision": "highest",
+        "matmul_allow_tf32": false
+      },
+      "workspace_head": "ca8bc81a59b70516f7ebb2da4808daade877c736"
+    },
+    "error_summary": "CUDA out of memory",
+    "error_type": "OutOfMemoryError",
+    "failure_stage": "forward",
+    "fallback_attempt": 0,
+    "fallback_parent_run_id": null,
+    "fallback_reason": null,
+    "finished_at": "2026-07-22T04:40:17+00:00",
+    "largest_allocation_mib": null,
+    "largest_segment_allocation_mib": null,
+    "largest_tensor_allocation": null,
+    "max_entries": 1000000,
+    "measurement_steps": 1,
+    "mode": "train_step",
+    "model_config": {
+      "d_ff": 10240,
+      "d_model": 2560,
+      "num_heads": 32,
+      "num_layers": 32
+    },
+    "model_fingerprint": "51d24fe881356ae182e9e824301994595fc64a59f0b3ddb23d482e3f2ecc06d7",
+    "parameter_count": 3406809600,
+    "peak_active_mib": 78292.1191,
+    "peak_allocated_mib": 78292.1191,
+    "peak_reserved_mib": 79412.0,
+    "requested_batch": 4,
+    "requested_context": 2048,
+    "requested_model": "xl",
+    "run_id": "M4-VERIFY",
+    "run_name": "memory-M4-VERIFY_xl_bs4_ctx2048_train_step_fp32_history",
+    "schema_version": "a2p-profiling-v1",
+    "seed": 42,
+    "started_at": "2026-07-22T04:40:14+00:00",
+    "status": "oom",
+    "warmup_steps": 1
+  },
+  {
+    "actual_batch": 1,
+    "actual_context": 2048,
+    "actual_model": "xl",
+    "command": "python profiling/memory_snapshot.py snapshot --run-id MF4 --model-size xl --batch-size 1 --context-length 2048 --mode train_step --warmup 1 --steps 1 --dtype fp32 --requested-model xl --requested-context 2048 --requested-batch 4 --fallback-reason prior_attempt_oom --fallback-parent-run-id M4-VERIFY --fallback-attempt 1 --output-dir results/memory/raw",
+    "dtype": "fp32",
+    "ending_allocated_mib": 79376.2402,
+    "ending_reserved_mib": 80408.0,
+    "environment": {
+      "bf16_supported": true,
+      "cuda_available": true,
+      "cuda_runtime": "13.0",
+      "cudnn_benchmark": false,
+      "deterministic_algorithms": false,
+      "driver_version": "580.159.03",
+      "gpu_compute_capability": "8.0",
+      "gpu_memory_mib": 81151.75,
+      "gpu_model": "NVIDIA A800-SXM4-80GB",
+      "python_version": "3.13.14",
+      "pytorch_version": "2.11.0+cu130",
+      "starter_commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+      "tf32_flags": {
+        "cudnn_allow_tf32": false,
+        "float32_matmul_precision": "highest",
+        "matmul_allow_tf32": false
+      },
+      "workspace_head": "ca8bc81a59b70516f7ebb2da4808daade877c736"
+    },
+    "error_summary": "CUDA out of memory",
+    "error_type": "OutOfMemoryError",
+    "failure_stage": "forward",
+    "fallback_attempt": 1,
+    "fallback_parent_run_id": "M4-VERIFY",
+    "fallback_reason": "prior_attempt_oom",
+    "finished_at": "2026-07-22T04:41:17+00:00",
+    "largest_allocation_mib": null,
+    "largest_segment_allocation_mib": null,
+    "largest_tensor_allocation": null,
+    "max_entries": 1000000,
+    "measurement_steps": 1,
+    "mode": "train_step",
+    "model_config": {
+      "d_ff": 10240,
+      "d_model": 2560,
+      "num_heads": 32,
+      "num_layers": 32
+    },
+    "model_fingerprint": "51d24fe881356ae182e9e824301994595fc64a59f0b3ddb23d482e3f2ecc06d7",
+    "parameter_count": 3406809600,
+    "peak_active_mib": 79376.4902,
+    "peak_allocated_mib": 79376.4902,
+    "peak_reserved_mib": 80414.0,
+    "requested_batch": 4,
+    "requested_context": 2048,
+    "requested_model": "xl",
+    "run_id": "MF4",
+    "run_name": "memory-MF4_xl_bs1_ctx2048_train_step_fp32_history",
+    "schema_version": "a2p-profiling-v1",
+    "seed": 42,
+    "started_at": "2026-07-22T04:41:12+00:00",
+    "status": "oom",
+    "warmup_steps": 1
+  },
+  {
+    "actual_batch": 1,
+    "actual_context": 1024,
+    "actual_model": "xl",
+    "command": "python profiling/memory_snapshot.py snapshot --run-id MF5 --model-size xl --batch-size 1 --context-length 1024 --mode train_step --warmup 1 --steps 1 --dtype fp32 --requested-model xl --requested-context 2048 --requested-batch 4 --fallback-reason prior_attempt_oom --fallback-parent-run-id MF4 --fallback-attempt 2 --output-dir results/memory/raw",
+    "dtype": "fp32",
+    "ending_allocated_mib": 52130.0859,
+    "ending_reserved_mib": 58628.0,
+    "environment": {
+      "bf16_supported": true,
+      "cuda_available": true,
+      "cuda_runtime": "13.0",
+      "cudnn_benchmark": false,
+      "deterministic_algorithms": false,
+      "driver_version": "580.159.03",
+      "gpu_compute_capability": "8.0",
+      "gpu_memory_mib": 81151.75,
+      "gpu_model": "NVIDIA A800-SXM4-80GB",
+      "python_version": "3.13.14",
+      "pytorch_version": "2.11.0+cu130",
+      "starter_commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+      "tf32_flags": {
+        "cudnn_allow_tf32": false,
+        "float32_matmul_precision": "highest",
+        "matmul_allow_tf32": false
+      },
+      "workspace_head": "ca8bc81a59b70516f7ebb2da4808daade877c736"
+    },
+    "error_summary": null,
+    "error_type": null,
+    "failure_stage": null,
+    "fallback_attempt": 2,
+    "fallback_parent_run_id": "MF4",
+    "fallback_reason": "prior_attempt_oom",
+    "finished_at": "2026-07-22T04:42:04+00:00",
+    "largest_allocation_mib": 128.0,
+    "largest_segment_allocation_mib": 128.0,
+    "largest_tensor_allocation": {
+      "frames": [
+        {
+          "file": "torch/functional.py",
+          "line": 373,
+          "name": "einsum"
+        },
+        {
+          "file": "einops/_backends.py",
+          "line": 291,
+          "name": "einsum"
+        },
+        {
+          "file": "einops/einops.py",
+          "line": 939,
+          "name": "einsum"
+        },
+        {
+          "file": "profiling/nvtx_ranges.py",
+          "line": 40,
+          "name": "annotated_scaled_dot_product_attention"
+        },
+        {
+          "file": "cs336-basics/cs336_basics/model.py",
+          "line": 520,
+          "name": "forward"
+        },
+        {
+          "file": "torch/nn/modules/module.py",
+          "line": 1790,
+          "name": "_call_impl"
+        },
+        {
+          "file": "torch/nn/modules/module.py",
+          "line": 1779,
+          "name": "_wrapped_call_impl"
+        },
+        {
+          "file": "cs336-basics/cs336_basics/model.py",
+          "line": 382,
+          "name": "forward"
+        },
+        {
+          "file": "torch/nn/modules/module.py",
+          "line": 1790,
+          "name": "_call_impl"
+        },
+        {
+          "file": "torch/nn/modules/module.py",
+          "line": 1779,
+          "name": "_wrapped_call_impl"
+        },
+        {
+          "file": "cs336-basics/cs336_basics/model.py",
+          "line": 253,
+          "name": "forward"
+        },
+        {
+          "file": "torch/nn/modules/module.py",
+          "line": 1790,
+          "name": "_call_impl"
+        }
+      ],
+      "size_bytes": 134217728,
+      "size_mib": 128.0
+    },
+    "max_entries": 1000000,
+    "measurement_steps": 1,
+    "mode": "train_step",
+    "model_config": {
+      "d_ff": 10240,
+      "d_model": 2560,
+      "num_heads": 32,
+      "num_layers": 32
+    },
+    "model_fingerprint": "51d24fe881356ae182e9e824301994595fc64a59f0b3ddb23d482e3f2ecc06d7",
+    "parameter_count": 3406809600,
+    "peak_active_mib": 57714.374,
+    "peak_allocated_mib": 57714.374,
+    "peak_reserved_mib": 58628.0,
+    "requested_batch": 4,
+    "requested_context": 2048,
+    "requested_model": "xl",
+    "run_id": "MF5",
+    "run_name": "memory-MF5_xl_bs1_ctx1024_train_step_fp32_history",
+    "schema_version": "a2p-profiling-v1",
+    "seed": 42,
+    "started_at": "2026-07-22T04:41:59+00:00",
+    "status": "success",
+    "warmup_steps": 1
+  },
+  {
+    "activation_saved_tensor_count": 39,
+    "batch_size": 4,
+    "context_length": 128,
+    "dtype": "fp32",
+    "environment": {
+      "bf16_supported": true,
+      "cuda_available": true,
+      "cuda_runtime": "13.0",
+      "cudnn_benchmark": false,
+      "deterministic_algorithms": false,
+      "driver_version": "580.159.03",
+      "gpu_compute_capability": "8.0",
+      "gpu_memory_mib": 81151.75,
+      "gpu_model": "NVIDIA A800-SXM4-80GB",
+      "python_version": "3.13.14",
+      "pytorch_version": "2.11.0+cu130",
+      "starter_commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+      "tf32_flags": {
+        "cudnn_allow_tf32": false,
+        "float32_matmul_precision": "highest",
+        "matmul_allow_tf32": false
+      },
+      "workspace_head": "ca8bc81a59b70516f7ebb2da4808daade877c736"
+    },
+    "error_summary": null,
+    "error_type": null,
+    "failure_stage": null,
+    "finished_at": "2026-07-22T10:16:38+00:00",
+    "input_gradient_bytes": 5242880,
+    "input_gradient_mib": 5.0,
+    "kind": "saved_tensor_diagnostic",
+    "logical_activation_saved_bytes": 230023168,
+    "logical_activation_saved_mib": 219.3672,
+    "missing_parameter_gradients": 0,
+    "model_config": {
+      "d_ff": 10240,
+      "d_model": 2560,
+      "num_heads": 32,
+      "num_layers": 32
+    },
+    "model_size": "xl",
+    "parameter_bytes": 419450880,
+    "parameter_gradient_bytes": 419450880,
+    "parameter_gradient_mib": 400.0195,
+    "parameter_mib": 400.0195,
+    "parameter_storage_record_count": 9,
+    "run_id": "M-BLOCK",
+    "run_name": "saved_tensors_xl_ctx128",
+    "saved_tensor_count": 48,
+    "schema_version": "a2p-profiling-v1",
+    "seed": 42,
+    "started_at": "2026-07-22T10:16:37+00:00",
+    "status": "success",
+    "top_activation_logical_groups": [
+      {
+        "calls": 2,
+        "dtype": "float32",
+        "grad_fn": "SigmoidBackward0",
+        "logical_bytes": 41943040,
+        "logical_mib": 40.0,
+        "logical_percentage": 18.234267602122582,
+        "shape": [
+          4,
+          128,
+          10240
+        ]
+      },
+      {
+        "calls": 2,
+        "dtype": "float32",
+        "grad_fn": "ViewBackward0",
+        "logical_bytes": 41943040,
+        "logical_mib": 40.0,
+        "logical_percentage": 18.234267602122582,
+        "shape": [
+          4,
+          128,
+          10240
+        ]
+      },
+      {
+        "calls": 6,
+        "dtype": "float32",
+        "grad_fn": "ViewBackward0",
+        "logical_bytes": 31457280,
+        "logical_mib": 30.0,
+        "logical_percentage": 13.675700701591937,
+        "shape": [
+          1,
+          512,
+          2560
+        ]
+      },
+      {
+        "calls": 1,
+        "dtype": "float32",
+        "grad_fn": "MulBackward0",
+        "logical_bytes": 20971520,
+        "logical_mib": 20.0,
+        "logical_percentage": 9.117133801061291,
+        "shape": [
+          4,
+          128,
+          10240
+        ]
+      },
+      {
+        "calls": 1,
+        "dtype": "float32",
+        "grad_fn": "ViewBackward0",
+        "logical_bytes": 20971520,
+        "logical_mib": 20.0,
+        "logical_percentage": 9.117133801061291,
+        "shape": [
+          1,
+          512,
+          10240
+        ]
+      },
+      {
+        "calls": 2,
+        "dtype": "float32",
+        "grad_fn": "ExpBackward0",
+        "logical_bytes": 16777216,
+        "logical_mib": 16.0,
+        "logical_percentage": 7.293707040849033,
+        "shape": [
+          4,
+          32,
+          128,
+          128
+        ]
+      },
+      {
+        "calls": 2,
+        "dtype": "float32",
+        "grad_fn": null,
+        "logical_bytes": 10485760,
+        "logical_mib": 10.0,
+        "logical_percentage": 4.5585669005306455,
+        "shape": [
+          4,
+          128,
+          2560
+        ]
+      },
+      {
+        "calls": 2,
+        "dtype": "float32",
+        "grad_fn": "MulBackward0",
+        "logical_bytes": 10485760,
+        "logical_mib": 10.0,
+        "logical_percentage": 4.5585669005306455,
+        "shape": [
+          4,
+          128,
+          2560
+        ]
+      },
+      {
+        "calls": 2,
+        "dtype": "float32",
+        "grad_fn": "AddBackward0",
+        "logical_bytes": 10485760,
+        "logical_mib": 10.0,
+        "logical_percentage": 4.5585669005306455,
+        "shape": [
+          4,
+          128,
+          2560
+        ]
+      },
+      {
+        "calls": 1,
+        "dtype": "float32",
+        "grad_fn": "ViewBackward0",
+        "logical_bytes": 8388608,
+        "logical_mib": 8.0,
+        "logical_percentage": 3.6468535204245165,
+        "shape": [
+          128,
+          128,
+          128
+        ]
+      },
+      {
+        "calls": 1,
+        "dtype": "float32",
+        "grad_fn": "ReshapeAliasBackward0",
+        "logical_bytes": 5242880,
+        "logical_mib": 5.0,
+        "logical_percentage": 2.2792834502653228,
+        "shape": [
+          128,
+          80,
+          128
+        ]
+      },
+      {
+        "calls": 1,
+        "dtype": "float32",
+        "grad_fn": "ViewBackward0",
+        "logical_bytes": 5242880,
+        "logical_mib": 5.0,
+        "logical_percentage": 2.2792834502653228,
+        "shape": [
+          128,
+          128,
+          80
+        ]
+      },
+      {
+        "calls": 1,
+        "dtype": "float32",
+        "grad_fn": "UnsafeViewBackward0",
+        "logical_bytes": 5242880,
+        "logical_mib": 5.0,
+        "logical_percentage": 2.2792834502653228,
+        "shape": [
+          128,
+          128,
+          80
+        ]
+      },
+      {
+        "calls": 8,
+        "dtype": "float32",
+        "grad_fn": null,
+        "logical_bytes": 163840,
+        "logical_mib": 0.1562,
+        "logical_percentage": 0.07122760782079134,
+        "shape": [
+          128,
+          40
+        ]
+      },
+      {
+        "calls": 1,
+        "dtype": "int64",
+        "grad_fn": null,
+        "logical_bytes": 131072,
+        "logical_mib": 0.125,
+        "logical_percentage": 0.05698208625663307,
+        "shape": [
+          4,
+          32,
+          128,
+          1
+        ]
+      },
+      {
+        "calls": 1,
+        "dtype": "float32",
+        "grad_fn": "SumBackward1",
+        "logical_bytes": 65536,
+        "logical_mib": 0.0625,
+        "logical_percentage": 0.028491043128316535,
+        "shape": [
+          4,
+          32,
+          128,
+          1
+        ]
+      },
+      {
+        "calls": 1,
+        "dtype": "bool",
+        "grad_fn": null,
+        "logical_bytes": 16384,
+        "logical_mib": 0.0156,
+        "logical_percentage": 0.007122760782079134,
+        "shape": [
+          1,
+          128,
+          128
+        ]
+      },
+      {
+        "calls": 4,
+        "dtype": "float32",
+        "grad_fn": "RsqrtBackward0",
+        "logical_bytes": 8192,
+        "logical_mib": 0.0078,
+        "logical_percentage": 0.003561380391039567,
+        "shape": [
+          4,
+          128,
+          1
+        ]
+      }
+    ],
+    "top_unique_activation_storages": [
+      {
+        "dtype": "float32",
+        "grad_fn": "SigmoidBackward0",
+        "percentage": 12.030357856152635,
+        "shape": [
+          4,
+          128,
+          10240
+        ],
+        "storage_mib": 20.0
+      },
+      {
+        "dtype": "float32",
+        "grad_fn": "ViewBackward0",
+        "percentage": 12.030357856152635,
+        "shape": [
+          4,
+          128,
+          10240
+        ],
+        "storage_mib": 20.0
+      },
+      {
+        "dtype": "float32",
+        "grad_fn": "ViewBackward0",
+        "percentage": 12.030357856152635,
+        "shape": [
+          4,
+          128,
+          10240
+        ],
+        "storage_mib": 20.0
+      },
+      {
+        "dtype": "float32",
+        "grad_fn": "MulBackward0",
+        "percentage": 12.030357856152635,
+        "shape": [
+          4,
+          128,
+          10240
+        ],
+        "storage_mib": 20.0
+      },
+      {
+        "dtype": "float32",
+        "grad_fn": "ViewBackward0",
+        "percentage": 12.030357856152635,
+        "shape": [
+          1,
+          512,
+          10240
+        ],
+        "storage_mib": 20.0
+      },
+      {
+        "dtype": "float32",
+        "grad_fn": "ExpBackward0",
+        "percentage": 4.812143142461054,
+        "shape": [
+          4,
+          32,
+          128,
+          128
+        ],
+        "storage_mib": 8.0
+      },
+      {
+        "dtype": "float32",
+        "grad_fn": "ViewBackward0",
+        "percentage": 4.812143142461054,
+        "shape": [
+          128,
+          128,
+          128
+        ],
+        "storage_mib": 8.0
+      },
+      {
+        "dtype": "float32",
+        "grad_fn": null,
+        "percentage": 3.007589464038159,
+        "shape": [
+          4,
+          128,
+          2560
+        ],
+        "storage_mib": 5.0
+      },
+      {
+        "dtype": "float32",
+        "grad_fn": "MulBackward0",
+        "percentage": 3.007589464038159,
+        "shape": [
+          4,
+          128,
+          2560
+        ],
+        "storage_mib": 5.0
+      },
+      {
+        "dtype": "float32",
+        "grad_fn": "ViewBackward0",
+        "percentage": 3.007589464038159,
+        "shape": [
+          1,
+          512,
+          2560
+        ],
+        "storage_mib": 5.0
+      },
+      {
+        "dtype": "float32",
+        "grad_fn": "ReshapeAliasBackward0",
+        "percentage": 3.007589464038159,
+        "shape": [
+          128,
+          80,
+          128
+        ],
+        "storage_mib": 5.0
+      },
+      {
+        "dtype": "float32",
+        "grad_fn": "ViewBackward0",
+        "percentage": 3.007589464038159,
+        "shape": [
+          128,
+          128,
+          80
+        ],
+        "storage_mib": 5.0
+      },
+      {
+        "dtype": "float32",
+        "grad_fn": "UnsafeViewBackward0",
+        "percentage": 3.007589464038159,
+        "shape": [
+          128,
+          128,
+          80
+        ],
+        "storage_mib": 5.0
+      },
+      {
+        "dtype": "float32",
+        "grad_fn": "ViewBackward0",
+        "percentage": 3.007589464038159,
+        "shape": [
+          1,
+          512,
+          2560
+        ],
+        "storage_mib": 5.0
+      },
+      {
+        "dtype": "float32",
+        "grad_fn": "AddBackward0",
+        "percentage": 3.007589464038159,
+        "shape": [
+          4,
+          128,
+          2560
+        ],
+        "storage_mib": 5.0
+      },
+      {
+        "dtype": "float32",
+        "grad_fn": "MulBackward0",
+        "percentage": 3.007589464038159,
+        "shape": [
+          4,
+          128,
+          2560
+        ],
+        "storage_mib": 5.0
+      },
+      {
+        "dtype": "float32",
+        "grad_fn": "ViewBackward0",
+        "percentage": 3.007589464038159,
+        "shape": [
+          1,
+          512,
+          2560
+        ],
+        "storage_mib": 5.0
+      },
+      {
+        "dtype": "int64",
+        "grad_fn": null,
+        "percentage": 0.07518973660095397,
+        "shape": [
+          4,
+          32,
+          128,
+          1
+        ],
+        "storage_mib": 0.125
+      },
+      {
+        "dtype": "float32",
+        "grad_fn": "SumBackward1",
+        "percentage": 0.03759486830047699,
+        "shape": [
+          4,
+          32,
+          128,
+          1
+        ],
+        "storage_mib": 0.0625
+      },
+      {
+        "dtype": "float32",
+        "grad_fn": null,
+        "percentage": 0.023496792687798116,
+        "shape": [
+          128,
+          40
+        ],
+        "storage_mib": 0.0391
+      }
+    ],
+    "total_produced_gradient_bytes": 424693760,
+    "total_produced_gradient_mib": 405.0195,
+    "unique_activation_saved_bytes": 174321664,
+    "unique_activation_saved_mib": 166.2461,
+    "unique_activation_storage_count": 23
+  }
+]

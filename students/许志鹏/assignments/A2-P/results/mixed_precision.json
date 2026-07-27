@@ -1,0 +1,190 @@
+{
+  "accumulation": {
+    "command": "python profiling/mixed_precision.py accumulation --output results/mixed_precision.json",
+    "expected_exact_sum": 10.0,
+    "results": {
+      "fp16_input_fp16_accumulator": {
+        "absolute_error": 0.046875,
+        "dtype": "float16",
+        "value": 9.953125
+      },
+      "fp16_input_fp32_accumulator_explicit": {
+        "absolute_error": 0.00213623046875,
+        "dtype": "float32",
+        "value": 10.00213623046875
+      },
+      "fp16_input_fp32_accumulator_implicit": {
+        "absolute_error": 0.00213623046875,
+        "dtype": "float32",
+        "value": 10.00213623046875
+      },
+      "fp32_input_fp32_accumulator": {
+        "absolute_error": 0.000133514404296875,
+        "dtype": "float32",
+        "value": 10.000133514404297
+      }
+    },
+    "timestamp_utc": "2026-07-22T13:09:15Z"
+  },
+  "benchmarks": [
+    {
+      "bf16": {
+        "dtype": "bf16",
+        "memory": {
+          "active_peak_bytes": 3396678656,
+          "allocated_peak_bytes": 3396678656,
+          "reserved_peak_bytes": 3602907136
+        },
+        "numerics": {
+          "final_loss": 9.284591674804688,
+          "logits_finite": true,
+          "logits_mean": 0.0018866858445107937,
+          "logits_std": 0.3722951114177704,
+          "measurement_losses": [
+            9.284591674804688,
+            9.284591674804688,
+            9.284591674804688,
+            9.284591674804688,
+            9.284591674804688,
+            9.284591674804688,
+            9.284591674804688,
+            9.284591674804688,
+            9.284591674804688,
+            9.284591674804688
+          ]
+        },
+        "timing_statistics": {
+          "cv": 0.0012398608768001472,
+          "mean_ms": 47.70148880779743,
+          "sample_std_ms": 0.05914320973790813
+        },
+        "timings_ms": [
+          47.63273894786835,
+          47.674644738435745,
+          47.76855185627937,
+          47.71756008267403,
+          47.74060845375061,
+          47.636762261390686,
+          47.718290239572525,
+          47.75596410036087,
+          47.608211636543274,
+          47.76155576109886
+        ]
+      },
+      "command": "python profiling/mixed_precision.py benchmark --device cuda --model-size small --batch-size 4 --context-length 512 --warmup 5 --steps 10 --seed 42 --output results/mixed_precision.json",
+      "comparison": {
+        "loss_absolute_difference": 0.00046062469482421875,
+        "sampled_logits_count": 4096,
+        "sampled_logits_relative_l2": 0.006059503182768822
+      },
+      "configuration": {
+        "batch_size": 4,
+        "context_length": 512,
+        "d_ff": 3072,
+        "d_model": 768,
+        "mode": "forward_backward",
+        "model_size": "small",
+        "num_heads": 12,
+        "num_layers": 12,
+        "seed": 42,
+        "steps": 10,
+        "vocab_size": 10000,
+        "warmup": 5
+      },
+      "environment": {
+        "bf16_supported": true,
+        "compiled_cuda": "12.8",
+        "device": "cuda",
+        "driver_version": "570.124.06",
+        "git_commit": "4bb57e8c430c9d3f0b0b48f02b383ab30144bb56",
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "python_version": "3.12.3",
+        "torch_version": "2.11.0+cu128"
+      },
+      "fp32": {
+        "dtype": "fp32",
+        "memory": {
+          "active_peak_bytes": 4359508480,
+          "allocated_peak_bytes": 4359508480,
+          "reserved_peak_bytes": 4496293888
+        },
+        "numerics": {
+          "final_loss": 9.285052299499512,
+          "logits_finite": true,
+          "logits_mean": 0.0018763046246021986,
+          "logits_std": 0.3722992241382599,
+          "measurement_losses": [
+            9.285052299499512,
+            9.285052299499512,
+            9.285052299499512,
+            9.285052299499512,
+            9.285052299499512,
+            9.285052299499512,
+            9.285052299499512,
+            9.285052299499512,
+            9.285052299499512,
+            9.285052299499512
+          ]
+        },
+        "timing_statistics": {
+          "cv": 0.0010356994994453967,
+          "mean_ms": 60.88577024638653,
+          "sample_std_ms": 0.06305936176752995
+        },
+        "timings_ms": [
+          61.028458178043365,
+          60.949843376874924,
+          60.843393206596375,
+          60.82930043339729,
+          60.84079295396805,
+          60.88618189096451,
+          60.90017408132553,
+          60.88372692465782,
+          60.82303822040558,
+          60.872793197631836
+        ]
+      },
+      "run_id": "small-bs4-ctx512-forward_backward-fp32-vs-bf16-seed42",
+      "timestamp_utc": "2026-07-22T13:09:35Z"
+    }
+  ],
+  "toy_model": {
+    "command": "python profiling/mixed_precision.py toy --device cuda --batch-size 4 --in-features 32 --out-features 8 --seed 42 --output results/mixed_precision.json",
+    "configuration": {
+      "autocast_dtype": "bfloat16",
+      "batch_size": 4,
+      "in_features": 32,
+      "out_features": 8,
+      "seed": 42
+    },
+    "dtypes": {
+      "fc1_output": "bfloat16",
+      "gradients": [
+        "float32"
+      ],
+      "layer_norm_output": "float32",
+      "logits": "bfloat16",
+      "loss": "float32",
+      "parameters_inside_autocast": [
+        "float32"
+      ]
+    },
+    "environment": {
+      "bf16_supported": true,
+      "compiled_cuda": "12.8",
+      "device": "cuda",
+      "driver_version": "570.124.06",
+      "git_commit": "4bb57e8c430c9d3f0b0b48f02b383ab30144bb56",
+      "gpu_name": "NVIDIA GeForce RTX 4090",
+      "python_version": "3.12.3",
+      "torch_version": "2.11.0+cu128"
+    },
+    "numerics": {
+      "logits_finite": true,
+      "logits_mean": 0.07755374908447266,
+      "logits_std": 0.5488371253013611,
+      "loss": 1.84765625
+    },
+    "timestamp_utc": "2026-07-22T13:09:22Z"
+  }
+}
