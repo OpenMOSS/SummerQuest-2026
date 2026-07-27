@@ -1,0 +1,106 @@
+{
+  "cuda_visible_devices": "0",
+  "torch_version": "2.7.0a0+ecf3bae40a.nv25.02",
+  "triton_version": "3.2.0",
+  "cuda_version": "12.8",
+  "cudnn_version": 90701,
+  "tf32_matmul": false,
+  "tf32_cudnn": true,
+  "allocator_fraction": 0.4854174583443363,
+  "allocator_limit_mib": 23552,
+  "timer": "triton.testing.do_bench (CUDA events) / torch.cuda.Event for step timing",
+  "python_version": "3.12.3",
+  "gpu_name": "NVIDIA GeForce RTX 4090",
+  "gpu_memory_total_mib": 49140,
+  "gpu_memory_free_at_start_mib": 48006,
+  "driver_version": "570.124.06",
+  "power_limit_w": 450.0,
+  "pstate": "P2",
+  "commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+  "seed": 0,
+  "do_bench": {
+    "warmup_ms": 100,
+    "rep_ms": 300,
+    "quantiles": [
+      0.2,
+      0.5,
+      0.8
+    ]
+  },
+  "runs": [
+    {
+      "script": "student_scripts/a2k/run_attention_baseline.py",
+      "command": "PYTHONPATH=cs336-basics CUDA_VISIBLE_DEVICES=0 .venv/bin/python student_scripts/a2k/run_attention_baseline.py",
+      "commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+      "seed": 0,
+      "warmup_steps": null,
+      "measurement_steps": null,
+      "do_bench": {
+        "warmup_ms": 100,
+        "rep_ms": 300,
+        "quantiles": [
+          0.2,
+          0.5,
+          0.8
+        ]
+      },
+      "triton_config": null,
+      "torch_compile_mode": null
+    },
+    {
+      "script": "student_scripts/a2k/run_checkpointing.py",
+      "command": "PYTHONPATH=cs336-basics CUDA_VISIBLE_DEVICES=0 .venv/bin/python student_scripts/a2k/run_checkpointing.py",
+      "commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+      "seed": 0,
+      "warmup_steps": 3,
+      "measurement_steps": 5,
+      "do_bench": null,
+      "triton_config": null,
+      "torch_compile_mode": null
+    },
+    {
+      "script": "student_scripts/a2k/run_compile_comparison.py",
+      "command": "PYTHONPATH=cs336-basics CUDA_VISIBLE_DEVICES=0 .venv/bin/python student_scripts/a2k/run_compile_comparison.py",
+      "commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+      "seed": 0,
+      "warmup_steps": null,
+      "measurement_steps": null,
+      "do_bench": {
+        "warmup_ms": 100,
+        "rep_ms": 300,
+        "quantiles": [
+          0.2,
+          0.5,
+          0.8
+        ]
+      },
+      "triton_config": null,
+      "torch_compile_mode": "default"
+    },
+    {
+      "script": "student_scripts/a2k/run_flash_benchmark.py",
+      "command": "PYTHONPATH=cs336-basics CUDA_VISIBLE_DEVICES=0 .venv/bin/python student_scripts/a2k/run_flash_benchmark.py",
+      "commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+      "seed": 0,
+      "warmup_steps": null,
+      "measurement_steps": null,
+      "do_bench": {
+        "warmup_ms": 100,
+        "rep_ms": 300,
+        "quantiles": [
+          0.2,
+          0.5,
+          0.8
+        ]
+      },
+      "triton_config": {
+        "BLOCK_M": 64,
+        "BLOCK_N": 64,
+        "num_warps": 4,
+        "num_stages": 2
+      },
+      "torch_compile_mode": null
+    }
+  ],
+  "unit_tests_command": "PYTHONPATH=cs336-basics CUDA_VISIBLE_DEVICES=0 .venv/bin/python -m pytest tests/test_attention.py -v"
+}

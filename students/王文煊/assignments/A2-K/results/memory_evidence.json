@@ -1,0 +1,11 @@
+{
+  "allocator": {
+    "allocator_fraction": 0.4854174583443363,
+    "allocator_limit_mib": 23552
+  },
+  "hard_limit_mib": 24576,
+  "pytorch_peak_allocated_mib": 19675.2,
+  "pytorch_peak_reserved_mib": 20164.0,
+  "within_24gib": true,
+  "note": "max over all formal experiment processes (checkpointing, attention baseline, compile comparison, flash benchmark); each process set the 23 GiB allocator fraction before its first CUDA allocation"
+}

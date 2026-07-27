@@ -1,0 +1,8 @@
+config_id,model_size,num_layers,context_length,batch_size,dtype,checkpoint_block_size,nested,warmup_steps,measurement_steps,step_time_ms_samples,step_time_ms_p50,peak_allocated_mib,peak_reserved_mib,status
+ctx1024_bsnone,medium,24,1024,1,bf16_autocast_fp32_params,none,False,3,5,135.073;134.344;134.839;137.708;136.87,135.073,10070.13,10224.0,ok
+ctx1024_bs1,medium,24,1024,1,bf16_autocast_fp32_params,1,False,3,5,345.117;202.448;205.412;201.037;200.031,202.448,6869.28,7054.0,ok
+ctx1024_bs2,medium,24,1024,1,bf16_autocast_fp32_params,2,False,3,5,193.322;193.786;193.582;190.485;191.747,193.322,7008.47,7182.0,ok
+ctx1024_bs4,medium,24,1024,1,bf16_autocast_fp32_params,4,False,3,5,187.241;184.532;184.284;183.902;184.577,184.532,7290.59,7376.0,ok
+ctx1024_bs8,medium,24,1024,1,bf16_autocast_fp32_params,8,False,3,5,183.27;181.934;295.315;184.351;181.298,183.27,7845.0,7966.0,ok
+ctx2048_bsnone,medium,24,2048,1,bf16_autocast_fp32_params,none,False,3,5,382.62;383.007;383.093;382.617;382.967,382.967,19675.2,20164.0,ok
+ctx2048_bs1,medium,24,2048,1,bf16_autocast_fp32_params,1,False,3,5,489.737;488.929;489.367;489.045;489.414,489.367,8072.86,8638.0,ok

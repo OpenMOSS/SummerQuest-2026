@@ -1,0 +1,1474 @@
+{
+  "metadata": {
+    "cuda_visible_devices": "0",
+    "torch_version": "2.7.0a0+ecf3bae40a.nv25.02",
+    "triton_version": "3.2.0",
+    "cuda_version": "12.8",
+    "cudnn_version": 90701,
+    "tf32_matmul": true,
+    "tf32_cudnn": true,
+    "allocator_fraction": 0.4854174583443363,
+    "allocator_limit_mib": 23552,
+    "timer": "triton.testing.do_bench (CUDA events) / torch.cuda.Event for step timing",
+    "python_version": "3.12.3",
+    "gpu_name": "NVIDIA GeForce RTX 4090",
+    "gpu_memory_total_mib": 49140,
+    "gpu_memory_free_at_start_mib": 48002,
+    "driver_version": "570.124.06",
+    "power_limit_w": 450.0,
+    "pstate": "P2",
+    "script": "student_scripts/a2k/run_correctness.py",
+    "command": "PYTHONPATH=cs336-basics CUDA_VISIBLE_DEVICES=0 .venv/bin/python student_scripts/a2k/run_correctness.py",
+    "commit": "ca8bc81a59b70516f7ebb2da4808daade877c736"
+  },
+  "reference": "explicit softmax attention in float64 (tests/_attention_and_lse logic)",
+  "tolerance": {
+    "rtol": 0.01,
+    "atol": 0.01
+  },
+  "num_configs": 36,
+  "num_pass": 36,
+  "num_fail": 0,
+  "entries": [
+    {
+      "impl": "FlashAttentionTriton",
+      "seed": 0,
+      "batch": 2,
+      "seq_len": 256,
+      "head_dim": 32,
+      "dtype": "bfloat16",
+      "tf32": true,
+      "is_causal": false,
+      "rtol": 0.01,
+      "atol": 0.01,
+      "tensors": {
+        "O": {
+          "max_abs_err": 0.001269799955695372,
+          "max_rel_err": 24.914242471574735,
+          "pass": true
+        },
+        "L": {
+          "max_abs_err": 5.514612162471622e-07,
+          "max_rel_err": 8.737244717796684e-08,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs_err": 0.0018136140491922248,
+          "max_rel_err": 3.234981082848278,
+          "pass": true
+        },
+        "dK": {
+          "max_abs_err": 0.0020941514373058467,
+          "max_rel_err": 6.497857891097989,
+          "pass": true
+        },
+        "dV": {
+          "max_abs_err": 0.0015913462985868154,
+          "max_rel_err": 4.010950047567249,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "impl": "FlashAttentionTriton",
+      "seed": 0,
+      "batch": 2,
+      "seq_len": 256,
+      "head_dim": 32,
+      "dtype": "bfloat16",
+      "tf32": true,
+      "is_causal": true,
+      "rtol": 0.01,
+      "atol": 0.01,
+      "tensors": {
+        "O": {
+          "max_abs_err": 0.00844901034429979,
+          "max_rel_err": 16.800867586388783,
+          "pass": true
+        },
+        "L": {
+          "max_abs_err": 4.815391161372418e-07,
+          "max_rel_err": 1.2306820183194286e-07,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs_err": 0.0062751228906621215,
+          "max_rel_err": 8.901727065692802,
+          "pass": true
+        },
+        "dK": {
+          "max_abs_err": 0.012246820755686283,
+          "max_rel_err": 2.6252990721812277,
+          "pass": true
+        },
+        "dV": {
+          "max_abs_err": 0.0067442781989282,
+          "max_rel_err": 3.8691845411065735,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "impl": "FlashAttentionTriton",
+      "seed": 0,
+      "batch": 2,
+      "seq_len": 256,
+      "head_dim": 64,
+      "dtype": "float32",
+      "tf32": false,
+      "is_causal": false,
+      "rtol": 0.01,
+      "atol": 0.01,
+      "tensors": {
+        "O": {
+          "max_abs_err": 0.001274715124057968,
+          "max_rel_err": 13.014032103669466,
+          "pass": true
+        },
+        "L": {
+          "max_abs_err": 0.0013371473512782117,
+          "max_rel_err": 0.00020896893670630917,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs_err": 0.0011589917456095167,
+          "max_rel_err": 1.593949630860644,
+          "pass": true
+        },
+        "dK": {
+          "max_abs_err": 0.0008303672219264202,
+          "max_rel_err": 1.080074616516586,
+          "pass": true
+        },
+        "dV": {
+          "max_abs_err": 0.0009146600862331988,
+          "max_rel_err": 4.074331393859308,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "impl": "FlashAttentionTriton",
+      "seed": 0,
+      "batch": 2,
+      "seq_len": 256,
+      "head_dim": 64,
+      "dtype": "float32",
+      "tf32": false,
+      "is_causal": true,
+      "rtol": 0.01,
+      "atol": 0.01,
+      "tensors": {
+        "O": {
+          "max_abs_err": 0.00232308025128658,
+          "max_rel_err": 17.82044911691258,
+          "pass": true
+        },
+        "L": {
+          "max_abs_err": 0.002154274431079628,
+          "max_rel_err": 0.0031806558291062287,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs_err": 0.003399855690076947,
+          "max_rel_err": 3399.855690076947,
+          "pass": true
+        },
+        "dK": {
+          "max_abs_err": 0.003284608084708429,
+          "max_rel_err": 18.66942432388884,
+          "pass": true
+        },
+        "dV": {
+          "max_abs_err": 0.005413949493382031,
+          "max_rel_err": 3.247150888467957,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "impl": "FlashAttentionTriton",
+      "seed": 0,
+      "batch": 2,
+      "seq_len": 256,
+      "head_dim": 128,
+      "dtype": "bfloat16",
+      "tf32": true,
+      "is_causal": false,
+      "rtol": 0.01,
+      "atol": 0.01,
+      "tensors": {
+        "O": {
+          "max_abs_err": 0.0014392958834313352,
+          "max_rel_err": 66.44625765772047,
+          "pass": true
+        },
+        "L": {
+          "max_abs_err": 6.589292089742571e-07,
+          "max_rel_err": 1.021728078943178e-07,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs_err": 0.00213432525491275,
+          "max_rel_err": 3.1618916056206023,
+          "pass": true
+        },
+        "dK": {
+          "max_abs_err": 0.002165985186012742,
+          "max_rel_err": 3.4832028412121003,
+          "pass": true
+        },
+        "dV": {
+          "max_abs_err": 0.0017980016662765275,
+          "max_rel_err": 24.92559179661904,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "impl": "FlashAttentionTriton",
+      "seed": 0,
+      "batch": 2,
+      "seq_len": 256,
+      "head_dim": 128,
+      "dtype": "bfloat16",
+      "tf32": true,
+      "is_causal": true,
+      "rtol": 0.01,
+      "atol": 0.01,
+      "tensors": {
+        "O": {
+          "max_abs_err": 0.006523621905691446,
+          "max_rel_err": 85.59347396570107,
+          "pass": true
+        },
+        "L": {
+          "max_abs_err": 5.73514125079555e-07,
+          "max_rel_err": 1.2651084601469053e-07,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs_err": 0.008863953424036453,
+          "max_rel_err": 27.002322028864523,
+          "pass": true
+        },
+        "dK": {
+          "max_abs_err": 0.008470287507703844,
+          "max_rel_err": 12.684708381957188,
+          "pass": true
+        },
+        "dV": {
+          "max_abs_err": 0.014793384368283036,
+          "max_rel_err": 7.331831182646695,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "impl": "FlashAttentionTriton",
+      "seed": 1,
+      "batch": 2,
+      "seq_len": 256,
+      "head_dim": 32,
+      "dtype": "bfloat16",
+      "tf32": true,
+      "is_causal": false,
+      "rtol": 0.01,
+      "atol": 0.01,
+      "tensors": {
+        "O": {
+          "max_abs_err": 0.0016068334287642205,
+          "max_rel_err": 15.188428672970868,
+          "pass": true
+        },
+        "L": {
+          "max_abs_err": 4.98924381808763e-07,
+          "max_rel_err": 7.952309364684514e-08,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs_err": 0.001490746384964825,
+          "max_rel_err": 1.552483278722467,
+          "pass": true
+        },
+        "dK": {
+          "max_abs_err": 0.0026079212930800733,
+          "max_rel_err": 1.2874856390739156,
+          "pass": true
+        },
+        "dV": {
+          "max_abs_err": 0.0017135830156974619,
+          "max_rel_err": 1.4041189098219253,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "impl": "FlashAttentionTriton",
+      "seed": 1,
+      "batch": 2,
+      "seq_len": 256,
+      "head_dim": 32,
+      "dtype": "bfloat16",
+      "tf32": true,
+      "is_causal": true,
+      "rtol": 0.01,
+      "atol": 0.01,
+      "tensors": {
+        "O": {
+          "max_abs_err": 0.007549213080134454,
+          "max_rel_err": 30.310912639468437,
+          "pass": true
+        },
+        "L": {
+          "max_abs_err": 5.145665307182412e-07,
+          "max_rel_err": 1.0399688598733404e-07,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs_err": 0.005027600795614706,
+          "max_rel_err": 5.40042835065374,
+          "pass": true
+        },
+        "dK": {
+          "max_abs_err": 0.007109538390754455,
+          "max_rel_err": 3.2530027399382777,
+          "pass": true
+        },
+        "dV": {
+          "max_abs_err": 0.00750080798072883,
+          "max_rel_err": 2.0402677235767355,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "impl": "FlashAttentionTriton",
+      "seed": 1,
+      "batch": 2,
+      "seq_len": 256,
+      "head_dim": 64,
+      "dtype": "bfloat16",
+      "tf32": true,
+      "is_causal": false,
+      "rtol": 0.01,
+      "atol": 0.01,
+      "tensors": {
+        "O": {
+          "max_abs_err": 0.0016570197325187497,
+          "max_rel_err": 18.18828232774602,
+          "pass": true
+        },
+        "L": {
+          "max_abs_err": 5.292757396802017e-07,
+          "max_rel_err": 8.54749915210432e-08,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs_err": 0.0016303378200471785,
+          "max_rel_err": 2.690101679062292,
+          "pass": true
+        },
+        "dK": {
+          "max_abs_err": 0.0016248161522083304,
+          "max_rel_err": 3.0531198458630695,
+          "pass": true
+        },
+        "dV": {
+          "max_abs_err": 0.0018989652858704131,
+          "max_rel_err": 4.154378031958164,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "impl": "FlashAttentionTriton",
+      "seed": 1,
+      "batch": 2,
+      "seq_len": 256,
+      "head_dim": 64,
+      "dtype": "bfloat16",
+      "tf32": true,
+      "is_causal": true,
+      "rtol": 0.01,
+      "atol": 0.01,
+      "tensors": {
+        "O": {
+          "max_abs_err": 0.006906493232855748,
+          "max_rel_err": 142.3297764922808,
+          "pass": true
+        },
+        "L": {
+          "max_abs_err": 5.845401105375458e-07,
+          "max_rel_err": 1.0528780841588386e-07,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs_err": 0.004731230020965793,
+          "max_rel_err": 176.30919554291822,
+          "pass": true
+        },
+        "dK": {
+          "max_abs_err": 0.007818614772248766,
+          "max_rel_err": 6.435783010657776,
+          "pass": true
+        },
+        "dV": {
+          "max_abs_err": 0.007630977265904004,
+          "max_rel_err": 0.9009496432407109,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "impl": "FlashAttentionTriton",
+      "seed": 1,
+      "batch": 2,
+      "seq_len": 256,
+      "head_dim": 128,
+      "dtype": "bfloat16",
+      "tf32": true,
+      "is_causal": false,
+      "rtol": 0.01,
+      "atol": 0.01,
+      "tensors": {
+        "O": {
+          "max_abs_err": 0.0013197297535497698,
+          "max_rel_err": 78.2112059494962,
+          "pass": true
+        },
+        "L": {
+          "max_abs_err": 5.833298910573603e-07,
+          "max_rel_err": 9.708305308775889e-08,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs_err": 0.0019589929685207563,
+          "max_rel_err": 8.950984685145842,
+          "pass": true
+        },
+        "dK": {
+          "max_abs_err": 0.0019283346672299695,
+          "max_rel_err": 5.550621162617239,
+          "pass": true
+        },
+        "dV": {
+          "max_abs_err": 0.0018152646940582384,
+          "max_rel_err": 4.100700531117837,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "impl": "FlashAttentionTriton",
+      "seed": 1,
+      "batch": 2,
+      "seq_len": 256,
+      "head_dim": 128,
+      "dtype": "bfloat16",
+      "tf32": true,
+      "is_causal": true,
+      "rtol": 0.01,
+      "atol": 0.01,
+      "tensors": {
+        "O": {
+          "max_abs_err": 0.004996254888220086,
+          "max_rel_err": 28.200712891829994,
+          "pass": true
+        },
+        "L": {
+          "max_abs_err": 6.010274891110612e-07,
+          "max_rel_err": 1.1493729548366028e-07,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs_err": 0.004686169348924851,
+          "max_rel_err": 179.5281809853524,
+          "pass": true
+        },
+        "dK": {
+          "max_abs_err": 0.005439722595400598,
+          "max_rel_err": 5.988826656534658,
+          "pass": true
+        },
+        "dV": {
+          "max_abs_err": 0.007794692607639764,
+          "max_rel_err": 18.933550343662098,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "impl": "FlashAttentionTriton",
+      "seed": 2,
+      "batch": 2,
+      "seq_len": 256,
+      "head_dim": 32,
+      "dtype": "bfloat16",
+      "tf32": true,
+      "is_causal": false,
+      "rtol": 0.01,
+      "atol": 0.01,
+      "tensors": {
+        "O": {
+          "max_abs_err": 0.0012132860850469496,
+          "max_rel_err": 12.864616536033765,
+          "pass": true
+        },
+        "L": {
+          "max_abs_err": 5.043000026461186e-07,
+          "max_rel_err": 8.432685317449423e-08,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs_err": 0.002243495497692982,
+          "max_rel_err": 8.123165290352372,
+          "pass": true
+        },
+        "dK": {
+          "max_abs_err": 0.0019665574825797894,
+          "max_rel_err": 2.543226010787753,
+          "pass": true
+        },
+        "dV": {
+          "max_abs_err": 0.0019886408056718485,
+          "max_rel_err": 6.876636380425177,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "impl": "FlashAttentionTriton",
+      "seed": 2,
+      "batch": 2,
+      "seq_len": 256,
+      "head_dim": 32,
+      "dtype": "bfloat16",
+      "tf32": true,
+      "is_causal": true,
+      "rtol": 0.01,
+      "atol": 0.01,
+      "tensors": {
+        "O": {
+          "max_abs_err": 0.0069731557502903385,
+          "max_rel_err": 182.01758589511465,
+          "pass": true
+        },
+        "L": {
+          "max_abs_err": 5.333275572283469e-07,
+          "max_rel_err": 1.1273355357107445e-07,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs_err": 0.0064564588018847235,
+          "max_rel_err": 6.939492343360894,
+          "pass": true
+        },
+        "dK": {
+          "max_abs_err": 0.006546556774435053,
+          "max_rel_err": 2.5926922948655085,
+          "pass": true
+        },
+        "dV": {
+          "max_abs_err": 0.010185713910455974,
+          "max_rel_err": 1.308866168889345,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "impl": "FlashAttentionTriton",
+      "seed": 2,
+      "batch": 2,
+      "seq_len": 256,
+      "head_dim": 64,
+      "dtype": "bfloat16",
+      "tf32": true,
+      "is_causal": false,
+      "rtol": 0.01,
+      "atol": 0.01,
+      "tensors": {
+        "O": {
+          "max_abs_err": 0.0018904554041666577,
+          "max_rel_err": 40.95817473378518,
+          "pass": true
+        },
+        "L": {
+          "max_abs_err": 5.768499331537669e-07,
+          "max_rel_err": 9.171393756093603e-08,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs_err": 0.0016524696754253165,
+          "max_rel_err": 7.069573012180358,
+          "pass": true
+        },
+        "dK": {
+          "max_abs_err": 0.002062966332928129,
+          "max_rel_err": 2.480846480628468,
+          "pass": true
+        },
+        "dV": {
+          "max_abs_err": 0.0011827194314043554,
+          "max_rel_err": 2.4339272139944454,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "impl": "FlashAttentionTriton",
+      "seed": 2,
+      "batch": 2,
+      "seq_len": 256,
+      "head_dim": 64,
+      "dtype": "bfloat16",
+      "tf32": true,
+      "is_causal": true,
+      "rtol": 0.01,
+      "atol": 0.01,
+      "tensors": {
+        "O": {
+          "max_abs_err": 0.006075136104448209,
+          "max_rel_err": 19.0933271368888,
+          "pass": true
+        },
+        "L": {
+          "max_abs_err": 4.849364767522957e-07,
+          "max_rel_err": 2.663021508881494e-07,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs_err": 0.004347655120383376,
+          "max_rel_err": 49.74855551706688,
+          "pass": true
+        },
+        "dK": {
+          "max_abs_err": 0.004224756403350849,
+          "max_rel_err": 11.039076730493644,
+          "pass": true
+        },
+        "dV": {
+          "max_abs_err": 0.0081610302799211,
+          "max_rel_err": 4.15658194345992,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "impl": "FlashAttentionTriton",
+      "seed": 2,
+      "batch": 2,
+      "seq_len": 256,
+      "head_dim": 128,
+      "dtype": "bfloat16",
+      "tf32": true,
+      "is_causal": false,
+      "rtol": 0.01,
+      "atol": 0.01,
+      "tensors": {
+        "O": {
+          "max_abs_err": 0.0019095647635575252,
+          "max_rel_err": 30.304743738527115,
+          "pass": true
+        },
+        "L": {
+          "max_abs_err": 5.904552837776578e-07,
+          "max_rel_err": 9.451221562283381e-08,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs_err": 0.0036446312203290976,
+          "max_rel_err": 19.74588046494202,
+          "pass": true
+        },
+        "dK": {
+          "max_abs_err": 0.003964958252363537,
+          "max_rel_err": 10.33681493625271,
+          "pass": true
+        },
+        "dV": {
+          "max_abs_err": 0.002903071007668956,
+          "max_rel_err": 6.491254640651824,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "impl": "FlashAttentionTriton",
+      "seed": 2,
+      "batch": 2,
+      "seq_len": 256,
+      "head_dim": 128,
+      "dtype": "bfloat16",
+      "tf32": true,
+      "is_causal": true,
+      "rtol": 0.01,
+      "atol": 0.01,
+      "tensors": {
+        "O": {
+          "max_abs_err": 0.007707431697376421,
+          "max_rel_err": 21.90988802931351,
+          "pass": true
+        },
+        "L": {
+          "max_abs_err": 5.894130836736622e-07,
+          "max_rel_err": 3.558777453893959e-07,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs_err": 0.006710623066403826,
+          "max_rel_err": 178.33709716300822,
+          "pass": true
+        },
+        "dK": {
+          "max_abs_err": 0.005881582769062588,
+          "max_rel_err": 93.89669773356238,
+          "pass": true
+        },
+        "dV": {
+          "max_abs_err": 0.007671551835153334,
+          "max_rel_err": 4.193302467652635,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "impl": "FlashAttentionPyTorch",
+      "seed": 0,
+      "batch": 2,
+      "seq_len": 256,
+      "head_dim": 32,
+      "dtype": "bfloat16",
+      "tf32": true,
+      "is_causal": false,
+      "rtol": 0.01,
+      "atol": 0.01,
+      "tensors": {
+        "O": {
+          "max_abs_err": 0.0009902733590156365,
+          "max_rel_err": 3.394322524118128,
+          "pass": true
+        },
+        "L": {
+          "max_abs_err": 5.017064799162085e-07,
+          "max_rel_err": 8.425025975532616e-08,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs_err": 0.0018136140491922248,
+          "max_rel_err": 2.51043865171072,
+          "pass": true
+        },
+        "dK": {
+          "max_abs_err": 0.0018120985626941533,
+          "max_rel_err": 2.3177350660547695,
+          "pass": true
+        },
+        "dV": {
+          "max_abs_err": 0.0015913462985868154,
+          "max_rel_err": 4.010950047567249,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "impl": "FlashAttentionPyTorch",
+      "seed": 0,
+      "batch": 2,
+      "seq_len": 256,
+      "head_dim": 32,
+      "dtype": "bfloat16",
+      "tf32": true,
+      "is_causal": true,
+      "rtol": 0.01,
+      "atol": 0.01,
+      "tensors": {
+        "O": {
+          "max_abs_err": 0.00717598965570021,
+          "max_rel_err": 1.329995879390351,
+          "pass": true
+        },
+        "L": {
+          "max_abs_err": 4.815391161372418e-07,
+          "max_rel_err": 1.2306820183194286e-07,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs_err": 0.004479468303530854,
+          "max_rel_err": 9.021741116081195,
+          "pass": true
+        },
+        "dK": {
+          "max_abs_err": 0.005501039238921035,
+          "max_rel_err": 2.5443377821458606,
+          "pass": true
+        },
+        "dV": {
+          "max_abs_err": 0.0067442781989282,
+          "max_rel_err": 3.8691845411065735,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "impl": "FlashAttentionPyTorch",
+      "seed": 0,
+      "batch": 2,
+      "seq_len": 256,
+      "head_dim": 64,
+      "dtype": "float32",
+      "tf32": false,
+      "is_causal": false,
+      "rtol": 0.01,
+      "atol": 0.01,
+      "tensors": {
+        "O": {
+          "max_abs_err": 3.717979416562045e-07,
+          "max_rel_err": 0.013305915483993104,
+          "pass": true
+        },
+        "L": {
+          "max_abs_err": 4.570186291630307e-07,
+          "max_rel_err": 7.681957616478385e-08,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs_err": 4.94733901401645e-07,
+          "max_rel_err": 0.0036670106032043247,
+          "pass": true
+        },
+        "dK": {
+          "max_abs_err": 3.7422612275683775e-07,
+          "max_rel_err": 0.006349163171618423,
+          "pass": true
+        },
+        "dV": {
+          "max_abs_err": 4.7571342431940167e-07,
+          "max_rel_err": 0.005070318246152979,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "impl": "FlashAttentionPyTorch",
+      "seed": 0,
+      "batch": 2,
+      "seq_len": 256,
+      "head_dim": 64,
+      "dtype": "float32",
+      "tf32": false,
+      "is_causal": true,
+      "rtol": 0.01,
+      "atol": 0.01,
+      "tensors": {
+        "O": {
+          "max_abs_err": 7.667313830506117e-07,
+          "max_rel_err": 0.0024543297297237687,
+          "pass": true
+        },
+        "L": {
+          "max_abs_err": 4.60102224764114e-07,
+          "max_rel_err": 5.628487666885553e-07,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs_err": 1.4433363730859128e-06,
+          "max_rel_err": 1.4433363730859128,
+          "pass": true
+        },
+        "dK": {
+          "max_abs_err": 1.6658590782370197e-06,
+          "max_rel_err": 0.00819752513789032,
+          "pass": true
+        },
+        "dV": {
+          "max_abs_err": 2.0893215224582207e-06,
+          "max_rel_err": 0.005873436757920439,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "impl": "FlashAttentionPyTorch",
+      "seed": 0,
+      "batch": 2,
+      "seq_len": 256,
+      "head_dim": 128,
+      "dtype": "bfloat16",
+      "tf32": true,
+      "is_causal": false,
+      "rtol": 0.01,
+      "atol": 0.01,
+      "tensors": {
+        "O": {
+          "max_abs_err": 0.0010981095780401295,
+          "max_rel_err": 11.321342346657664,
+          "pass": true
+        },
+        "L": {
+          "max_abs_err": 6.444981277553552e-07,
+          "max_rel_err": 1.0195780641123413e-07,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs_err": 0.0021161474873753194,
+          "max_rel_err": 3.8257943053295445,
+          "pass": true
+        },
+        "dK": {
+          "max_abs_err": 0.002022277841104869,
+          "max_rel_err": 3.6549892544302467,
+          "pass": true
+        },
+        "dV": {
+          "max_abs_err": 0.0017980016662765275,
+          "max_rel_err": 24.92559179661904,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "impl": "FlashAttentionPyTorch",
+      "seed": 0,
+      "batch": 2,
+      "seq_len": 256,
+      "head_dim": 128,
+      "dtype": "bfloat16",
+      "tf32": true,
+      "is_causal": true,
+      "rtol": 0.01,
+      "atol": 0.01,
+      "tensors": {
+        "O": {
+          "max_abs_err": 0.006523621905691446,
+          "max_rel_err": 28.923845459005037,
+          "pass": true
+        },
+        "L": {
+          "max_abs_err": 5.73514125079555e-07,
+          "max_rel_err": 1.2651084601469053e-07,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs_err": 0.008863953424036453,
+          "max_rel_err": 14.039051040011604,
+          "pass": true
+        },
+        "dK": {
+          "max_abs_err": 0.008470287507703844,
+          "max_rel_err": 11.463975764300368,
+          "pass": true
+        },
+        "dV": {
+          "max_abs_err": 0.014793384368283036,
+          "max_rel_err": 7.331831182646695,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "impl": "FlashAttentionPyTorch",
+      "seed": 1,
+      "batch": 2,
+      "seq_len": 256,
+      "head_dim": 32,
+      "dtype": "bfloat16",
+      "tf32": true,
+      "is_causal": false,
+      "rtol": 0.01,
+      "atol": 0.01,
+      "tensors": {
+        "O": {
+          "max_abs_err": 0.0016068334287642205,
+          "max_rel_err": 4.724097237059049,
+          "pass": true
+        },
+        "L": {
+          "max_abs_err": 4.4893175399352003e-07,
+          "max_rel_err": 7.395483524856476e-08,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs_err": 0.001490746384964825,
+          "max_rel_err": 1.6751276695958472,
+          "pass": true
+        },
+        "dK": {
+          "max_abs_err": 0.0026079212930800733,
+          "max_rel_err": 1.6494388897669672,
+          "pass": true
+        },
+        "dV": {
+          "max_abs_err": 0.0017135830156974619,
+          "max_rel_err": 1.4041189098219253,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "impl": "FlashAttentionPyTorch",
+      "seed": 1,
+      "batch": 2,
+      "seq_len": 256,
+      "head_dim": 32,
+      "dtype": "bfloat16",
+      "tf32": true,
+      "is_causal": true,
+      "rtol": 0.01,
+      "atol": 0.01,
+      "tensors": {
+        "O": {
+          "max_abs_err": 0.007549213080134454,
+          "max_rel_err": 2.2439658622541168,
+          "pass": true
+        },
+        "L": {
+          "max_abs_err": 5.045794253533131e-07,
+          "max_rel_err": 8.764209380523108e-08,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs_err": 0.005027600795614706,
+          "max_rel_err": 7.429244957629815,
+          "pass": true
+        },
+        "dK": {
+          "max_abs_err": 0.007109538390754455,
+          "max_rel_err": 4.406418103422699,
+          "pass": true
+        },
+        "dV": {
+          "max_abs_err": 0.00750080798072883,
+          "max_rel_err": 2.0402677235767355,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "impl": "FlashAttentionPyTorch",
+      "seed": 1,
+      "batch": 2,
+      "seq_len": 256,
+      "head_dim": 64,
+      "dtype": "bfloat16",
+      "tf32": true,
+      "is_causal": false,
+      "rtol": 0.01,
+      "atol": 0.01,
+      "tensors": {
+        "O": {
+          "max_abs_err": 0.0016570197325187497,
+          "max_rel_err": 2.5632091078827894,
+          "pass": true
+        },
+        "L": {
+          "max_abs_err": 4.6977131695769003e-07,
+          "max_rel_err": 7.528694511645573e-08,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs_err": 0.0016303378200471785,
+          "max_rel_err": 1.7228291427399167,
+          "pass": true
+        },
+        "dK": {
+          "max_abs_err": 0.0016248161522083304,
+          "max_rel_err": 2.9049446554270815,
+          "pass": true
+        },
+        "dV": {
+          "max_abs_err": 0.0018989652858704131,
+          "max_rel_err": 4.154378031958164,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "impl": "FlashAttentionPyTorch",
+      "seed": 1,
+      "batch": 2,
+      "seq_len": 256,
+      "head_dim": 64,
+      "dtype": "bfloat16",
+      "tf32": true,
+      "is_causal": true,
+      "rtol": 0.01,
+      "atol": 0.01,
+      "tensors": {
+        "O": {
+          "max_abs_err": 0.006906493232855748,
+          "max_rel_err": 8.30790776619367,
+          "pass": true
+        },
+        "L": {
+          "max_abs_err": 4.7317576701289e-07,
+          "max_rel_err": 9.44027303095794e-08,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs_err": 0.005433611641088604,
+          "max_rel_err": 180.10484372176515,
+          "pass": true
+        },
+        "dK": {
+          "max_abs_err": 0.008268389234196191,
+          "max_rel_err": 7.252967603619536,
+          "pass": true
+        },
+        "dV": {
+          "max_abs_err": 0.007630977265904004,
+          "max_rel_err": 0.9009496432407109,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "impl": "FlashAttentionPyTorch",
+      "seed": 1,
+      "batch": 2,
+      "seq_len": 256,
+      "head_dim": 128,
+      "dtype": "bfloat16",
+      "tf32": true,
+      "is_causal": false,
+      "rtol": 0.01,
+      "atol": 0.01,
+      "tensors": {
+        "O": {
+          "max_abs_err": 0.001006403941738343,
+          "max_rel_err": 1.8691324997477547,
+          "pass": true
+        },
+        "L": {
+          "max_abs_err": 5.446773814199446e-07,
+          "max_rel_err": 8.946593284265436e-08,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs_err": 0.0019472570314792437,
+          "max_rel_err": 9.44607024165115,
+          "pass": true
+        },
+        "dK": {
+          "max_abs_err": 0.0019283346672299695,
+          "max_rel_err": 2.5176220084511085,
+          "pass": true
+        },
+        "dV": {
+          "max_abs_err": 0.0018152646940582384,
+          "max_rel_err": 4.100700531117837,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "impl": "FlashAttentionPyTorch",
+      "seed": 1,
+      "batch": 2,
+      "seq_len": 256,
+      "head_dim": 128,
+      "dtype": "bfloat16",
+      "tf32": true,
+      "is_causal": true,
+      "rtol": 0.01,
+      "atol": 0.01,
+      "tensors": {
+        "O": {
+          "max_abs_err": 0.004996254888220086,
+          "max_rel_err": 5.368863874660641,
+          "pass": true
+        },
+        "L": {
+          "max_abs_err": 6.010274891110612e-07,
+          "max_rel_err": 1.1493729548366028e-07,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs_err": 0.004227876988190715,
+          "max_rel_err": 270.1114513656402,
+          "pass": true
+        },
+        "dK": {
+          "max_abs_err": 0.0051055836147138045,
+          "max_rel_err": 5.046853460993871,
+          "pass": true
+        },
+        "dV": {
+          "max_abs_err": 0.007794692607639764,
+          "max_rel_err": 18.933550343662098,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "impl": "FlashAttentionPyTorch",
+      "seed": 2,
+      "batch": 2,
+      "seq_len": 256,
+      "head_dim": 32,
+      "dtype": "bfloat16",
+      "tf32": true,
+      "is_causal": false,
+      "rtol": 0.01,
+      "atol": 0.01,
+      "tensors": {
+        "O": {
+          "max_abs_err": 0.0009626478345497458,
+          "max_rel_err": 1.0406656894222717,
+          "pass": true
+        },
+        "L": {
+          "max_abs_err": 4.6251711438571874e-07,
+          "max_rel_err": 7.771083459822352e-08,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs_err": 0.002243495497692982,
+          "max_rel_err": 3.968899738961431,
+          "pass": true
+        },
+        "dK": {
+          "max_abs_err": 0.0019665574825797894,
+          "max_rel_err": 1.7228424996348077,
+          "pass": true
+        },
+        "dV": {
+          "max_abs_err": 0.0019886408056718485,
+          "max_rel_err": 6.876636380425177,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "impl": "FlashAttentionPyTorch",
+      "seed": 2,
+      "batch": 2,
+      "seq_len": 256,
+      "head_dim": 32,
+      "dtype": "bfloat16",
+      "tf32": true,
+      "is_causal": true,
+      "rtol": 0.01,
+      "atol": 0.01,
+      "tensors": {
+        "O": {
+          "max_abs_err": 0.0069731557502903385,
+          "max_rel_err": 10.388130684243645,
+          "pass": true
+        },
+        "L": {
+          "max_abs_err": 4.814671141772919e-07,
+          "max_rel_err": 1.023147174928498e-07,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs_err": 0.007135192563533566,
+          "max_rel_err": 3.858895461628679,
+          "pass": true
+        },
+        "dK": {
+          "max_abs_err": 0.009043475243029064,
+          "max_rel_err": 1.7330844780103754,
+          "pass": true
+        },
+        "dV": {
+          "max_abs_err": 0.010185713910455974,
+          "max_rel_err": 1.308866168889345,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "impl": "FlashAttentionPyTorch",
+      "seed": 2,
+      "batch": 2,
+      "seq_len": 256,
+      "head_dim": 64,
+      "dtype": "bfloat16",
+      "tf32": true,
+      "is_causal": false,
+      "rtol": 0.01,
+      "atol": 0.01,
+      "tensors": {
+        "O": {
+          "max_abs_err": 0.0018904554041666577,
+          "max_rel_err": 6.185054210075375,
+          "pass": true
+        },
+        "L": {
+          "max_abs_err": 5.615358631416711e-07,
+          "max_rel_err": 8.98907186113477e-08,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs_err": 0.0016524696754253165,
+          "max_rel_err": 5.652461418937262,
+          "pass": true
+        },
+        "dK": {
+          "max_abs_err": 0.002062966332928129,
+          "max_rel_err": 3.9551357417958624,
+          "pass": true
+        },
+        "dV": {
+          "max_abs_err": 0.0011827194314043554,
+          "max_rel_err": 2.4339272139944454,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "impl": "FlashAttentionPyTorch",
+      "seed": 2,
+      "batch": 2,
+      "seq_len": 256,
+      "head_dim": 64,
+      "dtype": "bfloat16",
+      "tf32": true,
+      "is_causal": true,
+      "rtol": 0.01,
+      "atol": 0.01,
+      "tensors": {
+        "O": {
+          "max_abs_err": 0.006075136104448209,
+          "max_rel_err": 6.656197804431718,
+          "pass": true
+        },
+        "L": {
+          "max_abs_err": 4.5297624051698904e-07,
+          "max_rel_err": 2.663021508881494e-07,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs_err": 0.00402289925040189,
+          "max_rel_err": 46.0496848694527,
+          "pass": true
+        },
+        "dK": {
+          "max_abs_err": 0.004517781002367993,
+          "max_rel_err": 4.173686472909719,
+          "pass": true
+        },
+        "dV": {
+          "max_abs_err": 0.0081610302799211,
+          "max_rel_err": 4.15658194345992,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "impl": "FlashAttentionPyTorch",
+      "seed": 2,
+      "batch": 2,
+      "seq_len": 256,
+      "head_dim": 128,
+      "dtype": "bfloat16",
+      "tf32": true,
+      "is_causal": false,
+      "rtol": 0.01,
+      "atol": 0.01,
+      "tensors": {
+        "O": {
+          "max_abs_err": 0.0019095647635575252,
+          "max_rel_err": 7.540956400735053,
+          "pass": true
+        },
+        "L": {
+          "max_abs_err": 5.278125794205835e-07,
+          "max_rel_err": 8.68497492476773e-08,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs_err": 0.0036446312203290976,
+          "max_rel_err": 15.909164097383925,
+          "pass": true
+        },
+        "dK": {
+          "max_abs_err": 0.0038475417476364626,
+          "max_rel_err": 20.020485312170702,
+          "pass": true
+        },
+        "dV": {
+          "max_abs_err": 0.002903071007668956,
+          "max_rel_err": 6.491254640651824,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "impl": "FlashAttentionPyTorch",
+      "seed": 2,
+      "batch": 2,
+      "seq_len": 256,
+      "head_dim": 128,
+      "dtype": "bfloat16",
+      "tf32": true,
+      "is_causal": true,
+      "rtol": 0.01,
+      "atol": 0.01,
+      "tensors": {
+        "O": {
+          "max_abs_err": 0.007707431697376421,
+          "max_rel_err": 3.3266778657832594,
+          "pass": true
+        },
+        "L": {
+          "max_abs_err": 6.697034473646113e-07,
+          "max_rel_err": 3.558777453893959e-07,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs_err": 0.007687185566403826,
+          "max_rel_err": 1068.1152343450942,
+          "pass": true
+        },
+        "dK": {
+          "max_abs_err": 0.006870548759698725,
+          "max_rel_err": 14.285224010848333,
+          "pass": true
+        },
+        "dV": {
+          "max_abs_err": 0.007671551835153334,
+          "max_rel_err": 4.193302467652635,
+          "pass": true
+        }
+      },
+      "pass": true
+    }
+  ]
+}
