@@ -1,0 +1,12 @@
+{
+  "allocator": {
+    "allocator_fraction": 0.48421737046550567,
+    "allocator_limit_mib": 23552
+  },
+  "hard_limit_mib": 24576,
+  "pytorch_peak_allocated_mib": 19664.12255859375,
+  "pytorch_peak_reserved_mib": 20192.0,
+  "within_24gib": true,
+  "observed_gpu_total_memory_mib": 48639.3,
+  "formal_24gb_capacity_confirmed": false
+}
