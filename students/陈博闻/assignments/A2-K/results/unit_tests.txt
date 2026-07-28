@@ -1,0 +1,25 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.20, pytest-9.1.1, pluggy-1.6.0 -- <redacted>/python3
+cachedir: .pytest_cache
+rootdir: <redacted>
+plugins: anyio-4.12.1
+collecting ... collected 6 items
+
+tests/test_attention.py::test_flash_forward_pass_pytorch PASSED          [ 16%]
+tests/test_attention.py::test_flash_forward_pass_triton[False] PASSED    [ 33%]
+tests/test_attention.py::test_flash_forward_pass_triton[True] PASSED     [ 50%]
+tests/test_attention.py::test_flash_backward_pytorch PASSED              [ 66%]
+tests/test_attention.py::test_flash_backward_triton[False] PASSED        [ 83%]
+tests/test_attention.py::test_flash_backward_triton[True] PASSED         [100%]
+
+=============================== warnings summary ===============================
+tests/test_attention.py::test_flash_backward_triton[False]
+  <redacted>: UserWarning: Attempting to run cuBLAS, but there was no current CUDA context! Attempting to set the primary context...
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+
+tests/test_attention.py::test_flash_backward_triton[False]
+  <redacted>: UserWarning: TensorFloat32 tensor cores for float32 matrix multiplication available but not enabled. Consider setting `torch.set_float32_matmul_precision('high')` for better performance.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 6 passed, 2 warnings in 8.44s =========================

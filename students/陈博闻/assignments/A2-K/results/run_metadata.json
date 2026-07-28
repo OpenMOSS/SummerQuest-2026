@@ -1,0 +1,48 @@
+{
+  "allocator_fraction": 0.48421737046550567,
+  "allocator_limit_mib": 23552,
+  "assignment": "A2-K",
+  "assignment_version": "26.1.4-k-rc.3",
+  "attention_quantiles": [
+    0.2,
+    0.5,
+    0.8
+  ],
+  "attention_rep_ms": 300,
+  "attention_warmup_ms": 100,
+  "checkpoint_measurement_steps": 5,
+  "checkpoint_warmup_steps": 3,
+  "commands": [
+    "python -m pytest tests/test_attention.py -v",
+    "python -m student_scripts.a2k.correctness --include-triton --output local_results/a2k/correctness.json",
+    "python -m student_scripts.a2k.benchmark_checkpointing --output local_results/a2k/checkpointing.csv",
+    "python -m student_scripts.a2k.benchmark_attention --output-dir local_results/a2k",
+    "python -m student_scripts.a2k.collect_metadata --output local_results/a2k/run_metadata.json",
+    "python -m student_scripts.a2k.memory_evidence --results-dir local_results/a2k --output local_results/a2k/memory_evidence.json",
+    "python -m student_scripts.a2k.plot_results --results-dir local_results/a2k --assets-dir local_results/a2k/assets"
+  ],
+  "cuda": "12.1",
+  "cuda_available": true,
+  "hard_limit_mib": 24576,
+  "measurement_timer": "triton.testing.do_bench or CUDA events with synchronization",
+  "nvidia_smi_public_query": "NVIDIA GeForce RTX 4090, 49140 MiB, 48613 MiB, 550.163.01, 450.00 W, P3",
+  "seed": {
+    "attention_inputs": 0,
+    "checkpointing_data": 1,
+    "checkpointing_model": 0,
+    "correctness": [
+      0,
+      1,
+      2
+    ],
+    "small_model": 10,
+    "small_model_data": 11
+  },
+  "source_note": "Formal run used the submitted A2-K payload applied to the fixed starter tree; remote git HEAD was unavailable during metadata collection.",
+  "starter_commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+  "tf32_cudnn": true,
+  "tf32_matmul": false,
+  "torch": "2.5.1+cu121",
+  "triton": "3.1.0",
+  "working_commit": "ca8bc81a59b70516f7ebb2da4808daade877c736"
+}
