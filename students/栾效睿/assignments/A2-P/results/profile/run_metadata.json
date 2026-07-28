@@ -1,0 +1,152 @@
+[
+  {
+    "batch_size": 4,
+    "command": "profiling/benchmark.py --model-size small --batch-size 4 --context-length 256 --mode train_step --dtype fp32 --seed 0 --warmup 5 --steps 1 --profile-tool torch --trace-output local_artifacts/profile/small_ctx256_train_step_fp32.json --profile-summary local_artifacts/profile/summaries/small_ctx256_train_step_fp32_ops.csv --output results/profile/runs.jsonl",
+    "context_length": 256,
+    "dtype": "fp32",
+    "environment": {
+      "cuda_version": "12.8",
+      "device_name": "NVIDIA H200",
+      "python_version": "3.12.3",
+      "torch_version": "2.11.0+cu128"
+    },
+    "measurement_steps": 1,
+    "mode": "train_step",
+    "model_size": "small",
+    "run_name": "small_ctx256_train_step_fp32",
+    "summary_file": "trace_summary.csv",
+    "tool": "torch.profiler",
+    "trace_file": "small_ctx256_train_step_fp32.json",
+    "trace_location": "local_artifacts/profile (not submitted)",
+    "warmup_protocol": {
+      "inside_profiler_steps": 1,
+      "outside_profiler_steps": 4
+    },
+    "warmup_steps": 5
+  },
+  {
+    "batch_size": 4,
+    "command": "profiling/benchmark.py --model-size small --batch-size 4 --context-length 512 --mode train_step --dtype fp32 --seed 0 --warmup 5 --steps 1 --profile-tool torch --trace-output local_artifacts/profile/small_ctx512_train_step_fp32.json --profile-summary local_artifacts/profile/summaries/small_ctx512_train_step_fp32_ops.csv --output results/profile/runs.jsonl",
+    "context_length": 512,
+    "dtype": "fp32",
+    "environment": {
+      "cuda_version": "12.8",
+      "device_name": "NVIDIA H200",
+      "python_version": "3.12.3",
+      "torch_version": "2.11.0+cu128"
+    },
+    "measurement_steps": 1,
+    "mode": "train_step",
+    "model_size": "small",
+    "run_name": "small_ctx512_train_step_fp32",
+    "summary_file": "trace_summary.csv",
+    "tool": "torch.profiler",
+    "trace_file": "small_ctx512_train_step_fp32.json",
+    "trace_location": "local_artifacts/profile (not submitted)",
+    "warmup_protocol": {
+      "inside_profiler_steps": 1,
+      "outside_profiler_steps": 4
+    },
+    "warmup_steps": 5
+  },
+  {
+    "batch_size": 4,
+    "command": "profiling/benchmark.py --model-size small --batch-size 4 --context-length 1024 --mode train_step --dtype fp32 --seed 0 --warmup 5 --steps 1 --profile-tool torch --trace-output local_artifacts/profile/small_ctx1024_train_step_fp32.json --profile-summary local_artifacts/profile/summaries/small_ctx1024_train_step_fp32_ops.csv --output results/profile/runs.jsonl",
+    "context_length": 1024,
+    "dtype": "fp32",
+    "environment": {
+      "cuda_version": "12.8",
+      "device_name": "NVIDIA H200",
+      "python_version": "3.12.3",
+      "torch_version": "2.11.0+cu128"
+    },
+    "measurement_steps": 1,
+    "mode": "train_step",
+    "model_size": "small",
+    "run_name": "small_ctx1024_train_step_fp32",
+    "summary_file": "trace_summary.csv",
+    "tool": "torch.profiler",
+    "trace_file": "small_ctx1024_train_step_fp32.json",
+    "trace_location": "local_artifacts/profile (not submitted)",
+    "warmup_protocol": {
+      "inside_profiler_steps": 1,
+      "outside_profiler_steps": 4
+    },
+    "warmup_steps": 5
+  },
+  {
+    "batch_size": 4,
+    "command": "profiling/benchmark.py --model-size medium --batch-size 4 --context-length 256 --mode train_step --dtype fp32 --seed 0 --warmup 5 --steps 1 --profile-tool torch --trace-output local_artifacts/profile/medium_ctx256_train_step_fp32.json --profile-summary local_artifacts/profile/summaries/medium_ctx256_train_step_fp32_ops.csv --output results/profile/runs.jsonl",
+    "context_length": 256,
+    "dtype": "fp32",
+    "environment": {
+      "cuda_version": "12.8",
+      "device_name": "NVIDIA H200",
+      "python_version": "3.12.3",
+      "torch_version": "2.11.0+cu128"
+    },
+    "measurement_steps": 1,
+    "mode": "train_step",
+    "model_size": "medium",
+    "run_name": "medium_ctx256_train_step_fp32",
+    "summary_file": "trace_summary.csv",
+    "tool": "torch.profiler",
+    "trace_file": "medium_ctx256_train_step_fp32.json",
+    "trace_location": "local_artifacts/profile (not submitted)",
+    "warmup_protocol": {
+      "inside_profiler_steps": 1,
+      "outside_profiler_steps": 4
+    },
+    "warmup_steps": 5
+  },
+  {
+    "batch_size": 4,
+    "command": "profiling/benchmark.py --model-size medium --batch-size 4 --context-length 512 --mode train_step --dtype fp32 --seed 0 --warmup 5 --steps 1 --profile-tool torch --trace-output local_artifacts/profile/medium_ctx512_train_step_fp32.json --profile-summary local_artifacts/profile/summaries/medium_ctx512_train_step_fp32_ops.csv --output results/profile/runs.jsonl",
+    "context_length": 512,
+    "dtype": "fp32",
+    "environment": {
+      "cuda_version": "12.8",
+      "device_name": "NVIDIA H200",
+      "python_version": "3.12.3",
+      "torch_version": "2.11.0+cu128"
+    },
+    "measurement_steps": 1,
+    "mode": "train_step",
+    "model_size": "medium",
+    "run_name": "medium_ctx512_train_step_fp32",
+    "summary_file": "trace_summary.csv",
+    "tool": "torch.profiler",
+    "trace_file": "medium_ctx512_train_step_fp32.json",
+    "trace_location": "local_artifacts/profile (not submitted)",
+    "warmup_protocol": {
+      "inside_profiler_steps": 1,
+      "outside_profiler_steps": 4
+    },
+    "warmup_steps": 5
+  },
+  {
+    "batch_size": 4,
+    "command": "profiling/benchmark.py --model-size medium --batch-size 4 --context-length 1024 --mode train_step --dtype fp32 --seed 0 --warmup 5 --steps 1 --profile-tool torch --trace-output local_artifacts/profile/medium_ctx1024_train_step_fp32.json --profile-summary local_artifacts/profile/summaries/medium_ctx1024_train_step_fp32_ops.csv --output results/profile/runs.jsonl",
+    "context_length": 1024,
+    "dtype": "fp32",
+    "environment": {
+      "cuda_version": "12.8",
+      "device_name": "NVIDIA H200",
+      "python_version": "3.12.3",
+      "torch_version": "2.11.0+cu128"
+    },
+    "measurement_steps": 1,
+    "mode": "train_step",
+    "model_size": "medium",
+    "run_name": "medium_ctx1024_train_step_fp32",
+    "summary_file": "trace_summary.csv",
+    "tool": "torch.profiler",
+    "trace_file": "medium_ctx1024_train_step_fp32.json",
+    "trace_location": "local_artifacts/profile (not submitted)",
+    "warmup_protocol": {
+      "inside_profiler_steps": 1,
+      "outside_profiler_steps": 4
+    },
+    "warmup_steps": 5
+  }
+]

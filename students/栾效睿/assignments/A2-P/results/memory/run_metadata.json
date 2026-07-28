@@ -1,0 +1,146 @@
+[
+  {
+    "batch_size": 4,
+    "command": "profiling/benchmark.py --model-size xl --context-length 128 --batch-size 4 --mode forward --dtype fp32 --seed 0 --warmup 5 --steps 1 --track-memory --memory-snapshot local_artifacts/memory/xl_ctx128_bs4_forward_fp32.pickle --output results/memory/runs.jsonl",
+    "context_length": 128,
+    "dtype": "fp32",
+    "environment": {
+      "cuda_version": "12.8",
+      "device_name": "NVIDIA H200",
+      "python_version": "3.12.3",
+      "torch_version": "2.11.0+cu128"
+    },
+    "measurement_steps": 1,
+    "mode": "forward",
+    "model_size": "xl",
+    "snapshot_file": "xl_ctx128_bs4_forward_fp32.pickle",
+    "timestamp_utc": "2026-07-22T13:43:35.620693+00:00",
+    "warmup_steps": 5
+  },
+  {
+    "batch_size": 4,
+    "command": "profiling/benchmark.py --model-size xl --context-length 128 --batch-size 4 --mode train_step --dtype fp32 --seed 0 --warmup 5 --steps 1 --track-memory --memory-snapshot local_artifacts/memory/xl_ctx128_bs4_train_step_fp32.pickle --output results/memory/runs.jsonl",
+    "context_length": 128,
+    "dtype": "fp32",
+    "environment": {
+      "cuda_version": "12.8",
+      "device_name": "NVIDIA H200",
+      "python_version": "3.12.3",
+      "torch_version": "2.11.0+cu128"
+    },
+    "measurement_steps": 1,
+    "mode": "train_step",
+    "model_size": "xl",
+    "snapshot_file": "xl_ctx128_bs4_train_step_fp32.pickle",
+    "timestamp_utc": "2026-07-22T13:43:57.555565+00:00",
+    "warmup_steps": 5
+  },
+  {
+    "batch_size": 4,
+    "command": "profiling/benchmark.py --model-size xl --context-length 2048 --batch-size 4 --mode forward --dtype fp32 --seed 0 --warmup 5 --steps 1 --track-memory --memory-snapshot local_artifacts/memory/xl_ctx2048_bs4_forward_fp32.pickle --output results/memory/runs.jsonl",
+    "context_length": 2048,
+    "dtype": "fp32",
+    "environment": {
+      "cuda_version": "12.8",
+      "device_name": "NVIDIA H200",
+      "python_version": "3.12.3",
+      "torch_version": "2.11.0+cu128"
+    },
+    "measurement_steps": 1,
+    "mode": "forward",
+    "model_size": "xl",
+    "snapshot_file": "xl_ctx2048_bs4_forward_fp32.pickle",
+    "timestamp_utc": "2026-07-22T13:44:19.424383+00:00",
+    "warmup_steps": 5
+  },
+  {
+    "batch_size": 1,
+    "command": "profiling/benchmark.py --model-size xl --context-length 2048 --batch-size 1 --mode train_step --dtype fp32 --seed 0 --warmup 5 --steps 1 --track-memory --memory-snapshot local_artifacts/memory/xl_ctx2048_bs1_train_step_fp32.pickle --output results/memory/runs.jsonl",
+    "context_length": 2048,
+    "dtype": "fp32",
+    "environment": {
+      "cuda_version": "12.8",
+      "device_name": "NVIDIA H200",
+      "python_version": "3.12.3",
+      "torch_version": "2.11.0+cu128"
+    },
+    "measurement_steps": 1,
+    "mode": "train_step",
+    "model_size": "xl",
+    "snapshot_file": "xl_ctx2048_bs1_train_step_fp32.pickle",
+    "timestamp_utc": "2026-07-22T13:45:00.687442+00:00",
+    "warmup_steps": 5
+  },
+  {
+    "batch_size": 4,
+    "command": "profiling/benchmark.py --model-size xl --context-length 128 --batch-size 4 --mode forward --dtype bf16 --seed 0 --warmup 5 --steps 1 --track-memory --memory-snapshot local_artifacts/memory/xl_ctx128_bs4_forward_bf16.pickle --output results/memory/runs.jsonl",
+    "context_length": 128,
+    "dtype": "bf16",
+    "environment": {
+      "cuda_version": "12.8",
+      "device_name": "NVIDIA H200",
+      "python_version": "3.12.3",
+      "torch_version": "2.11.0+cu128"
+    },
+    "measurement_steps": 1,
+    "mode": "forward",
+    "model_size": "xl",
+    "snapshot_file": "xl_ctx128_bs4_forward_bf16.pickle",
+    "timestamp_utc": "2026-07-22T13:45:20.165600+00:00",
+    "warmup_steps": 5
+  },
+  {
+    "batch_size": 4,
+    "command": "profiling/benchmark.py --model-size xl --context-length 128 --batch-size 4 --mode train_step --dtype bf16 --seed 0 --warmup 5 --steps 1 --track-memory --memory-snapshot local_artifacts/memory/xl_ctx128_bs4_train_step_bf16.pickle --output results/memory/runs.jsonl",
+    "context_length": 128,
+    "dtype": "bf16",
+    "environment": {
+      "cuda_version": "12.8",
+      "device_name": "NVIDIA H200",
+      "python_version": "3.12.3",
+      "torch_version": "2.11.0+cu128"
+    },
+    "measurement_steps": 1,
+    "mode": "train_step",
+    "model_size": "xl",
+    "snapshot_file": "xl_ctx128_bs4_train_step_bf16.pickle",
+    "timestamp_utc": "2026-07-22T13:45:40.254945+00:00",
+    "warmup_steps": 5
+  },
+  {
+    "batch_size": 4,
+    "command": "profiling/benchmark.py --model-size xl --context-length 2048 --batch-size 4 --mode forward --dtype bf16 --seed 0 --warmup 5 --steps 1 --track-memory --memory-snapshot local_artifacts/memory/xl_ctx2048_bs4_forward_bf16.pickle --output results/memory/runs.jsonl",
+    "context_length": 2048,
+    "dtype": "bf16",
+    "environment": {
+      "cuda_version": "12.8",
+      "device_name": "NVIDIA H200",
+      "python_version": "3.12.3",
+      "torch_version": "2.11.0+cu128"
+    },
+    "measurement_steps": 1,
+    "mode": "forward",
+    "model_size": "xl",
+    "snapshot_file": "xl_ctx2048_bs4_forward_bf16.pickle",
+    "timestamp_utc": "2026-07-22T13:46:02.014052+00:00",
+    "warmup_steps": 5
+  },
+  {
+    "batch_size": 1,
+    "command": "profiling/benchmark.py --model-size xl --context-length 2048 --batch-size 1 --mode train_step --dtype bf16 --seed 0 --warmup 5 --steps 1 --track-memory --memory-snapshot local_artifacts/memory/xl_ctx2048_bs1_train_step_bf16.pickle --output results/memory/runs.jsonl",
+    "context_length": 2048,
+    "dtype": "bf16",
+    "environment": {
+      "cuda_version": "12.8",
+      "device_name": "NVIDIA H200",
+      "python_version": "3.12.3",
+      "torch_version": "2.11.0+cu128"
+    },
+    "measurement_steps": 1,
+    "mode": "train_step",
+    "model_size": "xl",
+    "snapshot_file": "xl_ctx2048_bs1_train_step_bf16.pickle",
+    "timestamp_utc": "2026-07-22T13:46:44.726864+00:00",
+    "warmup_steps": 5
+  }
+]

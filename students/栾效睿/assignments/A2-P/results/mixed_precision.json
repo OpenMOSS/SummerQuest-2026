@@ -1,0 +1,314 @@
+{
+  "accumulation": {
+    "fp16_accumulator_fp16_input": {
+      "absolute_error_from_10": 0.046875,
+      "accumulator_dtype": "torch.float16",
+      "input_dtype": "torch.float16",
+      "value": 9.953125
+    },
+    "fp32_accumulator_explicit_cast_fp16_input": {
+      "absolute_error_from_10": 0.00213623046875,
+      "accumulator_dtype": "torch.float32",
+      "input_dtype": "torch.float16",
+      "value": 10.00213623046875
+    },
+    "fp32_accumulator_fp16_input": {
+      "absolute_error_from_10": 0.00213623046875,
+      "accumulator_dtype": "torch.float32",
+      "input_dtype": "torch.float16",
+      "value": 10.00213623046875
+    },
+    "fp32_accumulator_fp32_input": {
+      "absolute_error_from_10": 0.000133514404296875,
+      "accumulator_dtype": "torch.float32",
+      "input_dtype": "torch.float32",
+      "value": 10.000133514404297
+    }
+  },
+  "language_model_numeric_trend": {
+    "comparison": {
+      "initialization": "shared_cpu_fp32_state_dict",
+      "inputs": "shared_fixed_token_and_target_tensors",
+      "observation_point": "before_optimizer_update",
+      "optimizer": "independent_matching_adamw_optimizers"
+    },
+    "configuration": {
+      "batch_size": 4,
+      "beta1": 0.9,
+      "beta2": 0.999,
+      "bf16_precision": "bf16_autocast",
+      "context_length": 512,
+      "eps": 1e-08,
+      "fp32_precision": "fp32",
+      "grad_clip": 1.0,
+      "lr_max": 0.001,
+      "lr_min": 0.0001,
+      "measurement_steps": 10,
+      "mode": "train_step",
+      "model_config": {
+        "batch_size": 4,
+        "context_length": 512,
+        "d_ff": 3072,
+        "d_model": 768,
+        "num_heads": 12,
+        "num_layers": 12,
+        "vocab_size": 10000
+      },
+      "model_size": "small",
+      "seed": 0,
+      "vocab_size": 10000,
+      "warmup_steps": 5,
+      "weight_decay": 0.01
+    },
+    "environment": {
+      "cuda_version": "12.8",
+      "device_name": "NVIDIA H200",
+      "python_version": "3.12.3",
+      "torch_version": "2.11.0+cu128"
+    },
+    "schema_version": 1,
+    "steps": [
+      {
+        "all_finite": true,
+        "bf16_logits_finite": true,
+        "bf16_loss": 6.016376495361328,
+        "bf16_loss_finite": true,
+        "fp32_logits_finite": true,
+        "fp32_loss": 6.024628639221191,
+        "fp32_loss_finite": true,
+        "global_step": 5,
+        "logits_max_abs_diff": 0.051013827323913574,
+        "logits_relative_l2_error": 0.013574928976595402,
+        "logits_rmse": 0.008899718523025513,
+        "loss_abs_diff": 0.008252143859863281,
+        "loss_relative_diff": 0.0013697348767891526,
+        "measurement_step": 1,
+        "top1_agreement": 0.99609375
+      },
+      {
+        "all_finite": true,
+        "bf16_logits_finite": true,
+        "bf16_loss": 5.479192733764648,
+        "bf16_loss_finite": true,
+        "fp32_logits_finite": true,
+        "fp32_loss": 5.498357772827148,
+        "fp32_loss_finite": true,
+        "global_step": 6,
+        "logits_max_abs_diff": 0.07721471786499023,
+        "logits_relative_l2_error": 0.021408796310424805,
+        "logits_rmse": 0.011129721067845821,
+        "loss_abs_diff": 0.0191650390625,
+        "loss_relative_diff": 0.003485593246296048,
+        "measurement_step": 2,
+        "top1_agreement": 0.99951171875
+      },
+      {
+        "all_finite": true,
+        "bf16_logits_finite": true,
+        "bf16_loss": 4.533493995666504,
+        "bf16_loss_finite": true,
+        "fp32_logits_finite": true,
+        "fp32_loss": 4.530468940734863,
+        "fp32_loss_finite": true,
+        "global_step": 7,
+        "logits_max_abs_diff": 0.08270502090454102,
+        "logits_relative_l2_error": 0.011796417646110058,
+        "logits_rmse": 0.01239127479493618,
+        "loss_abs_diff": 0.003025054931640625,
+        "loss_relative_diff": 0.0006677134078927338,
+        "measurement_step": 3,
+        "top1_agreement": 0.9990234375
+      },
+      {
+        "all_finite": true,
+        "bf16_logits_finite": true,
+        "bf16_loss": 4.085101127624512,
+        "bf16_loss_finite": true,
+        "fp32_logits_finite": true,
+        "fp32_loss": 4.091228008270264,
+        "fp32_loss_finite": true,
+        "global_step": 8,
+        "logits_max_abs_diff": 0.09569644927978516,
+        "logits_relative_l2_error": 0.027758752927184105,
+        "logits_rmse": 0.02154027856886387,
+        "loss_abs_diff": 0.006126880645751953,
+        "loss_relative_diff": 0.0014975651865825057,
+        "measurement_step": 4,
+        "top1_agreement": 1.0
+      },
+      {
+        "all_finite": true,
+        "bf16_logits_finite": true,
+        "bf16_loss": 2.8426942825317383,
+        "bf16_loss_finite": true,
+        "fp32_logits_finite": true,
+        "fp32_loss": 2.852688789367676,
+        "fp32_loss_finite": true,
+        "global_step": 9,
+        "logits_max_abs_diff": 0.14000043272972107,
+        "logits_relative_l2_error": 0.02604384534060955,
+        "logits_rmse": 0.020263293758034706,
+        "loss_abs_diff": 0.0099945068359375,
+        "loss_relative_diff": 0.0035035391338169575,
+        "measurement_step": 5,
+        "top1_agreement": 0.99951171875
+      },
+      {
+        "all_finite": true,
+        "bf16_logits_finite": true,
+        "bf16_loss": 2.0347161293029785,
+        "bf16_loss_finite": true,
+        "fp32_logits_finite": true,
+        "fp32_loss": 2.0381271839141846,
+        "fp32_loss_finite": true,
+        "global_step": 10,
+        "logits_max_abs_diff": 0.12026429176330566,
+        "logits_relative_l2_error": 0.017201412469148636,
+        "logits_rmse": 0.014107747934758663,
+        "loss_abs_diff": 0.0034110546112060547,
+        "loss_relative_diff": 0.0016736220568418503,
+        "measurement_step": 6,
+        "top1_agreement": 1.0
+      },
+      {
+        "all_finite": true,
+        "bf16_logits_finite": true,
+        "bf16_loss": 1.6115283966064453,
+        "bf16_loss_finite": true,
+        "fp32_logits_finite": true,
+        "fp32_loss": 1.6151542663574219,
+        "fp32_loss_finite": true,
+        "global_step": 11,
+        "logits_max_abs_diff": 0.08487021923065186,
+        "logits_relative_l2_error": 0.014215268194675446,
+        "logits_rmse": 0.010842164978384972,
+        "loss_abs_diff": 0.0036258697509765625,
+        "loss_relative_diff": 0.0022449062671512365,
+        "measurement_step": 7,
+        "top1_agreement": 1.0
+      },
+      {
+        "all_finite": true,
+        "bf16_logits_finite": true,
+        "bf16_loss": 1.3558640480041504,
+        "bf16_loss_finite": true,
+        "fp32_logits_finite": true,
+        "fp32_loss": 1.3596694469451904,
+        "fp32_loss_finite": true,
+        "global_step": 12,
+        "logits_max_abs_diff": 0.060805678367614746,
+        "logits_relative_l2_error": 0.012013924308121204,
+        "logits_rmse": 0.009627077728509903,
+        "loss_abs_diff": 0.003805398941040039,
+        "loss_relative_diff": 0.0027987677603960037,
+        "measurement_step": 8,
+        "top1_agreement": 1.0
+      },
+      {
+        "all_finite": true,
+        "bf16_logits_finite": true,
+        "bf16_loss": 1.1956751346588135,
+        "bf16_loss_finite": true,
+        "fp32_logits_finite": true,
+        "fp32_loss": 1.1982862949371338,
+        "fp32_loss_finite": true,
+        "global_step": 13,
+        "logits_max_abs_diff": 0.053625524044036865,
+        "logits_relative_l2_error": 0.009253527969121933,
+        "logits_rmse": 0.007690933533012867,
+        "loss_abs_diff": 0.0026111602783203125,
+        "loss_relative_diff": 0.002179078757762909,
+        "measurement_step": 9,
+        "top1_agreement": 1.0
+      },
+      {
+        "all_finite": true,
+        "bf16_logits_finite": true,
+        "bf16_loss": 1.0927910804748535,
+        "bf16_loss_finite": true,
+        "fp32_logits_finite": true,
+        "fp32_loss": 1.0948468446731567,
+        "fp32_loss_finite": true,
+        "global_step": 14,
+        "logits_max_abs_diff": 0.04551124572753906,
+        "logits_relative_l2_error": 0.007294809445738792,
+        "logits_rmse": 0.006218547932803631,
+        "loss_abs_diff": 0.0020557641983032227,
+        "loss_relative_diff": 0.0018776728538796306,
+        "measurement_step": 10,
+        "top1_agreement": 0.99853515625
+      }
+    ],
+    "summary": {
+      "all_steps_finite": true,
+      "finite_step_counts": {
+        "all_finite": 10,
+        "bf16_logits_finite": 10,
+        "bf16_loss_finite": 10,
+        "fp32_logits_finite": 10,
+        "fp32_loss_finite": 10
+      },
+      "measurement_steps": 10,
+      "metrics": {
+        "bf16_loss": {
+          "available_steps": 10,
+          "max": 6.016376495361328,
+          "mean": 3.024743342399597,
+          "min": 1.0927910804748535
+        },
+        "fp32_loss": {
+          "available_steps": 10,
+          "max": 6.024628639221191,
+          "mean": 3.030345618724823,
+          "min": 1.0948468446731567
+        },
+        "logits_max_abs_diff": {
+          "available_steps": 10,
+          "max": 0.14000043272972107,
+          "mean": 0.08117074072360993,
+          "min": 0.04551124572753906
+        },
+        "logits_relative_l2_error": {
+          "available_steps": 10,
+          "max": 0.027758752927184105,
+          "mean": 0.016056168358772993,
+          "min": 0.007294809445738792
+        },
+        "logits_rmse": {
+          "available_steps": 10,
+          "max": 0.02154027856886387,
+          "mean": 0.012271075882017613,
+          "min": 0.006218547932803631
+        },
+        "loss_abs_diff": {
+          "available_steps": 10,
+          "max": 0.0191650390625,
+          "mean": 0.006207287311553955,
+          "min": 0.0020557641983032227
+        },
+        "loss_relative_diff": {
+          "available_steps": 10,
+          "max": 0.0035035391338169575,
+          "mean": 0.0021298193547409027,
+          "min": 0.0006677134078927338
+        },
+        "top1_agreement": {
+          "available_steps": 10,
+          "max": 1.0,
+          "mean": 0.999267578125,
+          "min": 0.99609375
+        }
+      }
+    },
+    "timestamp_utc": "2026-07-24T05:30:34.832089+00:00"
+  },
+  "timestamp_utc": "2026-07-24T05:30:22.670798+00:00",
+  "toy_bf16": {
+    "fc1_output": "torch.bfloat16",
+    "gradient": "torch.float32",
+    "layer_norm_output": "torch.float32",
+    "logits": "torch.bfloat16",
+    "loss": "torch.float32",
+    "parameters": "torch.float32"
+  }
+}
