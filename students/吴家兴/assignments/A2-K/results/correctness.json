@@ -1,0 +1,1494 @@
+{
+  "assignment": "A2-K",
+  "cases": [
+    {
+      "atol": 0.05,
+      "batch_size": 2,
+      "causal": false,
+      "dtype": "bfloat16",
+      "head_dim": 32,
+      "implementation": "pytorch_tiled",
+      "quantities": {
+        "grad_k": {
+          "max_abs_error": 0.0034133195877075195,
+          "max_rel_error": 86.19661712646484,
+          "pass": true
+        },
+        "grad_q": {
+          "max_abs_error": 0.0037720203399658203,
+          "max_rel_error": 1.517546534538269,
+          "pass": true
+        },
+        "grad_v": {
+          "max_abs_error": 0.0037370920181274414,
+          "max_rel_error": 0.003828474786132574,
+          "pass": true
+        },
+        "lse": {
+          "max_abs_error": 0.0,
+          "max_rel_error": 0.0,
+          "pass": true
+        },
+        "output": {
+          "max_abs_error": 0.001941978931427002,
+          "max_rel_error": 0.0038909323047846556,
+          "pass": true
+        }
+      },
+      "rtol": 0.05,
+      "seed": 0,
+      "sequence_length": 64,
+      "status": "pass"
+    },
+    {
+      "atol": 0.05,
+      "batch_size": 2,
+      "causal": true,
+      "dtype": "bfloat16",
+      "head_dim": 32,
+      "implementation": "pytorch_tiled",
+      "quantities": {
+        "grad_k": {
+          "max_abs_error": 0.005942344665527344,
+          "max_rel_error": 1.98313570022583,
+          "pass": true
+        },
+        "grad_q": {
+          "max_abs_error": 0.005002260208129883,
+          "max_rel_error": 1.0531854629516602,
+          "pass": true
+        },
+        "grad_v": {
+          "max_abs_error": 0.007353544235229492,
+          "max_rel_error": 0.0038588910829275846,
+          "pass": true
+        },
+        "lse": {
+          "max_abs_error": 0.0,
+          "max_rel_error": 0.0,
+          "pass": true
+        },
+        "output": {
+          "max_abs_error": 0.007088899612426758,
+          "max_rel_error": 0.0038680441211909056,
+          "pass": true
+        }
+      },
+      "rtol": 0.05,
+      "seed": 0,
+      "sequence_length": 64,
+      "status": "pass"
+    },
+    {
+      "atol": 0.05,
+      "batch_size": 2,
+      "causal": false,
+      "dtype": "bfloat16",
+      "head_dim": 64,
+      "implementation": "pytorch_tiled",
+      "quantities": {
+        "grad_k": {
+          "max_abs_error": 0.0022249817848205566,
+          "max_rel_error": 2.0461602210998535,
+          "pass": true
+        },
+        "grad_q": {
+          "max_abs_error": 0.0019663572311401367,
+          "max_rel_error": 2.5730063915252686,
+          "pass": true
+        },
+        "grad_v": {
+          "max_abs_error": 0.0026322603225708008,
+          "max_rel_error": 0.0038428930565714836,
+          "pass": true
+        },
+        "lse": {
+          "max_abs_error": 0.0,
+          "max_rel_error": 0.0,
+          "pass": true
+        },
+        "output": {
+          "max_abs_error": 0.0019373297691345215,
+          "max_rel_error": 0.003888666396960616,
+          "pass": true
+        }
+      },
+      "rtol": 0.05,
+      "seed": 0,
+      "sequence_length": 64,
+      "status": "pass"
+    },
+    {
+      "atol": 0.05,
+      "batch_size": 2,
+      "causal": true,
+      "dtype": "bfloat16",
+      "head_dim": 64,
+      "implementation": "pytorch_tiled",
+      "quantities": {
+        "grad_k": {
+          "max_abs_error": 0.004526376724243164,
+          "max_rel_error": 12.772980690002441,
+          "pass": true
+        },
+        "grad_q": {
+          "max_abs_error": 0.005703449249267578,
+          "max_rel_error": 1655.6060791015625,
+          "pass": true
+        },
+        "grad_v": {
+          "max_abs_error": 0.012306690216064453,
+          "max_rel_error": 0.003848703345283866,
+          "pass": true
+        },
+        "lse": {
+          "max_abs_error": 0.0,
+          "max_rel_error": 0.0,
+          "pass": true
+        },
+        "output": {
+          "max_abs_error": 0.007484912872314453,
+          "max_rel_error": 0.0038142786361277103,
+          "pass": true
+        }
+      },
+      "rtol": 0.05,
+      "seed": 0,
+      "sequence_length": 64,
+      "status": "pass"
+    },
+    {
+      "atol": 0.05,
+      "batch_size": 2,
+      "causal": false,
+      "dtype": "bfloat16",
+      "head_dim": 128,
+      "implementation": "pytorch_tiled",
+      "quantities": {
+        "grad_k": {
+          "max_abs_error": 0.0023148059844970703,
+          "max_rel_error": 7.519115447998047,
+          "pass": true
+        },
+        "grad_q": {
+          "max_abs_error": 0.002140641212463379,
+          "max_rel_error": 1.8566603660583496,
+          "pass": true
+        },
+        "grad_v": {
+          "max_abs_error": 0.0029331445693969727,
+          "max_rel_error": 0.004400607664138079,
+          "pass": true
+        },
+        "lse": {
+          "max_abs_error": 0.0,
+          "max_rel_error": 0.0,
+          "pass": true
+        },
+        "output": {
+          "max_abs_error": 0.001950085163116455,
+          "max_rel_error": 0.00533214770257473,
+          "pass": true
+        }
+      },
+      "rtol": 0.05,
+      "seed": 0,
+      "sequence_length": 64,
+      "status": "pass"
+    },
+    {
+      "atol": 0.05,
+      "batch_size": 2,
+      "causal": true,
+      "dtype": "bfloat16",
+      "head_dim": 128,
+      "implementation": "pytorch_tiled",
+      "quantities": {
+        "grad_k": {
+          "max_abs_error": 0.008440092206001282,
+          "max_rel_error": 3.6179797649383545,
+          "pass": true
+        },
+        "grad_q": {
+          "max_abs_error": 0.008863985538482666,
+          "max_rel_error": 448.44219970703125,
+          "pass": true
+        },
+        "grad_v": {
+          "max_abs_error": 0.009479999542236328,
+          "max_rel_error": 0.011132040061056614,
+          "pass": true
+        },
+        "lse": {
+          "max_abs_error": 0.0,
+          "max_rel_error": 0.0,
+          "pass": true
+        },
+        "output": {
+          "max_abs_error": 0.006523609161376953,
+          "max_rel_error": 0.003892093664035201,
+          "pass": true
+        }
+      },
+      "rtol": 0.05,
+      "seed": 0,
+      "sequence_length": 64,
+      "status": "pass"
+    },
+    {
+      "atol": 0.05,
+      "batch_size": 2,
+      "causal": false,
+      "dtype": "bfloat16",
+      "head_dim": 32,
+      "implementation": "pytorch_tiled",
+      "quantities": {
+        "grad_k": {
+          "max_abs_error": 0.0025932788848876953,
+          "max_rel_error": 0.2970033884048462,
+          "pass": true
+        },
+        "grad_q": {
+          "max_abs_error": 0.0023648738861083984,
+          "max_rel_error": 1.597178339958191,
+          "pass": true
+        },
+        "grad_v": {
+          "max_abs_error": 0.0026186704635620117,
+          "max_rel_error": 0.0038774479180574417,
+          "pass": true
+        },
+        "lse": {
+          "max_abs_error": 0.0,
+          "max_rel_error": 0.0,
+          "pass": true
+        },
+        "output": {
+          "max_abs_error": 0.0019521117210388184,
+          "max_rel_error": 0.003855446120724082,
+          "pass": true
+        }
+      },
+      "rtol": 0.05,
+      "seed": 1,
+      "sequence_length": 64,
+      "status": "pass"
+    },
+    {
+      "atol": 0.05,
+      "batch_size": 2,
+      "causal": true,
+      "dtype": "bfloat16",
+      "head_dim": 32,
+      "implementation": "pytorch_tiled",
+      "quantities": {
+        "grad_k": {
+          "max_abs_error": 0.0067365169525146484,
+          "max_rel_error": 0.4836966395378113,
+          "pass": true
+        },
+        "grad_q": {
+          "max_abs_error": 0.0050275325775146484,
+          "max_rel_error": 9.326929092407227,
+          "pass": true
+        },
+        "grad_v": {
+          "max_abs_error": 0.006325483322143555,
+          "max_rel_error": 0.0038664944004267454,
+          "pass": true
+        },
+        "lse": {
+          "max_abs_error": 0.0,
+          "max_rel_error": 0.0,
+          "pass": true
+        },
+        "output": {
+          "max_abs_error": 0.0038892030715942383,
+          "max_rel_error": 0.003872931469231844,
+          "pass": true
+        }
+      },
+      "rtol": 0.05,
+      "seed": 1,
+      "sequence_length": 64,
+      "status": "pass"
+    },
+    {
+      "atol": 0.05,
+      "batch_size": 2,
+      "causal": false,
+      "dtype": "bfloat16",
+      "head_dim": 64,
+      "implementation": "pytorch_tiled",
+      "quantities": {
+        "grad_k": {
+          "max_abs_error": 0.0025075674057006836,
+          "max_rel_error": 2.52472186088562,
+          "pass": true
+        },
+        "grad_q": {
+          "max_abs_error": 0.0022216439247131348,
+          "max_rel_error": 1.0263564586639404,
+          "pass": true
+        },
+        "grad_v": {
+          "max_abs_error": 0.0019522905349731445,
+          "max_rel_error": 0.009973880834877491,
+          "pass": true
+        },
+        "lse": {
+          "max_abs_error": 0.0,
+          "max_rel_error": 0.0,
+          "pass": true
+        },
+        "output": {
+          "max_abs_error": 0.0030323266983032227,
+          "max_rel_error": 0.00384361669421196,
+          "pass": true
+        }
+      },
+      "rtol": 0.05,
+      "seed": 1,
+      "sequence_length": 64,
+      "status": "pass"
+    },
+    {
+      "atol": 0.05,
+      "batch_size": 2,
+      "causal": true,
+      "dtype": "bfloat16",
+      "head_dim": 64,
+      "implementation": "pytorch_tiled",
+      "quantities": {
+        "grad_k": {
+          "max_abs_error": 0.005916953086853027,
+          "max_rel_error": 2.756028413772583,
+          "pass": true
+        },
+        "grad_q": {
+          "max_abs_error": 0.004328250885009766,
+          "max_rel_error": 19.6245174407959,
+          "pass": true
+        },
+        "grad_v": {
+          "max_abs_error": 0.007588624954223633,
+          "max_rel_error": 0.003839289303869009,
+          "pass": true
+        },
+        "lse": {
+          "max_abs_error": 0.0,
+          "max_rel_error": 0.0,
+          "pass": true
+        },
+        "output": {
+          "max_abs_error": 0.0063364505767822266,
+          "max_rel_error": 0.003854499664157629,
+          "pass": true
+        }
+      },
+      "rtol": 0.05,
+      "seed": 1,
+      "sequence_length": 64,
+      "status": "pass"
+    },
+    {
+      "atol": 0.05,
+      "batch_size": 2,
+      "causal": false,
+      "dtype": "bfloat16",
+      "head_dim": 128,
+      "implementation": "pytorch_tiled",
+      "quantities": {
+        "grad_k": {
+          "max_abs_error": 0.003023505210876465,
+          "max_rel_error": 1.4274240732192993,
+          "pass": true
+        },
+        "grad_q": {
+          "max_abs_error": 0.003391265869140625,
+          "max_rel_error": 14.610672950744629,
+          "pass": true
+        },
+        "grad_v": {
+          "max_abs_error": 0.002816319465637207,
+          "max_rel_error": 0.0038297760765999556,
+          "pass": true
+        },
+        "lse": {
+          "max_abs_error": 0.0,
+          "max_rel_error": 0.0,
+          "pass": true
+        },
+        "output": {
+          "max_abs_error": 0.001951754093170166,
+          "max_rel_error": 0.003890459192916751,
+          "pass": true
+        }
+      },
+      "rtol": 0.05,
+      "seed": 1,
+      "sequence_length": 64,
+      "status": "pass"
+    },
+    {
+      "atol": 0.05,
+      "batch_size": 2,
+      "causal": true,
+      "dtype": "bfloat16",
+      "head_dim": 128,
+      "implementation": "pytorch_tiled",
+      "quantities": {
+        "grad_k": {
+          "max_abs_error": 0.008564233779907227,
+          "max_rel_error": 1.4461696147918701,
+          "pass": true
+        },
+        "grad_q": {
+          "max_abs_error": 0.004915475845336914,
+          "max_rel_error": 9.170686721801758,
+          "pass": true
+        },
+        "grad_v": {
+          "max_abs_error": 0.012877941131591797,
+          "max_rel_error": 0.015398118644952774,
+          "pass": true
+        },
+        "lse": {
+          "max_abs_error": 0.0,
+          "max_rel_error": 0.0,
+          "pass": true
+        },
+        "output": {
+          "max_abs_error": 0.004996299743652344,
+          "max_rel_error": 0.0038607672322541475,
+          "pass": true
+        }
+      },
+      "rtol": 0.05,
+      "seed": 1,
+      "sequence_length": 64,
+      "status": "pass"
+    },
+    {
+      "atol": 0.05,
+      "batch_size": 2,
+      "causal": false,
+      "dtype": "bfloat16",
+      "head_dim": 32,
+      "implementation": "pytorch_tiled",
+      "quantities": {
+        "grad_k": {
+          "max_abs_error": 0.0026979446411132812,
+          "max_rel_error": 2.1367554664611816,
+          "pass": true
+        },
+        "grad_q": {
+          "max_abs_error": 0.0019376277923583984,
+          "max_rel_error": 1.5668163299560547,
+          "pass": true
+        },
+        "grad_v": {
+          "max_abs_error": 0.002688884735107422,
+          "max_rel_error": 0.0048133693635463715,
+          "pass": true
+        },
+        "lse": {
+          "max_abs_error": 0.0,
+          "max_rel_error": 0.0,
+          "pass": true
+        },
+        "output": {
+          "max_abs_error": 0.001835942268371582,
+          "max_rel_error": 0.0038704280741512775,
+          "pass": true
+        }
+      },
+      "rtol": 0.05,
+      "seed": 2,
+      "sequence_length": 64,
+      "status": "pass"
+    },
+    {
+      "atol": 0.05,
+      "batch_size": 2,
+      "causal": true,
+      "dtype": "bfloat16",
+      "head_dim": 32,
+      "implementation": "pytorch_tiled",
+      "quantities": {
+        "grad_k": {
+          "max_abs_error": 0.0075190067291259766,
+          "max_rel_error": 0.6542249917984009,
+          "pass": true
+        },
+        "grad_q": {
+          "max_abs_error": 0.006046772003173828,
+          "max_rel_error": 0.9003769755363464,
+          "pass": true
+        },
+        "grad_v": {
+          "max_abs_error": 0.0058135986328125,
+          "max_rel_error": 0.0038358853198587894,
+          "pass": true
+        },
+        "lse": {
+          "max_abs_error": 0.0,
+          "max_rel_error": 0.0,
+          "pass": true
+        },
+        "output": {
+          "max_abs_error": 0.0069730281829833984,
+          "max_rel_error": 0.0038607690948992968,
+          "pass": true
+        }
+      },
+      "rtol": 0.05,
+      "seed": 2,
+      "sequence_length": 64,
+      "status": "pass"
+    },
+    {
+      "atol": 0.05,
+      "batch_size": 2,
+      "causal": false,
+      "dtype": "bfloat16",
+      "head_dim": 64,
+      "implementation": "pytorch_tiled",
+      "quantities": {
+        "grad_k": {
+          "max_abs_error": 0.003548860549926758,
+          "max_rel_error": 1.9933156967163086,
+          "pass": true
+        },
+        "grad_q": {
+          "max_abs_error": 0.003416776657104492,
+          "max_rel_error": 12.491069793701172,
+          "pass": true
+        },
+        "grad_v": {
+          "max_abs_error": 0.0019225478172302246,
+          "max_rel_error": 0.003869116771966219,
+          "pass": true
+        },
+        "lse": {
+          "max_abs_error": 0.0,
+          "max_rel_error": 0.0,
+          "pass": true
+        },
+        "output": {
+          "max_abs_error": 0.0019357800483703613,
+          "max_rel_error": 0.003855956718325615,
+          "pass": true
+        }
+      },
+      "rtol": 0.05,
+      "seed": 2,
+      "sequence_length": 64,
+      "status": "pass"
+    },
+    {
+      "atol": 0.05,
+      "batch_size": 2,
+      "causal": true,
+      "dtype": "bfloat16",
+      "head_dim": 64,
+      "implementation": "pytorch_tiled",
+      "quantities": {
+        "grad_k": {
+          "max_abs_error": 0.007128715515136719,
+          "max_rel_error": 12.1561918258667,
+          "pass": true
+        },
+        "grad_q": {
+          "max_abs_error": 0.004168033599853516,
+          "max_rel_error": 54.543888092041016,
+          "pass": true
+        },
+        "grad_v": {
+          "max_abs_error": 0.007543325424194336,
+          "max_rel_error": 0.0038408958353102207,
+          "pass": true
+        },
+        "lse": {
+          "max_abs_error": 0.0,
+          "max_rel_error": 0.0,
+          "pass": true
+        },
+        "output": {
+          "max_abs_error": 0.00447845458984375,
+          "max_rel_error": 0.0038180432748049498,
+          "pass": true
+        }
+      },
+      "rtol": 0.05,
+      "seed": 2,
+      "sequence_length": 64,
+      "status": "pass"
+    },
+    {
+      "atol": 0.05,
+      "batch_size": 2,
+      "causal": false,
+      "dtype": "bfloat16",
+      "head_dim": 128,
+      "implementation": "pytorch_tiled",
+      "quantities": {
+        "grad_k": {
+          "max_abs_error": 0.002927422523498535,
+          "max_rel_error": 6.957169055938721,
+          "pass": true
+        },
+        "grad_q": {
+          "max_abs_error": 0.003451824188232422,
+          "max_rel_error": 1.8679137229919434,
+          "pass": true
+        },
+        "grad_v": {
+          "max_abs_error": 0.0034085512161254883,
+          "max_rel_error": 0.003872812259942293,
+          "pass": true
+        },
+        "lse": {
+          "max_abs_error": 0.0,
+          "max_rel_error": 0.0,
+          "pass": true
+        },
+        "output": {
+          "max_abs_error": 0.0019492506980895996,
+          "max_rel_error": 0.003867393359541893,
+          "pass": true
+        }
+      },
+      "rtol": 0.05,
+      "seed": 2,
+      "sequence_length": 64,
+      "status": "pass"
+    },
+    {
+      "atol": 0.05,
+      "batch_size": 2,
+      "causal": true,
+      "dtype": "bfloat16",
+      "head_dim": 128,
+      "implementation": "pytorch_tiled",
+      "quantities": {
+        "grad_k": {
+          "max_abs_error": 0.008071422576904297,
+          "max_rel_error": 2.516608715057373,
+          "pass": true
+        },
+        "grad_q": {
+          "max_abs_error": 0.007687211036682129,
+          "max_rel_error": 356.65277099609375,
+          "pass": true
+        },
+        "grad_v": {
+          "max_abs_error": 0.013064861297607422,
+          "max_rel_error": 0.004362563602626324,
+          "pass": true
+        },
+        "lse": {
+          "max_abs_error": 0.0,
+          "max_rel_error": 0.0,
+          "pass": true
+        },
+        "output": {
+          "max_abs_error": 0.0077075958251953125,
+          "max_rel_error": 0.003887502010911703,
+          "pass": true
+        }
+      },
+      "rtol": 0.05,
+      "seed": 2,
+      "sequence_length": 64,
+      "status": "pass"
+    },
+    {
+      "atol": 0.002,
+      "batch_size": 2,
+      "causal": true,
+      "dtype": "float32",
+      "head_dim": 64,
+      "implementation": "pytorch_tiled",
+      "quantities": {
+        "grad_k": {
+          "max_abs_error": 1.1026859283447266e-06,
+          "max_rel_error": 0.00022610934684053063,
+          "pass": true
+        },
+        "grad_q": {
+          "max_abs_error": 1.4433363730859128e-06,
+          "max_rel_error": 1.4433363676071167,
+          "pass": true
+        },
+        "grad_v": {
+          "max_abs_error": 8.344650268554688e-07,
+          "max_rel_error": 0.0012664457317441702,
+          "pass": true
+        },
+        "lse": {
+          "max_abs_error": 0.0,
+          "max_rel_error": 0.0,
+          "pass": true
+        },
+        "output": {
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 0.0007217208039946854,
+          "pass": true
+        }
+      },
+      "rtol": 0.002,
+      "seed": 0,
+      "sequence_length": 64,
+      "status": "pass"
+    },
+    {
+      "atol": 0.05,
+      "batch_size": 2,
+      "causal": false,
+      "dtype": "bfloat16",
+      "head_dim": 32,
+      "implementation": "triton",
+      "quantities": {
+        "grad_k": {
+          "max_abs_error": 0.005294919013977051,
+          "max_rel_error": 318.63812255859375,
+          "pass": true
+        },
+        "grad_q": {
+          "max_abs_error": 0.00404047966003418,
+          "max_rel_error": 7.470803260803223,
+          "pass": true
+        },
+        "grad_v": {
+          "max_abs_error": 0.004608631134033203,
+          "max_rel_error": 4.661882400512695,
+          "pass": true
+        },
+        "lse": {
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 1.1026263990743246e-07,
+          "pass": true
+        },
+        "output": {
+          "max_abs_error": 0.002708733081817627,
+          "max_rel_error": 3.715177536010742,
+          "pass": true
+        }
+      },
+      "rtol": 0.05,
+      "seed": 0,
+      "sequence_length": 64,
+      "status": "pass"
+    },
+    {
+      "atol": 0.05,
+      "batch_size": 2,
+      "causal": true,
+      "dtype": "bfloat16",
+      "head_dim": 32,
+      "implementation": "triton",
+      "quantities": {
+        "grad_k": {
+          "max_abs_error": 0.009730100631713867,
+          "max_rel_error": 8.309565544128418,
+          "pass": true
+        },
+        "grad_q": {
+          "max_abs_error": 0.008445501327514648,
+          "max_rel_error": 1.9688459634780884,
+          "pass": true
+        },
+        "grad_v": {
+          "max_abs_error": 0.007353544235229492,
+          "max_rel_error": 38.92342758178711,
+          "pass": true
+        },
+        "lse": {
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 1.6603165420292498e-07,
+          "pass": true
+        },
+        "output": {
+          "max_abs_error": 0.007088899612426758,
+          "max_rel_error": 2.554602861404419,
+          "pass": true
+        }
+      },
+      "rtol": 0.05,
+      "seed": 0,
+      "sequence_length": 64,
+      "status": "pass"
+    },
+    {
+      "atol": 0.05,
+      "batch_size": 2,
+      "causal": false,
+      "dtype": "bfloat16",
+      "head_dim": 64,
+      "implementation": "triton",
+      "quantities": {
+        "grad_k": {
+          "max_abs_error": 0.0031232237815856934,
+          "max_rel_error": 3.3444674015045166,
+          "pass": true
+        },
+        "grad_q": {
+          "max_abs_error": 0.0034008026123046875,
+          "max_rel_error": 15.185521125793457,
+          "pass": true
+        },
+        "grad_v": {
+          "max_abs_error": 0.005180239677429199,
+          "max_rel_error": 95.34693908691406,
+          "pass": true
+        },
+        "lse": {
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 1.0616825818487996e-07,
+          "pass": true
+        },
+        "output": {
+          "max_abs_error": 0.002520918846130371,
+          "max_rel_error": 14.647170066833496,
+          "pass": true
+        }
+      },
+      "rtol": 0.05,
+      "seed": 0,
+      "sequence_length": 64,
+      "status": "pass"
+    },
+    {
+      "atol": 0.05,
+      "batch_size": 2,
+      "causal": true,
+      "dtype": "bfloat16",
+      "head_dim": 64,
+      "implementation": "triton",
+      "quantities": {
+        "grad_k": {
+          "max_abs_error": 0.005710959434509277,
+          "max_rel_error": 35.783809661865234,
+          "pass": true
+        },
+        "grad_q": {
+          "max_abs_error": 0.0057555437088012695,
+          "max_rel_error": 48.392967224121094,
+          "pass": true
+        },
+        "grad_v": {
+          "max_abs_error": 0.012306690216064453,
+          "max_rel_error": 12.523259162902832,
+          "pass": true
+        },
+        "lse": {
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 1.5633398220415984e-07,
+          "pass": true
+        },
+        "output": {
+          "max_abs_error": 0.007484912872314453,
+          "max_rel_error": 7.012322902679443,
+          "pass": true
+        }
+      },
+      "rtol": 0.05,
+      "seed": 0,
+      "sequence_length": 64,
+      "status": "pass"
+    },
+    {
+      "atol": 0.05,
+      "batch_size": 2,
+      "causal": false,
+      "dtype": "bfloat16",
+      "head_dim": 128,
+      "implementation": "triton",
+      "quantities": {
+        "grad_k": {
+          "max_abs_error": 0.0031179189682006836,
+          "max_rel_error": 31.546709060668945,
+          "pass": true
+        },
+        "grad_q": {
+          "max_abs_error": 0.004018962383270264,
+          "max_rel_error": 36.28313446044922,
+          "pass": true
+        },
+        "grad_v": {
+          "max_abs_error": 0.0034933090209960938,
+          "max_rel_error": 65.1228256225586,
+          "pass": true
+        },
+        "lse": {
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 1.093683508202048e-07,
+          "pass": true
+        },
+        "output": {
+          "max_abs_error": 0.0025776028633117676,
+          "max_rel_error": 99.75891876220703,
+          "pass": true
+        }
+      },
+      "rtol": 0.05,
+      "seed": 0,
+      "sequence_length": 64,
+      "status": "pass"
+    },
+    {
+      "atol": 0.05,
+      "batch_size": 2,
+      "causal": true,
+      "dtype": "bfloat16",
+      "head_dim": 128,
+      "implementation": "triton",
+      "quantities": {
+        "grad_k": {
+          "max_abs_error": 0.009736239910125732,
+          "max_rel_error": 15.502486228942871,
+          "pass": true
+        },
+        "grad_q": {
+          "max_abs_error": 0.008863985538482666,
+          "max_rel_error": 3753.87744140625,
+          "pass": true
+        },
+        "grad_v": {
+          "max_abs_error": 0.012166261672973633,
+          "max_rel_error": 23.67584228515625,
+          "pass": true
+        },
+        "lse": {
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 1.6103052757898695e-07,
+          "pass": true
+        },
+        "output": {
+          "max_abs_error": 0.006523609161376953,
+          "max_rel_error": 26.26288604736328,
+          "pass": true
+        }
+      },
+      "rtol": 0.05,
+      "seed": 0,
+      "sequence_length": 64,
+      "status": "pass"
+    },
+    {
+      "atol": 0.05,
+      "batch_size": 2,
+      "causal": false,
+      "dtype": "bfloat16",
+      "head_dim": 32,
+      "implementation": "triton",
+      "quantities": {
+        "grad_k": {
+          "max_abs_error": 0.005219221115112305,
+          "max_rel_error": 4.113412380218506,
+          "pass": true
+        },
+        "grad_q": {
+          "max_abs_error": 0.00369107723236084,
+          "max_rel_error": 55.5539436340332,
+          "pass": true
+        },
+        "grad_v": {
+          "max_abs_error": 0.0033841729164123535,
+          "max_rel_error": 2.36270809173584,
+          "pass": true
+        },
+        "lse": {
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 1.1158113011333626e-07,
+          "pass": true
+        },
+        "output": {
+          "max_abs_error": 0.0021536946296691895,
+          "max_rel_error": 9.942228317260742,
+          "pass": true
+        }
+      },
+      "rtol": 0.05,
+      "seed": 1,
+      "sequence_length": 64,
+      "status": "pass"
+    },
+    {
+      "atol": 0.05,
+      "batch_size": 2,
+      "causal": true,
+      "dtype": "bfloat16",
+      "head_dim": 32,
+      "implementation": "triton",
+      "quantities": {
+        "grad_k": {
+          "max_abs_error": 0.007737278938293457,
+          "max_rel_error": 1.4171251058578491,
+          "pass": true
+        },
+        "grad_q": {
+          "max_abs_error": 0.014857053756713867,
+          "max_rel_error": 14.827522277832031,
+          "pass": true
+        },
+        "grad_v": {
+          "max_abs_error": 0.010137319564819336,
+          "max_rel_error": 10.553356170654297,
+          "pass": true
+        },
+        "lse": {
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 1.580595778705174e-07,
+          "pass": true
+        },
+        "output": {
+          "max_abs_error": 0.0038892030715942383,
+          "max_rel_error": 1.2744665145874023,
+          "pass": true
+        }
+      },
+      "rtol": 0.05,
+      "seed": 1,
+      "sequence_length": 64,
+      "status": "pass"
+    },
+    {
+      "atol": 0.05,
+      "batch_size": 2,
+      "causal": false,
+      "dtype": "bfloat16",
+      "head_dim": 64,
+      "implementation": "triton",
+      "quantities": {
+        "grad_k": {
+          "max_abs_error": 0.005304932594299316,
+          "max_rel_error": 13.022307395935059,
+          "pass": true
+        },
+        "grad_q": {
+          "max_abs_error": 0.0039045214653015137,
+          "max_rel_error": 6.135097026824951,
+          "pass": true
+        },
+        "grad_v": {
+          "max_abs_error": 0.0028907060623168945,
+          "max_rel_error": 47.99324035644531,
+          "pass": true
+        },
+        "lse": {
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 1.1033160518536533e-07,
+          "pass": true
+        },
+        "output": {
+          "max_abs_error": 0.0030323266983032227,
+          "max_rel_error": 8.090710639953613,
+          "pass": true
+        }
+      },
+      "rtol": 0.05,
+      "seed": 1,
+      "sequence_length": 64,
+      "status": "pass"
+    },
+    {
+      "atol": 0.05,
+      "batch_size": 2,
+      "causal": true,
+      "dtype": "bfloat16",
+      "head_dim": 64,
+      "implementation": "triton",
+      "quantities": {
+        "grad_k": {
+          "max_abs_error": 0.005233883857727051,
+          "max_rel_error": 20.303714752197266,
+          "pass": true
+        },
+        "grad_q": {
+          "max_abs_error": 0.005201280117034912,
+          "max_rel_error": 25.25559425354004,
+          "pass": true
+        },
+        "grad_v": {
+          "max_abs_error": 0.011504650115966797,
+          "max_rel_error": 9.306448936462402,
+          "pass": true
+        },
+        "lse": {
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 1.2597004683811974e-07,
+          "pass": true
+        },
+        "output": {
+          "max_abs_error": 0.0063364505767822266,
+          "max_rel_error": 5.314013957977295,
+          "pass": true
+        }
+      },
+      "rtol": 0.05,
+      "seed": 1,
+      "sequence_length": 64,
+      "status": "pass"
+    },
+    {
+      "atol": 0.05,
+      "batch_size": 2,
+      "causal": false,
+      "dtype": "bfloat16",
+      "head_dim": 128,
+      "implementation": "triton",
+      "quantities": {
+        "grad_k": {
+          "max_abs_error": 0.006172299385070801,
+          "max_rel_error": 12.906167984008789,
+          "pass": true
+        },
+        "grad_q": {
+          "max_abs_error": 0.004421234130859375,
+          "max_rel_error": 30.65095329284668,
+          "pass": true
+        },
+        "grad_v": {
+          "max_abs_error": 0.0032196640968322754,
+          "max_rel_error": 27.709762573242188,
+          "pass": true
+        },
+        "lse": {
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 1.0907727698850067e-07,
+          "pass": true
+        },
+        "output": {
+          "max_abs_error": 0.0024524331092834473,
+          "max_rel_error": 25.67059898376465,
+          "pass": true
+        }
+      },
+      "rtol": 0.05,
+      "seed": 1,
+      "sequence_length": 64,
+      "status": "pass"
+    },
+    {
+      "atol": 0.05,
+      "batch_size": 2,
+      "causal": true,
+      "dtype": "bfloat16",
+      "head_dim": 128,
+      "implementation": "triton",
+      "quantities": {
+        "grad_k": {
+          "max_abs_error": 0.008008241653442383,
+          "max_rel_error": 18.50087547302246,
+          "pass": true
+        },
+        "grad_q": {
+          "max_abs_error": 0.005015328526496887,
+          "max_rel_error": 10.210135459899902,
+          "pass": true
+        },
+        "grad_v": {
+          "max_abs_error": 0.012877941131591797,
+          "max_rel_error": 163.11204528808594,
+          "pass": true
+        },
+        "lse": {
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 1.6735701535708358e-07,
+          "pass": true
+        },
+        "output": {
+          "max_abs_error": 0.004996299743652344,
+          "max_rel_error": 61.5708122253418,
+          "pass": true
+        }
+      },
+      "rtol": 0.05,
+      "seed": 1,
+      "sequence_length": 64,
+      "status": "pass"
+    },
+    {
+      "atol": 0.05,
+      "batch_size": 2,
+      "causal": false,
+      "dtype": "bfloat16",
+      "head_dim": 32,
+      "implementation": "triton",
+      "quantities": {
+        "grad_k": {
+          "max_abs_error": 0.003939390182495117,
+          "max_rel_error": 4.277589321136475,
+          "pass": true
+        },
+        "grad_q": {
+          "max_abs_error": 0.0037183761596679688,
+          "max_rel_error": 7.694154739379883,
+          "pass": true
+        },
+        "grad_v": {
+          "max_abs_error": 0.002688884735107422,
+          "max_rel_error": 10.683296203613281,
+          "pass": true
+        },
+        "lse": {
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 1.0947231032787386e-07,
+          "pass": true
+        },
+        "output": {
+          "max_abs_error": 0.001835942268371582,
+          "max_rel_error": 5.830170631408691,
+          "pass": true
+        }
+      },
+      "rtol": 0.05,
+      "seed": 2,
+      "sequence_length": 64,
+      "status": "pass"
+    },
+    {
+      "atol": 0.05,
+      "batch_size": 2,
+      "causal": true,
+      "dtype": "bfloat16",
+      "head_dim": 32,
+      "implementation": "triton",
+      "quantities": {
+        "grad_k": {
+          "max_abs_error": 0.0075190067291259766,
+          "max_rel_error": 6.153749942779541,
+          "pass": true
+        },
+        "grad_q": {
+          "max_abs_error": 0.007175564765930176,
+          "max_rel_error": 4.996859073638916,
+          "pass": true
+        },
+        "grad_v": {
+          "max_abs_error": 0.005855560302734375,
+          "max_rel_error": 10.212479591369629,
+          "pass": true
+        },
+        "lse": {
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 4.822840082852053e-07,
+          "pass": true
+        },
+        "output": {
+          "max_abs_error": 0.0069730281829833984,
+          "max_rel_error": 28.317121505737305,
+          "pass": true
+        }
+      },
+      "rtol": 0.05,
+      "seed": 2,
+      "sequence_length": 64,
+      "status": "pass"
+    },
+    {
+      "atol": 0.05,
+      "batch_size": 2,
+      "causal": false,
+      "dtype": "bfloat16",
+      "head_dim": 64,
+      "implementation": "triton",
+      "quantities": {
+        "grad_k": {
+          "max_abs_error": 0.006424307823181152,
+          "max_rel_error": 9.937114715576172,
+          "pass": true
+        },
+        "grad_q": {
+          "max_abs_error": 0.0036644339561462402,
+          "max_rel_error": 56.52485275268555,
+          "pass": true
+        },
+        "grad_v": {
+          "max_abs_error": 0.0035896897315979004,
+          "max_rel_error": 43.98043441772461,
+          "pass": true
+        },
+        "lse": {
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 1.1137807121031074e-07,
+          "pass": true
+        },
+        "output": {
+          "max_abs_error": 0.00244826078414917,
+          "max_rel_error": 3.8768086433410645,
+          "pass": true
+        }
+      },
+      "rtol": 0.05,
+      "seed": 2,
+      "sequence_length": 64,
+      "status": "pass"
+    },
+    {
+      "atol": 0.05,
+      "batch_size": 2,
+      "causal": true,
+      "dtype": "bfloat16",
+      "head_dim": 64,
+      "implementation": "triton",
+      "quantities": {
+        "grad_k": {
+          "max_abs_error": 0.008496284484863281,
+          "max_rel_error": 21.01873016357422,
+          "pass": true
+        },
+        "grad_q": {
+          "max_abs_error": 0.006010890007019043,
+          "max_rel_error": 181.86334228515625,
+          "pass": true
+        },
+        "grad_v": {
+          "max_abs_error": 0.009903430938720703,
+          "max_rel_error": 4.500282287597656,
+          "pass": true
+        },
+        "lse": {
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 1.1528237564562005e-07,
+          "pass": true
+        },
+        "output": {
+          "max_abs_error": 0.004507780075073242,
+          "max_rel_error": 21.59727668762207,
+          "pass": true
+        }
+      },
+      "rtol": 0.05,
+      "seed": 2,
+      "sequence_length": 64,
+      "status": "pass"
+    },
+    {
+      "atol": 0.05,
+      "batch_size": 2,
+      "causal": false,
+      "dtype": "bfloat16",
+      "head_dim": 128,
+      "implementation": "triton",
+      "quantities": {
+        "grad_k": {
+          "max_abs_error": 0.0034435391426086426,
+          "max_rel_error": 20.127450942993164,
+          "pass": true
+        },
+        "grad_q": {
+          "max_abs_error": 0.004360675811767578,
+          "max_rel_error": 2.991291046142578,
+          "pass": true
+        },
+        "grad_v": {
+          "max_abs_error": 0.004403948783874512,
+          "max_rel_error": 32.42523193359375,
+          "pass": true
+        },
+        "lse": {
+          "max_abs_error": 9.5367431640625e-07,
+          "max_rel_error": 1.948902905724026e-07,
+          "pass": true
+        },
+        "output": {
+          "max_abs_error": 0.0024752020835876465,
+          "max_rel_error": 5.365970134735107,
+          "pass": true
+        }
+      },
+      "rtol": 0.05,
+      "seed": 2,
+      "sequence_length": 64,
+      "status": "pass"
+    },
+    {
+      "atol": 0.05,
+      "batch_size": 2,
+      "causal": true,
+      "dtype": "bfloat16",
+      "head_dim": 128,
+      "implementation": "triton",
+      "quantities": {
+        "grad_k": {
+          "max_abs_error": 0.012814521789550781,
+          "max_rel_error": 8.447813034057617,
+          "pass": true
+        },
+        "grad_q": {
+          "max_abs_error": 0.0094146728515625,
+          "max_rel_error": 356.69561767578125,
+          "pass": true
+        },
+        "grad_v": {
+          "max_abs_error": 0.013064861297607422,
+          "max_rel_error": 46.43599319458008,
+          "pass": true
+        },
+        "lse": {
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 1.2681944099313114e-06,
+          "pass": true
+        },
+        "output": {
+          "max_abs_error": 0.0077075958251953125,
+          "max_rel_error": 3.8612186908721924,
+          "pass": true
+        }
+      },
+      "rtol": 0.05,
+      "seed": 2,
+      "sequence_length": 64,
+      "status": "pass"
+    },
+    {
+      "atol": 0.002,
+      "batch_size": 2,
+      "causal": true,
+      "dtype": "float32",
+      "head_dim": 64,
+      "implementation": "triton",
+      "quantities": {
+        "grad_k": {
+          "max_abs_error": 1.1324882507324219e-06,
+          "max_rel_error": 0.0007308286149054766,
+          "pass": true
+        },
+        "grad_q": {
+          "max_abs_error": 1.4433363730859128e-06,
+          "max_rel_error": 1.4433363676071167,
+          "pass": true
+        },
+        "grad_v": {
+          "max_abs_error": 8.344650268554688e-07,
+          "max_rel_error": 0.0010530035942792892,
+          "pass": true
+        },
+        "lse": {
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 1.177969934929024e-07,
+          "pass": true
+        },
+        "output": {
+          "max_abs_error": 3.5762786865234375e-07,
+          "max_rel_error": 0.000191053535672836,
+          "pass": true
+        }
+      },
+      "rtol": 0.002,
+      "seed": 0,
+      "sequence_length": 64,
+      "status": "pass"
+    }
+  ],
+  "schema_version": 1,
+  "summary": {
+    "failed": 0,
+    "passed": 38,
+    "skipped": 0,
+    "total": 38
+  }
+}

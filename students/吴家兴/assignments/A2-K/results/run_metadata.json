@@ -1,0 +1,3077 @@
+{
+  "allocator_limit_mib": 23552,
+  "assignment": "A2-K",
+  "compile": {
+    "cold_start_separated": true,
+    "fresh_process_and_cache_per_formal_compiled_row": true,
+    "mode": "reduce-overhead"
+  },
+  "experiments": {
+    "attention_baseline": [
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.attention_baseline --seq-len 2048 --head-dim 128 --phase backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "eager-s2048-d128-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.attention_baseline --seq-len 2048 --head-dim 128 --phase forward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "eager-s2048-d128-forward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.attention_baseline --seq-len 2048 --head-dim 128 --phase forward-backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "eager-s2048-d128-forward-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.attention_baseline --seq-len 2048 --head-dim 64 --phase backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "eager-s2048-d64-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.attention_baseline --seq-len 2048 --head-dim 64 --phase forward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "eager-s2048-d64-forward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.attention_baseline --seq-len 2048 --head-dim 64 --phase forward-backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "eager-s2048-d64-forward-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.attention_baseline --seq-len 512 --head-dim 128 --phase backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "eager-s512-d128-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.attention_baseline --seq-len 512 --head-dim 128 --phase forward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "eager-s512-d128-forward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.attention_baseline --seq-len 512 --head-dim 128 --phase forward-backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "eager-s512-d128-forward-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.attention_baseline --seq-len 512 --head-dim 64 --phase backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "eager-s512-d64-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.attention_baseline --seq-len 512 --head-dim 64 --phase forward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "eager-s512-d64-forward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.attention_baseline --seq-len 512 --head-dim 64 --phase forward-backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "eager-s512-d64-forward-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.attention_baseline --seq-len 8192 --head-dim 128 --phase backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "eager-s8192-d128-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.attention_baseline --seq-len 8192 --head-dim 128 --phase forward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "eager-s8192-d128-forward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.attention_baseline --seq-len 8192 --head-dim 128 --phase forward-backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "eager-s8192-d128-forward-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.attention_baseline --seq-len 8192 --head-dim 64 --phase backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "eager-s8192-d64-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.attention_baseline --seq-len 8192 --head-dim 64 --phase forward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "eager-s8192-d64-forward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.attention_baseline --seq-len 8192 --head-dim 64 --phase forward-backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "eager-s8192-d64-forward-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      }
+    ],
+    "checkpointing": [
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.checkpoint_benchmark --context-length 1024 --checkpoint-block-size 1 --warmup-steps 3 --measurement-steps 5 --seed 42",
+        "config_id": "medium-l24-b1-s1024-bf16-block1",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "reported_quantile": 0.5,
+          "steps": 5
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events around one complete training step",
+        "warmup": {
+          "steps": 3
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.checkpoint_benchmark --context-length 1024 --checkpoint-block-size 2 --warmup-steps 3 --measurement-steps 5 --seed 42",
+        "config_id": "medium-l24-b1-s1024-bf16-block2",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "reported_quantile": 0.5,
+          "steps": 5
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events around one complete training step",
+        "warmup": {
+          "steps": 3
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.checkpoint_benchmark --context-length 1024 --checkpoint-block-size 4 --warmup-steps 3 --measurement-steps 5 --seed 42",
+        "config_id": "medium-l24-b1-s1024-bf16-block4",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "reported_quantile": 0.5,
+          "steps": 5
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events around one complete training step",
+        "warmup": {
+          "steps": 3
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.checkpoint_benchmark --context-length 1024 --checkpoint-block-size 8 --warmup-steps 3 --measurement-steps 5 --seed 42",
+        "config_id": "medium-l24-b1-s1024-bf16-block8",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "reported_quantile": 0.5,
+          "steps": 5
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events around one complete training step",
+        "warmup": {
+          "steps": 3
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.checkpoint_benchmark --context-length 1024 --checkpoint-block-size 0 --warmup-steps 3 --measurement-steps 5 --seed 42",
+        "config_id": "medium-l24-b1-s1024-bf16-blocknone",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "reported_quantile": 0.5,
+          "steps": 5
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events around one complete training step",
+        "warmup": {
+          "steps": 3
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.checkpoint_benchmark --context-length 2048 --checkpoint-block-size 2 --warmup-steps 3 --measurement-steps 5 --seed 42",
+        "config_id": "medium-l24-b1-s2048-bf16-block2",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "reported_quantile": 0.5,
+          "steps": 5
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events around one complete training step",
+        "warmup": {
+          "steps": 3
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.checkpoint_benchmark --context-length 2048 --checkpoint-block-size 0 --warmup-steps 3 --measurement-steps 5 --seed 42",
+        "config_id": "medium-l24-b1-s2048-bf16-blocknone",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "reported_quantile": 0.5,
+          "steps": 5
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events around one complete training step",
+        "warmup": {
+          "steps": 3
+        }
+      }
+    ],
+    "compile_comparison": [
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.compile_comparison --target attention --implementation compiled --phase backward --warmup-ms 100 --rep-ms 300 --seed 42 --seq-len 2048 --head-dim 128",
+        "config_id": "attention-compiled-s2048-d128-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; compilation recorded separately as wall time",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.compile_comparison --target attention --implementation compiled --phase forward --warmup-ms 100 --rep-ms 300 --seed 42 --seq-len 2048 --head-dim 128",
+        "config_id": "attention-compiled-s2048-d128-forward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; compilation recorded separately as wall time",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.compile_comparison --target attention --implementation compiled --phase forward-backward --warmup-ms 100 --rep-ms 300 --seed 42 --seq-len 2048 --head-dim 128",
+        "config_id": "attention-compiled-s2048-d128-forward-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; compilation recorded separately as wall time",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.compile_comparison --target attention --implementation compiled --phase backward --warmup-ms 100 --rep-ms 300 --seed 42 --seq-len 512 --head-dim 64",
+        "config_id": "attention-compiled-s512-d64-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; compilation recorded separately as wall time",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.compile_comparison --target attention --implementation compiled --phase forward --warmup-ms 100 --rep-ms 300 --seed 42 --seq-len 512 --head-dim 64",
+        "config_id": "attention-compiled-s512-d64-forward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; compilation recorded separately as wall time",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.compile_comparison --target attention --implementation compiled --phase forward-backward --warmup-ms 100 --rep-ms 300 --seed 42 --seq-len 512 --head-dim 64",
+        "config_id": "attention-compiled-s512-d64-forward-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; compilation recorded separately as wall time",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.compile_comparison --target attention --implementation compiled --phase backward --warmup-ms 100 --rep-ms 300 --seed 42 --seq-len 8192 --head-dim 128",
+        "config_id": "attention-compiled-s8192-d128-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; compilation recorded separately as wall time",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.compile_comparison --target attention --implementation compiled --phase forward --warmup-ms 100 --rep-ms 300 --seed 42 --seq-len 8192 --head-dim 128",
+        "config_id": "attention-compiled-s8192-d128-forward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; compilation recorded separately as wall time",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.compile_comparison --target attention --implementation compiled --phase forward-backward --warmup-ms 100 --rep-ms 300 --seed 42 --seq-len 8192 --head-dim 128",
+        "config_id": "attention-compiled-s8192-d128-forward-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; compilation recorded separately as wall time",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.compile_comparison --target attention --implementation eager --phase backward --warmup-ms 100 --rep-ms 300 --seed 42 --seq-len 2048 --head-dim 128",
+        "config_id": "attention-eager-s2048-d128-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; compilation recorded separately as wall time",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.compile_comparison --target attention --implementation eager --phase forward --warmup-ms 100 --rep-ms 300 --seed 42 --seq-len 2048 --head-dim 128",
+        "config_id": "attention-eager-s2048-d128-forward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; compilation recorded separately as wall time",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.compile_comparison --target attention --implementation eager --phase forward-backward --warmup-ms 100 --rep-ms 300 --seed 42 --seq-len 2048 --head-dim 128",
+        "config_id": "attention-eager-s2048-d128-forward-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; compilation recorded separately as wall time",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.compile_comparison --target attention --implementation eager --phase backward --warmup-ms 100 --rep-ms 300 --seed 42 --seq-len 512 --head-dim 64",
+        "config_id": "attention-eager-s512-d64-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; compilation recorded separately as wall time",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.compile_comparison --target attention --implementation eager --phase forward --warmup-ms 100 --rep-ms 300 --seed 42 --seq-len 512 --head-dim 64",
+        "config_id": "attention-eager-s512-d64-forward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; compilation recorded separately as wall time",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.compile_comparison --target attention --implementation eager --phase forward-backward --warmup-ms 100 --rep-ms 300 --seed 42 --seq-len 512 --head-dim 64",
+        "config_id": "attention-eager-s512-d64-forward-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; compilation recorded separately as wall time",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.compile_comparison --target attention --implementation eager --phase backward --warmup-ms 100 --rep-ms 300 --seed 42 --seq-len 8192 --head-dim 128",
+        "config_id": "attention-eager-s8192-d128-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; compilation recorded separately as wall time",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.compile_comparison --target attention --implementation eager --phase forward --warmup-ms 100 --rep-ms 300 --seed 42 --seq-len 8192 --head-dim 128",
+        "config_id": "attention-eager-s8192-d128-forward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; compilation recorded separately as wall time",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.compile_comparison --target attention --implementation eager --phase forward-backward --warmup-ms 100 --rep-ms 300 --seed 42 --seq-len 8192 --head-dim 128",
+        "config_id": "attention-eager-s8192-d128-forward-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; compilation recorded separately as wall time",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.compile_comparison --target small-model --implementation compiled --phase forward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "small-model-compiled-s512-d64-forward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; compilation recorded separately as wall time",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.compile_comparison --target small-model --implementation compiled --phase forward-backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "small-model-compiled-s512-d64-forward-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; compilation recorded separately as wall time",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.compile_comparison --target small-model --implementation compiled --phase train-step --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "small-model-compiled-s512-d64-train-step",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; compilation recorded separately as wall time",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.compile_comparison --target small-model --implementation eager --phase forward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "small-model-eager-s512-d64-forward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; compilation recorded separately as wall time",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.compile_comparison --target small-model --implementation eager --phase forward-backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "small-model-eager-s512-d64-forward-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; compilation recorded separately as wall time",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.compile_comparison --target small-model --implementation eager --phase train-step --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "small-model-eager-s512-d64-train-step",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; compilation recorded separately as wall time",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      }
+    ],
+    "extended_correctness": [
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.correctness --seeds 0,1,2 --sequence-length 64",
+        "config_id": null,
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "causal": [
+            false,
+            true
+          ],
+          "dtypes": [
+            "bfloat16",
+            "float32"
+          ],
+          "head_dims": [
+            32,
+            64,
+            128
+          ],
+          "implementations": [
+            "pytorch_tiled",
+            "triton"
+          ],
+          "seeds": [
+            0,
+            1,
+            2
+          ]
+        },
+        "seed": 0,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "not applicable; correctness only",
+        "warmup": {
+          "kind": "none"
+        }
+      }
+    ],
+    "flash_benchmark": [
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation compiled --seq-len 2048 --head-dim 128 --phase backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "compiled-s2048-d128-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation compiled --seq-len 2048 --head-dim 128 --phase forward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "compiled-s2048-d128-forward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation compiled --seq-len 2048 --head-dim 128 --phase forward-backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "compiled-s2048-d128-forward-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation compiled --seq-len 2048 --head-dim 64 --phase backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "compiled-s2048-d64-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation compiled --seq-len 2048 --head-dim 64 --phase forward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "compiled-s2048-d64-forward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation compiled --seq-len 2048 --head-dim 64 --phase forward-backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "compiled-s2048-d64-forward-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation compiled --seq-len 512 --head-dim 128 --phase backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "compiled-s512-d128-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation compiled --seq-len 512 --head-dim 128 --phase forward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "compiled-s512-d128-forward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation compiled --seq-len 512 --head-dim 128 --phase forward-backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "compiled-s512-d128-forward-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation compiled --seq-len 512 --head-dim 64 --phase backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "compiled-s512-d64-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation compiled --seq-len 512 --head-dim 64 --phase forward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "compiled-s512-d64-forward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation compiled --seq-len 512 --head-dim 64 --phase forward-backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "compiled-s512-d64-forward-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation compiled --seq-len 8192 --head-dim 128 --phase backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "compiled-s8192-d128-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation compiled --seq-len 8192 --head-dim 128 --phase forward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "compiled-s8192-d128-forward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation compiled --seq-len 8192 --head-dim 128 --phase forward-backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "compiled-s8192-d128-forward-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation compiled --seq-len 8192 --head-dim 64 --phase backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "compiled-s8192-d64-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation compiled --seq-len 8192 --head-dim 64 --phase forward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "compiled-s8192-d64-forward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation compiled --seq-len 8192 --head-dim 64 --phase forward-backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "compiled-s8192-d64-forward-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation eager --seq-len 16384 --head-dim 128 --phase backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "eager-s16384-d128-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation eager --seq-len 16384 --head-dim 128 --phase forward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "eager-s16384-d128-forward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation eager --seq-len 16384 --head-dim 128 --phase forward-backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "eager-s16384-d128-forward-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation eager --seq-len 16384 --head-dim 64 --phase backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "eager-s16384-d64-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation eager --seq-len 16384 --head-dim 64 --phase forward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "eager-s16384-d64-forward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation eager --seq-len 16384 --head-dim 64 --phase forward-backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "eager-s16384-d64-forward-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation eager --seq-len 2048 --head-dim 128 --phase backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "eager-s2048-d128-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation eager --seq-len 2048 --head-dim 128 --phase forward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "eager-s2048-d128-forward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation eager --seq-len 2048 --head-dim 128 --phase forward-backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "eager-s2048-d128-forward-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation eager --seq-len 2048 --head-dim 64 --phase backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "eager-s2048-d64-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation eager --seq-len 2048 --head-dim 64 --phase forward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "eager-s2048-d64-forward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation eager --seq-len 2048 --head-dim 64 --phase forward-backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "eager-s2048-d64-forward-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation eager --seq-len 512 --head-dim 128 --phase backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "eager-s512-d128-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation eager --seq-len 512 --head-dim 128 --phase forward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "eager-s512-d128-forward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation eager --seq-len 512 --head-dim 128 --phase forward-backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "eager-s512-d128-forward-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation eager --seq-len 512 --head-dim 64 --phase backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "eager-s512-d64-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation eager --seq-len 512 --head-dim 64 --phase forward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "eager-s512-d64-forward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation eager --seq-len 512 --head-dim 64 --phase forward-backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "eager-s512-d64-forward-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation eager --seq-len 8192 --head-dim 128 --phase backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "eager-s8192-d128-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation eager --seq-len 8192 --head-dim 128 --phase forward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "eager-s8192-d128-forward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation eager --seq-len 8192 --head-dim 128 --phase forward-backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "eager-s8192-d128-forward-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation eager --seq-len 8192 --head-dim 64 --phase backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "eager-s8192-d64-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation eager --seq-len 8192 --head-dim 64 --phase forward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "eager-s8192-d64-forward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation eager --seq-len 8192 --head-dim 64 --phase forward-backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "eager-s8192-d64-forward-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation triton --seq-len 16384 --head-dim 128 --phase backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "triton-s16384-d128-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation triton --seq-len 16384 --head-dim 128 --phase forward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "triton-s16384-d128-forward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation triton --seq-len 16384 --head-dim 128 --phase forward-backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "triton-s16384-d128-forward-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation triton --seq-len 16384 --head-dim 64 --phase backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "triton-s16384-d64-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation triton --seq-len 16384 --head-dim 64 --phase forward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "triton-s16384-d64-forward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation triton --seq-len 16384 --head-dim 64 --phase forward-backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "triton-s16384-d64-forward-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation triton --seq-len 2048 --head-dim 128 --phase backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "triton-s2048-d128-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation triton --seq-len 2048 --head-dim 128 --phase forward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "triton-s2048-d128-forward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation triton --seq-len 2048 --head-dim 128 --phase forward-backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "triton-s2048-d128-forward-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation triton --seq-len 2048 --head-dim 64 --phase backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "triton-s2048-d64-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation triton --seq-len 2048 --head-dim 64 --phase forward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "triton-s2048-d64-forward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation triton --seq-len 2048 --head-dim 64 --phase forward-backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "triton-s2048-d64-forward-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation triton --seq-len 512 --head-dim 128 --phase backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "triton-s512-d128-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation triton --seq-len 512 --head-dim 128 --phase forward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "triton-s512-d128-forward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation triton --seq-len 512 --head-dim 128 --phase forward-backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "triton-s512-d128-forward-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation triton --seq-len 512 --head-dim 64 --phase backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "triton-s512-d64-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation triton --seq-len 512 --head-dim 64 --phase forward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "triton-s512-d64-forward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation triton --seq-len 512 --head-dim 64 --phase forward-backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "triton-s512-d64-forward-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation triton --seq-len 8192 --head-dim 128 --phase backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "triton-s8192-d128-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation triton --seq-len 8192 --head-dim 128 --phase forward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "triton-s8192-d128-forward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation triton --seq-len 8192 --head-dim 128 --phase forward-backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "triton-s8192-d128-forward-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation triton --seq-len 8192 --head-dim 64 --phase backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "triton-s8192-d64-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation triton --seq-len 8192 --head-dim 64 --phase forward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "triton-s8192-d64-forward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      },
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.flash_benchmark --implementation triton --seq-len 8192 --head-dim 64 --phase forward-backward --warmup-ms 100 --rep-ms 300 --seed 42",
+        "config_id": "triton-s8192-d64-forward-backward",
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "milliseconds": 300.0,
+          "quantiles": [
+            0.2,
+            0.5,
+            0.8
+          ]
+        },
+        "seed": 42,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "CUDA events; prepare excluded from backward-only latency",
+        "warmup": {
+          "milliseconds": 100.0
+        }
+      }
+    ],
+    "official_attention_tests": [
+      {
+        "allocator": {
+          "allocator_fraction": 0.48421737046550567,
+          "allocator_limit_mib": 23552,
+          "device": 0,
+          "total_memory_mib": 48639.3125
+        },
+        "command": "python -m student_scripts.a2k.official_tests --official-test ../assignment2-systems/tests/test_attention.py",
+        "config_id": null,
+        "free_memory_mib_at_start": 48233.125,
+        "measurement": {
+          "official_test_sha256": "88da8191dbfd36362d720c635a6161175dbdac5fe5663d32d2405367b77ec6e3"
+        },
+        "seed": 0,
+        "status": "ok",
+        "tf32_enabled": false,
+        "timer": "pytest wall time",
+        "warmup": {
+          "kind": "official tests"
+        }
+      }
+    ]
+  },
+  "formal_process_count": 117,
+  "fp32_correctness_tf32_enabled": false,
+  "hard_limit_mib": 24576,
+  "hardware": {
+    "driver_version": "550.163.01",
+    "free_memory_mib_at_start": 48233.125,
+    "gpu_name": "NVIDIA GeForce RTX 4090",
+    "memory_free_mib": 48054.0,
+    "memory_total_mib": 49140.0,
+    "power_limit_w": 450.0,
+    "pstate": "P0"
+  },
+  "minimum_free_memory_mib_at_start": 48233.125,
+  "performance_dtype": "bfloat16",
+  "schema_version": 1,
+  "software": {
+    "python": "3.12.13",
+    "pytorch": "2.6.0+cu124",
+    "pytorch_compiled_cuda": "12.4",
+    "triton": "3.2.0"
+  },
+  "starter_commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+  "table_rows": {
+    "attention_baseline": 18,
+    "checkpointing": 7,
+    "compile_comparison": 24,
+    "flash_benchmark": 66
+  },
+  "timer": "CUDA events for steady-state latency; wall time only for compile/Triton cold starts"
+}

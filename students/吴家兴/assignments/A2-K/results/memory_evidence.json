@@ -1,0 +1,53 @@
+{
+  "allocator": {
+    "allocator_fraction": 0.48421737046550567,
+    "allocator_limit_mib": 23552,
+    "observed_allocator_limits_mib": [
+      23552
+    ]
+  },
+  "formal_process_summaries": [
+    {
+      "error_rows": 0,
+      "experiment": "checkpointing",
+      "max_peak_allocated_mib": 19664.1376953125,
+      "max_peak_reserved_mib": 20192.0,
+      "oom_rows": 0,
+      "row_count": 7,
+      "successful_rows": 7
+    },
+    {
+      "error_rows": 0,
+      "experiment": "attention_baseline",
+      "max_peak_allocated_mib": 858.3125,
+      "max_peak_reserved_mib": 1174.0,
+      "oom_rows": 0,
+      "row_count": 18,
+      "successful_rows": 18
+    },
+    {
+      "error_rows": 0,
+      "experiment": "compile_comparison",
+      "max_peak_allocated_mib": 2496.8740234375,
+      "max_peak_reserved_mib": 3796.0,
+      "oom_rows": 0,
+      "row_count": 24,
+      "successful_rows": 24
+    },
+    {
+      "error_rows": 0,
+      "experiment": "flash_benchmark",
+      "max_peak_allocated_mib": 3364.375,
+      "max_peak_reserved_mib": 4650.0,
+      "oom_rows": 0,
+      "row_count": 66,
+      "successful_rows": 66
+    }
+  ],
+  "hard_limit_mib": 24576,
+  "note": "Aggregate maxima across all successful checkpoint, attention, compile, and Flash benchmark rows. OOM rows remain in the CSVs.",
+  "pytorch_peak_allocated_mib": 19664.1376953125,
+  "pytorch_peak_reserved_mib": 20192.0,
+  "schema_version": 1,
+  "within_24gib": true
+}
