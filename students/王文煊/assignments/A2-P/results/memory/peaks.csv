@@ -1,0 +1,7 @@
+run,model_size,batch_size,context_length,mode,dtype,active_gib_now,peak_allocated_gib,reserved_gib_now,peak_reserved_gib
+large_ctx128_bs4_train_step_fp32,large,4,128,train_step,fp32,14.8785,15.1389,16.6973,16.6973
+large_ctx2048_bs1_train_step_fp32,large,1,2048,train_step,fp32,14.5679,45.4018,46.082,46.082
+large_ctx2048_bs2_forward_fp32,large,2,2048,forward,fp32,3.7253,6.3467,7.0703,7.0703
+xl_ctx128_bs4_forward_fp32,xl,4,128,forward,fp32,12.825,12.908,12.9355,12.9355
+xl_ctx2048_bs4_forward_bf16,xl,4,2048,forward,bf16,12.8257,25.3526,27.459,27.459
+xl_ctx2048_bs4_forward_fp32,xl,4,2048,forward,fp32,12.8257,21.2993,23.4648,23.4648
