@@ -1,0 +1,1321 @@
+{
+  "summary": {
+    "configurations": 36,
+    "passed": 36,
+    "failed": 0,
+    "tf32_enabled": false
+  },
+  "allocator": {
+    "allocator_limit_mib": 23552,
+    "allocator_fraction": 0.48421737046550567,
+    "device_name": "NVIDIA GeForce RTX 4090",
+    "torch_total_memory_mib": 48639.3125
+  },
+  "gpu": {
+    "gpu_name": "NVIDIA GeForce RTX 4090",
+    "memory_total_mib": 49140.0,
+    "memory_free_mib_at_start": 48234.0,
+    "driver_version": "550.163.01",
+    "power_limit_w": 450.0,
+    "pstate": "P0"
+  },
+  "command": "python -m student_scripts.a2k.run_correctness --output results/correctness.json",
+  "records": [
+    {
+      "implementation": "pytorch_tiled",
+      "seed": 0,
+      "shape": [
+        1,
+        128,
+        32
+      ],
+      "dtype": "float32",
+      "is_causal": false,
+      "absolute_tolerance": 0.02,
+      "relative_tolerance": 0.02,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 4.172325134277344e-07,
+          "max_relative_error": 7.153541810112074e-05
+        },
+        "logsumexp": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 9.232778097612027e-08
+        },
+        "dQ": {
+          "max_absolute_error": 3.5762786865234375e-07,
+          "max_relative_error": 6.449408829212189e-05
+        },
+        "dK": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 0.00010512302833376452
+        },
+        "dV": {
+          "max_absolute_error": 2.384185791015625e-07,
+          "max_relative_error": 7.955628825584427e-05
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "triton",
+      "seed": 0,
+      "shape": [
+        1,
+        128,
+        32
+      ],
+      "dtype": "float32",
+      "is_causal": false,
+      "absolute_tolerance": 0.02,
+      "relative_tolerance": 0.02,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 2.980232238769531e-07,
+          "max_relative_error": 8.296134183183312e-05
+        },
+        "logsumexp": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 9.232778097612027e-08
+        },
+        "dQ": {
+          "max_absolute_error": 5.364418029785156e-07,
+          "max_relative_error": 4.6495002607116476e-05
+        },
+        "dK": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 8.603091555414721e-05
+        },
+        "dV": {
+          "max_absolute_error": 2.384185791015625e-07,
+          "max_relative_error": 6.658956408500671e-05
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "pytorch_tiled",
+      "seed": 0,
+      "shape": [
+        1,
+        128,
+        32
+      ],
+      "dtype": "float32",
+      "is_causal": true,
+      "absolute_tolerance": 0.02,
+      "relative_tolerance": 0.02,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 4.172325134277344e-07,
+          "max_relative_error": 8.381902443943545e-05
+        },
+        "logsumexp": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 2.624919659410807e-07
+        },
+        "dQ": {
+          "max_absolute_error": 4.172325134277344e-07,
+          "max_relative_error": 0.00015615228039678186
+        },
+        "dK": {
+          "max_absolute_error": 8.344650268554688e-07,
+          "max_relative_error": 9.086215140996501e-05
+        },
+        "dV": {
+          "max_absolute_error": 7.152557373046875e-07,
+          "max_relative_error": 0.00016945283277891576
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "triton",
+      "seed": 0,
+      "shape": [
+        1,
+        128,
+        32
+      ],
+      "dtype": "float32",
+      "is_causal": true,
+      "absolute_tolerance": 0.02,
+      "relative_tolerance": 0.02,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 7.770722004352137e-05
+        },
+        "logsumexp": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 2.624919659410807e-07
+        },
+        "dQ": {
+          "max_absolute_error": 3.5762786865234375e-07,
+          "max_relative_error": 0.00015615228039678186
+        },
+        "dK": {
+          "max_absolute_error": 8.344650268554688e-07,
+          "max_relative_error": 9.604263323126361e-05
+        },
+        "dV": {
+          "max_absolute_error": 7.152557373046875e-07,
+          "max_relative_error": 0.00013358979776967317
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "pytorch_tiled",
+      "seed": 0,
+      "shape": [
+        1,
+        128,
+        64
+      ],
+      "dtype": "float32",
+      "is_causal": false,
+      "absolute_tolerance": 0.02,
+      "relative_tolerance": 0.02,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 2.980232238769531e-07,
+          "max_relative_error": 9.868029155768454e-05
+        },
+        "logsumexp": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 9.270789291804249e-08
+        },
+        "dQ": {
+          "max_absolute_error": 3.5762786865234375e-07,
+          "max_relative_error": 6.705522537231445e-05
+        },
+        "dK": {
+          "max_absolute_error": 2.980232238769531e-07,
+          "max_relative_error": 0.0001341104507446289
+        },
+        "dV": {
+          "max_absolute_error": 2.2351741790771484e-07,
+          "max_relative_error": 8.19563792902045e-05
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "triton",
+      "seed": 0,
+      "shape": [
+        1,
+        128,
+        64
+      ],
+      "dtype": "float32",
+      "is_causal": false,
+      "absolute_tolerance": 0.02,
+      "relative_tolerance": 0.02,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 4.172325134277344e-07,
+          "max_relative_error": 8.3010527305305e-05
+        },
+        "logsumexp": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 9.163801450995379e-08
+        },
+        "dQ": {
+          "max_absolute_error": 3.2782554626464844e-07,
+          "max_relative_error": 6.705522537231445e-05
+        },
+        "dK": {
+          "max_absolute_error": 1.862645149230957e-07,
+          "max_relative_error": 6.332993507385254e-05
+        },
+        "dV": {
+          "max_absolute_error": 1.6391277313232422e-07,
+          "max_relative_error": 6.845220923423767e-05
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "pytorch_tiled",
+      "seed": 0,
+      "shape": [
+        1,
+        128,
+        64
+      ],
+      "dtype": "float32",
+      "is_causal": true,
+      "absolute_tolerance": 0.02,
+      "relative_tolerance": 0.02,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 7.152557373046875e-07,
+          "max_relative_error": 0.00014045508578419685
+        },
+        "logsumexp": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 2.3154456130214385e-07
+        },
+        "dQ": {
+          "max_absolute_error": 7.216681865429564e-07,
+          "max_relative_error": 0.0007216681260615587
+        },
+        "dK": {
+          "max_absolute_error": 1.0132789611816406e-06,
+          "max_relative_error": 0.0006109476089477539
+        },
+        "dV": {
+          "max_absolute_error": 1.0728836059570312e-06,
+          "max_relative_error": 7.947660196805373e-05
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "triton",
+      "seed": 0,
+      "shape": [
+        1,
+        128,
+        64
+      ],
+      "dtype": "float32",
+      "is_causal": true,
+      "absolute_tolerance": 0.02,
+      "relative_tolerance": 0.02,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 0.00010049551929114386
+        },
+        "logsumexp": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 3.087261006839981e-07
+        },
+        "dQ": {
+          "max_absolute_error": 7.216681865429564e-07,
+          "max_relative_error": 0.0007216681260615587
+        },
+        "dK": {
+          "max_absolute_error": 7.152557373046875e-07,
+          "max_relative_error": 0.0005736947059631348
+        },
+        "dV": {
+          "max_absolute_error": 7.748603820800781e-07,
+          "max_relative_error": 0.00018253921007271856
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "pytorch_tiled",
+      "seed": 0,
+      "shape": [
+        1,
+        128,
+        128
+      ],
+      "dtype": "float32",
+      "is_causal": false,
+      "absolute_tolerance": 0.02,
+      "relative_tolerance": 0.02,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 6.556510925292969e-07,
+          "max_relative_error": 0.0001916094042826444
+        },
+        "logsumexp": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 9.255471411506733e-08
+        },
+        "dQ": {
+          "max_absolute_error": 3.5762786865234375e-07,
+          "max_relative_error": 0.000105617793451529
+        },
+        "dK": {
+          "max_absolute_error": 3.2782554626464844e-07,
+          "max_relative_error": 8.073401841102168e-05
+        },
+        "dV": {
+          "max_absolute_error": 2.60770320892334e-07,
+          "max_relative_error": 0.00011175870167789981
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "triton",
+      "seed": 0,
+      "shape": [
+        1,
+        128,
+        128
+      ],
+      "dtype": "float32",
+      "is_causal": false,
+      "absolute_tolerance": 0.02,
+      "relative_tolerance": 0.02,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 8.940696716308594e-07,
+          "max_relative_error": 0.00019831348618026823
+        },
+        "logsumexp": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 9.468572415016752e-08
+        },
+        "dQ": {
+          "max_absolute_error": 4.172325134277344e-07,
+          "max_relative_error": 0.000105617793451529
+        },
+        "dK": {
+          "max_absolute_error": 2.980232238769531e-07,
+          "max_relative_error": 9.419207344762981e-05
+        },
+        "dV": {
+          "max_absolute_error": 3.427267074584961e-07,
+          "max_relative_error": 0.00010430812108097598
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "pytorch_tiled",
+      "seed": 0,
+      "shape": [
+        1,
+        128,
+        128
+      ],
+      "dtype": "float32",
+      "is_causal": true,
+      "absolute_tolerance": 0.02,
+      "relative_tolerance": 0.02,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 7.059425115585327e-07,
+          "max_relative_error": 0.00025312876095995307
+        },
+        "logsumexp": {
+          "max_absolute_error": 5.960464477539062e-07,
+          "max_relative_error": 3.5951916288468055e-07
+        },
+        "dQ": {
+          "max_absolute_error": 6.556510925292969e-07,
+          "max_relative_error": 0.0005102962604723871
+        },
+        "dK": {
+          "max_absolute_error": 1.1920928955078125e-06,
+          "max_relative_error": 0.00022181720123626292
+        },
+        "dV": {
+          "max_absolute_error": 1.7285346984863281e-06,
+          "max_relative_error": 0.00017881391977425665
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "triton",
+      "seed": 0,
+      "shape": [
+        1,
+        128,
+        128
+      ],
+      "dtype": "float32",
+      "is_causal": true,
+      "absolute_tolerance": 0.02,
+      "relative_tolerance": 0.02,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 8.344650268554688e-07,
+          "max_relative_error": 0.0002616675046738237
+        },
+        "logsumexp": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 3.5951916288468055e-07
+        },
+        "dQ": {
+          "max_absolute_error": 8.344650268554688e-07,
+          "max_relative_error": 0.0005102962604723871
+        },
+        "dK": {
+          "max_absolute_error": 1.1920928955078125e-06,
+          "max_relative_error": 0.0002739812480285764
+        },
+        "dV": {
+          "max_absolute_error": 1.6689300537109375e-06,
+          "max_relative_error": 0.0001545995328342542
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "pytorch_tiled",
+      "seed": 1,
+      "shape": [
+        1,
+        128,
+        32
+      ],
+      "dtype": "bfloat16",
+      "is_causal": false,
+      "absolute_tolerance": 0.06,
+      "relative_tolerance": 0.06,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.0078125,
+          "max_relative_error": 1.6875
+        },
+        "logsumexp": {
+          "max_absolute_error": 0.024898052215576172,
+          "max_relative_error": 0.004799624439328909
+        },
+        "dQ": {
+          "max_absolute_error": 0.00390625,
+          "max_relative_error": 1.9531248807907104
+        },
+        "dK": {
+          "max_absolute_error": 0.0048828125,
+          "max_relative_error": 1.7929075956344604
+        },
+        "dV": {
+          "max_absolute_error": 0.0078125,
+          "max_relative_error": 1.1791044473648071
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "triton",
+      "seed": 1,
+      "shape": [
+        1,
+        128,
+        32
+      ],
+      "dtype": "bfloat16",
+      "is_causal": false,
+      "absolute_tolerance": 0.06,
+      "relative_tolerance": 0.06,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.0078125,
+          "max_relative_error": 1.8333333730697632
+        },
+        "logsumexp": {
+          "max_absolute_error": 0.024898052215576172,
+          "max_relative_error": 0.004799624439328909
+        },
+        "dQ": {
+          "max_absolute_error": 0.00390625,
+          "max_relative_error": 2.410888671875
+        },
+        "dK": {
+          "max_absolute_error": 0.0048828125,
+          "max_relative_error": 1.8081663846969604
+        },
+        "dV": {
+          "max_absolute_error": 0.0078125,
+          "max_relative_error": 1.1791044473648071
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "pytorch_tiled",
+      "seed": 1,
+      "shape": [
+        1,
+        128,
+        32
+      ],
+      "dtype": "bfloat16",
+      "is_causal": true,
+      "absolute_tolerance": 0.06,
+      "relative_tolerance": 0.06,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.01171875,
+          "max_relative_error": 2.361297607421875
+        },
+        "logsumexp": {
+          "max_absolute_error": 0.02323436737060547,
+          "max_relative_error": 0.005548505578190088
+        },
+        "dQ": {
+          "max_absolute_error": 0.015625,
+          "max_relative_error": 1.0547637939453125
+        },
+        "dK": {
+          "max_absolute_error": 0.015625,
+          "max_relative_error": 2.01416015625
+        },
+        "dV": {
+          "max_absolute_error": 0.015625,
+          "max_relative_error": 1.8406593799591064
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "triton",
+      "seed": 1,
+      "shape": [
+        1,
+        128,
+        32
+      ],
+      "dtype": "bfloat16",
+      "is_causal": true,
+      "absolute_tolerance": 0.06,
+      "relative_tolerance": 0.06,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.01171875,
+          "max_relative_error": 2.548217535018921
+        },
+        "logsumexp": {
+          "max_absolute_error": 0.02323436737060547,
+          "max_relative_error": 0.005548505578190088
+        },
+        "dQ": {
+          "max_absolute_error": 0.015625,
+          "max_relative_error": 1.110076904296875
+        },
+        "dK": {
+          "max_absolute_error": 0.015625,
+          "max_relative_error": 2.02178955078125
+        },
+        "dV": {
+          "max_absolute_error": 0.015625,
+          "max_relative_error": 1.8406593799591064
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "pytorch_tiled",
+      "seed": 1,
+      "shape": [
+        1,
+        128,
+        64
+      ],
+      "dtype": "bfloat16",
+      "is_causal": false,
+      "absolute_tolerance": 0.06,
+      "relative_tolerance": 0.06,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.0078125,
+          "max_relative_error": 1.2969969511032104
+        },
+        "logsumexp": {
+          "max_absolute_error": 0.026352882385253906,
+          "max_relative_error": 0.004960542544722557
+        },
+        "dQ": {
+          "max_absolute_error": 0.00390625,
+          "max_relative_error": 0.9288787245750427
+        },
+        "dK": {
+          "max_absolute_error": 0.00439453125,
+          "max_relative_error": 1.4228819608688354
+        },
+        "dV": {
+          "max_absolute_error": 0.00390625,
+          "max_relative_error": 0.9727477431297302
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "triton",
+      "seed": 1,
+      "shape": [
+        1,
+        128,
+        64
+      ],
+      "dtype": "bfloat16",
+      "is_causal": false,
+      "absolute_tolerance": 0.06,
+      "relative_tolerance": 0.06,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.0078125,
+          "max_relative_error": 1.4190672636032104
+        },
+        "logsumexp": {
+          "max_absolute_error": 0.026352882385253906,
+          "max_relative_error": 0.004960542544722557
+        },
+        "dQ": {
+          "max_absolute_error": 0.00390625,
+          "max_relative_error": 0.8811950087547302
+        },
+        "dK": {
+          "max_absolute_error": 0.00439453125,
+          "max_relative_error": 1.443862795829773
+        },
+        "dV": {
+          "max_absolute_error": 0.00390625,
+          "max_relative_error": 0.9727477431297302
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "pytorch_tiled",
+      "seed": 1,
+      "shape": [
+        1,
+        128,
+        64
+      ],
+      "dtype": "bfloat16",
+      "is_causal": true,
+      "absolute_tolerance": 0.06,
+      "relative_tolerance": 0.06,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.015625,
+          "max_relative_error": 1.653594732284546
+        },
+        "logsumexp": {
+          "max_absolute_error": 0.02205371856689453,
+          "max_relative_error": 0.004845195449888706
+        },
+        "dQ": {
+          "max_absolute_error": 0.0078125,
+          "max_relative_error": 2.399444580078125
+        },
+        "dK": {
+          "max_absolute_error": 0.01171875,
+          "max_relative_error": 1.5166666507720947
+        },
+        "dV": {
+          "max_absolute_error": 0.0078125,
+          "max_relative_error": 1.102447509765625
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "triton",
+      "seed": 1,
+      "shape": [
+        1,
+        128,
+        64
+      ],
+      "dtype": "bfloat16",
+      "is_causal": true,
+      "absolute_tolerance": 0.06,
+      "relative_tolerance": 0.06,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.015625,
+          "max_relative_error": 2.1514892578125
+        },
+        "logsumexp": {
+          "max_absolute_error": 0.02205371856689453,
+          "max_relative_error": 0.004845195449888706
+        },
+        "dQ": {
+          "max_absolute_error": 0.0078125,
+          "max_relative_error": 2.674102544784546
+        },
+        "dK": {
+          "max_absolute_error": 0.01171875,
+          "max_relative_error": 1.7333333492279053
+        },
+        "dV": {
+          "max_absolute_error": 0.0078125,
+          "max_relative_error": 1.102447509765625
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "pytorch_tiled",
+      "seed": 1,
+      "shape": [
+        1,
+        128,
+        128
+      ],
+      "dtype": "bfloat16",
+      "is_causal": false,
+      "absolute_tolerance": 0.06,
+      "relative_tolerance": 0.06,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.0078125,
+          "max_relative_error": 2.0780563354492188
+        },
+        "logsumexp": {
+          "max_absolute_error": 0.024870872497558594,
+          "max_relative_error": 0.0047129676677286625
+        },
+        "dQ": {
+          "max_absolute_error": 0.00390625,
+          "max_relative_error": 1.5745161771774292
+        },
+        "dK": {
+          "max_absolute_error": 0.005859375,
+          "max_relative_error": 3.3144655227661133
+        },
+        "dV": {
+          "max_absolute_error": 0.00390625,
+          "max_relative_error": 1.3809202909469604
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "triton",
+      "seed": 1,
+      "shape": [
+        1,
+        128,
+        128
+      ],
+      "dtype": "bfloat16",
+      "is_causal": false,
+      "absolute_tolerance": 0.06,
+      "relative_tolerance": 0.06,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.0078125,
+          "max_relative_error": 2.2153854370117188
+        },
+        "logsumexp": {
+          "max_absolute_error": 0.024870872497558594,
+          "max_relative_error": 0.0047129676677286625
+        },
+        "dQ": {
+          "max_absolute_error": 0.00390625,
+          "max_relative_error": 1.5629370212554932
+        },
+        "dK": {
+          "max_absolute_error": 0.005859375,
+          "max_relative_error": 3.1886792182922363
+        },
+        "dV": {
+          "max_absolute_error": 0.00390625,
+          "max_relative_error": 1.3809202909469604
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "pytorch_tiled",
+      "seed": 1,
+      "shape": [
+        1,
+        128,
+        128
+      ],
+      "dtype": "bfloat16",
+      "is_causal": true,
+      "absolute_tolerance": 0.06,
+      "relative_tolerance": 0.06,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.015625,
+          "max_relative_error": 3.7403104305267334
+        },
+        "logsumexp": {
+          "max_absolute_error": 0.023641586303710938,
+          "max_relative_error": 0.005446041468530893
+        },
+        "dQ": {
+          "max_absolute_error": 0.01171875,
+          "max_relative_error": 3.1452176570892334
+        },
+        "dK": {
+          "max_absolute_error": 0.01171875,
+          "max_relative_error": 1.5668449401855469
+        },
+        "dV": {
+          "max_absolute_error": 0.015625,
+          "max_relative_error": 1.9340513944625854
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "triton",
+      "seed": 1,
+      "shape": [
+        1,
+        128,
+        128
+      ],
+      "dtype": "bfloat16",
+      "is_causal": true,
+      "absolute_tolerance": 0.06,
+      "relative_tolerance": 0.06,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.015625,
+          "max_relative_error": 3.4503934383392334
+        },
+        "logsumexp": {
+          "max_absolute_error": 0.023641586303710938,
+          "max_relative_error": 0.005445951595902443
+        },
+        "dQ": {
+          "max_absolute_error": 0.01171875,
+          "max_relative_error": 3.7860867977142334
+        },
+        "dK": {
+          "max_absolute_error": 0.015625,
+          "max_relative_error": 1.4686583280563354
+        },
+        "dV": {
+          "max_absolute_error": 0.015625,
+          "max_relative_error": 1.9340513944625854
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "pytorch_tiled",
+      "seed": 2,
+      "shape": [
+        1,
+        128,
+        32
+      ],
+      "dtype": "bfloat16",
+      "is_causal": false,
+      "absolute_tolerance": 0.06,
+      "relative_tolerance": 0.06,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.01171875,
+          "max_relative_error": 1.3961790800094604
+        },
+        "logsumexp": {
+          "max_absolute_error": 0.024041175842285156,
+          "max_relative_error": 0.004472776781767607
+        },
+        "dQ": {
+          "max_absolute_error": 0.005859375,
+          "max_relative_error": 1.670454502105713
+        },
+        "dK": {
+          "max_absolute_error": 0.005859375,
+          "max_relative_error": 1.4038084745407104
+        },
+        "dV": {
+          "max_absolute_error": 0.0078125,
+          "max_relative_error": 1.0847457647323608
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "triton",
+      "seed": 2,
+      "shape": [
+        1,
+        128,
+        32
+      ],
+      "dtype": "bfloat16",
+      "is_causal": false,
+      "absolute_tolerance": 0.06,
+      "relative_tolerance": 0.06,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.01171875,
+          "max_relative_error": 1.6326903104782104
+        },
+        "logsumexp": {
+          "max_absolute_error": 0.024041175842285156,
+          "max_relative_error": 0.004472776781767607
+        },
+        "dQ": {
+          "max_absolute_error": 0.005859375,
+          "max_relative_error": 1.6818181276321411
+        },
+        "dK": {
+          "max_absolute_error": 0.0078125,
+          "max_relative_error": 1.4038084745407104
+        },
+        "dV": {
+          "max_absolute_error": 0.0078125,
+          "max_relative_error": 1.0847457647323608
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "pytorch_tiled",
+      "seed": 2,
+      "shape": [
+        1,
+        128,
+        32
+      ],
+      "dtype": "bfloat16",
+      "is_causal": true,
+      "absolute_tolerance": 0.06,
+      "relative_tolerance": 0.06,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.009765625,
+          "max_relative_error": 1.609375
+        },
+        "logsumexp": {
+          "max_absolute_error": 0.02386474609375,
+          "max_relative_error": 0.00871366634964943
+        },
+        "dQ": {
+          "max_absolute_error": 0.0078125,
+          "max_relative_error": 1.3465880155563354
+        },
+        "dK": {
+          "max_absolute_error": 0.015625,
+          "max_relative_error": 2.13623046875
+        },
+        "dV": {
+          "max_absolute_error": 0.015625,
+          "max_relative_error": 1.2589285373687744
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "triton",
+      "seed": 2,
+      "shape": [
+        1,
+        128,
+        32
+      ],
+      "dtype": "bfloat16",
+      "is_causal": true,
+      "absolute_tolerance": 0.06,
+      "relative_tolerance": 0.06,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.0078125,
+          "max_relative_error": 1.80078125
+        },
+        "logsumexp": {
+          "max_absolute_error": 0.02386474609375,
+          "max_relative_error": 0.00871366634964943
+        },
+        "dQ": {
+          "max_absolute_error": 0.0078125,
+          "max_relative_error": 1.4190672636032104
+        },
+        "dK": {
+          "max_absolute_error": 0.015625,
+          "max_relative_error": 2.25830078125
+        },
+        "dV": {
+          "max_absolute_error": 0.015625,
+          "max_relative_error": 1.2589285373687744
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "pytorch_tiled",
+      "seed": 2,
+      "shape": [
+        1,
+        128,
+        64
+      ],
+      "dtype": "bfloat16",
+      "is_causal": false,
+      "absolute_tolerance": 0.06,
+      "relative_tolerance": 0.06,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.005859375,
+          "max_relative_error": 1.5869139432907104
+        },
+        "logsumexp": {
+          "max_absolute_error": 0.023678302764892578,
+          "max_relative_error": 0.004510153084993362
+        },
+        "dQ": {
+          "max_absolute_error": 0.005859375,
+          "max_relative_error": 0.700950562953949
+        },
+        "dK": {
+          "max_absolute_error": 0.005859375,
+          "max_relative_error": 1.3122557401657104
+        },
+        "dV": {
+          "max_absolute_error": 0.00390625,
+          "max_relative_error": 0.7095336318016052
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "triton",
+      "seed": 2,
+      "shape": [
+        1,
+        128,
+        64
+      ],
+      "dtype": "bfloat16",
+      "is_causal": false,
+      "absolute_tolerance": 0.06,
+      "relative_tolerance": 0.06,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.005859375,
+          "max_relative_error": 1.4572142362594604
+        },
+        "logsumexp": {
+          "max_absolute_error": 0.023678302764892578,
+          "max_relative_error": 0.004510153084993362
+        },
+        "dQ": {
+          "max_absolute_error": 0.005859375,
+          "max_relative_error": 0.7095336318016052
+        },
+        "dK": {
+          "max_absolute_error": 0.005859375,
+          "max_relative_error": 1.3732908964157104
+        },
+        "dV": {
+          "max_absolute_error": 0.00390625,
+          "max_relative_error": 0.7095336318016052
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "pytorch_tiled",
+      "seed": 2,
+      "shape": [
+        1,
+        128,
+        64
+      ],
+      "dtype": "bfloat16",
+      "is_causal": true,
+      "absolute_tolerance": 0.06,
+      "relative_tolerance": 0.06,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.015625,
+          "max_relative_error": 3.940582036972046
+        },
+        "logsumexp": {
+          "max_absolute_error": 0.025496959686279297,
+          "max_relative_error": 0.0066320025362074375
+        },
+        "dQ": {
+          "max_absolute_error": 0.0078125,
+          "max_relative_error": 1.4419554471969604
+        },
+        "dK": {
+          "max_absolute_error": 0.015625,
+          "max_relative_error": 2.2296295166015625
+        },
+        "dV": {
+          "max_absolute_error": 0.015625,
+          "max_relative_error": 0.8926391005516052
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "triton",
+      "seed": 2,
+      "shape": [
+        1,
+        128,
+        64
+      ],
+      "dtype": "bfloat16",
+      "is_causal": true,
+      "absolute_tolerance": 0.06,
+      "relative_tolerance": 0.06,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.015625,
+          "max_relative_error": 3.833770513534546
+        },
+        "logsumexp": {
+          "max_absolute_error": 0.025496959686279297,
+          "max_relative_error": 0.0066320025362074375
+        },
+        "dQ": {
+          "max_absolute_error": 0.0078125,
+          "max_relative_error": 1.3216911554336548
+        },
+        "dK": {
+          "max_absolute_error": 0.015625,
+          "max_relative_error": 2.3333332538604736
+        },
+        "dV": {
+          "max_absolute_error": 0.015625,
+          "max_relative_error": 0.8926391005516052
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "pytorch_tiled",
+      "seed": 2,
+      "shape": [
+        1,
+        128,
+        128
+      ],
+      "dtype": "bfloat16",
+      "is_causal": false,
+      "absolute_tolerance": 0.06,
+      "relative_tolerance": 0.06,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.005859375,
+          "max_relative_error": 1.8997191190719604
+        },
+        "logsumexp": {
+          "max_absolute_error": 0.023961544036865234,
+          "max_relative_error": 0.004585548769682646
+        },
+        "dQ": {
+          "max_absolute_error": 0.005859375,
+          "max_relative_error": 1.9569395780563354
+        },
+        "dK": {
+          "max_absolute_error": 0.0078125,
+          "max_relative_error": 2.124786376953125
+        },
+        "dV": {
+          "max_absolute_error": 0.00390625,
+          "max_relative_error": 1.178741455078125
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "triton",
+      "seed": 2,
+      "shape": [
+        1,
+        128,
+        128
+      ],
+      "dtype": "bfloat16",
+      "is_causal": false,
+      "absolute_tolerance": 0.06,
+      "relative_tolerance": 0.06,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.005859375,
+          "max_relative_error": 1.8310545682907104
+        },
+        "logsumexp": {
+          "max_absolute_error": 0.023961544036865234,
+          "max_relative_error": 0.004585548769682646
+        },
+        "dQ": {
+          "max_absolute_error": 0.005859375,
+          "max_relative_error": 1.9721983671188354
+        },
+        "dK": {
+          "max_absolute_error": 0.0078125,
+          "max_relative_error": 2.155303955078125
+        },
+        "dV": {
+          "max_absolute_error": 0.00390625,
+          "max_relative_error": 1.178741455078125
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "pytorch_tiled",
+      "seed": 2,
+      "shape": [
+        1,
+        128,
+        128
+      ],
+      "dtype": "bfloat16",
+      "is_causal": true,
+      "absolute_tolerance": 0.06,
+      "relative_tolerance": 0.06,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.015625,
+          "max_relative_error": 2.178192138671875
+        },
+        "logsumexp": {
+          "max_absolute_error": 0.022534847259521484,
+          "max_relative_error": 0.005279194097965956
+        },
+        "dQ": {
+          "max_absolute_error": 0.009765625,
+          "max_relative_error": 2.0657894611358643
+        },
+        "dK": {
+          "max_absolute_error": 0.01171875,
+          "max_relative_error": 3.313953399658203
+        },
+        "dV": {
+          "max_absolute_error": 0.015625,
+          "max_relative_error": 2.5
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "triton",
+      "seed": 2,
+      "shape": [
+        1,
+        128,
+        128
+      ],
+      "dtype": "bfloat16",
+      "is_causal": true,
+      "absolute_tolerance": 0.06,
+      "relative_tolerance": 0.06,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.015625,
+          "max_relative_error": 2.46429443359375
+        },
+        "logsumexp": {
+          "max_absolute_error": 0.02253437042236328,
+          "max_relative_error": 0.005279310047626495
+        },
+        "dQ": {
+          "max_absolute_error": 0.0078125,
+          "max_relative_error": 2.0723683834075928
+        },
+        "dK": {
+          "max_absolute_error": 0.01171875,
+          "max_relative_error": 3.034883737564087
+        },
+        "dV": {
+          "max_absolute_error": 0.015625,
+          "max_relative_error": 2.5
+        }
+      },
+      "status": "pass"
+    }
+  ]
+}

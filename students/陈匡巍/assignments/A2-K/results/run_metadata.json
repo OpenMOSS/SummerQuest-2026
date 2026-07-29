@@ -1,0 +1,63 @@
+{
+  "starter_commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+  "seed": 2026,
+  "hardware": {
+    "gpu_name": "NVIDIA GeForce RTX 4090",
+    "memory_total_mib": 49140.0,
+    "memory_free_mib_at_start": 48234.0,
+    "driver_version": "550.163.01",
+    "power_limit_w": 450.0,
+    "pstate": "P0"
+  },
+  "hardware_disclosure": "The physical RTX 4090 reports 49140 MiB; every formal process was constrained to the assignment's stricter 23552 MiB PyTorch allocator budget.",
+  "allocator": {
+    "allocator_limit_mib": 23552,
+    "allocator_fraction": 0.48421737046550567,
+    "device_name": "NVIDIA GeForce RTX 4090",
+    "torch_total_memory_mib": 48639.3125
+  },
+  "software": {
+    "driver": "550.163.01",
+    "cuda": "12.8",
+    "pytorch": "2.7.0+cu128",
+    "triton": "3.3.0"
+  },
+  "power_limit_w": 450.0,
+  "pstate_at_attention_start": "P0",
+  "tf32": {
+    "performance": true,
+    "fp32_correctness": false
+  },
+  "compile": {
+    "backend": "inductor",
+    "cold_start_separated": true,
+    "shape_specialization": true,
+    "cold_start_cache": "fresh process and empty TORCHINDUCTOR_CACHE_DIR per workload"
+  },
+  "timing": {
+    "attention_timer": "triton.testing.do_bench",
+    "attention_warmup_ms": 100,
+    "attention_rep_ms": 300,
+    "attention_quantiles": [
+      0.2,
+      0.5,
+      0.8
+    ],
+    "checkpoint_warmup_steps": 3,
+    "checkpoint_measurement_steps": 5
+  },
+  "correctness_summary": {
+    "configurations": 36,
+    "passed": 36,
+    "failed": 0,
+    "tf32_enabled": false
+  },
+  "commands": [
+    "python -m student_scripts.a2k.run_checkpointing --output results/checkpointing.csv",
+    "python -m student_scripts.a2k.run_compile_comparison --output results/compile_comparison.csv",
+    "python -m student_scripts.a2k.run_correctness --output results/correctness.json",
+    "python -m student_scripts.a2k.run_attention_benchmarks --flash-output results/flash_benchmark.csv --baseline-output results/attention_baseline.csv",
+    "python -m student_scripts.a2k.run_unit_tests --output results/unit_tests.txt"
+  ],
+  "process_policy": "checkpoint, compile, correctness, unit tests, and attention matrix were executed serially in fresh Python processes with CUDA_VISIBLE_DEVICES exposing one GPU"
+}
