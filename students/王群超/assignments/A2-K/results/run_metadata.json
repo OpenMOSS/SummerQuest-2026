@@ -1,0 +1,31 @@
+{
+  "seed": 42,
+  "command": "uv run --no-sync python student_scripts/a2k/flash_benchmark.py",
+  "gpu": {
+    "name": "NVIDIA GeForce RTX 4090",
+    "total_memory_gib": 23.98828125,
+    "free_memory_gib_before_run": 5.5849609375,
+    "driver_version": "560.28.03",
+    "power_limit_w": 450.0,
+    "p_state": "P2"
+  },
+  "software": {
+    "cuda_version": "12.1",
+    "pytorch_version": "2.5.1+cu121",
+    "triton_version": "3.1.0"
+  },
+  "settings": {
+    "tf32_enabled": false,
+    "allocator_limit_mib": 23552,
+    "allocator_fraction": 0.9768130292889415,
+    "timer": "triton.testing.do_bench",
+    "do_bench_warmup_ms": 100,
+    "do_bench_rep_ms": 300,
+    "do_bench_quantiles": [
+      0.2,
+      0.5,
+      0.8
+    ]
+  },
+  "timestamp": "2026-07-27T12:00:00+08:00"
+}
