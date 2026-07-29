@@ -1,0 +1,117 @@
+{
+  "configuration": {
+    "model_size": "xl",
+    "scope": "one TransformerBlock",
+    "batch_size": 1,
+    "context_length": 128,
+    "dtype": "fp32"
+  },
+  "saved_tensor_references": 40,
+  "unique_saved_storage_mib": 42.8525390625,
+  "top_five_contributors": [
+    {
+      "producer": "ViewBackward0",
+      "referenced_mib": 25.75,
+      "unique_storage_mib": 22.0,
+      "percentage_of_unique_saved_bytes": 51.33884824867255
+    },
+    {
+      "producer": "MulBackward0",
+      "referenced_mib": 7.5,
+      "unique_storage_mib": 7.5,
+      "percentage_of_unique_saved_bytes": 17.501880084774733
+    },
+    {
+      "producer": "SigmoidBackward0",
+      "referenced_mib": 10.0,
+      "unique_storage_mib": 5.0,
+      "percentage_of_unique_saved_bytes": 11.667920056516488
+    },
+    {
+      "producer": "ReshapeAliasBackward0",
+      "referenced_mib": 2.5,
+      "unique_storage_mib": 2.5,
+      "percentage_of_unique_saved_bytes": 5.833960028258244
+    },
+    {
+      "producer": "AddBackward0",
+      "referenced_mib": 3.75,
+      "unique_storage_mib": 2.5,
+      "percentage_of_unique_saved_bytes": 5.833960028258244
+    }
+  ],
+  "all_contributors": [
+    {
+      "producer": "ViewBackward0",
+      "referenced_mib": 25.75,
+      "unique_storage_mib": 22.0,
+      "percentage_of_unique_saved_bytes": 51.33884824867255
+    },
+    {
+      "producer": "MulBackward0",
+      "referenced_mib": 7.5,
+      "unique_storage_mib": 7.5,
+      "percentage_of_unique_saved_bytes": 17.501880084774733
+    },
+    {
+      "producer": "SigmoidBackward0",
+      "referenced_mib": 10.0,
+      "unique_storage_mib": 5.0,
+      "percentage_of_unique_saved_bytes": 11.667920056516488
+    },
+    {
+      "producer": "ReshapeAliasBackward0",
+      "referenced_mib": 2.5,
+      "unique_storage_mib": 2.5,
+      "percentage_of_unique_saved_bytes": 5.833960028258244
+    },
+    {
+      "producer": "AddBackward0",
+      "referenced_mib": 3.75,
+      "unique_storage_mib": 2.5,
+      "percentage_of_unique_saved_bytes": 5.833960028258244
+    },
+    {
+      "producer": "ExpBackward0",
+      "referenced_mib": 4.0,
+      "unique_storage_mib": 2.0,
+      "percentage_of_unique_saved_bytes": 4.667168022606595
+    },
+    {
+      "producer": "leaf_or_detached",
+      "referenced_mib": 2.703125,
+      "unique_storage_mib": 1.3359375,
+      "percentage_of_unique_saved_bytes": 3.117522390100499
+    },
+    {
+      "producer": "SumBackward1",
+      "referenced_mib": 0.015625,
+      "unique_storage_mib": 0.015625,
+      "percentage_of_unique_saved_bytes": 0.036462250176614024
+    },
+    {
+      "producer": "RsqrtBackward0",
+      "referenced_mib": 0.001953125,
+      "unique_storage_mib": 0.0009765625,
+      "percentage_of_unique_saved_bytes": 0.0022788906360383765
+    }
+  ],
+  "peak_allocated_mib": 854.06982421875,
+  "peak_reserved_mib": 914.0,
+  "allocator": {
+    "allocator_limit_mib": 23552,
+    "allocator_fraction": 0.48421737046550567,
+    "device_name": "NVIDIA GeForce RTX 4090",
+    "torch_total_memory_mib": 48639.3125
+  },
+  "gpu": {
+    "gpu_name": "NVIDIA GeForce RTX 4090",
+    "memory_total_mib": 49140.0,
+    "memory_free_mib_at_start": 48234.0,
+    "driver_version": "550.163.01",
+    "power_limit_w": 450.0,
+    "pstate": "P0"
+  },
+  "method": "torch.autograd.graph.saved_tensors_hooks",
+  "command": "python -m profiling.saved_tensor_analysis --context-length 128 --output results/memory/saved_tensors.json"
+}

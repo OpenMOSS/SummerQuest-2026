@@ -1,0 +1,210 @@
+{
+  "primary_tool": "torch.profiler",
+  "matrix": {
+    "model_sizes": [
+      "small",
+      "medium"
+    ],
+    "context_lengths": [
+      256,
+      512,
+      1024
+    ],
+    "mode": "train_step"
+  },
+  "runs": [
+    {
+      "run_id": "small_ctx256",
+      "model_size": "small",
+      "batch_size": 1,
+      "context_length": 256,
+      "mode": "train_step",
+      "dtype": "fp32",
+      "tool": "torch.profiler",
+      "activities": [
+        "CPU",
+        "CUDA"
+      ],
+      "unprofiled_warmup_steps": 3,
+      "profiled_measurement_steps": 1,
+      "trace_file": "small_ctx256_trace.json",
+      "summary_file": "small_ctx256_summary.csv",
+      "command": "python -m profiling.profile_runner --model-size small --context-length 256",
+      "allocator": {
+        "allocator_limit_mib": 23552,
+        "allocator_fraction": 0.48421737046550567,
+        "device_name": "NVIDIA GeForce RTX 4090",
+        "torch_total_memory_mib": 48639.3125
+      },
+      "gpu": {
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "memory_total_mib": 49140.0,
+        "memory_free_mib_at_start": 48234.0,
+        "driver_version": "550.163.01",
+        "power_limit_w": 450.0,
+        "pstate": "P0"
+      }
+    },
+    {
+      "run_id": "small_ctx512",
+      "model_size": "small",
+      "batch_size": 1,
+      "context_length": 512,
+      "mode": "train_step",
+      "dtype": "fp32",
+      "tool": "torch.profiler",
+      "activities": [
+        "CPU",
+        "CUDA"
+      ],
+      "unprofiled_warmup_steps": 3,
+      "profiled_measurement_steps": 1,
+      "trace_file": "small_ctx512_trace.json",
+      "summary_file": "small_ctx512_summary.csv",
+      "command": "python -m profiling.profile_runner --model-size small --context-length 512",
+      "allocator": {
+        "allocator_limit_mib": 23552,
+        "allocator_fraction": 0.48421737046550567,
+        "device_name": "NVIDIA GeForce RTX 4090",
+        "torch_total_memory_mib": 48639.3125
+      },
+      "gpu": {
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "memory_total_mib": 49140.0,
+        "memory_free_mib_at_start": 48234.0,
+        "driver_version": "550.163.01",
+        "power_limit_w": 450.0,
+        "pstate": "P0"
+      }
+    },
+    {
+      "run_id": "small_ctx1024",
+      "model_size": "small",
+      "batch_size": 1,
+      "context_length": 1024,
+      "mode": "train_step",
+      "dtype": "fp32",
+      "tool": "torch.profiler",
+      "activities": [
+        "CPU",
+        "CUDA"
+      ],
+      "unprofiled_warmup_steps": 3,
+      "profiled_measurement_steps": 1,
+      "trace_file": "small_ctx1024_trace.json",
+      "summary_file": "small_ctx1024_summary.csv",
+      "command": "python -m profiling.profile_runner --model-size small --context-length 1024",
+      "allocator": {
+        "allocator_limit_mib": 23552,
+        "allocator_fraction": 0.48421737046550567,
+        "device_name": "NVIDIA GeForce RTX 4090",
+        "torch_total_memory_mib": 48639.3125
+      },
+      "gpu": {
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "memory_total_mib": 49140.0,
+        "memory_free_mib_at_start": 48234.0,
+        "driver_version": "550.163.01",
+        "power_limit_w": 450.0,
+        "pstate": "P0"
+      }
+    },
+    {
+      "run_id": "medium_ctx256",
+      "model_size": "medium",
+      "batch_size": 1,
+      "context_length": 256,
+      "mode": "train_step",
+      "dtype": "fp32",
+      "tool": "torch.profiler",
+      "activities": [
+        "CPU",
+        "CUDA"
+      ],
+      "unprofiled_warmup_steps": 3,
+      "profiled_measurement_steps": 1,
+      "trace_file": "medium_ctx256_trace.json",
+      "summary_file": "medium_ctx256_summary.csv",
+      "command": "python -m profiling.profile_runner --model-size medium --context-length 256",
+      "allocator": {
+        "allocator_limit_mib": 23552,
+        "allocator_fraction": 0.48421737046550567,
+        "device_name": "NVIDIA GeForce RTX 4090",
+        "torch_total_memory_mib": 48639.3125
+      },
+      "gpu": {
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "memory_total_mib": 49140.0,
+        "memory_free_mib_at_start": 48234.0,
+        "driver_version": "550.163.01",
+        "power_limit_w": 450.0,
+        "pstate": "P0"
+      }
+    },
+    {
+      "run_id": "medium_ctx512",
+      "model_size": "medium",
+      "batch_size": 1,
+      "context_length": 512,
+      "mode": "train_step",
+      "dtype": "fp32",
+      "tool": "torch.profiler",
+      "activities": [
+        "CPU",
+        "CUDA"
+      ],
+      "unprofiled_warmup_steps": 3,
+      "profiled_measurement_steps": 1,
+      "trace_file": "medium_ctx512_trace.json",
+      "summary_file": "medium_ctx512_summary.csv",
+      "command": "python -m profiling.profile_runner --model-size medium --context-length 512",
+      "allocator": {
+        "allocator_limit_mib": 23552,
+        "allocator_fraction": 0.48421737046550567,
+        "device_name": "NVIDIA GeForce RTX 4090",
+        "torch_total_memory_mib": 48639.3125
+      },
+      "gpu": {
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "memory_total_mib": 49140.0,
+        "memory_free_mib_at_start": 48234.0,
+        "driver_version": "550.163.01",
+        "power_limit_w": 450.0,
+        "pstate": "P0"
+      }
+    },
+    {
+      "run_id": "medium_ctx1024",
+      "model_size": "medium",
+      "batch_size": 1,
+      "context_length": 1024,
+      "mode": "train_step",
+      "dtype": "fp32",
+      "tool": "torch.profiler",
+      "activities": [
+        "CPU",
+        "CUDA"
+      ],
+      "unprofiled_warmup_steps": 3,
+      "profiled_measurement_steps": 1,
+      "trace_file": "medium_ctx1024_trace.json",
+      "summary_file": "medium_ctx1024_summary.csv",
+      "command": "python -m profiling.profile_runner --model-size medium --context-length 1024",
+      "allocator": {
+        "allocator_limit_mib": 23552,
+        "allocator_fraction": 0.48421737046550567,
+        "device_name": "NVIDIA GeForce RTX 4090",
+        "torch_total_memory_mib": 48639.3125
+      },
+      "gpu": {
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "memory_total_mib": 49140.0,
+        "memory_free_mib_at_start": 48234.0,
+        "driver_version": "550.163.01",
+        "power_limit_w": 450.0,
+        "pstate": "P0"
+      }
+    }
+  ],
+  "raw_artifacts_policy": "Full Chrome traces remain local and are not submitted."
+}

@@ -1,0 +1,554 @@
+{
+  "accumulation": [
+    {
+      "case": "fp32_input_fp32_accumulator",
+      "result": 10.000133514404297,
+      "absolute_error_from_10": 0.000133514404296875
+    },
+    {
+      "case": "fp16_input_fp16_accumulator",
+      "result": 9.953125,
+      "absolute_error_from_10": 0.046875
+    },
+    {
+      "case": "fp16_input_fp32_accumulator",
+      "result": 10.00213623046875,
+      "absolute_error_from_10": 0.00213623046875
+    },
+    {
+      "case": "fp16_then_cast_fp32_accumulator",
+      "result": 10.00213623046875,
+      "absolute_error_from_10": 0.00213623046875
+    }
+  ],
+  "toy_model_bf16_autocast": {
+    "fc1_output": "torch.bfloat16",
+    "layernorm_output": "torch.float32",
+    "parameters": "torch.float32",
+    "logits": "torch.bfloat16",
+    "loss": "torch.float32",
+    "gradients": "torch.float32",
+    "loss_value": 2.106689453125,
+    "logits_mean": 0.0553152933716774
+  },
+  "language_model_comparison": [
+    {
+      "model_size": "small",
+      "dtype": "fp32",
+      "batch_size": 4,
+      "context_length": 512,
+      "mode": "forward_backward",
+      "warmup_steps": 5,
+      "measurement_steps": 10,
+      "raw_timings_ms": [
+        60.5664998292923,
+        60.35196781158447,
+        60.36008149385452,
+        60.33117696642876,
+        60.322705656290054,
+        60.41673570871353,
+        60.365285724401474,
+        60.36660075187683,
+        60.33744663000107,
+        60.352981090545654
+      ],
+      "mean_ms": 60.377148166298866,
+      "std_ms": 0.07136456519703692,
+      "cv": 0.0011819797284971963,
+      "peak_allocated_mib": 4157.55078125,
+      "peak_reserved_mib": 4288.0,
+      "loss": 9.284748077392578,
+      "logits_mean": -0.0026939159724861383,
+      "parameter_count": "",
+      "fp32_parameter_storage_mib": "",
+      "capacity_limit_mib": "",
+      "capacity_precheck": "",
+      "status": "ok",
+      "error_type": "",
+      "failure_stage": ""
+    },
+    {
+      "model_size": "small",
+      "dtype": "bf16",
+      "batch_size": 4,
+      "context_length": 512,
+      "mode": "forward_backward",
+      "warmup_steps": 5,
+      "measurement_steps": 10,
+      "raw_timings_ms": [
+        47.90812358260155,
+        47.94685170054436,
+        47.788240015506744,
+        47.75407537817955,
+        47.83952981233597,
+        47.72365465760231,
+        47.67611250281334,
+        47.68449068069458,
+        47.61141911149025,
+        47.85434901714325
+      ],
+      "mean_ms": 47.77868464589119,
+      "std_ms": 0.10829915118905808,
+      "cv": 0.0022666833964080564,
+      "peak_allocated_mib": 3241.07470703125,
+      "peak_reserved_mib": 3564.0,
+      "loss": 9.283920288085938,
+      "logits_mean": -0.0026956601068377495,
+      "parameter_count": "",
+      "fp32_parameter_storage_mib": "",
+      "capacity_limit_mib": "",
+      "capacity_precheck": "",
+      "status": "ok",
+      "error_type": "",
+      "failure_stage": ""
+    },
+    {
+      "model_size": "medium",
+      "dtype": "fp32",
+      "batch_size": 4,
+      "context_length": 512,
+      "mode": "forward_backward",
+      "warmup_steps": 5,
+      "measurement_steps": 10,
+      "raw_timings_ms": [
+        175.0793196260929,
+        174.78588223457336,
+        174.78761076927185,
+        174.97937753796577,
+        174.86048489809036,
+        174.80338737368584,
+        175.00854283571243,
+        174.82277378439903,
+        174.87149685621262,
+        174.88281801342964
+      ],
+      "mean_ms": 174.88816939294338,
+      "std_ms": 0.1013571359341824,
+      "cv": 0.0005795539874767086,
+      "peak_allocated_mib": 10817.2939453125,
+      "peak_reserved_mib": 11256.0,
+      "loss": 9.274682998657227,
+      "logits_mean": -0.0003765986184589565,
+      "parameter_count": "",
+      "fp32_parameter_storage_mib": "",
+      "capacity_limit_mib": "",
+      "capacity_precheck": "",
+      "status": "ok",
+      "error_type": "",
+      "failure_stage": ""
+    },
+    {
+      "model_size": "medium",
+      "dtype": "bf16",
+      "batch_size": 4,
+      "context_length": 512,
+      "mode": "forward_backward",
+      "warmup_steps": 5,
+      "measurement_steps": 10,
+      "raw_timings_ms": [
+        124.26155433058739,
+        123.53930994868279,
+        123.62151965498924,
+        123.58136475086212,
+        123.61907586455345,
+        123.58985468745232,
+        123.58364090323448,
+        123.66225942969322,
+        123.75377491116524,
+        123.79021942615509
+      ],
+      "mean_ms": 123.70025739073753,
+      "std_ms": 0.21241290103439345,
+      "cv": 0.0017171581168455884,
+      "peak_allocated_mib": 8565.0361328125,
+      "peak_reserved_mib": 8912.0,
+      "loss": 9.275009155273438,
+      "logits_mean": -0.00036641935002990067,
+      "parameter_count": "",
+      "fp32_parameter_storage_mib": "",
+      "capacity_limit_mib": "",
+      "capacity_precheck": "",
+      "status": "ok",
+      "error_type": "",
+      "failure_stage": ""
+    },
+    {
+      "model_size": "large",
+      "dtype": "fp32",
+      "batch_size": 4,
+      "context_length": 512,
+      "mode": "forward_backward",
+      "warmup_steps": 5,
+      "measurement_steps": 10,
+      "raw_timings_ms": [
+        397.43128046393394,
+        397.88299053907394,
+        397.75990694761276,
+        398.2435204088688,
+        397.7263905107975,
+        397.5890949368477,
+        397.4895589053631,
+        397.4955379962921,
+        397.3824344575405,
+        397.91829884052277
+      ],
+      "mean_ms": 397.6919014006853,
+      "std_ms": 0.26907907666109276,
+      "cv": 0.0006766018511148617,
+      "peak_allocated_mib": 20751.365234375,
+      "peak_reserved_mib": 20976.0,
+      "loss": 9.324878692626953,
+      "logits_mean": 0.0016311336075887084,
+      "parameter_count": "",
+      "fp32_parameter_storage_mib": "",
+      "capacity_limit_mib": "",
+      "capacity_precheck": "",
+      "status": "ok",
+      "error_type": "",
+      "failure_stage": ""
+    },
+    {
+      "model_size": "large",
+      "dtype": "bf16",
+      "batch_size": 4,
+      "context_length": 512,
+      "mode": "forward_backward",
+      "warmup_steps": 5,
+      "measurement_steps": 10,
+      "raw_timings_ms": [
+        263.4335607290268,
+        264.12738114595413,
+        263.2959894835949,
+        263.1482779979706,
+        263.2826827466488,
+        263.2244750857353,
+        263.2375434041023,
+        263.38398084044456,
+        263.3656896650791,
+        263.115581125021
+      ],
+      "mean_ms": 263.36151622235775,
+      "std_ms": 0.2873004978234583,
+      "cv": 0.001090897796855364,
+      "peak_allocated_mib": 17000.875,
+      "peak_reserved_mib": 17636.0,
+      "loss": 9.324630737304688,
+      "logits_mean": 0.0016563449753448367,
+      "parameter_count": "",
+      "fp32_parameter_storage_mib": "",
+      "capacity_limit_mib": "",
+      "capacity_precheck": "",
+      "status": "ok",
+      "error_type": "",
+      "failure_stage": ""
+    },
+    {
+      "model_size": "xl",
+      "dtype": "fp32",
+      "batch_size": 4,
+      "context_length": 512,
+      "mode": "forward_backward",
+      "warmup_steps": 5,
+      "measurement_steps": 10,
+      "raw_timings_ms": [],
+      "mean_ms": "",
+      "std_ms": "",
+      "cv": "",
+      "peak_allocated_mib": 23197.134765625,
+      "peak_reserved_mib": 23512.0,
+      "loss": "",
+      "logits_mean": "",
+      "parameter_count": "",
+      "fp32_parameter_storage_mib": "",
+      "capacity_limit_mib": "",
+      "capacity_precheck": "",
+      "status": "oom",
+      "error_type": "OutOfMemoryError",
+      "failure_stage": "warmup"
+    },
+    {
+      "model_size": "xl",
+      "dtype": "bf16",
+      "batch_size": 4,
+      "context_length": 512,
+      "mode": "forward_backward",
+      "warmup_steps": 5,
+      "measurement_steps": 10,
+      "raw_timings_ms": [],
+      "mean_ms": "",
+      "std_ms": "",
+      "cv": "",
+      "peak_allocated_mib": 23313.912109375,
+      "peak_reserved_mib": 23544.0,
+      "loss": "",
+      "logits_mean": "",
+      "parameter_count": "",
+      "fp32_parameter_storage_mib": "",
+      "capacity_limit_mib": "",
+      "capacity_precheck": "",
+      "status": "oom",
+      "error_type": "OutOfMemoryError",
+      "failure_stage": "warmup"
+    },
+    {
+      "model_size": "10b",
+      "dtype": "fp32",
+      "batch_size": 4,
+      "context_length": 512,
+      "mode": "forward_backward",
+      "warmup_steps": 5,
+      "measurement_steps": 10,
+      "raw_timings_ms": [],
+      "mean_ms": "",
+      "std_ms": "",
+      "cv": "",
+      "peak_allocated_mib": "",
+      "peak_reserved_mib": "",
+      "loss": "",
+      "logits_mean": "",
+      "parameter_count": 12832823808,
+      "fp32_parameter_storage_mib": 48953.337890625,
+      "capacity_limit_mib": 23552,
+      "capacity_precheck": "FP32 parameters alone exceed the allocator limit; BF16 autocast does not downcast stored parameters",
+      "status": "capacity_exceeded",
+      "error_type": "AllocatorCapacityPrecheck",
+      "failure_stage": "setup/parameters"
+    },
+    {
+      "model_size": "10b",
+      "dtype": "bf16",
+      "batch_size": 4,
+      "context_length": 512,
+      "mode": "forward_backward",
+      "warmup_steps": 5,
+      "measurement_steps": 10,
+      "raw_timings_ms": [],
+      "mean_ms": "",
+      "std_ms": "",
+      "cv": "",
+      "peak_allocated_mib": "",
+      "peak_reserved_mib": "",
+      "loss": "",
+      "logits_mean": "",
+      "parameter_count": 12832823808,
+      "fp32_parameter_storage_mib": 48953.337890625,
+      "capacity_limit_mib": 23552,
+      "capacity_precheck": "FP32 parameters alone exceed the allocator limit; BF16 autocast does not downcast stored parameters",
+      "status": "capacity_exceeded",
+      "error_type": "AllocatorCapacityPrecheck",
+      "failure_stage": "setup/parameters"
+    }
+  ],
+  "configuration": {
+    "model_sizes": [
+      "small",
+      "medium",
+      "large",
+      "xl",
+      "10b"
+    ],
+    "batch_size": 4,
+    "context_length": 512,
+    "mode": "forward_backward",
+    "warmup_steps": 5,
+    "measurement_steps": 10,
+    "process_isolation": "one fresh Python process per model/dtype row"
+  },
+  "runs": [
+    {
+      "model_size": "small",
+      "dtype": "fp32",
+      "allocator": {
+        "allocator_limit_mib": 23552,
+        "allocator_fraction": 0.48421737046550567,
+        "device_name": "NVIDIA GeForce RTX 4090",
+        "torch_total_memory_mib": 48639.3125
+      },
+      "gpu": {
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "memory_total_mib": 49140.0,
+        "memory_free_mib_at_start": 48234.0,
+        "driver_version": "550.163.01",
+        "power_limit_w": 450.0,
+        "pstate": "P0"
+      }
+    },
+    {
+      "model_size": "small",
+      "dtype": "bf16",
+      "allocator": {
+        "allocator_limit_mib": 23552,
+        "allocator_fraction": 0.48421737046550567,
+        "device_name": "NVIDIA GeForce RTX 4090",
+        "torch_total_memory_mib": 48639.3125
+      },
+      "gpu": {
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "memory_total_mib": 49140.0,
+        "memory_free_mib_at_start": 48234.0,
+        "driver_version": "550.163.01",
+        "power_limit_w": 450.0,
+        "pstate": "P0"
+      }
+    },
+    {
+      "model_size": "medium",
+      "dtype": "fp32",
+      "allocator": {
+        "allocator_limit_mib": 23552,
+        "allocator_fraction": 0.48421737046550567,
+        "device_name": "NVIDIA GeForce RTX 4090",
+        "torch_total_memory_mib": 48639.3125
+      },
+      "gpu": {
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "memory_total_mib": 49140.0,
+        "memory_free_mib_at_start": 48234.0,
+        "driver_version": "550.163.01",
+        "power_limit_w": 450.0,
+        "pstate": "P0"
+      }
+    },
+    {
+      "model_size": "medium",
+      "dtype": "bf16",
+      "allocator": {
+        "allocator_limit_mib": 23552,
+        "allocator_fraction": 0.48421737046550567,
+        "device_name": "NVIDIA GeForce RTX 4090",
+        "torch_total_memory_mib": 48639.3125
+      },
+      "gpu": {
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "memory_total_mib": 49140.0,
+        "memory_free_mib_at_start": 48234.0,
+        "driver_version": "550.163.01",
+        "power_limit_w": 450.0,
+        "pstate": "P0"
+      }
+    },
+    {
+      "model_size": "large",
+      "dtype": "fp32",
+      "allocator": {
+        "allocator_limit_mib": 23552,
+        "allocator_fraction": 0.48421737046550567,
+        "device_name": "NVIDIA GeForce RTX 4090",
+        "torch_total_memory_mib": 48639.3125
+      },
+      "gpu": {
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "memory_total_mib": 49140.0,
+        "memory_free_mib_at_start": 48234.0,
+        "driver_version": "550.163.01",
+        "power_limit_w": 450.0,
+        "pstate": "P0"
+      }
+    },
+    {
+      "model_size": "large",
+      "dtype": "bf16",
+      "allocator": {
+        "allocator_limit_mib": 23552,
+        "allocator_fraction": 0.48421737046550567,
+        "device_name": "NVIDIA GeForce RTX 4090",
+        "torch_total_memory_mib": 48639.3125
+      },
+      "gpu": {
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "memory_total_mib": 49140.0,
+        "memory_free_mib_at_start": 48234.0,
+        "driver_version": "550.163.01",
+        "power_limit_w": 450.0,
+        "pstate": "P0"
+      }
+    },
+    {
+      "model_size": "xl",
+      "dtype": "fp32",
+      "allocator": {
+        "allocator_limit_mib": 23552,
+        "allocator_fraction": 0.48421737046550567,
+        "device_name": "NVIDIA GeForce RTX 4090",
+        "torch_total_memory_mib": 48639.3125
+      },
+      "gpu": {
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "memory_total_mib": 49140.0,
+        "memory_free_mib_at_start": 48234.0,
+        "driver_version": "550.163.01",
+        "power_limit_w": 450.0,
+        "pstate": "P0"
+      }
+    },
+    {
+      "model_size": "xl",
+      "dtype": "bf16",
+      "allocator": {
+        "allocator_limit_mib": 23552,
+        "allocator_fraction": 0.48421737046550567,
+        "device_name": "NVIDIA GeForce RTX 4090",
+        "torch_total_memory_mib": 48639.3125
+      },
+      "gpu": {
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "memory_total_mib": 49140.0,
+        "memory_free_mib_at_start": 48234.0,
+        "driver_version": "550.163.01",
+        "power_limit_w": 450.0,
+        "pstate": "P0"
+      }
+    },
+    {
+      "model_size": "10b",
+      "dtype": "fp32",
+      "allocator": {
+        "allocator_limit_mib": 23552,
+        "allocator_fraction": 0.48421737046550567,
+        "device_name": "NVIDIA GeForce RTX 4090",
+        "torch_total_memory_mib": 48639.3125
+      },
+      "gpu": {
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "memory_total_mib": 49140.0,
+        "memory_free_mib_at_start": 48234.0,
+        "driver_version": "550.163.01",
+        "power_limit_w": 450.0,
+        "pstate": "P0"
+      }
+    },
+    {
+      "model_size": "10b",
+      "dtype": "bf16",
+      "allocator": {
+        "allocator_limit_mib": 23552,
+        "allocator_fraction": 0.48421737046550567,
+        "device_name": "NVIDIA GeForce RTX 4090",
+        "torch_total_memory_mib": 48639.3125
+      },
+      "gpu": {
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "memory_total_mib": 49140.0,
+        "memory_free_mib_at_start": 48234.0,
+        "driver_version": "550.163.01",
+        "power_limit_w": 450.0,
+        "pstate": "P0"
+      }
+    }
+  ],
+  "allocator": {
+    "allocator_limit_mib": 23552,
+    "allocator_fraction": 0.48421737046550567,
+    "device_name": "NVIDIA GeForce RTX 4090",
+    "torch_total_memory_mib": 48639.3125
+  },
+  "gpu": {
+    "gpu_name": "NVIDIA GeForce RTX 4090",
+    "memory_total_mib": 49140.0,
+    "memory_free_mib_at_start": 48234.0,
+    "driver_version": "550.163.01",
+    "power_limit_w": 450.0,
+    "pstate": "P0"
+  },
+  "command": "python -m profiling.mixed_precision --output results/mixed_precision.json"
+}

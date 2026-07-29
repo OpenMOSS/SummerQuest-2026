@@ -1,0 +1,8 @@
+model_size,batch_size,context_length,mode,dtype,status,active_mib_after_step,peak_allocated_mib,reserved_mib_after_step,peak_reserved_mib,largest_active_allocation_mib,error_type,failure_stage
+xl,1,128,forward,fp32,ok,13132.80078125,13154.05078125,13168.0,13168.0,100.0,,
+xl,1,128,train_step,fp32,oom,23269.4208984375,23386.6708984375,23524.0,23526.0,,OutOfMemoryError,warmup
+xl,1,2048,forward,fp32,ok,13133.416015625,15305.681640625,15858.0,15858.0,100.0,,
+xl,1,2048,train_step,fp32,oom,22937.767578125,22938.017578125,23048.0,23048.0,,OutOfMemoryError,warmup
+xl,1,1024,train_step,fp32,oom,23226.990234375,23245.982421875,23518.0,23528.0,,OutOfMemoryError,warmup
+large,1,2048,train_step,fp32,oom,22788.3798828125,23123.3642578125,23500.0,23500.0,,OutOfMemoryError,warmup
+large,1,128,train_step,fp32,ok,15241.333984375,19071.22998046875,19696.0,19696.0,48.828125,,

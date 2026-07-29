@@ -1,0 +1,1149 @@
+{
+  "experiment": "memory_profiling",
+  "dtype": "fp32",
+  "warmup_steps": 1,
+  "measurement_steps": 1,
+  "history": "torch.cuda.memory._record_memory_history",
+  "runs": [
+    {
+      "row": {
+        "model_size": "xl",
+        "batch_size": 1,
+        "context_length": 128,
+        "mode": "forward",
+        "dtype": "fp32",
+        "status": "ok",
+        "active_mib_after_step": 13132.80078125,
+        "peak_allocated_mib": 13154.05078125,
+        "reserved_mib_after_step": 13168.0,
+        "peak_reserved_mib": 13168.0,
+        "largest_active_allocation_mib": 100.0,
+        "error_type": "",
+        "failure_stage": ""
+      },
+      "timeline_samples": [
+        {
+          "stage": "forward/layer_00",
+          "allocated_mib": 13135.30078125,
+          "reserved_mib": 13168.0
+        },
+        {
+          "stage": "forward/layer_01",
+          "allocated_mib": 13136.55078125,
+          "reserved_mib": 13168.0
+        },
+        {
+          "stage": "forward/layer_02",
+          "allocated_mib": 13136.55078125,
+          "reserved_mib": 13168.0
+        },
+        {
+          "stage": "forward/layer_03",
+          "allocated_mib": 13136.55078125,
+          "reserved_mib": 13168.0
+        },
+        {
+          "stage": "forward/layer_04",
+          "allocated_mib": 13136.55078125,
+          "reserved_mib": 13168.0
+        },
+        {
+          "stage": "forward/layer_05",
+          "allocated_mib": 13136.55078125,
+          "reserved_mib": 13168.0
+        },
+        {
+          "stage": "forward/layer_06",
+          "allocated_mib": 13136.55078125,
+          "reserved_mib": 13168.0
+        },
+        {
+          "stage": "forward/layer_07",
+          "allocated_mib": 13136.55078125,
+          "reserved_mib": 13168.0
+        },
+        {
+          "stage": "forward/layer_08",
+          "allocated_mib": 13136.55078125,
+          "reserved_mib": 13168.0
+        },
+        {
+          "stage": "forward/layer_09",
+          "allocated_mib": 13136.55078125,
+          "reserved_mib": 13168.0
+        },
+        {
+          "stage": "forward/layer_10",
+          "allocated_mib": 13136.55078125,
+          "reserved_mib": 13168.0
+        },
+        {
+          "stage": "forward/layer_11",
+          "allocated_mib": 13136.55078125,
+          "reserved_mib": 13168.0
+        },
+        {
+          "stage": "forward/layer_12",
+          "allocated_mib": 13136.55078125,
+          "reserved_mib": 13168.0
+        },
+        {
+          "stage": "forward/layer_13",
+          "allocated_mib": 13136.55078125,
+          "reserved_mib": 13168.0
+        },
+        {
+          "stage": "forward/layer_14",
+          "allocated_mib": 13136.55078125,
+          "reserved_mib": 13168.0
+        },
+        {
+          "stage": "forward/layer_15",
+          "allocated_mib": 13136.55078125,
+          "reserved_mib": 13168.0
+        },
+        {
+          "stage": "forward/layer_16",
+          "allocated_mib": 13136.55078125,
+          "reserved_mib": 13168.0
+        },
+        {
+          "stage": "forward/layer_17",
+          "allocated_mib": 13136.55078125,
+          "reserved_mib": 13168.0
+        },
+        {
+          "stage": "forward/layer_18",
+          "allocated_mib": 13136.55078125,
+          "reserved_mib": 13168.0
+        },
+        {
+          "stage": "forward/layer_19",
+          "allocated_mib": 13136.55078125,
+          "reserved_mib": 13168.0
+        },
+        {
+          "stage": "forward/layer_20",
+          "allocated_mib": 13136.55078125,
+          "reserved_mib": 13168.0
+        },
+        {
+          "stage": "forward/layer_21",
+          "allocated_mib": 13136.55078125,
+          "reserved_mib": 13168.0
+        },
+        {
+          "stage": "forward/layer_22",
+          "allocated_mib": 13136.55078125,
+          "reserved_mib": 13168.0
+        },
+        {
+          "stage": "forward/layer_23",
+          "allocated_mib": 13136.55078125,
+          "reserved_mib": 13168.0
+        },
+        {
+          "stage": "forward/layer_24",
+          "allocated_mib": 13136.55078125,
+          "reserved_mib": 13168.0
+        },
+        {
+          "stage": "forward/layer_25",
+          "allocated_mib": 13136.55078125,
+          "reserved_mib": 13168.0
+        },
+        {
+          "stage": "forward/layer_26",
+          "allocated_mib": 13136.55078125,
+          "reserved_mib": 13168.0
+        },
+        {
+          "stage": "forward/layer_27",
+          "allocated_mib": 13136.55078125,
+          "reserved_mib": 13168.0
+        },
+        {
+          "stage": "forward/layer_28",
+          "allocated_mib": 13136.55078125,
+          "reserved_mib": 13168.0
+        },
+        {
+          "stage": "forward/layer_29",
+          "allocated_mib": 13136.55078125,
+          "reserved_mib": 13168.0
+        },
+        {
+          "stage": "forward/layer_30",
+          "allocated_mib": 13136.55078125,
+          "reserved_mib": 13168.0
+        },
+        {
+          "stage": "forward/layer_31",
+          "allocated_mib": 13136.55078125,
+          "reserved_mib": 13168.0
+        }
+      ],
+      "snapshot_file": "xl_ctx128_forward.pickle",
+      "snapshot_policy": "local only; never copied into the public submission",
+      "allocator": {
+        "allocator_limit_mib": 23552,
+        "allocator_fraction": 0.48421737046550567,
+        "device_name": "NVIDIA GeForce RTX 4090",
+        "torch_total_memory_mib": 48639.3125
+      },
+      "gpu": {
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "memory_total_mib": 49140.0,
+        "memory_free_mib_at_start": 48234.0,
+        "driver_version": "550.163.01",
+        "power_limit_w": 450.0,
+        "pstate": "P0"
+      },
+      "command": "python -m profiling.memory_snapshot --model-size xl --context-length 128 --mode forward"
+    },
+    {
+      "row": {
+        "model_size": "xl",
+        "batch_size": 1,
+        "context_length": 128,
+        "mode": "train_step",
+        "dtype": "fp32",
+        "status": "oom",
+        "active_mib_after_step": 23269.4208984375,
+        "peak_allocated_mib": 23386.6708984375,
+        "reserved_mib_after_step": 23524.0,
+        "peak_reserved_mib": 23526.0,
+        "largest_active_allocation_mib": "",
+        "error_type": "OutOfMemoryError",
+        "failure_stage": "warmup"
+      },
+      "timeline_samples": [
+        {
+          "stage": "forward/layer_00",
+          "allocated_mib": 13177.2392578125,
+          "reserved_mib": 13188.0
+        },
+        {
+          "stage": "forward/layer_01",
+          "allocated_mib": 13219.802734375,
+          "reserved_mib": 13228.0
+        },
+        {
+          "stage": "forward/layer_02",
+          "allocated_mib": 13262.3662109375,
+          "reserved_mib": 13268.0
+        },
+        {
+          "stage": "forward/layer_03",
+          "allocated_mib": 13304.9296875,
+          "reserved_mib": 13328.0
+        },
+        {
+          "stage": "forward/layer_04",
+          "allocated_mib": 13347.4931640625,
+          "reserved_mib": 13368.0
+        },
+        {
+          "stage": "forward/layer_05",
+          "allocated_mib": 13390.056640625,
+          "reserved_mib": 13408.0
+        },
+        {
+          "stage": "forward/layer_06",
+          "allocated_mib": 13432.6201171875,
+          "reserved_mib": 13448.0
+        },
+        {
+          "stage": "forward/layer_07",
+          "allocated_mib": 13475.18359375,
+          "reserved_mib": 13488.0
+        },
+        {
+          "stage": "forward/layer_08",
+          "allocated_mib": 13517.7470703125,
+          "reserved_mib": 13528.0
+        },
+        {
+          "stage": "forward/layer_09",
+          "allocated_mib": 13560.310546875,
+          "reserved_mib": 13568.0
+        },
+        {
+          "stage": "forward/layer_10",
+          "allocated_mib": 13602.8740234375,
+          "reserved_mib": 13608.0
+        },
+        {
+          "stage": "forward/layer_11",
+          "allocated_mib": 13645.4375,
+          "reserved_mib": 13668.0
+        },
+        {
+          "stage": "forward/layer_12",
+          "allocated_mib": 13688.0009765625,
+          "reserved_mib": 13710.0
+        },
+        {
+          "stage": "forward/layer_13",
+          "allocated_mib": 13730.564453125,
+          "reserved_mib": 13750.0
+        },
+        {
+          "stage": "forward/layer_14",
+          "allocated_mib": 13773.1279296875,
+          "reserved_mib": 13790.0
+        },
+        {
+          "stage": "forward/layer_15",
+          "allocated_mib": 13815.69140625,
+          "reserved_mib": 13830.0
+        },
+        {
+          "stage": "forward/layer_16",
+          "allocated_mib": 13858.2548828125,
+          "reserved_mib": 13870.0
+        },
+        {
+          "stage": "forward/layer_17",
+          "allocated_mib": 13900.818359375,
+          "reserved_mib": 13910.0
+        },
+        {
+          "stage": "forward/layer_18",
+          "allocated_mib": 13943.3818359375,
+          "reserved_mib": 13950.0
+        },
+        {
+          "stage": "forward/layer_19",
+          "allocated_mib": 13985.9453125,
+          "reserved_mib": 14010.0
+        },
+        {
+          "stage": "forward/layer_20",
+          "allocated_mib": 14028.5087890625,
+          "reserved_mib": 14050.0
+        },
+        {
+          "stage": "forward/layer_21",
+          "allocated_mib": 14071.072265625,
+          "reserved_mib": 14090.0
+        },
+        {
+          "stage": "forward/layer_22",
+          "allocated_mib": 14113.6357421875,
+          "reserved_mib": 14130.0
+        },
+        {
+          "stage": "forward/layer_23",
+          "allocated_mib": 14156.19921875,
+          "reserved_mib": 14170.0
+        },
+        {
+          "stage": "forward/layer_24",
+          "allocated_mib": 14198.7626953125,
+          "reserved_mib": 14210.0
+        },
+        {
+          "stage": "forward/layer_25",
+          "allocated_mib": 14241.326171875,
+          "reserved_mib": 14250.0
+        },
+        {
+          "stage": "forward/layer_26",
+          "allocated_mib": 14283.8896484375,
+          "reserved_mib": 14290.0
+        },
+        {
+          "stage": "forward/layer_27",
+          "allocated_mib": 14326.453125,
+          "reserved_mib": 14350.0
+        },
+        {
+          "stage": "forward/layer_28",
+          "allocated_mib": 14369.0166015625,
+          "reserved_mib": 14390.0
+        },
+        {
+          "stage": "forward/layer_29",
+          "allocated_mib": 14411.580078125,
+          "reserved_mib": 14430.0
+        },
+        {
+          "stage": "forward/layer_30",
+          "allocated_mib": 14454.1435546875,
+          "reserved_mib": 14470.0
+        },
+        {
+          "stage": "forward/layer_31",
+          "allocated_mib": 14496.70703125,
+          "reserved_mib": 14510.0
+        }
+      ],
+      "snapshot_file": "",
+      "snapshot_policy": "local only; never copied into the public submission",
+      "allocator": {
+        "allocator_limit_mib": 23552,
+        "allocator_fraction": 0.48421737046550567,
+        "device_name": "NVIDIA GeForce RTX 4090",
+        "torch_total_memory_mib": 48639.3125
+      },
+      "gpu": {
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "memory_total_mib": 49140.0,
+        "memory_free_mib_at_start": 48234.0,
+        "driver_version": "550.163.01",
+        "power_limit_w": 450.0,
+        "pstate": "P0"
+      },
+      "command": "python -m profiling.memory_snapshot --model-size xl --context-length 128 --mode train_step"
+    },
+    {
+      "row": {
+        "model_size": "xl",
+        "batch_size": 1,
+        "context_length": 2048,
+        "mode": "forward",
+        "dtype": "fp32",
+        "status": "ok",
+        "active_mib_after_step": 13133.416015625,
+        "peak_allocated_mib": 15305.681640625,
+        "reserved_mib_after_step": 15858.0,
+        "peak_reserved_mib": 15858.0,
+        "largest_active_allocation_mib": 100.0,
+        "error_type": "",
+        "failure_stage": ""
+      },
+      "timeline_samples": [
+        {
+          "stage": "forward/layer_00",
+          "allocated_mib": 13173.416015625,
+          "reserved_mib": 15858.0
+        },
+        {
+          "stage": "forward/layer_01",
+          "allocated_mib": 13193.416015625,
+          "reserved_mib": 15858.0
+        },
+        {
+          "stage": "forward/layer_02",
+          "allocated_mib": 13193.416015625,
+          "reserved_mib": 15858.0
+        },
+        {
+          "stage": "forward/layer_03",
+          "allocated_mib": 13193.416015625,
+          "reserved_mib": 15858.0
+        },
+        {
+          "stage": "forward/layer_04",
+          "allocated_mib": 13193.416015625,
+          "reserved_mib": 15858.0
+        },
+        {
+          "stage": "forward/layer_05",
+          "allocated_mib": 13193.416015625,
+          "reserved_mib": 15858.0
+        },
+        {
+          "stage": "forward/layer_06",
+          "allocated_mib": 13193.416015625,
+          "reserved_mib": 15858.0
+        },
+        {
+          "stage": "forward/layer_07",
+          "allocated_mib": 13193.416015625,
+          "reserved_mib": 15858.0
+        },
+        {
+          "stage": "forward/layer_08",
+          "allocated_mib": 13193.416015625,
+          "reserved_mib": 15858.0
+        },
+        {
+          "stage": "forward/layer_09",
+          "allocated_mib": 13193.416015625,
+          "reserved_mib": 15858.0
+        },
+        {
+          "stage": "forward/layer_10",
+          "allocated_mib": 13193.416015625,
+          "reserved_mib": 15858.0
+        },
+        {
+          "stage": "forward/layer_11",
+          "allocated_mib": 13193.416015625,
+          "reserved_mib": 15858.0
+        },
+        {
+          "stage": "forward/layer_12",
+          "allocated_mib": 13193.416015625,
+          "reserved_mib": 15858.0
+        },
+        {
+          "stage": "forward/layer_13",
+          "allocated_mib": 13193.416015625,
+          "reserved_mib": 15858.0
+        },
+        {
+          "stage": "forward/layer_14",
+          "allocated_mib": 13193.416015625,
+          "reserved_mib": 15858.0
+        },
+        {
+          "stage": "forward/layer_15",
+          "allocated_mib": 13193.416015625,
+          "reserved_mib": 15858.0
+        },
+        {
+          "stage": "forward/layer_16",
+          "allocated_mib": 13193.416015625,
+          "reserved_mib": 15858.0
+        },
+        {
+          "stage": "forward/layer_17",
+          "allocated_mib": 13193.416015625,
+          "reserved_mib": 15858.0
+        },
+        {
+          "stage": "forward/layer_18",
+          "allocated_mib": 13193.416015625,
+          "reserved_mib": 15858.0
+        },
+        {
+          "stage": "forward/layer_19",
+          "allocated_mib": 13193.416015625,
+          "reserved_mib": 15858.0
+        },
+        {
+          "stage": "forward/layer_20",
+          "allocated_mib": 13193.416015625,
+          "reserved_mib": 15858.0
+        },
+        {
+          "stage": "forward/layer_21",
+          "allocated_mib": 13193.416015625,
+          "reserved_mib": 15858.0
+        },
+        {
+          "stage": "forward/layer_22",
+          "allocated_mib": 13193.416015625,
+          "reserved_mib": 15858.0
+        },
+        {
+          "stage": "forward/layer_23",
+          "allocated_mib": 13193.416015625,
+          "reserved_mib": 15858.0
+        },
+        {
+          "stage": "forward/layer_24",
+          "allocated_mib": 13193.416015625,
+          "reserved_mib": 15858.0
+        },
+        {
+          "stage": "forward/layer_25",
+          "allocated_mib": 13193.416015625,
+          "reserved_mib": 15858.0
+        },
+        {
+          "stage": "forward/layer_26",
+          "allocated_mib": 13193.416015625,
+          "reserved_mib": 15858.0
+        },
+        {
+          "stage": "forward/layer_27",
+          "allocated_mib": 13193.416015625,
+          "reserved_mib": 15858.0
+        },
+        {
+          "stage": "forward/layer_28",
+          "allocated_mib": 13193.416015625,
+          "reserved_mib": 15858.0
+        },
+        {
+          "stage": "forward/layer_29",
+          "allocated_mib": 13193.416015625,
+          "reserved_mib": 15858.0
+        },
+        {
+          "stage": "forward/layer_30",
+          "allocated_mib": 13193.416015625,
+          "reserved_mib": 15858.0
+        },
+        {
+          "stage": "forward/layer_31",
+          "allocated_mib": 13193.416015625,
+          "reserved_mib": 15858.0
+        }
+      ],
+      "snapshot_file": "xl_ctx2048_forward.pickle",
+      "snapshot_policy": "local only; never copied into the public submission",
+      "allocator": {
+        "allocator_limit_mib": 23552,
+        "allocator_fraction": 0.48421737046550567,
+        "device_name": "NVIDIA GeForce RTX 4090",
+        "torch_total_memory_mib": 48639.3125
+      },
+      "gpu": {
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "memory_total_mib": 49140.0,
+        "memory_free_mib_at_start": 48234.0,
+        "driver_version": "550.163.01",
+        "power_limit_w": 450.0,
+        "pstate": "P0"
+      },
+      "command": "python -m profiling.memory_snapshot --model-size xl --context-length 2048 --mode forward"
+    },
+    {
+      "row": {
+        "model_size": "xl",
+        "batch_size": 1,
+        "context_length": 2048,
+        "mode": "train_step",
+        "dtype": "fp32",
+        "status": "oom",
+        "active_mib_after_step": 22937.767578125,
+        "peak_allocated_mib": 22938.017578125,
+        "reserved_mib_after_step": 23048.0,
+        "peak_reserved_mib": 23048.0,
+        "largest_active_allocation_mib": "",
+        "error_type": "OutOfMemoryError",
+        "failure_stage": "warmup"
+      },
+      "timeline_samples": [
+        {
+          "stage": "forward/layer_00",
+          "allocated_mib": 14782.181640625,
+          "reserved_mib": 15366.0
+        },
+        {
+          "stage": "forward/layer_01",
+          "allocated_mib": 16410.947265625,
+          "reserved_mib": 17414.0
+        },
+        {
+          "stage": "forward/layer_02",
+          "allocated_mib": 18039.712890625,
+          "reserved_mib": 18950.0
+        },
+        {
+          "stage": "forward/layer_03",
+          "allocated_mib": 19668.478515625,
+          "reserved_mib": 20488.0
+        },
+        {
+          "stage": "forward/layer_04",
+          "allocated_mib": 21297.244140625,
+          "reserved_mib": 22024.0
+        }
+      ],
+      "snapshot_file": "",
+      "snapshot_policy": "local only; never copied into the public submission",
+      "allocator": {
+        "allocator_limit_mib": 23552,
+        "allocator_fraction": 0.48421737046550567,
+        "device_name": "NVIDIA GeForce RTX 4090",
+        "torch_total_memory_mib": 48639.3125
+      },
+      "gpu": {
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "memory_total_mib": 49140.0,
+        "memory_free_mib_at_start": 48234.0,
+        "driver_version": "550.163.01",
+        "power_limit_w": 450.0,
+        "pstate": "P0"
+      },
+      "command": "python -m profiling.memory_snapshot --model-size xl --context-length 2048 --mode train_step"
+    },
+    {
+      "row": {
+        "model_size": "xl",
+        "batch_size": 1,
+        "context_length": 1024,
+        "mode": "train_step",
+        "dtype": "fp32",
+        "status": "oom",
+        "active_mib_after_step": 23226.990234375,
+        "peak_allocated_mib": 23245.982421875,
+        "reserved_mib_after_step": 23518.0,
+        "peak_reserved_mib": 23528.0,
+        "largest_active_allocation_mib": "",
+        "error_type": "OutOfMemoryError",
+        "failure_stage": "warmup"
+      },
+      "timeline_samples": [
+        {
+          "stage": "forward/layer_00",
+          "allocated_mib": 13700.470703125,
+          "reserved_mib": 13740.0
+        },
+        {
+          "stage": "forward/layer_01",
+          "allocated_mib": 14257.853515625,
+          "reserved_mib": 14312.0
+        },
+        {
+          "stage": "forward/layer_02",
+          "allocated_mib": 14815.236328125,
+          "reserved_mib": 14886.0
+        },
+        {
+          "stage": "forward/layer_03",
+          "allocated_mib": 15372.619140625,
+          "reserved_mib": 15460.0
+        },
+        {
+          "stage": "forward/layer_04",
+          "allocated_mib": 15930.001953125,
+          "reserved_mib": 16032.0
+        },
+        {
+          "stage": "forward/layer_05",
+          "allocated_mib": 16487.384765625,
+          "reserved_mib": 16606.0
+        },
+        {
+          "stage": "forward/layer_06",
+          "allocated_mib": 17044.767578125,
+          "reserved_mib": 17180.0
+        },
+        {
+          "stage": "forward/layer_07",
+          "allocated_mib": 17602.150390625,
+          "reserved_mib": 17754.0
+        },
+        {
+          "stage": "forward/layer_08",
+          "allocated_mib": 18159.533203125,
+          "reserved_mib": 18326.0
+        },
+        {
+          "stage": "forward/layer_09",
+          "allocated_mib": 18716.916015625,
+          "reserved_mib": 18900.0
+        },
+        {
+          "stage": "forward/layer_10",
+          "allocated_mib": 19274.298828125,
+          "reserved_mib": 19474.0
+        },
+        {
+          "stage": "forward/layer_11",
+          "allocated_mib": 19831.681640625,
+          "reserved_mib": 20046.0
+        },
+        {
+          "stage": "forward/layer_12",
+          "allocated_mib": 20389.064453125,
+          "reserved_mib": 20620.0
+        },
+        {
+          "stage": "forward/layer_13",
+          "allocated_mib": 20946.447265625,
+          "reserved_mib": 21194.0
+        },
+        {
+          "stage": "forward/layer_14",
+          "allocated_mib": 21503.830078125,
+          "reserved_mib": 21766.0
+        },
+        {
+          "stage": "forward/layer_15",
+          "allocated_mib": 22061.212890625,
+          "reserved_mib": 22340.0
+        },
+        {
+          "stage": "forward/layer_16",
+          "allocated_mib": 22618.595703125,
+          "reserved_mib": 22914.0
+        },
+        {
+          "stage": "forward/layer_17",
+          "allocated_mib": 23175.978515625,
+          "reserved_mib": 23486.0
+        }
+      ],
+      "snapshot_file": "",
+      "snapshot_policy": "local only; never copied into the public submission",
+      "allocator": {
+        "allocator_limit_mib": 23552,
+        "allocator_fraction": 0.48421737046550567,
+        "device_name": "NVIDIA GeForce RTX 4090",
+        "torch_total_memory_mib": 48639.3125
+      },
+      "gpu": {
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "memory_total_mib": 49140.0,
+        "memory_free_mib_at_start": 48234.0,
+        "driver_version": "550.163.01",
+        "power_limit_w": 450.0,
+        "pstate": "P0"
+      },
+      "command": "python -m profiling.memory_snapshot --model-size xl --context-length 1024 --mode train_step"
+    },
+    {
+      "row": {
+        "model_size": "large",
+        "batch_size": 1,
+        "context_length": 2048,
+        "mode": "train_step",
+        "dtype": "fp32",
+        "status": "oom",
+        "active_mib_after_step": 22788.3798828125,
+        "peak_allocated_mib": 23123.3642578125,
+        "reserved_mib_after_step": 23500.0,
+        "peak_reserved_mib": 23500.0,
+        "largest_active_allocation_mib": "",
+        "error_type": "OutOfMemoryError",
+        "failure_stage": "warmup"
+      },
+      "timeline_samples": [
+        {
+          "stage": "forward/layer_00",
+          "allocated_mib": 4769.1533203125,
+          "reserved_mib": 5250.0
+        },
+        {
+          "stage": "forward/layer_01",
+          "allocated_mib": 5714.6376953125,
+          "reserved_mib": 6210.0
+        },
+        {
+          "stage": "forward/layer_02",
+          "allocated_mib": 6660.1220703125,
+          "reserved_mib": 7172.0
+        },
+        {
+          "stage": "forward/layer_03",
+          "allocated_mib": 7605.6064453125,
+          "reserved_mib": 8132.0
+        },
+        {
+          "stage": "forward/layer_04",
+          "allocated_mib": 8551.0908203125,
+          "reserved_mib": 9092.0
+        },
+        {
+          "stage": "forward/layer_05",
+          "allocated_mib": 9496.5751953125,
+          "reserved_mib": 10052.0
+        },
+        {
+          "stage": "forward/layer_06",
+          "allocated_mib": 10442.0595703125,
+          "reserved_mib": 11014.0
+        },
+        {
+          "stage": "forward/layer_07",
+          "allocated_mib": 11387.5439453125,
+          "reserved_mib": 11974.0
+        },
+        {
+          "stage": "forward/layer_08",
+          "allocated_mib": 12333.0283203125,
+          "reserved_mib": 12934.0
+        },
+        {
+          "stage": "forward/layer_09",
+          "allocated_mib": 13278.5126953125,
+          "reserved_mib": 13894.0
+        },
+        {
+          "stage": "forward/layer_10",
+          "allocated_mib": 14223.9970703125,
+          "reserved_mib": 14856.0
+        },
+        {
+          "stage": "forward/layer_11",
+          "allocated_mib": 15169.4814453125,
+          "reserved_mib": 15816.0
+        },
+        {
+          "stage": "forward/layer_12",
+          "allocated_mib": 16114.9658203125,
+          "reserved_mib": 16776.0
+        },
+        {
+          "stage": "forward/layer_13",
+          "allocated_mib": 17060.4501953125,
+          "reserved_mib": 17736.0
+        },
+        {
+          "stage": "forward/layer_14",
+          "allocated_mib": 18005.9345703125,
+          "reserved_mib": 18698.0
+        },
+        {
+          "stage": "forward/layer_15",
+          "allocated_mib": 18951.4189453125,
+          "reserved_mib": 19658.0
+        },
+        {
+          "stage": "forward/layer_16",
+          "allocated_mib": 19896.9033203125,
+          "reserved_mib": 20618.0
+        },
+        {
+          "stage": "forward/layer_17",
+          "allocated_mib": 20842.3876953125,
+          "reserved_mib": 21578.0
+        },
+        {
+          "stage": "forward/layer_18",
+          "allocated_mib": 21787.8720703125,
+          "reserved_mib": 22540.0
+        },
+        {
+          "stage": "forward/layer_19",
+          "allocated_mib": 22733.3564453125,
+          "reserved_mib": 23500.0
+        }
+      ],
+      "snapshot_file": "",
+      "snapshot_policy": "local only; never copied into the public submission",
+      "allocator": {
+        "allocator_limit_mib": 23552,
+        "allocator_fraction": 0.48421737046550567,
+        "device_name": "NVIDIA GeForce RTX 4090",
+        "torch_total_memory_mib": 48639.3125
+      },
+      "gpu": {
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "memory_total_mib": 49140.0,
+        "memory_free_mib_at_start": 48234.0,
+        "driver_version": "550.163.01",
+        "power_limit_w": 450.0,
+        "pstate": "P0"
+      },
+      "command": "python -m profiling.memory_snapshot --model-size large --context-length 2048 --mode train_step"
+    },
+    {
+      "row": {
+        "model_size": "large",
+        "batch_size": 1,
+        "context_length": 128,
+        "mode": "train_step",
+        "dtype": "fp32",
+        "status": "ok",
+        "active_mib_after_step": 15241.333984375,
+        "peak_allocated_mib": 19071.22998046875,
+        "reserved_mib_after_step": 19696.0,
+        "peak_reserved_mib": 19696.0,
+        "largest_active_allocation_mib": 48.828125,
+        "error_type": "",
+        "failure_stage": ""
+      },
+      "timeline_samples": [
+        {
+          "stage": "forward/layer_00",
+          "allocated_mib": 11457.2421875,
+          "reserved_mib": 19696.0
+        },
+        {
+          "stage": "forward/layer_01",
+          "allocated_mib": 11478.5380859375,
+          "reserved_mib": 19696.0
+        },
+        {
+          "stage": "forward/layer_02",
+          "allocated_mib": 11499.833984375,
+          "reserved_mib": 19696.0
+        },
+        {
+          "stage": "forward/layer_03",
+          "allocated_mib": 11521.1298828125,
+          "reserved_mib": 19696.0
+        },
+        {
+          "stage": "forward/layer_04",
+          "allocated_mib": 11542.42578125,
+          "reserved_mib": 19696.0
+        },
+        {
+          "stage": "forward/layer_05",
+          "allocated_mib": 11563.7216796875,
+          "reserved_mib": 19696.0
+        },
+        {
+          "stage": "forward/layer_06",
+          "allocated_mib": 11585.017578125,
+          "reserved_mib": 19696.0
+        },
+        {
+          "stage": "forward/layer_07",
+          "allocated_mib": 11606.3134765625,
+          "reserved_mib": 19696.0
+        },
+        {
+          "stage": "forward/layer_08",
+          "allocated_mib": 11627.609375,
+          "reserved_mib": 19696.0
+        },
+        {
+          "stage": "forward/layer_09",
+          "allocated_mib": 11648.9052734375,
+          "reserved_mib": 19696.0
+        },
+        {
+          "stage": "forward/layer_10",
+          "allocated_mib": 11670.201171875,
+          "reserved_mib": 19696.0
+        },
+        {
+          "stage": "forward/layer_11",
+          "allocated_mib": 11691.4970703125,
+          "reserved_mib": 19696.0
+        },
+        {
+          "stage": "forward/layer_12",
+          "allocated_mib": 11712.79296875,
+          "reserved_mib": 19696.0
+        },
+        {
+          "stage": "forward/layer_13",
+          "allocated_mib": 11734.0888671875,
+          "reserved_mib": 19696.0
+        },
+        {
+          "stage": "forward/layer_14",
+          "allocated_mib": 11755.384765625,
+          "reserved_mib": 19696.0
+        },
+        {
+          "stage": "forward/layer_15",
+          "allocated_mib": 11776.6806640625,
+          "reserved_mib": 19696.0
+        },
+        {
+          "stage": "forward/layer_16",
+          "allocated_mib": 11797.9765625,
+          "reserved_mib": 19696.0
+        },
+        {
+          "stage": "forward/layer_17",
+          "allocated_mib": 11819.2724609375,
+          "reserved_mib": 19696.0
+        },
+        {
+          "stage": "forward/layer_18",
+          "allocated_mib": 11840.568359375,
+          "reserved_mib": 19696.0
+        },
+        {
+          "stage": "forward/layer_19",
+          "allocated_mib": 11861.8642578125,
+          "reserved_mib": 19696.0
+        },
+        {
+          "stage": "forward/layer_20",
+          "allocated_mib": 11883.16015625,
+          "reserved_mib": 19696.0
+        },
+        {
+          "stage": "forward/layer_21",
+          "allocated_mib": 11904.4560546875,
+          "reserved_mib": 19696.0
+        },
+        {
+          "stage": "forward/layer_22",
+          "allocated_mib": 11925.751953125,
+          "reserved_mib": 19696.0
+        },
+        {
+          "stage": "forward/layer_23",
+          "allocated_mib": 11947.0478515625,
+          "reserved_mib": 19696.0
+        },
+        {
+          "stage": "forward/layer_24",
+          "allocated_mib": 11968.34375,
+          "reserved_mib": 19696.0
+        },
+        {
+          "stage": "forward/layer_25",
+          "allocated_mib": 11989.6396484375,
+          "reserved_mib": 19696.0
+        },
+        {
+          "stage": "forward/layer_26",
+          "allocated_mib": 12010.935546875,
+          "reserved_mib": 19696.0
+        },
+        {
+          "stage": "forward/layer_27",
+          "allocated_mib": 12032.2314453125,
+          "reserved_mib": 19696.0
+        },
+        {
+          "stage": "forward/layer_28",
+          "allocated_mib": 12053.52734375,
+          "reserved_mib": 19696.0
+        },
+        {
+          "stage": "forward/layer_29",
+          "allocated_mib": 12074.8232421875,
+          "reserved_mib": 19696.0
+        },
+        {
+          "stage": "forward/layer_30",
+          "allocated_mib": 12096.119140625,
+          "reserved_mib": 19696.0
+        },
+        {
+          "stage": "forward/layer_31",
+          "allocated_mib": 12117.4150390625,
+          "reserved_mib": 19696.0
+        },
+        {
+          "stage": "forward/layer_32",
+          "allocated_mib": 12138.7109375,
+          "reserved_mib": 19696.0
+        },
+        {
+          "stage": "forward/layer_33",
+          "allocated_mib": 12160.0068359375,
+          "reserved_mib": 19696.0
+        },
+        {
+          "stage": "forward/layer_34",
+          "allocated_mib": 12181.302734375,
+          "reserved_mib": 19696.0
+        },
+        {
+          "stage": "forward/layer_35",
+          "allocated_mib": 12202.5986328125,
+          "reserved_mib": 19696.0
+        },
+        {
+          "stage": "backward/complete",
+          "allocated_mib": 15246.21728515625,
+          "reserved_mib": 19696.0
+        },
+        {
+          "stage": "optimizer/complete",
+          "allocated_mib": 15246.21728515625,
+          "reserved_mib": 19696.0
+        }
+      ],
+      "snapshot_file": "large_ctx128_train_step.pickle",
+      "snapshot_policy": "local only; never copied into the public submission",
+      "allocator": {
+        "allocator_limit_mib": 23552,
+        "allocator_fraction": 0.48421737046550567,
+        "device_name": "NVIDIA GeForce RTX 4090",
+        "torch_total_memory_mib": 48639.3125
+      },
+      "gpu": {
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "memory_total_mib": 49140.0,
+        "memory_free_mib_at_start": 48234.0,
+        "driver_version": "550.163.01",
+        "power_limit_w": 450.0,
+        "pstate": "P0"
+      },
+      "command": "python -m profiling.memory_snapshot --model-size large --context-length 128 --mode train_step"
+    }
+  ],
+  "supplemental_diagnostic": "Large/context-128 train_step is added only if both prescribed training fallbacks OOM; it never substitutes for them.",
+  "residual_stream_formula": "batch * context * d_model * bytes_per_element",
+  "raw_artifacts_policy": "Pickled snapshots remain local and are not submitted."
+}
