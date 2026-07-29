@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "accumulation_experiment": {
+    "mathematical_result": 10.0,
+    "observed": [
+      {
+        "case": "fp32_input_fp32_accumulator",
+        "result": 10.001
+      },
+      {
+        "case": "fp16_input_fp16_accumulator",
+        "result": 9.9531
+      },
+      {
+        "case": "fp16_input_fp32_accumulator",
+        "result": 10.0021
+      },
+      {
+        "case": "fp16_input_cast_to_fp32_accumulator",
+        "result": 10.0021
+      }
+    ]
+  },
+  "toy_model_bf16_autocast": {
+    "parameter": "float32",
+    "first_linear_output": "bfloat16",
+    "layer_norm_output": "float32",
+    "logits": "bfloat16",
+    "loss": "float32",
+    "parameter_gradient": "float32"
+  },
+  "benchmark": {
+    "shared_config": {
+      "batch_size": 4,
+      "context_length": 512,
+      "mode": "forward_backward",
+      "warmup_steps": 5,
+      "measurement_steps": 10,
+      "seed": 0,
+      "learning_rate": 0.001
+    },
+    "environment": {
+      "gpu": "NVIDIA GeForce RTX 4090",
+      "driver_version": "570.124.06",
+      "cuda_runtime": "12.8",
+      "pytorch": "2.11.0+cu128",
+      "python": "3.12.3"
+    },
+    "rows": [
+      {
+        "model_size": "small",
+        "dtype": "fp32",
+        "mean_ms": 81.22049896046519,
+        "stdev_ms": 0.15100953312060095,
+        "cv": 0.001859253945166062,
+        "peak_allocated_mib": 4157.58935546875,
+        "peak_reserved_mib": 4288.0,
+        "loss": 9.280805587768555
+      },
+      {
+        "model_size": "small",
+        "dtype": "bf16",
+        "mean_ms": 49.788172356784344,
+        "stdev_ms": 0.16918471177820585,
+        "cv": 0.003398090425288568,
+        "peak_allocated_mib": 3319.23095703125,
+        "peak_reserved_mib": 3596.0,
+        "loss": 9.28068733215332
+      },
+      {
+        "model_size": "medium",
+        "dtype": "fp32",
+        "mean_ms": 233.2879215478897,
+        "stdev_ms": 0.06934186835576756,
+        "cv": 0.00029723728470671355,
+        "peak_allocated_mib": 10817.33251953125,
+        "peak_reserved_mib": 11256.0,
+        "loss": 9.31201171875
+      },
+      {
+        "model_size": "medium",
+        "dtype": "bf16",
+        "mean_ms": 124.60137363523245,
+        "stdev_ms": 0.8748509744921859,
+        "cv": 0.0070211984745311975,
+        "peak_allocated_mib": 8624.04443359375,
+        "peak_reserved_mib": 8928.0,
+        "loss": 9.31192398071289
+      },
+      {
+        "model_size": "large",
+        "dtype": "fp32",
+        "mean_ms": 518.7860855832696,
+        "stdev_ms": 0.43001353688056887,
+        "cv": 0.0008288840985338032,
+        "peak_allocated_mib": 20751.40380859375,
+        "peak_reserved_mib": 20976.0,
+        "loss": 9.317277908325195
+      },
+      {
+        "model_size": "large",
+        "dtype": "bf16",
+        "mean_ms": 266.9599799439311,
+        "stdev_ms": 1.2696411773846195,
+        "cv": 0.004755923257303506,
+        "peak_allocated_mib": 17000.87548828125,
+        "peak_reserved_mib": 17636.0,
+        "loss": 9.317359924316406
+      },
+      {
+        "model_size": "xl",
+        "dtype": "fp32",
+        "mean_ms": 1292.7604770287871,
+        "stdev_ms": 4.585942779480132,
+        "cv": 0.0035474032978020974,
+        "peak_allocated_mib": 41118.36669921875,
+        "peak_reserved_mib": 42512.0,
+        "loss": 9.414849281311035
+      },
+      {
+        "model_size": "xl",
+        "dtype": "bf16",
+        "mean_ms": 649.583532102406,
+        "stdev_ms": 0.4799070256947929,
+        "cv": 0.0007387918596728467,
+        "peak_allocated_mib": 38182.80419921875,
+        "peak_reserved_mib": 44322.0,
+        "loss": 9.414957046508789
+      }
+    ],
+    "ten_b_attempt": {
+      "status": "oom",
+      "failure_stage": "model_to_device",
+      "error_type": "OutOfMemoryError",
+      "parameter_count": 12832823808,
+      "fp32_parameter_gib": 47.806,
+      "explanation": "The FP32 parameter tensor alone is larger than the usable device capacity once runtime and allocation overhead are included."
+    }
+  }
+}

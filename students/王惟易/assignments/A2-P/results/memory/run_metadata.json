@@ -1,0 +1,155 @@
+{
+  "schema_version": 1,
+  "tool": {
+    "name": "PyTorch CUDA memory history",
+    "capture_api": "torch.cuda.memory._record_memory_history",
+    "viewer": "PyTorch Memory Visualizer"
+  },
+  "environment": {
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpu_memory_mib": 48519.0625,
+    "compute_capability": "8.9",
+    "driver_version": "570.124.06",
+    "cuda_runtime": "12.8",
+    "cudnn_version": 91900,
+    "pytorch": "2.11.0+cu128",
+    "python": "3.12.3"
+  },
+  "measurement": {
+    "warmup_steps": 1,
+    "measurement_steps": 1,
+    "history_started_after_warmup": true,
+    "peak_stats_reset_after_warmup": true,
+    "max_history_entries": 1000000,
+    "seed": 0,
+    "learning_rate": 0.001
+  },
+  "primary_cases": [
+    {
+      "model_size": "xl",
+      "batch_size": 4,
+      "context_length": 128,
+      "mode": "forward",
+      "dtype": "fp32",
+      "status": "ok"
+    },
+    {
+      "model_size": "xl",
+      "batch_size": 4,
+      "context_length": 128,
+      "mode": "forward",
+      "dtype": "bf16",
+      "status": "ok"
+    },
+    {
+      "model_size": "xl",
+      "batch_size": 4,
+      "context_length": 128,
+      "mode": "train_step",
+      "dtype": "fp32",
+      "status": "oom",
+      "failure_stage": "warmup"
+    },
+    {
+      "model_size": "xl",
+      "batch_size": 4,
+      "context_length": 128,
+      "mode": "train_step",
+      "dtype": "bf16",
+      "status": "oom",
+      "failure_stage": "warmup"
+    },
+    {
+      "model_size": "xl",
+      "batch_size": 4,
+      "context_length": 2048,
+      "mode": "forward",
+      "dtype": "fp32",
+      "status": "ok"
+    },
+    {
+      "model_size": "xl",
+      "batch_size": 4,
+      "context_length": 2048,
+      "mode": "forward",
+      "dtype": "bf16",
+      "status": "ok"
+    },
+    {
+      "model_size": "xl",
+      "batch_size": 4,
+      "context_length": 2048,
+      "mode": "train_step",
+      "dtype": "fp32",
+      "status": "oom",
+      "failure_stage": "warmup"
+    },
+    {
+      "model_size": "xl",
+      "batch_size": 4,
+      "context_length": 2048,
+      "mode": "train_step",
+      "dtype": "bf16",
+      "status": "oom",
+      "failure_stage": "warmup"
+    }
+  ],
+  "fallback_cases": [
+    {
+      "model_size": "xl",
+      "batch_size": 1,
+      "context_length": 2048,
+      "mode": "train_step",
+      "dtype": "fp32",
+      "status": "oom",
+      "failure_stage": "warmup"
+    },
+    {
+      "model_size": "xl",
+      "batch_size": 1,
+      "context_length": 2048,
+      "mode": "train_step",
+      "dtype": "bf16",
+      "status": "oom",
+      "failure_stage": "warmup"
+    },
+    {
+      "model_size": "xl",
+      "batch_size": 1,
+      "context_length": 1024,
+      "mode": "train_step",
+      "dtype": "fp32",
+      "status": "oom",
+      "failure_stage": "warmup"
+    },
+    {
+      "model_size": "xl",
+      "batch_size": 1,
+      "context_length": 1024,
+      "mode": "train_step",
+      "dtype": "bf16",
+      "status": "oom",
+      "failure_stage": "warmup"
+    },
+    {
+      "model_size": "large",
+      "batch_size": 1,
+      "context_length": 2048,
+      "mode": "train_step",
+      "dtype": "fp32",
+      "status": "ok"
+    },
+    {
+      "model_size": "large",
+      "batch_size": 1,
+      "context_length": 2048,
+      "mode": "train_step",
+      "dtype": "bf16",
+      "status": "ok"
+    }
+  ],
+  "raw_artifacts": {
+    "submitted": false,
+    "retention": "Successful snapshots and OOM diagnostics are retained locally for review on request."
+  }
+}

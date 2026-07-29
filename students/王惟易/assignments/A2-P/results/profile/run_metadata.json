@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "tool": {
+    "name": "torch.profiler",
+    "pytorch_version": "2.11.0+cu128",
+    "activities": [
+      "CPU",
+      "CUDA"
+    ],
+    "trace_viewer": "Perfetto",
+    "limitation": "torch.profiler exposes framework operators, user annotations, and CUDA kernels, but not the full system-level CUDA API correlation provided by Nsight Systems."
+  },
+  "environment": {
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpu_memory_mib": 48519.0625,
+    "compute_capability": "8.9",
+    "driver_version": "570.124.06",
+    "cuda_runtime": "12.8",
+    "cudnn_version": 91900,
+    "python": "3.12.3"
+  },
+  "measurement": {
+    "mode": "train_step",
+    "batch_size": 4,
+    "dtype": "fp32",
+    "warmup_steps": 5,
+    "measurement_steps": 1,
+    "seed": 0,
+    "learning_rate": 0.001,
+    "markers": [
+      "profile/warmup",
+      "profile/measure",
+      "zero_grad",
+      "forward",
+      "loss",
+      "backward",
+      "optimizer",
+      "attention/scores",
+      "attention/softmax",
+      "attention/value"
+    ]
+  },
+  "runs": [
+    {
+      "model_size": "small",
+      "context_length": 256,
+      "trace_file": "small_b4_t256_fp32.trace.json",
+      "command": "uv run python profiling/compute_profile.py --model-size small --batch-size 4 --context-length 256 --warmup 5 --seed 0 --learning-rate 0.001 --trace-output results/profiler/final/small_b4_t256_fp32.trace.json --summary-output results/profiler/final/small_b4_t256_fp32.summary.txt --metadata-output results/profiler/final/small_b4_t256_fp32.metadata.json"
+    },
+    {
+      "model_size": "small",
+      "context_length": 512,
+      "trace_file": "small_b4_t512_fp32.trace.json",
+      "command": "uv run python profiling/compute_profile.py --model-size small --batch-size 4 --context-length 512 --warmup 5 --seed 0 --learning-rate 0.001 --trace-output results/profiler/final/small_b4_t512_fp32.trace.json --summary-output results/profiler/final/small_b4_t512_fp32.summary.txt --metadata-output results/profiler/final/small_b4_t512_fp32.metadata.json"
+    },
+    {
+      "model_size": "small",
+      "context_length": 1024,
+      "trace_file": "small_b4_t1024_fp32.trace.json",
+      "command": "uv run python profiling/compute_profile.py --model-size small --batch-size 4 --context-length 1024 --warmup 5 --seed 0 --learning-rate 0.001 --trace-output results/profiler/final/small_b4_t1024_fp32.trace.json --summary-output results/profiler/final/small_b4_t1024_fp32.summary.txt --metadata-output results/profiler/final/small_b4_t1024_fp32.metadata.json"
+    },
+    {
+      "model_size": "medium",
+      "context_length": 256,
+      "trace_file": "medium_b4_t256_fp32.trace.json",
+      "command": "uv run python profiling/compute_profile.py --model-size medium --batch-size 4 --context-length 256 --warmup 5 --seed 0 --learning-rate 0.001 --trace-output results/profiler/final/medium_b4_t256_fp32.trace.json --summary-output results/profiler/final/medium_b4_t256_fp32.summary.txt --metadata-output results/profiler/final/medium_b4_t256_fp32.metadata.json"
+    },
+    {
+      "model_size": "medium",
+      "context_length": 512,
+      "trace_file": "medium_b4_t512_fp32.trace.json",
+      "command": "uv run python profiling/compute_profile.py --model-size medium --batch-size 4 --context-length 512 --warmup 5 --seed 0 --learning-rate 0.001 --trace-output results/profiler/final/medium_b4_t512_fp32.trace.json --summary-output results/profiler/final/medium_b4_t512_fp32.summary.txt --metadata-output results/profiler/final/medium_b4_t512_fp32.metadata.json"
+    },
+    {
+      "model_size": "medium",
+      "context_length": 1024,
+      "trace_file": "medium_b4_t1024_fp32.trace.json",
+      "command": "uv run python profiling/compute_profile.py --model-size medium --batch-size 4 --context-length 1024 --warmup 5 --seed 0 --learning-rate 0.001 --trace-output results/profiler/final/medium_b4_t1024_fp32.trace.json --summary-output results/profiler/final/medium_b4_t1024_fp32.summary.txt --metadata-output results/profiler/final/medium_b4_t1024_fp32.metadata.json"
+    }
+  ],
+  "raw_artifacts": {
+    "submitted": false,
+    "retention": "The six full Chrome traces and detailed analysis JSON files are retained locally for review on request."
+  }
+}
