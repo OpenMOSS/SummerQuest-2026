@@ -1,0 +1,11 @@
+Command: ./.venv-a2k-cu124/bin/python -m pytest tests/test_attention.py -v
+Execution: CUDA-enabled single-GPU run
+
+tests/test_attention.py::test_flash_forward_pass_pytorch PASSED
+tests/test_attention.py::test_flash_forward_pass_triton[False] PASSED
+tests/test_attention.py::test_flash_forward_pass_triton[True] PASSED
+tests/test_attention.py::test_flash_backward_pytorch PASSED
+tests/test_attention.py::test_flash_backward_triton[False] PASSED
+tests/test_attention.py::test_flash_backward_triton[True] PASSED
+
+============================== 6 passed in 3.78s ===============================
