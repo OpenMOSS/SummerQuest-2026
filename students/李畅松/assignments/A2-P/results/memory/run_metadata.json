@@ -1,0 +1,63 @@
+{
+  "runs": [
+    {
+      "config_id": "xl_128_forward",
+      "model_size": "xl",
+      "context_length": 128,
+      "batch_size": 1,
+      "mode": "forward",
+      "dtype": "fp32",
+      "latency_ms": 59.6458837389946,
+      "peak_active_mib": 7644.101806640625,
+      "peak_allocated_mib": 7644.101806640625,
+      "peak_reserved_mib": 7834.0,
+      "status": "ok",
+      "snapshot_retained_locally": true,
+      "gpu": "NVIDIA GeForce RTX 4090",
+      "torch": "2.5.1+cu124",
+      "cuda": "12.4"
+    },
+    {
+      "config_id": "xl_128_train",
+      "model_size": "xl",
+      "context_length": 128,
+      "batch_size": 1,
+      "mode": "train_step",
+      "dtype": "fp32",
+      "latency_ms": 372.6186864078045,
+      "peak_active_mib": 38134.47778701782,
+      "peak_allocated_mib": 38134.47778701782,
+      "peak_reserved_mib": 40074.0,
+      "status": "ok",
+      "snapshot_retained_locally": true,
+      "gpu": "NVIDIA GeForce RTX 4090",
+      "torch": "2.5.1+cu124",
+      "cuda": "12.4"
+    },
+    {
+      "config_id": "xl_2048_forward",
+      "model_size": "xl",
+      "context_length": 2048,
+      "batch_size": 1,
+      "mode": "forward",
+      "dtype": "fp32",
+      "latency_ms": 560.0119456648827,
+      "peak_active_mib": 9310.529541015625,
+      "peak_allocated_mib": 9310.529541015625,
+      "peak_reserved_mib": 9930.0,
+      "status": "ok",
+      "snapshot_retained_locally": true,
+      "gpu": "NVIDIA GeForce RTX 4090",
+      "torch": "2.5.1+cu124",
+      "cuda": "12.4"
+    },
+    {
+      "config_id": "xl_2048_train",
+      "status": "oom",
+      "exception_type": "OutOfMemoryError",
+      "log_retained_locally": true,
+      "message": "<local-path> line 432, in scaled_dot_product_attention\n    attention_weights = softmax(attention_scores, dim=-1)  # Softmax over the key dimension\n  File \"<local-path> line 6, in softmax\n    exponentiated_rescaled_input = torch.exp(rescaled_input)\ntorch.OutOfMemoryError: CUDA out of memory. Tried to allocate 400.00 MiB. GPU 0 has a total capacity of 47.50 GiB of which 190.12 MiB is free. Process 1987602 has 47.29 GiB memory in use. Of the allocated memory 46.50 GiB is allocated by PyTorch, and 344.46 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https:<local-path>"
+    }
+  ],
+  "snapshots_submitted": false
+}

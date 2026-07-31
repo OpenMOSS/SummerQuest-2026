@@ -1,0 +1,61 @@
+config_id,model_size,context_length,mode,dtype,domain,rank,event,calls,total_time_us,measurement_mean_ms,status
+medium_1024,medium,1024,train_step,bf16,cpu,1,PyTorch Profiler (0),1,12725814.499,256.74597173929214,ok
+medium_1024,medium,1024,train_step,bf16,cpu,2,<frozen runpy>(198): _run_module_as_main,1,12725709.004,256.74597173929214,ok
+medium_1024,medium,1024,train_step,bf16,cpu,3,<frozen runpy>(88): _run_code,1,12725706.751,256.74597173929214,ok
+medium_1024,medium,1024,train_step,bf16,cpu,4,profiling/torch_profile.py(19): <module>,1,12725703.677,256.74597173929214,ok
+medium_1024,medium,1024,train_step,bf16,cpu,5,profiling/benchmark.py(34): run,1,12723593.244,256.74597173929214,ok
+medium_1024,medium,1024,train_step,bf16,cuda,1,cudaMemcpyAsync,526,774729.4639999992,256.74597173929214,ok
+medium_1024,medium,1024,train_step,bf16,cuda,2,Memcpy HtoD (Pageable -> Device),220,691297.8179999999,256.74597173929214,ok
+medium_1024,medium,1024,train_step,bf16,cuda,3,cudaLaunchKernel,28208,381604.60999999696,256.74597173929214,ok
+medium_1024,medium,1024,train_step,bf16,cuda,4,Optimizer.step#AdamW.step,6,256814.109,256.74597173929214,ok
+medium_1024,medium,1024,train_step,bf16,cuda,5,cudaStreamSynchronize,226,159948.449,256.74597173929214,ok
+medium_256,medium,256,train_step,bf16,cpu,1,PyTorch Profiler (0),1,12584363.523,259.748425334692,ok
+medium_256,medium,256,train_step,bf16,cpu,2,<frozen runpy>(198): _run_module_as_main,1,12584258.886,259.748425334692,ok
+medium_256,medium,256,train_step,bf16,cpu,3,<frozen runpy>(88): _run_code,1,12584256.33,259.748425334692,ok
+medium_256,medium,256,train_step,bf16,cpu,4,profiling/torch_profile.py(19): <module>,1,12584252.872,259.748425334692,ok
+medium_256,medium,256,train_step,bf16,cpu,5,profiling/benchmark.py(34): run,1,12582154.37,259.748425334692,ok
+medium_256,medium,256,train_step,bf16,cuda,1,cudaMemcpyAsync,526,640677.0860000008,259.748425334692,ok
+medium_256,medium,256,train_step,bf16,cuda,2,Memcpy HtoD (Pageable -> Device),220,573341.4709999998,259.748425334692,ok
+medium_256,medium,256,train_step,bf16,cuda,3,cudaLaunchKernel,29072,380601.1020000001,259.748425334692,ok
+medium_256,medium,256,train_step,bf16,cuda,4,Optimizer.step#AdamW.step,6,279504.956,259.748425334692,ok
+medium_256,medium,256,train_step,bf16,cuda,5,cudaStreamSynchronize,226,160037.1,259.748425334692,ok
+medium_512,medium,512,train_step,bf16,cpu,1,PyTorch Profiler (0),1,11530953.854,257.7280327677727,ok
+medium_512,medium,512,train_step,bf16,cpu,2,<frozen runpy>(198): _run_module_as_main,1,11530851.495,257.7280327677727,ok
+medium_512,medium,512,train_step,bf16,cpu,3,<frozen runpy>(88): _run_code,1,11530849.214,257.7280327677727,ok
+medium_512,medium,512,train_step,bf16,cpu,4,profiling/torch_profile.py(19): <module>,1,11530846.047,257.7280327677727,ok
+medium_512,medium,512,train_step,bf16,cpu,5,profiling/benchmark.py(34): run,1,11528750.266,257.7280327677727,ok
+medium_512,medium,512,train_step,bf16,cuda,1,cudaMemcpyAsync,526,611636.6960000001,257.7280327677727,ok
+medium_512,medium,512,train_step,bf16,cuda,2,Memcpy HtoD (Pageable -> Device),220,547889.5759999998,257.7280327677727,ok
+medium_512,medium,512,train_step,bf16,cuda,3,cudaLaunchKernel,29072,383117.5919999997,257.7280327677727,ok
+medium_512,medium,512,train_step,bf16,cuda,4,Optimizer.step#AdamW.step,6,344205.511,257.7280327677727,ok
+medium_512,medium,512,train_step,bf16,cuda,5,cudaMalloc,577,167966.45699999997,257.7280327677727,ok
+small_1024,small,1024,train_step,bf16,cpu,1,PyTorch Profiler (0),1,5253563.043,123.24297428131104,ok
+small_1024,small,1024,train_step,bf16,cpu,2,<frozen runpy>(198): _run_module_as_main,1,5253462.007,123.24297428131104,ok
+small_1024,small,1024,train_step,bf16,cpu,3,<frozen runpy>(88): _run_code,1,5253459.809,123.24297428131104,ok
+small_1024,small,1024,train_step,bf16,cpu,4,profiling/torch_profile.py(19): <module>,1,5253455.48,123.24297428131104,ok
+small_1024,small,1024,train_step,bf16,cpu,5,profiling/benchmark.py(34): run,1,5252306.364,123.24297428131104,ok
+small_1024,small,1024,train_step,bf16,cuda,1,cudaLaunchKernel,13916,348271.71699999645,123.24297428131104,ok
+small_1024,small,1024,train_step,bf16,cuda,2,cudaDeviceGetStreamPriorityRange,1,123695.691,123.24297428131104,ok
+small_1024,small,1024,train_step,bf16,cuda,3,Optimizer.step#AdamW.step,6,117351.92,123.24297428131104,ok
+small_1024,small,1024,train_step,bf16,cuda,4,cudaMemcpyAsync,274,68605.19000000008,123.24297428131104,ok
+small_1024,small,1024,train_step,bf16,cuda,5,Memcpy HtoD (Pageable -> Device),112,56441.91999999999,123.24297428131104,ok
+small_256,small,256,train_step,bf16,cpu,1,PyTorch Profiler (0),1,5926170.519,117.49909818172455,ok
+small_256,small,256,train_step,bf16,cpu,2,<frozen runpy>(198): _run_module_as_main,1,5926008.506,117.49909818172455,ok
+small_256,small,256,train_step,bf16,cpu,3,<frozen runpy>(88): _run_code,1,5926006.143,117.49909818172455,ok
+small_256,small,256,train_step,bf16,cpu,4,profiling/torch_profile.py(19): <module>,1,5926002.46,117.49909818172455,ok
+small_256,small,256,train_step,bf16,cpu,5,profiling/benchmark.py(34): run,1,5924780.564,117.49909818172455,ok
+small_256,small,256,train_step,bf16,cuda,1,cudaLaunchKernel,13712,345616.99999999866,117.49909818172455,ok
+small_256,small,256,train_step,bf16,cuda,2,cudaMemcpyAsync,274,161243.27399999992,117.49909818172455,ok
+small_256,small,256,train_step,bf16,cuda,3,Memcpy HtoD (Pageable -> Device),112,130319.29399999995,117.49909818172455,ok
+small_256,small,256,train_step,bf16,cuda,4,Optimizer.step#AdamW.step,6,122224.12299999999,117.49909818172455,ok
+small_256,small,256,train_step,bf16,cuda,5,cudaDeviceGetStreamPriorityRange,1,120951.261,117.49909818172455,ok
+small_512,small,512,train_step,bf16,cpu,1,PyTorch Profiler (0),1,6279105.764,124.93058666586876,ok
+small_512,small,512,train_step,bf16,cpu,2,<frozen runpy>(198): _run_module_as_main,1,6278988.459,124.93058666586876,ok
+small_512,small,512,train_step,bf16,cpu,3,<frozen runpy>(88): _run_code,1,6278986.362,124.93058666586876,ok
+small_512,small,512,train_step,bf16,cpu,4,profiling/torch_profile.py(19): <module>,1,6278982.865,124.93058666586876,ok
+small_512,small,512,train_step,bf16,cpu,5,profiling/benchmark.py(34): run,1,6277766.622,124.93058666586876,ok
+small_512,small,512,train_step,bf16,cuda,1,cudaLaunchKernel,13922,350857.19200000144,124.93058666586876,ok
+small_512,small,512,train_step,bf16,cuda,2,cudaMemcpyAsync,274,211061.59000000008,124.93058666586876,ok
+small_512,small,512,train_step,bf16,cuda,3,Memcpy HtoD (Pageable -> Device),112,173633.70500000002,124.93058666586876,ok
+small_512,small,512,train_step,bf16,cuda,4,Optimizer.step#AdamW.step,6,121862.90299999999,124.93058666586876,ok
+small_512,small,512,train_step,bf16,cuda,5,cudaDeviceGetStreamPriorityRange,1,119931.798,124.93058666586876,ok
