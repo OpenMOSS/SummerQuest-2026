@@ -1,0 +1,18 @@
+{
+  "starter_commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+  "handout_version": "26.1.4-rc.3",
+  "hardware": {
+    "cuda": "12.6",
+    "device": "cuda:0",
+    "device_name": "NVIDIA GeForce RTX 3090",
+    "memory_total_mib": 24154.4,
+    "tf32": false,
+    "torch": "2.7.1+cu126",
+    "triton": "3.3.1"
+  },
+  "report_note": "A2-P measured on RTX 3090.",
+  "commands": [
+    "python submission/profiling/a2_runner.py model --model-size small --batch-size 4 --context-length 512 --mode train_step --warmup 5 --steps 10 --output results/benchmark.json",
+    "python submission/profiling/a2_runner.py profile --model-size small --batch-size 4 --context-length 512 --warmup 5 --output results/profile.json"
+  ]
+}
