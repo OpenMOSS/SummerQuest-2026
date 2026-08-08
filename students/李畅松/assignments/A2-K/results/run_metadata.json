@@ -1,0 +1,50 @@
+{
+  "status": "ok",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "allocator_limit_mib": 23552,
+  "timing": {
+    "warmup_ms": 100,
+    "rep_ms": 300,
+    "quantiles": [
+      0.2,
+      0.5,
+      0.8
+    ]
+  },
+  "environments": [
+    {
+      "python": "3.12.13",
+      "torch": "2.5.1+cu124",
+      "cuda_runtime": "12.4",
+      "gpu": "NVIDIA GeForce RTX 4090",
+      "run_count": 19
+    },
+    {
+      "python": "3.13.14",
+      "torch": "2.5.1+cu124",
+      "cuda_runtime": "12.4",
+      "gpu": "NVIDIA GeForce RTX 4090",
+      "run_count": 13
+    }
+  ],
+  "official_tests": {
+    "passed": 6,
+    "failed": 0,
+    "skipped": 0
+  },
+  "supplemental_experiments": {
+    "small_transformer_eager_compiled": {
+      "status": "ok",
+      "python": "3.12.13",
+      "torch": "2.5.1+cu124",
+      "cuda_runtime": "12.4",
+      "gpu": "NVIDIA GeForce RTX 4090",
+      "context_length": 512,
+      "dtype": "bf16",
+      "warmup_steps": 5,
+      "measurement_steps": 10,
+      "source": "results/compile_comparison.csv"
+    }
+  },
+  "missing": []
+}
