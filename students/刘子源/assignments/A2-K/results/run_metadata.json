@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "cuda": "12.6",
+    "device": "cuda:0",
+    "device_name": "NVIDIA GeForce RTX 3090",
+    "memory_total_mib": 24154.4,
+    "tf32": false,
+    "torch": "2.7.1+cu126",
+    "triton": "3.3.1"
+  },
+  "hardware": {
+    "gpu_name": "NVIDIA GeForce RTX 3090",
+    "memory_total_mib": 24154.4,
+    "driver_version": "560.28.03",
+    "free_memory_mib_at_start": null,
+    "free_memory_requirement_mib": 22528,
+    "power_limit_w": null,
+    "pstate": null,
+    "unavailable_reason": "历史运行没有记录精确的开跑前可用显存、功耗上限和 P-state。"
+  },
+  "hardware_deviation": "由于 RTX 4090 队列长期没有可用卡，本次使用 RTX 3090 完成实验。",
+  "allocator_limit_mib": 23552,
+  "starter_commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+  "handout_version": "26.1.4-k-rc.3",
+  "seed": [
+    0,
+    1,
+    2
+  ],
+  "formal_gpu": "NVIDIA GeForce RTX 3090",
+  "driver": "560.28.03",
+  "measurement": {
+    "warmup_steps": 5,
+    "measurement_steps": 10,
+    "cuda_synchronize": true,
+    "process_policy": "新建进程、串行执行",
+    "attention_protocol": "使用 CUDA 同步的 perf_counter；5 次 warm-up，10 次测量",
+    "attention_protocol_note": "历史运行没有按照题面示例的 do_bench(warmup=100, rep=300) 设置重新执行。"
+  },
+  "commands": [
+    "python submission/student_scripts/a2k/a2_runner.py correctness --sequence-length 128 --seeds 0 1 2 --dimensions 32 64 128 --output results/correctness.json",
+    "python submission/student_scripts/a2k/a2_runner.py attention --implementation triton --phase forward_backward --sequence-length 8192 --dimension 128 --dtype bfloat16 --causal --output results/flash.json"
+  ],
+  "free_memory_start_mib": null,
+  "power_limit": null,
+  "pstate": null
+}
