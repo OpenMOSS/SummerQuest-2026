@@ -1,0 +1,17 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.1.1, pluggy-1.6.0 -- /usr/bin/python3
+hypothesis profile 'default'
+rootdir: assignment2-systems (public path redacted)
+configfile: pyproject.toml
+plugins: jaxtyping-0.3.11, anyio-4.9.0, hypothesis-6.130.8, flakefinder-1.1.0, rerunfailures-15.1, shard-0.1.2, xdist-3.7.0, xdoctest-1.0.2
+collecting ... collected 6 items
+Running 6 items in this shard: tests/test_attention.py::test_flash_forward_pass_pytorch, tests/test_attention.py::test_flash_forward_pass_triton[False], tests/test_attention.py::test_flash_forward_pass_triton[True], tests/test_attention.py::test_flash_backward_pytorch, tests/test_attention.py::test_flash_backward_triton[False], tests/test_attention.py::test_flash_backward_triton[True]
+
+tests/test_attention.py::test_flash_forward_pass_pytorch PASSED
+tests/test_attention.py::test_flash_forward_pass_triton[False] PASSED
+tests/test_attention.py::test_flash_forward_pass_triton[True] PASSED
+tests/test_attention.py::test_flash_backward_pytorch PASSED
+tests/test_attention.py::test_flash_backward_triton[False] PASSED
+tests/test_attention.py::test_flash_backward_triton[True] PASSED
+
+============================== 6 passed in 3.79s ===============================

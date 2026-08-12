@@ -1,0 +1,18 @@
+{
+  "status": "pass",
+  "measurement_collected": true,
+  "evaluation_type": "self_supervised_proxy",
+  "proxy_source": "torch.cuda.max_memory_reserved",
+  "allocator": {
+    "allocator_fraction": 0.16450711210198923,
+    "allocator_limit_mib": 23552
+  },
+  "hard_limit_mib": 24576,
+  "pytorch_peak_allocated_mib": 19710.2626953125,
+  "pytorch_peak_reserved_mib": 20212.0,
+  "within_24gib": true,
+  "nvidia_smi": {
+    "max_gpu_memory_used_mib": 20212.0,
+    "source": "pytorch_peak_reserved_proxy; nvidia-smi not collected"
+  }
+}

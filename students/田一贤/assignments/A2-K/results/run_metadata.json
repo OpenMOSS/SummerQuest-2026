@@ -1,0 +1,46 @@
+{
+  "student": "\u7530\u4e00\u8d24",
+  "status": "formal_run_complete",
+  "measurement_collected": true,
+  "gpu": "NVIDIA H200",
+  "torch": "2.9.0+cu128",
+  "cuda": "12.8",
+  "triton": "3.5.0",
+  "python": "3.12.3",
+  "dtype": "bfloat16",
+  "warmup_steps": {
+    "attention": 5,
+    "checkpoint": 3,
+    "flash": 5
+  },
+  "measurement_steps": {
+    "attention": 20,
+    "checkpoint": 5,
+    "flash": 20
+  },
+  "starter_commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+  "boundary_sequence": 16384,
+  "boundary_warmup_steps": 1,
+  "boundary_measurement_steps": 1,
+  "boundary_compiled": "skipped_optional",
+  "execution": {
+    "allocation": "4xH200 in one instance; independent single-GPU shards",
+    "launcher": "external qzcli wrapper (student submission does not claim multi-GPU speedup)",
+    "shards": [
+      "GPU0: checkpoint matrix, correctness, memory evidence",
+      "GPU1: compiled attention",
+      "GPU2: Flash core matrix",
+      "GPU3: compiled small-model comparison"
+    ],
+    "per_row_semantics": "each row measured on one visible CUDA device",
+    "seed_scope": {
+      "checkpoint": 20260811,
+      "compile_small_model": 42,
+      "correctness": [7, 19, 41],
+      "attention_baseline": "not explicitly set",
+      "flash_benchmark": "not explicitly set"
+    },
+    "synchronize_before_after": true,
+    "multi_gpu_speedup_claim": false
+  }
+}
