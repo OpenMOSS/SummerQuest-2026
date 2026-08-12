@@ -1,0 +1,4 @@
+stage,cpu_calls,cpu_total_us,cuda_annotation_calls,cuda_annotation_total_us,cuda_kernel_calls,cuda_kernel_total_us,status
+forward,1,35706.652,1,34412.956,634,7602.453,measured_from_raw_trace
+backward,1,166489.125,1,1.026,1275,18527.575,measured_from_raw_trace
+optimizer,1,40394.514,0,0,274,3103.374,measured_from_raw_trace

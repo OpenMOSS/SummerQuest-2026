@@ -1,0 +1,20 @@
+{
+  "measurement_collected": true,
+  "accumulation": {
+    "fp32_acc_fp32_add": 10.000133514404297,
+    "fp16_acc_fp16_add": 9.953125,
+    "fp32_acc_fp16_add": 10.00213623046875,
+    "fp32_acc_casted_fp16_add": 10.00213623046875
+  },
+  "toy_model_bf16": {
+    "fc1_output": "torch.bfloat16",
+    "layernorm_output": "torch.float32",
+    "parameter_dtype": "torch.float32",
+    "logits_dtype": "torch.bfloat16",
+    "loss_dtype": "torch.float32",
+    "gradient_dtype": "torch.float32",
+    "status": "pass"
+  },
+  "formal_lm_benchmark_status": "pass",
+  "formal_lm_benchmark_file": "benchmark.csv"
+}

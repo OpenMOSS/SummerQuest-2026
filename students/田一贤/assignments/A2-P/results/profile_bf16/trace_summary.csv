@@ -1,0 +1,31 @@
+name,calls,cpu_time_us,cuda_time_us,status
+autograd::engine::evaluate_function: IndexBackward0,1,77291.494,0.0,measured_from_raw_trace
+IndexBackward0,1,77278.979,0.0,measured_from_raw_trace
+aten::_index_put_impl_,1,77192.679,0.0,measured_from_raw_trace
+aten::bmm,327,33627.217000000026,0.0,measured_from_raw_trace
+aten::remainder,2,33123.462,0.0,measured_from_raw_trace
+autograd::engine::evaluate_function: BmmBackward0,109,33079.89400000002,0.0,measured_from_raw_trace
+BmmBackward0,109,32245.13500000001,0.0,measured_from_raw_trace
+aten::einsum,218,22499.57900000001,0.0,measured_from_raw_trace
+aten::_foreach_sqrt,1,19559.637,0.0,measured_from_raw_trace
+aten::div_,2,16724.679,0.0,measured_from_raw_trace
+autograd::engine::evaluate_function: MaxBackward0,12,12273.746000000003,0.0,measured_from_raw_trace
+MaxBackward0,12,12016.46,0.0,measured_from_raw_trace
+aten::log_softmax,2,12004.347,0.0,measured_from_raw_trace
+aten::value_selecting_reduction_backward,12,11951.446000000002,0.0,measured_from_raw_trace
+aten::scatter_,12,11570.043000000001,0.0,measured_from_raw_trace
+autograd::engine::evaluate_function: DivBackward0,24,10521.125999999998,0.0,measured_from_raw_trace
+DivBackward0,24,10062.19,0.0,measured_from_raw_trace
+aten::to,773,9496.867999999997,0.0,measured_from_raw_trace
+aten::neg,48,9198.046000000004,0.0,measured_from_raw_trace
+aten::_to_copy,510,8749.027000000011,0.0,measured_from_raw_trace
+aten::cross_entropy_loss,1,8709.256,0.0,measured_from_raw_trace
+aten::divide_,1,8383.434,0.0,measured_from_raw_trace
+autograd::engine::evaluate_function: MulBackward0,170,7827.939000000002,0.0,measured_from_raw_trace
+aten::mul,590,7229.207,0.0,measured_from_raw_trace
+aten::copy_,716,6534.3480000000045,0.0,measured_from_raw_trace
+aten::_log_softmax,1,5966.593,0.0,measured_from_raw_trace
+autograd::engine::evaluate_function: PermuteBackward0,617,5585.051999999992,0.0,measured_from_raw_trace
+aten::_foreach_div_,1,5252.131,0.0,measured_from_raw_trace
+autograd::engine::evaluate_function: ToCopyBackward0,195,5201.036999999999,0.0,measured_from_raw_trace
+autograd::engine::evaluate_function: SigmoidBackward0,12,5042.047,0.0,measured_from_raw_trace

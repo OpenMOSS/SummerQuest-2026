@@ -1,0 +1,60 @@
+{
+  "audit_type": "experiment_integrity",
+  "audit_date": "2026-08-11",
+  "reviewer": {
+    "agent_id": "/root/experiment_integrity_audit",
+    "model": "gpt-5.6-sol",
+    "reviewer_family": "openai",
+    "independence": "same-family",
+    "acceptance_status": "provisional"
+  },
+  "overall_verdict": "WARN",
+  "statuses": {
+    "A": "WARN",
+    "B": "PASS",
+    "C": "PASS",
+    "D": "PASS",
+    "E": "WARN",
+    "F": "PASS"
+  },
+  "verified": [
+    "A2-P FP32 and BF16 stage summaries are structured and measured_from_raw_trace",
+    "qzcli owner/project/status checks identify 田一贤 for the completed A2-P H200 job",
+    "exact shared and derived artifact hashes are recorded in h200_provenance.json"
+  ],
+  "warnings": [
+    {
+      "id": "raw_artifacts_omitted",
+      "scope": ["A2-P profiling", "A2-P memory"],
+      "detail": "Raw Chrome traces and memory-history pickles are retained remotely and represented by SHA-256 only."
+    },
+    {
+      "id": "nvidia_smi_probe_unavailable",
+      "scope": ["A2-P memory"],
+      "detail": "Independent H200 nvidia-smi probe stopped because no H200 capacity was schedulable; it is excluded from completed result claims."
+    },
+    {
+      "id": "a2p_shard_ordinal_not_retained",
+      "scope": ["A2-P provenance"],
+      "detail": "Four independent single-GPU activities are listed, but the external wrapper did not retain an exact GPU0-GPU3 mapping in the submitted artifact."
+    },
+    {
+      "id": "a2p_memory_seed_scope",
+      "scope": ["A2-P memory"],
+      "detail": "memory_snapshot.py does not explicitly set a seed; this is recorded rather than inferred."
+    },
+    {
+      "id": "framework_level_profile",
+      "scope": ["A2-P profiling"],
+      "detail": "One profiled training step plus one warm-up forward; not Nsight steady-state attribution."
+    }
+  ],
+  "evidence": {
+    "a2p_profile_stage_summary": [
+      "students/田一贤/assignments/A2-P/results/profile/stage_summary.csv",
+      "students/田一贤/assignments/A2-P/results/profile_bf16/stage_summary.csv",
+      "students/田一贤/assignments/A2-P/submission/profiling/trace_summarize.py"
+    ],
+    "owner_checks": "students/田一贤/assignments/A2-P/results/h200_provenance.json"
+  }
+}

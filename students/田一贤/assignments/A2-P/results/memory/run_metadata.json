@@ -1,0 +1,67 @@
+{
+  "status": "formal_run_complete",
+  "measurement_collected": true,
+  "history_started_after_warmup": true,
+  "evaluation_type": "self_supervised_proxy",
+  "configurations": 8,
+  "configuration_keys": [
+    [
+      128,
+      "bf16",
+      "forward"
+    ],
+    [
+      128,
+      "bf16",
+      "train_step"
+    ],
+    [
+      128,
+      "fp32",
+      "forward"
+    ],
+    [
+      128,
+      "fp32",
+      "train_step"
+    ],
+    [
+      2048,
+      "bf16",
+      "forward"
+    ],
+    [
+      2048,
+      "bf16",
+      "train_step"
+    ],
+    [
+      2048,
+      "fp32",
+      "forward"
+    ],
+    [
+      2048,
+      "fp32",
+      "train_step"
+    ]
+  ],
+  "sources": [
+    {
+      "file": "peaks.csv",
+      "sha256": "7c598a26712ee8c03ce644e2bec4842152db88a419d55bf53e2601dcb6bb76d5"
+    }
+  ],
+  "peaks_sha256": "292a2ded5555c821d983aa775d694a624bb543ecc8e0090aed4adb644c055eb2",
+  "timeline_sha256": {
+    "memory_128_timeline_forward_bf16.csv": "3bfd725dae657f4b93a47768d8131a7b0c233295a2f492b50c566085b54b6796",
+    "memory_128_timeline_forward_fp32.csv": "d4e7ee6c64d03a1296d707a9ee622dff6e3c70d3ae87d3505de628f6bdb4b857",
+    "memory_128_timeline_train_step_bf16.csv": "199591118e8ca06d3a4aa76eef164cca6d771b7713784ae8abb2483971398d2f",
+    "memory_128_timeline_train_step_fp32.csv": "4e3d4074caa1cfc32aaeb1a48eed800065cd7d8a6b732cbadc1edd3842f03cf7",
+    "memory_2048_timeline_forward_bf16.csv": "c3d03b3126aea13a810dfce200aa1a2afc1a8bd5c92315096c5023562d07c41a",
+    "memory_2048_timeline_forward_fp32.csv": "6d0fc0e5cf3e1a38f50d87e6d1ade5c40675bd2820fb11abaf74c007457fb90e",
+    "memory_2048_timeline_train_step_bf16.csv": "f04f568df9f9fdcb46c27f7470c464b73bb83f048363c7cfc6b8b7e74fa9e92e",
+    "memory_2048_timeline_train_step_fp32.csv": "4bd8e397f89d90ecc32a3d04a1f724960dec390a7bcae1b2d7e0d9327dd1bed5"
+  },
+  "raw_snapshots_submitted": false
+}

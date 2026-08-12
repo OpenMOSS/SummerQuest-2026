@@ -1,0 +1,13 @@
+{
+  "student": "\u7530\u4e00\u8d24",
+  "status": "formal_run_complete",
+  "measurement_collected": true,
+  "gpu": "NVIDIA H200",
+  "torch": "2.9.0+cu128",
+  "cuda": "12.8",
+  "python": "3.12.3",
+  "starter_commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+  "benchmark_warmup_steps": 5,
+  "benchmark_measurement_steps": 10,
+  "synchronize_before_after": true
+}

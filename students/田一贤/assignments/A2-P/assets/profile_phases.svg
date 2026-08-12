@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="250" viewBox="0 0 760 250" role="img" aria-label="Profile phase ranges">
+  <rect width="760" height="250" fill="#fff"/>
+  <text x="30" y="38" font-family="sans-serif" font-size="23" fill="#111827">Profiler ranges (schematic)</text>
+  <rect x="55" y="85" width="225" height="95" rx="10" fill="#dbeafe" stroke="#2563eb"/><text x="125" y="137" font-family="sans-serif" font-size="18" fill="#1e3a8a">forward</text>
+  <rect x="280" y="85" width="225" height="95" rx="10" fill="#fee2e2" stroke="#dc2626"/><text x="348" y="137" font-family="sans-serif" font-size="18" fill="#7f1d1d">backward</text>
+  <rect x="505" y="85" width="200" height="95" rx="10" fill="#dcfce7" stroke="#16a34a"/><text x="556" y="137" font-family="sans-serif" font-size="18" fill="#14532d">optimizer</text>
+  <text x="55" y="215" font-family="sans-serif" font-size="14" fill="#475569">torch.profiler records CPU ops, CUDA kernels, shapes and memory</text>
+</svg>
