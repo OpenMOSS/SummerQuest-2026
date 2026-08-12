@@ -12,7 +12,7 @@
 
 | 项目 | 状态 | 依据 |
 | --- | --- | --- |
-| A：来源、ground truth、proxy | WARN | `A2-P/results/h200_provenance.json`、`A2-K/results/h200_sharding.json`；所有 proxy/reference 已显式标注，但 A2-P shard ordinal 只保留为未记录。 |
+| A：来源、ground truth、proxy | WARN | `A2-P/results/h200_provenance.json`；所有 proxy/reference 已显式标注，但 A2-P shard ordinal 只保留为未记录。 |
 | B：统计与归一化 | PASS | `A2-P/results/benchmark.csv` 的 raw samples/mean/stdev/CV 与 `submission/profiling/common.py` 一致。 |
 | C：结果与数字一致性 | PASS | FP32/BF16 profiling CSV 已为结构化 measured-from-raw-trace；README 只描述实际存在的 aggregate duration 字段。 |
 | D：代码-产物链路 | PASS | `trace_summarize.py`、`summarize.py` 能生成当前 profiling 与 memory aggregate 格式。 |
