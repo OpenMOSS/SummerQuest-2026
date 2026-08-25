@@ -1,0 +1,333 @@
+{
+  "generated_at_utc": "2026-07-28T10:18:20Z",
+  "kind": "a2p_public_profile_metadata",
+  "metadata_run_count": 6,
+  "raw_artifact_policy": "Chrome trace、Nsight report 和完整 timeline 保留本地；本文件不复制这些原始内容。",
+  "runs": [
+    {
+      "batch_size": 4,
+      "command": "python profiling/benchmark.py --model-size small --batch-size 4 --warmup 3 --dtype fp32 --seed 20260728 --device cuda --profile-matrix --profile-model-sizes small medium --profile-context-lengths 256 512 1024 --trace-dir results/profile",
+      "context_length": 1024,
+      "dtype": "fp32",
+      "environment": {
+        "cuda_device_count": 1,
+        "cuda_runtime_version": "12.6",
+        "device_type": "cuda",
+        "gpu_capability": [
+          8,
+          0
+        ],
+        "gpu_name": "NVIDIA A800-SXM4-80GB",
+        "platform": "Linux",
+        "python_version": "3.10.12",
+        "pytorch_version": "2.7.1+cu126"
+      },
+      "local_trace_basename": "small_ctx1024_train_step_fp32.json",
+      "measurement_elapsed_ms": 321.52335811406374,
+      "mode": "train_step",
+      "model": {
+        "d_ff": 3072,
+        "d_model": 768,
+        "name": "small",
+        "num_heads": 12,
+        "num_layers": 12
+      },
+      "normal_warmup_steps": 3,
+      "parameter_count": 128625408,
+      "profiled_measurement_steps": 1,
+      "profiler_schedule": {
+        "active": 1,
+        "repeat": 1,
+        "wait": 0,
+        "warmup": 1
+      },
+      "schema_version": 1,
+      "seed": 20260728,
+      "stage_ranges": [
+        "profile/warmup",
+        "profile/measure",
+        "forward",
+        "backward",
+        "optimizer",
+        "attention",
+        "attention/scores",
+        "attention/softmax",
+        "attention/value"
+      ],
+      "timestamp_utc": "2026-07-28T08:52:29.422030Z",
+      "tool": "torch.profiler",
+      "vocab_size": 10000
+    },
+    {
+      "batch_size": 4,
+      "command": "python profiling/benchmark.py --model-size small --batch-size 4 --warmup 3 --dtype fp32 --seed 20260728 --device cuda --profile-matrix --profile-model-sizes small medium --profile-context-lengths 256 512 1024 --trace-dir results/profile",
+      "context_length": 256,
+      "dtype": "fp32",
+      "environment": {
+        "cuda_device_count": 1,
+        "cuda_runtime_version": "12.6",
+        "device_type": "cuda",
+        "gpu_capability": [
+          8,
+          0
+        ],
+        "gpu_name": "NVIDIA A800-SXM4-80GB",
+        "platform": "Linux",
+        "python_version": "3.10.12",
+        "pytorch_version": "2.7.1+cu126"
+      },
+      "local_trace_basename": "small_ctx256_train_step_fp32.json",
+      "measurement_elapsed_ms": 127.59066093713045,
+      "mode": "train_step",
+      "model": {
+        "d_ff": 3072,
+        "d_model": 768,
+        "name": "small",
+        "num_heads": 12,
+        "num_layers": 12
+      },
+      "normal_warmup_steps": 3,
+      "parameter_count": 128625408,
+      "profiled_measurement_steps": 1,
+      "profiler_schedule": {
+        "active": 1,
+        "repeat": 1,
+        "wait": 0,
+        "warmup": 1
+      },
+      "schema_version": 1,
+      "seed": 20260728,
+      "stage_ranges": [
+        "profile/warmup",
+        "profile/measure",
+        "forward",
+        "backward",
+        "optimizer",
+        "attention",
+        "attention/scores",
+        "attention/softmax",
+        "attention/value"
+      ],
+      "timestamp_utc": "2026-07-28T08:52:20.728847Z",
+      "tool": "torch.profiler",
+      "vocab_size": 10000
+    },
+    {
+      "batch_size": 4,
+      "command": "python profiling/benchmark.py --model-size small --batch-size 4 --warmup 3 --dtype fp32 --seed 20260728 --device cuda --profile-matrix --profile-model-sizes small medium --profile-context-lengths 256 512 1024 --trace-dir results/profile",
+      "context_length": 512,
+      "dtype": "fp32",
+      "environment": {
+        "cuda_device_count": 1,
+        "cuda_runtime_version": "12.6",
+        "device_type": "cuda",
+        "gpu_capability": [
+          8,
+          0
+        ],
+        "gpu_name": "NVIDIA A800-SXM4-80GB",
+        "platform": "Linux",
+        "python_version": "3.10.12",
+        "pytorch_version": "2.7.1+cu126"
+      },
+      "local_trace_basename": "small_ctx512_train_step_fp32.json",
+      "measurement_elapsed_ms": 146.44961897283792,
+      "mode": "train_step",
+      "model": {
+        "d_ff": 3072,
+        "d_model": 768,
+        "name": "small",
+        "num_heads": 12,
+        "num_layers": 12
+      },
+      "normal_warmup_steps": 3,
+      "parameter_count": 128625408,
+      "profiled_measurement_steps": 1,
+      "profiler_schedule": {
+        "active": 1,
+        "repeat": 1,
+        "wait": 0,
+        "warmup": 1
+      },
+      "schema_version": 1,
+      "seed": 20260728,
+      "stage_ranges": [
+        "profile/warmup",
+        "profile/measure",
+        "forward",
+        "backward",
+        "optimizer",
+        "attention",
+        "attention/scores",
+        "attention/softmax",
+        "attention/value"
+      ],
+      "timestamp_utc": "2026-07-28T08:52:24.604002Z",
+      "tool": "torch.profiler",
+      "vocab_size": 10000
+    },
+    {
+      "batch_size": 4,
+      "command": "python profiling/benchmark.py --model-size small --batch-size 4 --warmup 3 --dtype fp32 --seed 20260728 --device cuda --profile-matrix --profile-model-sizes small medium --profile-context-lengths 256 512 1024 --trace-dir results/profile",
+      "context_length": 1024,
+      "dtype": "fp32",
+      "environment": {
+        "cuda_device_count": 1,
+        "cuda_runtime_version": "12.6",
+        "device_type": "cuda",
+        "gpu_capability": [
+          8,
+          0
+        ],
+        "gpu_name": "NVIDIA A800-SXM4-80GB",
+        "platform": "Linux",
+        "python_version": "3.10.12",
+        "pytorch_version": "2.7.1+cu126"
+      },
+      "local_trace_basename": "medium_ctx1024_train_step_fp32.json",
+      "measurement_elapsed_ms": 952.8742013499141,
+      "mode": "train_step",
+      "model": {
+        "d_ff": 4096,
+        "d_model": 1024,
+        "name": "medium",
+        "num_heads": 16,
+        "num_layers": 24
+      },
+      "normal_warmup_steps": 3,
+      "parameter_count": 423183360,
+      "profiled_measurement_steps": 1,
+      "profiler_schedule": {
+        "active": 1,
+        "repeat": 1,
+        "wait": 0,
+        "warmup": 1
+      },
+      "schema_version": 1,
+      "seed": 20260728,
+      "stage_ranges": [
+        "profile/warmup",
+        "profile/measure",
+        "forward",
+        "backward",
+        "optimizer",
+        "attention",
+        "attention/scores",
+        "attention/softmax",
+        "attention/value"
+      ],
+      "timestamp_utc": "2026-07-28T08:53:00.603291Z",
+      "tool": "torch.profiler",
+      "vocab_size": 10000
+    },
+    {
+      "batch_size": 4,
+      "command": "python profiling/benchmark.py --model-size small --batch-size 4 --warmup 3 --dtype fp32 --seed 20260728 --device cuda --profile-matrix --profile-model-sizes small medium --profile-context-lengths 256 512 1024 --trace-dir results/profile",
+      "context_length": 256,
+      "dtype": "fp32",
+      "environment": {
+        "cuda_device_count": 1,
+        "cuda_runtime_version": "12.6",
+        "device_type": "cuda",
+        "gpu_capability": [
+          8,
+          0
+        ],
+        "gpu_name": "NVIDIA A800-SXM4-80GB",
+        "platform": "Linux",
+        "python_version": "3.10.12",
+        "pytorch_version": "2.7.1+cu126"
+      },
+      "local_trace_basename": "medium_ctx256_train_step_fp32.json",
+      "measurement_elapsed_ms": 242.89776850491762,
+      "mode": "train_step",
+      "model": {
+        "d_ff": 4096,
+        "d_model": 1024,
+        "name": "medium",
+        "num_heads": 16,
+        "num_layers": 24
+      },
+      "normal_warmup_steps": 3,
+      "parameter_count": 423183360,
+      "profiled_measurement_steps": 1,
+      "profiler_schedule": {
+        "active": 1,
+        "repeat": 1,
+        "wait": 0,
+        "warmup": 1
+      },
+      "schema_version": 1,
+      "seed": 20260728,
+      "stage_ranges": [
+        "profile/warmup",
+        "profile/measure",
+        "forward",
+        "backward",
+        "optimizer",
+        "attention",
+        "attention/scores",
+        "attention/softmax",
+        "attention/value"
+      ],
+      "timestamp_utc": "2026-07-28T08:52:38.210171Z",
+      "tool": "torch.profiler",
+      "vocab_size": 10000
+    },
+    {
+      "batch_size": 4,
+      "command": "python profiling/benchmark.py --model-size small --batch-size 4 --warmup 3 --dtype fp32 --seed 20260728 --device cuda --profile-matrix --profile-model-sizes small medium --profile-context-lengths 256 512 1024 --trace-dir results/profile",
+      "context_length": 512,
+      "dtype": "fp32",
+      "environment": {
+        "cuda_device_count": 1,
+        "cuda_runtime_version": "12.6",
+        "device_type": "cuda",
+        "gpu_capability": [
+          8,
+          0
+        ],
+        "gpu_name": "NVIDIA A800-SXM4-80GB",
+        "platform": "Linux",
+        "python_version": "3.10.12",
+        "pytorch_version": "2.7.1+cu126"
+      },
+      "local_trace_basename": "medium_ctx512_train_step_fp32.json",
+      "measurement_elapsed_ms": 447.8436689823866,
+      "mode": "train_step",
+      "model": {
+        "d_ff": 4096,
+        "d_model": 1024,
+        "name": "medium",
+        "num_heads": 16,
+        "num_layers": 24
+      },
+      "normal_warmup_steps": 3,
+      "parameter_count": 423183360,
+      "profiled_measurement_steps": 1,
+      "profiler_schedule": {
+        "active": 1,
+        "repeat": 1,
+        "wait": 0,
+        "warmup": 1
+      },
+      "schema_version": 1,
+      "seed": 20260728,
+      "stage_ranges": [
+        "profile/warmup",
+        "profile/measure",
+        "forward",
+        "backward",
+        "optimizer",
+        "attention",
+        "attention/scores",
+        "attention/softmax",
+        "attention/value"
+      ],
+      "timestamp_utc": "2026-07-28T08:52:48.044435Z",
+      "tool": "torch.profiler",
+      "vocab_size": 10000
+    }
+  ],
+  "schema_version": 1
+}

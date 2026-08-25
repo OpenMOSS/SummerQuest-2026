@@ -1,0 +1,13 @@
+{
+  "allocator": {
+    "allocator_fraction": 0.9768130292889415,
+    "allocator_limit_mib": 23552
+  },
+  "failed_or_oom_processes": 0,
+  "hard_limit_mib": 24576,
+  "minimum_gpu_free_memory_at_start_mib": 23717.75,
+  "pytorch_peak_allocated_mib": 19712.6064453125,
+  "pytorch_peak_reserved_mib": 20192.0,
+  "successful_processes": 80,
+  "within_24gib": true
+}

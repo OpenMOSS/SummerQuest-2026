@@ -1,0 +1,11 @@
+{
+  "allocator": {
+    "allocator_fraction": 0.9768130292889415,
+    "allocator_limit_mib": 23552
+  },
+  "hard_limit_mib": 24576,
+  "note": "Aggregate maximum across final post-revision formal matrices.",
+  "pytorch_peak_allocated_mib": 19674.4658203125,
+  "pytorch_peak_reserved_mib": 20760.0,
+  "within_24gib": true
+}

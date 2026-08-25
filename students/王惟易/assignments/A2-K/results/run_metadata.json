@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "generated_at_utc": "2026-08-07T11:10:08.111717+00:00",
+  "source_control": {
+    "starter_commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+    "working_tree_head_at_measurement": "ca8bc81a59b70516f7ebb2da4808daade877c736"
+  },
+  "environment": {
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpu_memory_total_mib": 49140.0,
+    "gpu_memory_free_mib_at_start": 48510.0,
+    "driver_version": "570.195.03",
+    "power_limit_w": 450.0,
+    "pstate": "P8",
+    "python": "3.12.3",
+    "pytorch": "2.11.0+cu128",
+    "triton": "3.6.0",
+    "cuda_runtime": "12.8",
+    "cudnn_version": 91900,
+    "compute_capability": "8.9",
+    "visible_cuda_devices": 1,
+    "device_reported_total_mib": 48518.0625,
+    "tf32_matmul_allowed": false,
+    "float32_matmul_precision": "highest"
+  },
+  "hardware_scope": {
+    "single_visible_gpu": true,
+    "platform_reported_memory_mib": 49140.0,
+    "minimum_free_memory_mib": 22528,
+    "larger_instance_used_with_fixed_allocator_cap": true
+  },
+  "allocator": {
+    "allocator_limit_mib": 23552,
+    "allocator_fraction": 0.48542746322568014,
+    "hard_limit_mib": 24576
+  },
+  "numerics": {
+    "performance_dtype": "bf16",
+    "performance_is_causal": true,
+    "performance_seed": 0,
+    "correctness_seeds": [
+      0,
+      1,
+      2
+    ],
+    "tf32_matmul_allowed": false,
+    "float32_matmul_precision": "highest",
+    "triton_fp32_dot_input_precision": "ieee"
+  },
+  "measurement_protocols": {
+    "checkpointing": {
+      "warmup_steps": 3,
+      "measurement_steps": 5,
+      "timer": "synchronized perf_counter",
+      "process_scope": "one configuration per Python process"
+    },
+    "attention": {
+      "timer": "triton.testing.do_bench",
+      "warmup_ms": 100,
+      "rep_ms": 300,
+      "quantiles": [
+        0.2,
+        0.5,
+        0.8
+      ],
+      "process_scope": "one configuration per Python process"
+    },
+    "compile": {
+      "fullgraph": true,
+      "cold_start_definition": "first invocation in a new Python process",
+      "disk_cache_cleared_between_processes": false,
+      "steady_state_timer": "triton.testing.do_bench"
+    },
+    "memory": {
+      "peak_scope": "one steady-state phase invocation, or the full measured checkpoint step",
+      "statistics": [
+        "torch.cuda.max_memory_allocated",
+        "torch.cuda.max_memory_reserved"
+      ]
+    }
+  },
+  "result_counts": {
+    "checkpointing_rows": 7,
+    "attention_baseline_rows": 18,
+    "compile_comparison_rows": 24,
+    "flash_benchmark_rows": 66,
+    "correctness_cases": 38,
+    "correctness_passed": 38,
+    "official_tests_passed": 6,
+    "official_tests_failed": 0,
+    "official_tests_skipped": 0
+  },
+  "commands": [
+    "CUDA_VISIBLE_DEVICES=0 uv run pytest tests/test_attention.py -v --no-header --tb=short",
+    "CUDA_VISIBLE_DEVICES=0 uv run python student_scripts/a2k/run_checkpoint_matrix.py --output-dir /tmp/a2k-checkpointing",
+    "CUDA_VISIBLE_DEVICES=0 uv run python student_scripts/a2k/run_attention_baseline_matrix.py --output-dir /tmp/a2k-attention-baseline",
+    "CUDA_VISIBLE_DEVICES=0 uv run python student_scripts/a2k/run_compile_comparison.py --output-dir /tmp/a2k-compile-comparison",
+    "CUDA_VISIBLE_DEVICES=0 uv run python student_scripts/a2k/flash_correctness.py --output /tmp/a2k-correctness.json",
+    "CUDA_VISIBLE_DEVICES=0 uv run python student_scripts/a2k/run_flash_benchmark_matrix.py --output-dir /tmp/a2k-flash-benchmark"
+  ],
+  "public_results": [
+    "checkpointing.csv",
+    "attention_baseline.csv",
+    "compile_comparison.csv",
+    "correctness.json",
+    "flash_benchmark.csv",
+    "unit_tests.txt"
+  ]
+}

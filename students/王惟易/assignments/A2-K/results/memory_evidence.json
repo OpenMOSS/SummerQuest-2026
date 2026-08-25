@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "allocator": {
+    "allocator_limit_mib": 23552,
+    "allocator_fraction": 0.48542746322568014,
+    "hard_limit_mib": 24576
+  },
+  "hard_limit_mib": 24576,
+  "pytorch_peak_allocated_mib": 19664.60693359375,
+  "pytorch_peak_reserved_mib": 20192.0,
+  "within_24gib": true,
+  "within_allocator_limit": true,
+  "peak_allocated_source": "medium-b1-t2048-bf16-checkpoint-none",
+  "peak_reserved_source": "medium-b1-t2048-bf16-checkpoint-none",
+  "performance_process_rows": 97,
+  "all_rows_successful": true,
+  "all_rows_report_within_24gib": true,
+  "attention_baseline_note": "The 18 baseline rows are exact views of eager rows already counted in flash_benchmark.csv.",
+  "matrix_maxima": {
+    "checkpointing.csv": {
+      "rows": 7,
+      "peak_allocated": {
+        "value_mib": 19664.60693359375,
+        "config_id": "medium-b1-t2048-bf16-checkpoint-none"
+      },
+      "peak_reserved": {
+        "value_mib": 20192.0,
+        "config_id": "medium-b1-t2048-bf16-checkpoint-none"
+      }
+    },
+    "compile_comparison.csv": {
+      "rows": 24,
+      "peak_allocated": {
+        "value_mib": 2425.21484375,
+        "config_id": "transformer_small-eager-b1-t512-dna-train_step-bf16"
+      },
+      "peak_reserved": {
+        "value_mib": 2866.0,
+        "config_id": "transformer_small-eager-b1-t512-dna-train_step-bf16"
+      }
+    },
+    "flash_benchmark.csv": {
+      "rows": 66,
+      "peak_allocated": {
+        "value_mib": 3124.25,
+        "config_id": "triton-b1-t16384-d128-backward-bf16"
+      },
+      "peak_reserved": {
+        "value_mib": 4282.0,
+        "config_id": "triton-b1-t16384-d128-backward-bf16"
+      }
+    }
+  }
+}

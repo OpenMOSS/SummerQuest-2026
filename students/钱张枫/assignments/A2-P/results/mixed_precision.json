@@ -1,0 +1,295 @@
+{
+  "accumulation": {
+    "cases": [
+      {
+        "absolute_error": 0.000133514404296875,
+        "accumulator_dtype": "torch.float32",
+        "case": "fp32_accumulator_fp32_input",
+        "expected_mathematical_sum": 10.0,
+        "explicit_input_upcast_to_fp32": false,
+        "input_dtype": "torch.float32",
+        "iterations": 1000,
+        "result": 10.000133514404297
+      },
+      {
+        "absolute_error": 0.046875,
+        "accumulator_dtype": "torch.float16",
+        "case": "fp16_accumulator_fp16_input",
+        "expected_mathematical_sum": 10.0,
+        "explicit_input_upcast_to_fp32": false,
+        "input_dtype": "torch.float16",
+        "iterations": 1000,
+        "result": 9.953125
+      },
+      {
+        "absolute_error": 0.00213623046875,
+        "accumulator_dtype": "torch.float32",
+        "case": "fp32_accumulator_fp16_input",
+        "expected_mathematical_sum": 10.0,
+        "explicit_input_upcast_to_fp32": false,
+        "input_dtype": "torch.float16",
+        "iterations": 1000,
+        "result": 10.00213623046875
+      },
+      {
+        "absolute_error": 0.00213623046875,
+        "accumulator_dtype": "torch.float32",
+        "case": "fp32_accumulator_explicit_fp16_to_fp32_input",
+        "expected_mathematical_sum": 10.0,
+        "explicit_input_upcast_to_fp32": true,
+        "input_dtype": "torch.float16",
+        "iterations": 1000,
+        "result": 10.00213623046875
+      }
+    ]
+  },
+  "generated_at_utc": "2026-07-28T08:53:55.710686+00:00",
+  "language_model_benchmark": {
+    "experiment_config": {
+      "batch_size": 4,
+      "context_length": 512,
+      "learning_rate": 0.001,
+      "measurement_steps": 10,
+      "mode": "multiple",
+      "model_size": "small",
+      "seed": 20260728,
+      "vocab_size": 10000,
+      "warmup_steps": 5
+    },
+    "model_config": {
+      "d_ff": 3072,
+      "d_model": 768,
+      "name": "small",
+      "num_heads": 12,
+      "num_layers": 12
+    },
+    "modes": {
+      "forward_backward": {
+        "bf16_autocast": {
+          "autocast_dtype": "torch.bfloat16",
+          "memory": {
+            "baseline": {
+              "available": true,
+              "baseline_allocated_bytes": 533179392,
+              "baseline_reserved_bytes": 3581935616
+            },
+            "measurement_scope": "after warm-up; includes one model, optimizer state created by the selected workload, and measured steps",
+            "peak": {
+              "available": true,
+              "peak_allocated_bytes": 3393532416,
+              "peak_reserved_bytes": 3581935616
+            }
+          },
+          "precision": "bf16",
+          "timing": {
+            "cv_percent": 5.589499988581468,
+            "mean_ms": 58.29848628491163,
+            "raw_step_ms": [
+              61.501894146203995,
+              61.35816965252161,
+              57.97577556222677,
+              54.179832339286804,
+              54.2322238907218,
+              59.40206628292799,
+              55.157785303890705,
+              55.63372001051903,
+              61.64677254855633,
+              61.896623112261295
+            ],
+            "sample_std_ms": 3.2585938842383046
+          }
+        },
+        "comparison": {
+          "bf16_over_fp32_peak_allocated_memory_ratio": 0.7784209688133319,
+          "bf16_over_fp32_speedup": 2.2608642198190494,
+          "mean_step_time_delta_ms_bf16_minus_fp32": -73.50647542625666,
+          "numeric_trend_before_warmup": {
+            "both_logits_finite": true,
+            "both_losses_finite": true,
+            "logits_mean_delta_bf16_minus_fp32": -6.988877430558205e-06,
+            "logits_std_population_delta_bf16_minus_fp32": -2.86102294921875e-06,
+            "loss_delta_bf16_minus_fp32": 0.00025653839111328125,
+            "loss_relative_delta_bf16_minus_fp32": 2.7641173181814492e-05
+          },
+          "peak_allocated_memory_delta_bytes_bf16_minus_fp32": -965975552.0
+        },
+        "fp32": {
+          "autocast_dtype": null,
+          "memory": {
+            "baseline": {
+              "available": true,
+              "baseline_allocated_bytes": 533179392,
+              "baseline_reserved_bytes": 4496293888
+            },
+            "measurement_scope": "after warm-up; includes one model, optimizer state created by the selected workload, and measured steps",
+            "peak": {
+              "available": true,
+              "peak_allocated_bytes": 4359507968,
+              "peak_reserved_bytes": 4496293888
+            }
+          },
+          "precision": "fp32",
+          "timing": {
+            "cv_percent": 0.09246609775180191,
+            "mean_ms": 131.8049617111683,
+            "raw_step_ms": [
+              131.6181067377329,
+              131.82214740663767,
+              131.82531017810106,
+              132.1096308529377,
+              131.75004161894321,
+              131.7910086363554,
+              131.77525997161865,
+              131.78356923162937,
+              131.78191799670458,
+              131.79262448102236
+            ],
+            "sample_std_ms": 0.12187490473757394
+          }
+        }
+      },
+      "train_step": {
+        "bf16_autocast": {
+          "autocast_dtype": "torch.bfloat16",
+          "memory": {
+            "baseline": {
+              "available": true,
+              "baseline_allocated_bytes": 1566639104,
+              "baseline_reserved_bytes": 4672454656
+            },
+            "measurement_scope": "after warm-up; includes one model, optimizer state created by the selected workload, and measured steps",
+            "peak": {
+              "available": true,
+              "peak_allocated_bytes": 4421388800,
+              "peak_reserved_bytes": 4672454656
+            }
+          },
+          "precision": "bf16",
+          "timing": {
+            "cv_percent": 6.15234432492337,
+            "mean_ms": 74.10350786522031,
+            "raw_step_ms": [
+              73.91293905675411,
+              71.43933605402708,
+              75.94089116901159,
+              69.16168611496687,
+              77.52227876335382,
+              69.23455651849508,
+              76.96469686925411,
+              68.86707339435816,
+              83.07419810444117,
+              74.91742260754108
+            ],
+            "sample_std_ms": 4.559102960715025
+          }
+        },
+        "comparison": {
+          "bf16_over_fp32_peak_allocated_memory_ratio": 0.8189576360525057,
+          "bf16_over_fp32_speedup": 1.8651499310545379,
+          "mean_step_time_delta_ms_bf16_minus_fp32": -64.11064472049475,
+          "numeric_trend_before_warmup": {
+            "both_logits_finite": true,
+            "both_losses_finite": true,
+            "logits_mean_delta_bf16_minus_fp32": -6.988877430558205e-06,
+            "logits_std_population_delta_bf16_minus_fp32": -2.86102294921875e-06,
+            "loss_delta_bf16_minus_fp32": 0.00025653839111328125,
+            "loss_relative_delta_bf16_minus_fp32": 2.7641173181814492e-05
+          },
+          "peak_allocated_memory_delta_bytes_bf16_minus_fp32": -977411584.0
+        },
+        "fp32": {
+          "autocast_dtype": null,
+          "memory": {
+            "baseline": {
+              "available": true,
+              "baseline_allocated_bytes": 1569899520,
+              "baseline_reserved_bytes": 5641338880
+            },
+            "measurement_scope": "after warm-up; includes one model, optimizer state created by the selected workload, and measured steps",
+            "peak": {
+              "available": true,
+              "peak_allocated_bytes": 5398800384,
+              "peak_reserved_bytes": 5641338880
+            }
+          },
+          "precision": "fp32",
+          "timing": {
+            "cv_percent": 0.058023184530885646,
+            "mean_ms": 138.21415258571506,
+            "raw_step_ms": [
+              138.1023172289133,
+              138.24456837028265,
+              138.04650213569403,
+              138.25496844947338,
+              138.23731895536184,
+              138.23295943439007,
+              138.23246397078037,
+              138.32723256200552,
+              138.2369203492999,
+              138.22627440094948
+            ],
+            "sample_std_ms": 0.08019625280260931
+          }
+        }
+      }
+    }
+  },
+  "metadata": {
+    "command": {
+      "accumulation_only": false,
+      "batch_size": 4,
+      "context_length": 512,
+      "cpu_test_mode": false,
+      "device": "cuda",
+      "entrypoint": "profiling/mixed_precision.py",
+      "learning_rate": 0.001,
+      "measurement_steps": 10,
+      "mode": "forward_backward",
+      "model_size": "small",
+      "output_path": "omitted_to_avoid_local_path_disclosure",
+      "seed": 20260728,
+      "vocab_size": 10000,
+      "warmup_steps": 5
+    },
+    "runtime": {
+      "execution_label": "cuda_bf16_autocast",
+      "hardware": {
+        "device_index": 0,
+        "device_name": "NVIDIA A800-SXM4-80GB",
+        "device_type": "cuda",
+        "total_memory_bytes": 85093777408
+      },
+      "is_cuda_experiment": true,
+      "privacy": {
+        "omitted_sensitive_fields": true
+      },
+      "software": {
+        "cuda_runtime_version": "12.6",
+        "cudnn_version": 90501,
+        "python_version": "3.10.12",
+        "pytorch_version": "2.7.1+cu126"
+      },
+      "warnings": []
+    }
+  },
+  "schema_version": 1,
+  "status": "completed",
+  "submission_source_labels": [
+    "mixed_precision_001.json",
+    "mixed_precision_002.json"
+  ],
+  "toy_model_dtype_probe": {
+    "autocast_dtype": "torch.bfloat16",
+    "fc1_output_dtype": "torch.bfloat16",
+    "gradient_dtypes": [
+      "torch.float32"
+    ],
+    "layer_norm_output_dtype": "torch.float32",
+    "logits_dtype": "torch.bfloat16",
+    "loss_dtype": "torch.float32",
+    "loss_is_finite": true,
+    "parameter_dtypes": [
+      "torch.float32"
+    ]
+  }
+}

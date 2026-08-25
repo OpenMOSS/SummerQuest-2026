@@ -1,0 +1,18 @@
+{
+  "allocator": {
+    "allocator_fraction": 0.4854174583443363,
+    "allocator_limit_mib": 23552,
+    "guard_applied_before_first_cuda_allocation": true
+  },
+  "authoritative": false,
+  "evidence_class": "development_non_authoritative",
+  "formal_rtx4090_24gb_evidence": false,
+  "hard_limit_mib": 24576,
+  "non_authoritative_reason": "Development result on NVIDIA GeForce RTX 4090 under a 23552 MiB PyTorch allocator cap; it does not replace the required RTX 4090 24GB formal evidence.",
+  "peak_reserved_source": "checkpoint:medium_ctx2048_ckpt0",
+  "process_observation_count": 159,
+  "pytorch_peak_allocated_mib": 19665.325195,
+  "pytorch_peak_reserved_mib": 20240.0,
+  "schema_version": "cs336.a2k.public-results.v1",
+  "within_24gib": true
+}

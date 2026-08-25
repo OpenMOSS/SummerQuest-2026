@@ -1,0 +1,71 @@
+{
+  "allocator": {
+    "allocator_fraction": 0.4854174583443363,
+    "allocator_limit_mib": 23552,
+    "applied_before_first_cuda_allocation": true
+  },
+  "attention_timer": {
+    "name": "triton.testing.do_bench",
+    "quantiles": [
+      0.2,
+      0.5,
+      0.8
+    ],
+    "rep_ms": 300,
+    "synchronized_boundaries": true,
+    "warmup_ms": 100
+  },
+  "authoritative": false,
+  "checkpoint_measurement": {
+    "autocast": "bf16",
+    "measurement_steps": 5,
+    "optimizer": "AdamW",
+    "parameters": "fp32",
+    "warmup_steps": 3
+  },
+  "command": "python -m student_scripts.a2k.run_suite --raw-dir .runtime/a2k/raw/run --development-cuda",
+  "commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+  "compile": {
+    "backend": "inductor",
+    "cold_start_separate_from_steady_state": true,
+    "dynamic": false,
+    "private_cache_per_case": true
+  },
+  "evidence_class": "development_non_authoritative",
+  "execution": {
+    "concurrent_benchmarks": false,
+    "fresh_process_per_attention_case": true,
+    "fresh_process_per_checkpoint_case": true,
+    "fresh_process_per_compile_case": true,
+    "mode": "development_cuda",
+    "serial": true,
+    "single_visible_gpu": true
+  },
+  "gpu": {
+    "driver_version": "570.124.06",
+    "memory_free_mib": 46730.0,
+    "memory_total_mib": 49140.0,
+    "name": "NVIDIA GeForce RTX 4090",
+    "power_limit_w": 450.0,
+    "pstate": "P8"
+  },
+  "matrix": {
+    "attention_case_count": 66,
+    "checkpoint_case_count": 7,
+    "compile_case_count": 24,
+    "correctness_case_count": 19,
+    "no_silent_shape_reduction": true
+  },
+  "non_authoritative_reason": "Development result on NVIDIA GeForce RTX 4090 under a 23552 MiB PyTorch allocator cap; it does not replace the required RTX 4090 24GB formal evidence.",
+  "schema_version": "cs336.a2k.public-results.v1",
+  "seed": 42,
+  "software": {
+    "cuda_version": "12.8",
+    "torch_version": "2.11.0+cu128",
+    "triton_version": "3.6.0"
+  },
+  "tf32": {
+    "fp32_correctness_policy": "ieee",
+    "performance_policy": "ieee"
+  }
+}

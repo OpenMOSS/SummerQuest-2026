@@ -1,0 +1,1489 @@
+{
+  "accumulation": {
+    "executed_as_written": true,
+    "records": [
+      {
+        "absolute_error": 0.000133514404296875,
+        "accumulator_dtype": "float32",
+        "actual_value": 10.000133514404297,
+        "case": "fp32_value_fp32_accumulator",
+        "increment": 0.01,
+        "input_dtype": "float32",
+        "iterations": 1000,
+        "mathematical_value": 10.0
+      },
+      {
+        "absolute_error": 0.046875,
+        "accumulator_dtype": "float16",
+        "actual_value": 9.953125,
+        "case": "fp16_value_fp16_accumulator",
+        "increment": 0.01,
+        "input_dtype": "float16",
+        "iterations": 1000,
+        "mathematical_value": 10.0
+      },
+      {
+        "absolute_error": 0.00213623046875,
+        "accumulator_dtype": "float32",
+        "actual_value": 10.00213623046875,
+        "case": "fp16_value_fp32_accumulator_implicit_cast",
+        "increment": 0.01,
+        "input_dtype": "float16",
+        "iterations": 1000,
+        "mathematical_value": 10.0
+      },
+      {
+        "absolute_error": 0.00213623046875,
+        "accumulator_dtype": "float32",
+        "actual_value": 10.00213623046875,
+        "case": "fp16_value_fp32_accumulator_explicit_cast",
+        "increment": 0.01,
+        "input_dtype": "float16",
+        "iterations": 1000,
+        "mathematical_value": 10.0
+      }
+    ],
+    "source": "pinned assignment PDF",
+    "starter_commit": "ca8bc81a59b70516f7ebb2da4808daade877c736"
+  },
+  "assignment": {
+    "handout_version": "26.1.4-rc.3",
+    "name": "A2-P",
+    "starter_commit": "ca8bc81a59b70516f7ebb2da4808daade877c736"
+  },
+  "authoritative": true,
+  "environment": {
+    "gpu_model": "NVIDIA H200",
+    "pytorch_cuda_version": "12.8",
+    "pytorch_version": "2.11.0+cu128"
+  },
+  "language_model_benchmarks": [
+    {
+      "command": [
+        "python",
+        "profiling/mixed_precision.py",
+        "--device",
+        "cuda",
+        "--model-size",
+        "small",
+        "--seed",
+        "42",
+        "--output",
+        "results/mixed/small.json"
+      ],
+      "comparison": {
+        "bf16_backward_speedup_over_fp32": 1.4073957576978338,
+        "bf16_forward_speedup_over_fp32": 1.2678604532824276,
+        "bf16_speedup_over_fp32": 1.3564216381308725,
+        "final_logits_mean_absolute_difference": 6.038695573806763e-06,
+        "final_loss_absolute_difference": 0.0005168914794921875,
+        "first_loss_absolute_difference": 0.0005168914794921875,
+        "peak_active_bytes_difference": -1002692096,
+        "peak_allocated_bytes_difference": -1002692096,
+        "peak_reserved_bytes_difference": -1059061760
+      },
+      "configuration": {
+        "batch_size": 4,
+        "context_length": 512,
+        "d_ff": 3072,
+        "d_model": 768,
+        "measurement_steps": 10,
+        "model_size": "small",
+        "num_heads": 12,
+        "num_layers": 12,
+        "vocab_size": 10000,
+        "warmup_steps": 5
+      },
+      "gradient_clearing_outside_timing": true,
+      "measurement_boundary": [
+        "forward",
+        "loss",
+        "backward"
+      ],
+      "model_size": "small",
+      "optimizer_step_included": false,
+      "records": {
+        "bf16": {
+          "autocast": true,
+          "autocast_dtype": "bfloat16",
+          "final_logits": {
+            "all_finite": true,
+            "dtype": "bfloat16",
+            "l2_norm": 1688.3802490234375,
+            "mean": -0.003757232567295432,
+            "std": 0.37306392192840576
+          },
+          "loss": {
+            "all_finite": true,
+            "change": 0.0,
+            "first": 9.275070190429688,
+            "last": 9.275070190429688,
+            "raw": [
+              9.275070190429688,
+              9.275070190429688,
+              9.275070190429688,
+              9.275070190429688,
+              9.275070190429688,
+              9.275070190429688,
+              9.275070190429688,
+              9.275070190429688,
+              9.275070190429688,
+              9.275070190429688
+            ]
+          },
+          "measurement_boundary": [
+            "forward",
+            "loss",
+            "backward"
+          ],
+          "measurement_mode": "forward_backward",
+          "memory": {
+            "peak_active_bytes": 3489543168,
+            "peak_allocated_bytes": 3489543168,
+            "peak_reserved_bytes": 3646947328
+          },
+          "model_parameter_dtype_set": [
+            "float32"
+          ],
+          "optimizer_step_included": false,
+          "phase_timings": {
+            "backward": {
+              "cv": 0.01784748081389085,
+              "cv_percent": 1.784748081389085,
+              "max_ms": 28.83610688149929,
+              "mean_ms": 27.765977755188942,
+              "min_ms": 27.096999809145927,
+              "raw_ms": [
+                27.096999809145927,
+                27.57028490304947,
+                27.49015763401985,
+                27.765439823269844,
+                28.83610688149929,
+                28.19993533194065,
+                27.423374354839325,
+                27.85901166498661,
+                28.011128306388855,
+                27.407338842749596
+              ],
+              "sample_count": 10,
+              "sample_std_ms": 0.49555275526465475
+            },
+            "forward_including_loss": {
+              "cv": 0.06748286808055046,
+              "cv_percent": 6.748286808055045,
+              "max_ms": 18.98391917347908,
+              "mean_ms": 15.981564298272133,
+              "min_ms": 15.27925580739975,
+              "raw_ms": [
+                16.105063259601593,
+                15.731308609247208,
+                15.859764069318771,
+                15.27925580739975,
+                15.604875981807709,
+                15.569943934679031,
+                15.615679323673248,
+                15.432287007570267,
+                15.633545815944672,
+                18.98391917347908
+              ],
+              "sample_count": 10,
+              "sample_std_ms": 1.0784817952611332
+            }
+          },
+          "precision": "bf16",
+          "status": "ok",
+          "timing": {
+            "clock": "time.perf_counter",
+            "cuda_synchronize_before_and_after_each_measurement": true,
+            "cv": 0.023285947060957043,
+            "cv_percent": 2.3285947060957044,
+            "data_generation_and_initialization_timed": false,
+            "gradient_clearing_timed": false,
+            "max_ms": 46.391258016228676,
+            "mean_ms": 43.747542053461075,
+            "min_ms": 43.03905367851257,
+            "raw_ms": [
+              43.20206306874752,
+              43.30159351229668,
+              43.34992170333862,
+              43.044695630669594,
+              44.440982863307,
+              43.76987926661968,
+              43.03905367851257,
+              43.29129867255688,
+              43.64467412233353,
+              46.391258016228676
+            ],
+            "sample_count": 10,
+            "sample_std_ms": 1.0187029483038865,
+            "unit": "milliseconds"
+          }
+        },
+        "fp32": {
+          "autocast": false,
+          "autocast_dtype": null,
+          "final_logits": {
+            "all_finite": true,
+            "dtype": "float32",
+            "l2_norm": 1688.379638671875,
+            "mean": -0.003763271262869239,
+            "std": 0.37306374311447144
+          },
+          "loss": {
+            "all_finite": true,
+            "change": 0.0,
+            "first": 9.274553298950195,
+            "last": 9.274553298950195,
+            "raw": [
+              9.274553298950195,
+              9.274553298950195,
+              9.274553298950195,
+              9.274553298950195,
+              9.274553298950195,
+              9.274553298950195,
+              9.274553298950195,
+              9.274553298950195,
+              9.274553298950195,
+              9.274553298950195
+            ]
+          },
+          "measurement_boundary": [
+            "forward",
+            "loss",
+            "backward"
+          ],
+          "measurement_mode": "forward_backward",
+          "memory": {
+            "peak_active_bytes": 4492235264,
+            "peak_allocated_bytes": 4492235264,
+            "peak_reserved_bytes": 4706009088
+          },
+          "model_parameter_dtype_set": [
+            "float32"
+          ],
+          "optimizer_step_included": false,
+          "phase_timings": {
+            "backward": {
+              "cv": 0.00995432655541644,
+              "cv_percent": 0.995432655541644,
+              "max_ms": 40.124645456671715,
+              "mean_ms": 39.077719300985336,
+              "min_ms": 38.83327357470989,
+              "raw_ms": [
+                40.124645456671715,
+                39.28920440375805,
+                39.00885209441185,
+                38.971442729234695,
+                38.90207223594189,
+                38.941072300076485,
+                38.83327357470989,
+                38.880396634340286,
+                38.87695260345936,
+                38.949280977249146
+              ],
+              "sample_count": 10,
+              "sample_std_ms": 0.3889923789629079
+            },
+            "forward_including_loss": {
+              "cv": 0.0810989646526926,
+              "cv_percent": 8.10989646526926,
+              "max_ms": 24.927867576479912,
+              "mean_ms": 20.262393355369568,
+              "min_ms": 19.633213058114052,
+              "raw_ms": [
+                19.697826355695724,
+                19.714582711458206,
+                20.01171186566353,
+                24.927867576479912,
+                19.681310281157494,
+                19.81329545378685,
+                19.646603614091873,
+                19.633213058114052,
+                19.67022940516472,
+                19.82729323208332
+              ],
+              "sample_count": 10,
+              "sample_std_ms": 1.6432591225060702
+            }
+          },
+          "precision": "fp32",
+          "status": "ok",
+          "timing": {
+            "clock": "time.perf_counter",
+            "cuda_synchronize_before_and_after_each_measurement": true,
+            "cv": 0.02781536760475975,
+            "cv_percent": 2.781536760475975,
+            "data_generation_and_initialization_timed": false,
+            "gradient_clearing_timed": false,
+            "max_ms": 63.89931030571461,
+            "mean_ms": 59.340112656354904,
+            "min_ms": 58.479877188801765,
+            "raw_ms": [
+              59.82247181236744,
+              59.003787115216255,
+              59.02056396007538,
+              63.89931030571461,
+              58.58338251709938,
+              58.754367753863335,
+              58.479877188801765,
+              58.51360969245434,
+              58.54718200862408,
+              58.776574209332466
+            ],
+            "sample_count": 10,
+            "sample_std_ms": 1.6505670472443683,
+            "unit": "milliseconds"
+          }
+        }
+      }
+    },
+    {
+      "command": [
+        "python",
+        "profiling/mixed_precision.py",
+        "--device",
+        "cuda",
+        "--model-size",
+        "medium",
+        "--seed",
+        "42",
+        "--output",
+        "results/mixed/medium.json"
+      ],
+      "comparison": {
+        "bf16_backward_speedup_over_fp32": 1.9767443039009118,
+        "bf16_forward_speedup_over_fp32": 1.6969173316272592,
+        "bf16_speedup_over_fp32": 1.8745116953118053,
+        "final_logits_mean_absolute_difference": 8.91042873263359e-06,
+        "final_loss_absolute_difference": 0.00019741058349609375,
+        "first_loss_absolute_difference": 0.00019741058349609375,
+        "peak_active_bytes_difference": -2402754560,
+        "peak_allocated_bytes_difference": -2402754560,
+        "peak_reserved_bytes_difference": -2604662784
+      },
+      "configuration": {
+        "batch_size": 4,
+        "context_length": 512,
+        "d_ff": 4096,
+        "d_model": 1024,
+        "measurement_steps": 10,
+        "model_size": "medium",
+        "num_heads": 16,
+        "num_layers": 24,
+        "vocab_size": 10000,
+        "warmup_steps": 5
+      },
+      "gradient_clearing_outside_timing": true,
+      "measurement_boundary": [
+        "forward",
+        "loss",
+        "backward"
+      ],
+      "model_size": "medium",
+      "optimizer_step_included": false,
+      "records": {
+        "bf16": {
+          "autocast": true,
+          "autocast_dtype": "bfloat16",
+          "final_logits": {
+            "all_finite": true,
+            "dtype": "bfloat16",
+            "l2_norm": 1920.360595703125,
+            "mean": -0.0007556916098110378,
+            "std": 0.424343079328537
+          },
+          "loss": {
+            "all_finite": true,
+            "change": 0.0,
+            "first": 9.321273803710938,
+            "last": 9.321273803710938,
+            "raw": [
+              9.321273803710938,
+              9.321273803710938,
+              9.321273803710938,
+              9.321273803710938,
+              9.321273803710938,
+              9.321273803710938,
+              9.321273803710938,
+              9.321273803710938,
+              9.321273803710938,
+              9.321273803710938
+            ]
+          },
+          "measurement_boundary": [
+            "forward",
+            "loss",
+            "backward"
+          ],
+          "measurement_mode": "forward_backward",
+          "memory": {
+            "peak_active_bytes": 9072121344,
+            "peak_allocated_bytes": 9072121344,
+            "peak_reserved_bytes": 9315549184
+          },
+          "model_parameter_dtype_set": [
+            "float32"
+          ],
+          "optimizer_step_included": false,
+          "phase_timings": {
+            "backward": {
+              "cv": 0.014717789994958928,
+              "cv_percent": 1.4717789994958927,
+              "max_ms": 56.2874972820282,
+              "mean_ms": 55.02216424793005,
+              "min_ms": 53.69540862739086,
+              "raw_ms": [
+                53.69540862739086,
+                55.9600293636322,
+                54.96964417397976,
+                55.04229664802551,
+                54.56768535077572,
+                55.262383073568344,
+                56.2874972820282,
+                53.983282297849655,
+                55.566370487213135,
+                54.88704517483711
+              ],
+              "sample_count": 10,
+              "sample_std_ms": 0.8098046584691717
+            },
+            "forward_including_loss": {
+              "cv": 0.01598732742069287,
+              "cv_percent": 1.598732742069287,
+              "max_ms": 32.56809525191784,
+              "mean_ms": 31.673636846244335,
+              "min_ms": 30.958646908402443,
+              "raw_ms": [
+                31.309904530644417,
+                32.26022608578205,
+                31.831862404942513,
+                30.958646908402443,
+                32.03028813004494,
+                31.174559146165848,
+                31.446121633052826,
+                31.422032043337822,
+                31.734632328152657,
+                32.56809525191784
+              ],
+              "sample_count": 10,
+              "sample_std_ms": 0.5063768028650301
+            }
+          },
+          "precision": "bf16",
+          "status": "ok",
+          "timing": {
+            "clock": "time.perf_counter",
+            "cuda_synchronize_before_and_after_each_measurement": true,
+            "cv": 0.0118116596870131,
+            "cv_percent": 1.1811659687013099,
+            "data_generation_and_initialization_timed": false,
+            "gradient_clearing_timed": false,
+            "max_ms": 88.22025544941425,
+            "mean_ms": 86.69580109417439,
+            "min_ms": 85.00531315803528,
+            "raw_ms": [
+              85.00531315803528,
+              88.22025544941425,
+              86.80150657892227,
+              86.00094355642796,
+              86.59797348082066,
+              86.43694221973419,
+              87.73361891508102,
+              85.40531434118748,
+              87.30100281536579,
+              87.45514042675495
+            ],
+            "sample_count": 10,
+            "sample_std_ms": 1.0240212988173658,
+            "unit": "milliseconds"
+          }
+        },
+        "fp32": {
+          "autocast": false,
+          "autocast_dtype": null,
+          "final_logits": {
+            "all_finite": true,
+            "dtype": "float32",
+            "l2_norm": 1920.4482421875,
+            "mean": -0.0007467811810784042,
+            "std": 0.424362450838089
+          },
+          "loss": {
+            "all_finite": true,
+            "change": 0.0,
+            "first": 9.321471214294434,
+            "last": 9.321471214294434,
+            "raw": [
+              9.321471214294434,
+              9.321471214294434,
+              9.321471214294434,
+              9.321471214294434,
+              9.321471214294434,
+              9.321471214294434,
+              9.321471214294434,
+              9.321471214294434,
+              9.321471214294434,
+              9.321471214294434
+            ]
+          },
+          "measurement_boundary": [
+            "forward",
+            "loss",
+            "backward"
+          ],
+          "measurement_mode": "forward_backward",
+          "memory": {
+            "peak_active_bytes": 11474875904,
+            "peak_allocated_bytes": 11474875904,
+            "peak_reserved_bytes": 11920211968
+          },
+          "model_parameter_dtype_set": [
+            "float32"
+          ],
+          "optimizer_step_included": false,
+          "phase_timings": {
+            "backward": {
+              "cv": 0.0038059656556790958,
+              "cv_percent": 0.38059656556790955,
+              "max_ms": 109.59940776228905,
+              "mean_ms": 108.76474976539612,
+              "min_ms": 108.41533541679382,
+              "raw_ms": [
+                108.41533541679382,
+                109.4459556043148,
+                108.50954428315163,
+                108.58781076967716,
+                108.56182873249054,
+                108.81662368774414,
+                108.5339579731226,
+                108.63185301423073,
+                108.54518041014671,
+                109.59940776228905
+              ],
+              "sample_count": 10,
+              "sample_std_ms": 0.41395490215562863
+            },
+            "forward_including_loss": {
+              "cv": 0.00212525722165471,
+              "cv_percent": 0.212525722165471,
+              "max_ms": 54.00006100535393,
+              "mean_ms": 53.747543320059776,
+              "min_ms": 53.66217531263828,
+              "raw_ms": [
+                54.00006100535393,
+                53.670406341552734,
+                53.680287674069405,
+                53.667230531573296,
+                53.67237143218517,
+                53.811611607670784,
+                53.78040298819542,
+                53.86025458574295,
+                53.66217531263828,
+                53.67063172161579
+              ],
+              "sample_count": 10,
+              "sample_std_ms": 0.1142273545871564
+            }
+          },
+          "precision": "fp32",
+          "status": "ok",
+          "timing": {
+            "clock": "time.perf_counter",
+            "cuda_synchronize_before_and_after_each_measurement": true,
+            "cv": 0.002376101961108217,
+            "cv_percent": 0.2376101961108217,
+            "data_generation_and_initialization_timed": false,
+            "gradient_clearing_timed": false,
+            "max_ms": 163.27003948390484,
+            "mean_ms": 162.5122930854559,
+            "min_ms": 162.18983195722103,
+            "raw_ms": [
+              162.41539642214775,
+              163.11636194586754,
+              162.18983195722103,
+              162.25504130125046,
+              162.2342001646757,
+              162.62823529541492,
+              162.31436096131802,
+              162.49210759997368,
+              162.207355722785,
+              163.27003948390484
+            ],
+            "sample_count": 10,
+            "sample_std_ms": 0.3861457783045451,
+            "unit": "milliseconds"
+          }
+        }
+      }
+    },
+    {
+      "command": [
+        "python",
+        "profiling/mixed_precision.py",
+        "--device",
+        "cuda",
+        "--model-size",
+        "large",
+        "--seed",
+        "42",
+        "--output",
+        "results/mixed/large.json"
+      ],
+      "comparison": {
+        "bf16_backward_speedup_over_fp32": 3.0741085699683075,
+        "bf16_forward_speedup_over_fp32": 2.541175385850896,
+        "bf16_speedup_over_fp32": 2.8790631259793305,
+        "final_logits_mean_absolute_difference": 1.5102410543477163e-05,
+        "final_loss_absolute_difference": 9.72747802734375e-05,
+        "first_loss_absolute_difference": 9.72747802734375e-05,
+        "peak_active_bytes_difference": -3962165248,
+        "peak_allocated_bytes_difference": -3962165248,
+        "peak_reserved_bytes_difference": -3554672640
+      },
+      "configuration": {
+        "batch_size": 4,
+        "context_length": 512,
+        "d_ff": 5120,
+        "d_model": 1280,
+        "measurement_steps": 10,
+        "model_size": "large",
+        "num_heads": 20,
+        "num_layers": 36,
+        "vocab_size": 10000,
+        "warmup_steps": 5
+      },
+      "gradient_clearing_outside_timing": true,
+      "measurement_boundary": [
+        "forward",
+        "loss",
+        "backward"
+      ],
+      "model_size": "large",
+      "optimizer_step_included": false,
+      "records": {
+        "bf16": {
+          "autocast": true,
+          "autocast_dtype": "bfloat16",
+          "final_logits": {
+            "all_finite": true,
+            "dtype": "bfloat16",
+            "l2_norm": 2130.843017578125,
+            "mean": 4.032304786960594e-06,
+            "std": 0.4708542227745056
+          },
+          "loss": {
+            "all_finite": true,
+            "change": 0.0,
+            "first": 9.314910888671875,
+            "last": 9.314910888671875,
+            "raw": [
+              9.314910888671875,
+              9.314910888671875,
+              9.314910888671875,
+              9.314910888671875,
+              9.314910888671875,
+              9.314910888671875,
+              9.314910888671875,
+              9.314910888671875,
+              9.314910888671875,
+              9.314910888671875
+            ]
+          },
+          "measurement_boundary": [
+            "forward",
+            "loss",
+            "backward"
+          ],
+          "measurement_mode": "forward_backward",
+          "memory": {
+            "peak_active_bytes": 17929208320,
+            "peak_allocated_bytes": 17929208320,
+            "peak_reserved_bytes": 18547212288
+          },
+          "model_parameter_dtype_set": [
+            "float32"
+          ],
+          "optimizer_step_included": false,
+          "phase_timings": {
+            "backward": {
+              "cv": 0.016083959095983123,
+              "cv_percent": 1.6083959095983122,
+              "max_ms": 85.08791588246822,
+              "mean_ms": 82.00353849679232,
+              "min_ms": 81.0823030769825,
+              "raw_ms": [
+                82.75343477725983,
+                83.23370851576328,
+                81.2088530510664,
+                81.18338137865067,
+                81.12226985394955,
+                81.4735796302557,
+                85.08791588246822,
+                81.0823030769825,
+                81.78634010255337,
+                81.10359869897366
+              ],
+              "sample_count": 10,
+              "sample_std_ms": 1.318941558908285
+            },
+            "forward_including_loss": {
+              "cv": 0.0338430237053514,
+              "cv_percent": 3.3843023705351403,
+              "max_ms": 51.61167122423649,
+              "mean_ms": 47.33648095279932,
+              "min_ms": 46.126967296004295,
+              "raw_ms": [
+                46.66429199278355,
+                46.126967296004295,
+                46.736281365156174,
+                51.61167122423649,
+                48.31362888216972,
+                46.574266627430916,
+                46.852339059114456,
+                46.80059291422367,
+                46.846963465213776,
+                46.837806701660156
+              ],
+              "sample_count": 10,
+              "sample_std_ms": 1.6020096470135026
+            }
+          },
+          "precision": "bf16",
+          "status": "ok",
+          "timing": {
+            "clock": "time.perf_counter",
+            "cuda_synchronize_before_and_after_each_measurement": true,
+            "cv": 0.013368700523689788,
+            "cv_percent": 1.336870052368979,
+            "data_generation_and_initialization_timed": false,
+            "gradient_clearing_timed": false,
+            "max_ms": 132.79505260288715,
+            "mean_ms": 129.34001944959164,
+            "min_ms": 127.88289599120617,
+            "raw_ms": [
+              129.41772677004337,
+              129.36067581176758,
+              127.94513441622257,
+              132.79505260288715,
+              129.43589873611927,
+              128.04784625768661,
+              131.94025494158268,
+              127.88289599120617,
+              128.63330356776714,
+              127.94140540063381
+            ],
+            "sample_count": 10,
+            "sample_std_ms": 1.729107985749803,
+            "unit": "milliseconds"
+          }
+        },
+        "fp32": {
+          "autocast": false,
+          "autocast_dtype": null,
+          "final_logits": {
+            "all_finite": true,
+            "dtype": "float32",
+            "l2_norm": 2130.893798828125,
+            "mean": 1.9134715330437757e-05,
+            "std": 0.470865398645401
+          },
+          "loss": {
+            "all_finite": true,
+            "change": 0.0,
+            "first": 9.314813613891602,
+            "last": 9.314813613891602,
+            "raw": [
+              9.314813613891602,
+              9.314813613891602,
+              9.314813613891602,
+              9.314813613891602,
+              9.314813613891602,
+              9.314813613891602,
+              9.314813613891602,
+              9.314813613891602,
+              9.314813613891602,
+              9.314813613891602
+            ]
+          },
+          "measurement_boundary": [
+            "forward",
+            "loss",
+            "backward"
+          ],
+          "measurement_mode": "forward_backward",
+          "memory": {
+            "peak_active_bytes": 21891373568,
+            "peak_allocated_bytes": 21891373568,
+            "peak_reserved_bytes": 22101884928
+          },
+          "model_parameter_dtype_set": [
+            "float32"
+          ],
+          "optimizer_step_included": false,
+          "phase_timings": {
+            "backward": {
+              "cv": 0.0007982599050343604,
+              "cv_percent": 0.07982599050343604,
+              "max_ms": 252.4117175489664,
+              "mean_ms": 252.0877804607153,
+              "min_ms": 251.84937566518784,
+              "raw_ms": [
+                251.84937566518784,
+                252.4117175489664,
+                251.9070040434599,
+                251.95516645908356,
+                252.23534181714058,
+                252.23534740507603,
+                252.3545902222395,
+                251.97132490575314,
+                251.99360959231853,
+                251.96432694792747
+              ],
+              "sample_count": 10,
+              "sample_std_ms": 0.2012315676908933
+            },
+            "forward_including_loss": {
+              "cv": 0.0006855135907885085,
+              "cv_percent": 0.06855135907885085,
+              "max_ms": 120.49018032848835,
+              "mean_ms": 120.2903002500534,
+              "min_ms": 120.18687650561333,
+              "raw_ms": [
+                120.25276012718678,
+                120.49018032848835,
+                120.27011252939701,
+                120.29293924570084,
+                120.22728100419044,
+                120.30273862183094,
+                120.2459018677473,
+                120.29270268976688,
+                120.18687650561333,
+                120.34150958061218
+              ],
+              "sample_count": 10,
+              "sample_std_ms": 0.08246063566144193
+            }
+          },
+          "precision": "fp32",
+          "status": "ok",
+          "timing": {
+            "clock": "time.perf_counter",
+            "cuda_synchronize_before_and_after_each_measurement": true,
+            "cv": 0.0006622258912421535,
+            "cv_percent": 0.06622258912421536,
+            "data_generation_and_initialization_timed": false,
+            "gradient_clearing_timed": false,
+            "max_ms": 372.90189787745476,
+            "mean_ms": 372.3780807107687,
+            "min_ms": 372.1021357923746,
+            "raw_ms": [
+              372.1021357923746,
+              372.90189787745476,
+              372.1771165728569,
+              372.2481057047844,
+              372.462622821331,
+              372.53808602690697,
+              372.6004920899868,
+              372.26402759552,
+              372.18048609793186,
+              372.30583652853966
+            ],
+            "sample_count": 10,
+            "sample_std_ms": 0.2465984063777314,
+            "unit": "milliseconds"
+          }
+        }
+      }
+    },
+    {
+      "command": [
+        "python",
+        "profiling/mixed_precision.py",
+        "--device",
+        "cuda",
+        "--model-size",
+        "xl",
+        "--seed",
+        "42",
+        "--output",
+        "results/mixed/xl.json"
+      ],
+      "comparison": {
+        "bf16_backward_speedup_over_fp32": 4.795601892289336,
+        "bf16_forward_speedup_over_fp32": 5.088400300565255,
+        "bf16_speedup_over_fp32": 4.884112428248254,
+        "final_logits_mean_absolute_difference": 1.8079648725688457e-05,
+        "final_loss_absolute_difference": 0.0008745193481445312,
+        "first_loss_absolute_difference": 0.0008745193481445312,
+        "peak_active_bytes_difference": -3122151424,
+        "peak_allocated_bytes_difference": -3122151424,
+        "peak_reserved_bytes_difference": 1990197248
+      },
+      "configuration": {
+        "batch_size": 4,
+        "context_length": 512,
+        "d_ff": 10240,
+        "d_model": 2560,
+        "measurement_steps": 10,
+        "model_size": "xl",
+        "num_heads": 32,
+        "num_layers": 32,
+        "vocab_size": 10000,
+        "warmup_steps": 5
+      },
+      "gradient_clearing_outside_timing": true,
+      "measurement_boundary": [
+        "forward",
+        "loss",
+        "backward"
+      ],
+      "model_size": "xl",
+      "optimizer_step_included": false,
+      "records": {
+        "bf16": {
+          "autocast": true,
+          "autocast_dtype": "bfloat16",
+          "final_logits": {
+            "all_finite": true,
+            "dtype": "bfloat16",
+            "l2_norm": 2847.505859375,
+            "mean": -0.00015817266830708832,
+            "std": 0.6292158365249634
+          },
+          "loss": {
+            "all_finite": true,
+            "change": 0.0,
+            "first": 9.398284912109375,
+            "last": 9.398284912109375,
+            "raw": [
+              9.398284912109375,
+              9.398284912109375,
+              9.398284912109375,
+              9.398284912109375,
+              9.398284912109375,
+              9.398284912109375,
+              9.398284912109375,
+              9.398284912109375,
+              9.398284912109375,
+              9.398284912109375
+            ]
+          },
+          "measurement_boundary": [
+            "forward",
+            "loss",
+            "backward"
+          ],
+          "measurement_mode": "forward_backward",
+          "memory": {
+            "peak_active_bytes": 40125570560,
+            "peak_allocated_bytes": 40125570560,
+            "peak_reserved_bytes": 46590328832
+          },
+          "model_parameter_dtype_set": [
+            "float32"
+          ],
+          "optimizer_step_included": false,
+          "phase_timings": {
+            "backward": {
+              "cv": 0.0011603385402745466,
+              "cv_percent": 0.11603385402745466,
+              "max_ms": 150.0381287187338,
+              "mean_ms": 149.59171265363693,
+              "min_ms": 149.436105042696,
+              "raw_ms": [
+                149.51644837856293,
+                150.0381287187338,
+                149.436105042696,
+                149.65087175369263,
+                149.49340373277664,
+                149.67222325503826,
+                149.5464239269495,
+                149.58023838698864,
+                149.499936029315,
+                149.48334731161594
+              ],
+              "sample_count": 10,
+              "sample_std_ms": 0.1735770294976905
+            },
+            "forward_including_loss": {
+              "cv": 0.0009043432708989108,
+              "cv_percent": 0.09043432708989108,
+              "max_ms": 64.95686434209347,
+              "mean_ms": 64.81267102062702,
+              "min_ms": 64.74047712981701,
+              "raw_ms": [
+                64.7695679217577,
+                64.80406783521175,
+                64.74047712981701,
+                64.85081277787685,
+                64.80187922716141,
+                64.95686434209347,
+                64.81229141354561,
+                64.79778327047825,
+                64.8147389292717,
+                64.77822735905647
+              ],
+              "sample_count": 10,
+              "sample_std_ms": 0.058612902906488885
+            }
+          },
+          "precision": "bf16",
+          "status": "ok",
+          "timing": {
+            "clock": "time.perf_counter",
+            "cuda_synchronize_before_and_after_each_measurement": true,
+            "cv": 0.0009336835677861674,
+            "cv_percent": 0.09336835677861674,
+            "data_generation_and_initialization_timed": false,
+            "gradient_clearing_timed": false,
+            "max_ms": 214.84219655394554,
+            "mean_ms": 214.40438367426395,
+            "min_ms": 214.176582172513,
+            "raw_ms": [
+              214.28601630032063,
+              214.84219655394554,
+              214.176582172513,
+              214.50168453156948,
+              214.29528295993805,
+              214.62908759713173,
+              214.3587153404951,
+              214.3780216574669,
+              214.3146749585867,
+              214.26157467067242
+            ],
+            "sample_count": 10,
+            "sample_std_ms": 0.20018584989798108,
+            "unit": "milliseconds"
+          }
+        },
+        "fp32": {
+          "autocast": false,
+          "autocast_dtype": null,
+          "final_logits": {
+            "all_finite": true,
+            "dtype": "float32",
+            "l2_norm": 2847.54638671875,
+            "mean": -0.00014009301958139986,
+            "std": 0.6292247772216797
+          },
+          "loss": {
+            "all_finite": true,
+            "change": 0.0,
+            "first": 9.39915943145752,
+            "last": 9.39915943145752,
+            "raw": [
+              9.39915943145752,
+              9.39915943145752,
+              9.39915943145752,
+              9.39915943145752,
+              9.39915943145752,
+              9.39915943145752,
+              9.39915943145752,
+              9.39915943145752,
+              9.39915943145752,
+              9.39915943145752
+            ]
+          },
+          "measurement_boundary": [
+            "forward",
+            "loss",
+            "backward"
+          ],
+          "measurement_mode": "forward_backward",
+          "memory": {
+            "peak_active_bytes": 43247721984,
+            "peak_allocated_bytes": 43247721984,
+            "peak_reserved_bytes": 44600131584
+          },
+          "model_parameter_dtype_set": [
+            "float32"
+          ],
+          "optimizer_step_included": false,
+          "phase_timings": {
+            "backward": {
+              "cv": 0.0007623734144335418,
+              "cv_percent": 0.07623734144335419,
+              "max_ms": 718.404158949852,
+              "mean_ms": 717.382300272584,
+              "min_ms": 716.7447097599506,
+              "raw_ms": [
+                718.167070299387,
+                717.4209151417017,
+                717.1634528785944,
+                717.259356752038,
+                716.9462442398071,
+                718.404158949852,
+                717.3451613634825,
+                717.5682801753283,
+                716.7447097599506,
+                716.803653165698
+              ],
+              "sample_count": 10,
+              "sample_std_ms": 0.5469131937129982
+            },
+            "forward_including_loss": {
+              "cv": 0.00036137160238969556,
+              "cv_percent": 0.036137160238969554,
+              "max_ms": 330.0494384020567,
+              "mean_ms": 329.7928147017956,
+              "min_ms": 329.60848696529865,
+              "raw_ms": [
+                329.60848696529865,
+                329.81335557997227,
+                330.0494384020567,
+                329.7608755528927,
+                329.65380512177944,
+                329.7990523278713,
+                329.8277836292982,
+                329.8452403396368,
+                329.82443273067474,
+                329.74567636847496
+              ],
+              "sample_count": 10,
+              "sample_std_ms": 0.11917775790539581
+            }
+          },
+          "precision": "fp32",
+          "status": "ok",
+          "timing": {
+            "clock": "time.perf_counter",
+            "cuda_synchronize_before_and_after_each_measurement": true,
+            "cv": 0.0005125571624375074,
+            "cv_percent": 0.05125571624375074,
+            "data_generation_and_initialization_timed": false,
+            "gradient_clearing_timed": false,
+            "max_ms": 1048.2032112777233,
+            "mean_ms": 1047.1751149743795,
+            "min_ms": 1046.549329534173,
+            "raw_ms": [
+              1047.7755572646856,
+              1047.234270721674,
+              1047.212891280651,
+              1047.0202323049307,
+              1046.6000493615866,
+              1048.2032112777233,
+              1047.1729449927807,
+              1047.413520514965,
+              1046.5691424906254,
+              1046.549329534173
+            ],
+            "sample_count": 10,
+            "sample_std_ms": 0.5367371055064386,
+            "unit": "milliseconds"
+          }
+        }
+      }
+    },
+    {
+      "command": [
+        "python",
+        "profiling/mixed_precision.py",
+        "--device",
+        "cuda",
+        "--model-size",
+        "10b",
+        "--seed",
+        "42",
+        "--output",
+        "results/mixed/10b.json"
+      ],
+      "comparison": {
+        "bf16_backward_speedup_over_fp32": 5.6333110552483,
+        "bf16_forward_speedup_over_fp32": 7.522494187308708,
+        "bf16_speedup_over_fp32": 6.176240294843979,
+        "final_logits_mean_absolute_difference": 1.5960074961185455e-05,
+        "final_loss_absolute_difference": 1.33514404296875e-05,
+        "first_loss_absolute_difference": 1.33514404296875e-05,
+        "peak_active_bytes_difference": 6173360128,
+        "peak_allocated_bytes_difference": 6173360128,
+        "peak_reserved_bytes_difference": -14766047232
+      },
+      "configuration": {
+        "batch_size": 4,
+        "context_length": 512,
+        "d_ff": 12288,
+        "d_model": 4608,
+        "measurement_steps": 10,
+        "model_size": "10b",
+        "num_heads": 36,
+        "num_layers": 50,
+        "vocab_size": 10000,
+        "warmup_steps": 5
+      },
+      "gradient_clearing_outside_timing": true,
+      "measurement_boundary": [
+        "forward",
+        "loss",
+        "backward"
+      ],
+      "model_size": "10b",
+      "optimizer_step_included": false,
+      "records": {
+        "bf16": {
+          "autocast": true,
+          "autocast_dtype": "bfloat16",
+          "final_logits": {
+            "all_finite": true,
+            "dtype": "bfloat16",
+            "l2_norm": 3545.632568359375,
+            "mean": 0.006151009351015091,
+            "std": 0.7834573984146118
+          },
+          "loss": {
+            "all_finite": true,
+            "change": 0.0,
+            "first": 9.537628173828125,
+            "last": 9.537628173828125,
+            "raw": [
+              9.537628173828125,
+              9.537628173828125,
+              9.537628173828125,
+              9.537628173828125,
+              9.537628173828125,
+              9.537628173828125,
+              9.537628173828125,
+              9.537628173828125,
+              9.537628173828125,
+              9.537628173828125
+            ]
+          },
+          "measurement_boundary": [
+            "forward",
+            "loss",
+            "backward"
+          ],
+          "measurement_mode": "forward_backward",
+          "memory": {
+            "peak_active_bytes": 118080101888,
+            "peak_allocated_bytes": 118080101888,
+            "peak_reserved_bytes": 132412080128
+          },
+          "model_parameter_dtype_set": [
+            "float32"
+          ],
+          "optimizer_step_included": false,
+          "phase_timings": {
+            "backward": {
+              "cv": 0.0007284107268490289,
+              "cv_percent": 0.07284107268490289,
+              "max_ms": 423.206839710474,
+              "mean_ms": 422.74893801659346,
+              "min_ms": 422.09381610155106,
+              "raw_ms": [
+                422.36899957060814,
+                423.206839710474,
+                422.09381610155106,
+                422.9374062269926,
+                422.7508623152971,
+                422.82128520309925,
+                422.8528346866369,
+                422.86755703389645,
+                422.80824668705463,
+                422.78153263032436
+              ],
+              "sample_count": 10,
+              "sample_std_ms": 0.3079348612153219
+            },
+            "forward_including_loss": {
+              "cv": 0.0011680967280337847,
+              "cv_percent": 0.11680967280337848,
+              "max_ms": 170.81040143966675,
+              "mean_ms": 170.48995047807693,
+              "min_ms": 170.1153051108122,
+              "raw_ms": [
+                170.44086568057537,
+                170.3560445457697,
+                170.1153051108122,
+                170.45087926089764,
+                170.81040143966675,
+                170.49990594387054,
+                170.6144604831934,
+                170.43564096093178,
+                170.42330652475357,
+                170.75269483029842
+              ],
+              "sample_count": 10,
+              "sample_std_ms": 0.19914875331608364
+            }
+          },
+          "precision": "bf16",
+          "status": "ok",
+          "timing": {
+            "clock": "time.perf_counter",
+            "cuda_synchronize_before_and_after_each_measurement": true,
+            "cv": 0.0007165015922584602,
+            "cv_percent": 0.07165015922584601,
+            "data_generation_and_initialization_timed": false,
+            "gradient_clearing_timed": false,
+            "max_ms": 593.5628842562437,
+            "mean_ms": 593.2388884946704,
+            "min_ms": 592.2091212123632,
+            "raw_ms": [
+              592.8098652511835,
+              593.5628842562437,
+              592.2091212123632,
+              593.3882854878902,
+              593.5612637549639,
+              593.3211911469698,
+              593.4672951698303,
+              593.3031979948282,
+              593.2315532118082,
+              593.5342274606228
+            ],
+            "sample_count": 10,
+            "sample_std_ms": 0.42505660819607044,
+            "unit": "milliseconds"
+          }
+        },
+        "fp32": {
+          "autocast": false,
+          "autocast_dtype": null,
+          "final_logits": {
+            "all_finite": true,
+            "dtype": "float32",
+            "l2_norm": 3545.6982421875,
+            "mean": 0.0061350492760539055,
+            "std": 0.783471941947937
+          },
+          "loss": {
+            "all_finite": true,
+            "change": 0.0,
+            "first": 9.537614822387695,
+            "last": 9.537614822387695,
+            "raw": [
+              9.537614822387695,
+              9.537614822387695,
+              9.537614822387695,
+              9.537614822387695,
+              9.537614822387695,
+              9.537614822387695,
+              9.537614822387695,
+              9.537614822387695,
+              9.537614822387695,
+              9.537614822387695
+            ]
+          },
+          "measurement_boundary": [
+            "forward",
+            "loss",
+            "backward"
+          ],
+          "measurement_mode": "forward_backward",
+          "memory": {
+            "peak_active_bytes": 111906741760,
+            "peak_allocated_bytes": 111906741760,
+            "peak_reserved_bytes": 147178127360
+          },
+          "model_parameter_dtype_set": [
+            "float32"
+          ],
+          "optimizer_step_included": false,
+          "phase_timings": {
+            "backward": {
+              "cv": 0.0002756537712575343,
+              "cv_percent": 0.02756537712575343,
+              "max_ms": 2382.325615733862,
+              "mean_ms": 2381.4762661233544,
+              "min_ms": 2380.3303334861994,
+              "raw_ms": [
+                2381.1019714921713,
+                2381.9387406110764,
+                2382.325615733862,
+                2382.0452131330967,
+                2381.808862090111,
+                2381.9691743701696,
+                2381.2958523631096,
+                2381.3439067453146,
+                2380.3303334861994,
+                2380.602991208434
+              ],
+              "sample_count": 10,
+              "sample_std_ms": 0.656462913917214
+            },
+            "forward_including_loss": {
+              "cv": 0.00023142727435847466,
+              "cv_percent": 0.023142727435847468,
+              "max_ms": 1282.8430589288473,
+              "mean_ms": 1282.5096614658833,
+              "min_ms": 1281.9028850644827,
+              "raw_ms": [
+                1282.3944315314293,
+                1282.7713023871183,
+                1282.5270649045706,
+                1282.8430589288473,
+                1282.6936040073633,
+                1282.6503682881594,
+                1282.728273421526,
+                1282.427003607154,
+                1282.1586225181818,
+                1281.9028850644827
+              ],
+              "sample_count": 10,
+              "sample_std_ms": 0.29680771529145944
+            }
+          },
+          "precision": "fp32",
+          "status": "ok",
+          "timing": {
+            "clock": "time.perf_counter",
+            "cuda_synchronize_before_and_after_each_measurement": true,
+            "cv": 0.00024876315775353527,
+            "cv_percent": 0.024876315775353527,
+            "data_generation_and_initialization_timed": false,
+            "gradient_clearing_timed": false,
+            "max_ms": 3664.888272061944,
+            "mean_ms": 3663.9859275892377,
+            "min_ms": 3662.488956004381,
+            "raw_ms": [
+              3663.4964030236006,
+              3664.7100429981947,
+              3664.8526806384325,
+              3664.888272061944,
+              3664.502466097474,
+              3664.619542658329,
+              3664.0241257846355,
+              3663.7709103524685,
+              3662.488956004381,
+              3662.505876272917
+            ],
+            "sample_count": 10,
+            "sample_std_ms": 0.9114647093116147,
+            "unit": "milliseconds"
+          }
+        }
+      }
+    }
+  ],
+  "schema_version": "cs336.a2p.public-summary.v1",
+  "seed": 42,
+  "toy_model": {
+    "authoritative_cuda_bf16": true,
+    "autocast_dtype": "bfloat16",
+    "autocast_enabled": true,
+    "device_type": "cuda",
+    "fc1_output_dtype": "bfloat16",
+    "gradient_dtype_set": [
+      "float32"
+    ],
+    "gradient_dtypes": {
+      "fc1.weight": "float32",
+      "fc2.weight": "float32",
+      "ln.bias": "float32",
+      "ln.weight": "float32"
+    },
+    "layer_norm_output_dtype": "float32",
+    "logits_dtype": "bfloat16",
+    "loss_dtype": "float32",
+    "loss_value": 2.12890625,
+    "parameter_dtype_set": [
+      "float32"
+    ],
+    "parameter_dtypes": {
+      "fc1.weight": "float32",
+      "fc2.weight": "float32",
+      "ln.bias": "float32",
+      "ln.weight": "float32"
+    },
+    "status": "ok"
+  }
+}

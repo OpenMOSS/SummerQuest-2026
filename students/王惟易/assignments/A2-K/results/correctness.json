@@ -1,0 +1,1996 @@
+{
+  "timestamp_utc": "2026-08-07T10:04:16.718426+00:00",
+  "command": "uv run python student_scripts/a2k/flash_correctness.py --output results/correctness.json",
+  "environment": {
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpu_memory_total_mib": 49140.0,
+    "gpu_memory_free_mib_at_start": 48510.0,
+    "driver_version": "570.195.03",
+    "power_limit_w": 450.0,
+    "pstate": "P8",
+    "python": "3.12.3",
+    "pytorch": "2.11.0+cu128",
+    "triton": "3.6.0",
+    "cuda_runtime": "12.8",
+    "cudnn_version": 91900,
+    "compute_capability": "8.9",
+    "visible_cuda_devices": 1,
+    "device_reported_total_mib": 48518.0625,
+    "tf32_matmul_allowed": false,
+    "float32_matmul_precision": "highest"
+  },
+  "allocator": {
+    "allocator_limit_mib": 23552,
+    "allocator_fraction": 0.48542746322568014,
+    "hard_limit_mib": 24576
+  },
+  "config": {
+    "batch_size": 2,
+    "sequence_length": 127,
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "head_dims": [
+      32,
+      64,
+      128
+    ],
+    "causal_settings": [
+      false,
+      true
+    ],
+    "implementations": [
+      "pytorch_tiled",
+      "triton"
+    ],
+    "reference_dtype": "fp32"
+  },
+  "summary": {
+    "total_cases": 38,
+    "passed_cases": 38,
+    "failed_cases": 0,
+    "status": "ok"
+  },
+  "cases": [
+    {
+      "seed": 0,
+      "shape": [
+        2,
+        127,
+        32
+      ],
+      "dtype": "bfloat16",
+      "is_causal": false,
+      "implementation": "pytorch_tiled",
+      "rtol": 0.02,
+      "atol": 0.02,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.0018261075019836426,
+          "max_relative_error": 0.0038680441211909056,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "logsumexp": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 9.355591856774481e-08,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_q": {
+          "max_absolute_error": 0.002773284912109375,
+          "max_relative_error": 0.022797757759690285,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_k": {
+          "max_absolute_error": 0.002005636692047119,
+          "max_relative_error": 0.00983665231615305,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_v": {
+          "max_absolute_error": 0.0019493699073791504,
+          "max_relative_error": 0.0038774479180574417,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 0,
+      "shape": [
+        2,
+        127,
+        32
+      ],
+      "dtype": "bfloat16",
+      "is_causal": false,
+      "implementation": "triton",
+      "rtol": 0.02,
+      "atol": 0.02,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.0018261075019836426,
+          "max_relative_error": 0.028580419719219208,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "logsumexp": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 9.36346182811576e-08,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_q": {
+          "max_absolute_error": 0.002773284912109375,
+          "max_relative_error": 0.03932146355509758,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_k": {
+          "max_absolute_error": 0.001992642879486084,
+          "max_relative_error": 0.01800677366554737,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_v": {
+          "max_absolute_error": 0.0019493699073791504,
+          "max_relative_error": 0.0038774479180574417,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 0,
+      "shape": [
+        2,
+        127,
+        32
+      ],
+      "dtype": "bfloat16",
+      "is_causal": true,
+      "implementation": "pytorch_tiled",
+      "rtol": 0.02,
+      "atol": 0.02,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.007088899612426758,
+          "max_relative_error": 0.0038680441211909056,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "logsumexp": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 1.0562776253664197e-07,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_q": {
+          "max_absolute_error": 0.005002260208129883,
+          "max_relative_error": 0.07949667423963547,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_k": {
+          "max_absolute_error": 0.004605770111083984,
+          "max_relative_error": 0.053649816662073135,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_v": {
+          "max_absolute_error": 0.007563591003417969,
+          "max_relative_error": 0.003857435192912817,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 0,
+      "shape": [
+        2,
+        127,
+        32
+      ],
+      "dtype": "bfloat16",
+      "is_causal": true,
+      "implementation": "triton",
+      "rtol": 0.02,
+      "atol": 0.02,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.007088899612426758,
+          "max_relative_error": 0.08092846721410751,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "logsumexp": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 1.546939216723331e-07,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_q": {
+          "max_absolute_error": 0.005781501531600952,
+          "max_relative_error": 0.06728964298963547,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_k": {
+          "max_absolute_error": 0.004968397319316864,
+          "max_relative_error": 0.05294790118932724,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_v": {
+          "max_absolute_error": 0.007563591003417969,
+          "max_relative_error": 0.003857435192912817,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 0,
+      "shape": [
+        2,
+        127,
+        64
+      ],
+      "dtype": "bfloat16",
+      "is_causal": false,
+      "implementation": "pytorch_tiled",
+      "rtol": 0.02,
+      "atol": 0.02,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.0019086003303527832,
+          "max_relative_error": 0.0038829445838928223,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "logsumexp": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 9.342961959646345e-08,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_q": {
+          "max_absolute_error": 0.0018811225891113281,
+          "max_relative_error": 0.016681605949997902,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_k": {
+          "max_absolute_error": 0.0019063353538513184,
+          "max_relative_error": 0.008652964606881142,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_v": {
+          "max_absolute_error": 0.0019506216049194336,
+          "max_relative_error": 0.0038822293281555176,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 0,
+      "shape": [
+        2,
+        127,
+        64
+      ],
+      "dtype": "bfloat16",
+      "is_causal": false,
+      "implementation": "triton",
+      "rtol": 0.02,
+      "atol": 0.02,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.002120673656463623,
+          "max_relative_error": 0.04151035100221634,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "logsumexp": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 9.387314747755227e-08,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_q": {
+          "max_absolute_error": 0.002025127410888672,
+          "max_relative_error": 0.02208859659731388,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_k": {
+          "max_absolute_error": 0.0019063353538513184,
+          "max_relative_error": 0.009932524524629116,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_v": {
+          "max_absolute_error": 0.0019506216049194336,
+          "max_relative_error": 0.0038822293281555176,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 0,
+      "shape": [
+        2,
+        127,
+        64
+      ],
+      "dtype": "bfloat16",
+      "is_causal": true,
+      "implementation": "pytorch_tiled",
+      "rtol": 0.02,
+      "atol": 0.02,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.007484912872314453,
+          "max_relative_error": 0.003847046522423625,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "logsumexp": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 9.597090411261888e-08,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_q": {
+          "max_absolute_error": 0.005703449249267578,
+          "max_relative_error": 0.10422957688570023,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_k": {
+          "max_absolute_error": 0.0037671327590942383,
+          "max_relative_error": 0.08711698651313782,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_v": {
+          "max_absolute_error": 0.007775306701660156,
+          "max_relative_error": 0.003864317899569869,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 0,
+      "shape": [
+        2,
+        127,
+        64
+      ],
+      "dtype": "bfloat16",
+      "is_causal": true,
+      "implementation": "triton",
+      "rtol": 0.02,
+      "atol": 0.02,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.007484912872314453,
+          "max_relative_error": 0.07438421994447708,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "logsumexp": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 3.021035865913291e-07,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_q": {
+          "max_absolute_error": 0.005703449249267578,
+          "max_relative_error": 0.07565402239561081,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_k": {
+          "max_absolute_error": 0.005350589752197266,
+          "max_relative_error": 0.10512992739677429,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_v": {
+          "max_absolute_error": 0.007775306701660156,
+          "max_relative_error": 0.003864317899569869,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 0,
+      "shape": [
+        2,
+        127,
+        128
+      ],
+      "dtype": "bfloat16",
+      "is_causal": false,
+      "implementation": "pytorch_tiled",
+      "rtol": 0.02,
+      "atol": 0.02,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.001946091651916504,
+          "max_relative_error": 0.00387746118940413,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "logsumexp": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 9.431889935740401e-08,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_q": {
+          "max_absolute_error": 0.003397703170776367,
+          "max_relative_error": 0.01630985736846924,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_k": {
+          "max_absolute_error": 0.0037298202514648438,
+          "max_relative_error": 0.011137407273054123,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_v": {
+          "max_absolute_error": 0.001899421215057373,
+          "max_relative_error": 0.0038906929548829794,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 0,
+      "shape": [
+        2,
+        127,
+        128
+      ],
+      "dtype": "bfloat16",
+      "is_causal": false,
+      "implementation": "triton",
+      "rtol": 0.02,
+      "atol": 0.02,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.0021108388900756836,
+          "max_relative_error": 0.047357335686683655,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "logsumexp": {
+          "max_absolute_error": 9.5367431640625e-07,
+          "max_relative_error": 1.7591780476777785e-07,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_q": {
+          "max_absolute_error": 0.003397703170776367,
+          "max_relative_error": 0.02758670598268509,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_k": {
+          "max_absolute_error": 0.0037298202514648438,
+          "max_relative_error": 0.013080844655632973,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_v": {
+          "max_absolute_error": 0.001899421215057373,
+          "max_relative_error": 0.0038914054166525602,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 0,
+      "shape": [
+        2,
+        127,
+        128
+      ],
+      "dtype": "bfloat16",
+      "is_causal": true,
+      "implementation": "pytorch_tiled",
+      "rtol": 0.02,
+      "atol": 0.02,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.006523609161376953,
+          "max_relative_error": 0.0038840717170387506,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "logsumexp": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 1.0011361695205778e-07,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_q": {
+          "max_absolute_error": 0.008863985538482666,
+          "max_relative_error": 0.12816858291625977,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_k": {
+          "max_absolute_error": 0.008274093270301819,
+          "max_relative_error": 0.32343873381614685,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_v": {
+          "max_absolute_error": 0.013887882232666016,
+          "max_relative_error": 0.0038888033013790846,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 0,
+      "shape": [
+        2,
+        127,
+        128
+      ],
+      "dtype": "bfloat16",
+      "is_causal": true,
+      "implementation": "triton",
+      "rtol": 0.02,
+      "atol": 0.02,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.006523609161376953,
+          "max_relative_error": 0.07013194262981415,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "logsumexp": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 2.2351741790771484e-06,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_q": {
+          "max_absolute_error": 0.008863985538482666,
+          "max_relative_error": 0.13671629130840302,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_k": {
+          "max_absolute_error": 0.007559478282928467,
+          "max_relative_error": 0.30741700530052185,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_v": {
+          "max_absolute_error": 0.013887882232666016,
+          "max_relative_error": 0.0038888033013790846,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 1,
+      "shape": [
+        2,
+        127,
+        32
+      ],
+      "dtype": "bfloat16",
+      "is_causal": false,
+      "implementation": "pytorch_tiled",
+      "rtol": 0.02,
+      "atol": 0.02,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.0018255114555358887,
+          "max_relative_error": 0.003858639858663082,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "logsumexp": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 9.362312880512036e-08,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_q": {
+          "max_absolute_error": 0.001994609832763672,
+          "max_relative_error": 0.01707456074655056,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_k": {
+          "max_absolute_error": 0.001852273941040039,
+          "max_relative_error": 0.014407606795430183,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_v": {
+          "max_absolute_error": 0.0018919110298156738,
+          "max_relative_error": 0.0038588657043874264,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 1,
+      "shape": [
+        2,
+        127,
+        32
+      ],
+      "dtype": "bfloat16",
+      "is_causal": false,
+      "implementation": "triton",
+      "rtol": 0.02,
+      "atol": 0.02,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.002462625503540039,
+          "max_relative_error": 0.03247465938329697,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "logsumexp": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 9.58259391836691e-08,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_q": {
+          "max_absolute_error": 0.001994609832763672,
+          "max_relative_error": 0.026367511600255966,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_k": {
+          "max_absolute_error": 0.001852273941040039,
+          "max_relative_error": 0.012934627011418343,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_v": {
+          "max_absolute_error": 0.0018919110298156738,
+          "max_relative_error": 0.0038588657043874264,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 1,
+      "shape": [
+        2,
+        127,
+        32
+      ],
+      "dtype": "bfloat16",
+      "is_causal": true,
+      "implementation": "pytorch_tiled",
+      "rtol": 0.02,
+      "atol": 0.02,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.0035942792892456055,
+          "max_relative_error": 0.003872931469231844,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "logsumexp": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 1.0144891149366231e-07,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_q": {
+          "max_absolute_error": 0.0050275325775146484,
+          "max_relative_error": 0.07069716602563858,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_k": {
+          "max_absolute_error": 0.004694223403930664,
+          "max_relative_error": 0.05789347365498543,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_v": {
+          "max_absolute_error": 0.00712895393371582,
+          "max_relative_error": 0.003885328769683838,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 1,
+      "shape": [
+        2,
+        127,
+        32
+      ],
+      "dtype": "bfloat16",
+      "is_causal": true,
+      "implementation": "triton",
+      "rtol": 0.02,
+      "atol": 0.02,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.0035942792892456055,
+          "max_relative_error": 0.07044079154729843,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "logsumexp": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 1.515055032541568e-07,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_q": {
+          "max_absolute_error": 0.0050275325775146484,
+          "max_relative_error": 0.06548913568258286,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_k": {
+          "max_absolute_error": 0.004694223403930664,
+          "max_relative_error": 0.11068392544984818,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_v": {
+          "max_absolute_error": 0.00712895393371582,
+          "max_relative_error": 0.003885328769683838,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 1,
+      "shape": [
+        2,
+        127,
+        64
+      ],
+      "dtype": "bfloat16",
+      "is_causal": false,
+      "implementation": "pytorch_tiled",
+      "rtol": 0.02,
+      "atol": 0.02,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.0019006729125976562,
+          "max_relative_error": 0.0038625607267022133,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "logsumexp": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 9.310219439839784e-08,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_q": {
+          "max_absolute_error": 0.0019685029983520508,
+          "max_relative_error": 0.014639808796346188,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_k": {
+          "max_absolute_error": 0.0019708871841430664,
+          "max_relative_error": 0.009916423819959164,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_v": {
+          "max_absolute_error": 0.0019504427909851074,
+          "max_relative_error": 0.00387460901401937,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 1,
+      "shape": [
+        2,
+        127,
+        64
+      ],
+      "dtype": "bfloat16",
+      "is_causal": false,
+      "implementation": "triton",
+      "rtol": 0.02,
+      "atol": 0.02,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.002148270606994629,
+          "max_relative_error": 0.04032430052757263,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "logsumexp": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 9.537247080970701e-08,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_q": {
+          "max_absolute_error": 0.0019947290420532227,
+          "max_relative_error": 0.024859877303242683,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_k": {
+          "max_absolute_error": 0.0019353628158569336,
+          "max_relative_error": 0.01238756813108921,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_v": {
+          "max_absolute_error": 0.0019504427909851074,
+          "max_relative_error": 0.00387460901401937,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 1,
+      "shape": [
+        2,
+        127,
+        64
+      ],
+      "dtype": "bfloat16",
+      "is_causal": true,
+      "implementation": "pytorch_tiled",
+      "rtol": 0.02,
+      "atol": 0.02,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.0063364505767822266,
+          "max_relative_error": 0.003854499664157629,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "logsumexp": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 1.0241655701292984e-07,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_q": {
+          "max_absolute_error": 0.005092322826385498,
+          "max_relative_error": 0.07982680201530457,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_k": {
+          "max_absolute_error": 0.005762696266174316,
+          "max_relative_error": 0.06970884650945663,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_v": {
+          "max_absolute_error": 0.007707118988037109,
+          "max_relative_error": 0.0038840174674987793,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 1,
+      "shape": [
+        2,
+        127,
+        64
+      ],
+      "dtype": "bfloat16",
+      "is_causal": true,
+      "implementation": "triton",
+      "rtol": 0.02,
+      "atol": 0.02,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.0063364505767822266,
+          "max_relative_error": 0.06635580211877823,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "logsumexp": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 2.816974529196159e-07,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_q": {
+          "max_absolute_error": 0.004462599754333496,
+          "max_relative_error": 0.07668919861316681,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_k": {
+          "max_absolute_error": 0.004786968231201172,
+          "max_relative_error": 0.07616165280342102,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_v": {
+          "max_absolute_error": 0.007707118988037109,
+          "max_relative_error": 0.0038840174674987793,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 1,
+      "shape": [
+        2,
+        127,
+        128
+      ],
+      "dtype": "bfloat16",
+      "is_causal": false,
+      "implementation": "pytorch_tiled",
+      "rtol": 0.02,
+      "atol": 0.02,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.0018294453620910645,
+          "max_relative_error": 0.003860182361677289,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "logsumexp": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 9.330479855407248e-08,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_q": {
+          "max_absolute_error": 0.002086043357849121,
+          "max_relative_error": 0.014741718769073486,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_k": {
+          "max_absolute_error": 0.0021173954010009766,
+          "max_relative_error": 0.012584123760461807,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_v": {
+          "max_absolute_error": 0.0019486546516418457,
+          "max_relative_error": 0.00387746118940413,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 1,
+      "shape": [
+        2,
+        127,
+        128
+      ],
+      "dtype": "bfloat16",
+      "is_causal": false,
+      "implementation": "triton",
+      "rtol": 0.02,
+      "atol": 0.02,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.0018294453620910645,
+          "max_relative_error": 0.03690347075462341,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "logsumexp": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 9.342832640868437e-08,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_q": {
+          "max_absolute_error": 0.002086043357849121,
+          "max_relative_error": 0.03706536069512367,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_k": {
+          "max_absolute_error": 0.0021173954010009766,
+          "max_relative_error": 0.011830474250018597,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_v": {
+          "max_absolute_error": 0.0019486546516418457,
+          "max_relative_error": 0.00387746118940413,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 1,
+      "shape": [
+        2,
+        127,
+        128
+      ],
+      "dtype": "bfloat16",
+      "is_causal": true,
+      "implementation": "pytorch_tiled",
+      "rtol": 0.02,
+      "atol": 0.02,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.007464170455932617,
+          "max_relative_error": 0.0038607672322541475,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "logsumexp": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 9.657131982976352e-08,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_q": {
+          "max_absolute_error": 0.007716059684753418,
+          "max_relative_error": 0.24100565910339355,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_k": {
+          "max_absolute_error": 0.009121894836425781,
+          "max_relative_error": 0.10162302106618881,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_v": {
+          "max_absolute_error": 0.011499881744384766,
+          "max_relative_error": 0.003887116676196456,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 1,
+      "shape": [
+        2,
+        127,
+        128
+      ],
+      "dtype": "bfloat16",
+      "is_causal": true,
+      "implementation": "triton",
+      "rtol": 0.02,
+      "atol": 0.02,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.007464170455932617,
+          "max_relative_error": 0.06527670472860336,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "logsumexp": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 5.066799531050492e-07,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_q": {
+          "max_absolute_error": 0.007716059684753418,
+          "max_relative_error": 0.21888041496276855,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_k": {
+          "max_absolute_error": 0.006691336631774902,
+          "max_relative_error": 0.12544189393520355,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_v": {
+          "max_absolute_error": 0.011499881744384766,
+          "max_relative_error": 0.003887116676196456,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 2,
+      "shape": [
+        2,
+        127,
+        32
+      ],
+      "dtype": "bfloat16",
+      "is_causal": false,
+      "implementation": "pytorch_tiled",
+      "rtol": 0.02,
+      "atol": 0.02,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.0018296241760253906,
+          "max_relative_error": 0.0038743617478758097,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "logsumexp": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 9.560883995618497e-08,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_q": {
+          "max_absolute_error": 0.0019388794898986816,
+          "max_relative_error": 0.025386013090610504,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_k": {
+          "max_absolute_error": 0.002059042453765869,
+          "max_relative_error": 0.010310299694538116,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_v": {
+          "max_absolute_error": 0.001803755760192871,
+          "max_relative_error": 0.0038747272919863462,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 2,
+      "shape": [
+        2,
+        127,
+        32
+      ],
+      "dtype": "bfloat16",
+      "is_causal": false,
+      "implementation": "triton",
+      "rtol": 0.02,
+      "atol": 0.02,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.0018296241760253906,
+          "max_relative_error": 0.03055483102798462,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "logsumexp": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 9.560883995618497e-08,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_q": {
+          "max_absolute_error": 0.0019673705101013184,
+          "max_relative_error": 0.03445218876004219,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_k": {
+          "max_absolute_error": 0.002059042453765869,
+          "max_relative_error": 0.013401161879301071,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_v": {
+          "max_absolute_error": 0.001803755760192871,
+          "max_relative_error": 0.0038747272919863462,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 2,
+      "shape": [
+        2,
+        127,
+        32
+      ],
+      "dtype": "bfloat16",
+      "is_causal": true,
+      "implementation": "pytorch_tiled",
+      "rtol": 0.02,
+      "atol": 0.02,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.0069730281829833984,
+          "max_relative_error": 0.0038607690948992968,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "logsumexp": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 1.035006533811611e-07,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_q": {
+          "max_absolute_error": 0.00791621208190918,
+          "max_relative_error": 0.052562590688467026,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_k": {
+          "max_absolute_error": 0.004802584648132324,
+          "max_relative_error": 0.06041461601853371,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_v": {
+          "max_absolute_error": 0.0076961517333984375,
+          "max_relative_error": 0.003841939615085721,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 2,
+      "shape": [
+        2,
+        127,
+        32
+      ],
+      "dtype": "bfloat16",
+      "is_causal": true,
+      "implementation": "triton",
+      "rtol": 0.02,
+      "atol": 0.02,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.0069730281829833984,
+          "max_relative_error": 0.0643359050154686,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "logsumexp": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 1.1236976149575639e-07,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_q": {
+          "max_absolute_error": 0.00791621208190918,
+          "max_relative_error": 0.08200835436582565,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_k": {
+          "max_absolute_error": 0.005040287971496582,
+          "max_relative_error": 0.0642731636762619,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_v": {
+          "max_absolute_error": 0.0076961517333984375,
+          "max_relative_error": 0.003841939615085721,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 2,
+      "shape": [
+        2,
+        127,
+        64
+      ],
+      "dtype": "bfloat16",
+      "is_causal": false,
+      "implementation": "pytorch_tiled",
+      "rtol": 0.02,
+      "atol": 0.02,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.0019422173500061035,
+          "max_relative_error": 0.003873662557452917,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "logsumexp": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 9.267111522603955e-08,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_q": {
+          "max_absolute_error": 0.0020383596420288086,
+          "max_relative_error": 0.018479488790035248,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_k": {
+          "max_absolute_error": 0.003380417823791504,
+          "max_relative_error": 0.008355849422514439,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_v": {
+          "max_absolute_error": 0.0019175410270690918,
+          "max_relative_error": 0.0038878319319337606,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 2,
+      "shape": [
+        2,
+        127,
+        64
+      ],
+      "dtype": "bfloat16",
+      "is_causal": false,
+      "implementation": "triton",
+      "rtol": 0.02,
+      "atol": 0.02,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.0022377371788024902,
+          "max_relative_error": 0.03982893005013466,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "logsumexp": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 9.40705575658285e-08,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_q": {
+          "max_absolute_error": 0.0020383596420288086,
+          "max_relative_error": 0.0165870264172554,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_k": {
+          "max_absolute_error": 0.003380417823791504,
+          "max_relative_error": 0.008942186832427979,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_v": {
+          "max_absolute_error": 0.0019175410270690918,
+          "max_relative_error": 0.0038878319319337606,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 2,
+      "shape": [
+        2,
+        127,
+        64
+      ],
+      "dtype": "bfloat16",
+      "is_causal": true,
+      "implementation": "pytorch_tiled",
+      "rtol": 0.02,
+      "atol": 0.02,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.00447845458984375,
+          "max_relative_error": 0.003864468075335026,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "logsumexp": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 9.684863044867598e-08,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_q": {
+          "max_absolute_error": 0.004240512847900391,
+          "max_relative_error": 0.11217020452022552,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_k": {
+          "max_absolute_error": 0.0056792497634887695,
+          "max_relative_error": 0.09528273344039917,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_v": {
+          "max_absolute_error": 0.007726907730102539,
+          "max_relative_error": 0.003854617942124605,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 2,
+      "shape": [
+        2,
+        127,
+        64
+      ],
+      "dtype": "bfloat16",
+      "is_causal": true,
+      "implementation": "triton",
+      "rtol": 0.02,
+      "atol": 0.02,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.005132317543029785,
+          "max_relative_error": 0.07556667923927307,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "logsumexp": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 1.3214341265666008e-07,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_q": {
+          "max_absolute_error": 0.0055596306920051575,
+          "max_relative_error": 0.21269795298576355,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_k": {
+          "max_absolute_error": 0.005697727203369141,
+          "max_relative_error": 0.12910225987434387,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_v": {
+          "max_absolute_error": 0.007726907730102539,
+          "max_relative_error": 0.003854617942124605,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 2,
+      "shape": [
+        2,
+        127,
+        128
+      ],
+      "dtype": "bfloat16",
+      "is_causal": false,
+      "implementation": "pytorch_tiled",
+      "rtol": 0.02,
+      "atol": 0.02,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.0018290281295776367,
+          "max_relative_error": 0.003886082675307989,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "logsumexp": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 9.334817718809063e-08,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_q": {
+          "max_absolute_error": 0.0020021796226501465,
+          "max_relative_error": 0.02270042896270752,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_k": {
+          "max_absolute_error": 0.001980006694793701,
+          "max_relative_error": 0.009733624756336212,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_v": {
+          "max_absolute_error": 0.0019503235816955566,
+          "max_relative_error": 0.0038779210299253464,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 2,
+      "shape": [
+        2,
+        127,
+        128
+      ],
+      "dtype": "bfloat16",
+      "is_causal": false,
+      "implementation": "triton",
+      "rtol": 0.02,
+      "atol": 0.02,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.0022215843200683594,
+          "max_relative_error": 0.03662761300802231,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "logsumexp": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 9.508343623565452e-08,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_q": {
+          "max_absolute_error": 0.0020380616188049316,
+          "max_relative_error": 0.017030630260705948,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_k": {
+          "max_absolute_error": 0.0019262433052062988,
+          "max_relative_error": 0.01228839997202158,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_v": {
+          "max_absolute_error": 0.0019503235816955566,
+          "max_relative_error": 0.0038779210299253464,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 2,
+      "shape": [
+        2,
+        127,
+        128
+      ],
+      "dtype": "bfloat16",
+      "is_causal": true,
+      "implementation": "pytorch_tiled",
+      "rtol": 0.02,
+      "atol": 0.02,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.0077075958251953125,
+          "max_relative_error": 0.0038695225957781076,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "logsumexp": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 9.953665625062058e-08,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_q": {
+          "max_absolute_error": 0.007687211036682129,
+          "max_relative_error": 0.20389795303344727,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_k": {
+          "max_absolute_error": 0.005198657512664795,
+          "max_relative_error": 0.0973578542470932,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_v": {
+          "max_absolute_error": 0.010528564453125,
+          "max_relative_error": 0.003877684473991394,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 2,
+      "shape": [
+        2,
+        127,
+        128
+      ],
+      "dtype": "bfloat16",
+      "is_causal": true,
+      "implementation": "triton",
+      "rtol": 0.02,
+      "atol": 0.02,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 0.0077075958251953125,
+          "max_relative_error": 0.06511153280735016,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "logsumexp": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 7.324092621274758e-07,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_q": {
+          "max_absolute_error": 0.006710648536682129,
+          "max_relative_error": 0.17032861709594727,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_k": {
+          "max_absolute_error": 0.006148576736450195,
+          "max_relative_error": 0.0912543386220932,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_v": {
+          "max_absolute_error": 0.010528564453125,
+          "max_relative_error": 0.003877684473991394,
+          "relative_error_floor": 0.02,
+          "all_finite": true,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 0,
+      "shape": [
+        2,
+        127,
+        64
+      ],
+      "dtype": "float32",
+      "is_causal": false,
+      "implementation": "pytorch_tiled",
+      "rtol": 0.01,
+      "atol": 0.01,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 3.5762786865234375e-07,
+          "max_relative_error": 1.234002411365509e-05,
+          "relative_error_floor": 0.01,
+          "all_finite": true,
+          "passed": true
+        },
+        "logsumexp": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 9.387070321054125e-08,
+          "relative_error_floor": 0.01,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_q": {
+          "max_absolute_error": 2.682209014892578e-07,
+          "max_relative_error": 9.336508810520172e-06,
+          "relative_error_floor": 0.01,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_k": {
+          "max_absolute_error": 2.384185791015625e-07,
+          "max_relative_error": 1.2968666851520538e-05,
+          "relative_error_floor": 0.01,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_v": {
+          "max_absolute_error": 2.086162567138672e-07,
+          "max_relative_error": 1.1548399925231934e-05,
+          "relative_error_floor": 0.01,
+          "all_finite": true,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "seed": 0,
+      "shape": [
+        2,
+        127,
+        64
+      ],
+      "dtype": "float32",
+      "is_causal": false,
+      "implementation": "triton",
+      "rtol": 0.01,
+      "atol": 0.01,
+      "metrics": {
+        "output": {
+          "max_absolute_error": 3.8743019104003906e-07,
+          "max_relative_error": 1.3131648302078247e-05,
+          "relative_error_floor": 0.01,
+          "all_finite": true,
+          "passed": true
+        },
+        "logsumexp": {
+          "max_absolute_error": 4.76837158203125e-07,
+          "max_relative_error": 9.265077949294209e-08,
+          "relative_error_floor": 0.01,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_q": {
+          "max_absolute_error": 2.980232238769531e-07,
+          "max_relative_error": 1.096632331609726e-05,
+          "relative_error_floor": 0.01,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_k": {
+          "max_absolute_error": 2.980232238769531e-07,
+          "max_relative_error": 1.2852251529693604e-05,
+          "relative_error_floor": 0.01,
+          "all_finite": true,
+          "passed": true
+        },
+        "grad_v": {
+          "max_absolute_error": 2.384185791015625e-07,
+          "max_relative_error": 1.3224780559539795e-05,
+          "relative_error_floor": 0.01,
+          "all_finite": true,
+          "passed": true
+        }
+      },
+      "passed": true
+    }
+  ]
+}

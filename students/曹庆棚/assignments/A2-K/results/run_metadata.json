@@ -1,0 +1,47 @@
+{
+  "allocator_fraction": 0.9768130292889415,
+  "allocator_limit_mib": 23552,
+  "assignment": "A2-K",
+  "attention_measurement_rep": 300,
+  "attention_warmup": 100,
+  "checkpoint_measurement_steps": 5,
+  "checkpoint_warmup_steps": 3,
+  "commands": {
+    "attention": "python -m student_scripts.a2k.benchmark_attention --output results/attention_baseline.csv --seqs 512,2048,8192 --dims 64,128 --warmup 100 --rep 300",
+    "checkpoint": "python -m student_scripts.a2k.benchmark_checkpointing --output results/checkpointing.csv --seqs 1024,2048 --block-sizes 0,1,2,4,8 --warmup 3 --steps 5",
+    "compile": "python -m student_scripts.a2k.benchmark_compile --output results/compile_comparison.csv --warmup 100 --rep 300",
+    "correctness": "python -m student_scripts.a2k.run_correctness --output results/correctness.json --seeds 0,1,2",
+    "flash_boundary": "python -m student_scripts.a2k.benchmark_flash --output results/flash_benchmark.csv --seqs 16384 --dims 64,128 --implementations eager,triton --warmup 100 --rep 300 --query-tile 32 --key-tile 64 --num-warps 4 --num-stages 1",
+    "flash_core": "python -m student_scripts.a2k.benchmark_flash --output results/flash_benchmark.csv --seqs 512,2048,8192 --dims 64,128 --implementations eager,compiled,triton --warmup 100 --rep 300 --query-tile 32 --key-tile 64 --num-warps 4 --num-stages 1",
+    "metadata": "python -m student_scripts.a2k.run_metadata --output results/run_metadata.json"
+  },
+  "compiled_mode": "reduce-overhead",
+  "cuda_available": true,
+  "cuda_runtime": "12.4",
+  "device_requested": "cuda",
+  "flash_measurement_rep": 300,
+  "flash_warmup": 100,
+  "git_commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+  "gpu_name": "NVIDIA GeForce RTX 4090",
+  "gpu_total_mib": 24111.0625,
+  "nvidia_smi": {
+    "driver_version": "560.28.03",
+    "gpu_name": "NVIDIA GeForce RTX 4090",
+    "memory_free": "23718 MiB",
+    "memory_total": "24564 MiB",
+    "power_limit": "450.00 W",
+    "pstate": "P0"
+  },
+  "python": "3.13.14",
+  "quantiles": [
+    0.2,
+    0.5,
+    0.8
+  ],
+  "seed": 0,
+  "tf32_cudnn": false,
+  "tf32_matmul": false,
+  "timer": "time.perf_counter with torch.cuda.synchronize before and after each sample",
+  "torch": "2.6.0+cu124",
+  "triton_version": "3.2.0"
+}

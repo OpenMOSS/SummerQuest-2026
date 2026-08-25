@@ -1,0 +1,1521 @@
+{
+  "assignment": "A2-P",
+  "environment": {
+    "cuda_runtime_version": "12.8",
+    "gpu_model": "NVIDIA H200",
+    "pytorch_version": "2.11.0+cu128"
+  },
+  "fallback_order": [
+    "XL/context 1024",
+    "Large/context 2048"
+  ],
+  "handout_version": "26.1.4-rc.3",
+  "history_boundary": "allocator history starts after all warmup steps",
+  "memory_counter_definitions": {
+    "active": "torch.cuda.memory_stats active_bytes.all current/peak",
+    "allocated": "torch.cuda.memory_stats allocated_bytes.all current/peak",
+    "max_memory_allocated": "torch.cuda.max_memory_allocated",
+    "reserved": "torch.cuda.memory_stats reserved_bytes.all current/peak"
+  },
+  "raw_artifact_policy": {
+    "snapshots_published": false,
+    "snapshots_retained_locally": true
+  },
+  "residual_stream_theory": {
+    "bf16_variant": "B*T*D*2 bytes for one BF16 tensor",
+    "formula": "B*T*D*4 bytes for one FP32 residual-stream tensor",
+    "pinned_pdf_reference": {
+      "batch_size": 4,
+      "context_length": 512,
+      "d_model": 2560,
+      "fp32_bytes": 20971520,
+      "fp32_mib": 20.0
+    }
+  },
+  "runs": [
+    {
+      "case_id": "xl_b1_ctx128_forward_fp32",
+      "command": [
+        "python",
+        "profiling/memory_snapshot.py",
+        "--model-size",
+        "xl",
+        "--batch-size",
+        "1",
+        "--context-length",
+        "128",
+        "--mode",
+        "forward",
+        "--dtype",
+        "fp32",
+        "--warmup",
+        "5",
+        "--steps",
+        "1",
+        "--seed",
+        "42",
+        "--output",
+        "results/memory/result.json",
+        "--snapshot-output",
+        "results/memory/snapshot.pickle",
+        "--timeline-output",
+        "results/memory/timeline.png"
+      ],
+      "configuration": {
+        "batch_size": 1,
+        "context_length": 128,
+        "dtype": "fp32",
+        "measurement_steps": 1,
+        "mode": "forward",
+        "model_size": "xl",
+        "parameter_dtype": "fp32",
+        "seed": 42,
+        "warmup_steps": 5
+      },
+      "exception_type": null,
+      "failure_stage": null,
+      "fallback_for": null,
+      "is_fallback": false,
+      "local_official_memory_viz_basename": null,
+      "local_official_memory_viz_generated": false,
+      "local_snapshot_basename": "snapshot.pickle",
+      "local_snapshot_generated": true,
+      "local_timeline_basename": "timeline.png",
+      "maximum_single_allocation_bytes": 5242880,
+      "maximum_single_allocation_stack": [
+        {
+          "file": "call.c",
+          "function": "_PyObject_Call_Prepend",
+          "line": 504
+        },
+        {
+          "file": "call.c",
+          "function": "_PyObject_MakeTpCall",
+          "line": 242
+        },
+        {
+          "file": "profiling/memory_snapshot.py",
+          "function": "_execute_step",
+          "line": 347
+        },
+        {
+          "file": "generated_cases.c.h",
+          "function": "_PyEval_EvalFrameDefault",
+          "line": 1850
+        },
+        {
+          "file": "profiling/memory_snapshot.py",
+          "function": "run",
+          "line": 1037
+        },
+        {
+          "file": "pycore_ceval.h",
+          "function": "_PyEval_EvalFrame",
+          "line": 119
+        },
+        {
+          "file": "bltinmodule.c",
+          "function": "builtin_exec_impl",
+          "line": 1143
+        },
+        {
+          "file": "methodobject.c",
+          "function": "cfunction_vectorcall_FASTCALL_KEYWORDS",
+          "line": 440
+        },
+        {
+          "file": "pycore_call.h",
+          "function": "_PyObject_VectorcallTstate",
+          "line": 168
+        },
+        {
+          "file": "profiling/memory_snapshot.py",
+          "function": "main",
+          "line": 1152
+        },
+        {
+          "file": "generated_cases.c.h",
+          "function": "_PyEval_EvalFrameDefault",
+          "line": 813
+        },
+        {
+          "file": "main.c",
+          "function": "pymain_run_module",
+          "line": 349
+        },
+        {
+          "file": "main.c",
+          "function": "pymain_run_python",
+          "line": 690
+        },
+        {
+          "file": "main.c",
+          "function": "Py_BytesMain",
+          "line": 829
+        },
+        {
+          "file": "??",
+          "function": "__libc_init_first",
+          "line": 0
+        },
+        {
+          "file": "??",
+          "function": "__libc_start_main",
+          "line": 0
+        },
+        {
+          "file": "??",
+          "function": "_start",
+          "line": 0
+        },
+        {
+          "file": "profiling/memory_snapshot.py",
+          "function": "<module>",
+          "line": 1158
+        },
+        {
+          "file": "<frozen runpy>",
+          "function": "_run_code",
+          "line": 88
+        },
+        {
+          "file": "<frozen runpy>",
+          "function": "_run_module_as_main",
+          "line": 198
+        }
+      ],
+      "official_memory_viz_published": false,
+      "phase_active_memory": {
+        "available": true,
+        "definition": "maximum reconstructed active bytes at phase start and after timestamped allocator events within the phase",
+        "peaks": [
+          {
+            "active_peak_bytes": 13818056704,
+            "phase": "forward",
+            "step": 0
+          }
+        ],
+        "timeline_axis": "snapshot_time_us"
+      },
+      "public_timeline_asset": null,
+      "snapshot_published": false,
+      "status": "ok"
+    },
+    {
+      "case_id": "xl_b1_ctx128_forward_bf16",
+      "command": [
+        "python",
+        "profiling/memory_snapshot.py",
+        "--model-size",
+        "xl",
+        "--batch-size",
+        "1",
+        "--context-length",
+        "128",
+        "--mode",
+        "forward",
+        "--dtype",
+        "bf16",
+        "--warmup",
+        "5",
+        "--steps",
+        "1",
+        "--seed",
+        "42",
+        "--output",
+        "results/memory/result.json",
+        "--snapshot-output",
+        "results/memory/snapshot.pickle",
+        "--timeline-output",
+        "results/memory/timeline.png"
+      ],
+      "configuration": {
+        "batch_size": 1,
+        "context_length": 128,
+        "dtype": "bf16",
+        "measurement_steps": 1,
+        "mode": "forward",
+        "model_size": "xl",
+        "parameter_dtype": "fp32",
+        "seed": 42,
+        "warmup_steps": 5
+      },
+      "exception_type": null,
+      "failure_stage": null,
+      "fallback_for": null,
+      "is_fallback": false,
+      "local_official_memory_viz_basename": null,
+      "local_official_memory_viz_generated": false,
+      "local_snapshot_basename": "snapshot.pickle",
+      "local_snapshot_generated": true,
+      "local_timeline_basename": "timeline.png",
+      "maximum_single_allocation_bytes": 52428800,
+      "maximum_single_allocation_stack": [
+        {
+          "file": "call.c",
+          "function": "_PyObject_Call_Prepend",
+          "line": 504
+        },
+        {
+          "file": "call.c",
+          "function": "_PyObject_MakeTpCall",
+          "line": 242
+        },
+        {
+          "file": "profiling/memory_snapshot.py",
+          "function": "_execute_step",
+          "line": 347
+        },
+        {
+          "file": "generated_cases.c.h",
+          "function": "_PyEval_EvalFrameDefault",
+          "line": 1850
+        },
+        {
+          "file": "profiling/memory_snapshot.py",
+          "function": "run",
+          "line": 1037
+        },
+        {
+          "file": "pycore_ceval.h",
+          "function": "_PyEval_EvalFrame",
+          "line": 119
+        },
+        {
+          "file": "bltinmodule.c",
+          "function": "builtin_exec_impl",
+          "line": 1143
+        },
+        {
+          "file": "methodobject.c",
+          "function": "cfunction_vectorcall_FASTCALL_KEYWORDS",
+          "line": 440
+        },
+        {
+          "file": "pycore_call.h",
+          "function": "_PyObject_VectorcallTstate",
+          "line": 168
+        },
+        {
+          "file": "profiling/memory_snapshot.py",
+          "function": "main",
+          "line": 1152
+        },
+        {
+          "file": "generated_cases.c.h",
+          "function": "_PyEval_EvalFrameDefault",
+          "line": 813
+        },
+        {
+          "file": "main.c",
+          "function": "pymain_run_module",
+          "line": 349
+        },
+        {
+          "file": "main.c",
+          "function": "pymain_run_python",
+          "line": 690
+        },
+        {
+          "file": "main.c",
+          "function": "Py_BytesMain",
+          "line": 829
+        },
+        {
+          "file": "??",
+          "function": "__libc_init_first",
+          "line": 0
+        },
+        {
+          "file": "??",
+          "function": "__libc_start_main",
+          "line": 0
+        },
+        {
+          "file": "??",
+          "function": "_start",
+          "line": 0
+        },
+        {
+          "file": "profiling/memory_snapshot.py",
+          "function": "<module>",
+          "line": 1158
+        },
+        {
+          "file": "<frozen runpy>",
+          "function": "_run_code",
+          "line": 88
+        },
+        {
+          "file": "<frozen runpy>",
+          "function": "_run_module_as_main",
+          "line": 198
+        }
+      ],
+      "official_memory_viz_published": false,
+      "phase_active_memory": {
+        "available": true,
+        "definition": "maximum reconstructed active bytes at phase start and after timestamped allocator events within the phase",
+        "peaks": [
+          {
+            "active_peak_bytes": 13859999744,
+            "phase": "forward",
+            "step": 0
+          }
+        ],
+        "timeline_axis": "snapshot_time_us"
+      },
+      "public_timeline_asset": null,
+      "snapshot_published": false,
+      "status": "ok"
+    },
+    {
+      "case_id": "xl_b1_ctx128_train_step_fp32",
+      "command": [
+        "python",
+        "profiling/memory_snapshot.py",
+        "--model-size",
+        "xl",
+        "--batch-size",
+        "1",
+        "--context-length",
+        "128",
+        "--mode",
+        "train_step",
+        "--dtype",
+        "fp32",
+        "--warmup",
+        "5",
+        "--steps",
+        "1",
+        "--seed",
+        "42",
+        "--output",
+        "results/memory/result.json",
+        "--snapshot-output",
+        "results/memory/snapshot.pickle",
+        "--timeline-output",
+        "results/memory/timeline.png",
+        "--saved-tensors-block"
+      ],
+      "configuration": {
+        "batch_size": 1,
+        "context_length": 128,
+        "dtype": "fp32",
+        "measurement_steps": 1,
+        "mode": "train_step",
+        "model_size": "xl",
+        "parameter_dtype": "fp32",
+        "seed": 42,
+        "warmup_steps": 5
+      },
+      "exception_type": null,
+      "failure_stage": null,
+      "fallback_for": null,
+      "is_fallback": false,
+      "local_official_memory_viz_basename": null,
+      "local_official_memory_viz_generated": false,
+      "local_snapshot_basename": "snapshot.pickle",
+      "local_snapshot_generated": true,
+      "local_timeline_basename": "timeline.png",
+      "maximum_single_allocation_bytes": 104857600,
+      "maximum_single_allocation_stack": [
+        {
+          "file": "??",
+          "function": "at_detail_empty_cuda_c10_ArrayRef<long>_std_optional<c10_ScalarType>_std_optional<c10_Layout>_std_optional<c10_Device>_std_optional<bool>_std_optional<c10_Memor",
+          "line": 0
+        },
+        {
+          "file": "??",
+          "function": "at_detail_empty_cuda_c10_ArrayRef<long>_c10_TensorOptions_const_",
+          "line": 0
+        },
+        {
+          "file": "RegisterCUDA_0.cpp",
+          "function": "at_anonymous_namespace_create_out_c10_ArrayRef<long>_c10_ArrayRef<long>_c10_TensorOptions_const_",
+          "line": 0
+        },
+        {
+          "file": "RegisterCUDA_0.cpp",
+          "function": "at_anonymous_namespace_structured_bmm_out_cuda_functional_set_output_raw_strided_long_c10_ArrayRef<long>_c10_ArrayRef<long>_c10_TensorOptions_c10_ArrayRef<at_Di",
+          "line": 0
+        },
+        {
+          "file": "??",
+          "function": "at_meta_structured_bmm_meta_at_Tensor_const_at_Tensor_const_",
+          "line": 0
+        },
+        {
+          "file": "RegisterCUDA_0.cpp",
+          "function": "c10_impl_wrap_kernel_functor_unboxed_<c10_impl_detail_WrapFunctionIntoFunctor_<c10_CompileTimeFunctionPointer<at_Tensor_at_Tensor_const_at_Tensor_const_at_anony",
+          "line": 0
+        },
+        {
+          "file": "??",
+          "function": "at__ops_bmm_redispatch_c10_DispatchKeySet_at_Tensor_const_at_Tensor_const_",
+          "line": 0
+        },
+        {
+          "file": "VariableType_3.cpp",
+          "function": "torch_autograd_VariableType_anonymous_namespace_bmm_c10_DispatchKeySet_at_Tensor_const_at_Tensor_const_",
+          "line": 0
+        },
+        {
+          "file": "VariableType_3.cpp",
+          "function": "c10_impl_wrap_kernel_functor_unboxed_<c10_impl_detail_WrapFunctionIntoFunctor_<c10_CompileTimeFunctionPointer<at_Tensor_c10_DispatchKeySet_at_Tensor_const_at_Te",
+          "line": 0
+        },
+        {
+          "file": "??",
+          "function": "at__ops_bmm_call_at_Tensor_const_at_Tensor_const_",
+          "line": 0
+        },
+        {
+          "file": "Functions.cpp",
+          "function": "torch_autograd_generated_BmmBackward0_apply_functional_std_vector<at_Tensor_std_allocator<at_Tensor>_>_std_array<bool_2ul>_at_Tensor_at_Tensor_",
+          "line": 0
+        },
+        {
+          "file": "??",
+          "function": "torch_autograd_generated_BmmBackward0_apply_std_vector<at_Tensor_std_allocator<at_Tensor>_>_",
+          "line": 0
+        },
+        {
+          "file": "<unknown>",
+          "function": "torch_autograd_Node_operator_std_vector<at_Tensor_std_allocator<at_Tensor>_>_",
+          "line": 0
+        },
+        {
+          "file": "??",
+          "function": "torch_autograd_Engine_evaluate_function_std_shared_ptr<torch_autograd_GraphTask>_torch_autograd_Node_torch_autograd_InputBuffer_std_shared_ptr<torch_autograd_Re",
+          "line": 0
+        },
+        {
+          "file": "??",
+          "function": "torch_autograd_Engine_thread_main_std_shared_ptr<torch_autograd_GraphTask>_const_",
+          "line": 0
+        },
+        {
+          "file": "??",
+          "function": "torch_autograd_Engine_thread_init_int_std_shared_ptr<torch_autograd_ReadyQueue>_const_bool_",
+          "line": 0
+        },
+        {
+          "file": "<unknown>",
+          "function": "torch_autograd_python_PythonEngine_thread_init_int_std_shared_ptr<torch_autograd_ReadyQueue>_const_bool_",
+          "line": 0
+        },
+        {
+          "file": "thread.cc",
+          "function": "execute_native_thread_routine",
+          "line": 104
+        },
+        {
+          "file": "??",
+          "function": "pthread_condattr_setpshared",
+          "line": 0
+        },
+        {
+          "file": "??",
+          "function": "__clone",
+          "line": 0
+        }
+      ],
+      "official_memory_viz_published": false,
+      "phase_active_memory": {
+        "available": true,
+        "definition": "maximum reconstructed active bytes at phase start and after timestamped allocator events within the phase",
+        "peaks": [
+          {
+            "active_peak_bytes": 42492977672,
+            "phase": "forward",
+            "step": 0
+          },
+          {
+            "active_peak_bytes": 54712719369,
+            "phase": "backward",
+            "step": 0
+          },
+          {
+            "active_peak_bytes": 55235692548,
+            "phase": "optimizer",
+            "step": 0
+          }
+        ],
+        "timeline_axis": "snapshot_time_us"
+      },
+      "public_timeline_asset": null,
+      "snapshot_published": false,
+      "status": "ok"
+    },
+    {
+      "case_id": "xl_b1_ctx128_train_step_bf16",
+      "command": [
+        "python",
+        "profiling/memory_snapshot.py",
+        "--model-size",
+        "xl",
+        "--batch-size",
+        "1",
+        "--context-length",
+        "128",
+        "--mode",
+        "train_step",
+        "--dtype",
+        "bf16",
+        "--warmup",
+        "5",
+        "--steps",
+        "1",
+        "--seed",
+        "42",
+        "--output",
+        "results/memory/result.json",
+        "--snapshot-output",
+        "results/memory/snapshot.pickle",
+        "--timeline-output",
+        "results/memory/timeline.png"
+      ],
+      "configuration": {
+        "batch_size": 1,
+        "context_length": 128,
+        "dtype": "bf16",
+        "measurement_steps": 1,
+        "mode": "train_step",
+        "model_size": "xl",
+        "parameter_dtype": "fp32",
+        "seed": 42,
+        "warmup_steps": 5
+      },
+      "exception_type": null,
+      "failure_stage": null,
+      "fallback_for": null,
+      "is_fallback": false,
+      "local_official_memory_viz_basename": null,
+      "local_official_memory_viz_generated": false,
+      "local_snapshot_basename": "snapshot.pickle",
+      "local_snapshot_generated": true,
+      "local_timeline_basename": "timeline.png",
+      "maximum_single_allocation_bytes": 104857600,
+      "maximum_single_allocation_stack": [
+        {
+          "file": "RegisterCompositeExplicitAutograd_0.cpp",
+          "function": "c10_impl_wrap_kernel_functor_unboxed_<c10_impl_detail_WrapFunctionIntoFunctor_<c10_CompileTimeFunctionPointer<at_Tensor_at_Tensor_const_std_optional<c10_ScalarT",
+          "line": 0
+        },
+        {
+          "file": "??",
+          "function": "at__ops__to_copy_redispatch_c10_DispatchKeySet_at_Tensor_const_std_optional<c10_ScalarType>_std_optional<c10_Layout>_std_optional<c10_Device>_std_optional<bool>",
+          "line": 0
+        },
+        {
+          "file": "RegisterBackendSelect.cpp",
+          "function": "c10_impl_wrap_kernel_functor_unboxed_<c10_impl_detail_WrapFunctionIntoFunctor_<c10_CompileTimeFunctionPointer<at_Tensor_at_Tensor_const_std_optional<c10_ScalarT",
+          "line": 0
+        },
+        {
+          "file": "??",
+          "function": "at__ops__to_copy_redispatch_c10_DispatchKeySet_at_Tensor_const_std_optional<c10_ScalarType>_std_optional<c10_Layout>_std_optional<c10_Device>_std_optional<bool>",
+          "line": 0
+        },
+        {
+          "file": "VariableType_0.cpp",
+          "function": "torch_autograd_VariableType_anonymous_namespace__to_copy_c10_DispatchKeySet_at_Tensor_const_std_optional<c10_ScalarType>_std_optional<c10_Layout>_std_optional<c",
+          "line": 0
+        },
+        {
+          "file": "VariableType_0.cpp",
+          "function": "c10_impl_wrap_kernel_functor_unboxed_<c10_impl_detail_WrapFunctionIntoFunctor_<c10_CompileTimeFunctionPointer<at_Tensor_c10_DispatchKeySet_at_Tensor_const_std_o",
+          "line": 0
+        },
+        {
+          "file": "??",
+          "function": "at__ops__to_copy_call_at_Tensor_const_std_optional<c10_ScalarType>_std_optional<c10_Layout>_std_optional<c10_Device>_std_optional<bool>_bool_std_optional<c10_Me",
+          "line": 0
+        },
+        {
+          "file": "??",
+          "function": "at_native_to_at_Tensor_const_std_optional<c10_ScalarType>_std_optional<c10_Layout>_std_optional<c10_Device>_std_optional<bool>_bool_bool_std_optional<c10_Memory",
+          "line": 0
+        },
+        {
+          "file": "RegisterCompositeImplicitAutograd_0.cpp",
+          "function": "c10_impl_wrap_kernel_functor_unboxed_<c10_impl_detail_WrapFunctionIntoFunctor_<c10_CompileTimeFunctionPointer<at_Tensor_at_Tensor_const_std_optional<c10_ScalarT",
+          "line": 0
+        },
+        {
+          "file": "??",
+          "function": "at__ops_to_dtype_layout_call_at_Tensor_const_std_optional<c10_ScalarType>_std_optional<c10_Layout>_std_optional<c10_Device>_std_optional<bool>_bool_bool_std_opt",
+          "line": 0
+        },
+        {
+          "file": "<unknown>",
+          "function": "torch_autograd_generated_details__to_copy_backward_at_Tensor_const_c10_TensorOptions_const_",
+          "line": 0
+        },
+        {
+          "file": "??",
+          "function": "torch_autograd_generated_ToCopyBackward0_apply_std_vector<at_Tensor_std_allocator<at_Tensor>_>_",
+          "line": 0
+        },
+        {
+          "file": "<unknown>",
+          "function": "torch_autograd_Node_operator_std_vector<at_Tensor_std_allocator<at_Tensor>_>_",
+          "line": 0
+        },
+        {
+          "file": "??",
+          "function": "torch_autograd_Engine_evaluate_function_std_shared_ptr<torch_autograd_GraphTask>_torch_autograd_Node_torch_autograd_InputBuffer_std_shared_ptr<torch_autograd_Re",
+          "line": 0
+        },
+        {
+          "file": "??",
+          "function": "torch_autograd_Engine_thread_main_std_shared_ptr<torch_autograd_GraphTask>_const_",
+          "line": 0
+        },
+        {
+          "file": "??",
+          "function": "torch_autograd_Engine_thread_init_int_std_shared_ptr<torch_autograd_ReadyQueue>_const_bool_",
+          "line": 0
+        },
+        {
+          "file": "<unknown>",
+          "function": "torch_autograd_python_PythonEngine_thread_init_int_std_shared_ptr<torch_autograd_ReadyQueue>_const_bool_",
+          "line": 0
+        },
+        {
+          "file": "thread.cc",
+          "function": "execute_native_thread_routine",
+          "line": 104
+        },
+        {
+          "file": "??",
+          "function": "pthread_condattr_setpshared",
+          "line": 0
+        },
+        {
+          "file": "??",
+          "function": "__clone",
+          "line": 0
+        }
+      ],
+      "official_memory_viz_published": false,
+      "phase_active_memory": {
+        "available": true,
+        "definition": "maximum reconstructed active bytes at phase start and after timestamped allocator events within the phase",
+        "peaks": [
+          {
+            "active_peak_bytes": 48738148872,
+            "phase": "forward",
+            "step": 0
+          },
+          {
+            "active_peak_bytes": 54712358921,
+            "phase": "backward",
+            "step": 0
+          },
+          {
+            "active_peak_bytes": 55235332100,
+            "phase": "optimizer",
+            "step": 0
+          }
+        ],
+        "timeline_axis": "snapshot_time_us"
+      },
+      "public_timeline_asset": null,
+      "snapshot_published": false,
+      "status": "ok"
+    },
+    {
+      "case_id": "xl_b1_ctx2048_forward_fp32",
+      "command": [
+        "python",
+        "profiling/memory_snapshot.py",
+        "--model-size",
+        "xl",
+        "--batch-size",
+        "1",
+        "--context-length",
+        "2048",
+        "--mode",
+        "forward",
+        "--dtype",
+        "fp32",
+        "--warmup",
+        "5",
+        "--steps",
+        "1",
+        "--seed",
+        "42",
+        "--output",
+        "results/memory/result.json",
+        "--snapshot-output",
+        "results/memory/snapshot.pickle",
+        "--timeline-output",
+        "results/memory/timeline.png",
+        "--memory-viz-output",
+        "private/active_memory_timeline.html"
+      ],
+      "configuration": {
+        "batch_size": 1,
+        "context_length": 2048,
+        "dtype": "fp32",
+        "measurement_steps": 1,
+        "mode": "forward",
+        "model_size": "xl",
+        "parameter_dtype": "fp32",
+        "seed": 42,
+        "warmup_steps": 5
+      },
+      "exception_type": null,
+      "failure_stage": null,
+      "fallback_for": null,
+      "is_fallback": false,
+      "local_official_memory_viz_basename": "active_memory_timeline.html",
+      "local_official_memory_viz_generated": true,
+      "local_snapshot_basename": "snapshot.pickle",
+      "local_snapshot_generated": true,
+      "local_timeline_basename": "timeline.png",
+      "maximum_single_allocation_bytes": 536870912,
+      "maximum_single_allocation_stack": [
+        {
+          "file": "profiling/memory_snapshot.py",
+          "function": "forward_only",
+          "line": 345
+        },
+        {
+          "file": "generated_cases.c.h",
+          "function": "_PyEval_EvalFrameDefault",
+          "line": 1850
+        },
+        {
+          "file": "profiling/memory_snapshot.py",
+          "function": "_run_stage",
+          "line": 320
+        },
+        {
+          "file": "pycore_ceval.h",
+          "function": "_PyEval_EvalFrame",
+          "line": 119
+        },
+        {
+          "file": "bltinmodule.c",
+          "function": "builtin_exec_impl",
+          "line": 1143
+        },
+        {
+          "file": "methodobject.c",
+          "function": "cfunction_vectorcall_FASTCALL_KEYWORDS",
+          "line": 440
+        },
+        {
+          "file": "pycore_call.h",
+          "function": "_PyObject_VectorcallTstate",
+          "line": 168
+        },
+        {
+          "file": "profiling/memory_snapshot.py",
+          "function": "_execute_step",
+          "line": 347
+        },
+        {
+          "file": "generated_cases.c.h",
+          "function": "_PyEval_EvalFrameDefault",
+          "line": 813
+        },
+        {
+          "file": "main.c",
+          "function": "pymain_run_module",
+          "line": 349
+        },
+        {
+          "file": "main.c",
+          "function": "pymain_run_python",
+          "line": 690
+        },
+        {
+          "file": "main.c",
+          "function": "Py_BytesMain",
+          "line": 829
+        },
+        {
+          "file": "??",
+          "function": "__libc_init_first",
+          "line": 0
+        },
+        {
+          "file": "??",
+          "function": "__libc_start_main",
+          "line": 0
+        },
+        {
+          "file": "??",
+          "function": "_start",
+          "line": 0
+        },
+        {
+          "file": "profiling/memory_snapshot.py",
+          "function": "run",
+          "line": 1037
+        },
+        {
+          "file": "profiling/memory_snapshot.py",
+          "function": "main",
+          "line": 1152
+        },
+        {
+          "file": "profiling/memory_snapshot.py",
+          "function": "<module>",
+          "line": 1158
+        },
+        {
+          "file": "<frozen runpy>",
+          "function": "_run_code",
+          "line": 88
+        },
+        {
+          "file": "<frozen runpy>",
+          "function": "_run_module_as_main",
+          "line": 198
+        }
+      ],
+      "official_memory_viz_published": false,
+      "phase_active_memory": {
+        "available": true,
+        "definition": "maximum reconstructed active bytes at phase start and after timestamped allocator events within the phase",
+        "peaks": [
+          {
+            "active_peak_bytes": 16074205184,
+            "phase": "forward",
+            "step": 0
+          }
+        ],
+        "timeline_axis": "snapshot_time_us"
+      },
+      "public_timeline_asset": "assets/memory_forward_active_timeline.png",
+      "snapshot_published": false,
+      "status": "ok"
+    },
+    {
+      "case_id": "xl_b1_ctx2048_forward_bf16",
+      "command": [
+        "python",
+        "profiling/memory_snapshot.py",
+        "--model-size",
+        "xl",
+        "--batch-size",
+        "1",
+        "--context-length",
+        "2048",
+        "--mode",
+        "forward",
+        "--dtype",
+        "bf16",
+        "--warmup",
+        "5",
+        "--steps",
+        "1",
+        "--seed",
+        "42",
+        "--output",
+        "results/memory/result.json",
+        "--snapshot-output",
+        "results/memory/snapshot.pickle",
+        "--timeline-output",
+        "results/memory/timeline.png"
+      ],
+      "configuration": {
+        "batch_size": 1,
+        "context_length": 2048,
+        "dtype": "bf16",
+        "measurement_steps": 1,
+        "mode": "forward",
+        "model_size": "xl",
+        "parameter_dtype": "fp32",
+        "seed": 42,
+        "warmup_steps": 5
+      },
+      "exception_type": null,
+      "failure_stage": null,
+      "fallback_for": null,
+      "is_fallback": false,
+      "local_official_memory_viz_basename": null,
+      "local_official_memory_viz_generated": false,
+      "local_snapshot_basename": "snapshot.pickle",
+      "local_snapshot_generated": true,
+      "local_timeline_basename": "timeline.png",
+      "maximum_single_allocation_bytes": 536870912,
+      "maximum_single_allocation_stack": [
+        {
+          "file": "call.c",
+          "function": "_PyObject_MakeTpCall",
+          "line": 242
+        },
+        {
+          "file": "profiling/memory_snapshot.py",
+          "function": "_run_stage",
+          "line": 320
+        },
+        {
+          "file": "generated_cases.c.h",
+          "function": "_PyEval_EvalFrameDefault",
+          "line": 1850
+        },
+        {
+          "file": "profiling/memory_snapshot.py",
+          "function": "_execute_step",
+          "line": 347
+        },
+        {
+          "file": "pycore_ceval.h",
+          "function": "_PyEval_EvalFrame",
+          "line": 119
+        },
+        {
+          "file": "bltinmodule.c",
+          "function": "builtin_exec_impl",
+          "line": 1143
+        },
+        {
+          "file": "methodobject.c",
+          "function": "cfunction_vectorcall_FASTCALL_KEYWORDS",
+          "line": 440
+        },
+        {
+          "file": "pycore_call.h",
+          "function": "_PyObject_VectorcallTstate",
+          "line": 168
+        },
+        {
+          "file": "profiling/memory_snapshot.py",
+          "function": "run",
+          "line": 1037
+        },
+        {
+          "file": "generated_cases.c.h",
+          "function": "_PyEval_EvalFrameDefault",
+          "line": 813
+        },
+        {
+          "file": "main.c",
+          "function": "pymain_run_module",
+          "line": 349
+        },
+        {
+          "file": "main.c",
+          "function": "pymain_run_python",
+          "line": 690
+        },
+        {
+          "file": "main.c",
+          "function": "Py_BytesMain",
+          "line": 829
+        },
+        {
+          "file": "??",
+          "function": "__libc_init_first",
+          "line": 0
+        },
+        {
+          "file": "??",
+          "function": "__libc_start_main",
+          "line": 0
+        },
+        {
+          "file": "??",
+          "function": "_start",
+          "line": 0
+        },
+        {
+          "file": "profiling/memory_snapshot.py",
+          "function": "main",
+          "line": 1152
+        },
+        {
+          "file": "profiling/memory_snapshot.py",
+          "function": "<module>",
+          "line": 1158
+        },
+        {
+          "file": "<frozen runpy>",
+          "function": "_run_code",
+          "line": 88
+        },
+        {
+          "file": "<frozen runpy>",
+          "function": "_run_module_as_main",
+          "line": 198
+        }
+      ],
+      "official_memory_viz_published": false,
+      "phase_active_memory": {
+        "available": true,
+        "definition": "maximum reconstructed active bytes at phase start and after timestamped allocator events within the phase",
+        "peaks": [
+          {
+            "active_peak_bytes": 15526848512,
+            "phase": "forward",
+            "step": 0
+          }
+        ],
+        "timeline_axis": "snapshot_time_us"
+      },
+      "public_timeline_asset": null,
+      "snapshot_published": false,
+      "status": "ok"
+    },
+    {
+      "case_id": "xl_b1_ctx2048_train_step_fp32",
+      "command": [
+        "python",
+        "profiling/memory_snapshot.py",
+        "--model-size",
+        "xl",
+        "--batch-size",
+        "1",
+        "--context-length",
+        "2048",
+        "--mode",
+        "train_step",
+        "--dtype",
+        "fp32",
+        "--warmup",
+        "5",
+        "--steps",
+        "1",
+        "--seed",
+        "42",
+        "--output",
+        "results/memory/result.json",
+        "--snapshot-output",
+        "results/memory/snapshot.pickle",
+        "--timeline-output",
+        "results/memory/timeline.png",
+        "--memory-viz-output",
+        "private/active_memory_timeline.html"
+      ],
+      "configuration": {
+        "batch_size": 1,
+        "context_length": 2048,
+        "dtype": "fp32",
+        "measurement_steps": 1,
+        "mode": "train_step",
+        "model_size": "xl",
+        "parameter_dtype": "fp32",
+        "seed": 42,
+        "warmup_steps": 5
+      },
+      "exception_type": null,
+      "failure_stage": null,
+      "fallback_for": null,
+      "is_fallback": false,
+      "local_official_memory_viz_basename": "active_memory_timeline.html",
+      "local_official_memory_viz_generated": true,
+      "local_snapshot_basename": "snapshot.pickle",
+      "local_snapshot_generated": true,
+      "local_timeline_basename": "timeline.png",
+      "maximum_single_allocation_bytes": 536870912,
+      "maximum_single_allocation_stack": [
+        {
+          "file": "profiling/memory_snapshot.py",
+          "function": "train_forward",
+          "line": 364
+        },
+        {
+          "file": "generated_cases.c.h",
+          "function": "_PyEval_EvalFrameDefault",
+          "line": 1850
+        },
+        {
+          "file": "profiling/memory_snapshot.py",
+          "function": "_run_stage",
+          "line": 320
+        },
+        {
+          "file": "pycore_ceval.h",
+          "function": "_PyEval_EvalFrame",
+          "line": 119
+        },
+        {
+          "file": "bltinmodule.c",
+          "function": "builtin_exec_impl",
+          "line": 1143
+        },
+        {
+          "file": "methodobject.c",
+          "function": "cfunction_vectorcall_FASTCALL_KEYWORDS",
+          "line": 440
+        },
+        {
+          "file": "pycore_call.h",
+          "function": "_PyObject_VectorcallTstate",
+          "line": 168
+        },
+        {
+          "file": "profiling/memory_snapshot.py",
+          "function": "_execute_step",
+          "line": 367
+        },
+        {
+          "file": "generated_cases.c.h",
+          "function": "_PyEval_EvalFrameDefault",
+          "line": 813
+        },
+        {
+          "file": "main.c",
+          "function": "pymain_run_module",
+          "line": 349
+        },
+        {
+          "file": "main.c",
+          "function": "pymain_run_python",
+          "line": 690
+        },
+        {
+          "file": "main.c",
+          "function": "Py_BytesMain",
+          "line": 829
+        },
+        {
+          "file": "??",
+          "function": "__libc_init_first",
+          "line": 0
+        },
+        {
+          "file": "??",
+          "function": "__libc_start_main",
+          "line": 0
+        },
+        {
+          "file": "??",
+          "function": "_start",
+          "line": 0
+        },
+        {
+          "file": "profiling/memory_snapshot.py",
+          "function": "run",
+          "line": 1037
+        },
+        {
+          "file": "profiling/memory_snapshot.py",
+          "function": "main",
+          "line": 1152
+        },
+        {
+          "file": "profiling/memory_snapshot.py",
+          "function": "<module>",
+          "line": 1158
+        },
+        {
+          "file": "<frozen runpy>",
+          "function": "_run_code",
+          "line": 88
+        },
+        {
+          "file": "<frozen runpy>",
+          "function": "_run_module_as_main",
+          "line": 198
+        }
+      ],
+      "official_memory_viz_published": false,
+      "phase_active_memory": {
+        "available": true,
+        "definition": "maximum reconstructed active bytes at phase start and after timestamped allocator events within the phase",
+        "peaks": [
+          {
+            "active_peak_bytes": 96307189760,
+            "phase": "forward",
+            "step": 0
+          },
+          {
+            "active_peak_bytes": 97845094408,
+            "phase": "backward",
+            "step": 0
+          },
+          {
+            "active_peak_bytes": 55235977220,
+            "phase": "optimizer",
+            "step": 0
+          }
+        ],
+        "timeline_axis": "snapshot_time_us"
+      },
+      "public_timeline_asset": "assets/memory_train_step_active_timeline.png",
+      "snapshot_published": false,
+      "status": "ok"
+    },
+    {
+      "case_id": "xl_b1_ctx2048_train_step_bf16",
+      "command": [
+        "python",
+        "profiling/memory_snapshot.py",
+        "--model-size",
+        "xl",
+        "--batch-size",
+        "1",
+        "--context-length",
+        "2048",
+        "--mode",
+        "train_step",
+        "--dtype",
+        "bf16",
+        "--warmup",
+        "5",
+        "--steps",
+        "1",
+        "--seed",
+        "42",
+        "--output",
+        "results/memory/result.json",
+        "--snapshot-output",
+        "results/memory/snapshot.pickle",
+        "--timeline-output",
+        "results/memory/timeline.png"
+      ],
+      "configuration": {
+        "batch_size": 1,
+        "context_length": 2048,
+        "dtype": "bf16",
+        "measurement_steps": 1,
+        "mode": "train_step",
+        "model_size": "xl",
+        "parameter_dtype": "fp32",
+        "seed": 42,
+        "warmup_steps": 5
+      },
+      "exception_type": null,
+      "failure_stage": null,
+      "fallback_for": null,
+      "is_fallback": false,
+      "local_official_memory_viz_basename": null,
+      "local_official_memory_viz_generated": false,
+      "local_snapshot_basename": "snapshot.pickle",
+      "local_snapshot_generated": true,
+      "local_timeline_basename": "timeline.png",
+      "maximum_single_allocation_bytes": 536870912,
+      "maximum_single_allocation_stack": [
+        {
+          "file": "call.c",
+          "function": "_PyObject_MakeTpCall",
+          "line": 242
+        },
+        {
+          "file": "profiling/memory_snapshot.py",
+          "function": "_run_stage",
+          "line": 320
+        },
+        {
+          "file": "generated_cases.c.h",
+          "function": "_PyEval_EvalFrameDefault",
+          "line": 1850
+        },
+        {
+          "file": "profiling/memory_snapshot.py",
+          "function": "_execute_step",
+          "line": 367
+        },
+        {
+          "file": "pycore_ceval.h",
+          "function": "_PyEval_EvalFrame",
+          "line": 119
+        },
+        {
+          "file": "bltinmodule.c",
+          "function": "builtin_exec_impl",
+          "line": 1143
+        },
+        {
+          "file": "methodobject.c",
+          "function": "cfunction_vectorcall_FASTCALL_KEYWORDS",
+          "line": 440
+        },
+        {
+          "file": "pycore_call.h",
+          "function": "_PyObject_VectorcallTstate",
+          "line": 168
+        },
+        {
+          "file": "profiling/memory_snapshot.py",
+          "function": "run",
+          "line": 1037
+        },
+        {
+          "file": "generated_cases.c.h",
+          "function": "_PyEval_EvalFrameDefault",
+          "line": 813
+        },
+        {
+          "file": "main.c",
+          "function": "pymain_run_module",
+          "line": 349
+        },
+        {
+          "file": "main.c",
+          "function": "pymain_run_python",
+          "line": 690
+        },
+        {
+          "file": "main.c",
+          "function": "Py_BytesMain",
+          "line": 829
+        },
+        {
+          "file": "??",
+          "function": "__libc_init_first",
+          "line": 0
+        },
+        {
+          "file": "??",
+          "function": "__libc_start_main",
+          "line": 0
+        },
+        {
+          "file": "??",
+          "function": "_start",
+          "line": 0
+        },
+        {
+          "file": "profiling/memory_snapshot.py",
+          "function": "main",
+          "line": 1152
+        },
+        {
+          "file": "profiling/memory_snapshot.py",
+          "function": "<module>",
+          "line": 1158
+        },
+        {
+          "file": "<frozen runpy>",
+          "function": "_run_code",
+          "line": 88
+        },
+        {
+          "file": "<frozen runpy>",
+          "function": "_run_module_as_main",
+          "line": 198
+        }
+      ],
+      "official_memory_viz_published": false,
+      "phase_active_memory": {
+        "available": true,
+        "definition": "maximum reconstructed active bytes at phase start and after timestamped allocator events within the phase",
+        "peaks": [
+          {
+            "active_peak_bytes": 86572734464,
+            "phase": "forward",
+            "step": 0
+          },
+          {
+            "active_peak_bytes": 88574109704,
+            "phase": "backward",
+            "step": 0
+          },
+          {
+            "active_peak_bytes": 55243317252,
+            "phase": "optimizer",
+            "step": 0
+          }
+        ],
+        "timeline_axis": "snapshot_time_us"
+      },
+      "public_timeline_asset": null,
+      "snapshot_published": false,
+      "status": "ok"
+    }
+  ],
+  "saved_tensors_block": {
+    "configuration": {
+      "batch_size": 1,
+      "context_length": 128,
+      "d_ff": 10240,
+      "d_model": 2560,
+      "num_heads": 32,
+      "parameter_dtype": "fp32"
+    },
+    "parameter_gradients": {
+      "actual_block_gradient_bytes": 419450880,
+      "formula": "(4*D^2 + 3*D*D_ff + 2*D) * 4 bytes",
+      "matches_theory": true,
+      "theoretical_fp32_block_gradient_bytes": 419450880
+    },
+    "saved_tensors": {
+      "operation_count": 17,
+      "parameter_saved_event_count_excluded": 9,
+      "release_event_count": 39,
+      "release_event_semantics": "saved-tensor retrievals during backward are release opportunities, not allocator-free observations",
+      "saved_tensor_event_count": 48,
+      "top_5_operations": [
+        {
+          "logical_saved_bytes": 15728640,
+          "module_path": "ffn",
+          "operation": "ffn | cs336_basics/model.py:532:silu",
+          "percent_of_unique_saved_bytes": 24.036994436750312,
+          "rank": 1,
+          "saved_event_count": 3,
+          "source_file": "cs336_basics/model.py",
+          "source_line": 532,
+          "unique_saved_bytes": 10485760,
+          "unique_storage_count": 2
+        },
+        {
+          "logical_saved_bytes": 10485760,
+          "module_path": "ffn",
+          "operation": "ffn | cs336_basics/model.py:399:forward",
+          "percent_of_unique_saved_bytes": 24.036994436750312,
+          "rank": 2,
+          "saved_event_count": 2,
+          "source_file": "cs336_basics/model.py",
+          "source_line": 399,
+          "unique_saved_bytes": 10485760,
+          "unique_storage_count": 2
+        },
+        {
+          "logical_saved_bytes": 5242880,
+          "module_path": "ffn.w2",
+          "operation": "ffn.w2 | cs336_basics/model.py:39:forward",
+          "percent_of_unique_saved_bytes": 12.018497218375156,
+          "rank": 3,
+          "saved_event_count": 1,
+          "source_file": "cs336_basics/model.py",
+          "source_line": 39,
+          "unique_saved_bytes": 5242880,
+          "unique_storage_count": 1
+        },
+        {
+          "logical_saved_bytes": 3407872,
+          "module_path": "attn",
+          "operation": "attn | cs336_basics/model.py:434:scaled_dot_product_attention",
+          "percent_of_unique_saved_bytes": 7.812023191943851,
+          "rank": 4,
+          "saved_event_count": 2,
+          "source_file": "cs336_basics/model.py",
+          "source_line": 434,
+          "unique_saved_bytes": 3407872,
+          "unique_storage_count": 2
+        },
+        {
+          "logical_saved_bytes": 2621440,
+          "module_path": "attn",
+          "operation": "attn | cs336_basics/model.py:427:scaled_dot_product_attention",
+          "percent_of_unique_saved_bytes": 6.009248609187578,
+          "rank": 5,
+          "saved_event_count": 2,
+          "source_file": "cs336_basics/model.py",
+          "source_line": 427,
+          "unique_saved_bytes": 2621440,
+          "unique_storage_count": 2
+        }
+      ],
+      "unique_saved_bytes": 43623424,
+      "unique_saved_storage_count": 23
+    },
+    "scope": "one TransformerBlock",
+    "source_case_id": "xl_b1_ctx128_train_step_fp32"
+  },
+  "schema_version": "cs336.a2p.public-summary.v1",
+  "selected_timeline_cases": {
+    "forward": "xl_b1_ctx2048_forward_fp32",
+    "train_step": "xl_b1_ctx2048_train_step_fp32"
+  },
+  "starter_commit": "ca8bc81a59b70516f7ebb2da4808daade877c736"
+}

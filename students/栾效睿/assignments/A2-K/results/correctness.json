@@ -1,0 +1,1510 @@
+{
+  "command": "python -m student_scripts.a2k.check_flash_attention",
+  "commit": "5890454a042ef6db6a12c205ccf8a0a530cc6802",
+  "metadata": {
+    "gpu": {
+      "name": "NVIDIA GeForce RTX 4090",
+      "memory_total_mib_nvidia_smi": 49140.0,
+      "memory_free_mib_nvidia_smi": 48126.0,
+      "driver_version": "570.124.06",
+      "power_limit_w": 450.0,
+      "pstate": "P5",
+      "compute_capability": "8.9",
+      "total_memory_mib": 48519.0625,
+      "start_free_memory_mib": 48125.8125
+    },
+    "allocator": {
+      "limit_bytes": 24696061952,
+      "limit_mib": 23552.0,
+      "fraction": 0.4854174583443363
+    },
+    "software": {
+      "python": "3.12.3",
+      "pytorch": "2.11.0+cu128",
+      "cuda": "12.8",
+      "triton": "3.6.0"
+    },
+    "tf32": {
+      "cuda_matmul_allow_tf32": false,
+      "cudnn_allow_tf32": false
+    }
+  },
+  "records": [
+    {
+      "implementation": "pytorch_tiled",
+      "seed": 336,
+      "batch_size": 1,
+      "sequence_length": 256,
+      "head_dim": 32,
+      "dtype": "float32",
+      "is_causal": false,
+      "tolerance": {
+        "rtol": 0.01,
+        "atol": 0.01
+      },
+      "checks": {
+        "output": {
+          "max_abs": 2.086162567138672e-07,
+          "max_rel": 0.006369613576680422,
+          "pass": true
+        },
+        "logsumexp": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 8.203291912423083e-08,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs": 2.5331974029541016e-07,
+          "max_rel": 0.011175870895385742,
+          "pass": true
+        },
+        "dK": {
+          "max_abs": 2.682209014892578e-07,
+          "max_rel": 0.010067113675177097,
+          "pass": true
+        },
+        "dV": {
+          "max_abs": 3.2782554626464844e-07,
+          "max_rel": 0.004341999534517527,
+          "pass": true
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "pytorch_tiled",
+      "seed": 336,
+      "batch_size": 1,
+      "sequence_length": 256,
+      "head_dim": 32,
+      "dtype": "float32",
+      "is_causal": true,
+      "tolerance": {
+        "rtol": 0.01,
+        "atol": 0.01
+      },
+      "checks": {
+        "output": {
+          "max_abs": 3.8743019104003906e-07,
+          "max_rel": 0.0025531372521072626,
+          "pass": true
+        },
+        "logsumexp": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 2.3960612338669307e-07,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs": 5.364418029785156e-07,
+          "max_rel": 0.09755919873714447,
+          "pass": true
+        },
+        "dK": {
+          "max_abs": 5.960464477539062e-07,
+          "max_rel": 0.002763553522527218,
+          "pass": true
+        },
+        "dV": {
+          "max_abs": 1.0728836059570312e-06,
+          "max_rel": 0.0005006007268093526,
+          "pass": true
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "pytorch_tiled",
+      "seed": 336,
+      "batch_size": 1,
+      "sequence_length": 256,
+      "head_dim": 64,
+      "dtype": "float32",
+      "is_causal": false,
+      "tolerance": {
+        "rtol": 0.01,
+        "atol": 0.01
+      },
+      "checks": {
+        "output": {
+          "max_abs": 2.086162567138672e-07,
+          "max_rel": 0.0009054887341335416,
+          "pass": true
+        },
+        "logsumexp": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 8.293980613416352e-08,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs": 2.682209014892578e-07,
+          "max_rel": 0.03799999877810478,
+          "pass": true
+        },
+        "dK": {
+          "max_abs": 1.9371509552001953e-07,
+          "max_rel": 0.006809011567384005,
+          "pass": true
+        },
+        "dV": {
+          "max_abs": 2.682209014892578e-07,
+          "max_rel": 0.0017344686202704906,
+          "pass": true
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "pytorch_tiled",
+      "seed": 336,
+      "batch_size": 1,
+      "sequence_length": 256,
+      "head_dim": 64,
+      "dtype": "float32",
+      "is_causal": true,
+      "tolerance": {
+        "rtol": 0.01,
+        "atol": 0.01
+      },
+      "checks": {
+        "output": {
+          "max_abs": 3.5762786865234375e-07,
+          "max_rel": 0.007053655572235584,
+          "pass": true
+        },
+        "logsumexp": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 1.748920794852893e-07,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs": 6.556510925292969e-07,
+          "max_rel": 0.13796955347061157,
+          "pass": true
+        },
+        "dK": {
+          "max_abs": 1.0728836059570312e-06,
+          "max_rel": 0.01885928213596344,
+          "pass": true
+        },
+        "dV": {
+          "max_abs": 1.9073486328125e-06,
+          "max_rel": 0.0021969075314700603,
+          "pass": true
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "pytorch_tiled",
+      "seed": 336,
+      "batch_size": 1,
+      "sequence_length": 256,
+      "head_dim": 128,
+      "dtype": "float32",
+      "is_causal": false,
+      "tolerance": {
+        "rtol": 0.01,
+        "atol": 0.01
+      },
+      "checks": {
+        "output": {
+          "max_abs": 1.1920928955078125e-07,
+          "max_rel": 0.00636191526427865,
+          "pass": true
+        },
+        "logsumexp": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 8.120404260125724e-08,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs": 2.086162567138672e-07,
+          "max_rel": 0.046566128730773926,
+          "pass": true
+        },
+        "dK": {
+          "max_abs": 1.862645149230957e-07,
+          "max_rel": 0.04470348358154297,
+          "pass": true
+        },
+        "dV": {
+          "max_abs": 2.086162567138672e-07,
+          "max_rel": 0.022351741790771484,
+          "pass": true
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "pytorch_tiled",
+      "seed": 336,
+      "batch_size": 1,
+      "sequence_length": 256,
+      "head_dim": 128,
+      "dtype": "float32",
+      "is_causal": true,
+      "tolerance": {
+        "rtol": 0.01,
+        "atol": 0.01
+      },
+      "checks": {
+        "output": {
+          "max_abs": 3.5762786865234375e-07,
+          "max_rel": 0.004803222604095936,
+          "pass": true
+        },
+        "logsumexp": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 8.744816426542457e-08,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 0.31608641147613525,
+          "pass": true
+        },
+        "dK": {
+          "max_abs": 1.430511474609375e-06,
+          "max_rel": 0.003615982597693801,
+          "pass": true
+        },
+        "dV": {
+          "max_abs": 1.1920928955078125e-06,
+          "max_rel": 0.0020404960960149765,
+          "pass": true
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "pytorch_tiled",
+      "seed": 337,
+      "batch_size": 1,
+      "sequence_length": 256,
+      "head_dim": 32,
+      "dtype": "float32",
+      "is_causal": false,
+      "tolerance": {
+        "rtol": 0.01,
+        "atol": 0.01
+      },
+      "checks": {
+        "output": {
+          "max_abs": 1.7881393432617188e-07,
+          "max_rel": 0.007930165156722069,
+          "pass": true
+        },
+        "logsumexp": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 8.287456410016603e-08,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs": 2.682209014892578e-07,
+          "max_rel": 0.0008006404968909919,
+          "pass": true
+        },
+        "dK": {
+          "max_abs": 2.384185791015625e-07,
+          "max_rel": 0.014057093299925327,
+          "pass": true
+        },
+        "dV": {
+          "max_abs": 2.5331974029541016e-07,
+          "max_rel": 0.0034978624898940325,
+          "pass": true
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "pytorch_tiled",
+      "seed": 337,
+      "batch_size": 1,
+      "sequence_length": 256,
+      "head_dim": 32,
+      "dtype": "float32",
+      "is_causal": true,
+      "tolerance": {
+        "rtol": 0.01,
+        "atol": 0.01
+      },
+      "checks": {
+        "output": {
+          "max_abs": 3.725290298461914e-07,
+          "max_rel": 0.0009402167052030563,
+          "pass": true
+        },
+        "logsumexp": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 1.1886950090911341e-07,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 0.11767344921827316,
+          "pass": true
+        },
+        "dK": {
+          "max_abs": 9.5367431640625e-07,
+          "max_rel": 0.0005053695640526712,
+          "pass": true
+        },
+        "dV": {
+          "max_abs": 9.5367431640625e-07,
+          "max_rel": 0.008263510651886463,
+          "pass": true
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "pytorch_tiled",
+      "seed": 337,
+      "batch_size": 1,
+      "sequence_length": 256,
+      "head_dim": 64,
+      "dtype": "float32",
+      "is_causal": false,
+      "tolerance": {
+        "rtol": 0.01,
+        "atol": 0.01
+      },
+      "checks": {
+        "output": {
+          "max_abs": 2.2351741790771484e-07,
+          "max_rel": 0.0026904249098151922,
+          "pass": true
+        },
+        "logsumexp": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 8.162033537928437e-08,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs": 2.980232238769531e-07,
+          "max_rel": 0.002632605377584696,
+          "pass": true
+        },
+        "dK": {
+          "max_abs": 2.682209014892578e-07,
+          "max_rel": 0.002577319508418441,
+          "pass": true
+        },
+        "dV": {
+          "max_abs": 2.980232238769531e-07,
+          "max_rel": 0.002370791742578149,
+          "pass": true
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "pytorch_tiled",
+      "seed": 337,
+      "batch_size": 1,
+      "sequence_length": 256,
+      "head_dim": 64,
+      "dtype": "float32",
+      "is_causal": true,
+      "tolerance": {
+        "rtol": 0.01,
+        "atol": 0.01
+      },
+      "checks": {
+        "output": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 0.0005580236902460456,
+          "pass": true
+        },
+        "logsumexp": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 1.5343827897140727e-07,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs": 8.642673492431641e-07,
+          "max_rel": 0.06705522537231445,
+          "pass": true
+        },
+        "dK": {
+          "max_abs": 7.152557373046875e-07,
+          "max_rel": 0.006254343315958977,
+          "pass": true
+        },
+        "dV": {
+          "max_abs": 1.9073486328125e-06,
+          "max_rel": 0.0028419182635843754,
+          "pass": true
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "pytorch_tiled",
+      "seed": 337,
+      "batch_size": 1,
+      "sequence_length": 256,
+      "head_dim": 128,
+      "dtype": "float32",
+      "is_causal": false,
+      "tolerance": {
+        "rtol": 0.01,
+        "atol": 0.01
+      },
+      "checks": {
+        "output": {
+          "max_abs": 1.2945383787155151e-07,
+          "max_rel": 0.0018621748313307762,
+          "pass": true
+        },
+        "logsumexp": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 8.312347432593015e-08,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs": 2.384185791015625e-07,
+          "max_rel": 0.004263382405042648,
+          "pass": true
+        },
+        "dK": {
+          "max_abs": 3.725290298461914e-07,
+          "max_rel": 0.022584572434425354,
+          "pass": true
+        },
+        "dV": {
+          "max_abs": 2.086162567138672e-07,
+          "max_rel": 0.005727581679821014,
+          "pass": true
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "pytorch_tiled",
+      "seed": 337,
+      "batch_size": 1,
+      "sequence_length": 256,
+      "head_dim": 128,
+      "dtype": "float32",
+      "is_causal": true,
+      "tolerance": {
+        "rtol": 0.01,
+        "atol": 0.01
+      },
+      "checks": {
+        "output": {
+          "max_abs": 2.384185791015625e-07,
+          "max_rel": 0.0045537264086306095,
+          "pass": true
+        },
+        "logsumexp": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 8.491152669876101e-08,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 0.12314686179161072,
+          "pass": true
+        },
+        "dK": {
+          "max_abs": 9.5367431640625e-07,
+          "max_rel": 0.02590673603117466,
+          "pass": true
+        },
+        "dV": {
+          "max_abs": 1.1920928955078125e-06,
+          "max_rel": 0.003196459263563156,
+          "pass": true
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "pytorch_tiled",
+      "seed": 338,
+      "batch_size": 1,
+      "sequence_length": 256,
+      "head_dim": 32,
+      "dtype": "float32",
+      "is_causal": false,
+      "tolerance": {
+        "rtol": 0.01,
+        "atol": 0.01
+      },
+      "checks": {
+        "output": {
+          "max_abs": 2.980232238769531e-07,
+          "max_rel": 0.005931481719017029,
+          "pass": true
+        },
+        "logsumexp": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 8.29498318921651e-08,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs": 2.682209014892578e-07,
+          "max_rel": 0.027939677238464355,
+          "pass": true
+        },
+        "dK": {
+          "max_abs": 3.5762786865234375e-07,
+          "max_rel": 0.0020680578891187906,
+          "pass": true
+        },
+        "dV": {
+          "max_abs": 2.682209014892578e-07,
+          "max_rel": 0.011175870895385742,
+          "pass": true
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "pytorch_tiled",
+      "seed": 338,
+      "batch_size": 1,
+      "sequence_length": 256,
+      "head_dim": 32,
+      "dtype": "float32",
+      "is_causal": true,
+      "tolerance": {
+        "rtol": 0.01,
+        "atol": 0.01
+      },
+      "checks": {
+        "output": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 0.001002069329842925,
+          "pass": true
+        },
+        "logsumexp": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 2.426212688533269e-07,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs": 3.5762786865234375e-07,
+          "max_rel": 0.046330343931913376,
+          "pass": true
+        },
+        "dK": {
+          "max_abs": 6.556510925292969e-07,
+          "max_rel": 0.0015306122368201613,
+          "pass": true
+        },
+        "dV": {
+          "max_abs": 9.5367431640625e-07,
+          "max_rel": 0.002295461716130376,
+          "pass": true
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "pytorch_tiled",
+      "seed": 338,
+      "batch_size": 1,
+      "sequence_length": 256,
+      "head_dim": 64,
+      "dtype": "float32",
+      "is_causal": false,
+      "tolerance": {
+        "rtol": 0.01,
+        "atol": 0.01
+      },
+      "checks": {
+        "output": {
+          "max_abs": 3.8743019104003906e-07,
+          "max_rel": 0.0023718741722404957,
+          "pass": true
+        },
+        "logsumexp": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 8.203638657278134e-08,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs": 5.364418029785156e-07,
+          "max_rel": 0.008748573251068592,
+          "pass": true
+        },
+        "dK": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 0.00653120456263423,
+          "pass": true
+        },
+        "dV": {
+          "max_abs": 5.364418029785156e-07,
+          "max_rel": 0.00827549397945404,
+          "pass": true
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "pytorch_tiled",
+      "seed": 338,
+      "batch_size": 1,
+      "sequence_length": 256,
+      "head_dim": 64,
+      "dtype": "float32",
+      "is_causal": true,
+      "tolerance": {
+        "rtol": 0.01,
+        "atol": 0.01
+      },
+      "checks": {
+        "output": {
+          "max_abs": 9.5367431640625e-07,
+          "max_rel": 0.0012970990501344204,
+          "pass": true
+        },
+        "logsumexp": {
+          "max_abs": 9.5367431640625e-07,
+          "max_rel": 2.121657161069379e-07,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs": 5.960464477539062e-07,
+          "max_rel": 0.3627379834651947,
+          "pass": true
+        },
+        "dK": {
+          "max_abs": 9.5367431640625e-07,
+          "max_rel": 0.0015144316712394357,
+          "pass": true
+        },
+        "dV": {
+          "max_abs": 1.1920928955078125e-06,
+          "max_rel": 0.0047386325895786285,
+          "pass": true
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "pytorch_tiled",
+      "seed": 338,
+      "batch_size": 1,
+      "sequence_length": 256,
+      "head_dim": 128,
+      "dtype": "float32",
+      "is_causal": false,
+      "tolerance": {
+        "rtol": 0.01,
+        "atol": 0.01
+      },
+      "checks": {
+        "output": {
+          "max_abs": 1.4901161193847656e-07,
+          "max_rel": 0.002365287160500884,
+          "pass": true
+        },
+        "logsumexp": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 8.089305936209712e-08,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs": 3.5762786865234375e-07,
+          "max_rel": 0.014191106893122196,
+          "pass": true
+        },
+        "dK": {
+          "max_abs": 2.980232238769531e-07,
+          "max_rel": 0.007567567750811577,
+          "pass": true
+        },
+        "dV": {
+          "max_abs": 2.682209014892578e-07,
+          "max_rel": 0.00437408871948719,
+          "pass": true
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "pytorch_tiled",
+      "seed": 338,
+      "batch_size": 1,
+      "sequence_length": 256,
+      "head_dim": 128,
+      "dtype": "float32",
+      "is_causal": true,
+      "tolerance": {
+        "rtol": 0.01,
+        "atol": 0.01
+      },
+      "checks": {
+        "output": {
+          "max_abs": 3.5762786865234375e-07,
+          "max_rel": 0.0007271704962477088,
+          "pass": true
+        },
+        "logsumexp": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 8.680490992674095e-08,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 0.0014767302200198174,
+          "pass": true
+        },
+        "dK": {
+          "max_abs": 1.0728836059570312e-06,
+          "max_rel": 0.010844748467206955,
+          "pass": true
+        },
+        "dV": {
+          "max_abs": 1.6689300537109375e-06,
+          "max_rel": 0.08475035429000854,
+          "pass": true
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "triton_flashattention",
+      "seed": 336,
+      "batch_size": 1,
+      "sequence_length": 256,
+      "head_dim": 32,
+      "dtype": "float32",
+      "is_causal": false,
+      "tolerance": {
+        "rtol": 0.01,
+        "atol": 0.01
+      },
+      "checks": {
+        "output": {
+          "max_abs": 0.0003193318843841553,
+          "max_rel": 3.390326738357544,
+          "pass": true
+        },
+        "logsumexp": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 8.242748350539841e-08,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs": 0.0008997917175292969,
+          "max_rel": 50.93391418457031,
+          "pass": true
+        },
+        "dK": {
+          "max_abs": 0.0005838274955749512,
+          "max_rel": 2.5446505546569824,
+          "pass": true
+        },
+        "dV": {
+          "max_abs": 0.0004070401191711426,
+          "max_rel": 5.035714149475098,
+          "pass": true
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "triton_flashattention",
+      "seed": 336,
+      "batch_size": 1,
+      "sequence_length": 256,
+      "head_dim": 32,
+      "dtype": "float32",
+      "is_causal": true,
+      "tolerance": {
+        "rtol": 0.01,
+        "atol": 0.01
+      },
+      "checks": {
+        "output": {
+          "max_abs": 0.001363515853881836,
+          "max_rel": 4.0106892585754395,
+          "pass": true
+        },
+        "logsumexp": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 1.3454582870053855e-07,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs": 0.0012608766555786133,
+          "max_rel": 967.665283203125,
+          "pass": true
+        },
+        "dK": {
+          "max_abs": 0.001712799072265625,
+          "max_rel": 1.6033978462219238,
+          "pass": true
+        },
+        "dV": {
+          "max_abs": 0.0019497871398925781,
+          "max_rel": 3.409269332885742,
+          "pass": true
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "triton_flashattention",
+      "seed": 336,
+      "batch_size": 1,
+      "sequence_length": 256,
+      "head_dim": 64,
+      "dtype": "float32",
+      "is_causal": false,
+      "tolerance": {
+        "rtol": 0.01,
+        "atol": 0.01
+      },
+      "checks": {
+        "output": {
+          "max_abs": 0.0003267526626586914,
+          "max_rel": 1.2029383182525635,
+          "pass": true
+        },
+        "logsumexp": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 8.293980613416352e-08,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs": 0.0004157423973083496,
+          "max_rel": 5.408750057220459,
+          "pass": true
+        },
+        "dK": {
+          "max_abs": 0.00048613548278808594,
+          "max_rel": 7.531838417053223,
+          "pass": true
+        },
+        "dV": {
+          "max_abs": 0.0006788671016693115,
+          "max_rel": 1.2270231246948242,
+          "pass": true
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "triton_flashattention",
+      "seed": 336,
+      "batch_size": 1,
+      "sequence_length": 256,
+      "head_dim": 64,
+      "dtype": "float32",
+      "is_causal": true,
+      "tolerance": {
+        "rtol": 0.01,
+        "atol": 0.01
+      },
+      "checks": {
+        "output": {
+          "max_abs": 0.001363515853881836,
+          "max_rel": 25.467927932739258,
+          "pass": true
+        },
+        "logsumexp": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 4.4560584910868783e-07,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs": 0.0016156435012817383,
+          "max_rel": 922.6240234375,
+          "pass": true
+        },
+        "dK": {
+          "max_abs": 0.0016837120056152344,
+          "max_rel": 16.9600830078125,
+          "pass": true
+        },
+        "dV": {
+          "max_abs": 0.0032749176025390625,
+          "max_rel": 4.673213481903076,
+          "pass": true
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "triton_flashattention",
+      "seed": 336,
+      "batch_size": 1,
+      "sequence_length": 256,
+      "head_dim": 128,
+      "dtype": "float32",
+      "is_causal": false,
+      "tolerance": {
+        "rtol": 0.01,
+        "atol": 0.01
+      },
+      "checks": {
+        "output": {
+          "max_abs": 0.0003288686275482178,
+          "max_rel": 15.16205883026123,
+          "pass": true
+        },
+        "logsumexp": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 8.151897645802819e-08,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs": 0.00046366453170776367,
+          "max_rel": 20.623109817504883,
+          "pass": true
+        },
+        "dK": {
+          "max_abs": 0.0004805028438568115,
+          "max_rel": 15.981935501098633,
+          "pass": true
+        },
+        "dV": {
+          "max_abs": 0.00045862793922424316,
+          "max_rel": 70.18633270263672,
+          "pass": true
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "triton_flashattention",
+      "seed": 336,
+      "batch_size": 1,
+      "sequence_length": 256,
+      "head_dim": 128,
+      "dtype": "float32",
+      "is_causal": true,
+      "tolerance": {
+        "rtol": 0.01,
+        "atol": 0.01
+      },
+      "checks": {
+        "output": {
+          "max_abs": 0.0022554397583007812,
+          "max_rel": 32.850059509277344,
+          "pass": true
+        },
+        "logsumexp": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 1.7537955443458486e-07,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs": 0.0033333301544189453,
+          "max_rel": 686.8780517578125,
+          "pass": true
+        },
+        "dK": {
+          "max_abs": 0.0034532546997070312,
+          "max_rel": 6.661839962005615,
+          "pass": true
+        },
+        "dV": {
+          "max_abs": 0.002536773681640625,
+          "max_rel": 4.75741720199585,
+          "pass": true
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "triton_flashattention",
+      "seed": 337,
+      "batch_size": 1,
+      "sequence_length": 256,
+      "head_dim": 32,
+      "dtype": "float32",
+      "is_causal": false,
+      "tolerance": {
+        "rtol": 0.01,
+        "atol": 0.01
+      },
+      "checks": {
+        "output": {
+          "max_abs": 0.0003222227096557617,
+          "max_rel": 13.578892707824707,
+          "pass": true
+        },
+        "logsumexp": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 8.275087282072491e-08,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs": 0.0004642605781555176,
+          "max_rel": 1.2648110389709473,
+          "pass": true
+        },
+        "dK": {
+          "max_abs": 0.0009706020355224609,
+          "max_rel": 15.867877006530762,
+          "pass": true
+        },
+        "dV": {
+          "max_abs": 0.00048676133155822754,
+          "max_rel": 3.487708806991577,
+          "pass": true
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "triton_flashattention",
+      "seed": 337,
+      "batch_size": 1,
+      "sequence_length": 256,
+      "head_dim": 32,
+      "dtype": "float32",
+      "is_causal": true,
+      "tolerance": {
+        "rtol": 0.01,
+        "atol": 0.01
+      },
+      "checks": {
+        "output": {
+          "max_abs": 0.0011873245239257812,
+          "max_rel": 0.7195611596107483,
+          "pass": true
+        },
+        "logsumexp": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 2.1030945163147408e-07,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs": 0.0030448436737060547,
+          "max_rel": 297.375,
+          "pass": true
+        },
+        "dK": {
+          "max_abs": 0.0024148225784301758,
+          "max_rel": 0.603362500667572,
+          "pass": true
+        },
+        "dV": {
+          "max_abs": 0.00351715087890625,
+          "max_rel": 8.065747261047363,
+          "pass": true
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "triton_flashattention",
+      "seed": 337,
+      "batch_size": 1,
+      "sequence_length": 256,
+      "head_dim": 64,
+      "dtype": "float32",
+      "is_causal": false,
+      "tolerance": {
+        "rtol": 0.01,
+        "atol": 0.01
+      },
+      "checks": {
+        "output": {
+          "max_abs": 0.0003021359443664551,
+          "max_rel": 2.5132498741149902,
+          "pass": true
+        },
+        "logsumexp": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 8.119823036167872e-08,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs": 0.0005314946174621582,
+          "max_rel": 1.8437987565994263,
+          "pass": true
+        },
+        "dK": {
+          "max_abs": 0.0004968047142028809,
+          "max_rel": 17.68685531616211,
+          "pass": true
+        },
+        "dV": {
+          "max_abs": 0.00043261051177978516,
+          "max_rel": 1.7651194334030151,
+          "pass": true
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "triton_flashattention",
+      "seed": 337,
+      "batch_size": 1,
+      "sequence_length": 256,
+      "head_dim": 64,
+      "dtype": "float32",
+      "is_causal": true,
+      "tolerance": {
+        "rtol": 0.01,
+        "atol": 0.01
+      },
+      "checks": {
+        "output": {
+          "max_abs": 0.001745462417602539,
+          "max_rel": 1.5736063718795776,
+          "pass": true
+        },
+        "logsumexp": {
+          "max_abs": 7.152557373046875e-07,
+          "max_rel": 7.374671895377105e-07,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs": 0.0018336772918701172,
+          "max_rel": 1321.318603515625,
+          "pass": true
+        },
+        "dK": {
+          "max_abs": 0.002408742904663086,
+          "max_rel": 13.674774169921875,
+          "pass": true
+        },
+        "dV": {
+          "max_abs": 0.002670764923095703,
+          "max_rel": 0.8899394869804382,
+          "pass": true
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "triton_flashattention",
+      "seed": 337,
+      "batch_size": 1,
+      "sequence_length": 256,
+      "head_dim": 128,
+      "dtype": "float32",
+      "is_causal": false,
+      "tolerance": {
+        "rtol": 0.01,
+        "atol": 0.01
+      },
+      "checks": {
+        "output": {
+          "max_abs": 0.00038498640060424805,
+          "max_rel": 11.997035026550293,
+          "pass": true
+        },
+        "logsumexp": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 8.312347432593015e-08,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs": 0.0008298158645629883,
+          "max_rel": 9.19728946685791,
+          "pass": true
+        },
+        "dK": {
+          "max_abs": 0.0007996559143066406,
+          "max_rel": 19.365739822387695,
+          "pass": true
+        },
+        "dV": {
+          "max_abs": 0.0005299150943756104,
+          "max_rel": 3.7269554138183594,
+          "pass": true
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "triton_flashattention",
+      "seed": 337,
+      "batch_size": 1,
+      "sequence_length": 256,
+      "head_dim": 128,
+      "dtype": "float32",
+      "is_causal": true,
+      "tolerance": {
+        "rtol": 0.01,
+        "atol": 0.01
+      },
+      "checks": {
+        "output": {
+          "max_abs": 0.001745462417602539,
+          "max_rel": 44.83506393432617,
+          "pass": true
+        },
+        "logsumexp": {
+          "max_abs": 9.5367431640625e-07,
+          "max_rel": 4.786307954418589e-07,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs": 0.0016454458236694336,
+          "max_rel": 1326.1539306640625,
+          "pass": true
+        },
+        "dK": {
+          "max_abs": 0.002010166645050049,
+          "max_rel": 36.3562126159668,
+          "pass": true
+        },
+        "dV": {
+          "max_abs": 0.0030105113983154297,
+          "max_rel": 10.058637619018555,
+          "pass": true
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "triton_flashattention",
+      "seed": 338,
+      "batch_size": 1,
+      "sequence_length": 256,
+      "head_dim": 32,
+      "dtype": "float32",
+      "is_causal": false,
+      "tolerance": {
+        "rtol": 0.01,
+        "atol": 0.01
+      },
+      "checks": {
+        "output": {
+          "max_abs": 0.000499427318572998,
+          "max_rel": 2.193817377090454,
+          "pass": true
+        },
+        "logsumexp": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 8.262655626367632e-08,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs": 0.0004285573959350586,
+          "max_rel": 0.8274151682853699,
+          "pass": true
+        },
+        "dK": {
+          "max_abs": 0.0006365776062011719,
+          "max_rel": 0.6819412708282471,
+          "pass": true
+        },
+        "dV": {
+          "max_abs": 0.0005595088005065918,
+          "max_rel": 17.721206665039062,
+          "pass": true
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "triton_flashattention",
+      "seed": 338,
+      "batch_size": 1,
+      "sequence_length": 256,
+      "head_dim": 32,
+      "dtype": "float32",
+      "is_causal": true,
+      "tolerance": {
+        "rtol": 0.01,
+        "atol": 0.01
+      },
+      "checks": {
+        "output": {
+          "max_abs": 0.0009302496910095215,
+          "max_rel": 6.240677833557129,
+          "pass": true
+        },
+        "logsumexp": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 1.2131063442666346e-07,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs": 0.0010556578636169434,
+          "max_rel": 178.35055541992188,
+          "pass": true
+        },
+        "dK": {
+          "max_abs": 0.0016546249389648438,
+          "max_rel": 0.9518373608589172,
+          "pass": true
+        },
+        "dV": {
+          "max_abs": 0.002856731414794922,
+          "max_rel": 5.408958435058594,
+          "pass": true
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "triton_flashattention",
+      "seed": 338,
+      "batch_size": 1,
+      "sequence_length": 256,
+      "head_dim": 64,
+      "dtype": "float32",
+      "is_causal": false,
+      "tolerance": {
+        "rtol": 0.01,
+        "atol": 0.01
+      },
+      "checks": {
+        "output": {
+          "max_abs": 0.00030991435050964355,
+          "max_rel": 4.687106609344482,
+          "pass": true
+        },
+        "logsumexp": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 8.19602092860805e-08,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs": 0.0005259215831756592,
+          "max_rel": 2.3928797245025635,
+          "pass": true
+        },
+        "dK": {
+          "max_abs": 0.0005324482917785645,
+          "max_rel": 4.708930492401123,
+          "pass": true
+        },
+        "dV": {
+          "max_abs": 0.0006718039512634277,
+          "max_rel": 6.658092975616455,
+          "pass": true
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "triton_flashattention",
+      "seed": 338,
+      "batch_size": 1,
+      "sequence_length": 256,
+      "head_dim": 64,
+      "dtype": "float32",
+      "is_causal": true,
+      "tolerance": {
+        "rtol": 0.01,
+        "atol": 0.01
+      },
+      "checks": {
+        "output": {
+          "max_abs": 0.0012428760528564453,
+          "max_rel": 1.7767550945281982,
+          "pass": true
+        },
+        "logsumexp": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 1.8016672242993081e-07,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs": 0.0011863261461257935,
+          "max_rel": 277.0521545410156,
+          "pass": true
+        },
+        "dK": {
+          "max_abs": 0.0015076994895935059,
+          "max_rel": 2.2236549854278564,
+          "pass": true
+        },
+        "dV": {
+          "max_abs": 0.0023686885833740234,
+          "max_rel": 10.167010307312012,
+          "pass": true
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "triton_flashattention",
+      "seed": 338,
+      "batch_size": 1,
+      "sequence_length": 256,
+      "head_dim": 128,
+      "dtype": "float32",
+      "is_causal": false,
+      "tolerance": {
+        "rtol": 0.01,
+        "atol": 0.01
+      },
+      "checks": {
+        "output": {
+          "max_abs": 0.0004152953624725342,
+          "max_rel": 22.256032943725586,
+          "pass": true
+        },
+        "logsumexp": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 8.166740883552848e-08,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs": 0.0005705356597900391,
+          "max_rel": 16.77199363708496,
+          "pass": true
+        },
+        "dK": {
+          "max_abs": 0.0005884766578674316,
+          "max_rel": 7.9688239097595215,
+          "pass": true
+        },
+        "dV": {
+          "max_abs": 0.0005975961685180664,
+          "max_rel": 2.151482343673706,
+          "pass": true
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "implementation": "triton_flashattention",
+      "seed": 338,
+      "batch_size": 1,
+      "sequence_length": 256,
+      "head_dim": 128,
+      "dtype": "float32",
+      "is_causal": true,
+      "tolerance": {
+        "rtol": 0.01,
+        "atol": 0.01
+      },
+      "checks": {
+        "output": {
+          "max_abs": 0.001425623893737793,
+          "max_rel": 2.2265498638153076,
+          "pass": true
+        },
+        "logsumexp": {
+          "max_abs": 4.76837158203125e-07,
+          "max_rel": 2.422282534553233e-07,
+          "pass": true
+        },
+        "dQ": {
+          "max_abs": 0.0021758079528808594,
+          "max_rel": 187.49485778808594,
+          "pass": true
+        },
+        "dK": {
+          "max_abs": 0.0021953582763671875,
+          "max_rel": 4.815945148468018,
+          "pass": true
+        },
+        "dV": {
+          "max_abs": 0.0018148422241210938,
+          "max_rel": 67.32740783691406,
+          "pass": true
+        }
+      },
+      "status": "pass"
+    }
+  ]
+}
