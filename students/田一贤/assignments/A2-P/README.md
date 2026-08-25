@@ -4,7 +4,7 @@
 
 本目录的代码从固定 starter interface 独立重写，review 复跑结果由田一贤本人提交的 1×H100 任务新鲜采集，未使用吴家兴、章之禹或其他同学的提交、数字、图和 metadata。题面版本为 `26.1.4-rc.3`，固定 starter commit 为 [`ca8bc81a59b70516f7ebb2da4808daade877c736`](https://github.com/stanford-cs336/assignment2-systems/tree/ca8bc81a59b70516f7ebb2da4808daade877c736)。
 
-公开环境信息：NVIDIA H100（80 GB）、PyTorch `2.9.0+cu128`、CUDA `12.8`、Python `3.12.3`。运行使用 `torch.cuda.synchronize()` 包围每个被测 step；原始样本、均值、样本标准差和 CV 保存在 [`results/benchmark.csv`](results/benchmark.csv)。原始 Chrome trace 与 memory-history pickle 只保留在运行工作区，没有提交。
+公开环境信息：既有 end-to-end/memory 结果来自 H200；本次六配置 compute profiling review 复跑来自 H100（80 GB）。两者均使用 PyTorch `2.9.0+cu128`、CUDA `12.8`、Python `3.12.3`，硬件口径不混写。原始 Chrome trace 与 memory-history pickle 只保留在运行工作区，没有提交。
 
 ## 1. End-to-End Benchmark
 
