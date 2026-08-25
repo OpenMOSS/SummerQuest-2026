@@ -1,2 +1,0 @@
-# 列出 analysis/ 实际使用的直接依赖及必要版本约束，例如 numpy、scipy、matplotlib。
-# 如果分析只使用 Python 标准库，请保留本文件并在 README 中明确说明。

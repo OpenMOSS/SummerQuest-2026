@@ -32,10 +32,10 @@ A2-K 也已正式发布并提供专用模板与脚手架。它仍使用 `../assi
 正式矩阵固定为单张 RTX 4090 24GB 与 23 GiB allocator 上限，`results/` 与 `assets/`
 附件合计不超过 2 MiB。详情见 [A2-K 正式题面](../assignments/A2-K/README.md)。
 
-A3 已正式发布并提供专用提交模板与脚手架。使用
-`python scripts/create_assignment.py --name '<同学真名>' --assignment A3` 创建目录，提交
-公开报告、分析代码、轻量结果、至少两张报告图片，以及轻量 `requirements.txt` 或
-`pyproject.toml`。详情见 [A3 正式题面](../assignments/A3/README.md)。
+A3 题面和 API 材料已由助教在课程群内发布，并提供 Markdown 提交模板。使用
+`python scripts/create_assignment.py --name '<同学真名>' --assignment A3` 创建目录；唯一
+必交文件是公开、脱敏的 `README.md`。轻量 `requirements.txt` 或 `pyproject.toml` 可选。
+详情见 [A3 提交说明](../assignments/A3/README.md)。
 
 ## 目录职责
 

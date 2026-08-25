@@ -40,7 +40,7 @@ A3 已正式发布，使用：
 python scripts/create_assignment.py --name '<同学真名>' --assignment A3
 ```
 
-A3 脚手架创建 `analysis/`、`results/` 与 `assets/`，并提供专用公开报告模板。提交轻量、
-脱敏的机器可读证据和至少两张报告图片；分析依赖用不超过 256 KiB 的 `requirements.txt`
-或 `pyproject.toml` 声明。完整要求见
+A3 脚手架创建一份公开、脱敏的 Markdown `README.md`，这是唯一必交文件。若需说明本地
+分析环境，可以附上不超过 256 KiB 的轻量 `requirements.txt` 或 `pyproject.toml`，但不是
+必交项。完整要求见
 [`assignments/A3/README.md`](../../../assignments/A3/README.md)。

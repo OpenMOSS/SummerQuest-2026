@@ -42,9 +42,10 @@ PR；完整要求以 [A2-P 题面](assignments/A2-P/README.md)和课程通知为
 A2-K 已正式发布。它与 A2-P 共用 `../assignment2-systems`，但使用独立同步脚本、个人目录
 和 PR；完整要求以 [A2-K 题面](assignments/A2-K/README.md)和课程通知为准。
 
-A3 已正式发布。它使用课程统一训练 API，个人 PR 提交公开报告、分析代码、轻量结果、图片
-和轻量依赖声明，不提交 backend、数据、权重、完整日志或 API 凭据；完整要求以
-[A3 题面](assignments/A3/README.md)和课程通知为准。
+A3 题面和 API 材料已由助教在课程群内发布。个人 PR 只要求提交公开、脱敏的 Markdown
+`README.md`；轻量 `requirements.txt` 或 `pyproject.toml` 可选。不提交 backend、数据、
+权重、完整日志或 API 凭据；完整要求以 [A3 提交说明](assignments/A3/README.md)和课程通知
+为准。
 
 ## Profile PR
 

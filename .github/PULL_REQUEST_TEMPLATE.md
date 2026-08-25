@@ -74,19 +74,12 @@
 
 若本 PR 不是 A3，请将本节标记为不适用。A3 已正式发布，按题面要求提交。
 
-- [ ] 已提交 Markdown `README.md`、至少一个 `analysis/**/*.py`、规定的轻量 `results/`
-      和至少两张被报告引用的压缩图片。
-- [ ] 已且只提交一个 `results/experiments.csv` 或 `results/experiments.jsonl`，并包含题面规定
-      的字段。
-- [ ] `fit_summary.json` 与 `final_prediction.json` 满足题面 schema，README/JSON 与冻结前
-      API final submission 一致。
-- [ ] 已提交不超过 256 KiB 的 `requirements.txt` 或 `pyproject.toml`，未提交 lock file、
-      wheel、虚拟环境或完整依赖环境。
-- [ ] 已运行 `scripts/validate_repo.py`，`analysis/` 能从轻量 `results/` 重建主要拟合、预测
-      和至少两张报告图片。
+- [ ] 已提交公开、脱敏的 Markdown `README.md`，且它与截止时间前的课程 API 最终提交一致。
+- [ ] 若附带 `requirements.txt` 或 `pyproject.toml`，文件不超过 256 KiB；未提交 lock file、
+      wheel、虚拟环境或完整依赖环境。没有附带依赖声明时，本项标记为不适用。
+- [ ] 已运行 `scripts/validate_repo.py`，并删除所有占位符。
 - [ ] 未提交 API 地址或凭据、内部路径、训练数据、权重、manifest、snapshot、backend、
-      provider 信息或完整服务日志。
-- [ ] `results/` 与 `assets/` 合计不超过 2 MiB，关键数字可回到机器可读记录和分析代码。
+      provider 信息、其他同学的记录或完整服务日志。
 
 ## 给助教的说明
 

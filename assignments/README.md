@@ -37,9 +37,9 @@ A2-K 复用同一个固定兄弟仓库，但只同步 `cs336_systems/a2k/**/*.py
 `tests/adapters.py` 和 `student_scripts/a2k/**/*.py`。正式矩阵固定为单张 RTX 4090 24GB，
 每个正式进程使用 23 GiB allocator 上限；`results/` 与 `assets/` 合计不超过 2 MiB。
 
-A3 使用课程统一训练 API，不复制 backend 源码。使用
-`python scripts/create_assignment.py --name '<同学真名>' --assignment A3` 创建专用提交目录，
-提交 `README.md`、`analysis/`、轻量 `results/`、至少两张报告图片，以及不超过 256 KiB 的
-`requirements.txt` 或 `pyproject.toml` 依赖声明。
+A3 题面、API Quickstart V2 和工作流 notebook 已由助教在课程群内发布。使用
+`python scripts/create_assignment.py --name '<同学真名>' --assignment A3` 创建提交目录；
+GitHub PR 只要求公开、脱敏的 Markdown `README.md`。不超过 256 KiB 的
+`requirements.txt` 或 `pyproject.toml` 可以附带，但不是必交项。
 
 课程题面、资料与个人提交都可能包含不适合公开的组内内容。请在开始任何作业前阅读 [公开性与提交规则](../docs/submission-rules.md)。

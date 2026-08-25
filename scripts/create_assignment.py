@@ -97,9 +97,6 @@ def create_assignment(root: Path, name: str, assignment: str) -> Path:
             "assets",
         ):
             (destination / relative).mkdir(parents=True)
-    elif assignment == "A3":
-        for relative in ("analysis", "results", "assets"):
-            (destination / relative).mkdir(parents=True)
 
     replacements = {
         "<姓名>": name,
@@ -138,12 +135,6 @@ def main() -> int:
             "A2-P workspace: ../assignment2-systems. Keep raw profiler artifacts "
             "there, then run python3 scripts/sync_a2p_submission.py "
             "--name '<同学真名>'."
-        )
-    elif args.assignment.strip().upper() == "A3":
-        print(
-            "A3 workspace created with analysis/, results/, and assets/. Follow "
-            "assignments/A3/README.md, keep API credentials outside the repository, "
-            "and record analysis dependencies in requirements.txt or pyproject.toml."
         )
     return 0
 

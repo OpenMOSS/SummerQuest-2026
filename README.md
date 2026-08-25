@@ -82,16 +82,17 @@ python3 scripts/sync_a2k_submission.py --name '<同学真名>'
 正式矩阵固定为单张 RTX 4090 24GB，并使用 23 GiB allocator 上限。完整要求见
 [A2-K 题面](assignments/A2-K/README.md)。
 
-A3 已发布，使用课程统一训练 API 完成探索实验，并在本仓库提交轻量、脱敏的实验记录、分析
-代码、拟合结果和图片：
+A3 题面、API Quickstart V2 和工作流 notebook 已由助教在课程群内发布。本仓库只接收公开、
+脱敏的 Markdown 作业报告：
 
 ```bash
 python scripts/create_assignment.py --name '<同学真名>' --assignment A3
 ```
 
-A3 分析依赖可以使用不超过 256 KiB 的 `requirements.txt` 和/或 `pyproject.toml` 声明；
-不得提交 API 凭据、内部地址、训练数据、权重、完整日志或依赖环境。完整要求见
-[A3 题面](assignments/A3/README.md)。
+生成的 `students/<同学真名>/assignments/A3/README.md` 是唯一必交文件。若需说明本地分析
+环境，可附上不超过 256 KiB 的轻量 `requirements.txt` 或 `pyproject.toml`，但两者均非
+必交。不得提交 API 凭据、内部地址、训练数据、权重、完整日志或依赖环境。完整要求见
+[A3 提交说明](assignments/A3/README.md)。
 
 ## 作业状态
 
