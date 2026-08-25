@@ -3,7 +3,9 @@
 
 from __future__ import annotations
 
+import csv
 import json
+import math
 import re
 import sys
 from pathlib import Path
@@ -17,6 +19,9 @@ A2P_MAX_REPORT_BYTES = 1 * 1024 * 1024
 A2P_MAX_ATTACHMENT_BYTES = 2 * 1024 * 1024
 A2K_MAX_REPORT_BYTES = 1 * 1024 * 1024
 A2K_MAX_ATTACHMENT_BYTES = 2 * 1024 * 1024
+A3_MAX_REPORT_BYTES = 1 * 1024 * 1024
+A3_MAX_ATTACHMENT_BYTES = 2 * 1024 * 1024
+A3_MAX_DEPENDENCY_BYTES = 256 * 1024
 
 TEMPLATE_FILES = (
     "PROFILE.md",
@@ -91,6 +96,55 @@ A2K_ALLOWED_RESULT_SUFFIXES = {".csv", ".json", ".jsonl", ".md", ".txt"}
 A2K_ALLOWED_ASSET_SUFFIXES = {".jpeg", ".jpg", ".png", ".svg", ".webp"}
 A2K_ALLOWED_TOP_LEVEL = {"README.md", "assets", "results", "submission"}
 
+A3_REQUIRED_RESULT_FILES = (
+    "results/fit_summary.json",
+    "results/final_prediction.json",
+)
+A3_EXPERIMENT_FILES = (
+    "results/experiments.csv",
+    "results/experiments.jsonl",
+)
+A3_EXPERIMENT_FIELDS = (
+    "experiment_id",
+    "hypothesis",
+    "submitted_config",
+    "resolved_config",
+    "status",
+    "reserved_seconds",
+    "used_seconds",
+    "validation_losses",
+    "final_validation_loss",
+    "fit_role",
+    "exclusion_reason",
+)
+A3_FIT_SUMMARY_FIELDS = (
+    "model_name",
+    "target",
+    "parameters",
+    "num_fit_runs",
+    "diagnostics",
+    "generated_at",
+)
+A3_FINAL_PREDICTION_FIELDS = (
+    "predicted_final_loss",
+    "predicted_final_loss_lower",
+    "predicted_final_loss_upper",
+    "analysis_version",
+    "generated_at",
+)
+A3_ALLOWED_ANALYSIS_SUFFIXES = {".md", ".py"}
+A3_ALLOWED_RESULT_SUFFIXES = {".csv", ".json", ".jsonl", ".md", ".txt"}
+A3_ALLOWED_ASSET_SUFFIXES = {".jpeg", ".jpg", ".png", ".svg", ".webp"}
+A3_ALLOWED_TOP_LEVEL = {
+    "README.md",
+    "analysis",
+    "assets",
+    "pyproject.toml",
+    "requirements.txt",
+    "results",
+}
+A3_DEPENDENCY_FILES = ("requirements.txt", "pyproject.toml")
+
 
 def read_text(path: Path) -> str:
     try:
@@ -124,6 +178,13 @@ def validate_template(errors: list[str]) -> None:
         errors.append(
             f"missing A2-K assignment template: {a2k_template.relative_to(ROOT)}"
         )
+    a3_template = STUDENTS / "_assignment_templates" / "A3"
+    for name in ("README.md", "requirements.txt"):
+        path = a3_template / name
+        if not path.is_file():
+            errors.append(
+                f"missing A3 assignment template file: {path.relative_to(ROOT)}"
+            )
     vendored_a1 = ROOT / "starter" / "A1"
     if vendored_a1.exists():
         errors.append(
@@ -440,6 +501,250 @@ def validate_a2k_submission(
         )
 
 
+def _validate_a3_experiments(path: Path, errors: list[str]) -> None:
+    records = 0
+    if path.suffix == ".csv":
+        try:
+            with path.open(encoding="utf-8", newline="") as handle:
+                reader = csv.DictReader(handle)
+                fields = set(reader.fieldnames or [])
+                missing = sorted(set(A3_EXPERIMENT_FIELDS) - fields)
+                records = sum(1 for _ in reader)
+        except (OSError, UnicodeDecodeError, csv.Error):
+            errors.append(f"invalid A3 experiment CSV: {path.relative_to(ROOT)}")
+            return
+    else:
+        try:
+            for line_number, line in enumerate(
+                path.read_text(encoding="utf-8").splitlines(), start=1
+            ):
+                if not line.strip():
+                    continue
+                record = json.loads(line)
+                if not isinstance(record, dict):
+                    raise TypeError
+                missing = sorted(set(A3_EXPERIMENT_FIELDS) - set(record))
+                if missing:
+                    errors.append(
+                        "A3 experiment JSONL record is missing fields "
+                        f"{missing}: {path.relative_to(ROOT)}:{line_number}"
+                    )
+                records += 1
+        except (OSError, UnicodeDecodeError, json.JSONDecodeError, TypeError):
+            errors.append(f"invalid A3 experiment JSONL: {path.relative_to(ROOT)}")
+            return
+        missing = []
+
+    if missing:
+        errors.append(
+            f"A3 experiment table is missing fields {missing}: "
+            f"{path.relative_to(ROOT)}"
+        )
+    if records == 0:
+        errors.append(f"A3 experiment table has no records: {path.relative_to(ROOT)}")
+
+
+def _read_json_object(path: Path, label: str, errors: list[str]) -> dict | None:
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError):
+        errors.append(f"invalid {label} JSON: {path.relative_to(ROOT)}")
+        return None
+    if not isinstance(data, dict):
+        errors.append(f"{label} must be a JSON object: {path.relative_to(ROOT)}")
+        return None
+    return data
+
+
+def _validate_a3_fit_summary(path: Path, errors: list[str]) -> None:
+    data = _read_json_object(path, "A3 fit summary", errors)
+    if data is None:
+        return
+    missing = sorted(set(A3_FIT_SUMMARY_FIELDS) - set(data))
+    if missing:
+        errors.append(
+            f"A3 fit summary is missing fields {missing}: {path.relative_to(ROOT)}"
+        )
+    if "parameters" in data and not isinstance(data["parameters"], dict):
+        errors.append(f"A3 fit parameters must be an object: {path.relative_to(ROOT)}")
+    if "diagnostics" in data and not isinstance(data["diagnostics"], dict):
+        errors.append(f"A3 fit diagnostics must be an object: {path.relative_to(ROOT)}")
+    if "num_fit_runs" in data and (
+        not isinstance(data["num_fit_runs"], int)
+        or isinstance(data["num_fit_runs"], bool)
+        or data["num_fit_runs"] < 1
+    ):
+        errors.append(
+            f"A3 num_fit_runs must be a positive integer: {path.relative_to(ROOT)}"
+        )
+
+
+def _validate_a3_final_prediction(path: Path, errors: list[str]) -> None:
+    data = _read_json_object(path, "A3 final prediction", errors)
+    if data is None:
+        return
+    missing = sorted(set(A3_FINAL_PREDICTION_FIELDS) - set(data))
+    if missing:
+        errors.append(
+            f"A3 final prediction is missing fields {missing}: "
+            f"{path.relative_to(ROOT)}"
+        )
+    final_config_hash = data.get("final_config_hash")
+    if not isinstance(data.get("final_config"), dict) and not (
+        isinstance(final_config_hash, str) and final_config_hash.strip()
+    ):
+        errors.append(
+            "A3 final prediction requires final_config or final_config_hash: "
+            f"{path.relative_to(ROOT)}"
+        )
+
+    values: list[float] = []
+    for field in (
+        "predicted_final_loss_lower",
+        "predicted_final_loss",
+        "predicted_final_loss_upper",
+    ):
+        try:
+            value = float(data[field])
+        except (KeyError, TypeError, ValueError):
+            continue
+        if not math.isfinite(value):
+            errors.append(
+                f"A3 {field} must be finite: {path.relative_to(ROOT)}"
+            )
+        values.append(value)
+    if len(values) == 3 and not values[0] <= values[1] <= values[2]:
+        errors.append(
+            "A3 prediction must satisfy lower <= point <= upper: "
+            f"{path.relative_to(ROOT)}"
+        )
+
+
+def validate_a3_submission(
+    assignment: Path, report: str, errors: list[str]
+) -> None:
+    relative = assignment.relative_to(ROOT)
+    readme = assignment / "README.md"
+    if readme.stat().st_size > A3_MAX_REPORT_BYTES:
+        errors.append(f"A3 README exceeds 1 MiB: {readme.relative_to(ROOT)}")
+
+    for target in MARKDOWN_LINK.findall(report):
+        if target.startswith("https://") or target.startswith("#"):
+            continue
+        if "://" in target or target.startswith("/"):
+            errors.append(
+                f"A3 README link must use HTTPS or remain inside SummerQuest-2026: "
+                f"{target}"
+            )
+            continue
+        relative_target = target.split("#", 1)[0].split("?", 1)[0]
+        if not relative_target:
+            continue
+        resolved = (readme.parent / relative_target).resolve()
+        try:
+            resolved.relative_to(ROOT.resolve())
+        except ValueError:
+            errors.append(
+                "A3 external repository links must use GitHub HTTPS absolute URLs: "
+                f"{target}"
+            )
+
+    top_level = {path.name for path in assignment.iterdir()}
+    for name in sorted(top_level - A3_ALLOWED_TOP_LEVEL):
+        errors.append(f"unexpected A3 top-level entry: {relative}/{name}")
+
+    dependency_files = [
+        assignment / name
+        for name in A3_DEPENDENCY_FILES
+        if (assignment / name).is_file()
+    ]
+    if not dependency_files:
+        errors.append(
+            f"A3 requires requirements.txt or pyproject.toml: {relative}"
+        )
+    for path in dependency_files:
+        if path.stat().st_size > A3_MAX_DEPENDENCY_BYTES:
+            errors.append(
+                f"A3 dependency declaration exceeds 256 KiB: "
+                f"{path.relative_to(ROOT)}"
+            )
+
+    analysis = assignment / "analysis"
+    analysis_files = (
+        sorted(path for path in analysis.rglob("*") if path.is_file())
+        if analysis.is_dir()
+        else []
+    )
+    if not any(path.suffix == ".py" for path in analysis_files):
+        errors.append(f"A3 analysis has no executable Python file: {relative}/analysis")
+    for path in analysis_files:
+        if path.suffix.lower() not in A3_ALLOWED_ANALYSIS_SUFFIXES:
+            errors.append(f"unsupported A3 analysis file: {path.relative_to(ROOT)}")
+
+    results = assignment / "results"
+    if not results.is_dir():
+        errors.append(f"missing A3 results directory: {relative}/results")
+    else:
+        for path in sorted(item for item in results.rglob("*") if item.is_file()):
+            if path.suffix.lower() not in A3_ALLOWED_RESULT_SUFFIXES:
+                errors.append(f"unsupported A3 result file: {path.relative_to(ROOT)}")
+
+    for required in A3_REQUIRED_RESULT_FILES:
+        path = assignment / required
+        if not path.is_file():
+            errors.append(f"missing required A3 result file: {path.relative_to(ROOT)}")
+
+    experiment_files = [
+        assignment / relative_path
+        for relative_path in A3_EXPERIMENT_FILES
+        if (assignment / relative_path).is_file()
+    ]
+    if len(experiment_files) != 1:
+        errors.append(
+            f"A3 requires exactly one of experiments.csv or experiments.jsonl: "
+            f"{relative}/results"
+        )
+    else:
+        _validate_a3_experiments(experiment_files[0], errors)
+
+    fit_summary = assignment / "results" / "fit_summary.json"
+    if fit_summary.is_file():
+        _validate_a3_fit_summary(fit_summary, errors)
+    final_prediction = assignment / "results" / "final_prediction.json"
+    if final_prediction.is_file():
+        _validate_a3_final_prediction(final_prediction, errors)
+
+    assets = assignment / "assets"
+    asset_files = (
+        sorted(path for path in assets.rglob("*") if path.is_file())
+        if assets.is_dir()
+        else []
+    )
+    if len(asset_files) < 2:
+        errors.append(f"A3 requires at least two report images: {relative}/assets")
+    for path in asset_files:
+        if path.suffix.lower() not in A3_ALLOWED_ASSET_SUFFIXES:
+            errors.append(f"unsupported A3 asset file: {path.relative_to(ROOT)}")
+        asset_reference = path.relative_to(assignment).as_posix()
+        if asset_reference not in report:
+            errors.append(
+                f"A3 asset is not referenced from README.md: "
+                f"{path.relative_to(ROOT)}"
+            )
+
+    attachment_bytes = sum(
+        path.stat().st_size
+        for directory in (results, assets)
+        if directory.is_dir()
+        for path in directory.rglob("*")
+        if path.is_file()
+    )
+    if attachment_bytes > A3_MAX_ATTACHMENT_BYTES:
+        errors.append(
+            f"A3 results/ and assets/ exceed the 2 MiB attachment budget: {relative}"
+        )
+
+
 def validate_assignment(student: Path, assignment: Path, errors: list[str]) -> None:
     relative = assignment.relative_to(ROOT)
     readme = assignment / "README.md"
@@ -465,6 +770,8 @@ def validate_assignment(student: Path, assignment: Path, errors: list[str]) -> N
         validate_a2p_submission(assignment, report, errors)
     elif assignment.name == "A2-K":
         validate_a2k_submission(assignment, report, errors)
+    elif assignment.name == "A3":
+        validate_a3_submission(assignment, report, errors)
 
 
 def validate_student(student: Path, errors: list[str]) -> None:

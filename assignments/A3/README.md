@@ -1,7 +1,7 @@
 # A3：Scaling Laws——实验设计、外推与集中评测
 
-> 状态：发布候选，供课程团队审核；正式合并与课程通知前请勿提交。
-> 实验室题面版本：`26.2.0-rc.1`（2026-08-07）。
+> 状态：已发布；开放时间、冻结时间和结果发布时间以正式课程通知为准。
+> 实验室题面版本：`26.2.0`（2026-08-25）。
 >
 > 本作业参考
 > [Stanford CS336 assignment3-scaling](https://github.com/stanford-cs336/assignment3-scaling)，
@@ -94,6 +94,10 @@ A3 有两个阶段。具体开放时间、冻结时间和结果发布时间以�
 - API quickstart；
 - 可直接运行的中英文 notebook 示例；
 - 参数 schema、状态和常见错误说明。
+
+本题面冻结的公开 API contract 版本为 `26.2.0`。组织内 quickstart、notebook 和正在运行的
+服务必须明确显示同一版本，并与下列认证方式、endpoint、请求和响应字段一致；若版本不一致，
+停止提交并联系课程助教，不要通过猜测字段消耗正式预算。
 
 学生只需要使用 HTTP API，不需要安装私有 client，也不需要接触计算集群 provider。最小
 Python 入口使用 `requests`：
@@ -224,18 +228,30 @@ $$
 | 字段 | 要求 |
 | --- | --- |
 | `experiment_id` | API 返回的正式 ID |
-| hypothesis | 本次 run 要回答的问题 |
-| submitted config | 原始 `model`、`training` 和 requested runtime |
-| resolved config | API 返回的参数量、optimizer steps 等派生信息 |
-| status | `completed`、失败类别或其他终态 |
-| runtime | reserved 与 used seconds，不混用墙钟等待时间 |
-| validation | 完整 loss 序列与 final loss；失败 run 保留缺失值 |
-| fit role | 用于拟合、留出验证、稳定性诊断或明确排除 |
-| exclusion reason | 不参与拟合时给出可复核理由 |
+| `hypothesis` | 本次 run 要回答的问题 |
+| `submitted_config` | 原始 `model`、`training` 和 requested runtime |
+| `resolved_config` | API 返回的参数量、optimizer steps 等派生信息 |
+| `status` | `completed`、失败类别或其他终态 |
+| `reserved_seconds` | API 记录的预留预算秒数，不混用墙钟等待时间 |
+| `used_seconds` | API 记录的实际计费秒数，不混用墙钟等待时间 |
+| `validation_losses` | 完整 loss 序列；失败 run 保留已有 sequence 或空值 |
+| `final_validation_loss` | completed run 的最终 loss；失败 run 使用空值 |
+| `fit_role` | 用于拟合、留出验证、稳定性诊断或明确排除 |
+| `exclusion_reason` | 不参与拟合时给出可复核理由；参与拟合时保留空值 |
 
-推荐把公开、脱敏的轻量记录保存在 `results/experiments.csv` 或
-`results/experiments.jsonl`。不得提交 API key、Authorization header、API base URL、
-callback URL、provider job ID、内部路径或未经裁剪的完整服务日志。
+必须且只能选择一种格式，把公开、脱敏的轻量记录保存为 `results/experiments.csv` 或
+`results/experiments.jsonl`。字段名固定为：
+
+```text
+experiment_id, hypothesis, submitted_config, resolved_config, status,
+reserved_seconds, used_seconds, validation_losses, final_validation_loss,
+fit_role, exclusion_reason
+```
+
+CSV 中的 config、loss sequence 等复合值使用 JSON 字符串；JSONL 每行使用包含上述字段的
+一个 JSON object。没有 final loss 或排除理由时保留字段并使用空值或 `null`，不要删列。
+不得提交 API key、Authorization header、API base URL、callback URL、provider job ID、
+内部路径或未经裁剪的完整服务日志。
 
 实验设计应让参数变化和 loss 变化具有可解释关系。建议在对数尺度上覆盖多个模型与数据
 规模，并留出少量预算检查稳定性和外推区域。可以使用网格、分层设计、序贯设计或其他方法，
@@ -304,24 +320,43 @@ python3 scripts/create_assignment.py --name '<同学真名>' --assignment A3
 ```text
 students/<同学真名>/assignments/A3/
 ├── README.md                         # 必交：公开 Markdown 主报告
+├── {requirements.txt,pyproject.toml} # 至少一个：轻量分析依赖声明
 ├── analysis/                         # 必交：拟合、诊断和绘图代码
-│   └── **/*.py
+│   └── **/*.{py,md}
 ├── results/                          # 必交：轻量、脱敏、机器可读证据
-│   ├── experiments.{csv,jsonl}
+│   ├── experiments.{csv,jsonl}       # 二选一，不能同时提交
 │   ├── fit_summary.json
 │   └── final_prediction.json
 └── assets/                           # 必交：报告引用的压缩图
     └── *.{png,jpg,jpeg,webp,svg}
 ```
 
-`analysis/` 中的代码必须能从提交的轻量 experiment table 重建报告中的主要拟合、诊断和图。
-可以在本地 notebook 中探索，但最终提交使用可执行 `.py` 文件；不提交 notebook、notebook
-导出、模型 checkpoint、训练数据或 backend 源码副本。
+`analysis/` 中至少有一个可执行 `.py` 文件，并能从提交的轻量 experiment table 重建报告
+中的主要拟合、诊断和图。可以在本地 notebook 中探索，但最终提交使用可执行 `.py` 文件；
+不提交 notebook、notebook 导出、模型 checkpoint、训练数据或 backend 源码副本。
 
-`results/final_prediction.json` 至少记录 point prediction、80% interval lower/upper、最终
-配置的公开摘要或 config hash、分析代码版本和生成时间。该文件必须与截止时间前 API 中的
-最新有效 final submission 一致；若不一致，以冻结的 API 记录为最终配置和预测，报告会因
-不可复现而扣分。
+分析依赖使用轻量 `requirements.txt` 或 `pyproject.toml` 声明，至少提交其中一个；两者均可
+提交，但任一文件不得超过 256 KiB。只声明重建分析所需的直接依赖，不提交虚拟环境、wheel、
+conda environment、`uv.lock`、`poetry.lock` 或其他自动生成的大型锁文件。
+
+`results/fit_summary.json` 至少包含：
+
+```text
+model_name, target, parameters, num_fit_runs, diagnostics, generated_at
+```
+
+其中 `parameters` 和 `diagnostics` 为 JSON object，`num_fit_runs` 为正整数。
+
+`results/final_prediction.json` 至少包含：
+
+```text
+predicted_final_loss, predicted_final_loss_lower, predicted_final_loss_upper,
+final_config 或 final_config_hash, analysis_version, generated_at
+```
+
+三个预测值必须为有限数并满足 lower ≤ point ≤ upper；`final_config` 为公开、脱敏的 JSON
+object，或改用非空 `final_config_hash`。该文件必须与截止时间前 API 中的最新有效 final
+submission 一致；若不一致，以冻结的 API 记录为最终配置和预测，报告会因不可复现而扣分。
 
 ## 10. README 报告要求
 
@@ -347,11 +382,13 @@ students/<同学真名>/assignments/A3/
 | --- | ---: |
 | 学生目录内任意单文件 | 不超过 5 MiB |
 | A3 `README.md` | 不超过 1 MiB |
+| `requirements.txt` 或 `pyproject.toml` | 每个不超过 256 KiB |
 | `results/` 与 `assets/` 公开附件合计 | 不超过 2 MiB |
 
 只允许提交：
 
 - `README.md`；
+- 根目录下的轻量 `requirements.txt` 和/或 `pyproject.toml`；
 - `analysis/**/*.{py,md}`；
 - `results/**/*.{csv,json,jsonl,md,txt}`；
 - `assets/**/*.{png,jpg,jpeg,webp,svg}`。
@@ -362,7 +399,8 @@ students/<同学真名>/assignments/A3/
 - 内部 API URL、callback URL、服务器地址、主机名、IP、用户名、挂载路径或 provider 信息；
 - 训练语料、validation data、tokenized shard、模型权重、checkpoint 或 optimizer state；
 - 完整服务日志、数据库、snapshot、FrozenManifest、队列导出或其他同学的记录；
-- backend/worker 源码副本、Docker image、虚拟环境、缓存、wheel、压缩包或依赖锁；
+- backend/worker 源码副本、Docker image、虚拟环境、缓存、wheel、压缩包或自动生成的依赖
+  锁文件；
 - PDF、Office 文档、notebook 和 notebook 导出。
 
 公开报告可以包含模型规模、训练 token、正式 experiment ID、runtime、loss、拟合参数和脱敏
@@ -418,6 +456,7 @@ feat(a3): submit 张三 scaling law report
 - [ ] 点预测和区间值有限，满足 $L_- \leq \hat{L} \leq L_+$。
 - [ ] 报告解释了 80% 区间的构造、覆盖对象、已包含和未包含的不确定性。
 - [ ] `analysis/` 可以从 `results/` 重建主要数字和图片。
+- [ ] 已提交不超过 256 KiB 的 `requirements.txt` 或 `pyproject.toml`，并能在干净环境安装。
 - [ ] `final_prediction.json`、README 与冻结前 API final submission 一致。
 - [ ] 未提交凭据、内部 URL/路径、数据、权重、manifest、snapshot、backend 或大型日志。
 - [ ] 文件类型、单文件大小和附件总量满足限制，飞书补充文档为组织内公开。

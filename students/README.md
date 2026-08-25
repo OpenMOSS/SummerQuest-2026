@@ -21,16 +21,21 @@ A1 先把官方仓库下载到固定兄弟目录 `../assignment1-basics`，再�
 A1 已发布并提供专用提交模板；创建 A1 时也不要修改 `_assignment_templates`。A1 的固定
 文件清单见 [A1 正式题面](../assignments/A1/README.md)。
 
-A2-P 已提供 Profiling 专用候选模板与脚手架，但在题面状态改为“已发布”前不接收学生 PR。
-正式发布后，工作仓库固定放在 `../assignment2-systems`，只通过
+A2-P 已正式发布并提供 Profiling 专用模板与脚手架。工作仓库固定放在
+`../assignment2-systems`，只通过
 `scripts/sync_a2p_submission.py` 同步 `profiling/**/*.py`；trace、snapshot、上游代码和
 依赖不进入个人目录。`results/` 与 `assets/` 附件合计不超过 2 MiB。详情见
-[A2-P 候选题面](../assignments/A2-P/README.md)。
+[A2-P 正式题面](../assignments/A2-P/README.md)。
 
-A2-K 也已提供专用候选模板与脚手架，候选阶段不接收学生 PR。正式发布后仍使用
-`../assignment2-systems`，但通过 `scripts/sync_a2k_submission.py` 只同步 A2-K allowlist；
+A2-K 也已正式发布并提供专用模板与脚手架。它仍使用 `../assignment2-systems`，但通过
+`scripts/sync_a2k_submission.py` 只同步 A2-K allowlist；
 正式矩阵固定为单张 RTX 4090 24GB 与 23 GiB allocator 上限，`results/` 与 `assets/`
-附件合计不超过 2 MiB。详情见 [A2-K 候选题面](../assignments/A2-K/README.md)。
+附件合计不超过 2 MiB。详情见 [A2-K 正式题面](../assignments/A2-K/README.md)。
+
+A3 已正式发布并提供专用提交模板与脚手架。使用
+`python scripts/create_assignment.py --name '<同学真名>' --assignment A3` 创建目录，提交
+公开报告、分析代码、轻量结果、至少两张报告图片，以及轻量 `requirements.txt` 或
+`pyproject.toml`。详情见 [A3 正式题面](../assignments/A3/README.md)。
 
 ## 目录职责
 
@@ -51,8 +56,9 @@ students/<同学真名>/
 
 - A0：创建完整个人目录，完成公开 profile、组内飞书 profile 和 A0 报告。
 - A1：只提交自己的 A1 目录，并单独创建一个 PR。
-- A2-P：正式发布后只提交自己的 A2-P 目录，并单独创建一个 PR；候选阶段不提交。
-- A2-K：正式发布后只提交自己的 A2-K 目录，并单独创建一个 PR；候选阶段不提交。
+- A2-P：只提交自己的 A2-P 目录，并单独创建一个 PR。
+- A2-K：只提交自己的 A2-K 目录，并单独创建一个 PR。
+- A3：只提交自己的 A3 目录，并单独创建一个 PR。
 - Profile 更新：不和作业混合，单独创建 `[PROFILE]` PR。
 
 完整要求见 [公开性与提交规则](../docs/submission-rules.md)。

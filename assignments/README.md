@@ -1,6 +1,6 @@
 # 作业总览
 
-本集训基于 Stanford CS336。A1、A2-P 与 A2-K 已正式发布；A3 及后续作业仍按各自题面
+本集训基于 Stanford CS336。A1、A2-P、A2-K 与 A3 已正式发布；后续作业仍按各自题面
 状态执行。各作业的信息和状态见下表。
 
 | 作业 | 主题 | 状态 | 原版或说明 |
@@ -9,7 +9,7 @@
 | [A1](A1/README.md) | 从零实现 tokenizer、Transformer 与训练流程 | 已发布 | [实验室题面](A1/README.md) · [Stanford 原版](https://github.com/stanford-cs336/assignment1-basics) |
 | [A2-P](A2-P/README.md) | Profiling 与性能分析（A2 子作业） | 已发布 | [实验室题面](A2-P/README.md) · [Stanford A2 固定快照](https://github.com/stanford-cs336/assignment2-systems/tree/ca8bc81a59b70516f7ebb2da4808daade877c736) |
 | [A2-K](A2-K/README.md) | 单卡显存优化与 GPU Kernels（A2 子作业） | 已发布 | [实验室题面](A2-K/README.md) · [Stanford A2 固定快照](https://github.com/stanford-cs336/assignment2-systems/tree/ca8bc81a59b70516f7ebb2da4808daade877c736) |
-| [A3](A3/README.md) | Scaling | 预告 | [Stanford 原版 assignment3-scaling](https://github.com/stanford-cs336/assignment3-scaling) |
+| [A3](A3/README.md) | Scaling Laws、外推与集中评测 | 已发布 | [实验室题面](A3/README.md) · [Stanford 原版](https://github.com/stanford-cs336/assignment3-scaling) |
 | [A4](A4/README.md) | Data | 预告 | [Stanford 原版 assignment4-data](https://github.com/stanford-cs336/assignment4-data) |
 | [A5](A5/README.md) | Alignment | 预告 | [Stanford 原版 assignment5-alignment](https://github.com/stanford-cs336/assignment5-alignment) |
 | [A6](A6/README.md) | 内容待公布 | 预告 | 具体题目后续发布 |
@@ -36,5 +36,10 @@ A2-P 使用固定兄弟目录 `../assignment2-systems`，但只同步
 A2-K 复用同一个固定兄弟仓库，但只同步 `cs336_systems/a2k/**/*.py`、
 `tests/adapters.py` 和 `student_scripts/a2k/**/*.py`。正式矩阵固定为单张 RTX 4090 24GB，
 每个正式进程使用 23 GiB allocator 上限；`results/` 与 `assets/` 合计不超过 2 MiB。
+
+A3 使用课程统一训练 API，不复制 backend 源码。使用
+`python scripts/create_assignment.py --name '<同学真名>' --assignment A3` 创建专用提交目录，
+提交 `README.md`、`analysis/`、轻量 `results/`、至少两张报告图片，以及不超过 256 KiB 的
+`requirements.txt` 或 `pyproject.toml` 依赖声明。
 
 课程题面、资料与个人提交都可能包含不适合公开的组内内容。请在开始任何作业前阅读 [公开性与提交规则](../docs/submission-rules.md)。

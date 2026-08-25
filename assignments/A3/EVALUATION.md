@@ -27,10 +27,34 @@
 | 点预测与 80% prediction interval | 20% | `prediction_quality_penalty`，越低越好 |
 | 实验、拟合与复现性 | 20% | 下文 methodology rubric |
 
-actual-loss 与 prediction-quality 的原始数值、有效/无效状态和排名应一并保留在评分导出中。
-如需把 lower-is-better 原始量转换为班级内的有界分数，转换规则必须在 final submission
-冻结前由课程团队统一确定，并对所有有效提交使用同一规则；批改助教不得在看到结果后为个别
-同学调整归一化方法。
+actual-loss 与 prediction-quality 的原始数值、有效/无效状态、并列情况和排名应一并保留在
+评分导出中。
+
+### 2.1 冻结的分数换算
+
+两个 lower-is-better 指标均使用同一批次内的**稠密排名百分位**换算，规则随题面版本
+`26.2.0` 一并冻结。对某项指标的所有有效提交按原始值从低到高排列；相同原始值使用相同的
+稠密名次 $r$。令 $m$ 为该项指标不同有效取值的数量：
+
+$$
+p =
+\begin{cases}
+1, & m = 1, \\
+\dfrac{m-r}{m-1}, & m > 1.
+\end{cases}
+$$
+
+- final-loss 得分为 $60p_{\text{loss}}$；
+- prediction-quality 得分为 $20p_{\text{pred}}$；
+- methodology 按第 5 节 rubric 直接计 20 分；
+- 每部分保留完整精度计算，最终总分四舍五入到小数点后两位。
+
+同一批次指课程通知中声明的本次 A3 正常参评同学；免修、退课和确认的平台故障待处理记录不
+进入有效取值集合。学生原因导致该项没有有效结果时，该部分记 0 分。批改助教不得在看到结果
+后调整参评集合、排名方式、权重或归一化方法。
+
+final-loss 的有效集合按第 3 节判定；prediction-quality 的有效集合还要求同一提交具有有效
+actual loss、有效 point prediction 和合法区间。每项分别计算自身的 $m$ 与 $r$。
 
 ## 3. Actual final validation loss（60%）
 
@@ -49,9 +73,8 @@ actual-loss 与 prediction-quality 的原始数值、有效/无效状态和排�
 loss 代替 held-out final loss，也不得对失败任务外推一个“假想 final loss”。
 
 学生配置导致的 timeout、OOM/resource exhaustion、numerical instability、非法 shape 或其他
-训练失败，final-loss 部分按无有效结果并进入最低档处理；prediction 部分因为没有可信 actual
-loss，也不能按正常公式自动得到有效分。确认的平台故障先标记为 `staff_review`，完成重跑或
-裁定后再计分。
+训练失败，final-loss 部分按无有效结果记 0 分；prediction 部分因为没有可信 actual loss，
+同样记 0 分。确认的平台故障先标记为 `staff_review`，完成重跑或裁定后再计分。
 
 ## 4. Prediction quality（20%）
 
@@ -160,9 +183,10 @@ parameter confidence interval、只给 point estimate 的 standard error，或�
 
 ### 5.4 可复现性与一致性（2 分）
 
-在干净 Python 环境中，助教应能从 `results/` 运行 `analysis/`，重建主要拟合参数、最终 point
-prediction 和至少两张关键图。关键数字应能回到 machine-readable row，且不依赖私有绝对
-路径、未提交 notebook state 或手工编辑的中间值。
+在干净 Python 环境中，助教应能使用根目录轻量 `requirements.txt` 或 `pyproject.toml` 安装
+分析依赖，再从 `results/` 运行 `analysis/`，重建主要拟合参数、最终 point prediction 和至少
+两张关键图。关键数字应能回到 machine-readable row，且不依赖私有绝对路径、未提交 notebook
+state 或手工编辑的中间值。
 
 ## 6. 核验流程
 
@@ -177,8 +201,8 @@ prediction 和至少两张关键图。关键数字应能回到 machine-readable 
    报告结论与代码输出一致。
 6. 由课程团队从冻结记录统一启动 final runs；确认 final manifest、provider terminal status、
    callback/result 与 grading export 对齐。
-7. 对所有有效结果统一计算 actual-loss 指标、`E_point`、`S_interval` 和 `S_pred`；由另一名
-   助教抽查公式和异常记录。
+7. 对所有有效结果统一计算 actual-loss 指标、`E_point`、`S_interval` 和 `S_pred`，再按
+   第 2.1 节换算分数；由另一名助教抽查公式、排名和异常记录。
 
 评分过程可以借助代码或模型整理材料，但实际分数和异常裁定必须由批改助教复核。自动摘要不
 得覆盖原始 API/export、Git commit 或学生提交中的事实。
@@ -188,7 +212,7 @@ prediction 和至少两张关键图。关键数字应能回到 machine-readable 
 | 情况 | 处理 |
 | --- | --- |
 | API 在截止前拒绝 final config | 该记录无效，不覆盖上一条有效 submission |
-| 没有任何有效 final submission | final-loss 与 prediction 进入最低档，methodology 仍按已交材料核验 |
+| 没有任何有效 final submission | final-loss 与 prediction 均记 0 分，methodology 仍按已交材料核验 |
 | 学生配置导致 final timeout/OOM/numerical failure | 不自动重跑，按无有效 actual loss 处理 |
 | 确认的 backend/provider/storage 故障 | 标记 `staff_review`，审核后重跑或裁定，不直接惩罚学生 |
 | README/JSON 与 API 冻结预测不一致 | API 为准；methodology 的一致性/复现性扣分 |

@@ -12,7 +12,7 @@ A1 的原版工作仓库固定放在 `../assignment1-basics`；完成实现和�
 A1 维护一个公开 `README.md`，并在其中填写组织内公开的飞书补充文档链接，同时提交
 题面列出的代码、脚本和日志。
 
-A2-P 当前是发布候选稿。正式发布后使用：
+A2-P 已正式发布，使用：
 
 ```bash
 python scripts/create_assignment.py --name '<同学真名>' --assignment A2-P
@@ -23,7 +23,7 @@ A2-P 的原版工作仓库固定放在 `../assignment2-systems`；同步脚本�
 `profiling/**/*.py`。大型 trace、snapshot、上游代码和依赖不得进入本仓库；
 `results/` 与 `assets/` 附件合计不超过 2 MiB。
 
-A2-K 当前也是发布候选稿。正式发布后使用：
+A2-K 已正式发布，使用：
 
 ```bash
 python scripts/create_assignment.py --name '<同学真名>' --assignment A2-K
@@ -33,3 +33,14 @@ python3 scripts/sync_a2k_submission.py --name '<同学真名>'
 A2-K 复用 `../assignment2-systems`，同步脚本只复制题面允许的 Python 文件。正式矩阵使用
 单张 RTX 4090 24GB 与 23 GiB allocator 上限；`results/` 与 `assets/` 附件合计不超过
 2 MiB。
+
+A3 已正式发布，使用：
+
+```bash
+python scripts/create_assignment.py --name '<同学真名>' --assignment A3
+```
+
+A3 脚手架创建 `analysis/`、`results/` 与 `assets/`，并提供专用公开报告模板。提交轻量、
+脱敏的机器可读证据和至少两张报告图片；分析依赖用不超过 256 KiB 的 `requirements.txt`
+或 `pyproject.toml` 声明。完整要求见
+[`assignments/A3/README.md`](../../../assignments/A3/README.md)。

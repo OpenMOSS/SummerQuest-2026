@@ -37,10 +37,10 @@ App Secret、Verification Token、Encrypt Key、Webhook Secret、Access Token、
 
 - `assignments/<A编号>/README.md`：公开、脱敏的报告和公开代码说明，并在“飞书补充文档”一节填写组内文档链接。
 - 代码、日志、图表等其他提交文件：仅在对应正式题面规定的个人作业目录内提交。A1 的
-固定目录和必交文件见 [A1 题面](../assignments/A1/README.md)；A2-P、A2-K 的代码边界、
-附件大小和禁止文件分别见
-  [A2-P 题面](../assignments/A2-P/README.md)与
-  [A2-K 题面](../assignments/A2-K/README.md)。
+固定目录和必交文件见 [A1 题面](../assignments/A1/README.md)；A2-P、A2-K 与 A3 的代码
+边界、附件大小和禁止文件见 [A2-P 题面](../assignments/A2-P/README.md)、
+[A2-K 题面](../assignments/A2-K/README.md)与
+[A3 题面](../assignments/A3/README.md)。
 
 公开 README 应该让评审者理解你完成了什么，但不要求通过公开仓库重建实验室内部环境。组内飞书文档只保存不能公开且审核必要的差量证据，不要机械复制公开报告，也不要把组内正文复制回 GitHub。仓库不维护额外的飞书索引文件。
 
@@ -106,6 +106,17 @@ A2-K 的正式矩阵固定为单张 RTX 4090 24GB，每个正式进程在首次 
 完整 benchmark 日志、逐秒显存采样、compile cache 和 binary 不进入 GitHub。A2-K 已正式
 发布，学生 PR 的代码边界、附件大小和验证要求以题面为准。
 
+A3 使用课程统一训练 API，不同步或提交 backend 源码。创建专用目录：
+
+```bash
+python3 scripts/create_assignment.py --name '<同学真名>' --assignment A3
+```
+
+A3 只提交公开、脱敏的 `README.md`、`analysis/`、轻量 `results/`、报告图片，以及不超过
+256 KiB 的 `requirements.txt` 和/或 `pyproject.toml`。API 地址、密钥、内部路径、训练数据、
+权重、完整服务日志、虚拟环境和自动生成的依赖锁文件不得进入 GitHub。`results/` 与
+`assets/` 合计不超过 2 MiB；完整结构与结果 schema 以 A3 题面为准。
+
 不要把整个 `assignment1-basics/`、`assignment2-systems/`、公共 tests/fixtures、数据、模型权重或
 依赖环境放进 SummerQuest 仓库。
 
@@ -128,8 +139,8 @@ git push -u origin a0/<你的 GitHub ID>
 [A0] <同学真名> - 完成基础环境与 Profile
 ```
 
-A1、A2-P 或 A2-K 将分支名、commit scope 和标题中的编号改为对应的
-`a1` / `a2-p` / `a2-k` 和 `[A1]` / `[A2-P]` / `[A2-K]`。
+A1、A2-P、A2-K 或 A3 将分支名、commit scope 和标题中的编号改为对应的
+`a1` / `a2-p` / `a2-k` / `a3` 和 `[A1]` / `[A2-P]` / `[A2-K]` / `[A3]`。
 
 ## 4. PR 范围
 
