@@ -15,8 +15,17 @@ def main() -> None:
     parser.add_argument("--trace", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--dtype", choices=("fp32", "bf16"), required=True)
-    parser.add_argument("--gpu", default="NVIDIA H200")
+    parser.add_argument("--gpu", default=None)
+    parser.add_argument("--model-size", default="small")
+    parser.add_argument("--context-length", type=int, default=512)
+    parser.add_argument("--batch-size", type=int, default=4)
+    parser.add_argument("--warmup-steps", type=int, default=1)
+    parser.add_argument("--seed", type=int, default=42)
     args = parser.parse_args()
+    if args.gpu is None:
+        import torch
+
+        args.gpu = torch.cuda.get_device_name(0) if torch.cuda.is_available() else None
     raw = args.trace.read_bytes()
     payload = json.loads(raw)
     events = payload.get("traceEvents", payload)
@@ -67,7 +76,7 @@ def main() -> None:
         if event.get("ph") == "X" and event.get("cat") == "kernel"
     ]
     stage_rows = []
-    for stage in ("forward", "backward", "optimizer"):
+    for stage in ("forward", "attention", "backward", "optimizer"):
         cpu_events = stage_events(stage, "user_annotation")
         cuda_events = stage_events(stage, "gpu_user_annotation")
         kernel_events = []
@@ -116,13 +125,15 @@ def main() -> None:
         "evaluation_type": "self_supervised_proxy",
         "tool": "torch.profiler Chrome trace",
         "gpu": args.gpu,
-        "model_size": "small",
-        "context_length": 512,
-        "batch_size": 4,
+        "model_size": args.model_size,
+        "context_length": args.context_length,
+        "batch_size": args.batch_size,
         "dtype": args.dtype,
+        "seed": args.seed,
         "profiled_steps": 1,
-        "warmup_forward_steps": 1,
-        "stage_ranges": ["forward", "backward", "optimizer"],
+        "warmup_train_step_steps": args.warmup_steps,
+        "profile_range": "train_step",
+        "stage_ranges": ["forward", "attention", "backward", "optimizer"],
         "raw_trace": {
             "sha256": hashlib.sha256(raw).hexdigest(),
             "bytes": len(raw),

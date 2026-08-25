@@ -2,9 +2,9 @@
 
 ## 完成范围与环境
 
-本目录的代码从固定 starter interface 独立重写，结果由本次 4×H200 任务新鲜采集，未使用吴家兴、章之禹或其他同学的提交、数字、图和 metadata。题面版本为 `26.1.4-rc.3`，固定 starter commit 为 [`ca8bc81a59b70516f7ebb2da4808daade877c736`](https://github.com/stanford-cs336/assignment2-systems/tree/ca8bc81a59b70516f7ebb2da4808daade877c736)。
+本目录的代码从固定 starter interface 独立重写，review 复跑结果由田一贤本人提交的 1×H100 任务新鲜采集，未使用吴家兴、章之禹或其他同学的提交、数字、图和 metadata。题面版本为 `26.1.4-rc.3`，固定 starter commit 为 [`ca8bc81a59b70516f7ebb2da4808daade877c736`](https://github.com/stanford-cs336/assignment2-systems/tree/ca8bc81a59b70516f7ebb2da4808daade877c736)。
 
-公开环境信息：NVIDIA H200（141 GB）、PyTorch `2.9.0+cu128`、CUDA `12.8`、Python `3.12.3`。运行使用 `torch.cuda.synchronize()` 包围每个被测 step；原始样本、均值、样本标准差和 CV 保存在 [`results/benchmark.csv`](results/benchmark.csv)。已完成任务的 qzcli 归属、共享文件 hash 和分片范围见 [`results/h200_provenance.json`](results/h200_provenance.json)。原始 Chrome trace 与 memory-history pickle 只保留在运行工作区，没有提交。
+公开环境信息：NVIDIA H100（80 GB）、PyTorch `2.9.0+cu128`、CUDA `12.8`、Python `3.12.3`。运行使用 `torch.cuda.synchronize()` 包围每个被测 step；原始样本、均值、样本标准差和 CV 保存在 [`results/benchmark.csv`](results/benchmark.csv)。原始 Chrome trace 与 memory-history pickle 只保留在运行工作区，没有提交。
 
 ## 1. End-to-End Benchmark
 
@@ -34,9 +34,9 @@ python -m profiling.benchmark --model-size small --batch-size 4 \
 
 ## 2. Compute Profiling
 
-`compute_profile.py` 使用 `torch.profiler` 的 CPU/CUDA activities、shape 和 memory，并用 `record_function` 标记 `forward`、`backward`、`optimizer`；`trace_summarize.py` 将保留在执行区的原始 Chrome trace 转成公开轻量汇总。代表配置为 small / batch 4 / context 512 / FP32/BF16 / 一次完整训练 step；算子级汇总见 [`results/profile/trace_summary.csv`](results/profile/trace_summary.csv) 与 [`results/profile_bf16/trace_summary.csv`](results/profile_bf16/trace_summary.csv)，阶段级汇总见 `results/profile/stage_summary.csv` 与 `results/profile_bf16/stage_summary.csv`。算子级 CSV 逐行报告 calls 及从 raw trace 聚合的 CPU/CUDA duration；阶段级 CSV 另外报告阶段 CPU 区间、CUDA annotation 区间和窗口内 kernel duration 总和，不把缺失的 per-op self/total 字段补写成现场数据。汇总显示 AdamW、forward/backward/optimizer 区间以及 `aten::bmm`、`aten::mul`、`aten::div` 等 attention 相关算子。这属于框架级 CUDA 证据，不冒充 Nsight Systems 的 kernel 归因。
+`compute_profile.py` 使用 `torch.profiler` 的 CPU/CUDA activities、shape 和 memory，并用 `record_function` 标记 `forward`、`attention`、`backward`、`optimizer`。本次复跑覆盖 `small/medium × context {256,512,1024}` 的 6 个 FP32 配置，每个配置均为 1 个完整 warm-up train step + 1 个完整 profiled train step。矩阵清单见 [`results/profile_matrix/matrix_manifest.json`](results/profile_matrix/matrix_manifest.json)，算子级汇总见 [`results/profile_matrix/trace_summary.csv`](results/profile_matrix/trace_summary.csv)，阶段级汇总见 [`results/profile_matrix/stage_summary.csv`](results/profile_matrix/stage_summary.csv)；raw trace 只保留在 H100 执行工作区。
 
-从原始 Chrome trace 重建的阶段表（CUDA 列为阶段时间窗内 kernel duration 之和）为：FP32 forward `CPU 35.707 ms / CUDA kernels 7.602 ms`、backward `166.489 / 18.528 ms`、optimizer `40.395 / 3.103 ms`；BF16 对应 `37.228 / 7.102 ms`、`188.576 / 14.110 ms`、`41.927 / 3.018 ms`。每次 trace 只包含 1 个被 profile 的训练 step，前面有 1 个 warm-up forward；因此这里的结论限定为一次 framework-level trace，不能替代 steady-state Nsight kernel 统计。原始 trace 不提交，但 SHA-256、字节数和保留位置在各自 `run_metadata.json` 中。
+代表配置 small/context 512 的阶段表（CUDA 列为阶段时间窗内 kernel duration 之和）为：forward `33.682 ms CPU / 8.133 ms CUDA kernels`、attention `21.399 / 5.383 ms`、backward `47.539 / 20.176 ms`、optimizer `3.729 / 2.570 ms`。所有 6 配置的 24 个阶段行状态均为 `measured_from_raw_trace`；原始 trace 不提交，但 SHA-256 和文件名记录在 manifest 的逐配置 metadata 中。
 
 ![原创 timing boundary schematic](assets/timing_boundary.svg)
 

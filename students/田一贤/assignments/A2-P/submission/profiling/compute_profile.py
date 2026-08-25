@@ -15,12 +15,38 @@ from .common import autocast_context, build_model, loss_from_logits, synchronize
 from .config import get_model_spec
 
 
+def _register_attention_ranges(model: torch.nn.Module) -> list[torch.utils.hooks.RemovableHandle]:
+    """Annotate each attention-module forward without changing model numerics."""
+    handles = []
+    for module in model.modules():
+        if "attention" not in type(module).__name__.lower():
+            continue
+
+        def before(attention_module, _inputs):
+            context = record_function("attention")
+            context.__enter__()
+            attention_module._a2p_attention_context = context
+
+        def after(attention_module, _inputs, output):
+            context = attention_module.__dict__.pop("_a2p_attention_context", None)
+            if context is not None:
+                context.__exit__(None, None, None)
+            return output
+
+        handles.append(module.register_forward_pre_hook(before))
+        handles.append(module.register_forward_hook(after))
+    return handles
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--model-size", default="small")
     parser.add_argument("--context-length", type=int, default=512)
     parser.add_argument("--batch-size", type=int, default=4)
     parser.add_argument("--dtype", choices=("fp32", "bf16"), default="fp32")
+    parser.add_argument("--warmup-steps", type=int, default=1)
+    parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--trace-name", default="trace.json")
     parser.add_argument("--output-dir", type=Path, default=Path("results/profile"))
     args = parser.parse_args()
     args.output_dir.mkdir(parents=True, exist_ok=True)
@@ -38,6 +64,7 @@ def main() -> None:
         (args.output_dir / "stage_summary.csv").write_text(
             "stage,calls,cpu_self_us,cpu_total_us,cuda_self_us,cuda_total_us,status\n"
             "forward,0,0,0,0,0,not_run_no_cuda\n"
+            "attention,0,0,0,0,0,not_run_no_cuda\n"
             "backward,0,0,0,0,0,not_run_no_cuda\n"
             "optimizer,0,0,0,0,0,not_run_no_cuda\n",
             encoding="utf-8",
@@ -45,32 +72,43 @@ def main() -> None:
         return
     device = torch.device("cuda")
     spec = get_model_spec(args.model_size)
-    torch.manual_seed(42)
+    torch.manual_seed(args.seed)
     model = build_model(args.model_size, args.context_length, device)
+    attention_handles = _register_attention_ranges(model)
     tokens = torch.randint(
         0, spec.vocab_size, (args.batch_size, args.context_length), device=device
     )
     targets = torch.randint_like(tokens, high=spec.vocab_size)
     optimizer = torch.optim.AdamW(model.parameters(), lr=1e-4)
     optimizer.zero_grad(set_to_none=True)
-    with autocast_context(device, args.dtype):
-        model(tokens)
+    for _ in range(args.warmup_steps):
+        optimizer.zero_grad(set_to_none=True)
+        with autocast_context(device, args.dtype):
+            warmup_logits = model(tokens)
+            warmup_loss = loss_from_logits(warmup_logits, targets)
+        warmup_loss.backward()
+        optimizer.step()
+        optimizer.zero_grad(set_to_none=True)
     synchronize(device)
     with profile(
         activities=[ProfilerActivity.CPU, ProfilerActivity.CUDA],
         record_shapes=True,
         profile_memory=True,
     ) as prof:
-        with record_function("forward"):
-            with autocast_context(device, args.dtype):
-                logits = model(tokens)
-                loss = loss_from_logits(logits, targets)
-        with record_function("backward"):
-            loss.backward()
-        with record_function("optimizer"):
-            optimizer.step()
+        with record_function("train_step"):
+            optimizer.zero_grad(set_to_none=True)
+            with record_function("forward"):
+                with autocast_context(device, args.dtype):
+                    logits = model(tokens)
+                    loss = loss_from_logits(logits, targets)
+            with record_function("backward"):
+                loss.backward()
+            with record_function("optimizer"):
+                optimizer.step()
     synchronize(device)
-    trace_path = args.output_dir / "trace.json"
+    for handle in attention_handles:
+        handle.remove()
+    trace_path = args.output_dir / args.trace_name
     prof.export_chrome_trace(str(trace_path))
     trace_sha256 = hashlib.sha256(trace_path.read_bytes()).hexdigest()
     averages = list(prof.key_averages())
@@ -98,7 +136,7 @@ def main() -> None:
         writer.writerows(rows)
     by_name = {event.key: event for event in averages}
     stage_rows = []
-    for stage in ("forward", "backward", "optimizer"):
+    for stage in ("forward", "attention", "backward", "optimizer"):
         event = by_name.get(stage)
         stage_rows.append(
             {
@@ -135,9 +173,13 @@ def main() -> None:
         "context_length": args.context_length,
         "batch_size": args.batch_size,
         "dtype": args.dtype,
-        "stage_ranges": ["forward", "backward", "optimizer"],
+        "seed": args.seed,
+        "profile_range": "train_step",
+        "stage_ranges": ["forward", "attention", "backward", "optimizer"],
         "profiled_steps": 1,
-        "warmup_forward_steps": 1,
+        "warmup_train_step_steps": args.warmup_steps,
+        "trace_file": trace_path.name,
+        "command": " ".join(__import__("sys").argv),
         "raw_trace": {
             "sha256": trace_sha256,
             "submitted": False,
