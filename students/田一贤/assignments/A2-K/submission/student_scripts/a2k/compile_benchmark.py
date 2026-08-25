@@ -10,7 +10,7 @@ import torch
 import torch.nn.functional as F
 from cs336_basics.model import BasicsTransformerLM
 
-from .common import measure_attention_phase, native_attention
+from .common import configure_allocator_guard, measure_attention_phase, native_attention
 
 
 def _attention_rows(device: torch.device, warmup: int, steps: int) -> list[dict]:
@@ -167,10 +167,15 @@ def main() -> None:
     if not torch.cuda.is_available():
         rows = [{"component": "attention", "status": "not_run_no_cuda"}]
     else:
+        guard = configure_allocator_guard()
         device = torch.device("cuda")
         rows = _attention_rows(device, args.warmup, args.steps)
         if not args.skip_model:
             rows.extend(_model_rows(device, args.warmup, args.steps))
+        for row in rows:
+            row["allocator_guard_applied"] = guard["applied"]
+            row["allocator_limit_mib"] = guard["limit_mib"]
+            row["allocator_fraction"] = guard["fraction"]
     args.output.parent.mkdir(parents=True, exist_ok=True)
     fields = sorted({key for row in rows for key in row})
     with args.output.open("w", newline="", encoding="utf-8") as f:

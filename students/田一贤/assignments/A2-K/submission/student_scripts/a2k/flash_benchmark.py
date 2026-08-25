@@ -9,7 +9,7 @@ import torch
 
 from cs336_systems.a2k.attention import FlashAttentionTriton
 
-from .common import measure_attention_phase, native_attention
+from .common import configure_allocator_guard, measure_attention_phase, native_attention
 
 
 def _write_rows(path: Path, rows: list[dict]) -> None:
@@ -54,6 +54,7 @@ def main() -> None:
     if not torch.cuda.is_available():
         rows.append({"status": "not_run_no_cuda"})
     else:
+        guard = configure_allocator_guard()
         device = torch.device("cuda")
         compiled = torch.compile(
             lambda q, k, v: native_attention(q, k, v, True), dynamic=False
@@ -84,6 +85,9 @@ def main() -> None:
                             "k_tile": 64 if name == "triton" else "",
                             "num_warps": 4 if name == "triton" else "",
                             "num_stages": 2 if name == "triton" else "",
+                            "allocator_guard_applied": guard["applied"],
+                            "allocator_limit_mib": guard["limit_mib"],
+                            "allocator_fraction": guard["fraction"],
                         }
                         q = torch.randn(
                             1,

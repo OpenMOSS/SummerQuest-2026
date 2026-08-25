@@ -6,6 +6,8 @@ from pathlib import Path
 
 import torch
 
+from .common import configure_allocator_guard
+
 from cs336_systems.a2k.attention import FlashAttentionPyTorch, _tiled_attention
 from .common import dense_attention
 
@@ -67,6 +69,7 @@ def main() -> None:
         "--device", default="cuda" if torch.cuda.is_available() else "cpu"
     )
     args = parser.parse_args()
+    guard = configure_allocator_guard() if args.device.startswith("cuda") else {"applied": False}
     device = torch.device(args.device)
     rows = [
         run(seed, dim, causal, device)
@@ -79,6 +82,7 @@ def main() -> None:
         "measurement_collected": True,
         "evaluation_type": "synthetic_proxy",
         "reference": "dense_attention mathematical reference; not dataset ground truth",
+        "allocator_guard": guard,
         "rows": rows,
     }
     args.output.write_text(

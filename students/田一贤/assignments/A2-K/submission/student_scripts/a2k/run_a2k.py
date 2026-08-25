@@ -20,6 +20,7 @@ def main() -> None:
     parser.add_argument("--results", type=Path, default=Path("results"))
     parser.add_argument("--formal", action="store_true")
     parser.add_argument("--include-boundary", action="store_true")
+    parser.add_argument("--skip-compiled-boundary", action="store_true")
     args = parser.parse_args()
     args.results.mkdir(parents=True, exist_ok=True)
     metadata = {
@@ -32,6 +33,9 @@ def main() -> None:
         "torch": torch.__version__,
         "cuda": torch.version.cuda,
         "gpu": torch.cuda.get_device_name(0) if torch.cuda.is_available() else None,
+        "allocator_limit_mib": 23552,
+        "allocator_guard": "each benchmark subprocess applies torch.cuda.set_per_process_memory_fraction before first CUDA tensor allocation",
+        "execution_order": ["correctness", "checkpoint", "attention", "compile", "flash", "memory_evidence"],
     }
     metadata_path = args.results / "run_metadata.json"
     metadata_path.write_text(json.dumps(metadata, indent=2), encoding="utf-8")
@@ -63,6 +67,8 @@ def main() -> None:
     flash_args = ["--output", args.results / "flash_benchmark.csv"]
     if args.include_boundary:
         flash_args.append("--include-boundary")
+    if args.skip_compiled_boundary:
+        flash_args.append("--skip-compiled-boundary")
     _run("student_scripts.a2k.flash_benchmark", *flash_args)
     _run(
         "student_scripts.a2k.memory_evidence",

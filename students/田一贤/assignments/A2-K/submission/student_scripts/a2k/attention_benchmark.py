@@ -7,7 +7,7 @@ from pathlib import Path
 
 import torch
 
-from .common import measure_attention_phase, native_attention
+from .common import configure_allocator_guard, measure_attention_phase, native_attention
 
 
 def main() -> None:
@@ -21,6 +21,7 @@ def main() -> None:
     parser.add_argument("--warmup", type=int, default=5)
     parser.add_argument("--steps", type=int, default=20)
     args = parser.parse_args()
+    guard = configure_allocator_guard() if args.device.startswith("cuda") else {"applied": False}
     device = torch.device(args.device)
     rows = []
     for seq in (512, 2048, 8192):
@@ -33,6 +34,9 @@ def main() -> None:
                             "head_dim": dim,
                             "dtype": "bfloat16",
                             "phase": phase,
+                            "allocator_guard_applied": guard["applied"],
+                            "allocator_limit_mib": guard.get("limit_mib", 23552),
+                            "allocator_fraction": guard.get("fraction", 0.0),
                             "status": "not_run_no_cuda",
                         }
                     )
@@ -58,6 +62,9 @@ def main() -> None:
                             "head_dim": dim,
                             "dtype": "bfloat16",
                             "phase": phase,
+                            "allocator_guard_applied": guard["applied"],
+                            "allocator_limit_mib": guard.get("limit_mib", 23552),
+                            "allocator_fraction": guard.get("fraction", 0.0),
                             **measured,
                             "status": "pass",
                         }

@@ -2,6 +2,11 @@
   "measurement_collected": true,
   "evaluation_type": "synthetic_proxy",
   "reference": "dense_attention mathematical reference; not dataset ground truth",
+  "allocator_guard": {
+    "applied": true,
+    "limit_mib": 23552,
+    "fraction": 0.2904749571416238
+  },
   "rows": [
     {
       "seed": 7,

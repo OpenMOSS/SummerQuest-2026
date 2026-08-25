@@ -13,6 +13,7 @@ import torch.nn.functional as F
 from cs336_basics.model import BasicsTransformerLM
 
 from cs336_systems.a2k.checkpointing import checkpoint_blocks
+from .common import configure_allocator_guard
 
 
 def _model_forward(model, tokens, checkpoint_block_size: int):
@@ -80,10 +81,7 @@ def main() -> None:
     contexts = (1024, 2048) if args.include_2048 else (1024,)
     rows = []
 
-    if torch.cuda.is_available():
-        total_mib = torch.cuda.get_device_properties(0).total_memory / 2**20
-        allocator_fraction = min(1.0, 23552.0 / total_mib)
-        torch.cuda.set_per_process_memory_fraction(allocator_fraction, 0)
+    guard = configure_allocator_guard()
     for context_length in contexts:
         for block_size in (0, 1, 2, 4, 8):
             base = {
@@ -97,6 +95,9 @@ def main() -> None:
                 "nested": False,
                 "warmup_steps": args.warmup,
                 "measurement_steps": args.steps,
+                "allocator_guard_applied": guard["applied"],
+                "allocator_limit_mib": guard["limit_mib"],
+                "allocator_fraction": guard["fraction"],
             }
             if not torch.cuda.is_available():
                 rows.append({**base, "status": "not_run_no_cuda"})

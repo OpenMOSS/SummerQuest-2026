@@ -5,6 +5,18 @@ import time
 
 import torch
 
+ALLOCATOR_LIMIT_MIB = 23 * 1024
+
+
+def configure_allocator_guard(device_index: int = 0) -> dict[str, float | bool]:
+    """Apply the 23 GiB allocator guard before the first CUDA tensor allocation."""
+    if not torch.cuda.is_available():
+        return {"applied": False, "limit_mib": ALLOCATOR_LIMIT_MIB, "fraction": 0.0}
+    total_mib = torch.cuda.get_device_properties(device_index).total_memory / 2**20
+    fraction = min(1.0, ALLOCATOR_LIMIT_MIB / total_mib)
+    torch.cuda.set_per_process_memory_fraction(fraction, device_index)
+    return {"applied": True, "limit_mib": ALLOCATOR_LIMIT_MIB, "fraction": fraction}
+
 
 def dense_attention(q, k, v, causal=False):
     scores = q.float() @ k.float().transpose(-1, -2) / math.sqrt(q.shape[-1])
