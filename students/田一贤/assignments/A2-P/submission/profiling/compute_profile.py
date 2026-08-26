@@ -38,6 +38,33 @@ def _register_attention_ranges(model: torch.nn.Module) -> list[torch.utils.hooks
     return handles
 
 
+def _install_profiled_attention() -> object:
+    """Patch starter attention with real named score/softmax/value ranges."""
+    import cs336_basics.model as starter_model
+
+    original = starter_model.scaled_dot_product_attention
+
+    def profiled_attention(Q, K, V, mask=None):
+        with record_function("attention/scores"):
+            d_k = K.shape[-1]
+            attention_scores = starter_model.einsum(
+                Q, K, "... query d_k, ... key d_k -> ... query key"
+            ) / d_k**0.5
+            if mask is not None:
+                attention_scores = torch.where(mask, attention_scores, float("-inf"))
+        with record_function("attention/softmax"):
+            attention_weights = starter_model.softmax(attention_scores, dim=-1)
+        with record_function("attention/value"):
+            return starter_model.einsum(
+                attention_weights,
+                V,
+                "... query key, ... key d_v -> ... query d_v",
+            )
+
+    starter_model.scaled_dot_product_attention = profiled_attention
+    return original, starter_model
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--model-size", default="small")
@@ -63,10 +90,10 @@ def main() -> None:
         )
         (args.output_dir / "stage_summary.csv").write_text(
             "stage,calls,cpu_self_us,cpu_total_us,cuda_self_us,cuda_total_us,status\n"
-            "forward,0,0,0,0,0,not_run_no_cuda\n"
-            "attention,0,0,0,0,0,not_run_no_cuda\n"
-            "backward,0,0,0,0,0,not_run_no_cuda\n"
-            "optimizer,0,0,0,0,0,not_run_no_cuda\n",
+            + "\n".join(f"{stage},0,0,0,0,0,not_run_no_cuda" for stage in (
+                "profile/warmup", "profile/measure", "forward", "attention",
+                "attention/scores", "attention/softmax", "attention/value",
+                "backward", "optimizer")) + "\n",
             encoding="utf-8",
         )
         return
@@ -75,37 +102,44 @@ def main() -> None:
     torch.manual_seed(args.seed)
     model = build_model(args.model_size, args.context_length, device)
     attention_handles = _register_attention_ranges(model)
+    original_attention, starter_model = _install_profiled_attention()
     tokens = torch.randint(
         0, spec.vocab_size, (args.batch_size, args.context_length), device=device
     )
     targets = torch.randint_like(tokens, high=spec.vocab_size)
     optimizer = torch.optim.AdamW(model.parameters(), lr=1e-4)
-    optimizer.zero_grad(set_to_none=True)
-    for _ in range(args.warmup_steps):
-        optimizer.zero_grad(set_to_none=True)
-        with autocast_context(device, args.dtype):
-            warmup_logits = model(tokens)
-            warmup_loss = loss_from_logits(warmup_logits, targets)
-        warmup_loss.backward()
-        optimizer.step()
-        optimizer.zero_grad(set_to_none=True)
     synchronize(device)
+    stage_names = (
+        "profile/warmup", "profile/measure", "forward", "attention",
+        "attention/scores", "attention/softmax", "attention/value",
+        "backward", "optimizer",
+    )
     with profile(
         activities=[ProfilerActivity.CPU, ProfilerActivity.CUDA],
         record_shapes=True,
         profile_memory=True,
     ) as prof:
-        with record_function("train_step"):
-            optimizer.zero_grad(set_to_none=True)
-            with record_function("forward"):
+        for _ in range(args.warmup_steps):
+            with record_function("profile/warmup"):
+                optimizer.zero_grad(set_to_none=True)
                 with autocast_context(device, args.dtype):
-                    logits = model(tokens)
-                    loss = loss_from_logits(logits, targets)
-            with record_function("backward"):
-                loss.backward()
-            with record_function("optimizer"):
+                    warmup_logits = model(tokens)
+                    warmup_loss = loss_from_logits(warmup_logits, targets)
+                warmup_loss.backward()
                 optimizer.step()
+        with record_function("profile/measure"):
+            with record_function("train_step"):
+                optimizer.zero_grad(set_to_none=True)
+                with record_function("forward"):
+                    with autocast_context(device, args.dtype):
+                        logits = model(tokens)
+                        loss = loss_from_logits(logits, targets)
+                with record_function("backward"):
+                    loss.backward()
+                with record_function("optimizer"):
+                    optimizer.step()
     synchronize(device)
+    starter_model.scaled_dot_product_attention = original_attention
     for handle in attention_handles:
         handle.remove()
     trace_path = args.output_dir / args.trace_name
@@ -136,7 +170,7 @@ def main() -> None:
         writer.writerows(rows)
     by_name = {event.key: event for event in averages}
     stage_rows = []
-    for stage in ("forward", "attention", "backward", "optimizer"):
+    for stage in stage_names:
         event = by_name.get(stage)
         stage_rows.append(
             {
@@ -175,7 +209,7 @@ def main() -> None:
         "dtype": args.dtype,
         "seed": args.seed,
         "profile_range": "train_step",
-        "stage_ranges": ["forward", "attention", "backward", "optimizer"],
+        "stage_ranges": list(stage_names),
         "profiled_steps": 1,
         "warmup_train_step_steps": args.warmup_steps,
         "trace_file": trace_path.name,

@@ -34,9 +34,9 @@ python -m profiling.benchmark --model-size small --batch-size 4 \
 
 ## 2. Compute Profiling
 
-`compute_profile.py` 使用 `torch.profiler` 的 CPU/CUDA activities、shape 和 memory，并用 `record_function` 标记 `forward`、`attention`、`backward`、`optimizer`。本次复跑覆盖 `small/medium × context {256,512,1024}` 的 6 个 FP32 配置，每个配置均为 1 个完整 warm-up train step + 1 个完整 profiled train step。矩阵清单见 [`results/profile_matrix/matrix_manifest.json`](results/profile_matrix/matrix_manifest.json)，算子级汇总见 [`results/profile_matrix/trace_summary.csv`](results/profile_matrix/trace_summary.csv)，阶段级汇总见 [`results/profile_matrix/stage_summary.csv`](results/profile_matrix/stage_summary.csv)；raw trace 只保留在 H100 执行工作区。
+`compute_profile.py` 使用 `torch.profiler` 的 CPU/CUDA activities、shape 和 memory，并在真实 train-step 路径中用 `record_function` 标记 9 个阶段：`profile/warmup`、`profile/measure`、`forward`、`attention`、`attention/scores`、`attention/softmax`、`attention/value`、`backward`、`optimizer`。本次复跑覆盖 `small/medium × context {256,512,1024}` 的 6 个 FP32 配置，每个配置均为 1 个完整 warm-up train step + 1 个完整 profiled train step，即 6×9=54 个阶段行。矩阵清单见 [`results/profile_matrix/matrix_manifest.json`](results/profile_matrix/matrix_manifest.json)，算子级汇总见 [`results/profile_matrix/trace_summary.csv`](results/profile_matrix/trace_summary.csv)，阶段级汇总见 [`results/profile_matrix/stage_summary.csv`](results/profile_matrix/stage_summary.csv)；raw trace 只保留在 H100 执行工作区。
 
-代表配置 small/context 512 的阶段表（CUDA 列为阶段时间窗内 kernel duration 之和）为：forward `33.682 ms CPU / 8.133 ms CUDA kernels`、attention `21.399 / 5.383 ms`、backward `47.539 / 20.176 ms`、optimizer `3.729 / 2.570 ms`。所有 6 配置的 24 个阶段行状态均为 `measured_from_raw_trace`；原始 trace 不提交，但 SHA-256 和文件名记录在 manifest 的逐配置 metadata 中。
+代表配置 small/context 512 的阶段表（CUDA 列为阶段时间窗内 kernel duration 之和）为：forward `33.682 ms CPU / 8.133 ms CUDA kernels`、attention `21.399 / 5.383 ms`、backward `47.539 / 20.176 ms`、optimizer `3.729 / 2.570 ms`；attention 下的 scores、softmax、value 子阶段也分别记录在汇总表中。所有 6 配置的 54 个阶段行状态均为 `measured_from_raw_trace`；原始 trace 不提交，但 SHA-256 和文件名记录在 manifest 的逐配置 metadata 中。
 
 ![原创 timing boundary schematic](assets/timing_boundary.svg)
 

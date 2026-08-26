@@ -90,6 +90,17 @@ def main() -> None:
         manifest.append(metadata)
 
     with (args.output_root / "matrix_manifest.json").open("w", encoding="utf-8") as f:
+        stage_ranges = [
+            "profile/warmup",
+            "profile/measure",
+            "forward",
+            "attention",
+            "attention/scores",
+            "attention/softmax",
+            "attention/value",
+            "backward",
+            "optimizer",
+        ]
         json.dump(
             {
                 "status": "pass",
@@ -102,6 +113,7 @@ def main() -> None:
                 "warmup_train_step_steps": args.warmup_steps,
                 "profiled_train_step_steps": 1,
                 "seed": args.seed,
+                "stage_ranges": stage_ranges,
                 "configurations": manifest,
             },
             f,

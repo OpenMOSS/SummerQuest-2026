@@ -76,7 +76,12 @@ def main() -> None:
         if event.get("ph") == "X" and event.get("cat") == "kernel"
     ]
     stage_rows = []
-    for stage in ("forward", "attention", "backward", "optimizer"):
+    stage_names = (
+        "profile/warmup", "profile/measure", "forward", "attention",
+        "attention/scores", "attention/softmax", "attention/value",
+        "backward", "optimizer",
+    )
+    for stage in stage_names:
         cpu_events = stage_events(stage, "user_annotation")
         cuda_events = stage_events(stage, "gpu_user_annotation")
         kernel_events = []
@@ -133,7 +138,7 @@ def main() -> None:
         "profiled_steps": 1,
         "warmup_train_step_steps": args.warmup_steps,
         "profile_range": "train_step",
-        "stage_ranges": ["forward", "attention", "backward", "optimizer"],
+        "stage_ranges": list(stage_names),
         "raw_trace": {
             "sha256": hashlib.sha256(raw).hexdigest(),
             "bytes": len(raw),
