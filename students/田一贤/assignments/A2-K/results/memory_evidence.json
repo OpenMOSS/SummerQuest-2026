@@ -6,6 +6,7 @@
   "allocator": {
     "runtime_guard": "torch.cuda.set_per_process_memory_fraction",
     "runtime_guard_applied": true,
+    "allocator_fraction": 0.2904749571416238,
     "allocator_limit_mib": 23552,
     "guarded_pass_rows": 118,
     "total_pass_rows": 118,

@@ -68,6 +68,7 @@ def main() -> None:
         "allocator": {
             "runtime_guard": "torch.cuda.set_per_process_memory_fraction",
             "runtime_guard_applied": runtime_guard["applied"],
+            "allocator_fraction": runtime_guard["fraction"],
             "allocator_limit_mib": ALLOCATOR_LIMIT_MIB,
             "guarded_pass_rows": guard_rows,
             "total_pass_rows": total_rows,
