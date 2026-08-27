@@ -194,10 +194,3 @@ $$
 ## 飞书补充文档
 
 - 链接：https://fudan-nlp.feishu.cn/wiki/CgtdwwU1OisGW9kDLpDcZMwmn6d
-
-## 自检
-
-- [x] 本次仅修改 `final_report_gpt.md`。
-- [x] 公式、数据表、拟合诊断、最终候选和风险判断均已写明；没有将失败/部分运行 loss 当作完成结果。
-- [x] 已明确最终候选未提交，避免将预测伪称为观测结果。
-- [x] 未写入 API 地址、凭据、内部服务信息、训练数据、权重或完整日志。
