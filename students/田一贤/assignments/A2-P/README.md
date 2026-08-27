@@ -36,7 +36,7 @@ python -m profiling.benchmark --model-size small --batch-size 4 \
 
 `compute_profile.py` 使用 `torch.profiler` 的 CPU/CUDA activities、shape 和 memory，并在真实 train-step 路径中用 `record_function` 标记 9 个阶段：`profile/warmup`、`profile/measure`、`forward`、`attention`、`attention/scores`、`attention/softmax`、`attention/value`、`backward`、`optimizer`。本次复跑覆盖 `small/medium × context {256,512,1024}` 的 6 个 FP32 配置，每个配置均为 1 个完整 warm-up train step + 1 个完整 profiled train step，即 6×9=54 个阶段行。矩阵清单见 [`results/profile_matrix/matrix_manifest.json`](results/profile_matrix/matrix_manifest.json)，算子级汇总见 [`results/profile_matrix/trace_summary.csv`](results/profile_matrix/trace_summary.csv)，阶段级汇总见 [`results/profile_matrix/stage_summary.csv`](results/profile_matrix/stage_summary.csv)；raw trace 只保留在 H100 执行工作区。
 
-代表配置 small/context 512 的阶段表（CUDA 列为阶段时间窗内 kernel duration 之和）为：forward `33.682 ms CPU / 8.133 ms CUDA kernels`、attention `21.399 / 5.383 ms`、backward `47.539 / 20.176 ms`、optimizer `3.729 / 2.570 ms`；attention 下的 scores、softmax、value 子阶段也分别记录在汇总表中。所有 6 配置的 54 个阶段行状态均为 `measured_from_raw_trace`；原始 trace 不提交，但 SHA-256 和文件名记录在 manifest 的逐配置 metadata 中。
+代表配置 small/context 512 的阶段表（CUDA 列为阶段时间窗内 kernel duration 之和）为：profile/measure `98.376 ms CPU / 33.046 ms CUDA kernels`、forward `38.147 / 8.777 ms`、attention `160.312 / 11.242 ms`、backward `55.823 / 21.039 ms`、optimizer `4.070 / 2.825 ms`。attention 子阶段为 scores `27.341 / 2.593 ms`、softmax `18.550 / 3.753 ms`、value `11.214 / 1.493 ms`。attention 的 Calls 为 24，是 warm-up 与 measure 各经过 12 层的合计；所有 6 配置的 54 个阶段行状态均为 `measured_from_raw_trace`。原始 trace 不提交，但六个 SHA-256、文件名和本人 qzcli H100 任务 provenance 均记录在 manifest 中。
 
 ![原创 timing boundary schematic](assets/timing_boundary.svg)
 

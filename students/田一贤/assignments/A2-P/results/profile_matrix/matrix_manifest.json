@@ -16,11 +16,17 @@
   "warmup_train_step_steps": 1,
   "profiled_train_step_steps": 1,
   "seed": 42,
-  "student": "田一贤",
-  "gpu": "NVIDIA H100 80GB HBM3",
-  "qzcli_job_id": "job-4327d9c5-7aa4-4dd5-9a27-2eb5f0874e6f",
-  "qzcli_project_id": "project-f277dd4c-fa6b-4908-b75c-4416a0407a3d",
-  "qzcli_compute_group": "lcg-7a513e40-d82b-4d6f-888f-9a74a9cae04e",
+  "stage_ranges": [
+    "profile/warmup",
+    "profile/measure",
+    "forward",
+    "attention",
+    "attention/scores",
+    "attention/softmax",
+    "attention/value",
+    "backward",
+    "optimizer"
+  ],
   "configurations": [
     {
       "status": "pass",
@@ -37,14 +43,19 @@
       "warmup_train_step_steps": 1,
       "profile_range": "train_step",
       "stage_ranges": [
+        "profile/warmup",
+        "profile/measure",
         "forward",
         "attention",
+        "attention/scores",
+        "attention/softmax",
+        "attention/value",
         "backward",
         "optimizer"
       ],
       "raw_trace": {
-        "sha256": "d7be0948da63fdb607661a775042fea2bb6bbaa51e75a05c16e01753bfdb45b7",
-        "bytes": 10675300,
+        "sha256": "9c9eacadc31b78dcf03d4b537f994f50162e58b76ea9e06be29a04316b70ad27",
+        "bytes": 22566744,
         "submitted": false,
         "retention": "remote execution workspace only"
       },
@@ -74,14 +85,19 @@
       "warmup_train_step_steps": 1,
       "profile_range": "train_step",
       "stage_ranges": [
+        "profile/warmup",
+        "profile/measure",
         "forward",
         "attention",
+        "attention/scores",
+        "attention/softmax",
+        "attention/value",
         "backward",
         "optimizer"
       ],
       "raw_trace": {
-        "sha256": "a22e63a49b89c16680ee852313389b168d9809b04030e28d421d40201f9b910b",
-        "bytes": 10779293,
+        "sha256": "468137ef4fd52edc980f2ee171ad395843ca7916daf59012d2e56116ad69fb77",
+        "bytes": 22758824,
         "submitted": false,
         "retention": "remote execution workspace only"
       },
@@ -111,14 +127,19 @@
       "warmup_train_step_steps": 1,
       "profile_range": "train_step",
       "stage_ranges": [
+        "profile/warmup",
+        "profile/measure",
         "forward",
         "attention",
+        "attention/scores",
+        "attention/softmax",
+        "attention/value",
         "backward",
         "optimizer"
       ],
       "raw_trace": {
-        "sha256": "e7f69c956fa9b8b33fdddcee14d76a3b192eca5c59fd1c4d6d24bf972e4ab7d3",
-        "bytes": 10903824,
+        "sha256": "e8b0fd903162dcdec2c438e921277261785085b207cbee307d0429abcab09565",
+        "bytes": 23038692,
         "submitted": false,
         "retention": "remote execution workspace only"
       },
@@ -148,14 +169,19 @@
       "warmup_train_step_steps": 1,
       "profile_range": "train_step",
       "stage_ranges": [
+        "profile/warmup",
+        "profile/measure",
         "forward",
         "attention",
+        "attention/scores",
+        "attention/softmax",
+        "attention/value",
         "backward",
         "optimizer"
       ],
       "raw_trace": {
-        "sha256": "6d9e6718d768899c4de571f8bbe3b37aa660b1a344d19932a59850f0e83fbe03",
-        "bytes": 21383017,
+        "sha256": "95295ce0bf29b6b6b414d651b197cb7ec2fccaeae677af07d56fc25eb2d11ccf",
+        "bytes": 45229961,
         "submitted": false,
         "retention": "remote execution workspace only"
       },
@@ -185,14 +211,19 @@
       "warmup_train_step_steps": 1,
       "profile_range": "train_step",
       "stage_ranges": [
+        "profile/warmup",
+        "profile/measure",
         "forward",
         "attention",
+        "attention/scores",
+        "attention/softmax",
+        "attention/value",
         "backward",
         "optimizer"
       ],
       "raw_trace": {
-        "sha256": "fd27ab59dbef99b64c8c299acb7155dd25b7ddb067344b7692fbe2fc08f05a7e",
-        "bytes": 21510682,
+        "sha256": "fe3fd99fbc14c89e8d552012d1ce33e720268e25ce4d31fa7f56cfbb1cac9fda",
+        "bytes": 45334557,
         "submitted": false,
         "retention": "remote execution workspace only"
       },
@@ -222,14 +253,19 @@
       "warmup_train_step_steps": 1,
       "profile_range": "train_step",
       "stage_ranges": [
+        "profile/warmup",
+        "profile/measure",
         "forward",
         "attention",
+        "attention/scores",
+        "attention/softmax",
+        "attention/value",
         "backward",
         "optimizer"
       ],
       "raw_trace": {
-        "sha256": "1752b1e936ab04cf19c5bbacf6c27a5acc4cbbfee278d5cd71388cd421ce04ec",
-        "bytes": 21717855,
+        "sha256": "d5c7166215323911d72408d8e632bc00c9ecd132b674ab1208917b710fd74202",
+        "bytes": 45730510,
         "submitted": false,
         "retention": "remote execution workspace only"
       },
@@ -244,5 +280,10 @@
       "summary_command": "/usr/bin/python3 -m profiling.trace_summarize --trace /inspire/hdd/project/exploration-topic/public/yxtian/summerquest_tianyixian_a2_review_20260825/assignment2-systems/results/review_a2p_20260825/profile_matrix/medium_c1024_fp32/medium_c1024_fp32.trace.json --output-dir /inspire/hdd/project/exploration-topic/public/yxtian/summerquest_tianyixian_a2_review_20260825/assignment2-systems/results/review_a2p_20260825/profile_matrix/medium_c1024_fp32 --dtype fp32 --model-size medium --context-length 1024 --batch-size 4 --warmup-steps 1 --seed 42",
       "trace_file": "medium_c1024_fp32/medium_c1024_fp32.trace.json"
     }
-  ]
+  ],
+  "student": "\u7530\u4e00\u8d24",
+  "gpu": "NVIDIA H100 80GB HBM3",
+  "qzcli_job_id": "job-d8ed1c2e-354b-4a0f-8305-96255a9dffc3",
+  "qzcli_project_id": "project-f277dd4c-fa6b-4908-b75c-4416a0407a3d",
+  "qzcli_compute_group": "lcg-79b2ad0e-a375-43f3-a0b1-b4ce79710fd7"
 }
