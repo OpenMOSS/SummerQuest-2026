@@ -1,0 +1,24 @@
+{
+  "student": "\u7530\u4e00\u8d24",
+  "status": "formal_run_complete",
+  "measurement_collected": true,
+  "starter_commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+  "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.39",
+  "python": "3.12.3",
+  "torch": "2.9.0+cu128",
+  "cuda": "12.8",
+  "gpu": "NVIDIA H100 80GB HBM3",
+  "qzcli_job_id": "job-d680cb50-f852-4b1a-9c3c-0d7f049d3889",
+  "qzcli_project_id": "project-f277dd4c-fa6b-4908-b75c-4416a0407a3d",
+  "qzcli_compute_group": "lcg-7a513e40-d82b-4d6f-888f-9a74a9cae04e",
+  "allocator_limit_mib": 23552,
+  "allocator_guard": "each benchmark subprocess applies torch.cuda.set_per_process_memory_fraction before first CUDA tensor allocation",
+  "execution_order": [
+    "correctness",
+    "checkpoint",
+    "attention",
+    "compile",
+    "flash",
+    "memory_evidence"
+  ]
+}

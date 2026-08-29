@@ -1,0 +1,44 @@
+{
+  "status": "verified_for_completed_runs",
+  "hardware": "NVIDIA H200",
+  "allocation": "4 GPUs in one instance",
+  "launcher": "external qzcli wrapper; not the sequential run_a2k.py entry point",
+  "mapping": {
+    "GPU0": ["checkpoint matrix", "correctness", "memory evidence"],
+    "GPU1": ["compiled attention"],
+    "GPU2": ["Flash core matrix"],
+    "GPU3": ["compiled small model"]
+  },
+  "semantics": "CUDA_VISIBLE_DEVICES isolated each shard; every CSV row reports one-GPU timing and allocator peak.",
+  "multi_gpu_speedup_claim": false,
+  "owner_verified_by_qzcli": "田一贤",
+  "project_verified_by_qzcli": "前沿课题探索",
+  "completed_job_status": "job_succeeded",
+  "field_probe_status": "separate H200 nvidia-smi probe stopped after no H200 capacity; not used for completed result claims",
+  "qzcli_api_checks": {
+    "core": {
+      "created_by": "田一贤",
+      "gpu": "H200",
+      "gpu_count": 4,
+      "project": "前沿课题探索",
+      "status": "job_succeeded"
+    },
+    "boundary": {
+      "created_by": "田一贤",
+      "gpu": "H200",
+      "gpu_count": 1,
+      "project": "前沿课题探索",
+      "status": "job_succeeded",
+      "scope": "sequence 16384, warmup 1, measurement 1"
+    }
+  },
+  "artifact_hashes": {
+    "checkpointing.csv": "1500575d7f7a91fc32cbeebc345b137b2cc912f91a6e5bb0df905a09d193b859",
+    "attention_baseline.csv": "6af02bc89f2e3bb875fe0ae4155492a94679c9fdd6f3af9213dcf53f959e3499",
+    "compile_comparison.csv": "f2b73ac11ea44e08ba3189415cd162739f64cb65359821b837fa8e2c2254f107",
+    "flash_boundary.csv": "ab140acaca5da1b85f51f0b73a5a6f98f3466103cff550bb050e5dafe9b974d7",
+    "flash_benchmark.csv": "516e0e859243dbb4b53be3dcbafdd620cc7370ea579bb85a4c22423bac20425e",
+    "correctness.json": "a6cb1d7436b9b96407c2adea235fea7dfaec70044a7388005a9888abe9cd3586",
+    "memory_evidence.json": "01b69345910f4f4e10ca5e25d78bf5d335158445ef1cdae5fbfe659aa037580c"
+  }
+}

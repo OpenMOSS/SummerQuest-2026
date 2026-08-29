@@ -1,0 +1,4 @@
+warning: scalar conversion of a tensor with requires_grad=True (path redacted)
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  out_error = float((out - ref).abs().max())
+{'status': 'pass', 'rows': [{'causal': False, 'output_max_abs_error': 0.00390625, 'lse_max_abs_error': 4.76837158203125e-07, 'gradient_max_abs_error': 0.00390625}, {'causal': True, 'output_max_abs_error': 0.0078125, 'lse_max_abs_error': 4.76837158203125e-07, 'gradient_max_abs_error': 0.015625}]}

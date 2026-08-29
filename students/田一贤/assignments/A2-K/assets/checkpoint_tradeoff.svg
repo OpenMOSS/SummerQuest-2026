@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="300" viewBox="0 0 760 300" role="img" aria-label="Activation checkpointing memory compute tradeoff">
+  <rect width="760" height="300" fill="#fff"/>
+  <text x="30" y="38" font-family="sans-serif" font-size="24" fill="#1a202c">Checkpoint boundary trade-off</text>
+  <line x1="90" y1="235" x2="700" y2="235" stroke="#475569" stroke-width="2"/>
+  <line x1="90" y1="70" x2="90" y2="235" stroke="#475569" stroke-width="2"/>
+  <text x="315" y="275" font-family="sans-serif" font-size="15" fill="#334155">larger block size →</text>
+  <text x="17" y="170" transform="rotate(-90 17 170)" font-family="sans-serif" font-size="15" fill="#334155">relative cost</text>
+  <path d="M110 95 C250 130 430 180 680 215" fill="none" stroke="#2563eb" stroke-width="4"/>
+  <path d="M110 215 C270 175 430 125 680 95" fill="none" stroke="#dc2626" stroke-width="4"/>
+  <circle cx="600" cy="199" r="5" fill="#2563eb"/><circle cx="600" cy="112" r="5" fill="#dc2626"/>
+  <text x="530" y="220" font-family="sans-serif" font-size="14" fill="#1d4ed8">saved activation</text>
+  <text x="510" y="90" font-family="sans-serif" font-size="14" fill="#b91c1c">recompute work</text>
+</svg>

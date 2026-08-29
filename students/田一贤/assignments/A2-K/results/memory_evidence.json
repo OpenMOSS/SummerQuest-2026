@@ -1,0 +1,26 @@
+{
+  "status": "pass",
+  "measurement_collected": true,
+  "evaluation_type": "self_supervised_proxy",
+  "proxy_source": "torch.cuda.max_memory_reserved",
+  "allocator": {
+    "runtime_guard": "torch.cuda.set_per_process_memory_fraction",
+    "runtime_guard_applied": true,
+    "allocator_fraction": 0.2904749571416238,
+    "allocator_limit_mib": 23552,
+    "guarded_pass_rows": 118,
+    "total_pass_rows": 118,
+    "all_formal_pass_rows_guarded": true,
+    "observed_allocator_fractions": [
+      0.2904749571416238
+    ]
+  },
+  "hard_limit_mib": 24576,
+  "pytorch_peak_allocated_mib": 19710.2626953125,
+  "pytorch_peak_reserved_mib": 20212.0,
+  "within_24gib": true,
+  "nvidia_smi": {
+    "max_gpu_memory_used_mib": 20212.0,
+    "source": "pytorch_peak_reserved_proxy; nvidia-smi not collected"
+  }
+}
