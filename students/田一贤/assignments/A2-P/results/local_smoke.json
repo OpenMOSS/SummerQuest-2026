@@ -1,0 +1,18 @@
+{
+  "student": "田一贤",
+  "scope": "implementation smoke only; not part of the formal H100/H200 matrix",
+  "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "torch": "2.6.0+cu124",
+  "cuda_runtime": "12.4",
+  "model_size": "small",
+  "batch_size": 1,
+  "context_length": 16,
+  "mode": "forward",
+  "warmup": 1,
+  "steps": 1,
+  "dtype": "fp32",
+  "samples_ms": [53.1077],
+  "peak_allocated_mib": 501.0,
+  "peak_reserved_mib": 562.0,
+  "status": "pass"
+}

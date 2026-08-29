@@ -1,0 +1,68 @@
+{
+  "status": "verified_for_completed_runs",
+  "verification_method": "qzcli status --json plus SHA-256 comparison of shared execution artifacts",
+  "owner": "田一贤",
+  "project": "前沿课题探索",
+  "completed_runs": [
+    {
+      "assignment": "A2-P",
+      "gpu": "NVIDIA H200",
+      "gpu_count": 4,
+      "status": "job_succeeded",
+      "launcher": "external qzcli wrapper",
+      "shards": ["benchmark", "torch.profiler FP32", "torch.profiler BF16", "XL memory 128/2048"]
+    }
+  ],
+  "artifact_hashes": {
+    "artifact_path_base": "students/田一贤/assignments",
+    "exact_shared_to_submission": [
+      "A2-P/results/benchmark.csv"
+    ],
+    "derived_after_download": [
+      "A2-P/results/mixed_precision.json",
+      "A2-P/results/memory/peaks.csv"
+    ],
+    "raw_profile_trace_sha256": {
+      "fp32": "8626d901c7a1c791f838af8bafa0c123f0bed359652b427333f4d5aaa085c112",
+      "bf16": "c3f1befcbde84b9064a136950125d803186f08209b45d381e236c840323577b9"
+    },
+    "shared_artifact_hashes": {
+      "A2-P/results/benchmark.csv": "919d578b439a954dc20a839092afff6c811467f43f044491ef69282c3f26d1a0"
+    },
+    "derived_artifact_hashes": {
+      "A2-P/results/mixed_precision.json": "08e23387dae6e92add9d2663950d1348ceb4d08ef6f0de23f4b30f72fad0b843",
+      "A2-P/results/memory/peaks.csv": "292a2ded5555c821d983aa775d694a624bb543ecc8e0090aed4adb644c055eb2"
+    }
+  },
+  "execution_scope": {
+    "per_gpu_mapping": "The completed A2-P qzcli run used four independent single-GPU shards, but the execution wrapper did not retain a GPU0-GPU3 ordinal mapping in the submitted artifact; no cross-GPU speedup claim is made.",
+    "seed_scope": {
+      "benchmark": 42,
+      "torch_profiler_fp32": 42,
+      "torch_profiler_bf16": 42,
+      "memory_snapshot": "not explicitly set by memory_snapshot.py",
+      "mixed_precision": 42
+    },
+    "synchronize_before_after": {
+      "benchmark": true,
+      "torch_profiler": true,
+      "memory_snapshot": true,
+      "mixed_precision": "not a timed CUDA benchmark"
+    }
+  },
+  "qzcli_api_checks": {
+    "A2-P": {
+      "created_by": "田一贤",
+      "gpu": "H200",
+      "gpu_count": 4,
+      "project": "前沿课题探索",
+      "status": "job_succeeded"
+    }
+  },
+  "field_probe": {
+    "status": "stopped_unschedulable_no_h200_capacity",
+    "purpose": "direct nvidia-smi versus PyTorch allocator probe",
+    "not_used_for_completed_result_claims": true
+  },
+  "public_scope_note": "No multi-GPU speedup claim; each benchmark row is a single visible-GPU measurement. Job IDs and internal paths are intentionally omitted from the submitted artifact."
+}

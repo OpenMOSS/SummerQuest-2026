@@ -1,0 +1,9 @@
+context_length,dtype,largest_allocation_mib,mode,model_size,peak_allocated_mib,peak_reserved_mib,status
+128,bf16,100.0,forward,xl,20526.10205078125,20560.0,pass
+128,bf16,100.0,train_step,xl,65493.3125,68044.0,pass
+128,fp32,100.0,forward,xl,14526.59033203125,14542.0,pass
+128,fp32,100.0,train_step,xl,65561.09765625,66982.0,pass
+2048,bf16,512.0,forward,xl,56539.798828125,56688.0,pass
+2048,bf16,100.0,train_step,xl,65285.486328125,67302.0,pass
+2048,fp32,512.0,forward,xl,65821.798828125,66610.0,pass
+2048,fp32,100.0,train_step,xl,67398.5849609375,68660.0,pass

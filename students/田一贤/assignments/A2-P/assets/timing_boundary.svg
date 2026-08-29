@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="250" viewBox="0 0 760 250" role="img" aria-label="CUDA benchmark timing boundary">
+  <rect width="760" height="250" fill="#f8fafc"/>
+  <text x="30" y="38" font-family="sans-serif" font-size="23" fill="#0f172a">CUDA timing boundary (schematic)</text>
+  <rect x="45" y="95" width="115" height="60" rx="8" fill="#e2e8f0"/><text x="65" y="130" font-family="sans-serif" font-size="15">warm-up</text>
+  <rect x="185" y="95" width="115" height="60" rx="8" fill="#dbeafe"/><text x="205" y="120" font-family="sans-serif" font-size="14">synchronize</text><text x="224" y="142" font-family="sans-serif" font-size="14">start</text>
+  <rect x="325" y="95" width="145" height="60" rx="8" fill="#dcfce7"/><text x="352" y="130" font-family="sans-serif" font-size="15">measured step</text>
+  <rect x="495" y="95" width="115" height="60" rx="8" fill="#dbeafe"/><text x="515" y="120" font-family="sans-serif" font-size="14">synchronize</text><text x="535" y="142" font-family="sans-serif" font-size="14">stop</text>
+  <rect x="635" y="95" width="80" height="60" rx="8" fill="#fef3c7"/><text x="654" y="130" font-family="sans-serif" font-size="14">sample</text>
+  <path d="M160 125H185M300 125H325M470 125H495M610 125H635" stroke="#475569" stroke-width="3"/>
+</svg>

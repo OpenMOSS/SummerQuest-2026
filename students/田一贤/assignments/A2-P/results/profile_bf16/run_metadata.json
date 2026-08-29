@@ -1,0 +1,24 @@
+{
+  "status": "pass",
+  "measurement_collected": true,
+  "evaluation_type": "self_supervised_proxy",
+  "tool": "torch.profiler Chrome trace",
+  "gpu": "NVIDIA H200",
+  "model_size": "small",
+  "context_length": 512,
+  "batch_size": 4,
+  "dtype": "bf16",
+  "profiled_steps": 1,
+  "warmup_forward_steps": 1,
+  "stage_ranges": [
+    "forward",
+    "backward",
+    "optimizer"
+  ],
+  "raw_trace": {
+    "sha256": "c3f1befcbde84b9064a136950125d803186f08209b45d381e236c840323577b9",
+    "bytes": 13836589,
+    "submitted": false,
+    "retention": "remote execution workspace only"
+  }
+}

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="280" viewBox="0 0 760 280" role="img" aria-label="Training step memory lifecycle schematic">
+  <rect width="760" height="280" fill="#f8fafc"/>
+  <text x="30" y="38" font-family="sans-serif" font-size="23" fill="#0f172a">Training-step memory lifecycle (schematic)</text>
+  <line x1="70" y1="230" x2="710" y2="230" stroke="#475569" stroke-width="2"/>
+  <line x1="70" y1="65" x2="70" y2="230" stroke="#475569" stroke-width="2"/>
+  <path d="M80 210 L160 180 L270 125 L370 82 L455 135 L555 165 L640 110 L700 145" fill="none" stroke="#7c3aed" stroke-width="4"/>
+  <line x1="370" y1="75" x2="370" y2="230" stroke="#cbd5e1" stroke-dasharray="5 5"/>
+  <line x1="575" y1="75" x2="575" y2="230" stroke="#cbd5e1" stroke-dasharray="5 5"/>
+  <text x="165" y="255" font-family="sans-serif" font-size="14" fill="#334155">forward / saved tensors</text>
+  <text x="405" y="255" font-family="sans-serif" font-size="14" fill="#334155">backward / gradients</text>
+  <text x="610" y="255" font-family="sans-serif" font-size="14" fill="#334155">AdamW</text>
+</svg>

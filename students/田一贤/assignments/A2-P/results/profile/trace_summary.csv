@@ -1,0 +1,31 @@
+name,calls,cpu_time_us,cuda_time_us,status
+autograd::engine::evaluate_function: IndexBackward0,1,77650.86,0.0,measured_from_raw_trace
+IndexBackward0,1,77637.537,0.0,measured_from_raw_trace
+aten::_index_put_impl_,1,77532.18,0.0,measured_from_raw_trace
+aten::remainder,2,33130.831999999995,0.0,measured_from_raw_trace
+aten::bmm,327,19756.504000000004,0.0,measured_from_raw_trace
+aten::_foreach_sqrt,1,19571.748,0.0,measured_from_raw_trace
+autograd::engine::evaluate_function: BmmBackward0,109,18489.715999999997,0.0,measured_from_raw_trace
+aten::div_,2,17819.892,0.0,measured_from_raw_trace
+BmmBackward0,109,17639.02699999998,0.0,measured_from_raw_trace
+autograd::engine::evaluate_function: MaxBackward0,12,12260.259000000002,0.0,measured_from_raw_trace
+MaxBackward0,12,12025.066,0.0,measured_from_raw_trace
+aten::value_selecting_reduction_backward,12,11967.503999999999,0.0,measured_from_raw_trace
+aten::scatter_,12,11562.014000000001,0.0,measured_from_raw_trace
+aten::einsum,109,10352.086000000003,0.0,measured_from_raw_trace
+autograd::engine::evaluate_function: DivBackward0,24,10041.396999999997,0.0,measured_from_raw_trace
+DivBackward0,24,9676.407999999996,0.0,measured_from_raw_trace
+aten::cross_entropy_loss,1,9575.796,0.0,measured_from_raw_trace
+aten::neg,48,9234.747999999998,0.0,measured_from_raw_trace
+aten::divide_,1,8930.55,0.0,measured_from_raw_trace
+aten::mul,590,7068.781000000001,0.0,measured_from_raw_trace
+aten::log_softmax,1,6981.969,0.0,measured_from_raw_trace
+aten::_log_softmax,1,6937.8,0.0,measured_from_raw_trace
+autograd::engine::evaluate_function: MulBackward0,170,6093.487999999998,0.0,measured_from_raw_trace
+autograd::engine::evaluate_function: PermuteBackward0,617,5684.395000000001,0.0,measured_from_raw_trace
+autograd::engine::evaluate_function: SigmoidBackward0,12,5271.724999999999,0.0,measured_from_raw_trace
+aten::_foreach_div_,1,5248.272,0.0,measured_from_raw_trace
+SigmoidBackward0,12,5047.774000000001,0.0,measured_from_raw_trace
+aten::sigmoid_backward,12,4979.983999999999,0.0,measured_from_raw_trace
+aten::reshape,825,4860.762999999997,0.0,measured_from_raw_trace
+aten::permute,1234,4444.578000000001,0.0,measured_from_raw_trace
