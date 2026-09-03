@@ -1,0 +1,4 @@
+{"event": "train_start", "timestamp": 1788341849.3529828, "input_path": "data/TinyStories/TinyStoriesV2-GPT4-train.txt", "vocab_size": 10000}
+{"event": "train_complete", "train_time_sec": 854.283171415329, "memory_peak_mb": 2396.4453125}
+{"event": "longest_token", "token_id": 7160, "token_bytes_length": 15, "token_bytes_utf8": " accomplishment"}
+{"event": "metrics", "train_time_sec": 854.283171415329, "memory_peak_mb": 2396.4453125, "longest_token_bytes_length": 15, "val_raw_bytes": 22502601, "val_num_tokens": 5465878, "val_compression_ratio": 4.116923392728488, "val_throughput_tokens_per_sec": 165856.7707324111, "train_raw_bytes": 2227753162, "train_num_tokens": 541229176, "train_compression_ratio": 4.116099539319736, "train_throughput_tokens_per_sec": 161560.49059169152}
