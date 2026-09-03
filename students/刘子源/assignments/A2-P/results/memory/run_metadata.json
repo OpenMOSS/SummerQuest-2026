@@ -1,0 +1,77 @@
+[
+  {
+    "source": "memory/medium-512-train-step-fallback.json",
+    "metadata": {
+      "cuda": "12.6",
+      "device": "cuda:0",
+      "device_name": "NVIDIA GeForce RTX 3090",
+      "memory_total_mib": 24154.4,
+      "tf32": false,
+      "torch": "2.7.1+cu126",
+      "triton": "3.3.1"
+    },
+    "model_size": "medium",
+    "context_length": 512,
+    "mode": "train_step"
+  },
+  {
+    "source": "memory/xl-128-forward.json",
+    "metadata": {
+      "cuda": "12.6",
+      "device": "cuda:0",
+      "device_name": "NVIDIA GeForce RTX 3090",
+      "memory_total_mib": 24154.4,
+      "tf32": false,
+      "torch": "2.7.1+cu126",
+      "triton": "3.3.1"
+    },
+    "model_size": "xl",
+    "context_length": 128,
+    "mode": "forward"
+  },
+  {
+    "source": "memory/xl-128-train-step.json",
+    "metadata": {
+      "cuda": "12.6",
+      "device": "cuda:0",
+      "device_name": "NVIDIA GeForce RTX 3090",
+      "memory_total_mib": 24154.4,
+      "tf32": false,
+      "torch": "2.7.1+cu126",
+      "triton": "3.3.1"
+    },
+    "model_size": "xl",
+    "context_length": 128,
+    "mode": "train_step"
+  },
+  {
+    "source": "memory/xl-2048-forward.json",
+    "metadata": {
+      "cuda": "12.6",
+      "device": "cuda:0",
+      "device_name": "NVIDIA GeForce RTX 3090",
+      "memory_total_mib": 24154.4,
+      "tf32": false,
+      "torch": "2.7.1+cu126",
+      "triton": "3.3.1"
+    },
+    "model_size": "xl",
+    "context_length": 2048,
+    "mode": "forward"
+  },
+  {
+    "source": "memory/xl-2048-train-step.json",
+    "metadata": {
+      "cuda": "12.6",
+      "device": "cuda:0",
+      "device_name": "NVIDIA GeForce RTX 3090",
+      "memory_total_mib": 24154.4,
+      "tf32": false,
+      "torch": "2.7.1+cu126",
+      "triton": "3.3.1"
+    },
+    "model_size": "xl",
+    "context_length": 2048,
+    "mode": "train_step"
+  }
+]
