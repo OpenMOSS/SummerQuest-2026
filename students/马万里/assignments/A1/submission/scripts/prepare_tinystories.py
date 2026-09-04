@@ -157,12 +157,12 @@ def encode_file(tokenizer, file_path, chunk_size=1024*1024):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--train_file", type=str, default="TinyStoriesV2-GPT4-train.txt")
-    
+
     # 让默认日志目录指向项目根目录下的 logs
     script_dir = Path(__file__).resolve().parent
     project_root = script_dir.parent
     default_log_dir = project_root / "log"
-    
+
     parser.add_argument("--log_dir", type=str, default=str(default_log_dir))
     args = parser.parse_args()
     main(args)

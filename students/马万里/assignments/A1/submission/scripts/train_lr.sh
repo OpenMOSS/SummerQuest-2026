@@ -3,7 +3,7 @@
 export PYTHONPATH=/remote-home1/wlma/work/assignment1-basics:$PYTHONPATH
 
 # 学习率列表（可根据需要增减）
-LR_LIST=("1e-4" "1e-3"  "1e-2" "1e-1" "1e0" "10") 
+LR_LIST=("1e-4" "1e-3"  "1e-2" "1e-1" "1e0" "10")
 
 for LR in "${LR_LIST[@]}"; do
     echo "===== Training with lr=${LR} ====="

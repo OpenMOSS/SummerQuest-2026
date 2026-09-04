@@ -7,16 +7,16 @@ def cross_entropy(logits: torch.Tensor, targets: torch.Tensor):
     vocab_size = logits.size(-1)
     logits_flat = logits.reshape(-1, vocab_size)
     targets_flat = targets.reshape(-1)
-    
+
     logits_max = torch.max(logits_flat, dim=-1, keepdim=True).values
     logits_shifted = logits_flat - logits_max
-    
+
     log_sum_exp = torch.log(torch.sum(torch.exp(logits_shifted), dim=-1, keepdim=True))
-    
+
     log_probs = logits_shifted - log_sum_exp
-    
+
     nll = -log_probs.gather(dim=-1, index=targets_flat.unsqueeze(-1)).squeeze(-1)
-    
+
     return nll.mean()
 
 class AdamW(Optimizer):
@@ -31,10 +31,10 @@ class AdamW(Optimizer):
             raise ValueError(f"Invalid beta parameter at index 1: {betas[1]}")
         if weight_decay < 0.0:
             raise ValueError(f"Invalid weight_decay value: {weight_decay}")
-        
+
         defaults = dict(lr=lr, betas=betas, eps=eps, weight_decay=weight_decay)
         super().__init__(params, defaults)
-        
+
     @torch.no_grad()
     def step(self, closure=None):
         loss = None
@@ -77,7 +77,7 @@ class AdamW(Optimizer):
                 p.addcdiv_(exp_avg, denom, value=-step_size)
 
         return loss
-    
+
 def get_lr_cosine_schedule(
     it: int,
     max_learning_rate: float,
@@ -94,7 +94,7 @@ def get_lr_cosine_schedule(
         progress = (it - warmup_iters) / (cosine_cycle_iters - warmup_iters)
         lr = min_lr + 0.5 * (1 + cos(pi * progress)) * (max_lr - min_lr)
     """
-    
+
     if it < warmup_iters:
         # 线性 warmup 阶段
         return max_learning_rate * (it /warmup_iters)
@@ -103,7 +103,7 @@ def get_lr_cosine_schedule(
         progress = (it - warmup_iters) / (cosine_cycle_iters - warmup_iters)
         progress = min(1.0, max(0.0, progress))
         return min_learning_rate + 0.5 * (1 + math.cos(math.pi * progress)) * (max_learning_rate - min_learning_rate)
-    
+
 def clip_gradients(
     parameters,
     max_12_norm: float,
@@ -120,13 +120,13 @@ def clip_gradients(
     params_with_grad = [p for p in parameters if p.grad is not None]
     if not params_with_grad:
         return
-    
+
     total_norm = 0.0
     for p in params_with_grad:
         grad = p.grad
         total_norm += grad.norm(2).item() ** 2
     total_norm = math.sqrt(total_norm)
-    
+
     clip_coef = max_12_norm / (total_norm + eps)
     if clip_coef < 1.0:
         for p in params_with_grad:

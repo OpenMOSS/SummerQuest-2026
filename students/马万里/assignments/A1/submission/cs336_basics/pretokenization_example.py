@@ -1,7 +1,6 @@
 import os
 from typing import BinaryIO
 
-
 def find_chunk_boundaries(
     file: BinaryIO,
     desired_num_chunks: int,
@@ -47,7 +46,6 @@ def find_chunk_boundaries(
 
     # Make sure all boundaries are unique, but might be fewer than desired_num_chunks
     return sorted(set(chunk_boundaries))
-
 
 ## Usage
 with open(..., "rb") as f:

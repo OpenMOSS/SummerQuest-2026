@@ -1,31 +1,31 @@
-import torch 
+import torch
 import math
-import torch.nn as nn 
+import torch.nn as nn
 
 class Linear(nn.Module):
     def __init__(self, d_in, d_out):
         super().__init__()
         self.weight = nn.Parameter(torch.empty(d_out, d_in))
         nn.init.kaiming_uniform_(self.weight, a=math.sqrt(5))
-    
+
     def forward(self, x):
         return x @ self.weight.T
-    
+
 class Embedding(nn.Module):
     def __init__(self, vocab_size, d_model):
         super().__init__()
         self.weight = nn.Parameter(torch.empty(vocab_size, d_model))
         nn.init.normal_(self.weight, mean=0, std=1.0)
-    
+
     def forward(self, x):
         return self.weight[x]
-    
+
 class RMSNorm(nn.Module):
     def __init__(self, d_model: int, eps: float = 1e-5):
         super().__init__()
         self.eps = eps
         self.weight = nn.Parameter(torch.ones(d_model))
-        
+
     def forward(self, x):
         # 先转换成float32计算，避免溢出
         x_f32 = x.float()
@@ -45,7 +45,7 @@ class SwiGLU(nn.Module):
 
     def forward(self, x):
         return self.W2(silu(self.W1(x)) * self.W3(x))
-    
+
 def rope(
     x: torch.Tensor,
     token_positions: torch.Tensor,
@@ -53,27 +53,27 @@ def rope(
     theta: float
 ) -> torch.Tensor:
     assert d_k % 2 == 0, "RoPE requires even d_k"
-    
+
     # 计算逆频率 1 / (theta^(2i/d_k))
     inv_freq = 1.0 / (theta ** (torch.arange(0, d_k, 2, device=x.device, dtype=torch.float32) / d_k))
-    
+
     positions = token_positions.float().unsqueeze(-1)
     angles = positions * inv_freq
-    
+
     cos = torch.cos(angles)
     sin = torch.sin(angles)
-    
+
     # 拆分奇偶维度
     x_even = x[..., 0::2]
     x_odd = x[..., 1::2]
-    
+
     # 旋转
     out_even = x_even * cos - x_odd * sin
     out_odd = x_even * sin + x_odd * cos
-    
+
     out = torch.stack([out_even, out_odd], dim=-1).flatten(-2)
     return out
-    
+
 def softmax(x, dim):
     x_max = torch.max(x, dim=dim, keepdim=True).values
     x_exp = torch.exp(x - x_max)
@@ -87,12 +87,12 @@ def scaled_dot_product_attention(
 ):
     d_k = Q.size(-1)
     scores = torch.einsum('... q d, ... k d -> ... q k', Q, K) / (d_k ** 0.5)
-    
+
     if mask is not None:
         scores = scores.masked_fill(~mask, float("-inf"))
-    
+
     attn_weights = softmax(scores, dim=-1)
-    
+
     output = torch.einsum('... q k, ... k d -> ... q d', attn_weights, V)
     return output
 
@@ -103,29 +103,29 @@ class MultiHeadSelfAttention(nn.Module):
         self.d_model = d_model
         self.num_heads = num_heads
         self.head_dim = d_model // num_heads
-        
+
         self.q_proj = Linear(d_model, d_model)
         self.k_proj = Linear(d_model, d_model)
         self.v_proj = Linear(d_model, d_model)
         self.o_proj = Linear(d_model, d_model)
-        
+
     def forward(self, x):
         batch_size, seq_len, _ = x.shape
-        
+
         # 线性投影，然后拆分为多头
         Q = self.q_proj(x).view(batch_size, seq_len, self.num_heads, self.head_dim).transpose(1, 2)
         K = self.k_proj(x).view(batch_size, seq_len, self.num_heads, self.head_dim).transpose(1, 2)
         V = self.v_proj(x).view(batch_size, seq_len, self.num_heads, self.head_dim).transpose(1, 2)
-        
+
         # 因果 mask：下三角为 True，上三角为 False
         causal_mask = torch.tril(torch.ones(seq_len, seq_len, dtype=torch.bool, device=x.device))
-        
+
         # 注意力计算
         attn_output = scaled_dot_product_attention(Q, K, V, mask=causal_mask)
-        
+
         # 合并多头：(B, num_heads, T, head_dim) -> (B, T, d_model)
         attn_output = attn_output.transpose(1, 2).contiguous().view(batch_size, seq_len, self.d_model)
-        
+
         return self.o_proj(attn_output)
 
 class MultiHeadSelfAttentionWithRoPE(nn.Module):
@@ -178,13 +178,13 @@ class MultiHeadSelfAttentionWithRoPE(nn.Module):
         # 合并多头
         attn_output = attn_output.transpose(1, 2).contiguous().view(batch_size, seq_len, self.d_model)
         return self.o_proj(attn_output)
-    
+
 class TransformerBlock(nn.Module):
     def __init__(
-        self, 
-        d_model: int, 
-        num_heads: int, 
-        d_ff: int, 
+        self,
+        d_model: int,
+        num_heads: int,
+        d_ff: int,
         theta: float = 10000.0,
         ffn_cls=SwiGLU
     ):
@@ -198,11 +198,11 @@ class TransformerBlock(nn.Module):
         batch_size, seq_len, _ = x.shape
         # 自动生成位置索引（如果模型没有外部传入）
         token_positions = torch.arange(seq_len, device=x.device).unsqueeze(0).expand(batch_size, seq_len)
-        
+
         x = x + self.attn(self.ln1(x), token_positions)
         x = x + self.ffn(self.ln2(x))
         return x
-    
+
 class TransformerLM(nn.Module):
     def __init__(
         self,
@@ -218,7 +218,7 @@ class TransformerLM(nn.Module):
     ):
         super().__init__()
         self.token_embedding = Embedding(vocab_size, d_model)
-        
+
         if use_silu_ffn:
             ffn_cls = SiLUFFN
             d_ff = int(d_ff * 1.5)
@@ -235,19 +235,19 @@ class TransformerLM(nn.Module):
             block_cls = TransformerBlockNoPE
         else:
             raise ValueError(f"Unknown block_type: {block_type}")
-        
+
         self.layers = nn.ModuleList([
             block_cls(d_model, num_heads, d_ff, theta, ffn_cls)
             for _ in range(num_layers)
         ])
-        
+
         if block_type != "no_rmsnorm":
             self.final_norm = RMSNorm(d_model)
         else:
             self.final_norm = nn.Identity()   # 无 norm
-            
+
         self.lm_head = Linear(d_model, vocab_size)
-        
+
     def forward(self, token_ids):
         x = self.token_embedding(token_ids)
         for layer in self.layers:
@@ -255,7 +255,7 @@ class TransformerLM(nn.Module):
         x = self.final_norm(x)
         logits = self.lm_head(x)
         return logits
-    
+
 # 消融实验相关模型
 class SiLUFFN(nn.Module):
     def __init__(self, d_model: int, d_ff: int):
@@ -265,7 +265,7 @@ class SiLUFFN(nn.Module):
 
     def forward(self, x):
         return self.W2(silu(self.W1(x)))
-    
+
 class TransformerBlockPostNorm(nn.Module):
     def __init__(self, d_model, num_heads, d_ff, theta=10000.0, ffn_cls=SwiGLU):
         super().__init__()
@@ -300,7 +300,7 @@ class TransformerBlockNoRMSNorm(nn.Module):
         x = x + self.attn(x, token_positions)
         x = x + self.ffn(x)
         return x
-    
+
 class TransformerBlockNoPE(nn.Module):
     def __init__(self, d_model, num_heads, d_ff, theta=10000.0, ffn_cls=SwiGLU):
         super().__init__()

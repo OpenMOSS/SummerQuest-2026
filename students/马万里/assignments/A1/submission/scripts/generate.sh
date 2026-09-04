@@ -8,4 +8,4 @@ python scripts/generate.py \
     --max_tokens 256 \
     --temperature 1.0 \
     --top_p 0.9 \
-    --device cpu
+    --device cuda:0

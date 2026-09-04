@@ -9,7 +9,6 @@ import torch
 from jaxtyping import Bool, Float, Int
 from torch import Tensor
 
-
 def run_linear(
     d_in: int,
     d_out: int,
@@ -34,7 +33,6 @@ def run_linear(
     linear.weight.data.copy_(weights)
     return linear(in_features)
 
-
 def run_embedding(
     vocab_size: int,
     d_model: int,
@@ -58,7 +56,6 @@ def run_embedding(
     embedding = Embedding(vocab_size, d_model)
     embedding.weight.data.copy_(weights)
     return embedding(token_ids)
-
 
 def run_swiglu(
     d_model: int,
@@ -89,7 +86,6 @@ def run_swiglu(
     swiglu.W3.weight.data.copy_(w3_weight)
     return swiglu(in_features)
 
-
 def run_scaled_dot_product_attention(
     Q: Float[Tensor, " ... queries d_k"],
     K: Float[Tensor, " ... keys d_k"],
@@ -110,7 +106,6 @@ def run_scaled_dot_product_attention(
     """
     from cs336_basics.model import scaled_dot_product_attention as sdpa
     return sdpa(Q, K, V, mask)
-
 
 def run_multihead_self_attention(
     d_model: int,
@@ -151,7 +146,6 @@ def run_multihead_self_attention(
     mha.v_proj.weight.data.copy_(v_proj_weight)
     mha.o_proj.weight.data.copy_(o_proj_weight)
     return mha(in_features)
-
 
 def run_multihead_self_attention_with_rope(
     d_model: int,
@@ -199,7 +193,6 @@ def run_multihead_self_attention_with_rope(
     mha.o_proj.weight.data.copy_(o_proj_weight)
     return mha(in_features, token_positions)
 
-
 def run_rope(
     d_k: int,
     theta: float,
@@ -221,7 +214,6 @@ def run_rope(
     """
     from cs336_basics.model import rope
     return rope(in_query_or_key, token_positions, d_k, theta)
-
 
 def run_transformer_block(
     d_model: int,
@@ -294,7 +286,7 @@ def run_transformer_block(
         running the Transformer block on the input features while using RoPE.
     """
     from cs336_basics.model import TransformerBlock
-    
+
     block = TransformerBlock(d_model, num_heads, d_ff, theta)
     block.ln1.weight.data.copy_(weights["ln1.weight"])
     block.attn.q_proj.weight.data.copy_(weights["attn.q_proj.weight"])
@@ -306,7 +298,6 @@ def run_transformer_block(
     block.ffn.W3.weight.data.copy_(weights["ffn.w3.weight"])
     block.ln2.weight.data.copy_(weights["ln2.weight"])
     return block(in_features)
-
 
 def run_transformer_lm(
     vocab_size: int,
@@ -410,7 +401,6 @@ def run_transformer_lm(
 
     return model(in_indices)
 
-
 def run_rmsnorm(
     d_model: int,
     eps: float,
@@ -436,7 +426,6 @@ def run_rmsnorm(
     rmsnorm.weight.data.copy_(weights)
     return rmsnorm(in_features)
 
-
 def run_silu(in_features: Float[Tensor, " ..."]) -> Float[Tensor, " ..."]:
     """Given a tensor of inputs, return the output of applying SiLU
     to each element.
@@ -450,7 +439,6 @@ def run_silu(in_features: Float[Tensor, " ..."]) -> Float[Tensor, " ..."]:
     """
     from cs336_basics.model import silu
     return silu(in_features)
-
 
 def run_get_batch(
     dataset: npt.NDArray, batch_size: int, context_length: int, device: str
@@ -475,7 +463,6 @@ def run_get_batch(
     from cs336_basics.training import get_batch
     return get_batch(dataset, batch_size, context_length, device)
 
-
 def run_softmax(in_features: Float[Tensor, " ..."], dim: int) -> Float[Tensor, " ..."]:
     """
     Given a tensor of inputs, return the output of softmaxing the given `dim`
@@ -491,7 +478,6 @@ def run_softmax(in_features: Float[Tensor, " ..."], dim: int) -> Float[Tensor, "
     """
     from cs336_basics.model import softmax
     return softmax(in_features, dim)
-
 
 def run_cross_entropy(
     inputs: Float[Tensor, " batch_size vocab_size"], targets: Int[Tensor, " batch_size"]
@@ -511,7 +497,6 @@ def run_cross_entropy(
     from cs336_basics.optim import cross_entropy
     return cross_entropy(inputs, targets)
 
-
 def run_gradient_clipping(parameters: Iterable[torch.nn.Parameter], max_l2_norm: float) -> None:
     """Given a set of parameters, clip their combined gradients to have l2 norm at most max_l2_norm.
 
@@ -524,14 +509,12 @@ def run_gradient_clipping(parameters: Iterable[torch.nn.Parameter], max_l2_norm:
     from cs336_basics.optim import clip_gradients
     clip_gradients(parameters, max_l2_norm)
 
-
 def get_adamw_cls() -> Any:
     """
     Returns a torch.optim.Optimizer that implements AdamW.
     """
     from cs336_basics.optim import AdamW
     return AdamW
-
 
 def run_get_lr_cosine_schedule(
     it: int,
@@ -563,7 +546,6 @@ def run_get_lr_cosine_schedule(
         it, max_learning_rate, min_learning_rate, warmup_iters, cosine_cycle_iters
     )
 
-
 def run_save_checkpoint(
     model: torch.nn.Module,
     optimizer: torch.optim.Optimizer,
@@ -582,7 +564,6 @@ def run_save_checkpoint(
     """
     from cs336_basics.training import save_checkpoint
     save_checkpoint(model, optimizer, iteration, out)
-
 
 def run_load_checkpoint(
     src: str | os.PathLike | BinaryIO | IO[bytes],
@@ -604,7 +585,6 @@ def run_load_checkpoint(
     """
     from cs336_basics.training import load_checkpoint
     return load_checkpoint(src, model, optimizer)
-
 
 def get_tokenizer(
     vocab: dict[int, bytes],
@@ -628,7 +608,6 @@ def get_tokenizer(
     """
     from cs336_basics.tokenizer import Tokenizer
     return Tokenizer(vocab, merges, special_tokens)
-
 
 def run_train_bpe(
     input_path: str | os.PathLike,
@@ -657,6 +636,6 @@ def run_train_bpe(
                 representing that <token1> was merged with <token2>.
                 Merges are ordered by order of creation.
     """
-    from cs336_basics.bpe import train_bpe 
+    from cs336_basics.bpe import train_bpe
     return train_bpe(input_path, vocab_size, special_tokens)
     # raise NotImplementedError

@@ -19,7 +19,6 @@ class BPEHeap:
     def __lt__(self, other: "BPEHeap") -> bool:
         return self.pair > other.pair
 
-
 def train_bpe(
     input_path: str | PathLike,
     vocab_size: int,
@@ -67,7 +66,7 @@ def train_bpe(
             pre_token = tuple(map(byte_tokens.__getitem__, pre_token_bytes))
             if pre_token:
                 pre_token_counts[pre_token] += 1
-                
+
     words: List[Tuple[bytes, ...]] = list(pre_token_counts.keys())
     word_freqs: List[int] = [pre_token_counts[w] for w in words]
 

@@ -74,7 +74,7 @@ def train(args):
 
     # 日志记录
     log_path = os.path.join(args.log_dir, args.log_name)
-    log_file = open(log_path, "w")  
+    log_file = open(log_path, "w")
     start_time = time.time()
 
     model.train()

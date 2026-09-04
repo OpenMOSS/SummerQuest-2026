@@ -4,7 +4,6 @@ from typing import Dict, List, Tuple, Iterator, Iterable
 
 PAT = r"""'(?:[sdmt]|ll|ve|re)| ?\p{L}+| ?\p{N}+| ?[^\s\p{L}\p{N}]+|\s+(?!\S)|\s+"""
 
-
 class Tokenizer:
     def __init__(
         self,
