@@ -1,0 +1,1139 @@
+{
+  "allocator": {
+    "allocator_fraction": 0.9768130292889415,
+    "allocator_limit_mib": 23552.0,
+    "target_limit_mib": 23552
+  },
+  "excluded_nonformal_observation_count": 7,
+  "hard_limit_mib": 24576,
+  "observation_count": 112,
+  "pytorch_peak_allocated_mib": 19660.513,
+  "pytorch_peak_reserved_mib": 20164.0,
+  "runs": [
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 19.277,
+      "peak_reserved_mib": 24.0,
+      "script": "correctness.py",
+      "source": "memory_evidence.json",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 19660.513,
+      "peak_reserved_mib": 20164.0,
+      "script": "benchmark_checkpointing.py",
+      "source": "memory_evidence.json",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 1500.25,
+      "peak_reserved_mib": 1578.0,
+      "script": "benchmark_attention.py",
+      "source": "memory_evidence.json",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 2763.386,
+      "peak_reserved_mib": 3098.0,
+      "script": "benchmark_compile.py",
+      "source": "memory_evidence.json",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 5160.25,
+      "peak_reserved_mib": 6186.0,
+      "script": "benchmark_flash.py",
+      "source": "memory_evidence.json",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 267.375,
+      "peak_reserved_mib": 280.0,
+      "script": "attention_baseline",
+      "source": "attention_baseline.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 277.375,
+      "peak_reserved_mib": 282.0,
+      "script": "attention_baseline",
+      "source": "attention_baseline.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 276.875,
+      "peak_reserved_mib": 282.0,
+      "script": "attention_baseline",
+      "source": "attention_baseline.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 275.75,
+      "peak_reserved_mib": 280.0,
+      "script": "attention_baseline",
+      "source": "attention_baseline.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 277.75,
+      "peak_reserved_mib": 282.0,
+      "script": "attention_baseline",
+      "source": "attention_baseline.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 277.25,
+      "peak_reserved_mib": 282.0,
+      "script": "attention_baseline",
+      "source": "attention_baseline.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 321.25,
+      "peak_reserved_mib": 330.0,
+      "script": "attention_baseline",
+      "source": "attention_baseline.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 349.75,
+      "peak_reserved_mib": 362.0,
+      "script": "attention_baseline",
+      "source": "attention_baseline.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 341.75,
+      "peak_reserved_mib": 362.0,
+      "script": "attention_baseline",
+      "source": "attention_baseline.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 322.25,
+      "peak_reserved_mib": 332.0,
+      "script": "attention_baseline",
+      "source": "attention_baseline.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 351.25,
+      "peak_reserved_mib": 364.0,
+      "script": "attention_baseline",
+      "source": "attention_baseline.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 343.25,
+      "peak_reserved_mib": 364.0,
+      "script": "attention_baseline",
+      "source": "attention_baseline.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 1044.25,
+      "peak_reserved_mib": 1050.0,
+      "script": "attention_baseline",
+      "source": "attention_baseline.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 1494.25,
+      "peak_reserved_mib": 1564.0,
+      "script": "attention_baseline",
+      "source": "attention_baseline.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 1366.25,
+      "peak_reserved_mib": 1564.0,
+      "script": "attention_baseline",
+      "source": "attention_baseline.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 1048.25,
+      "peak_reserved_mib": 1066.0,
+      "script": "attention_baseline",
+      "source": "attention_baseline.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 1500.25,
+      "peak_reserved_mib": 1578.0,
+      "script": "attention_baseline",
+      "source": "attention_baseline.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 1372.25,
+      "peak_reserved_mib": 1578.0,
+      "script": "attention_baseline",
+      "source": "attention_baseline.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 267.375,
+      "peak_reserved_mib": 280.0,
+      "script": "compile_comparison",
+      "source": "compile_comparison.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 277.375,
+      "peak_reserved_mib": 282.0,
+      "script": "compile_comparison",
+      "source": "compile_comparison.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 276.875,
+      "peak_reserved_mib": 282.0,
+      "script": "compile_comparison",
+      "source": "compile_comparison.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 273.566,
+      "peak_reserved_mib": 278.0,
+      "script": "compile_comparison",
+      "source": "compile_comparison.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 274.254,
+      "peak_reserved_mib": 280.0,
+      "script": "compile_comparison",
+      "source": "compile_comparison.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 273.629,
+      "peak_reserved_mib": 278.0,
+      "script": "compile_comparison",
+      "source": "compile_comparison.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 322.25,
+      "peak_reserved_mib": 332.0,
+      "script": "compile_comparison",
+      "source": "compile_comparison.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 351.25,
+      "peak_reserved_mib": 364.0,
+      "script": "compile_comparison",
+      "source": "compile_comparison.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 343.25,
+      "peak_reserved_mib": 364.0,
+      "script": "compile_comparison",
+      "source": "compile_comparison.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 290.766,
+      "peak_reserved_mib": 300.0,
+      "script": "compile_comparison",
+      "source": "compile_comparison.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 300.266,
+      "peak_reserved_mib": 322.0,
+      "script": "compile_comparison",
+      "source": "compile_comparison.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 291.266,
+      "peak_reserved_mib": 302.0,
+      "script": "compile_comparison",
+      "source": "compile_comparison.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 1048.25,
+      "peak_reserved_mib": 1066.0,
+      "script": "compile_comparison",
+      "source": "compile_comparison.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 1500.25,
+      "peak_reserved_mib": 1578.0,
+      "script": "compile_comparison",
+      "source": "compile_comparison.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 1372.25,
+      "peak_reserved_mib": 1578.0,
+      "script": "compile_comparison",
+      "source": "compile_comparison.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 538.312,
+      "peak_reserved_mib": 554.0,
+      "script": "compile_comparison",
+      "source": "compile_comparison.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 672.312,
+      "peak_reserved_mib": 682.0,
+      "script": "compile_comparison",
+      "source": "compile_comparison.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 540.312,
+      "peak_reserved_mib": 554.0,
+      "script": "compile_comparison",
+      "source": "compile_comparison.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 1595.509,
+      "peak_reserved_mib": 1638.0,
+      "script": "compile_comparison",
+      "source": "compile_comparison.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 1654.113,
+      "peak_reserved_mib": 1748.0,
+      "script": "compile_comparison",
+      "source": "compile_comparison.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 2763.386,
+      "peak_reserved_mib": 3098.0,
+      "script": "compile_comparison",
+      "source": "compile_comparison.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 1378.399,
+      "peak_reserved_mib": 1462.0,
+      "script": "compile_comparison",
+      "source": "compile_comparison.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 1422.113,
+      "peak_reserved_mib": 1650.0,
+      "script": "compile_comparison",
+      "source": "compile_comparison.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 2746.011,
+      "peak_reserved_mib": 3074.0,
+      "script": "compile_comparison",
+      "source": "compile_comparison.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 267.375,
+      "peak_reserved_mib": 280.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 265.441,
+      "peak_reserved_mib": 278.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 264.439,
+      "peak_reserved_mib": 278.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 277.375,
+      "peak_reserved_mib": 282.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 274.254,
+      "peak_reserved_mib": 280.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 275.403,
+      "peak_reserved_mib": 280.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 276.875,
+      "peak_reserved_mib": 282.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 273.629,
+      "peak_reserved_mib": 278.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 275.75,
+      "peak_reserved_mib": 280.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 273.879,
+      "peak_reserved_mib": 278.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 272.877,
+      "peak_reserved_mib": 278.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 277.75,
+      "peak_reserved_mib": 282.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 274.754,
+      "peak_reserved_mib": 280.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 277.403,
+      "peak_reserved_mib": 282.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 277.25,
+      "peak_reserved_mib": 282.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 274.004,
+      "peak_reserved_mib": 278.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 321.25,
+      "peak_reserved_mib": 330.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 289.516,
+      "peak_reserved_mib": 298.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 273.508,
+      "peak_reserved_mib": 278.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 349.75,
+      "peak_reserved_mib": 362.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 298.266,
+      "peak_reserved_mib": 320.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 307.103,
+      "peak_reserved_mib": 312.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 341.75,
+      "peak_reserved_mib": 362.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 289.766,
+      "peak_reserved_mib": 300.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 322.25,
+      "peak_reserved_mib": 332.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 290.766,
+      "peak_reserved_mib": 300.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 274.758,
+      "peak_reserved_mib": 280.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 351.25,
+      "peak_reserved_mib": 364.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 300.266,
+      "peak_reserved_mib": 322.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 321.103,
+      "peak_reserved_mib": 328.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 343.25,
+      "peak_reserved_mib": 364.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 291.266,
+      "peak_reserved_mib": 302.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 1044.25,
+      "peak_reserved_mib": 1050.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 533.312,
+      "peak_reserved_mib": 538.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 277.281,
+      "peak_reserved_mib": 282.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 1494.25,
+      "peak_reserved_mib": 1564.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 664.312,
+      "peak_reserved_mib": 670.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 760.149,
+      "peak_reserved_mib": 772.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 1366.25,
+      "peak_reserved_mib": 1564.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 534.312,
+      "peak_reserved_mib": 542.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 1048.25,
+      "peak_reserved_mib": 1066.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 538.312,
+      "peak_reserved_mib": 554.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 282.281,
+      "peak_reserved_mib": 298.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 1500.25,
+      "peak_reserved_mib": 1578.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 672.312,
+      "peak_reserved_mib": 682.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 912.149,
+      "peak_reserved_mib": 938.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 1372.25,
+      "peak_reserved_mib": 1578.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 540.312,
+      "peak_reserved_mib": 554.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 3352.25,
+      "peak_reserved_mib": 4138.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 282.312,
+      "peak_reserved_mib": 298.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 5148.25,
+      "peak_reserved_mib": 5162.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 2176.212,
+      "peak_reserved_mib": 2202.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 4636.25,
+      "peak_reserved_mib": 6186.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 3360.25,
+      "peak_reserved_mib": 4138.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 292.312,
+      "peak_reserved_mib": 298.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 5160.25,
+      "peak_reserved_mib": 6186.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 2736.212,
+      "peak_reserved_mib": 2782.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
+      "formal": true,
+      "peak_allocated_mib": 4648.25,
+      "peak_reserved_mib": 6186.0,
+      "script": "flash_benchmark",
+      "source": "flash_benchmark.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": null,
+      "allocator_limit_mib": null,
+      "formal": true,
+      "peak_allocated_mib": 10065.657,
+      "peak_reserved_mib": 10224.0,
+      "script": "checkpointing",
+      "source": "checkpointing.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": null,
+      "allocator_limit_mib": null,
+      "formal": true,
+      "peak_allocated_mib": 6865.751,
+      "peak_reserved_mib": 7022.0,
+      "script": "checkpointing",
+      "source": "checkpointing.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": null,
+      "allocator_limit_mib": null,
+      "formal": true,
+      "peak_allocated_mib": 7004.47,
+      "peak_reserved_mib": 7154.0,
+      "script": "checkpointing",
+      "source": "checkpointing.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": null,
+      "allocator_limit_mib": null,
+      "formal": true,
+      "peak_allocated_mib": 7283.313,
+      "peak_reserved_mib": 7368.0,
+      "script": "checkpointing",
+      "source": "checkpointing.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": null,
+      "allocator_limit_mib": null,
+      "formal": true,
+      "peak_allocated_mib": 7839.126,
+      "peak_reserved_mib": 7962.0,
+      "script": "checkpointing",
+      "source": "checkpointing.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": null,
+      "allocator_limit_mib": null,
+      "formal": true,
+      "peak_allocated_mib": 19660.513,
+      "peak_reserved_mib": 20164.0,
+      "script": "checkpointing",
+      "source": "checkpointing.csv",
+      "status": "success"
+    },
+    {
+      "allocator_fraction": null,
+      "allocator_limit_mib": null,
+      "formal": true,
+      "peak_allocated_mib": 8063.802,
+      "peak_reserved_mib": 8414.0,
+      "script": "checkpointing",
+      "source": "checkpointing.csv",
+      "status": "success"
+    }
+  ],
+  "schema_version": 1,
+  "status": "success",
+  "within_24gib": true,
+  "within_allocator_guard": true,
+  "within_hard_limit": true
+}

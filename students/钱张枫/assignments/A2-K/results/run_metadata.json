@@ -1,0 +1,288 @@
+{
+  "runs": [
+    {
+      "allocator": {
+        "allocator_fraction": 0.9768130292889415,
+        "allocator_limit_mib": 23552
+      },
+      "command": "python -m student_scripts.a2k.correctness --formal",
+      "commit": "dcf93d8c194ce1729f8b6583850294674e010199",
+      "configuration": {
+        "atol": 0.01,
+        "batch_size": 2,
+        "dtypes": [
+          "fp32"
+        ],
+        "head_dims": [
+          32,
+          64,
+          128
+        ],
+        "rtol": 0.01,
+        "seeds": [
+          0,
+          1,
+          2
+        ],
+        "sequence_length": 128,
+        "timer": "correctness_comparison"
+      },
+      "cuda": {
+        "cuda_available": true,
+        "device": "cuda:0",
+        "driver_version": "560.28.03",
+        "free_memory_mib": 23718.0,
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "power_limit_watts": 450.0,
+        "pstate": "P0",
+        "total_memory_mib": 24564.0,
+        "visible_device_count": 1
+      },
+      "formal": true,
+      "schema_version": 1,
+      "script": "correctness.py",
+      "software": {
+        "cuda": "12.6",
+        "pytorch": "2.7.1+cu126",
+        "triton": "3.3.1"
+      },
+      "status": "success",
+      "tf32": {
+        "cudnn_allow_tf32": false,
+        "matmul_allow_tf32": false
+      },
+      "timestamp_utc": "2026-08-26T09:16:51+00:00"
+    },
+    {
+      "allocator": {
+        "allocator_fraction": 0.9768130292889415,
+        "allocator_limit_mib": 23552
+      },
+      "command": "python -m student_scripts.a2k.benchmark_checkpointing --formal",
+      "commit": "dcf93d8c194ce1729f8b6583850294674e010199",
+      "configuration": {
+        "batch_size": 1,
+        "checkpoint_block_sizes": [
+          1,
+          2,
+          4,
+          8
+        ],
+        "context_lengths": [
+          1024,
+          2048
+        ],
+        "dtype": "bf16_autocast_fp32_parameters",
+        "measurement_steps": 5,
+        "model_size": "medium",
+        "num_layers": 24,
+        "warmup_steps": 3
+      },
+      "cuda": {
+        "cuda_available": true,
+        "device": "cuda:0",
+        "driver_version": "560.28.03",
+        "free_memory_mib": 23718.0,
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "power_limit_watts": 450.0,
+        "pstate": "P2",
+        "total_memory_mib": 24564.0,
+        "visible_device_count": 1
+      },
+      "formal": true,
+      "schema_version": 1,
+      "script": "benchmark_checkpointing.py",
+      "software": {
+        "cuda": "12.6",
+        "pytorch": "2.7.1+cu126",
+        "triton": "3.3.1"
+      },
+      "status": "success",
+      "tf32": {
+        "cudnn_allow_tf32": true,
+        "matmul_allow_tf32": false
+      },
+      "timestamp_utc": "2026-08-26T09:17:56+00:00"
+    },
+    {
+      "allocator": {
+        "allocator_fraction": 0.9768130292889415,
+        "allocator_limit_mib": 23552
+      },
+      "command": "python -m student_scripts.a2k.benchmark_attention --formal",
+      "commit": "dcf93d8c194ce1729f8b6583850294674e010199",
+      "configuration": {
+        "batch_size": 1,
+        "dtype": "bfloat16",
+        "head_dims": [
+          64,
+          128
+        ],
+        "implementation": "eager_explicit_pytorch",
+        "is_causal": true,
+        "rep_ms": 300,
+        "seed": 0,
+        "sequence_lengths": [
+          512,
+          2048,
+          8192
+        ],
+        "timer": "triton.testing.do_bench_or_cuda_events",
+        "warmup_ms": 100
+      },
+      "cuda": {
+        "cuda_available": true,
+        "device": "cuda:0",
+        "driver_version": "560.28.03",
+        "free_memory_mib": 23718.0,
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "power_limit_watts": 450.0,
+        "pstate": "P2",
+        "total_memory_mib": 24564.0,
+        "visible_device_count": 1
+      },
+      "formal": true,
+      "schema_version": 1,
+      "script": "benchmark_attention.py",
+      "software": {
+        "cuda": "12.6",
+        "pytorch": "2.7.1+cu126",
+        "triton": "3.3.1"
+      },
+      "status": "success",
+      "tf32": {
+        "cudnn_allow_tf32": true,
+        "matmul_allow_tf32": false
+      },
+      "timestamp_utc": "2026-08-26T09:18:12+00:00"
+    },
+    {
+      "allocator": {
+        "allocator_fraction": 0.9768130292889415,
+        "allocator_limit_mib": 23552
+      },
+      "command": "python -m student_scripts.a2k.benchmark_compile --formal",
+      "commit": "dcf93d8c194ce1729f8b6583850294674e010199",
+      "configuration": {
+        "attention_dtype": "bfloat16",
+        "attention_is_causal": true,
+        "attention_shapes": [
+          {
+            "head_dim": 64,
+            "sequence_length": 512
+          },
+          {
+            "head_dim": 128,
+            "sequence_length": 2048
+          },
+          {
+            "head_dim": 128,
+            "sequence_length": 8192
+          }
+        ],
+        "batch_size": 1,
+        "compiled_backward_graph_reuse": "aot_donated_buffer_disabled",
+        "model": {
+          "context_length": 512,
+          "d_ff": 3072,
+          "d_model": 768,
+          "num_heads": 12,
+          "num_layers": 12,
+          "rope_theta": 10000.0,
+          "vocab_size": 10000
+        },
+        "model_dtype": "bfloat16_autocast_with_fp32_parameters",
+        "rep_ms": 300,
+        "seed": 0,
+        "skip_model": false,
+        "timer": "triton.testing.do_bench_or_cuda_events",
+        "warmup_ms": 100
+      },
+      "cuda": {
+        "cuda_available": true,
+        "device": "cuda:0",
+        "driver_version": "560.28.03",
+        "free_memory_mib": 23718.0,
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "power_limit_watts": 450.0,
+        "pstate": "P0",
+        "total_memory_mib": 24564.0,
+        "visible_device_count": 1
+      },
+      "formal": true,
+      "schema_version": 1,
+      "script": "benchmark_compile.py",
+      "software": {
+        "cuda": "12.6",
+        "pytorch": "2.7.1+cu126",
+        "triton": "3.3.1"
+      },
+      "status": "success",
+      "tf32": {
+        "cudnn_allow_tf32": true,
+        "matmul_allow_tf32": false
+      },
+      "timestamp_utc": "2026-08-26T09:19:48+00:00"
+    },
+    {
+      "allocator": {
+        "allocator_fraction": 0.9768130292889415,
+        "allocator_limit_mib": 23552
+      },
+      "command": "python -m student_scripts.a2k.benchmark_flash --formal",
+      "commit": "dcf93d8c194ce1729f8b6583850294674e010199",
+      "configuration": {
+        "batch_size": 1,
+        "compiled_backward_graph_reuse": "aot_donated_buffer_disabled",
+        "core_sequence_lengths": [
+          512,
+          2048,
+          8192
+        ],
+        "dtype": "bfloat16",
+        "head_dims": [
+          64,
+          128
+        ],
+        "include_compiled_long": false,
+        "is_causal": true,
+        "long_sequence_length": 16384,
+        "phases": [
+          "forward",
+          "backward",
+          "forward_backward"
+        ],
+        "rep_ms": 300,
+        "seed": 0,
+        "timer": "triton.testing.do_bench_or_cuda_events",
+        "warmup_ms": 100
+      },
+      "cuda": {
+        "cuda_available": true,
+        "device": "cuda:0",
+        "driver_version": "560.28.03",
+        "free_memory_mib": 23718.0,
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "power_limit_watts": 450.0,
+        "pstate": "P2",
+        "total_memory_mib": 24564.0,
+        "visible_device_count": 1
+      },
+      "formal": true,
+      "schema_version": 1,
+      "script": "benchmark_flash.py",
+      "software": {
+        "cuda": "12.6",
+        "pytorch": "2.7.1+cu126",
+        "triton": "3.3.1"
+      },
+      "status": "success",
+      "tf32": {
+        "cudnn_allow_tf32": true,
+        "matmul_allow_tf32": false
+      },
+      "timestamp_utc": "2026-08-26T10:22:47+00:00"
+    }
+  ],
+  "schema_version": 1
+}
