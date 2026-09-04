@@ -1,0 +1,1 @@
+{"batch_size": 256, "oom": true, "gpu_model": "RTX 3090 24GB", "note": "CUDA out of memory during batch size sweep"}
