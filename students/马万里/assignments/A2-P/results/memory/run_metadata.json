@@ -1,0 +1,301 @@
+[
+  {
+    "timestamp": "2026-09-07T01:23:12",
+    "tag": "xl_ctx1024_forward",
+    "model_size": "xl",
+    "context_length": 1024,
+    "batch_size": 1,
+    "dtype": "fp32",
+    "mode": "forward",
+    "warmup": 3,
+    "command": "python profiling/memory_profiler.py --model-size xl --context-length 1024 --batch-size 1 --dtype fp32 --mode forward --warmup 3 --tag xl_ctx1024_forward",
+    "wall_time_s": 0.4551411997526884,
+    "peak_active_mib": 573.133,
+    "peak_allocated_mib": 13706.221,
+    "peak_reserved_mib": 13858.0,
+    "residual_stream_theory_mib": 10.0,
+    "snapshot_file": "results/memory/snapshots/xl_ctx1024_forward_snapshot.pickle",
+    "env": {
+      "python": "3.12.14",
+      "torch": "2.11.0+cu126",
+      "torch_cuda": "12.6",
+      "cuda_available": true,
+      "gpus": [
+        {
+          "name": "NVIDIA A800-SXM4-80GB",
+          "total_memory_bytes": 85093777408,
+          "capability": "8.0"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-09-07T01:29:51",
+    "tag": "xl_ctx1024_forward_bf16",
+    "model_size": "xl",
+    "context_length": 1024,
+    "batch_size": 1,
+    "dtype": "bf16",
+    "mode": "forward",
+    "warmup": 3,
+    "command": "python profiling/memory_profiler.py --model-size xl --context-length 1024 --batch-size 1 --dtype bf16 --mode forward --warmup 3 --tag xl_ctx1024_forward_bf16",
+    "wall_time_s": 0.07221008464694023,
+    "peak_active_mib": 287.07,
+    "peak_allocated_mib": 6793.341,
+    "peak_reserved_mib": 7064.0,
+    "residual_stream_theory_mib": 10.0,
+    "snapshot_file": "results/memory/snapshots/xl_ctx1024_forward_bf16_snapshot.pickle",
+    "env": {
+      "python": "3.12.14",
+      "torch": "2.11.0+cu126",
+      "torch_cuda": "12.6",
+      "cuda_available": true,
+      "gpus": [
+        {
+          "name": "NVIDIA A800-SXM4-80GB",
+          "total_memory_bytes": 85093777408,
+          "capability": "8.0"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-09-07T01:26:53",
+    "tag": "xl_ctx1024_train_step",
+    "model_size": "xl",
+    "context_length": 1024,
+    "batch_size": 1,
+    "dtype": "fp32",
+    "mode": "train_step",
+    "warmup": 3,
+    "command": "python profiling/memory_profiler.py --model-size xl --context-length 1024 --batch-size 1 --dtype fp32 --mode train_step --warmup 3 --tag xl_ctx1024_train_step",
+    "wall_time_s": 1.7378537710756063,
+    "peak_active_mib": 5584.037,
+    "peak_allocated_mib": 57714.468,
+    "peak_reserved_mib": 58628.0,
+    "residual_stream_theory_mib": 10.0,
+    "snapshot_file": "results/memory/snapshots/xl_ctx1024_train_step_snapshot.pickle",
+    "env": {
+      "python": "3.12.14",
+      "torch": "2.11.0+cu126",
+      "torch_cuda": "12.6",
+      "cuda_available": true,
+      "gpus": [
+        {
+          "name": "NVIDIA A800-SXM4-80GB",
+          "total_memory_bytes": 85093777408,
+          "capability": "8.0"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-09-07T01:32:20",
+    "tag": "xl_ctx1024_train_step_bf16",
+    "model_size": "xl",
+    "context_length": 1024,
+    "batch_size": 1,
+    "dtype": "bf16",
+    "mode": "train_step",
+    "warmup": 3,
+    "command": "python profiling/memory_profiler.py --model-size xl --context-length 1024 --batch-size 1 --dtype bf16 --mode train_step --warmup 3 --tag xl_ctx1024_train_step_bf16",
+    "wall_time_s": 0.4092691633850336,
+    "peak_active_mib": 3442.142,
+    "peak_allocated_mib": 29450.459,
+    "peak_reserved_mib": 30188.0,
+    "residual_stream_theory_mib": 10.0,
+    "snapshot_file": "results/memory/snapshots/xl_ctx1024_train_step_bf16_snapshot.pickle",
+    "env": {
+      "python": "3.12.14",
+      "torch": "2.11.0+cu126",
+      "torch_cuda": "12.6",
+      "cuda_available": true,
+      "gpus": [
+        {
+          "name": "NVIDIA A800-SXM4-80GB",
+          "total_memory_bytes": 85093777408,
+          "capability": "8.0"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-09-07T01:21:58",
+    "tag": "xl_ctx128_forward",
+    "model_size": "xl",
+    "context_length": 128,
+    "batch_size": 1,
+    "dtype": "fp32",
+    "mode": "forward",
+    "warmup": 3,
+    "command": "python profiling/memory_profiler.py --model-size xl --context-length 128 --batch-size 1 --dtype fp32 --mode forward --warmup 3 --tag xl_ctx128_forward",
+    "wall_time_s": 0.062237298116087914,
+    "peak_active_mib": 21.25,
+    "peak_allocated_mib": 13154.051,
+    "peak_reserved_mib": 13168.0,
+    "residual_stream_theory_mib": 1.25,
+    "snapshot_file": "results/memory/snapshots/xl_ctx128_forward_snapshot.pickle",
+    "env": {
+      "python": "3.12.14",
+      "torch": "2.11.0+cu126",
+      "torch_cuda": "12.6",
+      "cuda_available": true,
+      "gpus": [
+        {
+          "name": "NVIDIA A800-SXM4-80GB",
+          "total_memory_bytes": 85093777408,
+          "capability": "8.0"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-09-07T01:28:38",
+    "tag": "xl_ctx128_forward_bf16",
+    "model_size": "xl",
+    "context_length": 128,
+    "batch_size": 1,
+    "dtype": "bf16",
+    "mode": "forward",
+    "warmup": 3,
+    "command": "python profiling/memory_profiler.py --model-size xl --context-length 128 --batch-size 1 --dtype bf16 --mode forward --warmup 3 --tag xl_ctx128_forward_bf16",
+    "wall_time_s": 0.045900728553533554,
+    "peak_active_mib": 10.625,
+    "peak_allocated_mib": 6516.745,
+    "peak_reserved_mib": 6722.0,
+    "residual_stream_theory_mib": 1.25,
+    "snapshot_file": "results/memory/snapshots/xl_ctx128_forward_bf16_snapshot.pickle",
+    "env": {
+      "python": "3.12.14",
+      "torch": "2.11.0+cu126",
+      "torch_cuda": "12.6",
+      "cuda_available": true,
+      "gpus": [
+        {
+          "name": "NVIDIA A800-SXM4-80GB",
+          "total_memory_bytes": 85093777408,
+          "capability": "8.0"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-09-07T01:25:34",
+    "tag": "xl_ctx128_train_step",
+    "model_size": "xl",
+    "context_length": 128,
+    "batch_size": 1,
+    "dtype": "fp32",
+    "mode": "train_step",
+    "warmup": 3,
+    "command": "python profiling/memory_profiler.py --model-size xl --context-length 128 --batch-size 1 --dtype fp32 --mode train_step --warmup 3 --tag xl_ctx128_train_step",
+    "wall_time_s": 0.5119382124394178,
+    "peak_active_mib": 504.883,
+    "peak_allocated_mib": 52633.995,
+    "peak_reserved_mib": 54508.0,
+    "residual_stream_theory_mib": 1.25,
+    "snapshot_file": "results/memory/snapshots/xl_ctx128_train_step_snapshot.pickle",
+    "env": {
+      "python": "3.12.14",
+      "torch": "2.11.0+cu126",
+      "torch_cuda": "12.6",
+      "cuda_available": true,
+      "gpus": [
+        {
+          "name": "NVIDIA A800-SXM4-80GB",
+          "total_memory_bytes": 85093777408,
+          "capability": "8.0"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-09-07T01:31:05",
+    "tag": "xl_ctx128_train_step_bf16",
+    "model_size": "xl",
+    "context_length": 128,
+    "batch_size": 1,
+    "dtype": "bf16",
+    "mode": "train_step",
+    "warmup": 3,
+    "command": "python profiling/memory_profiler.py --model-size xl --context-length 128 --batch-size 1 --dtype bf16 --mode train_step --warmup 3 --tag xl_ctx128_train_step_bf16",
+    "wall_time_s": 0.30682858265936375,
+    "peak_active_mib": 252.441,
+    "peak_allocated_mib": 26260.667,
+    "peak_reserved_mib": 26896.0,
+    "residual_stream_theory_mib": 1.25,
+    "snapshot_file": "results/memory/snapshots/xl_ctx128_train_step_bf16_snapshot.pickle",
+    "env": {
+      "python": "3.12.14",
+      "torch": "2.11.0+cu126",
+      "torch_cuda": "12.6",
+      "cuda_available": true,
+      "gpus": [
+        {
+          "name": "NVIDIA A800-SXM4-80GB",
+          "total_memory_bytes": 85093777408,
+          "capability": "8.0"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-09-07T01:24:23",
+    "tag": "xl_ctx2048_forward",
+    "model_size": "xl",
+    "context_length": 2048,
+    "batch_size": 1,
+    "dtype": "fp32",
+    "mode": "forward",
+    "warmup": 3,
+    "command": "python profiling/memory_profiler.py --model-size xl --context-length 2048 --batch-size 1 --dtype fp32 --mode forward --warmup 3 --tag xl_ctx2048_forward",
+    "wall_time_s": 1.0061249881982803,
+    "peak_active_mib": 2172.266,
+    "peak_allocated_mib": 15305.682,
+    "peak_reserved_mib": 15858.0,
+    "residual_stream_theory_mib": 20.0,
+    "snapshot_file": "results/memory/snapshots/xl_ctx2048_forward_snapshot.pickle",
+    "env": {
+      "python": "3.12.14",
+      "torch": "2.11.0+cu126",
+      "torch_cuda": "12.6",
+      "cuda_available": true,
+      "gpus": [
+        {
+          "name": "NVIDIA A800-SXM4-80GB",
+          "total_memory_bytes": 85093777408,
+          "capability": "8.0"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-09-07T01:27:26",
+    "tag": "xl_ctx2048_train_step",
+    "model_size": "xl",
+    "context_length": 2048,
+    "batch_size": 1,
+    "dtype": "fp32",
+    "mode": "train_step",
+    "warmup": 3,
+    "status": "failed",
+    "stage": "warmup",
+    "exception": "torch.OutOfMemoryError",
+    "reason": "CUDA out of memory. Tried to allocate 512.00 MiB. GPU 0 has a total capacity of 79.25 GiB of which 224.88 MiB is free. Including non-PyTorch memory, this process has 79.02 GiB memory in use. Of the allocated memory 77.52 GiB is allocated by PyTorch, and 1.01 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)",
+    "peak_allocated_mib": 79376.49,
+    "peak_reserved_mib": 80414.0,
+    "env": {
+      "python": "3.12.14",
+      "torch": "2.11.0+cu126",
+      "torch_cuda": "12.6",
+      "cuda_available": true,
+      "gpus": [
+        {
+          "name": "NVIDIA A800-SXM4-80GB",
+          "total_memory_bytes": 85093777408,
+          "capability": "8.0"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,31 @@
+model_size,context_length,kernel_name,calls,total_time_us,phase
+medium,1024,ampere_sgemm_128x64_tn,1014,135650.27,matmul
+medium,1024,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned long)3>>(int, T2, T3)",2328,91795.26,elementwise
+medium,1024,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned long)2>>(int, T2, T3)",8472,87900.23,elementwise
+medium,1024,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::CUDAFunctor_add<float>, std::array<char *, (unsigned long)3>>(int, T2, T3)",8010,86016.59,elementwise
+medium,1024,void cutlass::Kernel2<cutlass_80_simt_sgemm_256x128_8x4_nn_align1>(T1::Params),438,81540.13,matmul
+medium,256,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned long)2>>(int, T2, T3)",8472,87620.03,elementwise
+medium,256,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::CUDAFunctor_add<float>, std::array<char *, (unsigned long)3>>(int, T2, T3)",8010,52673.69,elementwise
+medium,256,"void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 3)]::operator ()() const::[lambda() (instance 7)]::operator ()() const::[lambda(float) (instance 1)]>(at::TensorIteratorBase &, const T1 &)::[lambda(int) (instance 1)]>(int, T3)",1878,37979.1,elementwise
+medium,256,ampere_sgemm_128x64_tn,1014,37198.57,matmul
+medium,256,ampere_sgemm_32x32_sliced1x4_nn,864,34216.39,matmul
+medium,512,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned long)2>>(int, T2, T3)",8472,87607.57,elementwise
+medium,512,ampere_sgemm_128x64_tn,438,55354.78,matmul
+medium,512,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::CUDAFunctor_add<float>, std::array<char *, (unsigned long)3>>(int, T2, T3)",8010,54587.79,elementwise
+medium,512,ampere_sgemm_128x64_nn,438,54518.26,matmul
+medium,512,"void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 3)]::operator ()() const::[lambda() (instance 7)]::operator ()() const::[lambda(float) (instance 1)]>(at::TensorIteratorBase &, const T1 &)::[lambda(int) (instance 1)]>(int, T3)",1878,36917.06,elementwise
+small,1024,ampere_sgemm_128x64_tn,510,42292.22,matmul
+small,1024,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned long)3>>(int, T2, T3)",1176,30787.31,elementwise
+small,1024,void cutlass::Kernel2<cutlass_80_simt_sgemm_128x256_8x4_nt_align1>(T1::Params),222,30176.84,matmul
+small,1024,ampere_sgemm_128x64_nn,432,28894.33,matmul
+small,1024,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::CUDAFunctor_add<float>, std::array<char *, (unsigned long)3>>(int, T2, T3)",4050,28425.01,elementwise
+small,256,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned long)2>>(int, T2, T3)",4296,25740.56,elementwise
+small,256,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::CUDAFunctor_add<float>, std::array<char *, (unsigned long)3>>(int, T2, T3)",4050,16986.77,elementwise
+small,256,"void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 3)]::operator ()() const::[lambda() (instance 7)]::operator ()() const::[lambda(float) (instance 1)]>(at::TensorIteratorBase &, const T1 &)::[lambda(int) (instance 1)]>(int, T3)",942,12027.26,elementwise
+small,256,ampere_sgemm_128x64_tn,222,9341.39,matmul
+small,256,void cutlass::Kernel2<cutlass_80_simt_sgemm_128x256_8x4_nt_align1>(T1::Params),216,8847.68,matmul
+small,512,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned long)2>>(int, T2, T3)",4296,25701.16,elementwise
+small,512,ampere_sgemm_64x64_nn,438,24148.12,matmul
+small,512,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::CUDAFunctor_add<float>, std::array<char *, (unsigned long)3>>(int, T2, T3)",4050,18849.84,elementwise
+small,512,void cutlass::Kernel2<cutlass_80_simt_sgemm_128x256_8x4_nt_align1>(T1::Params),222,16940.89,matmul
+small,512,ampere_sgemm_64x64_tn,360,16643.91,matmul

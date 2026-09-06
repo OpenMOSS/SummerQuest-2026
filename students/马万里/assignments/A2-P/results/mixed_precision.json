@@ -1,0 +1,70 @@
+{
+  "env": {
+    "python": "3.12.14",
+    "torch": "2.11.0+cu126",
+    "torch_cuda": "12.6",
+    "cuda_available": true,
+    "gpus": [
+      {
+        "name": "NVIDIA GeForce RTX 4090",
+        "total_memory_bytes": 25282281472,
+        "capability": "8.9"
+      }
+    ]
+  },
+  "accumulation": {
+    "reference": 10.0,
+    "fp32_acc_fp32_add": 10.000133514404297,
+    "fp16_acc_fp16_add": 9.953125,
+    "fp32_acc_fp16_add": 10.00213623046875,
+    "fp32_acc_cast_fp16_to_fp32_add": 10.00213623046875,
+    "fp16_acc_error": -0.046875,
+    "fp16_addend_error": 0.00213623046875
+  },
+  "toy_dtypes": {
+    "fp16": {
+      "autocast_dtype": "torch.float16",
+      "param_fc1": "torch.float32",
+      "fc1_output": "torch.float16",
+      "relu_output": "torch.float16",
+      "layernorm_output": "torch.float32",
+      "logits": "torch.float16",
+      "loss": "torch.float32",
+      "fc1_grad": "torch.float32",
+      "layernorm_grad": "torch.float32",
+      "fc2_grad": "torch.float32"
+    },
+    "bf16": {
+      "autocast_dtype": "torch.bfloat16",
+      "param_fc1": "torch.float32",
+      "fc1_output": "torch.bfloat16",
+      "relu_output": "torch.bfloat16",
+      "layernorm_output": "torch.float32",
+      "logits": "torch.bfloat16",
+      "loss": "torch.float32",
+      "fc1_grad": "torch.float32",
+      "layernorm_grad": "torch.float32",
+      "fc2_grad": "torch.float32"
+    }
+  },
+  "toy_bench": {
+    "fp32": {
+      "mode": "fp32",
+      "batch_size": 32,
+      "mean_ms": 1.2020309019135311,
+      "std_ms": 0.04184912688434868,
+      "peak_memory_mib": 16.28076171875,
+      "loss": 1.944913625717163,
+      "logits_mean_abs": 0.4702966809272766
+    },
+    "bf16_autocast": {
+      "mode": "bf16",
+      "batch_size": 32,
+      "mean_ms": 1.5077645046403632,
+      "std_ms": 0.04877571050159094,
+      "peak_memory_mib": 16.28515625,
+      "loss": 1.945556640625,
+      "logits_mean_abs": 0.470703125
+    }
+  }
+}
