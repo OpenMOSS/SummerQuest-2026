@@ -35,9 +35,8 @@ def get_model(model_size: str, context_length: int, dtype: torch.dtype) -> nn.Mo
         num_layers=config["num_layers"],
         num_heads=config["num_heads"],
         d_ff=config["d_ff"],
-        rope_theta=10000.0,   # RoPE 的 theta 参数，使用默认值
+        rope_theta=10000.0,
     )
-    # 转换模型精度并移动到 GPU
     model = model.to(dtype=dtype)
     model = model.cuda()
     return model
@@ -100,7 +99,7 @@ def run_step(
 
     else:
         raise ValueError(f"Unknown mode: {mode}")
-    
+
 def benchmark(args) -> Dict:
     """
     运行基准测试，返回包含原始计时和统计信息的字典。
@@ -112,7 +111,7 @@ def benchmark(args) -> Dict:
         包含模型配置、原始时间列表、均值、标准差和变异系数的字典。
     """
     device = torch.device("cuda")
-    torch.manual_seed(args.seed)   # 固定随机种子，保证可重复性
+    torch.manual_seed(args.seed)
 
     # 将 dtype 字符串映射为 torch 数据类型
     dtype_map = {
@@ -162,7 +161,7 @@ def benchmark(args) -> Dict:
         "mode": args.mode,
         "warmup": args.warmup,
         "steps": args.steps,
-        "timings_sec": timings,      
+        "timings_sec": timings,
         "mean_sec": mean,
         "stddev_sec": stdev,
         "cv_percent": cv,
@@ -240,6 +239,6 @@ def main():
         f.write(json.dumps(meta, default=str) + "\n")
 
     print(json.dumps(result, indent=2))
-    
+
 if __name__ == "__main__":
     main()

@@ -96,7 +96,19 @@ def collect(args) -> dict:
     args.stage = "measure"
     torch.cuda.reset_peak_memory_stats()
     SNAPSHOT_DIR.mkdir(parents=True, exist_ok=True)
-    torch.cuda.memory._record_memory_history(max_entries=args.max_entries)
+    # 可选：context='all' / stacks='all' 让 snapshot 带每块 allocation 的上下文与完整栈，
+    # 供 memory_viz 逐层归因；默认只记 max_entries，保持轻量与行为不变。
+    hist_kwargs = {"max_entries": args.max_entries}
+    if args.context_all:
+        hist_kwargs["context"] = "all"
+    if args.stacks_all:
+        hist_kwargs["stacks"] = "all"
+    try:
+        torch.cuda.memory._record_memory_history(**hist_kwargs)
+    except TypeError:
+        torch.cuda.memory._record_memory_history(max_entries=args.max_entries)
+        print("warn: context/stacks not supported by this torch; recorded with defaults",
+              file=sys.stderr)
 
     t0 = time.perf_counter()
     run_step(args.mode, model, batch, optimizer)
@@ -126,6 +138,10 @@ def collect(args) -> dict:
                     f"--model-size {args.model_size} --context-length {args.context_length} "
                     f"--batch-size {args.batch_size} --dtype {args.dtype} "
                     f"--mode {args.mode} --warmup {args.warmup} --tag {args.tag}"),
+        "memory_history": {
+            "context": "all" if args.context_all else "default",
+            "stacks": "all" if args.stacks_all else "default",
+        },
         "wall_time_s": wall_s,
         "peak_active_mib": round(peak_active, 3),
         "peak_allocated_mib": round(peak_alloc / 1024 ** 2, 3),
@@ -209,6 +225,10 @@ def main():
     ap.add_argument("--seed", type=int, default=42)
     ap.add_argument("--tag")
     ap.add_argument("--max-entries", type=int, default=1000000)
+    ap.add_argument("--context-all", action="store_true",
+                    help="record memory history with context='all' (per-allocation context/栈细节)")
+    ap.add_argument("--stacks-all", action="store_true",
+                    help="record C+++Python stack for every allocation (用于 memory_viz 逐层归因)")
     ap.add_argument("--finalize", action="store_true")
     args = ap.parse_args()
 

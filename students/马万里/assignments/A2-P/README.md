@@ -177,9 +177,9 @@ kernel 家族计数：elementwise 6161 · matmul 578 · reduce 248 · other 171 
 
 | 配置 | fp32 forward | fp32 train_step | bf16 forward | bf16 train_step |
 | --- | ---: | ---: | ---: | ---: |
-| xl/128 | 13.15 | **52.63** | 6.52 | **26.26** |
-| xl/1024 | 13.71 | **57.71** | 6.79 | **29.45** |
-| xl/2048 | 15.31 | OOM(>80) | — | — |
+| xl/128 | 12.85 | **51.40** | 6.36 | **25.65** |
+| xl/1024 | 13.39 | **56.36** | 6.63 | **28.76** |
+| xl/2048 | 14.95 | OOM(>80) | — | — |
 
 `bf16/fp32` 峰值比约 **0.50**（bf16 几乎减半）。residual stream 理论大小：1.25 / 10 / 20 MiB（ctx128/1024/2048，=batch×seq×d_model×4，d_model=2560）。
 
@@ -187,17 +187,21 @@ kernel 家族计数：elementwise 6161 · matmul 578 · reduce 248 · other 171 
 
 ### Timeline、allocation 与 residual/gradient
 
-- **Active 显存时间线**：
-  - forward：峰值≈权重基线 13.13 GiB + 激活增量 21 MiB。
+- **Active / Reserved 显存时间线（PyTorch memory_viz 官方工具）**：
+  - forward（在用 active）：峰值≈权重基线 12.85 GiB + 激活增量 21 MiB。
 
-    ![XL/ctx128 forward active memory timeline](assets/xl_ctx128_forward_mem.png)
-  - full train_step：峰值≈**52.6 GiB**，出现在**反向/优化器**阶段（权重+梯度+2×AdamW 动量）。
+    ![XL/ctx128 forward 在用（active）显存时间线（PyTorch memory_viz）](assets/xl_ctx128_forward_active_mem.png)
+  - full train_step（在用 active）：峰值≈**51.40 GiB**，出现在**反向/优化器**阶段（权重+梯度+2×AdamW 动量）。
 
-    ![XL/ctx128 full train_step active memory timeline](assets/xl_ctx128_train_step_mem.png)
+    ![XL/ctx128 full train_step 在用显存时间线（PyTorch memory_viz）](assets/xl_ctx128_train_step_active_mem.png)
+  - reserved（Cached Segment）：forward≈12.1 GiB、train_step≈51.2 GiB，说明 **reserved ≥ allocated ≥ active**。
+
+    ![XL/ctx128 forward reserved（Cached Segment）时间线](assets/xl_ctx128_forward_active_cached.png)
+    ![XL/ctx128 train_step reserved（Cached Segment）时间线](assets/xl_ctx128_train_step_active_cached.png)
 - **口径**：`active`＝当前在用；`allocated`＝分配器已分配；`reserved`＝cudaMalloc 预留池；报告峰值用 `peak_allocated/peak_reserved`，不与 `active` 混用。
-- **最大 allocation**（见 plot 输出）：xl/128 forward 单次 5 MiB、xl/1024 forward 128 MiB、xl/2048 forward 512 MiB；来源为前向激活/梯度
-- **residual/gradient**：单层 residual stream 张量＝`[B,seq,d_model]×4B`（XL d_model=2560）：ctx128=1.25、1024=10、2048=20 MiB。train_step 要为每层保存该 residual 供反向，同时反向产生等量级**梯度**；XL 共 32 层 → 残差流合计≈32×[seq,d_model]。结合 **train_step≈W(权重)+W(梯度)+2W(AdamW 动量)+激活 ≈ 4×权重**，可解释为何 train_step 峰值远超 forward（xl/128 实测 52.6 GiB≈13.15×4）。
-- **任务四 (c) 混合精度**：bf16 把 forward 峰值从 13.15→6.52 GiB、train_step 从 52.63→26.26 GiB（约 2×），因为权重/梯度/动量占大头且被 bf16 减半——混合精度**显著**降低显存。bf16 的两条 Active Memory timeline 见下。
+- **最大 allocation**（见 plot 输出）：xl/128 forward 单次 5 MiB、xl/1024 forward 128 MiB、xl/2048 forward 512 MiB；来源为前向激活/梯度（该工具的 Python 栈只能归到最外层脚本，无法逐层归因，为已知限制）。
+- **residual/gradient**：单层 residual stream 张量＝`[B,seq,d_model]×4B`（XL d_model=2560）：ctx128=1.25、1024=10、2048=20 MiB。train_step 要为每层保存该 residual 供反向，同时反向产生等量级**梯度**；XL 共 32 层 → 残差流合计≈32×[seq,d_model]。结合 **train_step≈W(权重)+W(梯度)+2W(AdamW 动量)+激活 ≈ 4×权重**，可解释为何 train_step 峰值远超 forward（xl/128 实测 51.40 GiB≈12.85×4）。
+- **任务四 (c) 混合精度**：bf16 把 forward 峰值从 12.85→6.36 GiB、train_step 从 51.40→25.65 GiB（约 2×），因为权重/梯度/动量占大头且被 bf16 减半——混合精度**显著**降低显存。bf16 的两条 Active Memory timeline 见下。
 
   ![XL/ctx128 bf16 forward active memory timeline](assets/xl_ctx128_forward_bf16_mem.png)
 
@@ -208,7 +212,7 @@ kernel 家族计数：elementwise 6161 · matmul 578 · reduce 248 · other 171 
 - 代码同步命令：`python3 scripts/sync_a2p_submission.py --name '马万里'`
 - 轻量结果目录：`results/`（`benchmark.csv`、`profile/{trace_summary.csv, run_metadata.json}`、`mixed_precision.json`、`memory/{peaks.csv, run_metadata.json, failures.jsonl}`）。
 - 未提交的本地大型原始文件：`.nsys-rep`、`.sqlite`、`.qdstrm` 等 profiler 原始文件，以及 memory 的 `*.pickle` snapshot，仅保留在本地工作仓库（`results/profile/`、`results/memory/snapshots/`），不进入提交。
-- 已知限制：集群为无 GUI 环境，无法用 Nsight GUI / Perfetto / memory_viz 网页查看，改用离线解析/成图。driver 版本未记录（记录 GPU 型号、compute capability、CUDA 12.6、PyTorch 2.11.0+cu126）。profiling 六条 trace 统一 batch=1、同一张 RTX 4090。memory 部分：XL 的 train_step 在 24GB(RTX 4090) 必 OOM，故 train_step 在 A800(80GB) 上做；`xl/ctx2048` 的 fp32 train_step 连 80GB 也不够（失败前已分配 79.4GiB），已在 `failures.jsonl` 如实记录；本次矩阵只到 bf16@1024，未扩展到 2048 或更小模型回退。
+- 已知限制：集群为无 GUI 环境，compute/memory 时间线在集群上由离线脚本成图（matplotlib）；memory 快照另在本地用 PyTorch memory_viz 打开作官方核实（本报告 memory 时间线即来自 memory_viz）。driver 版本未记录（记录 GPU 型号、compute capability、CUDA 12.6、PyTorch 2.11.0+cu126）。profiling 六条 trace 统一 batch=1、同一张 RTX 4090。memory 部分：XL 的 train_step 在 24GB(RTX 4090) 必 OOM，故 train_step 在 A800(80GB) 上做；`xl/ctx2048` 的 fp32 train_step 连 80GB 也不够（失败前已分配 79.4GiB），已在 `failures.jsonl` 如实记录；本次矩阵只到 bf16@1024，未扩展到 2048 或更小模型回退。
 - 最小复现步骤：任务一 `bash run_benchmark.sh`；任务二 `bash run_profiling.sh`（b=1）→ `python profiling/summarize.py` → `python profiling/plot_nsys_timeline.py --name run_medium_ctx512 --out assets/medium512_timeline.png`；任务三 `python profiling/mixed_precision.py --run all`；任务四 `bash run_memory_profiling.sh`（A800）→ `python profiling/plot_memory_timeline.py --tag xl_ctx128_train_step --out ...`。
 
 ## 飞书补充文档
