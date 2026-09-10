@@ -1,7 +1,19 @@
+"""Generate lightweight, machine-readable profiling summaries for A2-P.
+
+Outputs (all under results/profile/):
+  trace_summary.csv   one table with a `kind` column covering
+                        kind=kernel  : GPU kernel rows  (Calls, cumulative CUDA time, phase)
+                        kind=stage   : NVTX stage ranges (forward/backward/optimizer/attention/*)
+                        kind=cpu_api : CUDA runtime API rows (Calls, cumulative CPU time)
+                        kind=cpu_api_total : total CPU API time for the config
+  run_metadata.json   per-run config/command/status (success|failed) + failure reason
+"""
 import csv
 import json
 import re
+import sqlite3
 from pathlib import Path
+
 import pandas as pd
 
 PROFILE_DIR = Path("results/profile")
@@ -9,9 +21,15 @@ OUTPUT_METADATA = PROFILE_DIR / "run_metadata.json"
 OUTPUT_TRACE_SUMMARY = PROFILE_DIR / "trace_summary.csv"
 FAILURES_FILE = PROFILE_DIR / "failures.jsonl"
 
-# ---------- Failure records (crash jsonl) ----------
+STAGE_TEXTS = ["profile/measure", "forward", "backward", "optimizer",
+               "scaled_dot_product_attention",
+               "attention/scores", "attention/softmax", "attention/value"]
+
+PROFILE_DEFAULT_BATCH = 1
+
+
+# ---------------- failures / batch helpers ----------------
 def load_failures() -> dict:
-    """Return {run_name: record} parsed from failures.jsonl (if present)."""
     failures = {}
     if not FAILURES_FILE.exists():
         return failures
@@ -24,19 +42,12 @@ def load_failures() -> dict:
                 rec = json.loads(line)
             except json.JSONDecodeError:
                 continue
-            name = rec.get("name")
-            if name:
-                failures[name] = rec
+            if rec.get("name"):
+                failures[rec["name"]] = rec
     return failures
 
 
-PROFILE_DEFAULT_BATCH = 1
-
 def load_batch(model: str, ctx: int) -> int:
-    """Read the batch_size actually used from the run's env json (profile_one_step writes it).
-
-    Falls back to PROFILE_DEFAULT_BATCH if no env json is present.
-    """
     hits = sorted(PROFILE_DIR.glob(f"run_{model}_ctx{ctx}_b*_env.json"))
     for hit in reversed(hits):
         try:
@@ -46,159 +57,202 @@ def load_batch(model: str, ctx: int) -> int:
             continue
     return PROFILE_DEFAULT_BATCH
 
-# ---------- Metadata generation ----------
+
+# ---------------- metadata ----------------
 def generate_metadata():
     failures = load_failures()
-    # 需要覆盖的 run 名 = 成功产出 .nsys-rep 的 + 记录在 failures.jsonl 的（失败配置）。
     names = set(failures.keys())
     for rep_file in PROFILE_DIR.glob("run_*.nsys-rep"):
-        match = re.match(r"run_(small|medium|large|xl)_ctx(\d+)", rep_file.name)
-        if match:
-            names.add(match.group(0))
+        m = re.match(r"run_(small|medium|large|xl)_ctx(\d+)", rep_file.name)
+        if m:
+            names.add(m.group(0))
     records = []
     for name in sorted(names):
-        match = re.match(r"run_(small|medium|large|xl)_ctx(\d+)", name)
-        if not match:
+        m = re.match(r"run_(small|medium|large|xl)_ctx(\d+)", name)
+        if not m:
             continue
-        model = match.group(1)
-        ctx = int(match.group(2))
+        model, ctx = m.group(1), int(m.group(2))
         batch = load_batch(model, ctx)
         stats_file = PROFILE_DIR / f"{name}_stats.csv"
         base = {
-            "model_size": model,
-            "context_length": ctx,
-            "batch_size": batch,
-            "dtype": "fp32",
-            "tool": "nsys",
-            "command": (f"nsys profile --output {PROFILE_DIR / name} --force-overwrite true "
+            "model_size": model, "context_length": ctx, "batch_size": batch,
+            "dtype": "fp32", "tool": "nsys", "mode": "train_step",
+            "command": (f"nsys profile --output results/profile/{name} --force-overwrite true "
                         f"python profiling/profile_one_step.py --model-size {model} "
                         f"--batch-size {batch} --context-length {ctx} --dtype fp32 --warmup 5"),
         }
         if name in failures:
             rec = failures[name]
-            cfg = rec.get("config", {})
             record = dict(base)
             record.update({
-                "batch_size": cfg.get("batch_size", batch),
-                "trace_file": None,
-                "status": "failed",
-                "stage": rec.get("stage"),
-                "exception": rec.get("exception"),
-                "reason": rec.get("message"),
-                "failure_timestamp": rec.get("timestamp"),
+                "status": "failed", "trace_file": None,
+                "stage": rec.get("stage"), "exception": rec.get("exception"),
+                "reason": rec.get("message"), "failure_timestamp": rec.get("timestamp"),
             })
         elif stats_file.exists():
             record = dict(base)
-            record.update({
-                "trace_file": str(PROFILE_DIR / f"{name}.nsys-rep"),
-                "status": "success",
-            })
+            record.update({"status": "success",
+                           "trace_file": f"results/profile/{name}.nsys-rep"})
         else:
             record = dict(base)
-            record.update({
-                "trace_file": None,
-                "status": "failed",
-                "reason": "no nsys trace or stats produced",
-            })
+            record.update({"status": "failed", "trace_file": None,
+                           "reason": "no nsys trace or stats produced"})
         records.append(record)
-    with open(OUTPUT_METADATA, "w") as f:
-        json.dump(records, f, indent=2)
-    n_succ = sum(1 for r in records if r["status"] == "success")
-    n_fail = len(records) - n_succ
-    print(f"Metadata written to {OUTPUT_METADATA} ({n_succ} success, {n_fail} failed)")
+    OUTPUT_METADATA.write_text(json.dumps(records, indent=2, default=str), encoding="utf-8")
+    n_ok = sum(1 for r in records if r["status"] == "success")
+    print(f"Metadata written to {OUTPUT_METADATA} ({n_ok} success, {len(records) - n_ok} failed)")
 
-# ---------- Trace summary generation ----------
+
+# ---------------- stats csv parsing ----------------
+def _first_header(rows, must_have):
+    for i, row in enumerate(rows):
+        if all(any(m in c for c in row) for m in must_have):
+            return i
+    return None
+
+
+def parse_kernel_rows(stats_file: Path):
+    """GPU kernel table (first table; header contains 'Instances')."""
+    with open(stats_file, newline="", encoding="utf-8") as f:
+        rows = list(csv.reader(f))
+    hi = _first_header(rows, ["Name", "Instances", "Total Time"])
+    if hi is None:
+        return []
+    header = rows[hi]
+    name_col = next(j for j, h in enumerate(header) if "Name" in h)
+    inst_col = next(j for j, h in enumerate(header) if "Instances" in h)
+    time_col = next(j for j, h in enumerate(header) if "Total Time" in h)
+    out = []
+    for row in rows[hi + 1:]:
+        if not row or all(c.strip() == "" for c in row):
+            continue
+        if any(c.strip() == "Name" for c in row):   # start of the 2nd (CUDA API) table
+            break
+        try:
+            out.append((row[name_col].strip(),
+                        int(row[inst_col].strip().replace(",", "")),
+                        float(row[time_col].strip().replace(",", ""))))
+        except (ValueError, IndexError):
+            continue
+    return sorted(out, key=lambda r: r[2], reverse=True)
+
+
+def parse_cpu_api_rows(stats_file: Path):
+    """CUDA runtime API table (second table; header contains 'Num Calls')."""
+    with open(stats_file, newline="", encoding="utf-8") as f:
+        rows = list(csv.reader(f))
+    hi = _first_header(rows, ["Name", "Num Calls", "Total Time"])
+    if hi is None:
+        return []
+    header = rows[hi]
+    name_col = next(j for j, h in enumerate(header) if "Name" in h)
+    call_col = next(j for j, h in enumerate(header) if "Num Calls" in h or "Calls" in h)
+    time_col = next(j for j, h in enumerate(header) if "Total Time" in h)
+    out = []
+    for row in rows[hi + 1:]:
+        if not row or all(c.strip() == "" for c in row):
+            continue
+        try:
+            out.append((row[name_col].strip(),
+                        int(row[call_col].strip().replace(",", "")),
+                        float(row[time_col].strip().replace(",", ""))))
+        except (ValueError, IndexError):
+            continue
+    return sorted(out, key=lambda r: r[2], reverse=True)
+
+
+# ---------------- NVTX stage ranges from the sqlite export ----------------
+def parse_stage_rows(sqlite_file: Path):
+    """Return {stage: (n_ranges, duration_ns)} from NVTX_EVENTS inside profile/measure."""
+    if not sqlite_file.exists():
+        return {}
+    con = sqlite3.connect(f"file:{sqlite_file}?mode=ro", uri=True)
+    cur = con.cursor()
+    marks = ",".join("?" * len(STAGE_TEXTS))
+    nv = {}
+    try:
+        for start, end, text in cur.execute(
+                f"SELECT start, end, text FROM NVTX_EVENTS WHERE text IN ({marks})", STAGE_TEXTS):
+            if end >= start:
+                nv.setdefault(text, []).append((start, end))
+    except sqlite3.Error:
+        return {}
+    finally:
+        con.close()
+    if "profile/measure" not in nv:
+        return {}
+    m0 = min(s for s, _ in nv["profile/measure"])
+    m1 = max(e for _, e in nv["profile/measure"])
+    out = {}
+    for text, spans in nv.items():
+        inside = [(s, e) for s, e in spans if s >= m0 and e <= m1]
+        if inside:
+            # 多区间（如每层一次 attention/*）取各区间时长之和；单区间时和=跨度。
+            total = sum(e - s for s, e in inside)
+            out[text] = (len(inside), total)
+    return out
+
+
+def generate_trace_summary():
+    rows = []
+    def add(model, ctx, kind, name, calls, cpu_us, cuda_us, phase):
+        rows.append({"model_size": model, "context_length": ctx, "kind": kind, "name": name,
+                     "calls": calls, "cpu_time_us": cpu_us, "cuda_time_us": cuda_us, "phase": phase})
+
+    for stats_file in sorted(PROFILE_DIR.glob("run_*_stats.csv")):
+        m = re.match(r"run_(small|medium|large|xl)_ctx(\d+)_stats", stats_file.stem)
+        if not m:
+            continue
+        model, ctx = m.group(1), int(m.group(2))
+        print(f"Processing {stats_file.name} ...")
+
+        for name, calls, ns in parse_kernel_rows(stats_file)[:5]:
+            add(model, ctx, "kernel", name, calls, "", round(ns / 1000.0, 2), infer_phase(name))
+
+        cpu_rows = parse_cpu_api_rows(stats_file)
+        for name, calls, ns in cpu_rows[:5]:
+            add(model, ctx, "cpu_api", name, calls, round(ns / 1000.0, 2), "", "cpu_api")
+        if cpu_rows:
+            total_ns = sum(ns for _, _, ns in cpu_rows)
+            total_calls = sum(c for _, c, _ in cpu_rows)
+            add(model, ctx, "cpu_api_total", "cuda_api_total", total_calls,
+                round(total_ns / 1000.0, 2), "", "cpu_api")
+
+        stage_rows = parse_stage_rows(PROFILE_DIR / f"run_{model}_ctx{ctx}.sqlite")
+        for stage in ["forward", "backward", "optimizer",
+                      "attention/scores", "attention/softmax", "attention/value"]:
+            if stage in stage_rows:
+                n, ns = stage_rows[stage]
+                add(model, ctx, "stage", stage, n, "", round(ns / 1000.0, 2), stage)
+
+    result_df = pd.DataFrame(rows, columns=["model_size", "context_length", "kind", "name",
+                                            "calls", "cpu_time_us", "cuda_time_us", "phase"])
+    result_df.to_csv(OUTPUT_TRACE_SUMMARY, index=False)
+    print(f"trace_summary.csv written to {OUTPUT_TRACE_SUMMARY} ({len(result_df)} rows)")
+
+
 def infer_phase(kernel_name: str) -> str:
-    name = kernel_name.lower()
-    if any(k in name for k in ["gemm", "matmul", "sgemm", "cublas"]):
+    n = kernel_name.lower()
+    if any(k in n for k in ["gemm", "matmul", "sgemm", "cublas"]):
         return "matmul"
-    if "softmax" in name:
+    if "softmax" in n:
         return "attention/softmax"
-    if "flash" in name or "attn" in name:
+    if "flash" in n or "attn" in n:
         return "attention"
-    if "norm" in name:
+    if "norm" in n:
         return "layernorm"
-    if "adam" in name or "optimizer" in name:
+    if "adam" in n or "optimizer" in n:
         return "optimizer"
-    if any(k in name for k in ["elementwise", "add", "mul", "div"]):
+    if any(k in n for k in ["elementwise", "add", "mul", "div"]):
         return "elementwise"
-    if any(k in name for k in ["reduce", "sum", "mean"]):
+    if any(k in n for k in ["reduce", "sum", "mean"]):
         return "reduce"
-    if "embed" in name:
+    if "embed" in n:
         return "embedding"
-    if "dropout" in name:
+    if "dropout" in n:
         return "dropout"
     return "other"
 
-def parse_kernel_stats(stats_file: Path):
-    """Extract top kernels from nsys stats CSV using csv module for robustness."""
-    with open(stats_file, newline='', encoding='utf-8') as f:
-        reader = csv.reader(f)
-        rows = list(reader)
-
-    header_idx = None
-    for i, row in enumerate(rows):
-        if any("Name" in cell for cell in row) and any("Instances" in cell for cell in row):
-            header_idx = i
-            break
-    if header_idx is None:
-        raise ValueError(f"Kernel table header not found in {stats_file}")
-
-    header = rows[header_idx]
-    name_col = next((j for j, h in enumerate(header) if "Name" in h), None)
-    inst_col = next((j for j, h in enumerate(header) if "Instances" in h or "Calls" in h), None)
-    time_col = next((j for j, h in enumerate(header) if "Total Time" in h), None)
-    if name_col is None or inst_col is None or time_col is None:
-        raise ValueError(f"Required columns missing in {stats_file}")
-
-    data = []
-    for row in rows[header_idx + 1:]:
-        if not row or all(cell.strip() == "" for cell in row):
-            continue
-        # 碰到第二张表（cuda_api_sum）的表头就停，避免把 CUDA API 调用当成 kernel。
-        if any(cell.strip() == "Name" for cell in row):
-            break
-        if any("CUDA API" in cell or cell.startswith("---") for cell in row):
-            break
-        try:
-            name = row[name_col].strip()
-            calls = int(row[inst_col].strip().replace(',', ''))
-            total_ns = float(row[time_col].strip().replace(',', ''))
-            data.append((name, calls, total_ns))
-        except (ValueError, IndexError):
-            continue
-    if not data:
-        raise ValueError(f"No kernel data extracted from {stats_file}")
-    df = pd.DataFrame(data, columns=["kernel_name", "calls", "total_time_ns"])
-    df = df.sort_values("total_time_ns", ascending=False)
-    return df
-
-def generate_trace_summary():
-    all_rows = []
-    for stats_file in sorted(PROFILE_DIR.glob("*_stats.csv")):
-        match = re.match(r"run_(small|medium|large|xl)_ctx(\d+)_stats", stats_file.stem)
-        if not match:
-            continue
-        model = match.group(1)
-        ctx = int(match.group(2))
-        print(f"Processing {stats_file.name} ...")
-        df = parse_kernel_stats(stats_file)
-        for _, row in df.head(5).iterrows():
-            kernel_name = row["kernel_name"]
-            calls = int(row["calls"])
-            total_time_us = row["total_time_ns"] / 1000.0
-            phase = infer_phase(kernel_name)
-            all_rows.append({
-                "model_size": model,
-                "context_length": ctx,
-                "kernel_name": kernel_name,
-                "calls": calls,
-                "total_time_us": round(total_time_us, 2),
-                "phase": phase
-            })
-    result_df = pd.DataFrame(all_rows, columns=["model_size", "context_length", "kernel_name", "calls", "total_time_us", "phase"])
-    result_df.to_csv(OUTPUT_TRACE_SUMMARY, index=False)
-    print(f"trace_summary.csv written to {OUTPUT_TRACE_SUMMARY}")
 
 if __name__ == "__main__":
     generate_metadata()

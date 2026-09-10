@@ -5,9 +5,10 @@
     "batch_size": 1,
     "dtype": "fp32",
     "tool": "nsys",
+    "mode": "train_step",
     "command": "nsys profile --output results/profile/run_medium_ctx1024 --force-overwrite true python profiling/profile_one_step.py --model-size medium --batch-size 1 --context-length 1024 --dtype fp32 --warmup 5",
-    "trace_file": "results/profile/run_medium_ctx1024.nsys-rep",
-    "status": "success"
+    "status": "success",
+    "trace_file": "results/profile/run_medium_ctx1024.nsys-rep"
   },
   {
     "model_size": "medium",
@@ -15,9 +16,10 @@
     "batch_size": 1,
     "dtype": "fp32",
     "tool": "nsys",
+    "mode": "train_step",
     "command": "nsys profile --output results/profile/run_medium_ctx256 --force-overwrite true python profiling/profile_one_step.py --model-size medium --batch-size 1 --context-length 256 --dtype fp32 --warmup 5",
-    "trace_file": "results/profile/run_medium_ctx256.nsys-rep",
-    "status": "success"
+    "status": "success",
+    "trace_file": "results/profile/run_medium_ctx256.nsys-rep"
   },
   {
     "model_size": "medium",
@@ -25,9 +27,10 @@
     "batch_size": 1,
     "dtype": "fp32",
     "tool": "nsys",
+    "mode": "train_step",
     "command": "nsys profile --output results/profile/run_medium_ctx512 --force-overwrite true python profiling/profile_one_step.py --model-size medium --batch-size 1 --context-length 512 --dtype fp32 --warmup 5",
-    "trace_file": "results/profile/run_medium_ctx512.nsys-rep",
-    "status": "success"
+    "status": "success",
+    "trace_file": "results/profile/run_medium_ctx512.nsys-rep"
   },
   {
     "model_size": "small",
@@ -35,9 +38,10 @@
     "batch_size": 1,
     "dtype": "fp32",
     "tool": "nsys",
+    "mode": "train_step",
     "command": "nsys profile --output results/profile/run_small_ctx1024 --force-overwrite true python profiling/profile_one_step.py --model-size small --batch-size 1 --context-length 1024 --dtype fp32 --warmup 5",
-    "trace_file": "results/profile/run_small_ctx1024.nsys-rep",
-    "status": "success"
+    "status": "success",
+    "trace_file": "results/profile/run_small_ctx1024.nsys-rep"
   },
   {
     "model_size": "small",
@@ -45,9 +49,10 @@
     "batch_size": 1,
     "dtype": "fp32",
     "tool": "nsys",
+    "mode": "train_step",
     "command": "nsys profile --output results/profile/run_small_ctx256 --force-overwrite true python profiling/profile_one_step.py --model-size small --batch-size 1 --context-length 256 --dtype fp32 --warmup 5",
-    "trace_file": "results/profile/run_small_ctx256.nsys-rep",
-    "status": "success"
+    "status": "success",
+    "trace_file": "results/profile/run_small_ctx256.nsys-rep"
   },
   {
     "model_size": "small",
@@ -55,8 +60,9 @@
     "batch_size": 1,
     "dtype": "fp32",
     "tool": "nsys",
+    "mode": "train_step",
     "command": "nsys profile --output results/profile/run_small_ctx512 --force-overwrite true python profiling/profile_one_step.py --model-size small --batch-size 1 --context-length 512 --dtype fp32 --warmup 5",
-    "trace_file": "results/profile/run_small_ctx512.nsys-rep",
-    "status": "success"
+    "status": "success",
+    "trace_file": "results/profile/run_small_ctx512.nsys-rep"
   }
 ]

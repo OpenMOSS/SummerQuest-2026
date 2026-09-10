@@ -1,31 +1,103 @@
-model_size,context_length,kernel_name,calls,total_time_us,phase
-medium,1024,ampere_sgemm_128x64_tn,1014,135650.27,matmul
-medium,1024,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned long)3>>(int, T2, T3)",2328,91795.26,elementwise
-medium,1024,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned long)2>>(int, T2, T3)",8472,87900.23,elementwise
-medium,1024,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::CUDAFunctor_add<float>, std::array<char *, (unsigned long)3>>(int, T2, T3)",8010,86016.59,elementwise
-medium,1024,void cutlass::Kernel2<cutlass_80_simt_sgemm_256x128_8x4_nn_align1>(T1::Params),438,81540.13,matmul
-medium,256,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned long)2>>(int, T2, T3)",8472,87620.03,elementwise
-medium,256,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::CUDAFunctor_add<float>, std::array<char *, (unsigned long)3>>(int, T2, T3)",8010,52673.69,elementwise
-medium,256,"void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 3)]::operator ()() const::[lambda() (instance 7)]::operator ()() const::[lambda(float) (instance 1)]>(at::TensorIteratorBase &, const T1 &)::[lambda(int) (instance 1)]>(int, T3)",1878,37979.1,elementwise
-medium,256,ampere_sgemm_128x64_tn,1014,37198.57,matmul
-medium,256,ampere_sgemm_32x32_sliced1x4_nn,864,34216.39,matmul
-medium,512,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned long)2>>(int, T2, T3)",8472,87607.57,elementwise
-medium,512,ampere_sgemm_128x64_tn,438,55354.78,matmul
-medium,512,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::CUDAFunctor_add<float>, std::array<char *, (unsigned long)3>>(int, T2, T3)",8010,54587.79,elementwise
-medium,512,ampere_sgemm_128x64_nn,438,54518.26,matmul
-medium,512,"void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 3)]::operator ()() const::[lambda() (instance 7)]::operator ()() const::[lambda(float) (instance 1)]>(at::TensorIteratorBase &, const T1 &)::[lambda(int) (instance 1)]>(int, T3)",1878,36917.06,elementwise
-small,1024,ampere_sgemm_128x64_tn,510,42292.22,matmul
-small,1024,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned long)3>>(int, T2, T3)",1176,30787.31,elementwise
-small,1024,void cutlass::Kernel2<cutlass_80_simt_sgemm_128x256_8x4_nt_align1>(T1::Params),222,30176.84,matmul
-small,1024,ampere_sgemm_128x64_nn,432,28894.33,matmul
-small,1024,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::CUDAFunctor_add<float>, std::array<char *, (unsigned long)3>>(int, T2, T3)",4050,28425.01,elementwise
-small,256,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned long)2>>(int, T2, T3)",4296,25740.56,elementwise
-small,256,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::CUDAFunctor_add<float>, std::array<char *, (unsigned long)3>>(int, T2, T3)",4050,16986.77,elementwise
-small,256,"void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 3)]::operator ()() const::[lambda() (instance 7)]::operator ()() const::[lambda(float) (instance 1)]>(at::TensorIteratorBase &, const T1 &)::[lambda(int) (instance 1)]>(int, T3)",942,12027.26,elementwise
-small,256,ampere_sgemm_128x64_tn,222,9341.39,matmul
-small,256,void cutlass::Kernel2<cutlass_80_simt_sgemm_128x256_8x4_nt_align1>(T1::Params),216,8847.68,matmul
-small,512,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned long)2>>(int, T2, T3)",4296,25701.16,elementwise
-small,512,ampere_sgemm_64x64_nn,438,24148.12,matmul
-small,512,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::CUDAFunctor_add<float>, std::array<char *, (unsigned long)3>>(int, T2, T3)",4050,18849.84,elementwise
-small,512,void cutlass::Kernel2<cutlass_80_simt_sgemm_128x256_8x4_nt_align1>(T1::Params),222,16940.89,matmul
-small,512,ampere_sgemm_64x64_tn,360,16643.91,matmul
+model_size,context_length,kind,name,calls,cpu_time_us,cuda_time_us,phase
+medium,1024,kernel,ampere_sgemm_128x64_tn,1014,,133970.32,matmul
+medium,1024,kernel,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned long)2>>(int, T2, T3)",8472,,88088.68,elementwise
+medium,1024,kernel,void cutlass::Kernel2<cutlass_80_simt_sgemm_256x128_8x4_nn_align1>(T1::Params),438,,81477.67,matmul
+medium,1024,kernel,void cutlass::Kernel2<cutlass_80_simt_sgemm_128x256_8x4_nt_align1>(T1::Params),438,,64511.84,matmul
+medium,1024,kernel,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned long)3>>(int, T2, T3)",2184,,60558.71,elementwise
+medium,1024,cpu_api,cudaLaunchKernel,38768,730015.77,,cpu_api
+medium,1024,cpu_api,cudaMemcpyAsync,514,432418.86,,cpu_api
+medium,1024,cpu_api,cudaMalloc,323,118073.68,,cpu_api
+medium,1024,cpu_api,cuLaunchKernel,2028,99841.02,,cpu_api
+medium,1024,cpu_api,cuLibraryLoadData,4,16641.69,,cpu_api
+medium,1024,cpu_api_total,cuda_api_total,47954,1444869.14,,cpu_api
+medium,1024,stage,forward,1,,94438.96,forward
+medium,1024,stage,backward,1,,139404.75,backward
+medium,1024,stage,optimizer,1,,62443.17,optimizer
+medium,1024,stage,attention/scores,24,,5841.52,attention/scores
+medium,1024,stage,attention/softmax,24,,870.42,attention/softmax
+medium,1024,stage,attention/value,24,,2755.15,attention/value
+medium,256,kernel,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned long)2>>(int, T2, T3)",8472,,86888.46,elementwise
+medium,256,kernel,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::CUDAFunctor_add<float>, std::array<char *, (unsigned long)3>>(int, T2, T3)",7866,,51056.9,elementwise
+medium,256,kernel,"void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 3)]::operator ()() const::[lambda() (instance 7)]::operator ()() const::[lambda(float) (instance 1)]>(at::TensorIteratorBase &, const T1 &)::[lambda(int) (instance 1)]>(int, T3)",1878,,38043.27,elementwise
+medium,256,kernel,ampere_sgemm_128x64_tn,1014,,37176.76,matmul
+medium,256,kernel,ampere_sgemm_32x32_sliced1x4_nn,864,,34410.25,matmul
+medium,256,cpu_api,cudaLaunchKernel,41504,656744.4,,cpu_api
+medium,256,cpu_api,cudaMemcpyAsync,514,512843.19,,cpu_api
+medium,256,cpu_api,cudaMalloc,514,199980.83,,cpu_api
+medium,256,cpu_api,cuLibraryLoadData,4,16710.49,,cpu_api
+medium,256,cpu_api,cudaStreamSynchronize,220,15026.24,,cpu_api
+medium,256,cpu_api_total,cuda_api_total,46748,1420913.85,,cpu_api
+medium,256,stage,forward,1,,57579.56,forward
+medium,256,stage,backward,1,,104413.86,backward
+medium,256,stage,optimizer,1,,214714.42,optimizer
+medium,256,stage,attention/scores,24,,4544.68,attention/scores
+medium,256,stage,attention/softmax,24,,637.41,attention/softmax
+medium,256,stage,attention/value,24,,2133.47,attention/value
+medium,512,kernel,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned long)2>>(int, T2, T3)",8472,,88012.65,elementwise
+medium,512,kernel,ampere_sgemm_128x64_tn,438,,54853.84,matmul
+medium,512,kernel,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::CUDAFunctor_add<float>, std::array<char *, (unsigned long)3>>(int, T2, T3)",7866,,53908.06,elementwise
+medium,512,kernel,ampere_sgemm_128x64_nn,438,,53734.82,matmul
+medium,512,kernel,"void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 3)]::operator ()() const::[lambda() (instance 7)]::operator ()() const::[lambda(float) (instance 1)]>(at::TensorIteratorBase &, const T1 &)::[lambda(int) (instance 1)]>(int, T3)",1878,,38593.42,elementwise
+medium,512,cpu_api,cudaLaunchKernel,40358,616884.47,,cpu_api
+medium,512,cpu_api,cudaMemcpyAsync,514,489595.53,,cpu_api
+medium,512,cpu_api,cudaMalloc,392,124999.26,,cpu_api
+medium,512,cpu_api,cuLibraryLoadData,4,16547.35,,cpu_api
+medium,512,cpu_api,cudaStreamSynchronize,220,15093.36,,cpu_api
+medium,512,cpu_api_total,cuda_api_total,48082,1299200.86,,cpu_api
+medium,512,stage,forward,1,,140728.66,forward
+medium,512,stage,backward,1,,80388.92,backward
+medium,512,stage,optimizer,1,,165263.77,optimizer
+medium,512,stage,attention/scores,24,,7263.53,attention/scores
+medium,512,stage,attention/softmax,24,,940.6,attention/softmax
+medium,512,stage,attention/value,24,,3317.5,attention/value
+small,1024,kernel,ampere_sgemm_128x64_tn,510,,42989.38,matmul
+small,1024,kernel,void cutlass::Kernel2<cutlass_80_simt_sgemm_128x256_8x4_nt_align1>(T1::Params),222,,31596.25,matmul
+small,1024,kernel,ampere_sgemm_128x64_nn,432,,29827.67,matmul
+small,1024,kernel,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned long)2>>(int, T2, T3)",4296,,25835.94,elementwise
+small,1024,kernel,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned long)3>>(int, T2, T3)",1104,,21235.8,elementwise
+small,1024,cpu_api,cudaLaunchKernel,20624,575388.98,,cpu_api
+small,1024,cpu_api,cudaMemcpyAsync,262,114744.5,,cpu_api
+small,1024,cpu_api,cuLibraryLoadData,4,103450.33,,cpu_api
+small,1024,cpu_api,cudaMalloc,141,83031.36,,cpu_api
+small,1024,cpu_api,cudaMemsetAsync,1242,8257.32,,cpu_api
+small,1024,cpu_api_total,cuda_api_total,24587,911119.77,,cpu_api
+small,1024,stage,forward,1,,30662.81,forward
+small,1024,stage,backward,1,,127592.25,backward
+small,1024,stage,optimizer,1,,35672.75,optimizer
+small,1024,stage,attention/scores,12,,2517.36,attention/scores
+small,1024,stage,attention/softmax,12,,336.36,attention/softmax
+small,1024,stage,attention/value,12,,1180.43,attention/value
+small,256,kernel,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned long)2>>(int, T2, T3)",4296,,25741.11,elementwise
+small,256,kernel,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::CUDAFunctor_add<float>, std::array<char *, (unsigned long)3>>(int, T2, T3)",3978,,16840.92,elementwise
+small,256,kernel,"void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 3)]::operator ()() const::[lambda() (instance 7)]::operator ()() const::[lambda(float) (instance 1)]>(at::TensorIteratorBase &, const T1 &)::[lambda(int) (instance 1)]>(int, T3)",942,,12075.01,elementwise
+small,256,kernel,ampere_sgemm_128x64_tn,222,,9453.53,matmul
+small,256,kernel,void cutlass::Kernel2<cutlass_80_simt_sgemm_128x256_8x4_nt_align1>(T1::Params),216,,8935.82,matmul
+small,256,cpu_api,cudaLaunchKernel,20714,1036101.12,,cpu_api
+small,256,cpu_api,cudaMemcpyAsync,262,155445.33,,cpu_api
+small,256,cpu_api,cudaMalloc,179,23980.85,,cpu_api
+small,256,cpu_api,cuLibraryLoadData,4,19392.66,,cpu_api
+small,256,cpu_api,cudaOccupancyMaxActiveBlocksPerMultiprocessor,346,6096.07,,cpu_api
+small,256,cpu_api_total,cuda_api_total,23711,1262002.66,,cpu_api
+small,256,stage,forward,1,,88819.62,forward
+small,256,stage,backward,1,,38685.84,backward
+small,256,stage,optimizer,1,,38874.62,optimizer
+small,256,stage,attention/scores,12,,3436.83,attention/scores
+small,256,stage,attention/softmax,12,,500.07,attention/softmax
+small,256,stage,attention/value,12,,1643.54,attention/value
+small,512,kernel,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned long)2>>(int, T2, T3)",4296,,25731.76,elementwise
+small,512,kernel,ampere_sgemm_64x64_nn,438,,24303.1,matmul
+small,512,kernel,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::CUDAFunctor_add<float>, std::array<char *, (unsigned long)3>>(int, T2, T3)",3978,,18293.06,elementwise
+small,512,kernel,void cutlass::Kernel2<cutlass_80_simt_sgemm_128x256_8x4_nt_align1>(T1::Params),222,,17013.82,matmul
+small,512,kernel,ampere_sgemm_64x64_tn,360,,16785.28,matmul
+small,512,cpu_api,cudaLaunchKernel,20486,695282.4,,cpu_api
+small,512,cpu_api,cudaMemcpyAsync,262,111980.34,,cpu_api
+small,512,cpu_api,cudaMalloc,133,16851.36,,cpu_api
+small,512,cpu_api,cuLibraryLoadData,4,16563.49,,cpu_api
+small,512,cpu_api,cudaOccupancyMaxActiveBlocksPerMultiprocessor,1353,6980.96,,cpu_api
+small,512,cpu_api_total,cuda_api_total,24998,872058.28,,cpu_api
+small,512,stage,forward,1,,28092.28,forward
+small,512,stage,backward,1,,40667.95,backward
+small,512,stage,optimizer,1,,36393.88,optimizer
+small,512,stage,attention/scores,12,,2341.57,attention/scores
+small,512,stage,attention/softmax,12,,310.87,attention/softmax
+small,512,stage,attention/value,12,,1101.02,attention/value

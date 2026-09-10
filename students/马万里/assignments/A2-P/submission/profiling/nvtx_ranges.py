@@ -16,6 +16,5 @@ def annotated_sdpa(Q, K, V, mask=None):
     return out
 
 def patch_attention():
-    """Replace the model's attention function with the annotated version."""
     import cs336_basics.model as model_module
     model_module.scaled_dot_product_attention = annotated_sdpa

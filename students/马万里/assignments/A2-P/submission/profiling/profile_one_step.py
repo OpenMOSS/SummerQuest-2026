@@ -98,6 +98,7 @@ def main():
     torch.manual_seed(42)
     stage = "setup"
     try:
+        patch_attention()
         model = get_model(args.model_size, args.context_length, dtype)
         optimizer = AdamW(model.parameters(), lr=1e-3)
 
