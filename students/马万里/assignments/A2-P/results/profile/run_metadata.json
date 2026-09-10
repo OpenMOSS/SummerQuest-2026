@@ -1,0 +1,110 @@
+[
+  {
+    "model_size": "medium",
+    "context_length": 1024,
+    "batch_size": 1,
+    "dtype": "fp32",
+    "tool": "nsys",
+    "mode": "train_step",
+    "command": "nsys profile --output results/profile/run_medium_ctx1024 --force-overwrite true python profiling/profile_one_step.py --model-size medium --batch-size 1 --context-length 1024 --dtype fp32 --warmup 5",
+    "status": "success",
+    "trace_file": "results/profile/run_medium_ctx1024.nsys-rep",
+    "capture_scope": "nsys captures the whole process (5 warm-up steps + 1 measure step); the reported numbers only use the single measurement step",
+    "summary_scope": "kernel / CUDA API / stage rows are all filtered to the NVTX `profile/measure` window via SQLite timestamps",
+    "measure_window_ns": [
+      11567663171,
+      11864910999
+    ],
+    "measure_window_us": 297247.828
+  },
+  {
+    "model_size": "medium",
+    "context_length": 256,
+    "batch_size": 1,
+    "dtype": "fp32",
+    "tool": "nsys",
+    "mode": "train_step",
+    "command": "nsys profile --output results/profile/run_medium_ctx256 --force-overwrite true python profiling/profile_one_step.py --model-size medium --batch-size 1 --context-length 256 --dtype fp32 --warmup 5",
+    "status": "success",
+    "trace_file": "results/profile/run_medium_ctx256.nsys-rep",
+    "capture_scope": "nsys captures the whole process (5 warm-up steps + 1 measure step); the reported numbers only use the single measurement step",
+    "summary_scope": "kernel / CUDA API / stage rows are all filtered to the NVTX `profile/measure` window via SQLite timestamps",
+    "measure_window_ns": [
+      12321893735,
+      12698757221
+    ],
+    "measure_window_us": 376863.486
+  },
+  {
+    "model_size": "medium",
+    "context_length": 512,
+    "batch_size": 1,
+    "dtype": "fp32",
+    "tool": "nsys",
+    "mode": "train_step",
+    "command": "nsys profile --output results/profile/run_medium_ctx512 --force-overwrite true python profiling/profile_one_step.py --model-size medium --batch-size 1 --context-length 512 --dtype fp32 --warmup 5",
+    "status": "success",
+    "trace_file": "results/profile/run_medium_ctx512.nsys-rep",
+    "capture_scope": "nsys captures the whole process (5 warm-up steps + 1 measure step); the reported numbers only use the single measurement step",
+    "summary_scope": "kernel / CUDA API / stage rows are all filtered to the NVTX `profile/measure` window via SQLite timestamps",
+    "measure_window_ns": [
+      11605858033,
+      11992947861
+    ],
+    "measure_window_us": 387089.828
+  },
+  {
+    "model_size": "small",
+    "context_length": 1024,
+    "batch_size": 1,
+    "dtype": "fp32",
+    "tool": "nsys",
+    "mode": "train_step",
+    "command": "nsys profile --output results/profile/run_small_ctx1024 --force-overwrite true python profiling/profile_one_step.py --model-size small --batch-size 1 --context-length 1024 --dtype fp32 --warmup 5",
+    "status": "success",
+    "trace_file": "results/profile/run_small_ctx1024.nsys-rep",
+    "capture_scope": "nsys captures the whole process (5 warm-up steps + 1 measure step); the reported numbers only use the single measurement step",
+    "summary_scope": "kernel / CUDA API / stage rows are all filtered to the NVTX `profile/measure` window via SQLite timestamps",
+    "measure_window_ns": [
+      8247596464,
+      8442055259
+    ],
+    "measure_window_us": 194458.795
+  },
+  {
+    "model_size": "small",
+    "context_length": 256,
+    "batch_size": 1,
+    "dtype": "fp32",
+    "tool": "nsys",
+    "mode": "train_step",
+    "command": "nsys profile --output results/profile/run_small_ctx256 --force-overwrite true python profiling/profile_one_step.py --model-size small --batch-size 1 --context-length 256 --dtype fp32 --warmup 5",
+    "status": "success",
+    "trace_file": "results/profile/run_small_ctx256.nsys-rep",
+    "capture_scope": "nsys captures the whole process (5 warm-up steps + 1 measure step); the reported numbers only use the single measurement step",
+    "summary_scope": "kernel / CUDA API / stage rows are all filtered to the NVTX `profile/measure` window via SQLite timestamps",
+    "measure_window_ns": [
+      10964534843,
+      11131227654
+    ],
+    "measure_window_us": 166692.811
+  },
+  {
+    "model_size": "small",
+    "context_length": 512,
+    "batch_size": 1,
+    "dtype": "fp32",
+    "tool": "nsys",
+    "mode": "train_step",
+    "command": "nsys profile --output results/profile/run_small_ctx512 --force-overwrite true python profiling/profile_one_step.py --model-size small --batch-size 1 --context-length 512 --dtype fp32 --warmup 5",
+    "status": "success",
+    "trace_file": "results/profile/run_small_ctx512.nsys-rep",
+    "capture_scope": "nsys captures the whole process (5 warm-up steps + 1 measure step); the reported numbers only use the single measurement step",
+    "summary_scope": "kernel / CUDA API / stage rows are all filtered to the NVTX `profile/measure` window via SQLite timestamps",
+    "measure_window_ns": [
+      8192159566,
+      8297846489
+    ],
+    "measure_window_us": 105686.923
+  }
+]
