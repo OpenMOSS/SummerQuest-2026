@@ -128,7 +128,7 @@ def main():
             with nvtx.range("optimizer"):
                 optimizer.step()
             torch.cuda.synchronize()
-    except Exception as exc:  
+    except Exception as exc:
         write_failure(name, config, stage, exc)
         print(f"[profile_one_step] failed during '{stage}' for {name}: {exc}", file=sys.stderr)
         sys.exit(1)

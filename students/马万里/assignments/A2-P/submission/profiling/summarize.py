@@ -1,14 +1,19 @@
 """Generate lightweight, machine-readable profiling summaries for A2-P.
 
+统计口径统一为**单个预热后的 measurement step**：nsys 会把整个进程写进 trace
+(5 个 warm-up step + 1 个 measure step)，所以这里不读整份 `nsys stats` 总表，
+而是按 NVTX `profile/measure` 区间的时间边界过滤 SQLite 里的 kernel / CUDA API 行，
+让 kernel、CUDA API 与 NVTX stage 三类行口径一致。
+
 Outputs (all under results/profile/):
   trace_summary.csv   one table with a `kind` column covering
-                        kind=kernel  : GPU kernel rows  (Calls, cumulative CUDA time, phase)
-                        kind=stage   : NVTX stage ranges (forward/backward/optimizer/attention/*)
-                        kind=cpu_api : CUDA runtime API rows (Calls, cumulative CPU time)
+                        kind=kernel  : GPU kernel rows (Calls, cumulative cuda_time_us, phase)
+                        kind=kernel_total : all GPU kernels inside the measure window
+                        kind=stage   : NVTX stage ranges (wall/host duration -> stage_time_us)
+                        kind=cpu_api : CUDA runtime API rows (Calls, cumulative cpu_time_us)
                         kind=cpu_api_total : total CPU API time for the config
-  run_metadata.json   per-run config/command/status (success|failed) + failure reason
+  run_metadata.json   per-run config/command/status (success|failed) + summary scope
 """
-import csv
 import json
 import re
 import sqlite3
@@ -24,6 +29,11 @@ FAILURES_FILE = PROFILE_DIR / "failures.jsonl"
 STAGE_TEXTS = ["profile/measure", "forward", "backward", "optimizer",
                "scaled_dot_product_attention",
                "attention/scores", "attention/softmax", "attention/value"]
+
+SUMMARY_SCOPE = ("kernel / CUDA API / stage rows are all filtered to the NVTX "
+                 "`profile/measure` window via SQLite timestamps")
+CAPTURE_SCOPE = ("nsys captures the whole process (5 warm-up steps + 1 measure step); "
+                 "the reported numbers only use the single measurement step")
 
 PROFILE_DEFAULT_BATCH = 1
 
@@ -92,7 +102,14 @@ def generate_metadata():
         elif stats_file.exists():
             record = dict(base)
             record.update({"status": "success",
-                           "trace_file": f"results/profile/{name}.nsys-rep"})
+                           "trace_file": f"results/profile/{name}.nsys-rep",
+                           "capture_scope": CAPTURE_SCOPE,
+                           "summary_scope": SUMMARY_SCOPE})
+            window = measure_window(PROFILE_DIR / f"{name}.sqlite")
+            if window is not None:
+                m0, m1 = window
+                record.update({"measure_window_ns": [m0, m1],
+                               "measure_window_us": round((m1 - m0) / 1000.0, 3)})
         else:
             record = dict(base)
             record.update({"status": "failed", "trace_file": None,
@@ -103,62 +120,61 @@ def generate_metadata():
     print(f"Metadata written to {OUTPUT_METADATA} ({n_ok} success, {len(records) - n_ok} failed)")
 
 
-# ---------------- stats csv parsing ----------------
-def _first_header(rows, must_have):
-    for i, row in enumerate(rows):
-        if all(any(m in c for c in row) for m in must_have):
-            return i
-    return None
+# ---------------- measure window / sqlite aggregation ----------------
+def _connect(sqlite_file: Path):
+    return sqlite3.connect(f"file:{sqlite_file}?mode=ro", uri=True)
 
 
-def parse_kernel_rows(stats_file: Path):
-    """GPU kernel table (first table; header contains 'Instances')."""
-    with open(stats_file, newline="", encoding="utf-8") as f:
-        rows = list(csv.reader(f))
-    hi = _first_header(rows, ["Name", "Instances", "Total Time"])
-    if hi is None:
+def measure_window(sqlite_file: Path):
+    """Return (start_ns, end_ns) of the `profile/measure` NVTX range, or None."""
+    if not sqlite_file.exists():
+        return None
+    con = _connect(sqlite_file)
+    try:
+        rows = list(con.execute(
+            "SELECT start, end FROM NVTX_EVENTS "
+            "WHERE text = 'profile/measure' AND end >= start"))
+    except sqlite3.Error:
+        return None
+    finally:
+        con.close()
+    if not rows:
+        return None
+    return min(s for s, _ in rows), max(e for _, e in rows)
+
+
+def _normalize_api_name(name: str) -> str:
+    """nsys 的 sqlite 里 CUDA API 名带版本后缀（cudaLaunchKernel_v7000）。"""
+    return re.sub(r"_v\d+$", "", name)
+
+
+def aggregate_activity_rows(sqlite_file: Path, table: str, name_column: str,
+                            m0: int, m1: int):
+    """Group kernel / CUDA API rows by name inside [m0, m1).
+
+    Returns (name, calls, duration_ns) sorted by duration descending. The name is
+    resolved through StringIds when the column is an id; API version suffixes are
+    stripped before grouping so that rows split by version still merge.
+    """
+    sql = (f"SELECT COALESCE(s.value, CAST(t.{name_column} AS TEXT)), COUNT(*), "
+           f"SUM(t.end - t.start) FROM {table} AS t "
+           f"LEFT JOIN StringIds AS s ON s.id = t.{name_column} "
+           f"WHERE t.start >= ? AND t.start < ? GROUP BY 1")
+    merged: dict = {}
+    con = _connect(sqlite_file)
+    try:
+        rows = list(con.execute(sql, (m0, m1)))
+    except sqlite3.Error:
         return []
-    header = rows[hi]
-    name_col = next(j for j, h in enumerate(header) if "Name" in h)
-    inst_col = next(j for j, h in enumerate(header) if "Instances" in h)
-    time_col = next(j for j, h in enumerate(header) if "Total Time" in h)
-    out = []
-    for row in rows[hi + 1:]:
-        if not row or all(c.strip() == "" for c in row):
-            continue
-        if any(c.strip() == "Name" for c in row):   # start of the 2nd (CUDA API) table
-            break
-        try:
-            out.append((row[name_col].strip(),
-                        int(row[inst_col].strip().replace(",", "")),
-                        float(row[time_col].strip().replace(",", ""))))
-        except (ValueError, IndexError):
-            continue
-    return sorted(out, key=lambda r: r[2], reverse=True)
-
-
-def parse_cpu_api_rows(stats_file: Path):
-    """CUDA runtime API table (second table; header contains 'Num Calls')."""
-    with open(stats_file, newline="", encoding="utf-8") as f:
-        rows = list(csv.reader(f))
-    hi = _first_header(rows, ["Name", "Num Calls", "Total Time"])
-    if hi is None:
-        return []
-    header = rows[hi]
-    name_col = next(j for j, h in enumerate(header) if "Name" in h)
-    call_col = next(j for j, h in enumerate(header) if "Num Calls" in h or "Calls" in h)
-    time_col = next(j for j, h in enumerate(header) if "Total Time" in h)
-    out = []
-    for row in rows[hi + 1:]:
-        if not row or all(c.strip() == "" for c in row):
-            continue
-        try:
-            out.append((row[name_col].strip(),
-                        int(row[call_col].strip().replace(",", "")),
-                        float(row[time_col].strip().replace(",", ""))))
-        except (ValueError, IndexError):
-            continue
-    return sorted(out, key=lambda r: r[2], reverse=True)
+    finally:
+        con.close()
+    for raw, calls, ns in rows:
+        key = _normalize_api_name(raw if raw else "[unknown]")
+        acc = merged.setdefault(key, [0, 0])
+        acc[0] += calls
+        acc[1] += ns or 0
+    return sorted(((k, c, d) for k, (c, d) in merged.items()),
+                  key=lambda r: r[2], reverse=True)
 
 
 # ---------------- NVTX stage ranges from the sqlite export ----------------
@@ -166,7 +182,7 @@ def parse_stage_rows(sqlite_file: Path):
     """Return {stage: (n_ranges, duration_ns)} from NVTX_EVENTS inside profile/measure."""
     if not sqlite_file.exists():
         return {}
-    con = sqlite3.connect(f"file:{sqlite_file}?mode=ro", uri=True)
+    con = _connect(sqlite_file)
     cur = con.cursor()
     marks = ",".join("?" * len(STAGE_TEXTS))
     nv = {}
@@ -195,38 +211,53 @@ def parse_stage_rows(sqlite_file: Path):
 
 def generate_trace_summary():
     rows = []
-    def add(model, ctx, kind, name, calls, cpu_us, cuda_us, phase):
-        rows.append({"model_size": model, "context_length": ctx, "kind": kind, "name": name,
-                     "calls": calls, "cpu_time_us": cpu_us, "cuda_time_us": cuda_us, "phase": phase})
 
-    for stats_file in sorted(PROFILE_DIR.glob("run_*_stats.csv")):
-        m = re.match(r"run_(small|medium|large|xl)_ctx(\d+)_stats", stats_file.stem)
+    def add(model, ctx, kind, name, calls, cpu_us, cuda_us, stage_us, phase):
+        rows.append({"model_size": model, "context_length": ctx, "kind": kind, "name": name,
+                     "calls": calls, "cpu_time_us": cpu_us, "cuda_time_us": cuda_us,
+                     "stage_time_us": stage_us, "phase": phase})
+
+    for sqlite_file in sorted(PROFILE_DIR.glob("run_*_ctx*.sqlite")):
+        m = re.match(r"run_(small|medium|large|xl)_ctx(\d+)\.sqlite", sqlite_file.name)
         if not m:
             continue
         model, ctx = m.group(1), int(m.group(2))
-        print(f"Processing {stats_file.name} ...")
+        window = measure_window(sqlite_file)
+        if window is None:
+            print(f"[skip] {sqlite_file.name}: no profile/measure NVTX range")
+            continue
+        m0, m1 = window
+        print(f"Processing {sqlite_file.name} (measure window {(m1 - m0) / 1e3:.1f} us) ...")
 
-        for name, calls, ns in parse_kernel_rows(stats_file)[:5]:
-            add(model, ctx, "kernel", name, calls, "", round(ns / 1000.0, 2), infer_phase(name))
+        kernel_rows = aggregate_activity_rows(
+            sqlite_file, "CUPTI_ACTIVITY_KIND_KERNEL", "demangledName", m0, m1)
+        for name, calls, ns in kernel_rows[:5]:
+            add(model, ctx, "kernel", name, calls, "", round(ns / 1000.0, 2), "",
+                infer_phase(name))
+        if kernel_rows:
+            add(model, ctx, "kernel_total", "gpu_kernel_total",
+                sum(c for _, c, _ in kernel_rows),
+                "", round(sum(ns for _, _, ns in kernel_rows) / 1000.0, 2), "", "kernel")
 
-        cpu_rows = parse_cpu_api_rows(stats_file)
+        cpu_rows = aggregate_activity_rows(
+            sqlite_file, "CUPTI_ACTIVITY_KIND_RUNTIME", "nameId", m0, m1)
         for name, calls, ns in cpu_rows[:5]:
-            add(model, ctx, "cpu_api", name, calls, round(ns / 1000.0, 2), "", "cpu_api")
+            add(model, ctx, "cpu_api", name, calls, round(ns / 1000.0, 2), "", "", "cpu_api")
         if cpu_rows:
-            total_ns = sum(ns for _, _, ns in cpu_rows)
-            total_calls = sum(c for _, c, _ in cpu_rows)
-            add(model, ctx, "cpu_api_total", "cuda_api_total", total_calls,
-                round(total_ns / 1000.0, 2), "", "cpu_api")
+            add(model, ctx, "cpu_api_total", "cuda_api_total",
+                sum(c for _, c, _ in cpu_rows),
+                round(sum(ns for _, _, ns in cpu_rows) / 1000.0, 2), "", "", "cpu_api")
 
-        stage_rows = parse_stage_rows(PROFILE_DIR / f"run_{model}_ctx{ctx}.sqlite")
-        for stage in ["forward", "backward", "optimizer",
+        stage_rows = parse_stage_rows(sqlite_file)
+        for stage in ["profile/measure", "forward", "backward", "optimizer",
                       "attention/scores", "attention/softmax", "attention/value"]:
             if stage in stage_rows:
                 n, ns = stage_rows[stage]
-                add(model, ctx, "stage", stage, n, "", round(ns / 1000.0, 2), stage)
+                add(model, ctx, "stage", stage, n, "", "", round(ns / 1000.0, 2), stage)
 
     result_df = pd.DataFrame(rows, columns=["model_size", "context_length", "kind", "name",
-                                            "calls", "cpu_time_us", "cuda_time_us", "phase"])
+                                            "calls", "cpu_time_us", "cuda_time_us",
+                                            "stage_time_us", "phase"])
     result_df.to_csv(OUTPUT_TRACE_SUMMARY, index=False)
     print(f"trace_summary.csv written to {OUTPUT_TRACE_SUMMARY} ({len(result_df)} rows)")
 
