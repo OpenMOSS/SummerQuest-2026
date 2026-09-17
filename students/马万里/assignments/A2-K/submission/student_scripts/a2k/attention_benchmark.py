@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import subprocess
 import csv
 import gc
 import json
@@ -10,6 +11,7 @@ from pathlib import Path
 
 import torch
 import torch.nn as nn
+import triton.testing
 
 from cs336_basics.model import BasicsTransformerLM
 from cs336_basics.nn_utils import cross_entropy
@@ -72,7 +74,8 @@ def append_row(path: Path, row: dict) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     exists = path.exists() and path.stat().st_size > 0
     with path.open("a", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=CSV_FIELDS, extrasaction="ignore")
+        writer = csv.DictWriter(handle, fieldnames=CSV_FIELDS, extrasaction="ignore",
+                                lineterminator="\n")
         if not exists:
             writer.writeheader()
         writer.writerow({field: row.get(field, "") for field in CSV_FIELDS})
@@ -281,23 +284,88 @@ def measure_full_model(implementation: str, phase: str, seed: int) -> tuple[dict
     return row, fraction
 
 
+#: 任务二固定矩阵：与报告 §4 一致，每个配置一个独立 Python 子进程。
+BASELINE_SHAPES = ((512, 64), (512, 128), (2048, 64), (2048, 128), (8192, 64), (8192, 128))
+COMPILE_SHAPES = ((512, 64), (2048, 128), (8192, 128))
+PHASE_CHOICES = ("forward", "backward", "forward_backward")
+
+
+def run_batch(args) -> None:
+    """在单张 RTX 4090 上串行跑完任务二的**一个**矩阵。
+
+    ``--matrix baseline`` 跑 6 个 shape × 3 个 phase 的显式 attention；
+    ``--matrix compile`` 跑 3 个代表配置的 eager/compiled 对照以及 small 模型的
+    train_step 对照。两个矩阵的产物文件不同，因此分成两次调用，各自写自己的 --output。
+
+    每个配置都用独立的 ``sys.executable`` 子进程执行，进程之间不共享显存缓存与
+    ``torch.compile`` 缓存——这是固定矩阵要求的隔离方式，也让每个配置的
+    allocator 上限都在首次 CUDA allocation 之前设置。
+    """
+    if args.matrix is None:
+        raise ValueError("批量模式需要 --matrix baseline 或 --matrix compile")
+    for output in (args.output, args.metadata_output):
+        if output is not None and output.exists():
+            output.unlink()
+
+    def spawn(*extra: str) -> None:
+        command = [
+            sys.executable, str(Path(__file__).resolve()),
+            "--seed", str(args.seed),
+            "--warmup-ms", str(args.warmup_ms),
+            "--rep-ms", str(args.rep_ms),
+            *extra,
+        ]
+        print(" ".join(command), flush=True)
+        subprocess.run(command, check=True, cwd=Path.cwd())
+
+    base = ["--metadata-output", str(args.metadata_output)]
+    if args.matrix == "baseline":
+        for sequence_length, head_dim in BASELINE_SHAPES:
+            for phase in PHASE_CHOICES:
+                spawn("--mode", "baseline", "--implementation", "eager",
+                      "--sequence-length", str(sequence_length), "--head-dim", str(head_dim),
+                      "--phase", phase, "--output", str(args.output), *base)
+        return
+    for sequence_length, head_dim in COMPILE_SHAPES:
+        for implementation in ("eager", "compiled"):
+            for phase in PHASE_CHOICES:
+                spawn("--mode", "compile", "--implementation", implementation,
+                      "--sequence-length", str(sequence_length), "--head-dim", str(head_dim),
+                      "--phase", phase, "--output", str(args.output), *base)
+    for implementation in ("eager", "compiled"):
+        for phase in ("forward", "forward_backward", "train_step"):
+            spawn("--mode", "full_model", "--implementation", implementation,
+                  "--phase", phase, "--output", str(args.output), *base)
+
+
 def main() -> None:
     global WARMUP_MS, REP_MS
     parser = argparse.ArgumentParser(description="A2-K 任务二 attention benchmark")
-    parser.add_argument("--mode", choices=["baseline", "compile", "full_model"], required=True)
+    parser.add_argument("--mode", choices=["baseline", "compile", "full_model"])
+    parser.add_argument("--batch", action="store_true",
+                        help="跑任务二固定矩阵中的一个矩阵（每个配置一个独立子进程）")
+    parser.add_argument("--matrix", choices=("baseline", "compile"),
+                        help="配合 --batch 选择要跑的矩阵")
     parser.add_argument("--implementation", choices=["eager", "compiled"], default="eager")
     parser.add_argument("--sequence-length", type=int)
     parser.add_argument("--head-dim", type=int)
-    parser.add_argument("--phase", choices=(*PHASES, "train_step"), required=True)
+    parser.add_argument("--phase", choices=(*PHASES, "train_step"))
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--batch-output", type=Path,
+                        help=argparse.SUPPRESS)
     parser.add_argument("--metadata-output", type=Path)
     parser.add_argument("--warmup-ms", type=int, default=WARMUP_MS)
     parser.add_argument("--rep-ms", type=int, default=REP_MS)
     args = parser.parse_args()
     WARMUP_MS, REP_MS = args.warmup_ms, args.rep_ms
+    if args.batch:
+        run_batch(args)
+        return
+    if args.mode is None or args.phase is None:
+        raise ValueError("单配置模式需要 --mode 与 --phase；若要跑完整矩阵请用 --batch")
     if not torch.cuda.is_available():
-        raise RuntimeError("必须在 srun 申请的 fnlp-4090 节点执行任务二 benchmark")
+        raise RuntimeError("任务二正式测量需要 CUDA，请在单张 RTX 4090 上执行")
 
     if args.mode == "full_model":
         row, fraction = measure_full_model(args.implementation, args.phase, args.seed)

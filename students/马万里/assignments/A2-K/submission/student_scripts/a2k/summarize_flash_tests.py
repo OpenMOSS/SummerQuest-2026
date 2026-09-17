@@ -1,5 +1,5 @@
 """python student_scripts/a2k/summarize_flash_tests.py \\
-    --run "srun -p fnlp-4090 --gres=gpu:1 python -m pytest tests/test_attention.py -v" \\
+    --run "python -m pytest tests/test_attention.py -v" \\
     --gpu "NVIDIA GeForce RTX 4090"
 """
 
@@ -41,7 +41,7 @@ _PLACEHOLDERS = ("<workspace>", "<home>", "<tmp>", "<scratch>", "<lustre>", "<ip
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--run", metavar="COMMAND", required=True, help="要执行的 pytest 命令（可含 srun 前缀）")
+    parser.add_argument("--run", metavar="COMMAND", required=True, help="要执行的 pytest 命令（在已申请到单张 RTX 4090 的进程里运行）")
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR, help="报告输出目录")
     parser.add_argument("--output-name", default=REPORT_FILENAME, help="报告文件名")
     parser.add_argument("--env", type=Path, default=None, help="环境 JSON，用于自动填写 GPU 型号")

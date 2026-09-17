@@ -5,7 +5,7 @@ A2-K FlashAttention 测试报告
 
 运行信息：
   GPU: NVIDIA GeForce RTX 4090
-  Command: srun -p fnlp-4090 --gres=gpu:1 python -m pytest tests/test_attention.py -v
+  Command: python -m pytest tests/test_attention.py -v
   Commit: ca8bc81a59b70516f7ebb2da4808daade877c736
 
 统计：

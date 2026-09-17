@@ -34,6 +34,6 @@
   "batch_size": 1,
   "memory_measure_iterations": 5,
   "seed": 42,
-  "command": "srun -p fnlp-4090 --gres=gpu:1 bash run_task5_flash.sh",
+  "command": "python student_scripts/a2k/task5_metadata.py && python student_scripts/a2k/task5_correctness.py --length 128 512 2048 && python student_scripts/a2k/flash_benchmark.py --implementation eager --sequence-length 512 --head-dim 64 --phase forward",
   "commit": "ca8bc81a59b70516f7ebb2da4808daade877c736"
 }

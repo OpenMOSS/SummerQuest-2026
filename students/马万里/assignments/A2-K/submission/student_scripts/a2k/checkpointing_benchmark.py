@@ -8,6 +8,8 @@ import json
 import math
 import os
 import statistics
+import subprocess
+import sys
 import time
 from pathlib import Path
 
@@ -87,6 +89,40 @@ def run_one(context_length: int, block_size: int | None, warmup: int, steps: int
     }
 
 
+def run_batch(args) -> None:
+    """逐配置跑任务一固定矩阵；每个配置都是一个独立进程。
+
+    独立进程是必须的：PyTorch 的分配器缓存池在同一进程内不会因
+    ``reset_peak_memory_stats()`` 而复位，所以如果所有配置共用一个进程，
+    ``peak_reserved_mib`` 会变成「本进程内出现过的最大值」，在 context length
+    更大的配置之后，后续配置的 reserved 都会被这个高水位污染。每个配置单独起进程
+    也保证 allocator 上限在该进程的第一次 CUDA allocation 之前设置。
+    """
+    output = Path(args.output)
+    output.parent.mkdir(parents=True, exist_ok=True)
+    if output.exists():
+        output.unlink()
+    specs = [(ctx, block) for ctx in args.context_lengths
+             for block in [0, *args.block_sizes]]
+    failures: list[str] = []
+    for context_length, block_size in specs:
+        command = [
+            sys.executable, str(Path(__file__).resolve()),
+            "--single-context", str(context_length),
+            "--single-block", str(block_size),
+            "--warmup", str(args.warmup), "--steps", str(args.steps),
+            "--seed", str(args.seed),
+            "--single-output", str(output),
+        ]
+        print(" ".join(command), flush=True)
+        result = subprocess.run(command, check=False, cwd=Path.cwd())
+        if result.returncode != 0:
+            failures.append(f"{context_length}/block{block_size}")
+    print(f"矩阵完成：{len(specs)} 个配置，子进程失败 {len(failures)} 个", flush=True)
+    for item in failures:
+        print(f"  子进程退出码非 0：{item}", flush=True)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="A2-K 任务一 checkpointing 矩阵")
     parser.add_argument("--context-lengths", nargs="+", type=int, default=[1024, 2048])
@@ -95,13 +131,20 @@ def main() -> None:
     parser.add_argument("--steps", type=int, default=5)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--output", type=Path, default=Path("local_results/a2k/checkpointing.csv"))
+    parser.add_argument("--batch", action="store_true",
+                        help="逐配置跑任务一固定矩阵（每个配置一个独立进程）")
     parser.add_argument("--single-context", type=int, help=argparse.SUPPRESS)
     parser.add_argument("--single-block", type=int, help=argparse.SUPPRESS)
     parser.add_argument("--single-output", type=Path, help=argparse.SUPPRESS)
     args = parser.parse_args()
+    if args.batch:
+        if not torch.cuda.is_available():
+            raise RuntimeError("任务一正式测量需要 CUDA，请在单张 RTX 4090 上执行")
+        run_batch(args)
+        return
     if args.single_context is not None:
         if not torch.cuda.is_available():
-            raise RuntimeError("必须在 srun 申请的 GPU 节点执行")
+            raise RuntimeError("任务一正式测量需要 CUDA，请在单张 RTX 4090 上执行")
         # 单配置子进程也必须在第一次 CUDA allocation 前设置 allocator 上限。
         set_allocator_limit()
         block_size = None if args.single_block == 0 else args.single_block
@@ -109,13 +152,13 @@ def main() -> None:
         args.single_output.parent.mkdir(parents=True, exist_ok=True)
         exists = args.single_output.exists() and args.single_output.stat().st_size > 0
         with args.single_output.open("a", newline="", encoding="utf-8") as handle:
-            writer = csv.DictWriter(handle, fieldnames=list(row))
+            writer = csv.DictWriter(handle, fieldnames=list(row), lineterminator="\n")
             if not exists:
                 writer.writeheader()
             writer.writerow(row)
         return
     if not torch.cuda.is_available():
-        raise RuntimeError("任务一正式测量需要 CUDA，请通过 srun 申请 RTX 4090 节点")
+        raise RuntimeError("任务一正式测量需要 CUDA，请在单张 RTX 4090 上执行")
     fraction = set_allocator_limit()
     rows = []
     for context_length in args.context_lengths:
@@ -124,7 +167,7 @@ def main() -> None:
     args.output.parent.mkdir(parents=True, exist_ok=True)
     fields = list(rows[0])
     with args.output.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fields)
+        writer = csv.DictWriter(handle, fieldnames=fields, lineterminator="\n")
         writer.writeheader(); writer.writerows(rows)
     metadata = {"allocator_limit_mib": 23552, "allocator_fraction": fraction, "seed": args.seed, "command": os.sys.argv, "cuda_device": torch.cuda.get_device_name(0)}
     args.output.with_name("checkpointing_metadata.json").write_text(json.dumps(metadata, ensure_ascii=True, indent=2), encoding="utf-8")

@@ -3,7 +3,6 @@ from __future__ import annotations
 import torch
 
 
-
 def get_flashattention_autograd_function_pytorch() -> type:
     """
     Returns a torch.autograd.Function subclass that implements FlashAttention2.

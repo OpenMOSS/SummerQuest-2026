@@ -4,6 +4,8 @@ from __future__ import annotations
 
 import argparse
 import csv
+import subprocess
+import sys
 import gc
 import time
 from pathlib import Path
@@ -35,7 +37,7 @@ def append(path: Path, values: dict):
     path.parent.mkdir(parents=True, exist_ok=True)
     exists = path.exists() and path.stat().st_size > 0
     with path.open("a", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=FIELDS)
+        writer = csv.DictWriter(handle, fieldnames=FIELDS, lineterminator="\n")
         if not exists:
             writer.writeheader()
         writer.writerow({field: values.get(field, "") for field in FIELDS})
@@ -89,15 +91,63 @@ def measure_peak_memory(step, iterations=MEMORY_MEASURE_ITERATIONS):
     return torch.cuda.max_memory_allocated() / 2**20, torch.cuda.max_memory_reserved() / 2**20
 
 
+#: 任务五固定矩阵：8 个 shape × 3 个 phase × 3 种实现 = 72 个配置。
+BATCH_SHAPES = ((512, 64), (512, 128), (2048, 64), (2048, 128),
+                (8192, 64), (8192, 128), (16384, 64), (16384, 128))
+BATCH_PHASES = ("forward", "backward", "forward_backward")
+BATCH_IMPLEMENTATIONS = ("eager", "compiled", "triton")
+
+
+def run_batch(output: Path) -> None:
+    """逐配置跑完整矩阵；每个配置都是一个独立进程。
+
+    独立进程是必须的：allocator 上限要在首次 CUDA allocation 之前设置，而且不同
+    shape 的显存缓存、``torch.compile`` 缓存不能相互污染。单个配置失败（例如 OOM）
+    不中止整批——失败会由该配置自己写进 CSV 的 status 列。
+    """
+    output.parent.mkdir(parents=True, exist_ok=True)
+    if output.exists():
+        output.unlink()
+    failures: list[str] = []
+    for sequence_length, head_dim in BATCH_SHAPES:
+        for phase in BATCH_PHASES:
+            for implementation in BATCH_IMPLEMENTATIONS:
+                command = [
+                    sys.executable, str(Path(__file__).resolve()),
+                    "--implementation", implementation,
+                    "--sequence-length", str(sequence_length),
+                    "--head-dim", str(head_dim),
+                    "--phase", phase,
+                    "--output", str(output),
+                ]
+                print(" ".join(command), flush=True)
+                result = subprocess.run(command, check=False, cwd=Path.cwd())
+                if result.returncode != 0:
+                    failures.append(f"{sequence_length}/{head_dim}/{phase}/{implementation}")
+    print(f"矩阵完成：{len(BATCH_SHAPES) * len(BATCH_PHASES) * len(BATCH_IMPLEMENTATIONS)} 个配置，"
+          f"子进程失败 {len(failures)} 个", flush=True)
+    for item in failures:
+        print(f"  子进程退出码非 0：{item}", flush=True)
+
+
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--implementation", choices=("eager", "compiled", "triton"), required=True)
-    parser.add_argument("--sequence-length", type=int, required=True)
-    parser.add_argument("--head-dim", type=int, required=True)
-    parser.add_argument("--phase", choices=("forward", "backward", "forward_backward"), required=True)
+    parser.add_argument("--implementation", choices=("eager", "compiled", "triton"))
+    parser.add_argument("--sequence-length", type=int)
+    parser.add_argument("--head-dim", type=int)
+    parser.add_argument("--phase", choices=("forward", "backward", "forward_backward"))
+    parser.add_argument("--batch", action="store_true",
+                        help="逐配置跑完任务五固定矩阵（每个配置一个独立进程）")
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
+    if args.batch:
+        run_batch(args.output)
+        return
+    missing = [name for name in ("implementation", "sequence_length", "head_dim", "phase")
+               if getattr(args, name) is None]
+    if missing:
+        raise SystemExit(f"单配置模式缺少参数 {missing}；若要跑完整矩阵请用 --batch")
 
     num_stages = triton_num_stages(args.head_dim)
     row = {"implementation": args.implementation, "sequence_length": args.sequence_length,

@@ -327,36 +327,36 @@ try:
         )
         o_block_ptr = tl.make_block_ptr(
             base=o_ptr + batch_index * stride_ob,
-            shape=(N_QUERIES, D), 
+            shape=(N_QUERIES, D),
             strides=(stride_oq, stride_od),
             offsets=(query_tile_index * Q_TILE_SIZE, 0),
-            block_shape=(Q_TILE_SIZE, D), 
+            block_shape=(Q_TILE_SIZE, D),
             order=(1, 0),
         )
         # L 的形状是 [batch, n_queries]，没有 head 维，所以是一维 block pointer。
         l_block_ptr = tl.make_block_ptr(
             base=l_ptr + batch_index * stride_lb,
-            shape=(N_QUERIES,), 
+            shape=(N_QUERIES,),
             strides=(stride_lq,),
             offsets=(query_tile_index * Q_TILE_SIZE,),
-            block_shape=(Q_TILE_SIZE,), 
+            block_shape=(Q_TILE_SIZE,),
             order=(0,),
         )
         # K/V 从第 0 行开始，在内层循环里沿 key 维前进。
         k_block_ptr = tl.make_block_ptr(
             base=k_ptr + batch_index * stride_kb,
-            shape=(N_KEYS, D), 
+            shape=(N_KEYS, D),
             strides=(stride_kk, stride_kd),
-            offsets=(0, 0), 
-            block_shape=(K_TILE_SIZE, D), 
+            offsets=(0, 0),
+            block_shape=(K_TILE_SIZE, D),
             order=(1, 0),
         )
         v_block_ptr = tl.make_block_ptr(
             base=v_ptr + batch_index * stride_vb,
-            shape=(N_KEYS, D), 
+            shape=(N_KEYS, D),
             strides=(stride_vk, stride_vd),
-            offsets=(0, 0), 
-            block_shape=(K_TILE_SIZE, D), 
+            offsets=(0, 0),
+            block_shape=(K_TILE_SIZE, D),
             order=(1, 0),
         )
 

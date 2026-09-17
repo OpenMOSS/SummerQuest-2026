@@ -80,17 +80,34 @@ Triton kernel 内所有 `tl.dot` 显式指定 `input_precision="ieee"`。两者�
 **安排方式**：对 `N` 个相同 Transformer block，最优安排是均匀分块的非嵌套 checkpoint。
 把 `N` 层切成 `B = N/k` 个连续 block，每块 `k` 层，只在每个 block 的入口边界保存一次
 activation；块内的 `k − 1` 个中间 activation 一律不保存，反向需要时由入口 activation
-重新前向算出。不嵌套的原因：嵌套只会把重计算量再乘一个常数、把常驻量降为对数项，
-在 `N = 24` 的规模下拿不到渐近收益。
+重新前向算出。
+
+上面这组结论与 Chen 等人提出 activation checkpointing 的原始论文一致。该论文给出的
+算法用 `O(√n)` 显存训练 `n` 层网络，代价是每个 mini-batch 只多一遍前向——这正是本作业
+采用这一档的依据；论文同时指出，把递归（嵌套）安排做到极端可以把显存进一步压到
+`O(log n)`，但前向计算要多付 `O(n log n)`（[Training Deep Nets with Sublinear Memory Cost, arXiv:1604.06174](https://arxiv.org/abs/1604.06174)）。
+在 `N = 24` 的规模下，`O(log n)` 相对 `O(√n)` 只剩常数级差别，而多出来的重算按
+`n log n / n = log n` 计已不划算，因此这里止步于均匀非嵌套。
 
 **峰值位置**：某个 block 正在做块内重计算时。此时常驻 = `B` 个边界 activation +
 当前重算 block 的 `k` 层内部 activation（含该层的 2D 注意力中间量）。
 
 **渐近表达**：
 
-- 不 checkpoint：峰值 activation memory `Θ(N)`。
-- block size `k`：`M(k) = Θ(N/k + k)`，在 `k* = Θ(√N)` 处最小，为 `Θ(√N)`。
-- 重计算代价：总计算量多出 `1/k` 倍的前向，`k = 1` 时最多。
+- 不 checkpoint：峰值 activation memory `Θ(N)`（每层都常驻）。
+- block size `k`：`M(k) = Θ(N/k + k)`，在 `k* = Θ(√N)` 处取最小值 `Θ(√N)`。
+- 重计算代价：反向阶段要为每个 block 重算块内 `k` 层的前向，`B = N/k` 个 block 合计
+  重算 `(N/k)·k = N` 层前向。**无论 `k` 取多少，额外计算总量都是 `Θ(N)`**，即固定为
+  「比不 checkpoint 多一遍前向」这一量级，不会随 `k` 变化——`k` 只改变这笔开销的
+  **分摊方式与常数因子**（每个 block 重算多少层、反向与重计算如何交错、kernel 与
+  显存访问模式的效率），不改变渐近阶。
+
+因此 checkpoint 的本质是**用一次额外的全量前向换取 activation 峰值从 `Θ(N)` 降到
+`Θ(√N)`**；不同 `k` 之间的时间差异来自常数项，而非计算量的阶数差异。
+
+`M(k) = Θ(N/k + k)` 在 `k* = √N ≈ 5` 处最小，实测的较小峰值落在
+`block1`–`block8` 之间，与这个量级相符；§3.3 给出实测值，并解释为什么实际曲线
+比这条只考虑 activation 的理论式更平。
 
 **代码骨架**：
 
@@ -123,38 +140,44 @@ AdamW，每配置 3 个 warm-up step、5 个 measurement step，测量完整 tra
 
 | config_id | context | block | peak allocated (MiB) | peak reserved (MiB) | step p50 (ms) | status |
 | --- | ---: | ---: | ---: | ---: | ---: | --- |
-| `medium_k1024_none` | 1024 | — | 10069.4 | 10272 | 167.79 | ok |
-| `medium_k1024_block1` | 1024 | 1 | 6864.5 | 7058 | 258.14 | ok |
-| `medium_k1024_block2` | 1024 | 2 | 7005.1 | 7170 | 211.18 | ok |
-| `medium_k1024_block4` | 1024 | 4 | 7282.5 | 7380 | 237.59 | ok |
-| `medium_k1024_block8` | 1024 | 8 | 7839.3 | 7954 | 216.95 | ok |
-| `medium_k2048_none` | 2048 | — | 19662.6 | 20192 | 374.58 | ok |
-| `medium_k2048_block1` | 2048 | 1 | 8061.1 | 8634 | 477.52 | ok |
+| `medium_k1024_none` | 1024 | — | 10068.5 | 10272 | 160.17 | ok |
+| `medium_k1024_block1` | 1024 | 1 | 6864.5 | 7058 | 275.41 | ok |
+| `medium_k1024_block2` | 1024 | 2 | 7005.1 | 7170 | 249.64 | ok |
+| `medium_k1024_block4` | 1024 | 4 | 7282.5 | 7380 | 239.18 | ok |
+| `medium_k1024_block8` | 1024 | 8 | 7839.3 | 7954 | 237.75 | ok |
+| `medium_k2048_none` | 2048 | — | 19662.6 | 20192 | 373.37 | ok |
+| `medium_k2048_block1` | 2048 | 1 | 8061.7 | 8634 | 478.38 | ok |
+| `medium_k2048_block2` | 2048 | 2 | 8565.5 | 9148 | 478.36 | ok |
+| `medium_k2048_block4` | 2048 | 4 | 9575.3 | 10188 | 479.64 | ok |
+| `medium_k2048_block8` | 2048 | 8 | 11599.4 | 11942 | 479.71 | ok |
 
-context length 2048 上，`none` 峰值 19662.6 MiB（占 23 GiB 预算的 84%），标准矩阵中
-peak allocated 最低的 `block1` 以 8061.1 MiB 成功，仅为 `none` 的 41%。
+context length 2048 上，`none` 峰值 19662.6 MiB（占 23 GiB 预算的83%），而 `block1` 只要 8061.7 MiB，为 `none` 的 41%。2048 上的完整扫描给出峰值随 `k` 单调回升的趋势：`block1` 8062 → `block2` 8565 → `block4` 9575 → `block8` 11599 MiB。
 
 ### 3.3 显存/时间权衡
 
 峰值 = 固定开销（参数 + 梯度 + AdamW 状态，与 `k` 无关）+ activation 项
-（≈ `B·A_residual + k·A_block`）。实测 `k2048_none − k1024_none = 9593.2 MiB`，
+（≈ `B·A_residual + k·A_block`）。实测 `k2048_none − k1024_none = 9594.1 MiB`，
 对应「每层 2D 注意力中间量 × 1024 个额外 token」，说明不 checkpoint 时峰值由逐层的
 二次方中间量主导。单独测得的 `A_residual` 仅 4.00 MiB/层，而块内 2D 中间量
 220.17 MiB/层（55×），因此减少 block 边界省下的远小于减少块内一层省下的，
 最优 `k` 被推向更小的一侧。
 
-以 `k = 1024` 的 `none` 为基准：`block1` 峰值降 32%（10069 → 6864 MiB），
-step 时间涨 54%（167.79 → 258.14 ms）；`block1 → block8` 只再省 975 MiB。
-收益递减的原因是固定开销约占峰值一半以上，checkpoint 压不动它。
+以 `k = 1024` 的 `none` 为基准：`block1` 把峰值从 10068 MiB 降到 6864 MiB（−32%），代价是 step p50 从 160.2 ms 升到 275.4 ms（+72%）；而 `block8` 反而比 `block1` 多占 975 MiB。
+收益递减的原因是固定开销约占峰值一半以上，checkpoint 压不动它：`Θ(N/k + k)` 只描述
+activation 项，而实测峰值里还有与 `k` 无关的那一半，因此实际曲线的起伏比该式更平，
+极小也更浅。
 
-> 五个 latency 采样中偶有离群值（见 `checkpointing.csv` 的 `step_time_ms_samples`），
-> 因此 `block2`（211.18 ms）与 `block8`（216.95 ms）约 3% 的差异不宜作强结论；
-> 显存结论不受影响。
+各 `k` 之间的时间差异（`block1` 275 ms、`block2` 250 ms、`block4` 239 ms、`block8` 238 ms）都落在同一量级（最大差约 16%），
+且不成比例于 `k`，这与 §3.1 的结论一致：重算量恒为一遍前向，差异来自常数项——
+`k` 越小，反向被切成越多、越短的 checkpoint 段，重计算与反向的调度次数更多；
+`k` 越大，块内需要同时驻留的 activation 越多，显存回升。
+
+> 五个 latency 采样中偶有离群值（见 `checkpointing.csv` 的 `step_time_ms_samples`），因此 `block2`（249.6 ms）与 `block8`（237.7 ms）之间约 5% 的差异不宜作强结论；显存结论不受影响。
 
 ![任务一 checkpointing 显存–时间权衡](assets/task1_checkpointing_tradeoff.png)
 
-**图 1**：横轴为 block size，纵轴分别是 peak allocated 与 step p50。可见峰值随 `k`
-先降后升的浅极小，以及时间随 `k` 减小的上升。
+**图 1**：横轴为 block size，纵轴分别是 peak allocated 与 step p50。可见 `k = 1024` 时峰值
+随 block size 单调上升（最小在 `block1`），而 step 时间的差异远小于峰值差异。
 
 ---
 
@@ -172,11 +195,11 @@ batch size 1、BF16、causal，`512/2048/8192 × 64/128` 共 18 行全部 `ok`
 | seq | head_dim | phase | p50 (ms) | peak reserved (MiB) |
 | ---: | ---: | --- | ---: | ---: |
 | 512 | 64 | forward | 0.0358 | 280 |
-| 512 | 64 | forward_backward | 0.8586 | 280 |
-| 2048 | 128 | backward | 0.4987 | 362 |
-| 8192 | 64 | forward | 2.1422 | 900 |
-| 8192 | 128 | backward | 4.7585 | 1302 |
-| 8192 | 128 | forward_backward | 6.8398 | 1174 |
+| 512 | 64 | forward_backward | 3.1150 | 280 |
+| 2048 | 128 | backward | 0.5100 | 362 |
+| 8192 | 64 | forward | 2.1340 | 900 |
+| 8192 | 128 | backward | 4.7626 | 1302 |
+| 8192 | 128 | forward_backward | 6.8409 | 1174 |
 
 显存随序列**二次方**增长：`8192/128` 的 backward 峰值是 `512/64` 的 4.6 倍，
 而序列长度是 16 倍。这与 `8192/128` 上显式实现物化 `N×N` 中间量的代价一致，
@@ -189,28 +212,23 @@ batch size 1、BF16、causal，`512/2048/8192 × 64/128` 共 18 行全部 `ok`
 
 | target | (seq, d) | phase | eager p50 | compiled p50 | 加速比 | cold start (ms) |
 | --- | --- | --- | ---: | ---: | ---: | ---: |
-| attention | (512, 64) | forward | 0.0369 | 0.0154 | 2.40× | 5094.1 |
-| attention | (512, 64) | forward_backward | 2.9491 | 0.8637 | 3.41× | 2203.1 |
-| attention | (2048, 128) | forward | 0.1137 | 0.0420 | 2.71× | 2343.1 |
-| attention | (2048, 128) | forward_backward | 3.1099 | 1.0455 | 2.97× | 2264.8 |
-| attention | (8192, 128) | forward | 2.1535 | 0.6748 | 3.19× | 2854.5 |
-| attention | (8192, 128) | forward_backward | 6.8454 | 2.5313 | 2.70× | 2281.6 |
-| small_transformer | (512, 64) | train_step | 87.8356 | 53.7876 | 1.63× | 17228.9 |
+| attention | (512, 64) | forward | 0.0358 | 0.0154 | 2.32× | 1983.3 |
+| attention | (512, 64) | forward_backward | 3.1304 | 0.4823 | 6.49× | 2304.0 |
+| attention | (2048, 128) | forward | 0.1137 | 0.0389 | 2.92× | 2024.1 |
+| attention | (2048, 128) | forward_backward | 3.1124 | 0.4116 | 7.56× | 2193.6 |
+| attention | (8192, 128) | forward | 2.1514 | 0.6738 | 3.19× | 2018.0 |
+| attention | (8192, 128) | forward_backward | 6.8419 | 2.5293 | 2.71× | 2340.6 |
+| small_transformer | (512, 64) | train_step | 93.0796 | 49.7091 | 1.87× | 16376.5 |
 
-- **稳态**：attention 的 forward 有 2.4–3.2×、forward_backward 有 2.7–3.4×。
-  显存同样下降，例如 `16384/64` 的 forward 峰值 reserved 从 2326 MiB 降到 1302 MiB，
-  因为 Inductor 融合了 `scale → where → softmax` 并复用缓冲（见 §8.2）。
-- **编译成本只付一次**：attention 配置 cold start 约 2.2–5.1 s；small 模型的
-  `train_step` 达 17.2 s。表格把 cold start 与稳态分位数分列，避免混入 latency。
-- **`forward_backward` 不等于 forward 与 backward 之和**：例如 `(2048,128)`，
-  eager 为 0.1137 + 0.4987 = 0.6124 ms 而实测 3.1099 ms。原因是该行的 step 含
+- **稳态**：三个代表配置上，attention 的 forward 为 2.3–3.2×、backward 为 1.8–3.9×、forward_backward 为 2.7–7.6×。
+  显存同样下降：`8192/128` 的 forward 峰值 reserved 从 854 MiB 降到 468 MiB，因为 Inductor 融合了 `scale → where → softmax` 并复用缓冲。
+- **编译成本只付一次**：attention 配置的 cold start 为 2.0–2.4 s；small 模型的 `train_step` 达 16.4 s（eager 同项为 93.1 ms，可见编译本身远贵于一次训练步）。表格把 cold start 与稳态分位数分列，避免把编译时间混进 latency。
+- **`forward_backward` 不等于 forward 与 backward 之和**：例如 `(2048,128)`，eager 为 0.1116 + 0.5100 = 0.6216 ms 而实测 3.1089 ms。原因是该行的 step 含
   `autograd.grad` 的图构建与梯度分配，且独立分位数不可相加。
 - **shape specialization**：compile 对 `(seq, head_dim, mask)` 特化。每个配置用独立
   进程与独立 shape，编译缓存进程内命中一次、跨进程不共享，所以 cold start 都在 2–3 s
   量级；`scaled_dot_product_attention` 全程是纯张量算子，未观察到 graph break。
-- **稳定性**：compiled 的 p20/p50/p80 很窄（`(2048,128)` forward 三者均为 0.0420），
-  而 `train_step` 的 p20–p80 为 `50.98/53.79/55.36`，符合端到端含 embedding、loss 与
-  optimizer 的预期。
+- **稳定性**：compiled 的分位数很窄（`(2048,128)` 的 forward p20/p50/p80 为 `0.0389/0.0389/0.0420 ms`），而 small 模型的 `train_step` 为 `48.1250/49.7091/51.1611 ms`，分布明显更宽，与端到端包含 embedding、loss 与 optimizer 的预期一致。
 
 ---
 
@@ -304,8 +322,10 @@ PyTorch tiled 与 Triton 两个 `autograd.Function` 共用这条重计算反向�
 ### 7.1 官方 tests
 
 ```bash
-srun -p fnlp-4090 --gres=gpu:1 python -m pytest tests/test_attention.py -v
+python -m pytest tests/test_attention.py -v
 ```
+
+（在已拿到单张 RTX 4090 的进程里执行。）
 
 `results/unit_tests.txt`：**6 passed, 0 failed, 0 skipped**。逐用例为
 `test_flash_forward_pass_pytorch`、`test_flash_forward_pass_triton[False]`、
@@ -345,59 +365,59 @@ batch size 1、BF16、causal。核心矩阵为 `512/2048/8192`（三种实现都
 | seq | head_dim | phase | 实现 | p50 (ms) | peak reserved (MiB) | 相对 eager | status |
 | ---: | ---: | --- | --- | ---: | ---: | ---: | --- |
 | 512 | 64 | fwd | eager | 0.0369 | 24 | 1.00× | ok |
-| 512 | 64 | fwd | compiled | 0.0205 | 22 | 1.80× | ok |
+| 512 | 64 | fwd | compiled | 0.0174 | 22 | 2.12× | ok |
 | 512 | 64 | fwd | triton | 0.7629 | 2 | 0.05× | ok |
-| 512 | 64 | bwd | eager | 0.4925 | 26 | 1.00× | ok |
-| 512 | 64 | bwd | compiled | 0.1705 | 24 | 2.89× | ok |
-| 512 | 64 | bwd | triton | 0.5361 | 28 | 0.92× | ok |
-| 512 | 64 | fwd+bwd | eager | 3.1058 | 24 | 1.00× | ok |
-| 512 | 64 | fwd+bwd | compiled | 0.3840 | 24 | 8.09× | ok |
-| 512 | 64 | fwd+bwd | triton | 1.9579 | 28 | 1.59× | ok |
-| 512 | 128 | fwd | eager | 0.0420 | 24 | 1.00× | ok |
-| 512 | 128 | fwd | compiled | 0.0236 | 22 | 1.78× | ok |
-| 512 | 128 | fwd | triton | 1.8801 | 2 | 0.02× | ok |
+| 512 | 64 | bwd | eager | 0.4895 | 26 | 1.00× | ok |
+| 512 | 64 | bwd | compiled | 0.1238 | 24 | 3.95× | ok |
+| 512 | 64 | bwd | triton | 0.5550 | 28 | 0.88× | ok |
+| 512 | 64 | fwd+bwd | eager | 3.1222 | 24 | 1.00× | ok |
+| 512 | 64 | fwd+bwd | compiled | 0.3820 | 24 | 8.17× | ok |
+| 512 | 64 | fwd+bwd | triton | 1.9763 | 28 | 1.58× | ok |
+| 512 | 128 | fwd | eager | 0.0389 | 24 | 1.00× | ok |
+| 512 | 128 | fwd | compiled | 0.0174 | 22 | 2.24× | ok |
+| 512 | 128 | fwd | triton | 1.8452 | 2 | 0.02× | ok |
 | 512 | 128 | bwd | eager | 0.4956 | 26 | 1.00× | ok |
-| 512 | 128 | bwd | compiled | 0.1823 | 24 | 2.72× | ok |
-| 512 | 128 | bwd | triton | 0.5386 | 28 | 0.92× | ok |
-| 512 | 128 | fwd+bwd | eager | 3.1447 | 26 | 1.00× | ok |
-| 512 | 128 | fwd+bwd | compiled | 0.3840 | 24 | 8.19× | ok |
-| 512 | 128 | fwd+bwd | triton | 1.9671 | 28 | 1.60× | ok |
-| 2048 | 64 | fwd | eager | 0.1014 | 62 | 1.00× | ok |
-| 2048 | 64 | fwd | compiled | 0.0399 | 42 | 2.54× | ok |
-| 2048 | 64 | fwd | triton | 2.7720 | 2 | 0.04× | ok |
-| 2048 | 64 | bwd | eager | 0.4987 | 104 | 1.00× | ok |
-| 2048 | 64 | bwd | compiled | 0.2068 | 84 | 2.41× | ok |
-| 2048 | 64 | bwd | triton | 0.5417 | 106 | 0.92× | ok |
-| 2048 | 64 | fwd+bwd | eager | 3.1575 | 104 | 1.00× | ok |
-| 2048 | 64 | fwd+bwd | compiled | 0.9554 | 64 | 3.30× | ok |
-| 2048 | 64 | fwd+bwd | triton | 3.0085 | 106 | 1.05× | ok |
-| 2048 | 128 | fwd | eager | 0.1126 | 64 | 1.00× | ok |
-| 2048 | 128 | fwd | compiled | 0.0471 | 44 | 2.39× | ok |
-| 2048 | 128 | fwd | triton | 6.8485 | 4 | 0.02× | ok |
-| 2048 | 128 | bwd | eager | 0.4977 | 106 | 1.00× | ok |
-| 2048 | 128 | bwd | compiled | 0.1382 | 86 | 3.60× | ok |
-| 2048 | 128 | bwd | triton | 0.5407 | 112 | 0.92× | ok |
-| 2048 | 128 | fwd+bwd | eager | 3.1171 | 106 | 1.00× | ok |
-| 2048 | 128 | fwd+bwd | compiled | 0.8817 | 66 | 3.54× | ok |
-| 2048 | 128 | fwd+bwd | triton | 7.1322 | 112 | 0.44× | ok |
+| 512 | 128 | bwd | compiled | 0.1812 | 24 | 2.74× | ok |
+| 512 | 128 | bwd | triton | 0.5325 | 28 | 0.93× | ok |
+| 512 | 128 | fwd+bwd | eager | 3.1242 | 26 | 1.00× | ok |
+| 512 | 128 | fwd+bwd | compiled | 0.4741 | 24 | 6.59× | ok |
+| 512 | 128 | fwd+bwd | triton | 1.9302 | 28 | 1.62× | ok |
+| 2048 | 64 | fwd | eager | 0.1024 | 62 | 1.00× | ok |
+| 2048 | 64 | fwd | compiled | 0.0389 | 42 | 2.63× | ok |
+| 2048 | 64 | fwd | triton | 3.0464 | 2 | 0.03× | ok |
+| 2048 | 64 | bwd | eager | 0.5090 | 104 | 1.00× | ok |
+| 2048 | 64 | bwd | compiled | 0.1812 | 84 | 2.81× | ok |
+| 2048 | 64 | bwd | triton | 0.5448 | 106 | 0.93× | ok |
+| 2048 | 64 | fwd+bwd | eager | 3.1171 | 104 | 1.00× | ok |
+| 2048 | 64 | fwd+bwd | compiled | 0.3922 | 64 | 7.95× | ok |
+| 2048 | 64 | fwd+bwd | triton | 3.0126 | 106 | 1.03× | ok |
+| 2048 | 128 | fwd | eager | 0.1075 | 64 | 1.00× | ok |
+| 2048 | 128 | fwd | compiled | 0.0471 | 44 | 2.28× | ok |
+| 2048 | 128 | fwd | triton | 6.8495 | 4 | 0.02× | ok |
+| 2048 | 128 | bwd | eager | 0.5059 | 106 | 1.00× | ok |
+| 2048 | 128 | bwd | compiled | 0.1935 | 86 | 2.61× | ok |
+| 2048 | 128 | bwd | triton | 0.5447 | 112 | 0.93× | ok |
+| 2048 | 128 | fwd+bwd | eager | 3.1063 | 106 | 1.00× | ok |
+| 2048 | 128 | fwd+bwd | compiled | 0.3850 | 66 | 8.07× | ok |
+| 2048 | 128 | fwd+bwd | triton | 7.1327 | 112 | 0.44× | ok |
 | 8192 | 64 | fwd | eager | 2.1340 | 602 | 1.00× | ok |
 | 8192 | 64 | fwd | compiled | 0.6595 | 346 | 3.24× | ok |
-| 8192 | 64 | fwd | triton | 25.2682 | 6 | 0.08× | ok |
-| 8192 | 64 | bwd | eager | 4.7196 | 1034 | 1.00× | ok |
-| 8192 | 64 | bwd | compiled | 1.8422 | 650 | 2.56× | ok |
-| 8192 | 64 | bwd | triton | 6.0257 | 1310 | 0.78× | ok |
+| 8192 | 64 | fwd | triton | 25.2692 | 6 | 0.08× | ok |
+| 8192 | 64 | bwd | eager | 4.7206 | 1034 | 1.00× | ok |
+| 8192 | 64 | bwd | compiled | 1.8442 | 650 | 2.56× | ok |
+| 8192 | 64 | bwd | triton | 6.0211 | 1310 | 0.78× | ok |
 | 8192 | 64 | fwd+bwd | eager | 6.7697 | 862 | 1.00× | ok |
-| 8192 | 64 | fwd+bwd | compiled | 2.4678 | 478 | 2.74× | ok |
-| 8192 | 64 | fwd+bwd | triton | 31.3016 | 1310 | 0.22× | ok |
-| 8192 | 128 | fwd | eager | 2.1514 | 598 | 1.00× | ok |
-| 8192 | 128 | fwd | compiled | 0.6932 | 342 | 3.10× | ok |
-| 8192 | 128 | fwd | triton | 60.1395 | 22 | 0.04× | ok |
-| 8192 | 128 | bwd | eager | 4.7575 | 1002 | 1.00× | ok |
+| 8192 | 64 | fwd+bwd | compiled | 2.4658 | 478 | 2.75× | ok |
+| 8192 | 64 | fwd+bwd | triton | 31.3129 | 1310 | 0.22× | ok |
+| 8192 | 128 | fwd | eager | 2.1524 | 598 | 1.00× | ok |
+| 8192 | 128 | fwd | compiled | 0.6922 | 342 | 3.11× | ok |
+| 8192 | 128 | fwd | triton | 60.1478 | 22 | 0.04× | ok |
+| 8192 | 128 | bwd | eager | 4.7555 | 1002 | 1.00× | ok |
 | 8192 | 128 | bwd | compiled | 1.8872 | 618 | 2.52× | ok |
-| 8192 | 128 | bwd | triton | 6.3713 | 1322 | 0.75× | ok |
-| 8192 | 128 | fwd+bwd | eager | 6.8475 | 982 | 1.00× | ok |
-| 8192 | 128 | fwd+bwd | compiled | 2.5283 | 542 | 2.71× | ok |
-| 8192 | 128 | fwd+bwd | triton | 66.5697 | 1322 | 0.10× | ok |
+| 8192 | 128 | bwd | triton | 6.3606 | 1322 | 0.75× | ok |
+| 8192 | 128 | fwd+bwd | eager | 6.8465 | 982 | 1.00× | ok |
+| 8192 | 128 | fwd+bwd | compiled | 2.5272 | 542 | 2.71× | ok |
+| 8192 | 128 | fwd+bwd | triton | 66.3905 | 1322 | 0.10× | ok |
 
 **主要观察**：
 
@@ -408,7 +428,7 @@ batch size 1、BF16、causal。核心矩阵为 `512/2048/8192`（三种实现都
   tiled 循环的固定开销占主导，长序列时代价来自 `tl.dot(..., input_precision="ieee")`
   走非张量核路径。它的价值在显存：`512` 时峰值只有 2 MiB（eager 24 MiB），
   `8192/128` 时 22 MiB（eager 598 MiB），因为完全不物化 `N×N` 中间量。
-- **Triton 的 backward 与 eager 接近**（0.75–0.92×）：它走的是 §6 的 PyTorch 张量运算
+- **Triton 的 backward 与 eager 接近**（0.75–0.93×）：它走的是 §6 的 PyTorch 张量运算
   反向，而不是手写 fused kernel，因此没有 forward 那种量级的差距。其显存峰值略高于
   eager，原因是重算时 `P` 在整块张量上一次成形（见 §6 与 §10）。
 
@@ -416,18 +436,18 @@ batch size 1、BF16、causal。核心矩阵为 `512/2048/8192`（三种实现都
 
 | seq | head_dim | phase | 实现 | p50 (ms) | peak reserved (MiB) | 相对 eager | status |
 | ---: | ---: | --- | --- | ---: | ---: | ---: | --- |
-| 16384 | 64 | fwd | eager | 8.3302 | 2326 | 1.00× | ok |
-| 16384 | 64 | fwd | triton | 94.6176 | 22 | 0.09× | ok |
-| 16384 | 64 | bwd | eager | 18.6163 | 3882 | 1.00× | ok |
-| 16384 | 64 | bwd | triton | 24.0579 | 5162 | 0.77× | ok |
-| 16384 | 64 | fwd+bwd | eager | 26.8861 | 3862 | 1.00× | ok |
-| 16384 | 64 | fwd+bwd | triton | 118.4123 | 5162 | 0.23× | ok |
-| 16384 | 128 | fwd | eager | 8.3671 | 2346 | 1.00× | ok |
-| 16384 | 128 | fwd | triton | 240.8868 | 22 | 0.03× | ok |
-| 16384 | 128 | bwd | eager | 18.7597 | 4118 | 1.00× | ok |
-| 16384 | 128 | bwd | triton | 25.1197 | 5182 | 0.75× | ok |
-| 16384 | 128 | fwd+bwd | eager | 27.0843 | 3882 | 1.00× | ok |
-| 16384 | 128 | fwd+bwd | triton | 266.1335 | 5182 | 0.10× | ok |
+| 16384 | 64 | fwd | eager | 8.3293 | 2326 | 1.00× | ok |
+| 16384 | 64 | fwd | triton | 94.6319 | 22 | 0.09× | ok |
+| 16384 | 64 | bwd | eager | 18.6184 | 3882 | 1.00× | ok |
+| 16384 | 64 | bwd | triton | 24.0620 | 5162 | 0.77× | ok |
+| 16384 | 64 | fwd+bwd | eager | 26.8933 | 3862 | 1.00× | ok |
+| 16384 | 64 | fwd+bwd | triton | 118.4886 | 5162 | 0.23× | ok |
+| 16384 | 128 | fwd | eager | 8.3630 | 2346 | 1.00× | ok |
+| 16384 | 128 | fwd | triton | 241.6558 | 22 | 0.03× | ok |
+| 16384 | 128 | bwd | eager | 18.7628 | 4118 | 1.00× | ok |
+| 16384 | 128 | bwd | triton | 25.0993 | 5182 | 0.75× | ok |
+| 16384 | 128 | fwd+bwd | eager | 27.0797 | 3882 | 1.00× | ok |
+| 16384 | 128 | fwd+bwd | triton | 266.4325 | 5182 | 0.10× | ok |
 
 compiled 在该边界为可选，也一并跑通：`16384/128` 的 forward / backward /
 forward_backward 分别为 2.728 / 7.576 / 10.259 ms。
@@ -453,16 +473,37 @@ Triton 的 backward 峰值（5162/5182 MiB）高于 eager（3882/4118 MiB），
 
 ### 9.1 关键数字 → 结果文件
 
-| 内容 | 结果文件 | 复现命令（在 `../assignment2-systems` 下） |
+所有命令都在 `../assignment2-systems` 仓库根目录执行，且**全部由已提交的
+`submission/student_scripts/a2k/**/*.py` 组成**，不依赖任何未提交的编排脚本。
+GPU 由调用方按自己环境的方式提供（本报告不记录内部资源名称）；正式矩阵要求
+同一时刻只有这一个进程使用该卡。
+
+一条命令即可跑完全部正式实验（含任务一矩阵、任务二 baseline/compile、
+官方 tests 汇总、任务五 metadata/正确性/性能矩阵/汇总/绘图）：
+
+```bash
+python student_scripts/a2k/run_all.py --all
+```
+
+它内部只是按顺序调用下表列出的脚本（`--dry-run` 可先打印全部命令）。也可单独复现：
+
+| 内容 | 结果文件 | 复现命令 |
 | --- | --- | --- |
-| checkpoint 矩阵 | `results/checkpointing.csv` | `bash run_task1_checkpointing.sh` |
-| 显式 attention 基线 | `results/attention_baseline.csv` | `bash run_task2_attention.sh` |
-| eager/compiled 对照 | `results/compile_comparison.csv` | `bash run_task2_attention.sh` |
-| 官方 tests | `results/unit_tests.txt` | `srun -p fnlp-4090 --gres=gpu:1 python -m pytest tests/test_attention.py -v` |
+| checkpoint 矩阵 | `results/checkpointing.csv` | `python student_scripts/a2k/checkpointing_benchmark.py --batch --context-lengths 1024 2048 --block-sizes 1 2 4 8 --warmup 3 --steps 5 --seed 42 --output local_results/a2k/checkpointing.csv` |
+| 显式 attention 基线 | `results/attention_baseline.csv` | `python student_scripts/a2k/attention_benchmark.py --batch --warmup-ms 100 --rep-ms 300 --seed 42 --output local_results/a2k/attention_baseline.csv --metadata-output local_results/a2k/attention_baseline_metadata.jsonl` |
+| eager/compiled 对照 | `results/compile_comparison.csv` | 同上一条命令（`--batch` 依次产出 baseline 与 compile 两个矩阵） |
+| 官方 tests | `results/unit_tests.txt` | `python student_scripts/a2k/summarize_flash_tests.py --run "python -m pytest tests/test_attention.py -v" --gpu "NVIDIA GeForce RTX 4090" --commit ca8bc81a59b70516f7ebb2da4808daade877c736 --output-dir local_results/a2k/pytest` |
 | 扩展正确性 | `results/correctness.json` | `python student_scripts/a2k/task5_correctness.py --output local_results/a2k/task5/correctness.json --length 128 512 2048` |
-| 性能矩阵 | `results/flash_benchmark.csv` | `bash run_task5_flash.sh` |
+| 性能矩阵 | `results/flash_benchmark.csv` | `python student_scripts/a2k/flash_benchmark.py --batch --output local_results/a2k/task5/flash_benchmark.csv` |
 | 显存汇总 | `results/memory_evidence.json` | `python student_scripts/a2k/summarize_memory_evidence.py --output local_results/a2k/memory_evidence.json` |
-| 环境 metadata | `results/run_metadata.json` | `bash run_task5_flash.sh`（第一步即生成） |
+| 环境 metadata | `results/run_metadata.json` | `python student_scripts/a2k/task5_metadata.py --output local_results/a2k/task5/run_metadata.json --commit ca8bc81a59b70516f7ebb2da4808daade877c736 --seed 42` |
+
+三个 `--batch` 都用「一个配置一个独立 Python 子进程」的方式执行：任务一 10 个配置、
+任务二 27 个配置、任务五 72 个配置。进程之间不共享分配器缓存池与 `torch.compile`
+缓存——这一点对任务一尤其重要，因为 PyTorch 的缓存池不会因
+`reset_peak_memory_stats()` 复位，同进程连跑多个配置会让 `peak_reserved_mib`
+退化成「本进程内出现过的最大值」。每个子进程也都在自己的第一次 CUDA allocation
+之前设置 23552 MiB 的 allocator 上限，与 §2.2 的测量协议一致。
 
 `local_results/a2k/` 保留本地原始结果，不整体提交；`results/` 只放轻量汇总。
 
@@ -478,13 +519,14 @@ Triton 的 backward 峰值（5162/5182 MiB）高于 eager（3882/4118 MiB），
 | `pytorch_peak_allocated_mib` | 19662.606 |
 | `pytorch_peak_reserved_mib` | 20192.0 |
 | `within_24gib` | true |
-| 成功配置总数 | 97 |
+| 成功配置总数 | 100 |
 
-最高峰值来自任务一 `k=2048` 的 no-checkpoint 配置（reserved 20192 MiB），
+最高峰值来自任务一 `k=2048` 的 no-checkpoint 配置（reserved 20192 MiB，
+占 23552 MiB 预算的 85.7%），
 即 activation checkpointing 要压下去的数字。`within_24gib` 由
 `peak_reserved ≤ 23552` 且 `≤ 24576` 判定。`fraction` 取
 `min(1.0, 23552 / total_bytes)`，在每个正式进程里都在**第一次 CUDA allocation 之前**
-设置，各配置独立进程、串行执行。
+设置；各配置独立进程、串行执行。
 
 ### 9.3 图
 

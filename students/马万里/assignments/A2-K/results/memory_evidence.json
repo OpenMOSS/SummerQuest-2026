@@ -8,13 +8,13 @@
   "pytorch_peak_reserved_mib": 20192.0,
   "within_24gib": true,
   "measured_scope": "A2-K 全部正式进程（任务一 checkpointing + 任务五性能矩阵等）",
-  "successful_configurations": 97,
+  "successful_configurations": 100,
   "sources": [
     {
       "source": "local_results/a2k/checkpointing.csv",
       "label": "任务一 activation checkpointing 矩阵",
       "present": true,
-      "successful_rows": 7,
+      "successful_rows": 10,
       "peak_allocated_mib": 19662.606,
       "peak_reserved_mib": 20192.0
     },

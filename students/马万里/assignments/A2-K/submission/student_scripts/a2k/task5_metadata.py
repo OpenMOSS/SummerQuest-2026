@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import re
 import json
 import subprocess
 from pathlib import Path
@@ -42,16 +43,37 @@ def nvidia_smi_snapshot() -> dict:
     return snapshot
 
 
+#: 内部调度资源名不应出现在公开产物里；写入 metadata 前统一做一次兜底替换。
+_SCHEDULER_PATTERN = re.compile(r"\bsrun\b[^&|;]*?(?=(?:&&|\|\||;|$))")
+
+
+def public_command(command: str) -> str:
+    """把可能带内部调度前缀的命令改写为公开的单卡执行说明。"""
+    if not _SCHEDULER_PATTERN.search(command):
+        return command
+    stripped = _SCHEDULER_PATTERN.sub("", command).strip()
+    return f"在单张 RTX 4090 上执行：{stripped}" if stripped else "在单张 RTX 4090 上执行"
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path, required=True)
-    parser.add_argument("--command", default="srun -p fnlp-4090 --gres=gpu:1 bash run_task5_flash.sh")
+    parser.add_argument(
+        "--command",
+        default=(
+            "python student_scripts/a2k/task5_metadata.py && "
+            "python student_scripts/a2k/task5_correctness.py --length 128 512 2048 && "
+            "python student_scripts/a2k/flash_benchmark.py --implementation eager "
+            "--sequence-length 512 --head-dim 64 --phase forward"
+        ),
+        help="写入 metadata 的复现命令（不要包含内部调度资源名称）",
+    )
     parser.add_argument("--commit", default="ca8bc81a59b70516f7ebb2da4808daade877c736")
     parser.add_argument("--seed", type=int, default=42)
     args = parser.parse_args()
     if not torch.cuda.is_available():
         metadata = {"status": "skip", "error": "CUDA unavailable",
-                    "command": args.command, "commit": args.commit, "seed": args.seed}
+                    "command": public_command(args.command), "commit": args.commit, "seed": args.seed}
     else:
         props = torch.cuda.get_device_properties(0)
         free_bytes, total_bytes = torch.cuda.mem_get_info()
@@ -86,7 +108,7 @@ def main():
             "batch_size": 1,
             "memory_measure_iterations": 5,
             "seed": args.seed,
-            "command": args.command,
+            "command": public_command(args.command),
             "commit": args.commit,
         }
     args.output.parent.mkdir(parents=True, exist_ok=True)
