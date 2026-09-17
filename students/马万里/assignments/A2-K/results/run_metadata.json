@@ -1,0 +1,39 @@
+{
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "total_memory_mib": 24111.0625,
+  "cuda_reported_total_mib": 24111.0625,
+  "free_memory_at_start_mib": 23717.75,
+  "torch": "2.11.0+cu126",
+  "cuda": "12.6",
+  "cudnn": 91002,
+  "triton": "3.6.0",
+  "tf32_matmul": false,
+  "tf32_cudnn": true,
+  "float32_matmul_precision": "highest",
+  "allocator_limit_mib": 23552,
+  "allocator_fraction": 0.9768130292889415,
+  "hard_limit_mib": 24576,
+  "nvidia_smi": {
+    "name": "NVIDIA GeForce RTX 4090",
+    "memory_total_mib": 24564.0,
+    "memory_free_mib": 23718.0,
+    "driver_version": "560.28.03",
+    "power_limit_w": 450.0,
+    "pstate": "P0"
+  },
+  "timer": "triton.testing.do_bench(warmup=100, rep=300, quantiles=[0.2, 0.5, 0.8])",
+  "warmup_ms": 100,
+  "rep_ms": 300,
+  "quantiles": [
+    0.2,
+    0.5,
+    0.8
+  ],
+  "dtype": "bfloat16",
+  "is_causal": true,
+  "batch_size": 1,
+  "memory_measure_iterations": 5,
+  "seed": 42,
+  "command": "srun -p fnlp-4090 --gres=gpu:1 bash run_task5_flash.sh",
+  "commit": "ca8bc81a59b70516f7ebb2da4808daade877c736"
+}

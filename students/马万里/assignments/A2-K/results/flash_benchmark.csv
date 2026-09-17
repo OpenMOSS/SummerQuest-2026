@@ -1,0 +1,73 @@
+implementation,sequence_length,head_dim,batch_size,dtype,is_causal,phase,p20_ms,p50_ms,p80_ms,peak_allocated_mib,peak_reserved_mib,speedup_vs_eager,status,error,q_tile_size,k_tile_size,num_warps,num_stages,cold_start_ms,triton_num_stages,timing_note
+eager,512,64,1,bfloat16,True,forward,0.0359,0.0369,0.0389,10.630,24.000,1.000000,ok,,,,,,,,forward
+compiled,512,64,1,bfloat16,True,forward,0.0174,0.0205,0.0328,9.693,22.000,1.800000,ok,,,,,,2470.1506,,forward
+triton,512,64,1,bfloat16,True,forward,0.6943,0.7629,0.7649,0.314,2.000,0.048368,ok,,64,64,4,2,,2,forward
+eager,512,64,1,bfloat16,True,backward,0.4884,0.4925,0.5093,20.380,26.000,1.000000,ok,,,,,,,,"backward (held forward graph, retain_graph=True)"
+compiled,512,64,1,bfloat16,True,backward,0.1317,0.1705,0.2109,18.882,24.000,2.888563,ok,,,,,,60.0977,,"backward (held forward graph, retain_graph=True)"
+triton,512,64,1,bfloat16,True,backward,0.5304,0.5361,0.5546,13.824,28.000,0.918672,ok,,64,64,4,2,,2,"backward (held forward graph, retain_graph=True)"
+eager,512,64,1,bfloat16,True,forward_backward,3.0843,3.1058,3.1130,19.880,24.000,1.000000,ok,,,,,,,,forward_backward
+compiled,512,64,1,bfloat16,True,forward_backward,0.3789,0.3840,0.4068,18.382,24.000,8.088021,ok,,,,,,2219.8502,,forward_backward
+triton,512,64,1,bfloat16,True,forward_backward,1.4658,1.9579,2.0404,13.824,28.000,1.586291,ok,,64,64,4,2,,2,forward_backward
+eager,512,128,1,bfloat16,True,forward,0.0399,0.0420,0.0461,10.880,24.000,1.000000,ok,,,,,,,,forward
+compiled,512,128,1,bfloat16,True,forward,0.0215,0.0236,0.0338,10.006,22.000,1.779661,ok,,,,,,2256.0440,,forward
+triton,512,128,1,bfloat16,True,forward,1.8780,1.8801,1.8821,0.627,2.000,0.022339,ok,,64,64,4,1,,1,forward
+eager,512,128,1,bfloat16,True,backward,0.4905,0.4956,0.5130,20.755,26.000,1.000000,ok,,,,,,,,"backward (held forward graph, retain_graph=True)"
+compiled,512,128,1,bfloat16,True,backward,0.1341,0.1823,0.2089,19.257,24.000,2.718596,ok,,,,,,61.1530,,"backward (held forward graph, retain_graph=True)"
+triton,512,128,1,bfloat16,True,backward,0.5335,0.5386,0.5616,14.637,28.000,0.920163,ok,,64,64,4,1,,1,"backward (held forward graph, retain_graph=True)"
+eager,512,128,1,bfloat16,True,forward_backward,3.1291,3.1447,3.1508,20.255,26.000,1.000000,ok,,,,,,,,forward_backward
+compiled,512,128,1,bfloat16,True,forward_backward,0.3789,0.3840,0.4106,18.757,24.000,8.189323,ok,,,,,,2222.1417,,forward_backward
+triton,512,128,1,bfloat16,True,forward_backward,1.7879,1.9671,1.9702,14.637,28.000,1.598648,ok,,64,64,4,1,,1,forward_backward
+eager,2048,64,1,bfloat16,True,forward,0.1004,0.1014,0.1065,45.145,62.000,1.000000,ok,,,,,,,,forward
+compiled,2048,64,1,bfloat16,True,forward,0.0369,0.0399,0.0440,29.398,42.000,2.541353,ok,,,,,,2234.7134,,forward
+triton,2048,64,1,bfloat16,True,forward,2.7699,2.7720,3.0495,1.258,2.000,0.036580,ok,,64,64,4,2,,2,forward
+eager,2048,64,1,bfloat16,True,backward,0.4925,0.4987,0.5089,77.770,104.000,1.000000,ok,,,,,,,,"backward (held forward graph, retain_graph=True)"
+compiled,2048,64,1,bfloat16,True,backward,0.1895,0.2068,0.3840,53.777,84.000,2.411509,ok,,,,,,61.6606,,"backward (held forward graph, retain_graph=True)"
+triton,2048,64,1,bfloat16,True,backward,0.5368,0.5417,0.5517,90.922,106.000,0.920620,ok,,64,64,4,2,,2,"backward (held forward graph, retain_graph=True)"
+eager,2048,64,1,bfloat16,True,forward_backward,3.1365,3.1575,3.1650,69.770,104.000,1.000000,ok,,,,,,,,forward_backward
+compiled,2048,64,1,bfloat16,True,forward_backward,0.7703,0.9554,1.0582,45.777,64.000,3.304898,ok,,,,,,2323.1007,,forward_backward
+triton,2048,64,1,bfloat16,True,forward_backward,3.0075,3.0085,3.0106,90.922,106.000,1.049526,ok,,64,64,4,2,,2,forward_backward
+eager,2048,128,1,bfloat16,True,forward,0.1075,0.1126,0.1137,46.145,64.000,1.000000,ok,,,,,,,,forward
+compiled,2048,128,1,bfloat16,True,forward,0.0471,0.0471,0.0471,30.648,44.000,2.390658,ok,,,,,,2216.5515,,forward
+triton,2048,128,1,bfloat16,True,forward,6.8425,6.8485,7.5366,2.508,4.000,0.016442,ok,,64,64,4,1,,1,forward
+eager,2048,128,1,bfloat16,True,backward,0.4925,0.4977,0.5120,79.270,106.000,1.000000,ok,,,,,,,,"backward (held forward graph, retain_graph=True)"
+compiled,2048,128,1,bfloat16,True,backward,0.1341,0.1382,0.1505,55.277,86.000,3.601302,ok,,,,,,48.4134,,"backward (held forward graph, retain_graph=True)"
+triton,2048,128,1,bfloat16,True,backward,0.5366,0.5407,0.5530,93.672,112.000,0.920473,ok,,64,64,4,1,,1,"backward (held forward graph, retain_graph=True)"
+eager,2048,128,1,bfloat16,True,forward_backward,3.1027,3.1171,3.1242,71.270,106.000,1.000000,ok,,,,,,,,forward_backward
+compiled,2048,128,1,bfloat16,True,forward_backward,0.7393,0.8817,1.0220,47.277,66.000,3.535329,ok,,,,,,2307.1647,,forward_backward
+triton,2048,128,1,bfloat16,True,forward_backward,7.1221,7.1322,7.8406,93.672,112.000,0.437046,ok,,64,64,4,1,,1,forward_backward
+eager,8192,64,1,bfloat16,True,forward,2.1330,2.1340,2.1361,588.203,602.000,1.000000,ok,,,,,,,,forward
+compiled,8192,64,1,bfloat16,True,forward,0.6584,0.6595,0.6615,333.219,346.000,3.235785,ok,,,,,,2273.2111,,forward
+triton,8192,64,1,bfloat16,True,forward,25.2475,25.2682,25.2815,5.031,6.000,0.084454,ok,,64,64,4,2,,2,forward
+eager,8192,64,1,bfloat16,True,backward,4.7176,4.7196,4.7221,982.328,1034.000,1.000000,ok,,,,,,,,"backward (held forward graph, retain_graph=True)"
+compiled,8192,64,1,bfloat16,True,backward,1.8412,1.8422,1.8432,598.359,650.000,2.561937,ok,,,,,,40.8313,,"backward (held forward graph, retain_graph=True)"
+triton,8192,64,1,bfloat16,True,backward,6.0203,6.0257,6.0590,1299.312,1310.000,0.783245,ok,,64,64,4,2,,2,"backward (held forward graph, retain_graph=True)"
+eager,8192,64,1,bfloat16,True,forward_backward,6.7676,6.7697,6.7717,854.328,862.000,1.000000,ok,,,,,,,,forward_backward
+compiled,8192,64,1,bfloat16,True,forward_backward,2.4648,2.4678,2.4711,470.359,478.000,2.743213,ok,,,,,,2330.1861,,forward_backward
+triton,8192,64,1,bfloat16,True,forward_backward,31.2695,31.3016,31.3051,1299.312,1310.000,0.216273,ok,,64,64,4,2,,2,forward_backward
+eager,8192,128,1,bfloat16,True,forward,2.1504,2.1514,2.1535,592.203,598.000,1.000000,ok,,,,,,,,forward
+compiled,8192,128,1,bfloat16,True,forward,0.6902,0.6932,0.6953,338.219,342.000,3.103578,ok,,,,,,2257.1687,,forward
+triton,8192,128,1,bfloat16,True,forward,60.0467,60.1395,60.3011,10.031,22.000,0.035773,ok,,64,64,4,1,,1,forward
+eager,8192,128,1,bfloat16,True,backward,4.7540,4.7575,4.7780,988.328,1002.000,1.000000,ok,,,,,,,,"backward (held forward graph, retain_graph=True)"
+compiled,8192,128,1,bfloat16,True,backward,1.8852,1.8872,1.8893,604.359,618.000,2.520930,ok,,,,,,40.0906,,"backward (held forward graph, retain_graph=True)"
+triton,8192,128,1,bfloat16,True,backward,6.3631,6.3713,6.3816,1310.312,1322.000,0.746708,ok,,64,64,4,1,,1,"backward (held forward graph, retain_graph=True)"
+eager,8192,128,1,bfloat16,True,forward_backward,6.8426,6.8475,6.8506,860.328,982.000,1.000000,ok,,,,,,,,forward_backward
+compiled,8192,128,1,bfloat16,True,forward_backward,2.5252,2.5283,2.5313,476.359,542.000,2.708342,ok,,,,,,2319.3990,,forward_backward
+triton,8192,128,1,bfloat16,True,forward_backward,66.5504,66.5697,66.6083,1310.312,1322.000,0.102862,ok,,64,64,4,1,,1,forward_backward
+eager,16384,64,1,bfloat16,True,forward,8.3251,8.3302,8.3343,2320.281,2326.000,1.000000,ok,,,,,,,,forward
+compiled,16384,64,1,bfloat16,True,forward,2.6675,2.6695,2.6706,1298.312,1302.000,3.120509,ok,,,,,,2307.4412,,forward
+triton,16384,64,1,bfloat16,True,forward,94.3651,94.6176,94.6330,10.062,22.000,0.088041,ok,,64,64,4,2,,2,forward
+eager,16384,64,1,bfloat16,True,backward,18.6118,18.6163,18.6227,3868.406,3882.000,1.000000,ok,,,,,,,,"backward (held forward graph, retain_graph=True)"
+compiled,16384,64,1,bfloat16,True,backward,7.4090,7.4117,7.4144,2332.469,2346.000,2.511745,ok,,,,,,59.3212,,"backward (held forward graph, retain_graph=True)"
+triton,16384,64,1,bfloat16,True,backward,24.0445,24.0579,24.0660,5150.500,5162.000,0.773812,ok,,64,64,4,2,,2,"backward (held forward graph, retain_graph=True)"
+eager,16384,64,1,bfloat16,True,forward_backward,26.8841,26.8861,26.8954,3356.406,3862.000,1.000000,ok,,,,,,,,forward_backward
+compiled,16384,64,1,bfloat16,True,forward_backward,10.0274,10.0291,10.0321,1820.469,1886.000,2.680809,ok,,,,,,2389.5579,,forward_backward
+triton,16384,64,1,bfloat16,True,forward_backward,118.4117,118.4123,118.4129,5150.500,5162.000,0.227055,ok,,64,64,4,2,,2,forward_backward
+eager,16384,128,1,bfloat16,True,forward,8.3646,8.3671,8.3710,2328.281,2346.000,1.000000,ok,,,,,,,,forward
+compiled,16384,128,1,bfloat16,True,forward,2.7228,2.7279,2.7320,1308.312,1322.000,3.067231,ok,,,,,,2314.7183,,forward
+triton,16384,128,1,bfloat16,True,forward,240.8868,240.8868,240.8868,20.062,22.000,0.034735,ok,,64,64,4,1,,1,forward
+eager,16384,128,1,bfloat16,True,backward,18.7566,18.7597,18.7617,3880.406,4118.000,1.000000,ok,,,,,,,,"backward (held forward graph, retain_graph=True)"
+compiled,16384,128,1,bfloat16,True,backward,7.5737,7.5756,7.5786,2344.469,2582.000,2.476332,ok,,,,,,63.5727,,"backward (held forward graph, retain_graph=True)"
+triton,16384,128,1,bfloat16,True,backward,25.0890,25.1197,25.4259,5172.500,5182.000,0.746812,ok,,64,64,4,1,,1,"backward (held forward graph, retain_graph=True)"
+eager,16384,128,1,bfloat16,True,forward_backward,27.0807,27.0843,27.0891,3368.406,3882.000,1.000000,ok,,,,,,,,forward_backward
+compiled,16384,128,1,bfloat16,True,forward_backward,10.2543,10.2595,10.2611,1832.469,1906.000,2.639924,ok,,,,,,2370.1439,,forward_backward
+triton,16384,128,1,bfloat16,True,forward_backward,266.1335,266.1335,266.1335,5172.500,5182.000,0.101770,ok,,64,64,4,1,,1,forward_backward
