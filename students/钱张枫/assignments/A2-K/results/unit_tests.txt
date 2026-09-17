@@ -1,4 +1,4 @@
-commit: dcf93d8c194ce1729f8b6583850294674e010199
+commit: 3bafbada637677a1d93034efbd2aef0a394360a9
 command: python -m pytest --no-header --tb=no -v --disable-warnings tests/test_attention.py
 preflight: gpu=NVIDIA GeForce RTX 4090; total_memory_mib=24564; free_memory_mib=23718; driver=560.28.03; power_limit_watts=450.0; pstate=P2; torch=2.7.1+cu126; cuda=12.6; triton=3.3.1
 tests/test_attention.py::test_flash_forward_pass_pytorch PASSED

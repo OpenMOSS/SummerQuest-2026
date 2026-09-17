@@ -194,7 +194,7 @@ trace、依赖或上游仓库元数据。轻量结果和压缩图片由本人确
 
 - 题面版本为 `26.1.4-k-rc.3`，固定 starter commit 为
   `ca8bc81a59b70516f7ebb2da4808daade877c736`；正式结果对应实现 commit 为
-  `dcf93d8c194ce1729f8b6583850294674e010199`。
+  `3bafbada637677a1d93034efbd2aef0a394360a9`，本报告采用 2026-09-07 正式重跑结果。
 - 已完成显式 PyTorch attention、纯 PyTorch tiled FlashAttention reference、学生 Triton
   forward、两条 autograd 路径，以及 checkpoint、correctness、attention、compile、Flash、
   memory 汇总和图表生成脚本。必做项均已完成；可选的自定义 Triton backward 未实现，当前
@@ -290,19 +290,20 @@ step_time_ms_samples,step_time_ms_p50,peak_allocated_mib,peak_reserved_mib,statu
 
 | context | block size | step p50 (ms) | peak allocated (MiB) | peak reserved (MiB) | status |
 | ---: | ---: | ---: | ---: | ---: | --- |
-| 1024 | none | 254.458 | 10065.657 | 10224 | success |
-| 1024 | 1 | 408.674 | 6865.751 | 7022 | success |
-| 1024 | 2 | 400.375 | 7004.470 | 7154 | success |
-| 1024 | 4 | 396.734 | 7283.313 | 7368 | success |
-| 1024 | 8 | 395.257 | 7839.126 | 7962 | success |
-| 2048 | none | 371.245 | 19660.513 | 20164 | success |
-| 2048 | 1 | 480.577 | 8063.802 | 8414 | success |
+| 1024 | none | 255.821 | 10065.657 | 10224 | success |
+| 1024 | 1 | 407.693 | 6865.751 | 7022 | success |
+| 1024 | 2 | 400.394 | 7004.470 | 7154 | success |
+| 1024 | 4 | 396.570 | 7283.313 | 7368 | success |
+| 1024 | 8 | 397.452 | 7839.126 | 7962 | success |
+| 2048 | none | 371.078 | 19660.513 | 20164 | success |
+| 2048 | 1 | 479.885 | 8063.802 | 8414 | success |
 
 在 context 1024 下，block size 1 相比无 checkpoint 将 reserved peak 降低 `31.3%`，代价
-是 step p50 增至 `1.61x`。在 2048 边界下，block size 1 将 reserved peak 降低 `58.3%`，
+是 step p50 增至 `1.59x`。在 2048 边界下，block size 1 将 reserved peak 降低 `58.3%`，
 step p50 为 `1.29x`。最佳 block size 同时受边界 activation 数量、段内临时 activation、
 kernel 调度和重计算开销影响，不能只按 checkpoint 数量判断。7 行均在 allocator guard 内
-成功，未删除或改写边界行。
+成功，未删除或改写边界行。每行均记录实际 `allocator_fraction=0.9768130292889415`
+及 `allocator_limit_mib=23552`，可与运行元数据逐行核验。
 
 ![Checkpoint 时间与显存权衡](assets/checkpoint_tradeoff.png)
 
@@ -330,7 +331,7 @@ kernel 调度和重计算开销影响，不能只按 checkpoint 数量判断。7
 `scaled_dot_product_attention` 或第三方 fused attention。完整 18 行见
 [`results/attention_baseline.csv`](results/attention_baseline.csv)。在 batch 1、causal、BF16、
 sequence 8192、head dim 128 下，forward/backward/forward-backward p50 分别为
-`2.680 / 4.242 / 6.846 ms`，reserved peak 分别为 `1066 / 1578 / 1578 MiB`。
+`2.678 / 4.241 / 6.845 ms`，reserved peak 分别为 `1066 / 1578 / 1578 MiB`。
 
 ### 6.2 `torch.compile` 对照
 
@@ -351,20 +352,22 @@ batch size 1、context length 512、BF16 上比较 eager/compiled 的 forward、
 
 完整 24 行对照见 [`results/compile_comparison.csv`](results/compile_comparison.csv)。在上述
 8192/128 配置下，compiled forward/backward/forward-backward p50 为
-`0.671 / 1.122 / 1.719 ms`，相对 eager 的 steady-state speedup 为
-`4.00x / 3.78x / 3.98x`。
+`0.671 / 1.122 / 1.720 ms`，相对同一 compile CSV 中 eager 的 steady-state speedup 为
+`3.99x / 3.78x / 3.98x`。
 
 Stanford small 模型、batch 1、context 512 的结果如下：
 
 | phase | eager p50 (ms) | compiled p50 (ms) | steady speedup | compiled cold start (ms) |
 | --- | ---: | ---: | ---: | ---: |
-| forward | 42.143 | 10.966 | 3.84x | 27254.993 |
-| forward-backward | 108.703 | 30.294 | 3.59x | 12237.221 |
-| training step | 110.992 | 35.397 | 3.14x | 73.724 |
+| forward | 41.966 | 11.002 | 3.81x | 27214.737 |
+| forward-backward | 108.274 | 30.412 | 3.56x | 12333.797 |
+| training step | 111.068 | 40.241 | 2.76x | 67.594 |
 
 compiled steady state 有稳定收益，但首次 shape/backend 编译需要额外 wall time，因此 cold
-start 未混入 steady latency。512 attention forward 的 compiled p50 为 `0.130 ms`，eager
-为 `0.604 ms`，steady-state 加速约 `4.65x`，但首次 compiled forward 仍需约 `8.60 s`。
+start 未混入 steady latency。512 attention forward 的 compiled p50 为 `0.129 ms`，eager
+为 `0.569 ms`，steady-state 加速约 `4.41x`，但首次 compiled forward 仍需约 `4.48 s`。
+small 模型 compiled training step 的 p20/p80 为 `32.547 / 43.340 ms`，正式测量仅 8 个
+样本，存在明显波动；`2.76x` 是本次 p50 比值，不代表所有样本都具有相同加速幅度。
 实际部署还需要考虑 shape specialization、graph break 和缓存复用；本次固定 shape 的热态
 结果不能直接外推到动态 shape 工作负载。
 
@@ -443,7 +446,7 @@ uv run pytest tests/test_attention.py -v
 PyTorch 与 Triton 两个 `autograd.Function` 均使用纯 PyTorch tiled attention 重计算概率并
 返回 `dQ`、`dK`、`dV`；Triton 路径只把学生 kernel 用于 forward，没有把重计算 backward
 描述为 Triton 性能优化。该 backward 在 sequence 8192 的 backward/forward-backward 约为
-`10.42–10.61 s`，在 16384 边界约为 `42.71–43.31 s`，但 reserved peak 最高仅
+`10.51–10.75 s`，在 16384 边界约为 `43.20–44.77 s`，但 reserved peak 最高仅
 `2782 MiB`。结果反映的是以显著重计算时间换取低显存，而不是反向加速。
 
 ## 9. 任务五：正确性与性能矩阵
@@ -502,9 +505,9 @@ status，以及 Triton 的 query/key tile、num warps 和 num stages。结果写
 | sequence | head dim | eager p50 (ms) | compiled p50 (ms) | Triton p50 (ms) | Triton speedup vs eager |
 | ---: | ---: | ---: | ---: | ---: | ---: |
 | 8192 | 64 | 2.652 | 0.646 | 0.242 | 10.97x |
-| 8192 | 128 | 2.679 | 0.671 | 0.481 | 5.57x |
-| 16384 | 64 | 10.709 | - | 0.500 | 21.43x |
-| 16384 | 128 | 10.744 | - | 1.230 | 8.74x |
+| 8192 | 128 | 2.679 | 0.671 | 0.482 | 5.56x |
+| 16384 | 64 | 10.707 | - | 0.499 | 21.47x |
+| 16384 | 128 | 10.744 | - | 1.229 | 8.74x |
 
 ![FlashAttention latency 与 speedup](assets/flash_latency_speedup.png)
 
@@ -512,7 +515,7 @@ status，以及 Triton 的 query/key tile、num warps 和 num stages。结果写
 重计算 backward 描述为性能优化。三个性能 CSV 的全部成功行都记录非空
 `measurement_sample_count` 和由实际 timing 列表求和得到的 `measurement_duration_ms`，没有
 把目标 `rep=300 ms` 当作固定实测时长。例如 16384/head dim 64 Triton backward 记录 1 个
-样本、`43297.1992 ms`，head dim 128 forward-backward 记录 1 个样本、`42711.4609 ms`。
+样本、`43707.4531 ms`，head dim 128 forward-backward 记录 1 个样本、`43197.9258 ms`。
 
 ### 9.4 低显存开发诊断（`formal=false`）
 
@@ -579,9 +582,11 @@ notebook 导出。报告必须包含：
 
 [`results/memory_evidence.json`](results/memory_evidence.json) 汇总 112 条正式观测，最高
 `peak_allocated_mib=19660.513`、`peak_reserved_mib=20164`，并记录
-`within_allocator_guard=true`、`within_24gib=true`。环境、seed、命令和配置见
+`allocator_evidence_complete=true`、`missing_allocator_evidence_count=0`、
+`within_allocator_guard=true`、`within_24gib=true`。汇总会拒绝缺少逐行 allocator 字段的
+正式成功记录，不会通过顶层声明掩盖缺失证据。环境、seed、命令和配置见
 [`results/run_metadata.json`](results/run_metadata.json)。8 个结果文件和两张图片共
-`320382 bytes`，约 `0.31 MiB`，低于 2 MiB 限制；公开候选文件未包含主机名、用户名、内部
+`323904 bytes`，约 `0.31 MiB`，低于 2 MiB 限制；公开候选文件未包含主机名、用户名、内部
 路径、GPU UUID、进程列表或 Slurm 标识。
 
 ### 10.2 最小复现命令
@@ -599,9 +604,7 @@ python -m student_scripts.a2k.benchmark_flash --formal
 
 - 飞书补充实验文档：https://fudan-nlp.feishu.cn/wiki/FXJwwSYWni0CdgkosgHcEjWAncd?from=from_copylink。
 - 必做实验和报告内容已完成；可选的自定义 Triton backward 未实现。
-- 将本 README 复制到 SummerQuest 并补充飞书链接后，仍需运行
-  `python3 scripts/validate_repo.py`，以目标仓库的最终输出核验目录、链接、文件类型和 staged
-  内容。
+- 已同步正式重跑结果及图片；提交前仍应核对 staged diff，确保提交范围仅为本人的 A2-K。
 
 ## 11. 文件与附件限制
 
@@ -653,7 +656,7 @@ feat(a2-k): submit 钱张枫 memory and kernels report
 
 以下状态按正式结果源目录与现有 SummerQuest 个人目录核验。目标目录中的 8 个结果文件和
 2 张图片与正式源文件 SHA-256 完全一致；官方校验器未报告本 A2-K 的附件类型、大小或禁止
-文件问题。替换 README 并补充飞书链接后，提交前仍需重新运行校验器和检查 staged diff。
+文件问题。提交前仍需检查 staged diff；仓库其他作业的既有校验错误不计为本 A2-K 通过。
 
 - [x] 固定 starter commit 正确，工作仓库位于 `../assignment2-systems`。
 - [x] 所有正式结果来自单张 RTX 4090 24GB，开跑前可用显存不少于 22 GiB。
@@ -667,6 +670,8 @@ feat(a2-k): submit 钱张枫 memory and kernels report
 - [x] 核心矩阵与 16384 边界矩阵使用同硬件、同输入、同 dtype、同 causal 和同测量边界。
 - [x] README 中每个关键数字都能回到 `results/` 或明确命令。
 - [x] `memory_evidence.json` 证明 peak reserved 不超过 23552 MiB，并如实记录 24 GiB 判定。
+- [x] 7 条 checkpoint 正式成功记录均保存实际 allocator fraction 和 23552 MiB 上限；汇总证据完整、缺失数为 0。
+- [x] 所有结果 CSV 使用 LF；相对复审基准执行 `git diff --check` 无输出。
 - [x] 至少两张图片被 README 引用，文件类型和大小通过校验。
 - [x] 未提交缓存、binary、trace、权重、数据、压缩包、内部信息或凭据。
 

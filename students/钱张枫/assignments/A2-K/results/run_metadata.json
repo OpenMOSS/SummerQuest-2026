@@ -6,7 +6,7 @@
         "allocator_limit_mib": 23552
       },
       "command": "python -m student_scripts.a2k.correctness --formal",
-      "commit": "dcf93d8c194ce1729f8b6583850294674e010199",
+      "commit": "3bafbada637677a1d93034efbd2aef0a394360a9",
       "configuration": {
         "atol": 0.01,
         "batch_size": 2,
@@ -34,7 +34,7 @@
         "free_memory_mib": 23718.0,
         "gpu_name": "NVIDIA GeForce RTX 4090",
         "power_limit_watts": 450.0,
-        "pstate": "P0",
+        "pstate": "P2",
         "total_memory_mib": 24564.0,
         "visible_device_count": 1
       },
@@ -51,7 +51,7 @@
         "cudnn_allow_tf32": false,
         "matmul_allow_tf32": false
       },
-      "timestamp_utc": "2026-08-26T09:16:51+00:00"
+      "timestamp_utc": "2026-09-07T02:37:23+00:00"
     },
     {
       "allocator": {
@@ -59,7 +59,7 @@
         "allocator_limit_mib": 23552
       },
       "command": "python -m student_scripts.a2k.benchmark_checkpointing --formal",
-      "commit": "dcf93d8c194ce1729f8b6583850294674e010199",
+      "commit": "3bafbada637677a1d93034efbd2aef0a394360a9",
       "configuration": {
         "batch_size": 1,
         "checkpoint_block_sizes": [
@@ -102,7 +102,7 @@
         "cudnn_allow_tf32": true,
         "matmul_allow_tf32": false
       },
-      "timestamp_utc": "2026-08-26T09:17:56+00:00"
+      "timestamp_utc": "2026-09-07T02:38:32+00:00"
     },
     {
       "allocator": {
@@ -110,7 +110,7 @@
         "allocator_limit_mib": 23552
       },
       "command": "python -m student_scripts.a2k.benchmark_attention --formal",
-      "commit": "dcf93d8c194ce1729f8b6583850294674e010199",
+      "commit": "3bafbada637677a1d93034efbd2aef0a394360a9",
       "configuration": {
         "batch_size": 1,
         "dtype": "bfloat16",
@@ -154,7 +154,7 @@
         "cudnn_allow_tf32": true,
         "matmul_allow_tf32": false
       },
-      "timestamp_utc": "2026-08-26T09:18:12+00:00"
+      "timestamp_utc": "2026-09-07T02:38:47+00:00"
     },
     {
       "allocator": {
@@ -162,7 +162,7 @@
         "allocator_limit_mib": 23552
       },
       "command": "python -m student_scripts.a2k.benchmark_compile --formal",
-      "commit": "dcf93d8c194ce1729f8b6583850294674e010199",
+      "commit": "3bafbada637677a1d93034efbd2aef0a394360a9",
       "configuration": {
         "attention_dtype": "bfloat16",
         "attention_is_causal": true,
@@ -205,7 +205,7 @@
         "free_memory_mib": 23718.0,
         "gpu_name": "NVIDIA GeForce RTX 4090",
         "power_limit_watts": 450.0,
-        "pstate": "P0",
+        "pstate": "P2",
         "total_memory_mib": 24564.0,
         "visible_device_count": 1
       },
@@ -222,7 +222,7 @@
         "cudnn_allow_tf32": true,
         "matmul_allow_tf32": false
       },
-      "timestamp_utc": "2026-08-26T09:19:48+00:00"
+      "timestamp_utc": "2026-09-07T02:40:20+00:00"
     },
     {
       "allocator": {
@@ -230,7 +230,7 @@
         "allocator_limit_mib": 23552
       },
       "command": "python -m student_scripts.a2k.benchmark_flash --formal",
-      "commit": "dcf93d8c194ce1729f8b6583850294674e010199",
+      "commit": "3bafbada637677a1d93034efbd2aef0a394360a9",
       "configuration": {
         "batch_size": 1,
         "compiled_backward_graph_reuse": "aot_donated_buffer_disabled",
@@ -264,7 +264,7 @@
         "free_memory_mib": 23718.0,
         "gpu_name": "NVIDIA GeForce RTX 4090",
         "power_limit_watts": 450.0,
-        "pstate": "P2",
+        "pstate": "P0",
         "total_memory_mib": 24564.0,
         "visible_device_count": 1
       },
@@ -281,7 +281,7 @@
         "cudnn_allow_tf32": true,
         "matmul_allow_tf32": false
       },
-      "timestamp_utc": "2026-08-26T10:22:47+00:00"
+      "timestamp_utc": "2026-09-07T03:44:00+00:00"
     }
   ],
   "schema_version": 1

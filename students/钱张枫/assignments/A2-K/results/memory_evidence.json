@@ -4,8 +4,10 @@
     "allocator_limit_mib": 23552.0,
     "target_limit_mib": 23552
   },
+  "allocator_evidence_complete": true,
   "excluded_nonformal_observation_count": 7,
   "hard_limit_mib": 24576,
+  "missing_allocator_evidence_count": 0,
   "observation_count": 112,
   "pytorch_peak_allocated_mib": 19660.513,
   "pytorch_peak_reserved_mib": 20164.0,
@@ -1061,8 +1063,8 @@
       "status": "success"
     },
     {
-      "allocator_fraction": null,
-      "allocator_limit_mib": null,
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
       "formal": true,
       "peak_allocated_mib": 10065.657,
       "peak_reserved_mib": 10224.0,
@@ -1071,8 +1073,8 @@
       "status": "success"
     },
     {
-      "allocator_fraction": null,
-      "allocator_limit_mib": null,
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
       "formal": true,
       "peak_allocated_mib": 6865.751,
       "peak_reserved_mib": 7022.0,
@@ -1081,8 +1083,8 @@
       "status": "success"
     },
     {
-      "allocator_fraction": null,
-      "allocator_limit_mib": null,
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
       "formal": true,
       "peak_allocated_mib": 7004.47,
       "peak_reserved_mib": 7154.0,
@@ -1091,8 +1093,8 @@
       "status": "success"
     },
     {
-      "allocator_fraction": null,
-      "allocator_limit_mib": null,
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
       "formal": true,
       "peak_allocated_mib": 7283.313,
       "peak_reserved_mib": 7368.0,
@@ -1101,8 +1103,8 @@
       "status": "success"
     },
     {
-      "allocator_fraction": null,
-      "allocator_limit_mib": null,
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
       "formal": true,
       "peak_allocated_mib": 7839.126,
       "peak_reserved_mib": 7962.0,
@@ -1111,8 +1113,8 @@
       "status": "success"
     },
     {
-      "allocator_fraction": null,
-      "allocator_limit_mib": null,
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
       "formal": true,
       "peak_allocated_mib": 19660.513,
       "peak_reserved_mib": 20164.0,
@@ -1121,8 +1123,8 @@
       "status": "success"
     },
     {
-      "allocator_fraction": null,
-      "allocator_limit_mib": null,
+      "allocator_fraction": 0.9768130292889415,
+      "allocator_limit_mib": 23552.0,
       "formal": true,
       "peak_allocated_mib": 8063.802,
       "peak_reserved_mib": 8414.0,
