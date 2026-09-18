@@ -1,0 +1,601 @@
+batch_size,calls,context_length,cpu_total_us,cuda_total_us,model_size,name,self_cuda_us
+1,651,1024,22441.544000000024,160763.644,medium,aten::bmm,160763.644
+1,1,1024,210195.86500000002,119984.3149999999,medium,profile/measure,0.0
+1,217,1024,21782.51799999988,106733.696,medium,autograd::engine::evaluate_function: BmmBackward0,0.0
+1,217,1024,19223.861999999965,106733.696,medium,BmmBackward0,0.0
+1,1,1024,0,81518.845,medium,forward,81518.845
+1,1,1024,59182.277,79325.77499999992,medium,forward,0.0
+1,169,1024,17320.280000000057,44739.05199999999,medium,aten::einsum,0.0
+1,169,1024,0,44525.07600000001,medium,ampere_sgemm_128x64_tn,44525.07600000001
+1,1,1024,0,40783.83799999996,medium,Optimizer.step#AdamW.step,40783.83799999996
+1,1,1024,6346.985000000015,40657.003999999986,medium,optimizer,0.0
+1,1,1024,6236.790000000008,40657.003999999986,medium,Optimizer.step#AdamW.step,0.0
+1,1043,1024,18321.370999999923,22221.642999999982,medium,aten::mul,22221.642999999982
+1,120,1024,0,21317.668000000107,medium,ampere_sgemm_128x64_nn,21317.668000000107
+1,120,1024,0,21023.39700000001,medium,void cutlass::Kernel2<cutlass_80_simt_sgemm_128x256_8x4_nt_align1>(cutlass_80_simt_sgemm_128x256_8x4_nt_align1::Params),21023.39700000001
+1,48,1024,0,20715.25500000012,medium,void cutlass::Kernel2<cutlass_80_simt_sgemm_256x128_8x4_nn_align1>(cutlass_80_simt_sgemm_256x128_8x4_nn_align1::Params),20715.25500000012
+1,49,1024,0,20679.733999999953,medium,void cutlass::Kernel2<cutlass_80_simt_sgemm_256x128_8x4_nt_align1>(cutlass_80_simt_sgemm_256x128_8x4_nt_align1::Params),20679.733999999953
+1,411,1024,7591.837000000073,17282.35099999993,medium,aten::copy_,17282.35099999993
+1,364,1024,0,16329.845000000256,medium,"void at::native::vectorized_elementwise_kernel<4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul> >(int, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul>)",16329.845000000256
+1,48,1024,3288.6860000000033,15348.21800000004,medium,aten::masked_fill,0.0
+1,24,1024,0,14931.110999999997,medium,attention/scores,14931.110999999997
+1,24,1024,5576.615999999997,14858.370999999956,medium,attention/scores,0.0
+1,49,1024,0,13112.227000000043,medium,ampere_sgemm_128x128_nn,13112.227000000043
+1,338,1024,19229.423000000206,11968.304000000062,medium,autograd::engine::evaluate_function: MulBackward0,0.0
+1,48,1024,0,11869.207999999853,medium,ampere_sgemm_128x128_nt,11869.207999999853
+1,24,1024,1304.0730000000185,11144.496000000014,medium,autograd::engine::evaluate_function: SoftmaxBackward0,0.0
+1,24,1024,1110.5909999999567,11144.496000000014,medium,SoftmaxBackward0,0.0
+1,24,1024,1001.9790000000066,11144.496000000014,medium,aten::_softmax_backward_data,5563.542000000016
+1,338,1024,10143.892999999814,9725.473000000158,medium,MulBackward0,0.0
+1,48,1024,3251.3749999999923,9290.895999999997,medium,aten::matmul,0.0
+1,192,1024,5757.72999999998,9237.304999999998,medium,aten::clone,0.0
+1,313,1024,0,9003.061999999874,medium,"void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1} const&)::{lambda(int)#1})",9003.061999999874
+1,2,1024,605.9210000000021,8321.43100000004,medium,aten::_foreach_mul_,8321.43100000004
+1,42,1024,0,8321.43100000004,medium,"void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListMetadata<1>, at::native::(anonymous namespace)::BinaryOpScalarFunctor<float, 1, 1, 0>, std::multiplies<float>, float>(at::native::(anonymous namespace)::TensorListMetadata<1>, at::native::(anonymous namespace)::BinaryOpScalarFunctor<float, 1, 1, 0>, std::multiplies<float>, float)",8321.43100000004
+1,98,1024,0,8279.289000000053,medium,Memcpy DtoD (Device -> Device),8279.289000000053
+1,97,1024,2209.2269999999635,7809.0250000000015,medium,aten::div,7809.0250000000015
+1,48,1024,1059.1549999999056,7771.592000000105,medium,aten::masked_fill_,7771.592000000105
+1,48,1024,0,7771.592000000105,medium,"void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::(anonymous namespace)::masked_fill_kernel(at::TensorIterator&, c10::Scalar const&)::{lambda()#1}::operator()() const::{lambda()#7}::operator()() const::{lambda(float, bool)#1}>(at::TensorIteratorBase&, at::native::(anonymous namespace)::masked_fill_kernel(at::TensorIterator&, c10::Scalar const&)::{lambda()#1}::operator()() const::{lambda()#7}::operator()() const::{lambda(float, bool)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::(anonymous namespace)::masked_fill_kernel(at::TensorIterator&, c10::Scalar const&)::{lambda()#1}::operator()() const::{lambda()#7}::operator()() const::{lambda(float, bool)#1}>(at::TensorIteratorBase&, at::native::(anonymous namespace)::masked_fill_kernel(at::TensorIterator&, c10::Scalar const&)::{lambda()#1}::operator()() const::{lambda()#7}::operator()() const::{lambda(float, bool)#1} const&)::{lambda(int)#1})",7771.592000000105
+1,1,1024,385.47299999999814,7754.921999999846,medium,aten::_foreach_addcdiv_,7754.921999999846
+1,21,1024,0,7754.921999999846,medium,"void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListScalarListMetadata<float, 3>, at::native::(anonymous namespace)::PointwiseOpScalarListFunctor<float, 3, 3, 0>, std::divides<float> >(at::native::(anonymous namespace)::TensorListScalarListMetadata<float, 3>, at::native::(anonymous namespace)::PointwiseOpScalarListFunctor<float, 3, 3, 0>, std::divides<float>)",7754.921999999846
+1,24,1024,2223.5449999999983,7675.856000000043,medium,autograd::engine::evaluate_function: MaskedFillBackward0,0.0
+1,24,1024,1946.1020000000062,7675.856000000043,medium,MaskedFillBackward0,0.0
+1,48,1024,0,7512.3959999999715,medium,"void at::native::vectorized_elementwise_kernel<4, at::native::BUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul> >(int, at::native::BUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul>)",7512.3959999999715
+1,219,1024,8129.445000000167,7342.3829999998125,medium,autograd::engine::evaluate_function: torch::autograd::AccumulateGrad,0.0
+1,219,1024,6865.1050000000905,7342.3829999998125,medium,torch::autograd::AccumulateGrad,0.0
+1,48,1024,0,6989.668999999938,medium,ampere_sgemm_128x128_tn,6989.668999999938
+1,1,1024,160.85800000000745,6087.266000000003,medium,aten::_foreach_lerp_,6087.266000000003
+1,21,1024,0,6087.266000000003,medium,"void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListMetadata<2>, at::native::(anonymous namespace)::TernaryOpScalarFunctor<float, 2, 2, 0>, at::native::LerpFunctor<float>, float>(at::native::(anonymous namespace)::TensorListMetadata<2>, at::native::(anonymous namespace)::TernaryOpScalarFunctor<float, 2, 2, 0>, at::native::LerpFunctor<float>, float)",6087.266000000003
+1,1,1024,295.2859999999928,6059.366999999998,medium,aten::_foreach_addcmul_,6059.366999999998
+1,21,1024,0,6059.366999999998,medium,"void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListMetadata<3>, at::native::(anonymous namespace)::PointwiseOpScalarFunctor<float, 3, 3, 0>, std::multiplies<float>, float>(at::native::(anonymous namespace)::TensorListMetadata<3>, at::native::(anonymous namespace)::PointwiseOpScalarFunctor<float, 3, 3, 0>, std::multiplies<float>, float)",6059.366999999998
+1,24,1024,2220.7940000000144,5967.558000000005,medium,attention/value,0.0
+1,24,1024,0,5967.558000000005,medium,attention/value,5967.558000000005
+1,24,1024,0,5563.542000000016,medium,"void (anonymous namespace)::softmax_warp_backward<float, float, float, 10, false, false>(float*, float const*, float const*, int, int, int, bool const*)",5563.542000000016
+1,580,1024,0,5471.650999999889,medium,"void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1})",5471.650999999889
+1,433,1024,0,5462.151999999993,medium,"void at::native::vectorized_elementwise_kernel<4, at::native::CUDAFunctor_add<float>, std::array<char*, 3ul> >(int, at::native::CUDAFunctor_add<float>, std::array<char*, 3ul>)",5462.151999999993
+1,2,1024,599.1910000000207,4165.417000000016,medium,aten::_foreach_add_,4165.417000000016
+1,21,1024,0,4165.417000000016,medium,"void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListMetadata<1>, at::native::(anonymous namespace)::BinaryOpScalarFunctor<float, 1, 1, 0>, std::plus<float>, float>(at::native::(anonymous namespace)::TensorListMetadata<1>, at::native::(anonymous namespace)::BinaryOpScalarFunctor<float, 1, 1, 0>, std::plus<float>, float)",4165.417000000016
+1,1,1024,325.66599999999744,4157.7729999999865,medium,aten::_foreach_div_,4157.7729999999865
+1,21,1024,0,4157.7729999999865,medium,"void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListScalarListMetadata<float, 1>, at::native::(anonymous namespace)::BinaryOpScalarListFunctor<float, 1, 1, 0>, std::divides<float> >(at::native::(anonymous namespace)::TensorListScalarListMetadata<float, 1>, at::native::(anonymous namespace)::BinaryOpScalarListFunctor<float, 1, 1, 0>, std::divides<float>)",4157.7729999999865
+1,1,1024,1191.6389999999956,4110.828000000096,medium,aten::_foreach_sqrt,4110.828000000096
+1,21,1024,0,4110.828000000096,medium,"void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListMetadata<2>, at::native::(anonymous namespace)::UnaryOpFunctor<float, 2, 1, 1>, at::native::Sqrt<float> >(at::native::(anonymous namespace)::TensorListMetadata<2>, at::native::(anonymous namespace)::UnaryOpFunctor<float, 2, 1, 1>, at::native::Sqrt<float>)",4110.828000000096
+1,24,1024,1178.762000000007,3795.0330000000104,medium,attention/softmax,0.0
+1,24,1024,579.604999999985,3795.0330000000104,medium,aten::softmax,0.0
+1,24,1024,532.9159999999774,3795.0330000000104,medium,aten::_softmax,3795.0330000000104
+1,24,1024,0,3795.0330000000104,medium,"void (anonymous namespace)::softmax_warp_forward<float, float, float, 10, false, false>(float*, float const*, int, int, int, bool const*, int, bool)",3795.0330000000104
+1,24,1024,0,3795.0330000000104,medium,attention/softmax,3795.0330000000104
+1,24,1024,781.3819999999905,3754.772999999972,medium,autograd::engine::evaluate_function: DivBackward0,0.0
+1,24,1024,571.525000000016,3754.772999999972,medium,DivBackward0,0.0
+1,460,1024,3389.9809999996214,3602.0870000000723,medium,aten::add_,3602.0870000000723
+1,24,1024,1258.412000000084,2857.84900000006,medium,autograd::engine::evaluate_function: SigmoidBackward0,0.0
+1,49,1024,5414.4140000000625,2122.9380000001984,medium,autograd::engine::evaluate_function: PowBackward0,0.0
+1,193,1024,3379.8000000000106,1708.8039999998737,medium,aten::add,1708.8039999998737
+1,1595,1024,11633.579000000322,1660.679000000062,medium,aten::reshape,0.0
+1,49,1024,3944.9210000000458,1543.3380000000616,medium,PowBackward0,0.0
+1,24,1024,599.2610000000132,1428.1080000000075,medium,SigmoidBackward0,0.0
+1,24,1024,424.9969999999885,1428.1080000000075,medium,aten::sigmoid_backward,1428.1080000000075
+1,24,1024,0,1428.1080000000075,medium,"void at::native::vectorized_elementwise_kernel<4, at::native::sigmoid_backward_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#2}::operator()() const::{lambda(float, float)#1}, std::array<char*, 3ul> >(int, at::native::sigmoid_backward_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#2}::operator()() const::{lambda(float, float)#1}, std::array<char*, 3ul>)",1428.1080000000075
+1,96,1024,2056.788999999993,1363.6290000002791,medium,aten::cat,1363.6290000002791
+1,507,1024,8540.506999999874,1132.5659999998898,medium,autograd::engine::evaluate_function: UnsqueezeBackward0,0.0
+1,72,1024,0,1125.2700000001369,medium,"void at::native::(anonymous namespace)::CatArrayBatchedCopy<at::native::(anonymous namespace)::OpaqueType<4u>, unsigned int, 4, 64, 64>(at::native::(anonymous namespace)::OpaqueType<4u>*, at::native::(anonymous namespace)::CatArrInputTensorMetadata<at::native::(anonymous namespace)::OpaqueType<4u>, unsigned int, 64, 64>, at::native::(anonymous namespace)::TensorSizeStride<unsigned int, 4u>, int, unsigned int)",1125.2700000001369
+1,147,1024,3911.9699999999866,1039.4540000001775,medium,aten::pow,434.32300000006717
+1,98,1024,2535.771999999968,1026.7750000000087,medium,aten::sum,1026.7750000000087
+1,24,1024,485.0900000000074,954.6839999999893,medium,aten::sigmoid,954.6839999999893
+1,24,1024,0,954.6839999999893,medium,"void at::native::vectorized_elementwise_kernel<4, at::native::sigmoid_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#2}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::sigmoid_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#2}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>)",954.6839999999893
+1,628,1024,9924.61200000022,901.024000000034,medium,autograd::engine::evaluate_function: ViewBackward0,0.0
+1,628,1024,5901.977999999923,901.024000000034,medium,ViewBackward0,0.0
+1,48,1024,1136.6860000000001,743.8130000000547,medium,aten::concat,0.0
+1,48,1024,2099.3800000000774,619.8160000002244,medium,autograd::engine::evaluate_function: UnbindBackward0,0.0
+1,48,1024,1689.2410000000673,619.8160000002244,medium,UnbindBackward0,0.0
+1,48,1024,1542.6770000000106,619.8160000002244,medium,aten::stack,0.0
+1,483,1024,0,589.774999999926,medium,Memset (Device),589.774999999926
+1,265,1024,5455.385999999977,516.1740000000282,medium,autograd::engine::evaluate_function: ReshapeAliasBackward0,0.0
+1,265,1024,3554.45900000017,516.1740000000282,medium,ReshapeAliasBackward0,0.0
+1,49,1024,0,510.89300000001094,medium,"void at::native::reduce_kernel<512, 1, at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::sum_functor<float, float, float>::operator()(at::TensorIterator&)::{lambda(float, float)#1}>, unsigned int, float, 4, 4> >(at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::sum_functor<float, float, float>::operator()(at::TensorIterator&)::{lambda(float, float)#1}>, unsigned int, float, 4, 4>)",510.89300000001094
+1,49,1024,0,457.51700000002165,medium,"void at::native::reduce_kernel<128, 4, at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::sum_functor<float, float, float>::operator()(at::TensorIterator&)::{lambda(float, float)#1}>, unsigned int, float, 4, 4> >(at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::sum_functor<float, float, float>::operator()(at::TensorIterator&)::{lambda(float, float)#1}>, unsigned int, float, 4, 4>)",457.51700000002165
+1,98,1024,0,418.29099999983737,medium,"void at::native::vectorized_elementwise_kernel<4, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul> >(int, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul>)",418.29099999983737
+1,49,1024,0,340.5649999999637,medium,"void at::native::vectorized_elementwise_kernel<4, at::native::(anonymous namespace)::pow_tensor_scalar_kernel_impl<float, float>(at::TensorIteratorBase&, float)::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::(anonymous namespace)::pow_tensor_scalar_kernel_impl<float, float>(at::TensorIteratorBase&, float)::{lambda(float)#1}, std::array<char*, 2ul>)",340.5649999999637
+1,48,1024,1351.2800000000134,337.68500000009954,medium,autograd::engine::evaluate_function: SubBackward0,0.0
+1,48,1024,1011.8969999999681,337.68500000009954,medium,SubBackward0,0.0
+1,48,1024,877.5539999998873,337.68500000009954,medium,aten::neg,337.68500000009954
+1,48,1024,0,337.68500000009954,medium,"void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::neg_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}>(at::TensorIteratorBase&, at::native::neg_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::neg_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}>(at::TensorIteratorBase&, at::native::neg_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1} const&)::{lambda(int)#1})",337.68500000009954
+1,1,256,211644.119,59634.1669999998,medium,profile/measure,0.0
+1,1,256,0,57954.007,medium,forward,57954.007
+1,651,256,22041.967000000004,41380.774999999725,medium,aten::bmm,41380.774999999725
+1,1,256,0,40516.15500000003,medium,Optimizer.step#AdamW.step,40516.15500000003
+1,1,256,6456.520999999979,40403.06899999987,medium,optimizer,0.0
+1,1,256,6336.263000000006,40403.06899999987,medium,Optimizer.step#AdamW.step,0.0
+1,217,256,21570.646999999837,25822.680999999735,medium,autograd::engine::evaluate_function: BmmBackward0,0.0
+1,217,256,18913.649999999943,25822.680999999735,medium,BmmBackward0,0.0
+1,1,256,59572.736,19229.75399999993,medium,forward,0.0
+1,169,256,17315.613000000016,14459.924999999996,medium,aten::einsum,0.0
+1,144,256,0,9365.360999999975,medium,ampere_sgemm_128x64_tn,9365.360999999975
+1,145,256,0,9168.707999999955,medium,void cutlass::Kernel2<cutlass_80_simt_sgemm_128x64_8x5_nn_align1>(cutlass_80_simt_sgemm_128x64_8x5_nn_align1::Params),9168.707999999955
+1,73,256,0,8240.859999999928,medium,ampere_sgemm_128x64_nt,8240.859999999928
+1,2,256,627.9740000000165,8239.231000000029,medium,aten::_foreach_mul_,8239.231000000029
+1,42,256,0,8239.231000000029,medium,"void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListMetadata<1>, at::native::(anonymous namespace)::BinaryOpScalarFunctor<float, 1, 1, 0>, std::multiplies<float>, float>(at::native::(anonymous namespace)::TensorListMetadata<1>, at::native::(anonymous namespace)::BinaryOpScalarFunctor<float, 1, 1, 0>, std::multiplies<float>, float)",8239.231000000029
+1,1,256,384.5210000000079,7729.777999999962,medium,aten::_foreach_addcdiv_,7729.777999999962
+1,21,256,0,7729.777999999962,medium,"void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListScalarListMetadata<float, 3>, at::native::(anonymous namespace)::PointwiseOpScalarListFunctor<float, 3, 3, 0>, std::divides<float> >(at::native::(anonymous namespace)::TensorListScalarListMetadata<float, 3>, at::native::(anonymous namespace)::PointwiseOpScalarListFunctor<float, 3, 3, 0>, std::divides<float>)",7729.777999999962
+1,411,256,7678.641000000085,7543.620999999828,medium,aten::copy_,7543.620999999828
+1,313,256,0,6908.255999999859,medium,"void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1} const&)::{lambda(int)#1})",6908.255999999859
+1,219,256,8254.850000000122,6476.038999999924,medium,autograd::engine::evaluate_function: torch::autograd::AccumulateGrad,0.0
+1,219,256,6998.727999999966,6476.038999999924,medium,torch::autograd::AccumulateGrad,0.0
+1,1,256,304.2509999999893,6042.546999999962,medium,aten::_foreach_addcmul_,6042.546999999962
+1,21,256,0,6042.546999999962,medium,"void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListMetadata<3>, at::native::(anonymous namespace)::PointwiseOpScalarFunctor<float, 3, 3, 0>, std::multiplies<float>, float>(at::native::(anonymous namespace)::TensorListMetadata<3>, at::native::(anonymous namespace)::PointwiseOpScalarFunctor<float, 3, 3, 0>, std::multiplies<float>, float)",6042.546999999962
+1,1,256,186.02100000000792,6039.284999999974,medium,aten::_foreach_lerp_,6039.284999999974
+1,21,256,0,6039.284999999974,medium,"void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListMetadata<2>, at::native::(anonymous namespace)::TernaryOpScalarFunctor<float, 2, 2, 0>, at::native::LerpFunctor<float>, float>(at::native::(anonymous namespace)::TensorListMetadata<2>, at::native::(anonymous namespace)::TernaryOpScalarFunctor<float, 2, 2, 0>, at::native::LerpFunctor<float>, float)",6039.284999999974
+1,1043,256,18859.374000000105,4741.475000000084,medium,aten::mul,4741.475000000084
+1,1,256,316.6579999999958,4137.953000000038,medium,aten::_foreach_div_,4137.953000000038
+1,21,256,0,4137.953000000038,medium,"void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListScalarListMetadata<float, 1>, at::native::(anonymous namespace)::BinaryOpScalarListFunctor<float, 1, 1, 0>, std::divides<float> >(at::native::(anonymous namespace)::TensorListScalarListMetadata<float, 1>, at::native::(anonymous namespace)::BinaryOpScalarListFunctor<float, 1, 1, 0>, std::divides<float>)",4137.953000000038
+1,2,256,596.0880000000179,4128.9619999999995,medium,aten::_foreach_add_,4128.9619999999995
+1,21,256,0,4128.9619999999995,medium,"void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListMetadata<1>, at::native::(anonymous namespace)::BinaryOpScalarFunctor<float, 1, 1, 0>, std::plus<float>, float>(at::native::(anonymous namespace)::TensorListMetadata<1>, at::native::(anonymous namespace)::BinaryOpScalarFunctor<float, 1, 1, 0>, std::plus<float>, float)",4128.9619999999995
+1,1,256,1212.1019999999844,4085.3129999999073,medium,aten::_foreach_sqrt,4085.3129999999073
+1,21,256,0,4085.3129999999073,medium,"void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListMetadata<2>, at::native::(anonymous namespace)::UnaryOpFunctor<float, 2, 1, 1>, at::native::Sqrt<float> >(at::native::(anonymous namespace)::TensorListMetadata<2>, at::native::(anonymous namespace)::UnaryOpFunctor<float, 2, 1, 1>, at::native::Sqrt<float>)",4085.3129999999073
+1,24,256,0,3774.1890000000085,medium,ampere_sgemm_128x32_sliced1x4_tn,3774.1890000000085
+1,338,256,19179.823999999768,3608.71500000004,medium,autograd::engine::evaluate_function: MulBackward0,0.0
+1,24,256,0,3221.4759999999806,medium,attention/scores,3221.4759999999806
+1,364,256,0,2904.3350000003493,medium,"void at::native::vectorized_elementwise_kernel<4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul> >(int, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul>)",2904.3350000003493
+1,96,256,0,2745.5270000000965,medium,void cutlass::Kernel2<cutlass_80_simt_sgemm_128x64_8x5_nt_align1>(cutlass_80_simt_sgemm_128x64_8x5_nt_align1::Params),2745.5270000000965
+1,338,256,10483.09000000012,2704.33900000016,medium,MulBackward0,0.0
+1,24,256,0,2622.3970000000045,medium,ampere_sgemm_128x64_nn,2622.3970000000045
+1,580,256,0,1684.9889999998968,medium,"void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1})",1684.9889999998968
+1,192,256,0,1561.5489999999572,medium,"void cublasLt::splitKreduce_kernel<32, 16, int, float, float, float, false, float, float, float, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, float const*, float*, float*, float const*, float const*, float const*, float const*, float*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",1561.5489999999572
+1,48,256,0,1530.8859999999504,medium,ampere_sgemm_128x128_nn,1530.8859999999504
+1,48,256,0,1458.594999999892,medium,ampere_sgemm_128x128_nt,1458.594999999892
+1,433,256,0,1453.4489999998596,medium,"void at::native::vectorized_elementwise_kernel<4, at::native::CUDAFunctor_add<float>, std::array<char*, 3ul> >(int, at::native::CUDAFunctor_add<float>, std::array<char*, 3ul>)",1453.4489999998596
+1,48,256,3328.6229999999837,1098.1689999999967,medium,aten::matmul,0.0
+1,24,256,5711.680000000005,987.0669999999714,medium,attention/scores,0.0
+1,460,256,3474.868999999824,868.3119999998598,medium,aten::add_,868.3119999998598
+1,192,256,5794.014000000154,864.0059999999025,medium,aten::clone,0.0
+1,48,256,3331.7879999999623,780.63599999995,medium,aten::masked_fill,0.0
+1,24,256,2253.87899999999,771.5560000000069,medium,attention/value,0.0
+1,24,256,0,771.5560000000069,medium,attention/value,771.5560000000069
+1,24,256,1296.3540000000357,653.0619999999035,medium,autograd::engine::evaluate_function: SigmoidBackward0,0.0
+1,48,256,0,639.2079999999619,medium,ampere_sgemm_128x128_tn,639.2079999999619
+1,98,256,0,635.3649999999684,medium,Memcpy DtoD (Device -> Device),635.3649999999684
+1,24,256,1349.5260000000635,590.823000000084,medium,autograd::engine::evaluate_function: SoftmaxBackward0,0.0
+1,24,256,1149.3289999999106,590.823000000084,medium,SoftmaxBackward0,0.0
+1,24,256,1033.7530000000552,590.823000000084,medium,aten::_softmax_backward_data,282.3250000000771
+1,98,256,2028.39700000015,576.8720000000249,medium,aten::sum,576.8720000000249
+1,193,256,3432.1329999999784,556.9850000000092,medium,aten::add,556.9850000000092
+1,97,256,2248.0609999999547,503.273999999888,medium,aten::div,503.273999999888
+1,49,256,5566.878000000099,451.50300000014977,medium,autograd::engine::evaluate_function: PowBackward0,0.0
+1,96,256,2059.8179999999184,450.3600000000001,medium,aten::cat,450.3600000000001
+1,1595,256,11751.208999999883,432.21699999993507,medium,aten::reshape,0.0
+1,24,256,2262.234999999986,389.2619999999588,medium,autograd::engine::evaluate_function: MaskedFillBackward0,0.0
+1,24,256,1963.6349999999366,389.2619999999588,medium,MaskedFillBackward0,0.0
+1,48,256,0,384.62200000000985,medium,"void at::native::vectorized_elementwise_kernel<4, at::native::BUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul> >(int, at::native::BUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul>)",384.62200000000985
+1,72,256,0,378.93600000000106,medium,"void at::native::(anonymous namespace)::CatArrayBatchedCopy<at::native::(anonymous namespace)::OpaqueType<4u>, unsigned int, 4, 64, 64>(at::native::(anonymous namespace)::OpaqueType<4u>*, at::native::(anonymous namespace)::CatArrInputTensorMetadata<at::native::(anonymous namespace)::OpaqueType<4u>, unsigned int, 64, 64>, at::native::(anonymous namespace)::TensorSizeStride<unsigned int, 4u>, int, unsigned int)",378.93600000000106
+1,24,256,617.140000000014,377.3959999999788,medium,SigmoidBackward0,0.0
+1,24,256,439.34099999994214,377.3959999999788,medium,aten::sigmoid_backward,377.3959999999788
+1,24,256,0,377.3959999999788,medium,"void at::native::vectorized_elementwise_kernel<4, at::native::sigmoid_backward_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#2}::operator()() const::{lambda(float, float)#1}, std::array<char*, 3ul> >(int, at::native::sigmoid_backward_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#2}::operator()() const::{lambda(float, float)#1}, std::array<char*, 3ul>)",377.3959999999788
+1,507,256,8581.999000000338,372.15200000006735,medium,autograd::engine::evaluate_function: UnsqueezeBackward0,0.0
+1,49,256,0,364.882000000056,medium,"void at::native::reduce_kernel<128, 4, at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::sum_functor<float, float, float>::operator()(at::TensorIterator&)::{lambda(float, float)#1}>, unsigned int, float, 4, 4> >(at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::sum_functor<float, float, float>::operator()(at::TensorIterator&)::{lambda(float, float)#1}>, unsigned int, float, 4, 4>)",364.882000000056
+1,48,256,1064.7089999998539,348.8469999999825,medium,aten::masked_fill_,348.8469999999825
+1,48,256,0,348.8469999999825,medium,"void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::(anonymous namespace)::masked_fill_kernel(at::TensorIterator&, c10::Scalar const&)::{lambda()#1}::operator()() const::{lambda()#7}::operator()() const::{lambda(float, bool)#1}>(at::TensorIteratorBase&, at::native::(anonymous namespace)::masked_fill_kernel(at::TensorIterator&, c10::Scalar const&)::{lambda()#1}::operator()() const::{lambda()#7}::operator()() const::{lambda(float, bool)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::(anonymous namespace)::masked_fill_kernel(at::TensorIterator&, c10::Scalar const&)::{lambda()#1}::operator()() const::{lambda()#7}::operator()() const::{lambda(float, bool)#1}>(at::TensorIteratorBase&, at::native::(anonymous namespace)::masked_fill_kernel(at::TensorIterator&, c10::Scalar const&)::{lambda()#1}::operator()() const::{lambda()#7}::operator()() const::{lambda(float, bool)#1} const&)::{lambda(int)#1})",348.8469999999825
+1,49,256,4075.342000000055,309.0780000001032,medium,PowBackward0,0.0
+1,24,256,0,282.3250000000771,medium,"void (anonymous namespace)::softmax_warp_backward<float, float, float, 8, false, false>(float*, float const*, float const*, int, int, int, bool const*)",282.3250000000771
+1,147,256,4052.641000000128,264.5339999999078,medium,aten::pow,158.29799999990337
+1,48,256,1142.3349999999932,246.5860000000098,medium,aten::concat,0.0
+1,1,256,0,220.53499999999622,medium,void cutlass::Kernel2<cutlass_80_simt_sgemm_128x256_8x4_tn_align1>(cutlass_80_simt_sgemm_128x256_8x4_tn_align1::Params),220.53499999999622
+1,49,256,0,211.98999999996886,medium,"void at::native::reduce_kernel<512, 1, at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::sum_functor<float, float, float>::operator()(at::TensorIterator&)::{lambda(float, float)#1}>, unsigned int, float, 4, 4> >(at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::sum_functor<float, float, float>::operator()(at::TensorIterator&)::{lambda(float, float)#1}>, unsigned int, float, 4, 4>)",211.98999999996886
+1,628,256,10068.275000000016,209.3059999999241,medium,autograd::engine::evaluate_function: ViewBackward0,0.0
+1,628,256,5987.030999999806,209.3059999999241,medium,ViewBackward0,0.0
+1,49,256,1041.3819999999773,205.4030000000148,medium,aten::mean,205.4030000000148
+1,49,256,0,205.4030000000148,medium,"void at::native::reduce_kernel<512, 1, at::native::ReduceOp<float, at::native::MeanOps<float, float, float, float>, unsigned int, float, 4, 4> >(at::native::ReduceOp<float, at::native::MeanOps<float, float, float, float>, unsigned int, float, 4, 4>)",205.4030000000148
+1,48,256,2108.899000000034,203.77399999999034,medium,autograd::engine::evaluate_function: UnbindBackward0,0.0
+1,48,256,1696.4370000000054,203.77399999999034,medium,UnbindBackward0,0.0
+1,48,256,1542.4310000000696,203.77399999999034,medium,aten::stack,0.0
+1,24,256,1213.747000000013,181.5920000000151,medium,attention/softmax,0.0
+1,24,256,610.5810000000047,181.5920000000151,medium,aten::softmax,0.0
+1,24,256,562.769000000002,181.5920000000151,medium,aten::_softmax,181.5920000000151
+1,24,256,0,181.5920000000151,medium,"void (anonymous namespace)::softmax_warp_forward<float, float, float, 8, false, false>(float*, float const*, int, int, int, bool const*, int, bool)",181.5920000000151
+1,24,256,0,181.5920000000151,medium,attention/softmax,181.5920000000151
+1,24,256,522.8280000000004,177.01999999999953,medium,aten::sigmoid,177.01999999999953
+1,24,256,0,177.01999999999953,medium,"void at::native::vectorized_elementwise_kernel<4, at::native::sigmoid_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#2}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::sigmoid_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#2}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>)",177.01999999999953
+1,49,256,4086.5970000000234,175.85999999977503,medium,autograd::engine::evaluate_function: RsqrtBackward0,0.0
+1,49,256,3686.523000000001,175.85999999977503,medium,RsqrtBackward0,0.0
+1,24,256,803.7969999999914,160.14900000001944,medium,autograd::engine::evaluate_function: DivBackward0,0.0
+1,24,256,590.3029999999562,160.14900000001944,medium,DivBackward0,0.0
+1,98,256,0,150.58299999983865,medium,"void at::native::vectorized_elementwise_kernel<4, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul> >(int, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul>)",150.58299999983865
+1,1,256,85.33599999998114,142.55399999997462,medium,autograd::engine::evaluate_function: SliceBackward0,0.0
+1,1,512,209930.20500000002,73660.61099999998,medium,profile/measure,0.0
+1,651,512,22132.461999999745,71462.83900000014,medium,aten::bmm,71462.83900000014
+1,1,512,0,58096.257,medium,forward,58096.257
+1,217,512,21390.576999999976,46913.06800000017,medium,autograd::engine::evaluate_function: BmmBackward0,0.0
+1,217,512,18799.120999999956,46913.06800000017,medium,BmmBackward0,0.0
+1,1,512,0,40476.78899999999,medium,Optimizer.step#AdamW.step,40476.78899999999
+1,1,512,6378.568999999989,40363.706000000006,medium,optimizer,0.0
+1,1,512,6252.931000000011,40363.706000000006,medium,Optimizer.step#AdamW.step,0.0
+1,1,512,59322.574,33295.56099999996,medium,forward,0.0
+1,169,512,17405.391000000043,21969.45099999995,medium,aten::einsum,0.0
+1,168,512,0,21404.19100000001,medium,ampere_sgemm_128x64_tn,21404.19100000001
+1,72,512,0,14633.438999999904,medium,void cutlass::Kernel2<cutlass_80_simt_sgemm_256x128_8x4_nn_align1>(cutlass_80_simt_sgemm_256x128_8x4_nn_align1::Params),14633.438999999904
+1,72,512,0,14506.46500000004,medium,ampere_sgemm_128x64_nt,14506.46500000004
+1,411,512,7658.835000000037,9717.4270000001,medium,aten::copy_,9717.4270000001
+1,145,512,0,9626.854000000101,medium,ampere_sgemm_128x128_nn,9626.854000000101
+1,1043,512,18425.39199999992,9587.919000000085,medium,aten::mul,9587.919000000085
+1,2,512,610.5530000000144,8228.842000000062,medium,aten::_foreach_mul_,8228.842000000062
+1,42,512,0,8228.842000000062,medium,"void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListMetadata<1>, at::native::(anonymous namespace)::BinaryOpScalarFunctor<float, 1, 1, 0>, std::multiplies<float>, float>(at::native::(anonymous namespace)::TensorListMetadata<1>, at::native::(anonymous namespace)::BinaryOpScalarFunctor<float, 1, 1, 0>, std::multiplies<float>, float)",8228.842000000062
+1,1,512,387.19999999998254,7726.720000000001,medium,aten::_foreach_addcdiv_,7726.720000000001
+1,21,512,0,7726.720000000001,medium,"void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListScalarListMetadata<float, 3>, at::native::(anonymous namespace)::PointwiseOpScalarListFunctor<float, 3, 3, 0>, std::divides<float> >(at::native::(anonymous namespace)::TensorListScalarListMetadata<float, 3>, at::native::(anonymous namespace)::PointwiseOpScalarListFunctor<float, 3, 3, 0>, std::divides<float>)",7726.720000000001
+1,313,512,0,7289.809999999996,medium,"void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1} const&)::{lambda(int)#1})",7289.809999999996
+1,364,512,0,6815.894999999905,medium,"void at::native::vectorized_elementwise_kernel<4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul> >(int, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul>)",6815.894999999905
+1,219,512,8210.55700000011,6503.888000000006,medium,autograd::engine::evaluate_function: torch::autograd::AccumulateGrad,0.0
+1,219,512,6976.97599999993,6503.888000000006,medium,torch::autograd::AccumulateGrad,0.0
+1,338,512,18756.262999999846,6319.834999999875,medium,autograd::engine::evaluate_function: MulBackward0,0.0
+1,1,512,159.43299999999,6043.774999999936,medium,aten::_foreach_lerp_,6043.774999999936
+1,21,512,0,6043.774999999936,medium,"void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListMetadata<2>, at::native::(anonymous namespace)::TernaryOpScalarFunctor<float, 2, 2, 0>, at::native::LerpFunctor<float>, float>(at::native::(anonymous namespace)::TensorListMetadata<2>, at::native::(anonymous namespace)::TernaryOpScalarFunctor<float, 2, 2, 0>, at::native::LerpFunctor<float>, float)",6043.774999999936
+1,1,512,299.10999999998603,6020.285999999993,medium,aten::_foreach_addcmul_,6020.285999999993
+1,21,512,0,6020.285999999993,medium,"void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListMetadata<3>, at::native::(anonymous namespace)::PointwiseOpScalarFunctor<float, 3, 3, 0>, std::multiplies<float>, float>(at::native::(anonymous namespace)::TensorListMetadata<3>, at::native::(anonymous namespace)::PointwiseOpScalarFunctor<float, 3, 3, 0>, std::multiplies<float>, float)",6020.285999999993
+1,96,512,0,5310.80599999991,medium,void cutlass::Kernel2<cutlass_80_simt_sgemm_128x64_8x5_nt_align1>(cutlass_80_simt_sgemm_128x64_8x5_nt_align1::Params),5310.80599999991
+1,338,512,10178.444999999825,5013.527999999918,medium,MulBackward0,0.0
+1,24,512,0,4509.94199999999,medium,attention/scores,4509.94199999999
+1,2,512,600.0050000000047,4138.661000000051,medium,aten::_foreach_add_,4138.661000000051
+1,21,512,0,4138.661000000051,medium,"void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListMetadata<1>, at::native::(anonymous namespace)::BinaryOpScalarFunctor<float, 1, 1, 0>, std::plus<float>, float>(at::native::(anonymous namespace)::TensorListMetadata<1>, at::native::(anonymous namespace)::BinaryOpScalarFunctor<float, 1, 1, 0>, std::plus<float>, float)",4138.661000000051
+1,1,512,323.7820000000065,4126.213999999978,medium,aten::_foreach_div_,4126.213999999978
+1,21,512,0,4126.213999999978,medium,"void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListScalarListMetadata<float, 1>, at::native::(anonymous namespace)::BinaryOpScalarListFunctor<float, 1, 1, 0>, std::divides<float> >(at::native::(anonymous namespace)::TensorListScalarListMetadata<float, 1>, at::native::(anonymous namespace)::BinaryOpScalarListFunctor<float, 1, 1, 0>, std::divides<float>)",4126.213999999978
+1,1,512,1221.0070000000123,4079.207999999984,medium,aten::_foreach_sqrt,4079.207999999984
+1,21,512,0,4079.207999999984,medium,"void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListMetadata<2>, at::native::(anonymous namespace)::UnaryOpFunctor<float, 2, 1, 1>, at::native::Sqrt<float> >(at::native::(anonymous namespace)::TensorListMetadata<2>, at::native::(anonymous namespace)::UnaryOpFunctor<float, 2, 1, 1>, at::native::Sqrt<float>)",4079.207999999984
+1,24,512,5606.282999999987,4063.3349999999764,medium,attention/scores,0.0
+1,48,512,3272.5169999999553,3970.478999999881,medium,aten::masked_fill,0.0
+1,24,512,1330.2809999999881,2848.4410000000644,medium,autograd::engine::evaluate_function: SoftmaxBackward0,0.0
+1,24,512,1140.662000000004,2848.4410000000644,medium,SoftmaxBackward0,0.0
+1,24,512,1028.632999999987,2848.4410000000644,medium,aten::_softmax_backward_data,1423.3740000000107
+1,192,512,5729.469000000034,2770.613999999974,medium,aten::clone,0.0
+1,48,512,0,2767.835000000021,medium,ampere_sgemm_128x128_nt,2767.835000000021
+1,433,512,0,2649.9149999998776,medium,"void at::native::vectorized_elementwise_kernel<4, at::native::CUDAFunctor_add<float>, std::array<char*, 3ul> >(int, at::native::CUDAFunctor_add<float>, std::array<char*, 3ul>)",2649.9149999998776
+1,49,512,0,2633.49600000007,medium,ampere_sgemm_128x128_tn,2633.49600000007
+1,580,512,0,2585.9480000000635,medium,"void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1})",2585.9480000000635
+1,48,512,3268.866999999993,2580.3200000000206,medium,aten::matmul,0.0
+1,98,512,0,2427.617000000104,medium,Memcpy DtoD (Device -> Device),2427.617000000104
+1,97,512,2236.8339999999093,2092.6899999999805,medium,aten::div,2092.6899999999805
+1,24,512,2224.874999999978,1986.3909999999087,medium,autograd::engine::evaluate_function: MaskedFillBackward0,0.0
+1,24,512,1948.541000000012,1986.3909999999087,medium,MaskedFillBackward0,0.0
+1,48,512,1038.8679999999995,1985.7869999998966,medium,aten::masked_fill_,1985.7869999998966
+1,48,512,0,1985.7869999998966,medium,"void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::(anonymous namespace)::masked_fill_kernel(at::TensorIterator&, c10::Scalar const&)::{lambda()#1}::operator()() const::{lambda()#7}::operator()() const::{lambda(float, bool)#1}>(at::TensorIteratorBase&, at::native::(anonymous namespace)::masked_fill_kernel(at::TensorIterator&, c10::Scalar const&)::{lambda()#1}::operator()() const::{lambda()#7}::operator()() const::{lambda(float, bool)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::(anonymous namespace)::masked_fill_kernel(at::TensorIterator&, c10::Scalar const&)::{lambda()#1}::operator()() const::{lambda()#7}::operator()() const::{lambda(float, bool)#1}>(at::TensorIteratorBase&, at::native::(anonymous namespace)::masked_fill_kernel(at::TensorIterator&, c10::Scalar const&)::{lambda()#1}::operator()() const::{lambda()#7}::operator()() const::{lambda(float, bool)#1} const&)::{lambda(int)#1})",1985.7869999998966
+1,48,512,0,1927.8620000000155,medium,"void at::native::vectorized_elementwise_kernel<4, at::native::BUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul> >(int, at::native::BUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul>)",1927.8620000000155
+1,460,512,3477.2560000003505,1734.841999999815,medium,aten::add_,1734.841999999815
+1,24,512,2220.5080000000144,1526.7620000000106,medium,attention/value,0.0
+1,24,512,0,1526.7620000000106,medium,attention/value,1526.7620000000106
+1,24,512,1282.8020000000251,1461.1279999999024,medium,autograd::engine::evaluate_function: SigmoidBackward0,0.0
+1,24,512,0,1423.3740000000107,medium,"void (anonymous namespace)::softmax_warp_backward<float, float, float, 9, false, false>(float*, float const*, float const*, int, int, int, bool const*)",1423.3740000000107
+1,49,512,5458.10999999995,1055.481000000109,medium,autograd::engine::evaluate_function: PowBackward0,0.0
+1,24,512,1176.7570000000078,982.2689999999875,medium,attention/softmax,0.0
+1,24,512,589.6450000000023,982.2689999999875,medium,aten::softmax,0.0
+1,24,512,543.5,982.2689999999875,medium,aten::_softmax,982.2689999999875
+1,24,512,0,982.2689999999875,medium,"void (anonymous namespace)::softmax_warp_forward<float, float, float, 9, false, false>(float*, float const*, int, int, int, bool const*, int, bool)",982.2689999999875
+1,24,512,0,982.2689999999875,medium,attention/softmax,982.2689999999875
+1,24,512,789.3029999999853,963.9920000000129,medium,autograd::engine::evaluate_function: DivBackward0,0.0
+1,24,512,579.5659999999261,963.9920000000129,medium,DivBackward0,0.0
+1,193,512,3454.793999999887,867.9760000000497,medium,aten::add,867.9760000000497
+1,98,512,2034.4480000000258,805.9109999999855,medium,aten::sum,805.9109999999855
+1,1595,512,11624.950000000461,785.9219999999896,medium,aten::reshape,0.0
+1,49,512,3976.2099999999773,758.4030000001221,medium,PowBackward0,0.0
+1,24,512,605.8549999999814,731.7809999999808,medium,SigmoidBackward0,0.0
+1,24,512,422.3760000000693,731.7809999999808,medium,aten::sigmoid_backward,731.7809999999808
+1,24,512,0,731.7809999999808,medium,"void at::native::vectorized_elementwise_kernel<4, at::native::sigmoid_backward_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#2}::operator()() const::{lambda(float, float)#1}, std::array<char*, 3ul> >(int, at::native::sigmoid_backward_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#2}::operator()() const::{lambda(float, float)#1}, std::array<char*, 3ul>)",731.7809999999808
+1,96,512,2073.395000000195,698.7569999998032,medium,aten::cat,698.7569999998032
+1,507,512,8592.322000000277,628.9969999999375,medium,autograd::engine::evaluate_function: UnsqueezeBackward0,0.0
+1,72,512,0,589.6409999998959,medium,"void at::native::(anonymous namespace)::CatArrayBatchedCopy<at::native::(anonymous namespace)::OpaqueType<4u>, unsigned int, 4, 64, 64>(at::native::(anonymous namespace)::OpaqueType<4u>*, at::native::(anonymous namespace)::CatArrInputTensorMetadata<at::native::(anonymous namespace)::OpaqueType<4u>, unsigned int, 64, 64>, at::native::(anonymous namespace)::TensorSizeStride<unsigned int, 4u>, int, unsigned int)",589.6409999998959
+1,147,512,3979.6469999999367,554.5340000001038,medium,aten::pow,208.40600000000495
+1,49,512,0,519.2079999999551,medium,"void at::native::reduce_kernel<128, 4, at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::sum_functor<float, float, float>::operator()(at::TensorIterator&)::{lambda(float, float)#1}>, unsigned int, float, 4, 4> >(at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::sum_functor<float, float, float>::operator()(at::TensorIterator&)::{lambda(float, float)#1}>, unsigned int, float, 4, 4>)",519.2079999999551
+1,628,512,9971.70900000014,482.3189999999304,medium,autograd::engine::evaluate_function: ViewBackward0,0.0
+1,628,512,5985.082000000279,482.3189999999304,medium,ViewBackward0,0.0
+1,24,512,497.9070000000065,455.34500000001117,medium,aten::sigmoid,455.34500000001117
+1,24,512,0,455.34500000001117,medium,"void at::native::vectorized_elementwise_kernel<4, at::native::sigmoid_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#2}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::sigmoid_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#2}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>)",455.34500000001117
+1,1,512,0,398.99199999999837,medium,void cutlass::Kernel2<cutlass_80_simt_sgemm_256x128_8x4_nt_align1>(cutlass_80_simt_sgemm_256x128_8x4_nt_align1::Params),398.99199999999837
+1,48,512,1150.350000000005,388.85199999997894,medium,aten::concat,0.0
+1,48,512,2085.334000000046,309.9049999998242,medium,autograd::engine::evaluate_function: UnbindBackward0,0.0
+1,48,512,1685.2390000000305,309.9049999998242,medium,UnbindBackward0,0.0
+1,48,512,1535.939000000144,309.9049999998242,medium,aten::stack,0.0
+1,49,512,0,286.70300000003044,medium,"void at::native::reduce_kernel<512, 1, at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::sum_functor<float, float, float>::operator()(at::TensorIterator&)::{lambda(float, float)#1}>, unsigned int, float, 4, 4> >(at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::sum_functor<float, float, float>::operator()(at::TensorIterator&)::{lambda(float, float)#1}>, unsigned int, float, 4, 4>)",286.70300000003044
+1,49,512,1027.1750000000097,221.3320000000008,medium,aten::mean,221.3320000000008
+1,49,512,0,221.3320000000008,medium,"void at::native::reduce_kernel<512, 1, at::native::ReduceOp<float, at::native::MeanOps<float, float, float, float>, unsigned int, float, 4, 4> >(at::native::ReduceOp<float, at::native::MeanOps<float, float, float, float>, unsigned int, float, 4, 4>)",221.3320000000008
+1,48,512,1366.9090000000142,207.25600000002305,medium,autograd::engine::evaluate_function: SubBackward0,0.0
+1,48,512,1030.1910000000207,207.25600000002305,medium,SubBackward0,0.0
+1,48,512,892.7859999999637,207.25600000002305,medium,aten::neg,207.25600000002305
+1,48,512,0,207.25600000002305,medium,"void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::neg_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}>(at::TensorIteratorBase&, at::native::neg_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::neg_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}>(at::TensorIteratorBase&, at::native::neg_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1} const&)::{lambda(int)#1})",207.25600000002305
+1,49,512,3996.045999999944,197.88000000010652,medium,autograd::engine::evaluate_function: RsqrtBackward0,0.0
+1,49,512,3609.0000000000437,197.88000000010652,medium,RsqrtBackward0,0.0
+1,98,512,0,184.4450000001234,medium,"void at::native::vectorized_elementwise_kernel<4, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul> >(int, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul>)",184.4450000001234
+4,327,1024,13082.444999999987,181898.43799999933,small,aten::bmm,181898.43799999933
+4,1,1024,155270.352,143373.0900000005,small,profile/measure,0.0
+4,109,1024,13066.581000000057,121074.74099999934,small,autograd::engine::evaluate_function: BmmBackward0,0.0
+4,109,1024,11797.499000000003,121074.74099999934,small,BmmBackward0,0.0
+4,1,1024,0,99681.52600000001,small,forward,99681.52600000001
+4,1,1024,31328.084,98880.84399999988,small,forward,0.0
+4,85,1024,8756.394999999995,48804.564999999995,small,aten::einsum,0.0
+4,84,1024,0,45508.18399999982,small,ampere_sgemm_128x64_nn,45508.18399999982
+4,1,1024,7996.800999999978,44490.74200000061,small,optimizer,0.0
+4,1,1024,7914.8829999999725,44490.74200000061,small,Optimizer.step#AdamW.step,0.0
+4,73,1024,0,37409.79599999999,small,ampere_sgemm_128x64_tn,37409.79599999999
+4,527,1024,24491.30199999987,32365.868000000148,small,aten::mul,32365.868000000148
+4,1643,1024,49322.43300000025,32032.011000000406,small,cudaLaunchKernel,0.0
+4,115,1024,43802.755999999936,32032.011000000406,small,Command Buffer Full,32032.011000000406
+4,37,1024,0,31667.361999999834,small,void cutlass::Kernel2<cutlass_80_simt_sgemm_128x256_8x4_nt_align1>(cutlass_80_simt_sgemm_128x256_8x4_nt_align1::Params),31667.361999999834
+4,184,1024,0,24251.691000000355,small,"void at::native::vectorized_elementwise_kernel<4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul> >(int, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul>)",24251.691000000355
+4,24,1024,2151.287999999989,22837.194999999963,small,aten::masked_fill,0.0
+4,12,1024,0,21725.71799999998,small,attention/scores,21725.71799999998
+4,12,1024,2855.1209999999965,21688.60299999998,small,attention/scores,0.0
+4,36,1024,0,20771.514999999934,small,ampere_sgemm_128x128_tn,20771.514999999934
+4,231,1024,14258.750999999915,17461.7969999998,small,aten::copy_,17461.7969999998
+4,170,1024,25462.591999999866,17303.31200000021,small,autograd::engine::evaluate_function: MulBackward0,0.0
+4,12,1024,665.3489999999729,16617.348000000056,small,autograd::engine::evaluate_function: SoftmaxBackward0,0.0
+4,12,1024,569.7539999999935,16617.348000000056,small,SoftmaxBackward0,0.0
+4,12,1024,507.4059999999881,16617.348000000056,small,aten::_softmax_backward_data,8304.017000000007
+4,24,1024,0,15007.074000000004,small,ampere_sgemm_128x128_nn,15007.074000000004
+4,24,1024,0,14869.546999999962,small,ampere_sgemm_128x128_nt,14869.546999999962
+4,120,1024,9624.390999999967,14286.23499999988,small,aten::clone,0.0
+4,1,1024,440.56200000000536,14155.968000000226,small,aten::_foreach_addcdiv_,2359.3280000000377
+4,170,1024,14162.440999999897,13938.93400000014,small,MulBackward0,0.0
+4,48,1024,0,13438.180999999866,small,void cutlass::Kernel2<cutlass_80_simt_sgemm_128x64_8x5_nt_align1>(cutlass_80_simt_sgemm_128x64_8x5_nt_align1::Params),13438.180999999866
+4,1,1024,3145.863000000012,13103.027000000235,small,aten::_foreach_lerp_,1871.8610000000335
+4,1,1024,0,12502.152999999991,small,Optimizer.step#AdamW.step,12502.152999999991
+4,24,1024,1929.4429999999966,12408.202999999941,small,aten::matmul,0.0
+4,50,1024,0,12105.917999999925,small,Memcpy DtoD (Device -> Device),12105.917999999925
+4,24,1024,627.0679999999843,11612.71700000001,small,aten::masked_fill_,11612.71700000001
+4,24,1024,0,11612.71700000001,small,"void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::(anonymous namespace)::masked_fill_kernel(at::TensorIterator&, c10::Scalar const&)::{lambda()#1}::operator()() const::{lambda()#7}::operator()() const::{lambda(float, bool)#1}>(at::TensorIteratorBase&, at::native::(anonymous namespace)::masked_fill_kernel(at::TensorIterator&, c10::Scalar const&)::{lambda()#1}::operator()() const::{lambda()#7}::operator()() const::{lambda(float, bool)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::(anonymous namespace)::masked_fill_kernel(at::TensorIterator&, c10::Scalar const&)::{lambda()#1}::operator()() const::{lambda()#7}::operator()() const::{lambda(float, bool)#1}>(at::TensorIteratorBase&, at::native::(anonymous namespace)::masked_fill_kernel(at::TensorIterator&, c10::Scalar const&)::{lambda()#1}::operator()() const::{lambda()#7}::operator()() const::{lambda(float, bool)#1} const&)::{lambda(int)#1})",11612.71700000001
+4,49,1024,3139.9110000000182,11573.421000000137,small,aten::div,11573.421000000137
+4,2,1024,1556.8209999999963,11562.40399999998,small,aten::_foreach_mul_,2558.198999999964
+4,12,1024,1579.948000000033,11419.73199999996,small,autograd::engine::evaluate_function: MaskedFillBackward0,0.0
+4,12,1024,1405.7060000000201,11419.73199999996,small,MaskedFillBackward0,0.0
+4,24,1024,0,11163.649000000067,small,"void at::native::vectorized_elementwise_kernel<4, at::native::BUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul> >(int, at::native::BUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul>)",11163.649000000067
+4,217,1024,0,9136.136000000035,small,"void at::native::vectorized_elementwise_kernel<4, at::native::CUDAFunctor_add<float>, std::array<char*, 3ul> >(int, at::native::CUDAFunctor_add<float>, std::array<char*, 3ul>)",9136.136000000035
+4,12,1024,0,8304.017000000007,small,"void (anonymous namespace)::softmax_warp_backward<float, float, float, 10, false, false>(float*, float const*, float const*, int, int, int, bool const*)",8304.017000000007
+4,12,1024,0,7779.973999999989,small,attention/value,7779.973999999989
+4,12,1024,1439.4309999999905,7770.885999999952,small,attention/value,0.0
+4,292,1024,0,7299.2629999997735,small,"void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1})",7299.2629999997735
+4,232,1024,4063.1069999999963,5887.696000000011,small,aten::add_,5887.696000000011
+4,12,1024,588.9020000000028,5610.015999999986,small,attention/softmax,0.0
+4,12,1024,293.4730000000018,5610.015999999986,small,aten::softmax,0.0
+4,12,1024,268.4519999999993,5610.015999999986,small,aten::_softmax,5610.015999999986
+4,12,1024,0,5610.015999999986,small,"void (anonymous namespace)::softmax_warp_forward<float, float, float, 10, false, false>(float*, float const*, int, int, int, bool const*, int, bool)",5610.015999999986
+4,12,1024,0,5610.015999999986,small,attention/softmax,5610.015999999986
+4,12,1024,522.6220000000321,5583.137000000075,small,autograd::engine::evaluate_function: DivBackward0,0.0
+4,12,1024,420.0570000000007,5583.137000000075,small,DivBackward0,0.0
+4,181,1024,0,5355.8789999998735,small,"void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1} const&)::{lambda(int)#1})",5355.8789999998735
+4,12,1024,637.5920000000042,4194.582999999999,small,autograd::engine::evaluate_function: SigmoidBackward0,0.0
+4,25,1024,10506.460999999996,3833.7359999999753,small,autograd::engine::evaluate_function: PowBackward0,0.0
+4,803,1024,12329.695000000087,3061.7569999999287,small,aten::reshape,0.0
+4,1,1024,0,2999.9110000000073,small,void cutlass::Kernel2<cutlass_80_simt_sgemm_128x128_8x4_nn_align1>(cutlass_80_simt_sgemm_128x128_8x4_nn_align1::Params),2999.9110000000073
+4,97,1024,1719.9740000000288,2748.9400000000346,small,aten::add,2748.9400000000346
+4,25,1024,9079.770999999986,2706.167999999976,small,PowBackward0,0.0
+4,14,1024,0,2558.198999999964,small,"void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListMetadata<1>, at::native::(anonymous namespace)::BinaryOpScalarFunctor<float, 1, 1, 0>, std::multiplies<float>, float>(at::native::(anonymous namespace)::TensorListMetadata<1>, at::native::(anonymous namespace)::BinaryOpScalarFunctor<float, 1, 1, 0>, std::multiplies<float>, float)",2558.198999999964
+4,7,1024,0,2359.3280000000377,small,"void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListScalarListMetadata<float, 3>, at::native::(anonymous namespace)::PointwiseOpScalarListFunctor<float, 3, 3, 0>, std::divides<float> >(at::native::(anonymous namespace)::TensorListScalarListMetadata<float, 3>, at::native::(anonymous namespace)::PointwiseOpScalarListFunctor<float, 3, 3, 0>, std::divides<float>)",2359.3280000000377
+4,111,1024,4180.731000000043,2294.121999999945,small,autograd::engine::evaluate_function: torch::autograd::AccumulateGrad,0.0
+4,111,1024,3538.5720000000074,2294.121999999945,small,torch::autograd::AccumulateGrad,0.0
+4,12,1024,274.92100000000937,2095.7880000000296,small,SigmoidBackward0,0.0
+4,12,1024,213.02599999999802,2095.7880000000296,small,aten::sigmoid_backward,2095.7880000000296
+4,12,1024,0,2095.7880000000296,small,"void at::native::vectorized_elementwise_kernel<4, at::native::sigmoid_backward_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#2}::operator()() const::{lambda(float, float)#1}, std::array<char*, 3ul> >(int, at::native::sigmoid_backward_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#2}::operator()() const::{lambda(float, float)#1}, std::array<char*, 3ul>)",2095.7880000000296
+4,7,1024,0,1871.8610000000335,small,"void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListMetadata<2>, at::native::(anonymous namespace)::TernaryOpScalarFunctor<float, 2, 2, 0>, at::native::LerpFunctor<float>, float>(at::native::(anonymous namespace)::TensorListMetadata<2>, at::native::(anonymous namespace)::TernaryOpScalarFunctor<float, 2, 2, 0>, at::native::LerpFunctor<float>, float)",1871.8610000000335
+4,1,1024,153.41499999997905,1865.0780000000377,small,aten::_foreach_addcmul_,1865.0780000000377
+4,7,1024,0,1865.0780000000377,small,"void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListMetadata<3>, at::native::(anonymous namespace)::PointwiseOpScalarFunctor<float, 3, 3, 0>, std::multiplies<float>, float>(at::native::(anonymous namespace)::TensorListMetadata<3>, at::native::(anonymous namespace)::PointwiseOpScalarFunctor<float, 3, 3, 0>, std::multiplies<float>, float)",1865.0780000000377
+4,48,1024,1551.1150000000357,1841.0789999998747,small,aten::cat,1841.0789999998747
+4,75,1024,7235.317000000008,1621.4119999999311,small,aten::pow,814.4969999999812
+4,255,1024,5742.632999999943,1617.2140000000218,small,autograd::engine::evaluate_function: UnsqueezeBackward0,0.0
+4,36,1024,0,1465.7039999999329,small,"void at::native::(anonymous namespace)::CatArrayBatchedCopy<at::native::(anonymous namespace)::OpaqueType<4u>, unsigned int, 4, 64, 64>(at::native::(anonymous namespace)::OpaqueType<4u>*, at::native::(anonymous namespace)::CatArrInputTensorMetadata<at::native::(anonymous namespace)::OpaqueType<4u>, unsigned int, 64, 64>, at::native::(anonymous namespace)::TensorSizeStride<unsigned int, 4u>, int, unsigned int)",1465.7039999999329
+4,12,1024,235.95300000000225,1416.7760000000098,small,aten::sigmoid,1416.7760000000098
+4,12,1024,0,1416.7760000000098,small,"void at::native::vectorized_elementwise_kernel<4, at::native::sigmoid_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#2}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::sigmoid_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#2}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>)",1416.7760000000098
+4,2,1024,353.44899999999325,1276.3330000000424,small,aten::_foreach_add_,1276.3330000000424
+4,7,1024,0,1276.3330000000424,small,"void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListMetadata<1>, at::native::(anonymous namespace)::BinaryOpScalarFunctor<float, 1, 1, 0>, std::plus<float>, float>(at::native::(anonymous namespace)::TensorListMetadata<1>, at::native::(anonymous namespace)::BinaryOpScalarFunctor<float, 1, 1, 0>, std::plus<float>, float)",1276.3330000000424
+4,1,1024,124.58699999999953,1272.5900000000256,small,aten::_foreach_div_,1272.5900000000256
+4,7,1024,0,1272.5900000000256,small,"void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListScalarListMetadata<float, 1>, at::native::(anonymous namespace)::BinaryOpScalarListFunctor<float, 1, 1, 0>, std::divides<float> >(at::native::(anonymous namespace)::TensorListScalarListMetadata<float, 1>, at::native::(anonymous namespace)::BinaryOpScalarListFunctor<float, 1, 1, 0>, std::divides<float>)",1272.5900000000256
+4,1,1024,597.9789999999921,1255.3420000000624,small,aten::_foreach_sqrt,1255.3420000000624
+4,7,1024,0,1255.3420000000624,small,"void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListMetadata<2>, at::native::(anonymous namespace)::UnaryOpFunctor<float, 2, 1, 1>, at::native::Sqrt<float> >(at::native::(anonymous namespace)::TensorListMetadata<2>, at::native::(anonymous namespace)::UnaryOpFunctor<float, 2, 1, 1>, at::native::Sqrt<float>)",1255.3420000000624
+4,50,1024,6318.888999999981,1241.8070000000298,small,aten::sum,1241.8070000000298
+4,316,1024,8070.168999999965,1170.672999999937,small,autograd::engine::evaluate_function: ViewBackward0,0.0
+4,316,1024,6010.1290000000445,1170.672999999937,small,ViewBackward0,0.0
+4,24,1024,549.5659999999825,944.8889999999888,small,aten::concat,0.0
+4,24,1024,1584.1560000000027,896.1899999998859,small,autograd::engine::evaluate_function: UnbindBackward0,0.0
+4,24,1024,1368.0200000000623,896.1899999998859,small,UnbindBackward0,0.0
+4,24,1024,1292.8740000000034,896.1899999998859,small,aten::stack,0.0
+4,50,1024,0,813.0259999999835,small,"void at::native::vectorized_elementwise_kernel<4, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul> >(int, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul>)",813.0259999999835
+4,25,1024,0,763.7460000000065,small,"void at::native::vectorized_elementwise_kernel<4, at::native::(anonymous namespace)::pow_tensor_scalar_kernel_impl<float, float>(at::TensorIteratorBase&, float)::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::(anonymous namespace)::pow_tensor_scalar_kernel_impl<float, float>(at::TensorIteratorBase&, float)::{lambda(float)#1}, std::array<char*, 2ul>)",763.7460000000065
+4,121,1024,5251.477000000035,750.7500000000291,small,autograd::engine::evaluate_function: ReshapeAliasBackward0,0.0
+4,121,1024,4352.103999999999,750.7500000000291,small,ReshapeAliasBackward0,0.0
+4,25,1024,0,636.5490000000718,small,"void at::native::reduce_kernel<128, 4, at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::sum_functor<float, float, float>::operator()(at::TensorIterator&)::{lambda(float, float)#1}>, unsigned int, float, 4, 4> >(at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::sum_functor<float, float, float>::operator()(at::TensorIterator&)::{lambda(float, float)#1}>, unsigned int, float, 4, 4>)",636.5490000000718
+4,25,1024,0,575.4670000000333,small,"void at::native::reduce_kernel<512, 1, at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::sum_functor<float, float, float>::operator()(at::TensorIterator&)::{lambda(float, float)#1}>, unsigned int, float, 4, 4> >(at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::sum_functor<float, float, float>::operator()(at::TensorIterator&)::{lambda(float, float)#1}>, unsigned int, float, 4, 4>)",575.4670000000333
+4,1,1024,44.26900000000023,563.560999999987,small,autograd::engine::evaluate_function: LogSoftmaxBackward0,0.0
+4,1,1024,34.23099999999977,563.560999999987,small,LogSoftmaxBackward0,0.0
+4,1,1024,24.031999999999243,563.560999999987,small,aten::_log_softmax_backward_data,563.560999999987
+4,327,256,12769.444000000074,39858.04300000002,small,aten::bmm,39858.04300000002
+4,1,256,0,33962.079,small,forward,33962.079
+4,1,256,127690.751,31565.368999999944,small,profile/measure,0.0
+4,109,256,12852.64399999992,25824.08200000001,small,autograd::engine::evaluate_function: BmmBackward0,0.0
+4,109,256,11388.900000000016,25824.08200000001,small,BmmBackward0,0.0
+4,1,256,35230.396,19278.432999999965,small,forward,0.0
+4,85,256,9793.543000000001,12853.43699999999,small,aten::einsum,0.0
+4,85,256,0,12823.970999999994,small,ampere_sgemm_128x64_tn,12823.970999999994
+4,1,256,0,12327.348999999987,small,Optimizer.step#AdamW.step,12327.348999999987
+4,1,256,3540.819000000003,12285.592999999979,small,optimizer,0.0
+4,1,256,3483.7100000000064,12285.592999999979,small,Optimizer.step#AdamW.step,0.0
+4,84,256,0,11616.367999999988,small,ampere_sgemm_128x64_nn,11616.367999999988
+4,527,256,10997.536000000107,6567.894999999973,small,aten::mul,6567.894999999973
+4,25,256,0,4917.7419999999765,small,void cutlass::Kernel2<cutlass_80_simt_sgemm_256x128_8x4_nt_align1>(cutlass_80_simt_sgemm_256x128_8x4_nt_align1::Params),4917.7419999999765
+4,184,256,0,4557.951000000029,small,"void at::native::vectorized_elementwise_kernel<4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul> >(int, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul>)",4557.951000000029
+4,170,256,11771.013999999886,4455.752,small,autograd::engine::evaluate_function: MulBackward0,0.0
+4,231,256,4960.754000000073,3970.4560000000465,small,aten::copy_,3970.4560000000465
+4,170,256,6293.972999999874,3603.412999999993,small,MulBackward0,0.0
+4,48,256,0,3108.1560000000172,small,ampere_sgemm_128x64_nt,3108.1560000000172
+4,181,256,0,2901.666000000022,small,"void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1} const&)::{lambda(int)#1})",2901.666000000022
+4,12,256,0,2849.222000000009,small,void cutlass::Kernel2<cutlass_80_simt_sgemm_128x64_8x5_nt_align1>(cutlass_80_simt_sgemm_128x64_8x5_nt_align1::Params),2849.222000000009
+4,2,256,327.9679999999935,2510.9979999999923,small,aten::_foreach_mul_,2510.9979999999923
+4,14,256,0,2510.9979999999923,small,"void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListMetadata<1>, at::native::(anonymous namespace)::BinaryOpScalarFunctor<float, 1, 1, 0>, std::multiplies<float>, float>(at::native::(anonymous namespace)::TensorListMetadata<1>, at::native::(anonymous namespace)::BinaryOpScalarFunctor<float, 1, 1, 0>, std::multiplies<float>, float)",2510.9979999999923
+4,1,256,150.28800000000047,2346.8769999999786,small,aten::_foreach_addcdiv_,2346.8769999999786
+4,7,256,0,2346.8769999999786,small,"void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListScalarListMetadata<float, 3>, at::native::(anonymous namespace)::PointwiseOpScalarListFunctor<float, 3, 3, 0>, std::divides<float> >(at::native::(anonymous namespace)::TensorListScalarListMetadata<float, 3>, at::native::(anonymous namespace)::PointwiseOpScalarListFunctor<float, 3, 3, 0>, std::divides<float>)",2346.8769999999786
+4,12,256,0,2284.191000000007,small,attention/scores,2284.191000000007
+4,111,256,4994.001000000026,2077.860000000059,small,autograd::engine::evaluate_function: torch::autograd::AccumulateGrad,0.0
+4,111,256,4225.995000000046,2077.860000000059,small,torch::autograd::AccumulateGrad,0.0
+4,217,256,0,1974.0599999999695,small,"void at::native::vectorized_elementwise_kernel<4, at::native::CUDAFunctor_add<float>, std::array<char*, 3ul> >(int, at::native::CUDAFunctor_add<float>, std::array<char*, 3ul>)",1974.0599999999695
+4,292,256,0,1873.5009999999743,small,"void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1})",1873.5009999999743
+4,1,256,66.46800000000803,1838.7709999999934,small,aten::_foreach_lerp_,1838.7709999999934
+4,7,256,0,1838.7709999999934,small,"void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListMetadata<2>, at::native::(anonymous namespace)::TernaryOpScalarFunctor<float, 2, 2, 0>, at::native::LerpFunctor<float>, float>(at::native::(anonymous namespace)::TensorListMetadata<2>, at::native::(anonymous namespace)::TernaryOpScalarFunctor<float, 2, 2, 0>, at::native::LerpFunctor<float>, float)",1838.7709999999934
+4,1,256,138.01699999999255,1835.1559999999881,small,aten::_foreach_addcmul_,1835.1559999999881
+4,7,256,0,1835.1559999999881,small,"void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListMetadata<3>, at::native::(anonymous namespace)::PointwiseOpScalarFunctor<float, 3, 3, 0>, std::multiplies<float>, float>(at::native::(anonymous namespace)::TensorListMetadata<3>, at::native::(anonymous namespace)::PointwiseOpScalarFunctor<float, 3, 3, 0>, std::multiplies<float>, float)",1835.1559999999881
+4,120,256,4270.59199999999,1584.0339999999824,small,aten::clone,0.0
+4,12,256,3248.998999999996,1570.3070000000243,small,attention/scores,0.0
+4,24,256,2000.7760000000053,1508.9960000000183,small,aten::masked_fill,0.0
+4,24,256,0,1500.8929999999918,small,ampere_sgemm_128x128_nn,1500.8929999999918
+4,24,256,0,1417.1560000000245,small,ampere_sgemm_128x128_nt,1417.1560000000245
+4,232,256,2054.69599999988,1335.746999999974,small,aten::add_,1335.746999999974
+4,24,256,2173.848000000008,1301.5100000000139,small,aten::matmul,0.0
+4,1,256,125.63400000000547,1261.1630000000296,small,aten::_foreach_div_,1261.1630000000296
+4,7,256,0,1261.1630000000296,small,"void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListScalarListMetadata<float, 1>, at::native::(anonymous namespace)::BinaryOpScalarListFunctor<float, 1, 1, 0>, std::divides<float> >(at::native::(anonymous namespace)::TensorListScalarListMetadata<float, 1>, at::native::(anonymous namespace)::BinaryOpScalarListFunctor<float, 1, 1, 0>, std::divides<float>)",1261.1630000000296
+4,2,256,356.0749999999971,1252.5849999999919,small,aten::_foreach_add_,1252.5849999999919
+4,7,256,0,1252.5849999999919,small,"void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListMetadata<1>, at::native::(anonymous namespace)::BinaryOpScalarFunctor<float, 1, 1, 0>, std::plus<float>, float>(at::native::(anonymous namespace)::TensorListMetadata<1>, at::native::(anonymous namespace)::BinaryOpScalarFunctor<float, 1, 1, 0>, std::plus<float>, float)",1252.5849999999919
+4,1,256,671.1150000000052,1240.0430000000051,small,aten::_foreach_sqrt,1240.0430000000051
+4,7,256,0,1240.0430000000051,small,"void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListMetadata<2>, at::native::(anonymous namespace)::UnaryOpFunctor<float, 2, 1, 1>, at::native::Sqrt<float> >(at::native::(anonymous namespace)::TensorListMetadata<2>, at::native::(anonymous namespace)::UnaryOpFunctor<float, 2, 1, 1>, at::native::Sqrt<float>)",1240.0430000000051
+4,12,256,0,1236.458999999997,small,attention/value,1236.458999999997
+4,12,256,759.6600000000253,1079.5090000000127,small,autograd::engine::evaluate_function: SigmoidBackward0,0.0
+4,12,256,782.3039999999819,1077.9680000000371,small,autograd::engine::evaluate_function: SoftmaxBackward0,0.0
+4,12,256,667.4729999999909,1077.9680000000371,small,SoftmaxBackward0,0.0
+4,12,256,602.5119999999879,1077.9680000000371,small,aten::_softmax_backward_data,541.1599999999962
+4,50,256,0,1068.7900000000245,small,Memcpy DtoD (Device -> Device),1068.7900000000245
+4,24,256,0,876.4749999999831,small,ampere_sgemm_128x128_tn,876.4749999999831
+4,12,256,1609.006999999995,872.600000000004,small,attention/value,0.0
+4,49,256,1357.3470000000407,834.5859999999939,small,aten::div,834.5859999999939
+4,803,256,7889.086999999836,823.8059999999632,small,aten::reshape,0.0
+4,12,256,1313.1299999999974,753.0570000000153,small,autograd::engine::evaluate_function: MaskedFillBackward0,0.0
+4,12,256,1132.1270000000368,753.0570000000153,small,MaskedFillBackward0,0.0
+4,24,256,611.359999999997,748.7679999999991,small,aten::masked_fill_,748.7679999999991
+4,24,256,0,748.7679999999991,small,"void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::(anonymous namespace)::masked_fill_kernel(at::TensorIterator&, c10::Scalar const&)::{lambda()#1}::operator()() const::{lambda()#7}::operator()() const::{lambda(float, bool)#1}>(at::TensorIteratorBase&, at::native::(anonymous namespace)::masked_fill_kernel(at::TensorIterator&, c10::Scalar const&)::{lambda()#1}::operator()() const::{lambda()#7}::operator()() const::{lambda(float, bool)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::(anonymous namespace)::masked_fill_kernel(at::TensorIterator&, c10::Scalar const&)::{lambda()#1}::operator()() const::{lambda()#7}::operator()() const::{lambda(float, bool)#1}>(at::TensorIteratorBase&, at::native::(anonymous namespace)::masked_fill_kernel(at::TensorIterator&, c10::Scalar const&)::{lambda()#1}::operator()() const::{lambda()#7}::operator()() const::{lambda(float, bool)#1} const&)::{lambda(int)#1})",748.7679999999991
+4,25,256,3234.7920000000304,741.7229999999836,small,autograd::engine::evaluate_function: PowBackward0,0.0
+4,24,256,0,726.1779999999981,small,"void at::native::vectorized_elementwise_kernel<4, at::native::BUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul> >(int, at::native::BUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul>)",726.1779999999981
+4,1,256,0,657.028999999995,small,void cutlass::Kernel2<cutlass_80_simt_sgemm_128x64_8x5_nn_align1>(cutlass_80_simt_sgemm_128x64_8x5_nn_align1::Params),657.028999999995
+4,97,256,1958.5230000000238,608.6809999999814,small,aten::add,608.6809999999814
+4,12,256,0,541.1599999999962,small,"void (anonymous namespace)::softmax_warp_backward<float, float, float, 8, false, false>(float*, float const*, float const*, int, int, int, bool const*)",541.1599999999962
+4,12,256,336.0210000000152,540.1380000000063,small,SigmoidBackward0,0.0
+4,12,256,261.71799999997893,540.1380000000063,small,aten::sigmoid_backward,540.1380000000063
+4,12,256,0,540.1380000000063,small,"void at::native::vectorized_elementwise_kernel<4, at::native::sigmoid_backward_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#2}::operator()() const::{lambda(float, float)#1}, std::array<char*, 3ul> >(int, at::native::sigmoid_backward_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#2}::operator()() const::{lambda(float, float)#1}, std::array<char*, 3ul>)",540.1380000000063
+4,25,256,2343.4339999999647,539.5589999999866,small,PowBackward0,0.0
+4,48,256,1190.0189999999702,486.9569999999562,small,aten::cat,486.9569999999562
+4,255,256,5127.711999999941,427.8220000000074,small,autograd::engine::evaluate_function: UnsqueezeBackward0,0.0
+4,36,256,0,404.01799999997957,small,"void at::native::(anonymous namespace)::CatArrayBatchedCopy<at::native::(anonymous namespace)::OpaqueType<4u>, unsigned int, 4, 64, 64>(at::native::(anonymous namespace)::OpaqueType<4u>*, at::native::(anonymous namespace)::CatArrInputTensorMetadata<at::native::(anonymous namespace)::OpaqueType<4u>, unsigned int, 64, 64>, at::native::(anonymous namespace)::TensorSizeStride<unsigned int, 4u>, int, unsigned int)",404.01799999997957
+4,50,256,1540.4039999999732,399.53100000004633,small,aten::sum,399.53100000004633
+4,75,256,2375.504000000001,375.43800000000147,small,aten::pow,141.400000000001
+4,12,256,660.158000000004,371.40999999999985,small,attention/softmax,0.0
+4,12,256,326.8949999999968,371.40999999999985,small,aten::softmax,0.0
+4,12,256,299.06300000000283,371.40999999999985,small,aten::_softmax,371.40999999999985
+4,12,256,0,371.40999999999985,small,"void (anonymous namespace)::softmax_warp_forward<float, float, float, 8, false, false>(float*, float const*, int, int, int, bool const*, int, bool)",371.40999999999985
+4,12,256,0,371.40999999999985,small,attention/softmax,371.40999999999985
+4,12,256,484.56200000000536,363.60099999998783,small,autograd::engine::evaluate_function: DivBackward0,0.0
+4,12,256,361.89300000000367,363.60099999998783,small,DivBackward0,0.0
+4,12,256,274.46800000001076,362.19200000000455,small,aten::sigmoid,362.19200000000455
+4,12,256,0,362.19200000000455,small,"void at::native::vectorized_elementwise_kernel<4, at::native::sigmoid_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#2}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::sigmoid_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#2}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>)",362.19200000000455
+4,316,256,6153.340000000135,341.84000000001834,small,autograd::engine::evaluate_function: ViewBackward0,0.0
+4,316,256,3683.719000000121,341.84000000001834,small,ViewBackward0,0.0
+4,24,256,620.5580000000127,269.36599999999225,small,aten::concat,0.0
+4,24,256,1216.8469999999943,217.59099999996397,small,autograd::engine::evaluate_function: UnbindBackward0,0.0
+4,24,256,973.5999999999985,217.59099999996397,small,UnbindBackward0,0.0
+4,24,256,891.4809999999779,217.59099999996397,small,aten::stack,0.0
+4,25,256,0,195.09500000004482,small,"void at::native::reduce_kernel<512, 1, at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::sum_functor<float, float, float>::operator()(at::TensorIterator&)::{lambda(float, float)#1}>, unsigned int, float, 4, 4> >(at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::sum_functor<float, float, float>::operator()(at::TensorIterator&)::{lambda(float, float)#1}>, unsigned int, float, 4, 4>)",195.09500000004482
+4,25,256,0,192.92199999999866,small,"void at::native::reduce_kernel<128, 4, at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::sum_functor<float, float, float>::operator()(at::TensorIterator&)::{lambda(float, float)#1}>, unsigned int, float, 4, 4> >(at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::sum_functor<float, float, float>::operator()(at::TensorIterator&)::{lambda(float, float)#1}>, unsigned int, float, 4, 4>)",192.92199999999866
+4,121,256,3080.7569999999178,158.491999999962,small,autograd::engine::evaluate_function: ReshapeAliasBackward0,0.0
+4,121,256,1988.810999999987,158.491999999962,small,ReshapeAliasBackward0,0.0
+4,1,256,52.374000000003434,141.94599999999627,small,autograd::engine::evaluate_function: LogSoftmaxBackward0,0.0
+4,1,256,40.572000000000116,141.94599999999627,small,LogSoftmaxBackward0,0.0
+4,1,256,29.139000000002852,141.94599999999627,small,aten::_log_softmax_backward_data,141.94599999999627
+4,1,256,0,141.94599999999627,small,"void at::native::(anonymous namespace)::cunn_SoftMaxBackwardSmem<4, float, float, float, at::native::(anonymous namespace)::LogSoftMaxBackwardEpilogue>(float*, float const*, float const*, long)",141.94599999999627
+4,50,256,0,134.8109999999724,small,"void at::native::vectorized_elementwise_kernel<4, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul> >(int, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul>)",134.8109999999724
+4,1,256,75.90499999999884,127.28899999999703,small,aten::cross_entropy_loss,0.0
+4,327,512,11219.29700000004,85310.80800000002,small,aten::bmm,85310.80800000002
+4,109,512,10834.106000000087,57166.97900000004,small,autograd::engine::evaluate_function: BmmBackward0,0.0
+4,109,512,9599.370000000046,57166.97900000004,small,BmmBackward0,0.0
+4,1,512,109187.887,54044.45899999988,small,profile/measure,0.0
+4,1,512,0,43034.799,small,forward,43034.799
+4,1,512,31999.617,41637.77100000003,small,forward,0.0
+4,85,512,9046.305999999997,24618.500999999982,small,aten::einsum,0.0
+4,85,512,0,24546.922999999995,small,ampere_sgemm_128x64_tn,24546.922999999995
+4,84,512,0,23889.671999999977,small,ampere_sgemm_128x64_nn,23889.671999999977
+4,527,512,9438.246000000005,14611.142000000229,small,aten::mul,14611.142000000229
+4,1,512,0,12448.12599999999,small,Optimizer.step#AdamW.step,12448.12599999999
+4,1,512,3438.173999999999,12405.247999999847,small,optimizer,0.0
+4,1,512,3383.3150000000023,12405.247999999847,small,Optimizer.step#AdamW.step,0.0
+4,60,512,0,12229.28400000005,small,void cutlass::Kernel2<cutlass_80_simt_sgemm_128x64_8x5_nt_align1>(cutlass_80_simt_sgemm_128x64_8x5_nt_align1::Params),12229.28400000005
+4,25,512,0,10943.00299999996,small,void cutlass::Kernel2<cutlass_80_simt_sgemm_256x128_8x4_nt_align1>(cutlass_80_simt_sgemm_256x128_8x4_nt_align1::Params),10943.00299999996
+4,184,512,0,10190.55500000012,small,"void at::native::vectorized_elementwise_kernel<4, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul> >(int, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 3ul>)",10190.55500000012
+4,170,512,9852.802000000076,8841.402000000111,small,autograd::engine::evaluate_function: MulBackward0,0.0
+4,231,512,4217.038000000127,7268.792999999983,small,aten::copy_,7268.792999999983
+4,170,512,5234.489999999998,7227.894000000168,small,MulBackward0,0.0
+4,24,512,1707.7790000000027,5697.462000000029,small,aten::masked_fill,0.0
+4,12,512,0,5695.19100000001,small,attention/scores,5695.19100000001
+4,12,512,2961.9770000000003,5659.480000000014,small,attention/scores,0.0
+4,24,512,0,4570.755999999994,small,ampere_sgemm_128x128_nt,4570.755999999994
+4,24,512,0,4529.924999999981,small,ampere_sgemm_128x128_nn,4529.924999999981
+4,120,512,3644.9449999999542,4483.016999999978,small,aten::clone,0.0
+4,217,512,0,4329.421000000033,small,"void at::native::vectorized_elementwise_kernel<4, at::native::CUDAFunctor_add<float>, std::array<char*, 3ul> >(int, at::native::CUDAFunctor_add<float>, std::array<char*, 3ul>)",4329.421000000033
+4,12,512,657.5169999999562,4194.41899999998,small,autograd::engine::evaluate_function: SoftmaxBackward0,0.0
+4,12,512,564.0050000000338,4194.41899999998,small,SoftmaxBackward0,0.0
+4,12,512,505.38000000001193,4194.41899999998,small,aten::_softmax_backward_data,2096.0399999999863
+4,292,512,0,3994.560000000107,small,"void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1})",3994.560000000107
+4,181,512,0,3897.1879999999264,small,"void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1} const&)::{lambda(int)#1})",3897.1879999999264
+4,24,512,1987.2150000000115,3740.1350000000016,small,aten::matmul,0.0
+4,50,512,0,3371.605000000057,small,Memcpy DtoD (Device -> Device),3371.605000000057
+4,49,512,1130.7640000000242,3037.0910000000767,small,aten::div,3037.0910000000767
+4,12,512,1054.8739999999816,2849.738000000012,small,autograd::engine::evaluate_function: MaskedFillBackward0,0.0
+4,12,512,905.2550000000119,2849.738000000012,small,MaskedFillBackward0,0.0
+4,24,512,535.1960000000272,2840.2679999999937,small,aten::masked_fill_,2840.2679999999937
+4,24,512,0,2840.2679999999937,small,"void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::(anonymous namespace)::masked_fill_kernel(at::TensorIterator&, c10::Scalar const&)::{lambda()#1}::operator()() const::{lambda()#7}::operator()() const::{lambda(float, bool)#1}>(at::TensorIteratorBase&, at::native::(anonymous namespace)::masked_fill_kernel(at::TensorIterator&, c10::Scalar const&)::{lambda()#1}::operator()() const::{lambda()#7}::operator()() const::{lambda(float, bool)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::(anonymous namespace)::masked_fill_kernel(at::TensorIterator&, c10::Scalar const&)::{lambda()#1}::operator()() const::{lambda()#7}::operator()() const::{lambda(float, bool)#1}>(at::TensorIteratorBase&, at::native::(anonymous namespace)::masked_fill_kernel(at::TensorIterator&, c10::Scalar const&)::{lambda()#1}::operator()() const::{lambda()#7}::operator()() const::{lambda(float, bool)#1} const&)::{lambda(int)#1})",2840.2679999999937
+4,24,512,0,2826.41100000004,small,"void at::native::vectorized_elementwise_kernel<4, at::native::BUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul> >(int, at::native::BUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul>)",2826.41100000004
+4,232,512,1714.707999999926,2821.740000000056,small,aten::add_,2821.740000000056
+4,24,512,0,2799.62800000001,small,ampere_sgemm_128x128_tn,2799.62800000001
+4,2,512,319.872000000003,2545.1419999999343,small,aten::_foreach_mul_,2545.1419999999343
+4,14,512,0,2545.1419999999343,small,"void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListMetadata<1>, at::native::(anonymous namespace)::BinaryOpScalarFunctor<float, 1, 1, 0>, std::multiplies<float>, float>(at::native::(anonymous namespace)::TensorListMetadata<1>, at::native::(anonymous namespace)::BinaryOpScalarFunctor<float, 1, 1, 0>, std::multiplies<float>, float)",2545.1419999999343
+4,12,512,0,2381.9189999999935,small,attention/value,2381.9189999999935
+4,12,512,1486.301999999996,2373.021999999998,small,attention/value,0.0
+4,1,512,144.52300000000105,2365.537000000011,small,aten::_foreach_addcdiv_,2365.537000000011
+4,7,512,0,2365.537000000011,small,"void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListScalarListMetadata<float, 3>, at::native::(anonymous namespace)::PointwiseOpScalarListFunctor<float, 3, 3, 0>, std::divides<float> >(at::native::(anonymous namespace)::TensorListScalarListMetadata<float, 3>, at::native::(anonymous namespace)::PointwiseOpScalarListFunctor<float, 3, 3, 0>, std::divides<float>)",2365.537000000011
+4,111,512,4150.584000000003,2271.3649999999834,small,autograd::engine::evaluate_function: torch::autograd::AccumulateGrad,0.0
+4,111,512,3518.6229999999778,2271.3649999999834,small,torch::autograd::AccumulateGrad,0.0
+4,12,512,618.6080000000511,2119.4020000000164,small,autograd::engine::evaluate_function: SigmoidBackward0,0.0
+4,12,512,0,2096.0399999999863,small,"void (anonymous namespace)::softmax_warp_backward<float, float, float, 9, false, false>(float*, float const*, float const*, int, int, int, bool const*)",2096.0399999999863
+4,25,512,2674.2639999999883,1975.1830000000627,small,autograd::engine::evaluate_function: PowBackward0,0.0
+4,1,512,66.96400000000722,1860.1479999999283,small,aten::_foreach_lerp_,1860.1479999999283
+4,7,512,0,1860.1479999999283,small,"void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListMetadata<2>, at::native::(anonymous namespace)::TernaryOpScalarFunctor<float, 2, 2, 0>, at::native::LerpFunctor<float>, float>(at::native::(anonymous namespace)::TensorListMetadata<2>, at::native::(anonymous namespace)::TernaryOpScalarFunctor<float, 2, 2, 0>, at::native::LerpFunctor<float>, float)",1860.1479999999283
+4,1,512,132.5109999999986,1844.243999999977,small,aten::_foreach_addcmul_,1844.243999999977
+4,7,512,0,1844.243999999977,small,"void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListMetadata<3>, at::native::(anonymous namespace)::PointwiseOpScalarFunctor<float, 3, 3, 0>, std::multiplies<float>, float>(at::native::(anonymous namespace)::TensorListMetadata<3>, at::native::(anonymous namespace)::PointwiseOpScalarFunctor<float, 3, 3, 0>, std::multiplies<float>, float)",1844.243999999977
+4,803,512,6733.647000000098,1625.822999999943,small,aten::reshape,0.0
+4,1,512,0,1584.094999999994,small,void cutlass::Kernel2<cutlass_80_simt_sgemm_128x128_8x4_nn_align1>(cutlass_80_simt_sgemm_128x128_8x4_nn_align1::Params),1584.094999999994
+4,12,512,602.3359999999984,1418.917999999997,small,attention/softmax,0.0
+4,12,512,299.0029999999906,1418.917999999997,small,aten::softmax,0.0
+4,12,512,273.8049999999939,1418.917999999997,small,aten::_softmax,1418.917999999997
+4,12,512,0,1418.917999999997,small,"void (anonymous namespace)::softmax_warp_forward<float, float, float, 9, false, false>(float*, float const*, int, int, int, bool const*, int, bool)",1418.917999999997
+4,12,512,0,1418.917999999997,small,attention/softmax,1418.917999999997
+4,12,512,386.3880000000354,1413.0630000000456,small,autograd::engine::evaluate_function: DivBackward0,0.0
+4,12,512,286.7100000000064,1413.0630000000456,small,DivBackward0,0.0
+4,25,512,1928.5880000000325,1396.7100000000355,small,PowBackward0,0.0
+4,97,512,1715.7459999999392,1346.121999999988,small,aten::add,1346.121999999988
+4,2,512,355.0309999999881,1278.1870000000345,small,aten::_foreach_add_,1278.1870000000345
+4,7,512,0,1278.1870000000345,small,"void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListMetadata<1>, at::native::(anonymous namespace)::BinaryOpScalarFunctor<float, 1, 1, 0>, std::plus<float>, float>(at::native::(anonymous namespace)::TensorListMetadata<1>, at::native::(anonymous namespace)::BinaryOpScalarFunctor<float, 1, 1, 0>, std::plus<float>, float)",1278.1870000000345
+4,1,512,138.33400000000256,1259.8189999999595,small,aten::_foreach_div_,1259.8189999999595
+4,7,512,0,1259.8189999999595,small,"void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListScalarListMetadata<float, 1>, at::native::(anonymous namespace)::BinaryOpScalarListFunctor<float, 1, 1, 0>, std::divides<float> >(at::native::(anonymous namespace)::TensorListScalarListMetadata<float, 1>, at::native::(anonymous namespace)::BinaryOpScalarListFunctor<float, 1, 1, 0>, std::divides<float>)",1259.8189999999595
+4,1,512,634.1879999999946,1252.171000000002,small,aten::_foreach_sqrt,1252.171000000002
+4,7,512,0,1252.171000000002,small,"void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListMetadata<2>, at::native::(anonymous namespace)::UnaryOpFunctor<float, 2, 1, 1>, at::native::Sqrt<float> >(at::native::(anonymous namespace)::TensorListMetadata<2>, at::native::(anonymous namespace)::UnaryOpFunctor<float, 2, 1, 1>, at::native::Sqrt<float>)",1252.171000000002
+4,12,512,269.2839999999851,1059.3799999999974,small,SigmoidBackward0,0.0
+4,12,512,210.78900000001158,1059.3799999999974,small,aten::sigmoid_backward,1059.3799999999974
+4,12,512,0,1059.3799999999974,small,"void at::native::vectorized_elementwise_kernel<4, at::native::sigmoid_backward_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#2}::operator()() const::{lambda(float, float)#1}, std::array<char*, 3ul> >(int, at::native::sigmoid_backward_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#2}::operator()() const::{lambda(float, float)#1}, std::array<char*, 3ul>)",1059.3799999999974
+4,48,512,1037.3689999999729,925.40400000002,small,aten::cat,925.40400000002
+4,75,512,1981.5670000000277,868.2170000000301,small,aten::pow,428.8110000000129
+4,255,512,4188.613999999907,834.4300000000076,small,autograd::engine::evaluate_function: UnsqueezeBackward0,0.0
+4,36,512,0,764.0660000000166,small,"void at::native::(anonymous namespace)::CatArrayBatchedCopy<at::native::(anonymous namespace)::OpaqueType<4u>, unsigned int, 4, 64, 64>(at::native::(anonymous namespace)::OpaqueType<4u>*, at::native::(anonymous namespace)::CatArrInputTensorMetadata<at::native::(anonymous namespace)::OpaqueType<4u>, unsigned int, 64, 64>, at::native::(anonymous namespace)::TensorSizeStride<unsigned int, 4u>, int, unsigned int)",764.0660000000166
+4,12,512,247.52599999999347,716.3549999999987,small,aten::sigmoid,716.3549999999987
+4,12,512,0,716.3549999999987,small,"void at::native::vectorized_elementwise_kernel<4, at::native::sigmoid_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#2}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::sigmoid_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#2}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>)",716.3549999999987
+4,50,512,1341.809000000001,707.8189999999668,small,aten::sum,707.8189999999668
+4,316,512,5062.640999999909,630.0219999999972,small,autograd::engine::evaluate_function: ViewBackward0,0.0
+4,316,512,3009.9179999999687,630.0219999999972,small,ViewBackward0,0.0
+4,24,512,579.4669999999983,502.8640000000046,small,aten::concat,0.0
+4,50,512,0,424.20299999999406,small,"void at::native::vectorized_elementwise_kernel<4, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul> >(int, at::native::AUnaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> >, std::array<char*, 2ul>)",424.20299999999406
+4,24,512,1012.8120000000126,422.5400000000154,small,autograd::engine::evaluate_function: UnbindBackward0,0.0
+4,24,512,808.7740000000049,422.5400000000154,small,UnbindBackward0,0.0
+4,24,512,737.7870000000039,422.5400000000154,small,aten::stack,0.0
+4,121,512,2536.00399999995,394.5769999999902,small,autograd::engine::evaluate_function: ReshapeAliasBackward0,0.0
+4,121,512,1654.8599999999642,394.5769999999902,small,ReshapeAliasBackward0,0.0
+4,25,512,0,378.1579999999999,small,"void at::native::vectorized_elementwise_kernel<4, at::native::(anonymous namespace)::pow_tensor_scalar_kernel_impl<float, float>(at::TensorIteratorBase&, float)::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::(anonymous namespace)::pow_tensor_scalar_kernel_impl<float, float>(at::TensorIteratorBase&, float)::{lambda(float)#1}, std::array<char*, 2ul>)",378.1579999999999
+4,25,512,0,348.692999999992,small,"void at::native::reduce_kernel<128, 4, at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::sum_functor<float, float, float>::operator()(at::TensorIterator&)::{lambda(float, float)#1}>, unsigned int, float, 4, 4> >(at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::sum_functor<float, float, float>::operator()(at::TensorIterator&)::{lambda(float, float)#1}>, unsigned int, float, 4, 4>)",348.692999999992
+4,25,512,0,330.0059999999794,small,"void at::native::reduce_kernel<512, 1, at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::sum_functor<float, float, float>::operator()(at::TensorIterator&)::{lambda(float, float)#1}>, unsigned int, float, 4, 4> >(at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::sum_functor<float, float, float>::operator()(at::TensorIterator&)::{lambda(float, float)#1}>, unsigned int, float, 4, 4>)",330.0059999999794
+4,1,512,42.978000000002794,282.9959999999992,small,autograd::engine::evaluate_function: LogSoftmaxBackward0,0.0
+4,1,512,33.29400000000169,282.9959999999992,small,LogSoftmaxBackward0,0.0
+4,1,512,23.97200000000157,282.9959999999992,small,aten::_log_softmax_backward_data,282.9959999999992
+4,1,512,0,282.9959999999992,small,"void at::native::(anonymous namespace)::cunn_SoftMaxBackwardSmem<4, float, float, float, at::native::(anonymous namespace)::LogSoftMaxBackwardEpilogue>(float*, float const*, float const*, long)",282.9959999999992
+4,1,512,74.68799999999828,246.9019999999946,small,aten::cross_entropy_loss,0.0
