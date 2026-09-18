@@ -1,0 +1,38 @@
+{
+  "allocator": {
+    "allocator_fraction": 0.9768130292889415,
+    "allocator_limit_mib": 23552
+  },
+  "hard_limit_mib": 24576,
+  "pytorch_peak_allocated_mib": 19662.606,
+  "pytorch_peak_reserved_mib": 20192.0,
+  "within_24gib": true,
+  "measured_scope": "A2-K 全部正式进程（任务一 checkpointing + 任务五性能矩阵等）",
+  "successful_configurations": 100,
+  "sources": [
+    {
+      "source": "local_results/a2k/checkpointing.csv",
+      "label": "任务一 activation checkpointing 矩阵",
+      "present": true,
+      "successful_rows": 10,
+      "peak_allocated_mib": 19662.606,
+      "peak_reserved_mib": 20192.0
+    },
+    {
+      "source": "local_results/a2k/task5/flash_benchmark.csv",
+      "label": "任务五 FlashAttention 性能矩阵",
+      "present": true,
+      "successful_rows": 72,
+      "peak_allocated_mib": 5172.5,
+      "peak_reserved_mib": 5182.0
+    },
+    {
+      "source": "local_results/a2k/attention_baseline.csv",
+      "label": "任务二 显式 PyTorch attention 基线",
+      "present": true,
+      "successful_rows": 18,
+      "peak_allocated_mib": 1244.328,
+      "peak_reserved_mib": 1302.0
+    }
+  ]
+}
