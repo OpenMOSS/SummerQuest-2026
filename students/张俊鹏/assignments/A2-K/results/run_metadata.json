@@ -1,0 +1,40 @@
+{
+  "assignment": "A2-K",
+  "starter_commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+  "gpu": {
+    "name": "NVIDIA GeForce RTX 4090",
+    "memory_total_mib": 49140,
+    "memory_free_mib_at_metadata_capture": 48626,
+    "driver_version": "550.163.01",
+    "power_limit_w": 450.0,
+    "pstate_at_metadata_capture": "P8"
+  },
+  "software": {
+    "pytorch": "2.6.0+cu124",
+    "cuda": "12.4",
+    "triton": "3.2.0"
+  },
+  "allocator": {
+    "limit_mib": 23552,
+    "fraction": 0.48421737046550567,
+    "configured_before_first_cuda_allocation": true
+  },
+  "precision": {
+    "performance_dtype": "bfloat16",
+    "correctness_includes_fp32_with_tf32_disabled": true,
+    "tf32_matmul_default": false,
+    "tf32_cudnn_default": true
+  },
+  "measurement": {
+    "attention_timer": "triton.testing.do_bench",
+    "attention_warmup_ms": 100,
+    "attention_rep_ms": 300,
+    "checkpoint_warmup_steps": 3,
+    "checkpoint_measurement_steps": 5,
+    "compile_warmup_steps": 3,
+    "compile_measurement_steps": 5,
+    "compile_timer": "perf_counter bracketed by torch.cuda.synchronize"
+  },
+  "seeds": [42, 11, 29, 47],
+  "hardware_disclosure": "The development GPU exposes 49140 MiB, not physical 24GB. Formal processes used the 23 GiB allocator budget, but results must not be represented as physical RTX 4090 24GB compliance."
+}

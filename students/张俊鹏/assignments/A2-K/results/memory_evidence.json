@@ -1,0 +1,20 @@
+{
+  "allocator": {
+    "allocator_fraction": 0.48421737046550567,
+    "allocator_limit_mib": 23552
+  },
+  "hard_limit_mib": 24576,
+  "pytorch_peak_allocated_mib": 19664.2314453125,
+  "pytorch_peak_reserved_mib": 20192.0,
+  "per_result_file_maxima_mib": {
+    "checkpointing.csv": {"allocated": 19664.2314453125, "reserved": 20192.0},
+    "attention_baseline.csv": {"allocated": 1054.25, "reserved": 1182.0},
+    "compile_comparison.csv": {"allocated": 2428.98046875, "reserved": 2640.0},
+    "flash_benchmark.csv": {"allocated": 3372.25, "reserved": 4138.0}
+  },
+  "within_allocator_limit": true,
+  "within_24gib": true,
+  "physical_gpu_memory_mib": 49140,
+  "physical_24gb_rtx_4090_match": false,
+  "disclosure": "Measurements used a 23 GiB PyTorch allocator limit on a 48 GiB RTX 4090 development GPU; allocator compliance does not establish physical 24GB hardware compliance."
+}
