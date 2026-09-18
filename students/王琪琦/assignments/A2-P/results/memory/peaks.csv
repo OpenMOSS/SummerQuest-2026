@@ -1,0 +1,7 @@
+model,context,batch_size,mode,dtype,status,peak_allocated_mib,peak_reserved_mib,peak_active_mib
+xl,128,1,forward,fp32,success,13027.4189453125,13080.0,13027.4189453125
+xl,128,1,train_step,fp32,oom,47958.32666015625,48078.0,
+xl,2048,1,forward,fp32,success,15692.025390625,15758.0,15692.025390625
+xl,2048,1,train_step,fp32,oom,47401.955078125,47558.0,
+xl,1024,1,train_step,fp32,oom,46671.19970703125,48028.0,
+large,2048,1,train_step,fp32,oom,47754.7705078125,47864.0,

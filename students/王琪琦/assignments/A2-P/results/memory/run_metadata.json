@@ -1,0 +1,66 @@
+{
+  "environment": {
+    "python": "3.12.13",
+    "pytorch": "2.10.0+cu128",
+    "cuda_runtime": "12.8",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpu_memory_mib": 48639.3
+  },
+  "runs": [
+    {
+      "model_size": "xl",
+      "context_length": 128,
+      "batch_size": 1,
+      "mode": "forward",
+      "warmup": 1,
+      "output": "xl_128_forward.json",
+      "snapshot": "xl_128_forward.pickle"
+    },
+    {
+      "model_size": "xl",
+      "context_length": 128,
+      "batch_size": 1,
+      "mode": "train_step",
+      "warmup": 1,
+      "output": "xl_128_train.json",
+      "snapshot": "xl_128_train.pickle"
+    },
+    {
+      "model_size": "xl",
+      "context_length": 2048,
+      "batch_size": 1,
+      "mode": "forward",
+      "warmup": 1,
+      "output": "xl_2048_forward.json",
+      "snapshot": "xl_2048_forward.pickle"
+    },
+    {
+      "model_size": "xl",
+      "context_length": 2048,
+      "batch_size": 1,
+      "mode": "train_step",
+      "warmup": 1,
+      "output": "xl_2048_train.json",
+      "snapshot": "xl_2048_train.pickle"
+    },
+    {
+      "model_size": "xl",
+      "context_length": 1024,
+      "batch_size": 1,
+      "mode": "train_step",
+      "warmup": 1,
+      "output": "xl_1024_train.json",
+      "snapshot": "xl_1024_train.pickle"
+    },
+    {
+      "model_size": "large",
+      "context_length": 2048,
+      "batch_size": 1,
+      "mode": "train_step",
+      "warmup": 1,
+      "output": "large_2048_train.json",
+      "snapshot": "large_2048_train.pickle"
+    }
+  ],
+  "snapshots": "retained locally; not submitted"
+}

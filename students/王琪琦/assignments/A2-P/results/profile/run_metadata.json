@@ -1,0 +1,71 @@
+{
+  "environment": {
+    "python": "3.12.13",
+    "pytorch": "2.10.0+cu128",
+    "cuda_runtime": "12.8",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpu_memory_mib": 48639.3
+  },
+  "runs": [
+    {
+      "model_size": "small",
+      "context_length": 256,
+      "batch_size": 1,
+      "warmup": 5,
+      "mode": "train_step",
+      "dtype": "fp32",
+      "tool": "torch.profiler",
+      "trace_file": "small_256.trace.json"
+    },
+    {
+      "model_size": "small",
+      "context_length": 512,
+      "batch_size": 1,
+      "warmup": 5,
+      "mode": "train_step",
+      "dtype": "fp32",
+      "tool": "torch.profiler",
+      "trace_file": "small_512.trace.json"
+    },
+    {
+      "model_size": "small",
+      "context_length": 1024,
+      "batch_size": 1,
+      "warmup": 5,
+      "mode": "train_step",
+      "dtype": "fp32",
+      "tool": "torch.profiler",
+      "trace_file": "small_1024.trace.json"
+    },
+    {
+      "model_size": "medium",
+      "context_length": 256,
+      "batch_size": 1,
+      "warmup": 5,
+      "mode": "train_step",
+      "dtype": "fp32",
+      "tool": "torch.profiler",
+      "trace_file": "medium_256.trace.json"
+    },
+    {
+      "model_size": "medium",
+      "context_length": 512,
+      "batch_size": 1,
+      "warmup": 5,
+      "mode": "train_step",
+      "dtype": "fp32",
+      "tool": "torch.profiler",
+      "trace_file": "medium_512.trace.json"
+    },
+    {
+      "model_size": "medium",
+      "context_length": 1024,
+      "batch_size": 1,
+      "warmup": 5,
+      "mode": "train_step",
+      "dtype": "fp32",
+      "tool": "torch.profiler",
+      "trace_file": "medium_1024.trace.json"
+    }
+  ]
+}
