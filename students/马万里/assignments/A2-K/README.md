@@ -485,27 +485,34 @@ GPU 由调用方按自己环境的方式提供（本报告不记录内部资源�
 python student_scripts/a2k/run_all.py --all
 ```
 
-它内部只是按顺序调用下表列出的脚本（`--dry-run` 可先打印全部命令）。也可单独复现：
+它按顺序调用下表列出的 10 个脚本，每条命令在执行前都会打印出来；也可以按下表单独复现
+其中任意一步。产物写入 `local_results/a2k/`，并由脚本就地脱敏（metadata 里的绝对路径
+改写为仓库内相对路径，清除用户名 / 主机名 / IP）；本脚本不做任何复制，把哪些文件放进
+`results/` 与 `assets/` 由本人决定。
 
 | 内容 | 结果文件 | 复现命令 |
 | --- | --- | --- |
 | checkpoint 矩阵 | `results/checkpointing.csv` | `python student_scripts/a2k/checkpointing_benchmark.py --batch --context-lengths 1024 2048 --block-sizes 1 2 4 8 --warmup 3 --steps 5 --seed 42 --output local_results/a2k/checkpointing.csv` |
-| 显式 attention 基线 | `results/attention_baseline.csv` | `python student_scripts/a2k/attention_benchmark.py --batch --warmup-ms 100 --rep-ms 300 --seed 42 --output local_results/a2k/attention_baseline.csv --metadata-output local_results/a2k/attention_baseline_metadata.jsonl` |
-| eager/compiled 对照 | `results/compile_comparison.csv` | 同上一条命令（`--batch` 依次产出 baseline 与 compile 两个矩阵） |
-| 官方 tests | `results/unit_tests.txt` | `python student_scripts/a2k/summarize_flash_tests.py --run "python -m pytest tests/test_attention.py -v" --gpu "NVIDIA GeForce RTX 4090" --commit ca8bc81a59b70516f7ebb2da4808daade877c736 --output-dir local_results/a2k/pytest` |
+| 显式 attention 基线 | `results/attention_baseline.csv` | `python student_scripts/a2k/attention_benchmark.py --batch --warmup-ms 100 --rep-ms 300 --seed 42 --matrix baseline --output local_results/a2k/attention_baseline.csv --metadata-output local_results/a2k/attention_baseline_metadata.jsonl` |
+| eager/compiled 对照 | `results/compile_comparison.csv` | `python student_scripts/a2k/attention_benchmark.py --batch --warmup-ms 100 --rep-ms 300 --seed 42 --matrix compile --output local_results/a2k/compile_comparison.csv --metadata-output local_results/a2k/compile_comparison_metadata.jsonl` |
+| 官方 tests | `results/unit_tests.txt` | `python student_scripts/a2k/summarize_flash_tests.py --run python -m pytest tests/test_attention.py -v --gpu NVIDIA GeForce RTX 4090 --commit ca8bc81a59b70516f7ebb2da4808daade877c736 --output-dir local_results/a2k/pytest` |
 | 扩展正确性 | `results/correctness.json` | `python student_scripts/a2k/task5_correctness.py --output local_results/a2k/task5/correctness.json --length 128 512 2048` |
 | 性能矩阵 | `results/flash_benchmark.csv` | `python student_scripts/a2k/flash_benchmark.py --batch --output local_results/a2k/task5/flash_benchmark.csv` |
 | 显存汇总 | `results/memory_evidence.json` | `python student_scripts/a2k/summarize_memory_evidence.py --output local_results/a2k/memory_evidence.json` |
 | 环境 metadata | `results/run_metadata.json` | `python student_scripts/a2k/task5_metadata.py --output local_results/a2k/task5/run_metadata.json --commit ca8bc81a59b70516f7ebb2da4808daade877c736 --seed 42` |
+| speedup 列 | `results/flash_benchmark.csv`（就地补 `speedup_vs_eager`） | `python student_scripts/a2k/summarize_flash_benchmark.py --input local_results/a2k/task5/flash_benchmark.csv` |
+| 四张图 | `assets/*.png` | `python student_scripts/a2k/plot_task5.py --output-dir local_results/a2k/figures --benchmark local_results/a2k/task5/flash_benchmark.csv --checkpointing local_results/a2k/checkpointing.csv` |
 
-三个 `--batch` 都用「一个配置一个独立 Python 子进程」的方式执行：任务一 10 个配置、
-任务二 27 个配置、任务五 72 个配置。进程之间不共享分配器缓存池与 `torch.compile`
+三个 `--batch` 都用「一个配置一个独立 Python 子进程」的方式执行，合计 124 个子进程配置：
+任务一 10 个（2 个 context × 5 档 block，含不 checkpoint）、任务二 42 个（baseline 18 行 +
+compile/full-model 24 行，需分两次调用并各自指定 `--output`）、任务五 72 个
+（8 个 shape × 3 个 phase × 3 种实现）。进程之间不共享分配器缓存池与 `torch.compile`
 缓存——这一点对任务一尤其重要，因为 PyTorch 的缓存池不会因
 `reset_peak_memory_stats()` 复位，同进程连跑多个配置会让 `peak_reserved_mib`
 退化成「本进程内出现过的最大值」。每个子进程也都在自己的第一次 CUDA allocation
 之前设置 23552 MiB 的 allocator 上限，与 §2.2 的测量协议一致。
 
-`local_results/a2k/` 保留本地原始结果，不整体提交；`results/` 只放轻量汇总。
+`local_results/a2k/` 保留本地原始结果，不整体提交；`results/` 只放轻量汇总，由本人从脱敏后的产物中挑选复制。
 
 ### 9.2 显存汇总
 

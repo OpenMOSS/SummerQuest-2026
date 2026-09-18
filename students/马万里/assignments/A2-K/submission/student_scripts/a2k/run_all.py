@@ -7,22 +7,27 @@
 
 用法（在 `../assignment2-systems` 仓库根目录）：
 
-    # 三个任务全跑
+    # 四个部分全跑（任务一、任务二、官方 tests 汇总、任务五）
     python student_scripts/a2k/run_all.py --all
 
-    # 只跑某一个任务（可组合）
+    # 只跑其中一个或几个（可组合）
     python student_scripts/a2k/run_all.py --task1 --task5
+    python student_scripts/a2k/run_all.py --unit-tests
 
-    # 只打印将要执行的命令，不执行
-    python student_scripts/a2k/run_all.py --all --dry-run
+产物写入 `local_results/a2k/` 与 `local_results/a2k/task5/`。每一条命令在执行前都会
+打印出来，便于留档。
 
-产物写入 `local_results/a2k/` 与 `local_results/a2k/task5/`；把其中的轻量汇总与图片
-脱敏后放入提交目录的 `results/` 与 `assets/`。
+所有产物在本地生成后就地脱敏：metadata 里的绝对路径会被改写为仓库内相对路径，
+并清除用户名 / 主机名 / IP。**本脚本不做任何复制**——把哪些文件放进提交目录、
+如何同步代码，由调用方自行决定（代码同步走
+`python3 scripts/sync_a2k_submission.py --name '<同学真名>'`）。
 """
 
 from __future__ import annotations
 
 import argparse
+import json
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -33,6 +38,17 @@ LOCAL = Path("local_results/a2k")
 TASK5 = LOCAL / "task5"
 FIGURE_DIR = LOCAL / "figures"
 STARTER_COMMIT = "ca8bc81a59b70516f7ebb2da4808daade877c736"
+
+#: 脱敏规则：本地绝对路径会被压成仓库内相对路径；其余常见内部标识替换为占位符。
+USER_PATTERNS = (
+    (re.compile(r"/remote-home\d+/[^/\s]+"), "<workspace>"),
+    (re.compile(r"/home/[^/\s]+"), "<home>"),
+    (re.compile(r"/Users/[^/\s]+"), "<home>"),
+    (re.compile(r"\b10\.\d{1,3}\.\d{1,3}\.\d{1,3}\b"), "<ip>"),
+    (re.compile(r"\b192\.168\.\d{1,3}\.\d{1,3}\b"), "<ip>"),
+    (re.compile(r"\b172\.(?:1[6-9]|2\d|3[01])\.\d{1,3}\.\d{1,3}\b"), "<ip>"),
+    (re.compile(r"\b[a-zA-Z0-9._-]+\.(?:local|cluster|internal)\b"), "<host>"),
+)
 
 
 def task1_commands() -> list[list[str]]:
@@ -116,6 +132,50 @@ def unit_test_command() -> list[str]:
     ]
 
 
+def sanitize_text(text: str) -> str:
+    """把仓库绝对路径压成相对路径，并替换其余内部标识。
+
+    同时处理 POSIX 与 Windows 两种分隔符：metadata 里记的是 argv，因此在 Windows 上
+    会是 `C:\\...\\assignment2-systems\\student_scripts\\...` 这种形式。
+    """
+    for prefix in (str(REPO_ROOT) + "/", str(REPO_ROOT) + "\\",
+                   REPO_ROOT.as_posix() + "/"):
+        text = text.replace(prefix, "")
+    for pattern, replacement in USER_PATTERNS:
+        text = pattern.sub(replacement, text)
+    return text
+
+
+def sanitize_outputs() -> list[Path]:
+    """就地脱敏本地产物；返回被改写的文件列表。
+
+    主要处理两类内容：
+      * metadata（`*.jsonl` / `*_metadata.json`）——命令里常带脚本的绝对路径；
+      * 汇总 JSON——例如 `memory_evidence.json` 里的 `sources[].source`。
+
+    只改写路径与标识，不改动任何测量数字；改写后仍做一次 JSON 合法性兜底校验。
+    """
+    changed: list[Path] = []
+    for path in sorted(LOCAL.rglob("*")):
+        if not path.is_file() or path.suffix.lower() not in {".json", ".jsonl", ".txt", ".csv"}:
+            continue
+        raw = path.read_text(encoding="utf-8")
+        cleaned = sanitize_text(raw)
+        if cleaned != raw:
+            path.write_text(cleaned, encoding="utf-8")
+            changed.append(path.resolve().relative_to(REPO_ROOT))
+
+    for rel in changed:
+        path = REPO_ROOT / rel
+        if path.suffix == ".jsonl":
+            for line in path.read_text(encoding="utf-8").splitlines():
+                if line.strip():
+                    json.loads(line)
+        elif path.suffix == ".json":
+            json.loads(path.read_text(encoding="utf-8"))
+    return changed
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="A2-K 正式矩阵统一入口")
     parser.add_argument("--all", action="store_true", help="跑任务一、二、五与官方 tests")
@@ -123,7 +183,6 @@ def main() -> int:
     parser.add_argument("--task2", action="store_true", help="只跑任务二")
     parser.add_argument("--task5", action="store_true", help="只跑任务五")
     parser.add_argument("--unit-tests", action="store_true", help="只跑官方 tests 汇总")
-    parser.add_argument("--dry-run", action="store_true", help="只打印命令，不执行")
     args = parser.parse_args()
 
     selected = {
@@ -147,17 +206,19 @@ def main() -> int:
 
     for label, command in planned:
         print(f"[{label}] {' '.join(command)}", flush=True)
-        if args.dry_run:
-            continue
         result = subprocess.run(command, check=False, cwd=REPO_ROOT)
         if result.returncode != 0:
             # 单个配置失败不应中止整批：flash_benchmark.py 会把 OOM/失败写进 CSV 行。
             print(f"  注意: {label} 退出码 {result.returncode}", file=sys.stderr, flush=True)
 
-    if args.dry_run:
-        print(f"共 {len(planned)} 条命令（--dry-run 未执行）")
+    changed = sanitize_outputs()
+    print(f"完成 {len(planned)} 条命令；产物在 {LOCAL}/", flush=True)
+    if changed:
+        print(f"已就地脱敏 {len(changed)} 个产物文件：", flush=True)
+        for rel in changed:
+            print(f"  {rel}", flush=True)
     else:
-        print(f"完成 {len(planned)} 条命令；产物在 {LOCAL}/")
+        print("产物已是脱敏状态（无绝对路径或内部标识）。", flush=True)
     return 0
 
 

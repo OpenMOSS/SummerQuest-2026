@@ -352,8 +352,6 @@ def main() -> None:
     parser.add_argument("--phase", choices=(*PHASES, "train_step"))
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--output", type=Path, required=True)
-    parser.add_argument("--batch-output", type=Path,
-                        help=argparse.SUPPRESS)
     parser.add_argument("--metadata-output", type=Path)
     parser.add_argument("--warmup-ms", type=int, default=WARMUP_MS)
     parser.add_argument("--rep-ms", type=int, default=REP_MS)
