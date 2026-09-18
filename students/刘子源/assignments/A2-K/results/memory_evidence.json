@@ -1,0 +1,19 @@
+{
+  "starter_commit": "ca8bc81a59b70516f7ebb2da4808daade877c736",
+  "formal_gpu": "NVIDIA GeForce RTX 3090",
+  "memory_total_mib": 24154.4,
+  "allocator": {
+    "allocator_limit_mib": 23552,
+    "allocator_fraction": 0.9750604444738846
+  },
+  "hard_limit_mib": 24576,
+  "preflight_free_memory_requirement_mib": 22528,
+  "peak_allocated_bytes_observed": 20623799296.0,
+  "peak_reserved_bytes_observed": 21172846592.0,
+  "pytorch_peak_allocated_mib": 19668.3876953125,
+  "pytorch_peak_reserved_mib": 20192.0,
+  "reserved_within_allocator_limit": true,
+  "within_24gib": true,
+  "rows_included": 100,
+  "hardware_deviation": "RTX 3090 used because the RTX 4090 queue had no available GPU."
+}
