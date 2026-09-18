@@ -1,0 +1,5 @@
+config_id,model_size,context_length,batch_size,mode,dtype,latency_ms,peak_active_mib,peak_allocated_mib,peak_reserved_mib,status
+xl_128_forward,xl,128,1,forward,fp32,59.6458837389946,7644.101806640625,7644.101806640625,7834.0,ok
+xl_128_train,xl,128,1,train_step,fp32,372.6186864078045,38134.47778701782,38134.47778701782,40074.0,ok
+xl_2048_forward,xl,2048,1,forward,fp32,560.0119456648827,9310.529541015625,9310.529541015625,9930.0,ok
+xl_2048_train,xl,2048,1,train_step,fp32,,,,,oom

@@ -1,0 +1,96 @@
+{
+  "status": "ok",
+  "accumulation": {
+    "fp32_input_fp32_accumulator": 100.0,
+    "fp32_input_fp16_accumulator": 100.0,
+    "fp16_input_fp32_accumulator": 99.9755859375,
+    "fp16_input_fp16_accumulator": 100.0,
+    "reference_float64": 100.0
+  },
+  "model_benchmark": {
+    "bf16": {
+      "timings_ms": [
+        59.63699892163277,
+        59.66071039438248,
+        61.28914654254913,
+        61.40310317277908,
+        59.76412817835808,
+        59.657834470272064,
+        59.70102921128273,
+        59.800080955028534,
+        59.94667857885361,
+        59.766341000795364
+      ],
+      "mean_ms": 60.062605142593384,
+      "std_ms": 0.6829506348764401,
+      "cv": 0.0113706462324613,
+      "last_loss": 5.017822265625,
+      "environment": {
+        "python": "3.13.14",
+        "torch": "2.5.1+cu124",
+        "device": "cuda",
+        "gpu": "NVIDIA GeForce RTX 4090",
+        "cuda": "12.4"
+      }
+    },
+    "fp32": {
+      "timings_ms": [
+        89.40108865499496,
+        89.69322219491005,
+        89.46579322218895,
+        89.5959697663784,
+        89.36797082424164,
+        89.65123444795609,
+        89.48737755417824,
+        89.67668935656548,
+        89.52650800347328,
+        89.34232220053673
+      ],
+      "mean_ms": 89.52081762254238,
+      "std_ms": 0.12927654056071258,
+      "cv": 0.001444094725606698,
+      "last_loss": 5.0183305740356445,
+      "environment": {
+        "python": "3.13.14",
+        "torch": "2.5.1+cu124",
+        "device": "cuda",
+        "gpu": "NVIDIA GeForce RTX 4090",
+        "cuda": "12.4"
+      }
+    }
+  },
+  "toy_model_dtype_trace": {
+    "status": "ok",
+    "source": "local_results/a2p_toymodel_dtype.json",
+    "environment": {
+      "python": "3.12.13",
+      "torch": "2.5.1+cu124",
+      "cuda_runtime": "12.4",
+      "gpu": "NVIDIA GeForce RTX 4090"
+    },
+    "fp32": {
+      "first_layer_output": "torch.float32",
+      "second_layer_output": "torch.float32",
+      "logits": "torch.float32",
+      "parameter": "torch.float32",
+      "loss": "torch.float32",
+      "gradient": "torch.float32",
+      "peak_allocated_mib": 16.26611328125,
+      "peak_reserved_mib": 22.0,
+      "loss_value": 0.644748866558075
+    },
+    "bf16": {
+      "first_layer_output": "torch.bfloat16",
+      "second_layer_output": "torch.bfloat16",
+      "logits": "torch.bfloat16",
+      "parameter": "torch.float32",
+      "loss": "torch.float32",
+      "gradient": "torch.float32",
+      "peak_allocated_mib": 17.26123046875,
+      "peak_reserved_mib": 22.0,
+      "loss_value": 0.6447299122810364
+    },
+    "layernorm_output": "not_applicable: ToyModel has no LayerNorm"
+  },
+  "note": "GPU FP32/BF16 timing and ToyModel intermediate dtype/peak-memory trace are present."
+}
