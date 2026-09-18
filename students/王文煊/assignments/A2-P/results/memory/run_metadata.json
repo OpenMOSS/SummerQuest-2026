@@ -1,0 +1,124 @@
+{
+  "runs": {
+    "large_ctx128_bs4_train_step_fp32": {
+      "config": {
+        "model_size": "large",
+        "batch_size": 4,
+        "context_length": 128,
+        "mode": "train_step",
+        "warmup": 2,
+        "steps": 3,
+        "dtype": "fp32",
+        "seed": 0
+      },
+      "snapshot_file": "snapshot_large_ctx128_bs4_train_step_fp32.pickle",
+      "stats": {
+        "active_bytes_now": 15975641088,
+        "peak_allocated_bytes": 16255267328,
+        "reserved_bytes_now": 17928552448,
+        "peak_reserved_bytes": 17928552448,
+        "num_alloc_retries": 0
+      }
+    },
+    "large_ctx2048_bs1_train_step_fp32": {
+      "config": {
+        "model_size": "large",
+        "batch_size": 1,
+        "context_length": 2048,
+        "mode": "train_step",
+        "warmup": 2,
+        "steps": 3,
+        "dtype": "fp32",
+        "seed": 0
+      },
+      "snapshot_file": "snapshot_large_ctx2048_bs1_train_step_fp32.pickle",
+      "stats": {
+        "active_bytes_now": 15642169344,
+        "peak_allocated_bytes": 48749799424,
+        "reserved_bytes_now": 49480204288,
+        "peak_reserved_bytes": 49480204288,
+        "num_alloc_retries": 0
+      }
+    },
+    "large_ctx2048_bs2_forward_fp32": {
+      "config": {
+        "model_size": "large",
+        "batch_size": 2,
+        "context_length": 2048,
+        "mode": "forward",
+        "warmup": 2,
+        "steps": 3,
+        "dtype": "fp32",
+        "seed": 0
+      },
+      "snapshot_file": "snapshot_large_ctx2048_bs2_forward_fp32.pickle",
+      "stats": {
+        "active_bytes_now": 4000003072,
+        "peak_allocated_bytes": 6814725120,
+        "reserved_bytes_now": 7591690240,
+        "peak_reserved_bytes": 7591690240,
+        "num_alloc_retries": 0
+      }
+    },
+    "xl_ctx128_bs4_forward_fp32": {
+      "config": {
+        "model_size": "xl",
+        "batch_size": 4,
+        "context_length": 128,
+        "mode": "forward",
+        "warmup": 2,
+        "steps": 3,
+        "dtype": "fp32",
+        "seed": 0
+      },
+      "snapshot_file": "snapshot_xl_ctx128_bs4_forward_fp32.pickle",
+      "stats": {
+        "active_bytes_now": 13770745856,
+        "peak_allocated_bytes": 13859874816,
+        "reserved_bytes_now": 13889437696,
+        "peak_reserved_bytes": 13889437696,
+        "num_alloc_retries": 0
+      }
+    },
+    "xl_ctx2048_bs4_forward_bf16": {
+      "config": {
+        "model_size": "xl",
+        "batch_size": 4,
+        "context_length": 2048,
+        "mode": "forward",
+        "warmup": 2,
+        "steps": 3,
+        "dtype": "bf16",
+        "seed": 0
+      },
+      "snapshot_file": "snapshot_xl_ctx2048_bs4_forward_bf16.pickle",
+      "stats": {
+        "active_bytes_now": 13771483136,
+        "peak_allocated_bytes": 27222108160,
+        "reserved_bytes_now": 29483859968,
+        "peak_reserved_bytes": 29483859968,
+        "num_alloc_retries": 0
+      }
+    },
+    "xl_ctx2048_bs4_forward_fp32": {
+      "config": {
+        "model_size": "xl",
+        "batch_size": 4,
+        "context_length": 2048,
+        "mode": "forward",
+        "warmup": 2,
+        "steps": 3,
+        "dtype": "fp32",
+        "seed": 0
+      },
+      "snapshot_file": "snapshot_xl_ctx2048_bs4_forward_fp32.pickle",
+      "stats": {
+        "active_bytes_now": 13771483136,
+        "peak_allocated_bytes": 22869993472,
+        "reserved_bytes_now": 25195184128,
+        "peak_reserved_bytes": 25195184128,
+        "num_alloc_retries": 0
+      }
+    }
+  }
+}

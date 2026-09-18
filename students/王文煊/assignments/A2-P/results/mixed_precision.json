@@ -1,0 +1,18 @@
+{
+  "accumulation": {
+    "fp32_accum_fp32_addend": 10.000133514404297,
+    "fp16_accum_fp16_addend": 9.953125,
+    "fp32_accum_fp16_addend": 10.00213623046875,
+    "fp32_accum_fp16_addend_upcast": 10.00213623046875
+  },
+  "toymodel_bf16_autocast": {
+    "autocast_dtype": "bfloat16",
+    "param_dtype_inside_autocast": "torch.float32",
+    "fc1_output": "torch.bfloat16",
+    "ln_output": "torch.float32",
+    "logits": "torch.bfloat16",
+    "loss": "torch.float32",
+    "gradient_fc1_weight": "torch.float32",
+    "gradient_ln_weight": "torch.float32"
+  }
+}
