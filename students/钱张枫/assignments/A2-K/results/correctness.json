@@ -1,0 +1,1934 @@
+{
+  "configuration": {
+    "atol": 0.01,
+    "batch_size": 2,
+    "dtypes": [
+      "fp32"
+    ],
+    "head_dims": [
+      32,
+      64,
+      128
+    ],
+    "rtol": 0.01,
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "sequence_length": 128,
+    "timer": "correctness_comparison"
+  },
+  "records": [
+    {
+      "dtype": "float32",
+      "error_kind": null,
+      "implementation": "pytorch_tiled",
+      "is_causal": false,
+      "metrics": {
+        "dk": {
+          "atol": 0.01,
+          "max_abs_error": 4.0046870708465576e-07,
+          "max_rel_error": 0.0019649581518024206,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dq": {
+          "atol": 0.01,
+          "max_abs_error": 2.980232238769531e-07,
+          "max_rel_error": 0.011488646268844604,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dv": {
+          "atol": 0.01,
+          "max_abs_error": 1.1920928955078125e-07,
+          "max_rel_error": 0.0009027494816109538,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "lse": {
+          "atol": 0.01,
+          "max_abs_error": 0.0,
+          "max_rel_error": 0.0,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "output": {
+          "atol": 0.01,
+          "max_abs_error": 5.364418029785156e-07,
+          "max_rel_error": 0.0015968938823789358,
+          "rtol": 0.01,
+          "status": "pass"
+        }
+      },
+      "peak_allocated_mib": 17.294,
+      "peak_reserved_mib": 22.0,
+      "seed": 0,
+      "shape": [
+        2,
+        128,
+        32
+      ],
+      "status": "pass",
+      "tf32_enabled": false
+    },
+    {
+      "dtype": "float32",
+      "error_kind": null,
+      "implementation": "pytorch_tiled",
+      "is_causal": true,
+      "metrics": {
+        "dk": {
+          "atol": 0.01,
+          "max_abs_error": 5.960464477539062e-07,
+          "max_rel_error": 0.000334464042680338,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dq": {
+          "atol": 0.01,
+          "max_abs_error": 4.470348358154297e-07,
+          "max_rel_error": 0.011827812530100346,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dv": {
+          "atol": 0.01,
+          "max_abs_error": 3.5762786865234375e-07,
+          "max_rel_error": 0.004123339895159006,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "lse": {
+          "atol": 0.01,
+          "max_abs_error": 0.0,
+          "max_rel_error": 0.0,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "output": {
+          "atol": 0.01,
+          "max_abs_error": 3.5762786865234375e-07,
+          "max_rel_error": 0.004025691654533148,
+          "rtol": 0.01,
+          "status": "pass"
+        }
+      },
+      "peak_allocated_mib": 17.31,
+      "peak_reserved_mib": 22.0,
+      "seed": 0,
+      "shape": [
+        2,
+        128,
+        32
+      ],
+      "status": "pass",
+      "tf32_enabled": false
+    },
+    {
+      "dtype": "float32",
+      "error_kind": null,
+      "implementation": "pytorch_tiled",
+      "is_causal": false,
+      "metrics": {
+        "dk": {
+          "atol": 0.01,
+          "max_abs_error": 3.8743019104003906e-07,
+          "max_rel_error": 0.0017123866127803922,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dq": {
+          "atol": 0.01,
+          "max_abs_error": 3.2782554626464844e-07,
+          "max_rel_error": 0.004780000075697899,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dv": {
+          "atol": 0.01,
+          "max_abs_error": 1.1920928955078125e-07,
+          "max_rel_error": 0.002982404315844178,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "lse": {
+          "atol": 0.01,
+          "max_abs_error": 0.0,
+          "max_rel_error": 0.0,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "output": {
+          "atol": 0.01,
+          "max_abs_error": 3.5762786865234375e-07,
+          "max_rel_error": 0.0006906371563673019,
+          "rtol": 0.01,
+          "status": "pass"
+        }
+      },
+      "peak_allocated_mib": 17.888,
+      "peak_reserved_mib": 22.0,
+      "seed": 0,
+      "shape": [
+        2,
+        128,
+        64
+      ],
+      "status": "pass",
+      "tf32_enabled": false
+    },
+    {
+      "dtype": "float32",
+      "error_kind": null,
+      "implementation": "pytorch_tiled",
+      "is_causal": true,
+      "metrics": {
+        "dk": {
+          "atol": 0.01,
+          "max_abs_error": 9.5367431640625e-07,
+          "max_rel_error": 0.03902115300297737,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dq": {
+          "atol": 0.01,
+          "max_abs_error": 9.5367431640625e-07,
+          "max_rel_error": 0.0030443391297012568,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dv": {
+          "atol": 0.01,
+          "max_abs_error": 5.960464477539062e-07,
+          "max_rel_error": 0.001065536867827177,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "lse": {
+          "atol": 0.01,
+          "max_abs_error": 0.0,
+          "max_rel_error": 0.0,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "output": {
+          "atol": 0.01,
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 0.003759481944143772,
+          "rtol": 0.01,
+          "status": "pass"
+        }
+      },
+      "peak_allocated_mib": 17.904,
+      "peak_reserved_mib": 22.0,
+      "seed": 0,
+      "shape": [
+        2,
+        128,
+        64
+      ],
+      "status": "pass",
+      "tf32_enabled": false
+    },
+    {
+      "dtype": "float32",
+      "error_kind": null,
+      "implementation": "pytorch_tiled",
+      "is_causal": false,
+      "metrics": {
+        "dk": {
+          "atol": 0.01,
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 0.22404968738555908,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dq": {
+          "atol": 0.01,
+          "max_abs_error": 5.364418029785156e-07,
+          "max_rel_error": 0.006866110488772392,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dv": {
+          "atol": 0.01,
+          "max_abs_error": 1.1920928955078125e-07,
+          "max_rel_error": 0.0007596294744871557,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "lse": {
+          "atol": 0.01,
+          "max_abs_error": 0.0,
+          "max_rel_error": 0.0,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "output": {
+          "atol": 0.01,
+          "max_abs_error": 4.470348358154297e-07,
+          "max_rel_error": 0.002702871337532997,
+          "rtol": 0.01,
+          "status": "pass"
+        }
+      },
+      "peak_allocated_mib": 19.261,
+      "peak_reserved_mib": 24.0,
+      "seed": 0,
+      "shape": [
+        2,
+        128,
+        128
+      ],
+      "status": "pass",
+      "tf32_enabled": false
+    },
+    {
+      "dtype": "float32",
+      "error_kind": null,
+      "implementation": "pytorch_tiled",
+      "is_causal": true,
+      "metrics": {
+        "dk": {
+          "atol": 0.01,
+          "max_abs_error": 1.1920928955078125e-06,
+          "max_rel_error": 0.0226579699665308,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dq": {
+          "atol": 0.01,
+          "max_abs_error": 8.642673492431641e-07,
+          "max_rel_error": 0.01660608872771263,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dv": {
+          "atol": 0.01,
+          "max_abs_error": 7.152557373046875e-07,
+          "max_rel_error": 0.0014220792800188065,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "lse": {
+          "atol": 0.01,
+          "max_abs_error": 0.0,
+          "max_rel_error": 0.0,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "output": {
+          "atol": 0.01,
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 0.00435670604929328,
+          "rtol": 0.01,
+          "status": "pass"
+        }
+      },
+      "peak_allocated_mib": 19.277,
+      "peak_reserved_mib": 24.0,
+      "seed": 0,
+      "shape": [
+        2,
+        128,
+        128
+      ],
+      "status": "pass",
+      "tf32_enabled": false
+    },
+    {
+      "dtype": "float32",
+      "error_kind": null,
+      "implementation": "pytorch_tiled",
+      "is_causal": false,
+      "metrics": {
+        "dk": {
+          "atol": 0.01,
+          "max_abs_error": 3.5762786865234375e-07,
+          "max_rel_error": 0.0015227100811898708,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dq": {
+          "atol": 0.01,
+          "max_abs_error": 3.8743019104003906e-07,
+          "max_rel_error": 0.00527660408988595,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dv": {
+          "atol": 0.01,
+          "max_abs_error": 1.1920928955078125e-07,
+          "max_rel_error": 0.000495582411531359,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "lse": {
+          "atol": 0.01,
+          "max_abs_error": 0.0,
+          "max_rel_error": 0.0,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "output": {
+          "atol": 0.01,
+          "max_abs_error": 3.5762786865234375e-07,
+          "max_rel_error": 0.43998658657073975,
+          "rtol": 0.01,
+          "status": "pass"
+        }
+      },
+      "peak_allocated_mib": 17.294,
+      "peak_reserved_mib": 24.0,
+      "seed": 1,
+      "shape": [
+        2,
+        128,
+        32
+      ],
+      "status": "pass",
+      "tf32_enabled": false
+    },
+    {
+      "dtype": "float32",
+      "error_kind": null,
+      "implementation": "pytorch_tiled",
+      "is_causal": true,
+      "metrics": {
+        "dk": {
+          "atol": 0.01,
+          "max_abs_error": 7.152557373046875e-07,
+          "max_rel_error": 0.0004748624924104661,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dq": {
+          "atol": 0.01,
+          "max_abs_error": 5.960464477539062e-07,
+          "max_rel_error": 0.0017161123687401414,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dv": {
+          "atol": 0.01,
+          "max_abs_error": 3.5762786865234375e-07,
+          "max_rel_error": 0.0014257990987971425,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "lse": {
+          "atol": 0.01,
+          "max_abs_error": 0.0,
+          "max_rel_error": 0.0,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "output": {
+          "atol": 0.01,
+          "max_abs_error": 4.172325134277344e-07,
+          "max_rel_error": 0.00048808331484906375,
+          "rtol": 0.01,
+          "status": "pass"
+        }
+      },
+      "peak_allocated_mib": 17.31,
+      "peak_reserved_mib": 22.0,
+      "seed": 1,
+      "shape": [
+        2,
+        128,
+        32
+      ],
+      "status": "pass",
+      "tf32_enabled": false
+    },
+    {
+      "dtype": "float32",
+      "error_kind": null,
+      "implementation": "pytorch_tiled",
+      "is_causal": false,
+      "metrics": {
+        "dk": {
+          "atol": 0.01,
+          "max_abs_error": 5.662441253662109e-07,
+          "max_rel_error": 0.010525650344789028,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dq": {
+          "atol": 0.01,
+          "max_abs_error": 3.8743019104003906e-07,
+          "max_rel_error": 0.00933025125414133,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dv": {
+          "atol": 0.01,
+          "max_abs_error": 1.1920928955078125e-07,
+          "max_rel_error": 0.002003490226343274,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "lse": {
+          "atol": 0.01,
+          "max_abs_error": 0.0,
+          "max_rel_error": 0.0,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "output": {
+          "atol": 0.01,
+          "max_abs_error": 3.8743019104003906e-07,
+          "max_rel_error": 0.02046590857207775,
+          "rtol": 0.01,
+          "status": "pass"
+        }
+      },
+      "peak_allocated_mib": 17.888,
+      "peak_reserved_mib": 22.0,
+      "seed": 1,
+      "shape": [
+        2,
+        128,
+        64
+      ],
+      "status": "pass",
+      "tf32_enabled": false
+    },
+    {
+      "dtype": "float32",
+      "error_kind": null,
+      "implementation": "pytorch_tiled",
+      "is_causal": true,
+      "metrics": {
+        "dk": {
+          "atol": 0.01,
+          "max_abs_error": 7.748603820800781e-07,
+          "max_rel_error": 0.0010379924206063151,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dq": {
+          "atol": 0.01,
+          "max_abs_error": 6.258487701416016e-07,
+          "max_rel_error": 0.0004885687958449125,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dv": {
+          "atol": 0.01,
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 0.0018991258693858981,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "lse": {
+          "atol": 0.01,
+          "max_abs_error": 0.0,
+          "max_rel_error": 0.0,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "output": {
+          "atol": 0.01,
+          "max_abs_error": 5.960464477539062e-07,
+          "max_rel_error": 0.0005088176112622023,
+          "rtol": 0.01,
+          "status": "pass"
+        }
+      },
+      "peak_allocated_mib": 17.904,
+      "peak_reserved_mib": 22.0,
+      "seed": 1,
+      "shape": [
+        2,
+        128,
+        64
+      ],
+      "status": "pass",
+      "tf32_enabled": false
+    },
+    {
+      "dtype": "float32",
+      "error_kind": null,
+      "implementation": "pytorch_tiled",
+      "is_causal": false,
+      "metrics": {
+        "dk": {
+          "atol": 0.01,
+          "max_abs_error": 9.015202522277832e-07,
+          "max_rel_error": 0.0017408799612894654,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dq": {
+          "atol": 0.01,
+          "max_abs_error": 7.022172212600708e-07,
+          "max_rel_error": 0.010967817157506943,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dv": {
+          "atol": 0.01,
+          "max_abs_error": 1.7881393432617188e-07,
+          "max_rel_error": 0.06408953666687012,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "lse": {
+          "atol": 0.01,
+          "max_abs_error": 0.0,
+          "max_rel_error": 0.0,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "output": {
+          "atol": 0.01,
+          "max_abs_error": 3.5762786865234375e-07,
+          "max_rel_error": 0.005827969405800104,
+          "rtol": 0.01,
+          "status": "pass"
+        }
+      },
+      "peak_allocated_mib": 19.261,
+      "peak_reserved_mib": 24.0,
+      "seed": 1,
+      "shape": [
+        2,
+        128,
+        128
+      ],
+      "status": "pass",
+      "tf32_enabled": false
+    },
+    {
+      "dtype": "float32",
+      "error_kind": null,
+      "implementation": "pytorch_tiled",
+      "is_causal": true,
+      "metrics": {
+        "dk": {
+          "atol": 0.01,
+          "max_abs_error": 9.5367431640625e-07,
+          "max_rel_error": 0.006289223674684763,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dq": {
+          "atol": 0.01,
+          "max_abs_error": 1.3113021850585938e-06,
+          "max_rel_error": 0.06869973242282867,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dv": {
+          "atol": 0.01,
+          "max_abs_error": 7.152557373046875e-07,
+          "max_rel_error": 0.0009223258821293712,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "lse": {
+          "atol": 0.01,
+          "max_abs_error": 0.0,
+          "max_rel_error": 0.0,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "output": {
+          "atol": 0.01,
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 0.002896340098232031,
+          "rtol": 0.01,
+          "status": "pass"
+        }
+      },
+      "peak_allocated_mib": 19.277,
+      "peak_reserved_mib": 24.0,
+      "seed": 1,
+      "shape": [
+        2,
+        128,
+        128
+      ],
+      "status": "pass",
+      "tf32_enabled": false
+    },
+    {
+      "dtype": "float32",
+      "error_kind": null,
+      "implementation": "pytorch_tiled",
+      "is_causal": false,
+      "metrics": {
+        "dk": {
+          "atol": 0.01,
+          "max_abs_error": 3.8743019104003906e-07,
+          "max_rel_error": 0.001528741093352437,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dq": {
+          "atol": 0.01,
+          "max_abs_error": 2.682209014892578e-07,
+          "max_rel_error": 0.007405990734696388,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dv": {
+          "atol": 0.01,
+          "max_abs_error": 1.2293457984924316e-07,
+          "max_rel_error": 0.0006707545835524797,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "lse": {
+          "atol": 0.01,
+          "max_abs_error": 0.0,
+          "max_rel_error": 0.0,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "output": {
+          "atol": 0.01,
+          "max_abs_error": 3.2782554626464844e-07,
+          "max_rel_error": 0.004803781397640705,
+          "rtol": 0.01,
+          "status": "pass"
+        }
+      },
+      "peak_allocated_mib": 17.294,
+      "peak_reserved_mib": 24.0,
+      "seed": 2,
+      "shape": [
+        2,
+        128,
+        32
+      ],
+      "status": "pass",
+      "tf32_enabled": false
+    },
+    {
+      "dtype": "float32",
+      "error_kind": null,
+      "implementation": "pytorch_tiled",
+      "is_causal": true,
+      "metrics": {
+        "dk": {
+          "atol": 0.01,
+          "max_abs_error": 5.960464477539062e-07,
+          "max_rel_error": 0.012391780503094196,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dq": {
+          "atol": 0.01,
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 0.002130119828507304,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dv": {
+          "atol": 0.01,
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 0.00043680626549758017,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "lse": {
+          "atol": 0.01,
+          "max_abs_error": 0.0,
+          "max_rel_error": 0.0,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "output": {
+          "atol": 0.01,
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 0.0005440897075459361,
+          "rtol": 0.01,
+          "status": "pass"
+        }
+      },
+      "peak_allocated_mib": 17.31,
+      "peak_reserved_mib": 22.0,
+      "seed": 2,
+      "shape": [
+        2,
+        128,
+        32
+      ],
+      "status": "pass",
+      "tf32_enabled": false
+    },
+    {
+      "dtype": "float32",
+      "error_kind": null,
+      "implementation": "pytorch_tiled",
+      "is_causal": false,
+      "metrics": {
+        "dk": {
+          "atol": 0.01,
+          "max_abs_error": 3.5762786865234375e-07,
+          "max_rel_error": 0.006625409238040447,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dq": {
+          "atol": 0.01,
+          "max_abs_error": 3.5762786865234375e-07,
+          "max_rel_error": 0.002355540869757533,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dv": {
+          "atol": 0.01,
+          "max_abs_error": 1.1920928955078125e-07,
+          "max_rel_error": 0.00041058313217945397,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "lse": {
+          "atol": 0.01,
+          "max_abs_error": 0.0,
+          "max_rel_error": 0.0,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "output": {
+          "atol": 0.01,
+          "max_abs_error": 4.172325134277344e-07,
+          "max_rel_error": 0.0010222168639302254,
+          "rtol": 0.01,
+          "status": "pass"
+        }
+      },
+      "peak_allocated_mib": 17.888,
+      "peak_reserved_mib": 22.0,
+      "seed": 2,
+      "shape": [
+        2,
+        128,
+        64
+      ],
+      "status": "pass",
+      "tf32_enabled": false
+    },
+    {
+      "dtype": "float32",
+      "error_kind": null,
+      "implementation": "pytorch_tiled",
+      "is_causal": true,
+      "metrics": {
+        "dk": {
+          "atol": 0.01,
+          "max_abs_error": 8.344650268554688e-07,
+          "max_rel_error": 0.0013390762032940984,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dq": {
+          "atol": 0.01,
+          "max_abs_error": 8.344650268554688e-07,
+          "max_rel_error": 0.0025831260718405247,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dv": {
+          "atol": 0.01,
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 0.0008413920295424759,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "lse": {
+          "atol": 0.01,
+          "max_abs_error": 0.0,
+          "max_rel_error": 0.0,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "output": {
+          "atol": 0.01,
+          "max_abs_error": 2.980232238769531e-07,
+          "max_rel_error": 0.000895282719284296,
+          "rtol": 0.01,
+          "status": "pass"
+        }
+      },
+      "peak_allocated_mib": 17.904,
+      "peak_reserved_mib": 22.0,
+      "seed": 2,
+      "shape": [
+        2,
+        128,
+        64
+      ],
+      "status": "pass",
+      "tf32_enabled": false
+    },
+    {
+      "dtype": "float32",
+      "error_kind": null,
+      "implementation": "pytorch_tiled",
+      "is_causal": false,
+      "metrics": {
+        "dk": {
+          "atol": 0.01,
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 0.03396227955818176,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dq": {
+          "atol": 0.01,
+          "max_abs_error": 5.513429641723633e-07,
+          "max_rel_error": 0.1220703125,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dv": {
+          "atol": 0.01,
+          "max_abs_error": 1.1920928955078125e-07,
+          "max_rel_error": 0.0015472740633413196,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "lse": {
+          "atol": 0.01,
+          "max_abs_error": 0.0,
+          "max_rel_error": 0.0,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "output": {
+          "atol": 0.01,
+          "max_abs_error": 5.960464477539062e-07,
+          "max_rel_error": 0.0024775369092822075,
+          "rtol": 0.01,
+          "status": "pass"
+        }
+      },
+      "peak_allocated_mib": 19.261,
+      "peak_reserved_mib": 24.0,
+      "seed": 2,
+      "shape": [
+        2,
+        128,
+        128
+      ],
+      "status": "pass",
+      "tf32_enabled": false
+    },
+    {
+      "dtype": "float32",
+      "error_kind": null,
+      "implementation": "pytorch_tiled",
+      "is_causal": true,
+      "metrics": {
+        "dk": {
+          "atol": 0.01,
+          "max_abs_error": 1.3113021850585938e-06,
+          "max_rel_error": 0.0064215329475700855,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dq": {
+          "atol": 0.01,
+          "max_abs_error": 7.450580596923828e-07,
+          "max_rel_error": 0.019793381914496422,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dv": {
+          "atol": 0.01,
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 0.0007694699452258646,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "lse": {
+          "atol": 0.01,
+          "max_abs_error": 0.0,
+          "max_rel_error": 0.0,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "output": {
+          "atol": 0.01,
+          "max_abs_error": 4.172325134277344e-07,
+          "max_rel_error": 0.0062433816492557526,
+          "rtol": 0.01,
+          "status": "pass"
+        }
+      },
+      "peak_allocated_mib": 19.277,
+      "peak_reserved_mib": 24.0,
+      "seed": 2,
+      "shape": [
+        2,
+        128,
+        128
+      ],
+      "status": "pass",
+      "tf32_enabled": false
+    },
+    {
+      "dtype": "float32",
+      "error_kind": null,
+      "implementation": "triton_flashattention2",
+      "is_causal": false,
+      "metrics": {
+        "dk": {
+          "atol": 0.01,
+          "max_abs_error": 4.0046870708465576e-07,
+          "max_rel_error": 0.0019649581518024206,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dq": {
+          "atol": 0.01,
+          "max_abs_error": 2.980232238769531e-07,
+          "max_rel_error": 0.011488646268844604,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dv": {
+          "atol": 0.01,
+          "max_abs_error": 1.1920928955078125e-07,
+          "max_rel_error": 0.0009027494816109538,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "lse": {
+          "atol": 0.01,
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 9.200546458032477e-08,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "output": {
+          "atol": 0.01,
+          "max_abs_error": 5.364418029785156e-07,
+          "max_rel_error": 0.0021936071570962667,
+          "rtol": 0.01,
+          "status": "pass"
+        }
+      },
+      "peak_allocated_mib": 17.294,
+      "peak_reserved_mib": 24.0,
+      "seed": 0,
+      "shape": [
+        2,
+        128,
+        32
+      ],
+      "status": "pass",
+      "tf32_enabled": false
+    },
+    {
+      "dtype": "float32",
+      "error_kind": null,
+      "implementation": "triton_flashattention2",
+      "is_causal": true,
+      "metrics": {
+        "dk": {
+          "atol": 0.01,
+          "max_abs_error": 5.960464477539062e-07,
+          "max_rel_error": 0.000334464042680338,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dq": {
+          "atol": 0.01,
+          "max_abs_error": 4.470348358154297e-07,
+          "max_rel_error": 0.011827812530100346,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dv": {
+          "atol": 0.01,
+          "max_abs_error": 3.5762786865234375e-07,
+          "max_rel_error": 0.004123339895159006,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "lse": {
+          "atol": 0.01,
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 1.6111117417949572e-07,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "output": {
+          "atol": 0.01,
+          "max_abs_error": 4.172325134277344e-07,
+          "max_rel_error": 0.004998010117560625,
+          "rtol": 0.01,
+          "status": "pass"
+        }
+      },
+      "peak_allocated_mib": 17.31,
+      "peak_reserved_mib": 22.0,
+      "seed": 0,
+      "shape": [
+        2,
+        128,
+        32
+      ],
+      "status": "pass",
+      "tf32_enabled": false
+    },
+    {
+      "dtype": "float32",
+      "error_kind": null,
+      "implementation": "triton_flashattention2",
+      "is_causal": false,
+      "metrics": {
+        "dk": {
+          "atol": 0.01,
+          "max_abs_error": 3.8743019104003906e-07,
+          "max_rel_error": 0.0017123866127803922,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dq": {
+          "atol": 0.01,
+          "max_abs_error": 3.2782554626464844e-07,
+          "max_rel_error": 0.004780000075697899,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dv": {
+          "atol": 0.01,
+          "max_abs_error": 1.1920928955078125e-07,
+          "max_rel_error": 0.002982404315844178,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "lse": {
+          "atol": 0.01,
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 9.492578101344407e-08,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "output": {
+          "atol": 0.01,
+          "max_abs_error": 3.8743019104003906e-07,
+          "max_rel_error": 0.0009269860456697643,
+          "rtol": 0.01,
+          "status": "pass"
+        }
+      },
+      "peak_allocated_mib": 17.888,
+      "peak_reserved_mib": 22.0,
+      "seed": 0,
+      "shape": [
+        2,
+        128,
+        64
+      ],
+      "status": "pass",
+      "tf32_enabled": false
+    },
+    {
+      "dtype": "float32",
+      "error_kind": null,
+      "implementation": "triton_flashattention2",
+      "is_causal": true,
+      "metrics": {
+        "dk": {
+          "atol": 0.01,
+          "max_abs_error": 9.5367431640625e-07,
+          "max_rel_error": 0.03902115300297737,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dq": {
+          "atol": 0.01,
+          "max_abs_error": 9.5367431640625e-07,
+          "max_rel_error": 0.0030443391297012568,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dv": {
+          "atol": 0.01,
+          "max_abs_error": 5.960464477539062e-07,
+          "max_rel_error": 0.001065536867827177,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "lse": {
+          "atol": 0.01,
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 1.1711417613469166e-07,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "output": {
+          "atol": 0.01,
+          "max_abs_error": 4.172325134277344e-07,
+          "max_rel_error": 0.003398249391466379,
+          "rtol": 0.01,
+          "status": "pass"
+        }
+      },
+      "peak_allocated_mib": 17.904,
+      "peak_reserved_mib": 22.0,
+      "seed": 0,
+      "shape": [
+        2,
+        128,
+        64
+      ],
+      "status": "pass",
+      "tf32_enabled": false
+    },
+    {
+      "dtype": "float32",
+      "error_kind": null,
+      "implementation": "triton_flashattention2",
+      "is_causal": false,
+      "metrics": {
+        "dk": {
+          "atol": 0.01,
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 0.22404968738555908,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dq": {
+          "atol": 0.01,
+          "max_abs_error": 5.364418029785156e-07,
+          "max_rel_error": 0.006866110488772392,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dv": {
+          "atol": 0.01,
+          "max_abs_error": 1.1920928955078125e-07,
+          "max_rel_error": 0.0007596294744871557,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "lse": {
+          "atol": 0.01,
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 9.243065335340361e-08,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "output": {
+          "atol": 0.01,
+          "max_abs_error": 4.172325134277344e-07,
+          "max_rel_error": 0.004354425240308046,
+          "rtol": 0.01,
+          "status": "pass"
+        }
+      },
+      "peak_allocated_mib": 19.261,
+      "peak_reserved_mib": 24.0,
+      "seed": 0,
+      "shape": [
+        2,
+        128,
+        128
+      ],
+      "status": "pass",
+      "tf32_enabled": false
+    },
+    {
+      "dtype": "float32",
+      "error_kind": null,
+      "implementation": "triton_flashattention2",
+      "is_causal": true,
+      "metrics": {
+        "dk": {
+          "atol": 0.01,
+          "max_abs_error": 1.1920928955078125e-06,
+          "max_rel_error": 0.0226579699665308,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dq": {
+          "atol": 0.01,
+          "max_abs_error": 8.642673492431641e-07,
+          "max_rel_error": 0.01660608872771263,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dv": {
+          "atol": 0.01,
+          "max_abs_error": 7.152557373046875e-07,
+          "max_rel_error": 0.0014220792800188065,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "lse": {
+          "atol": 0.01,
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 1.5618442716913705e-07,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "output": {
+          "atol": 0.01,
+          "max_abs_error": 4.172325134277344e-07,
+          "max_rel_error": 0.00672884238883853,
+          "rtol": 0.01,
+          "status": "pass"
+        }
+      },
+      "peak_allocated_mib": 19.277,
+      "peak_reserved_mib": 24.0,
+      "seed": 0,
+      "shape": [
+        2,
+        128,
+        128
+      ],
+      "status": "pass",
+      "tf32_enabled": false
+    },
+    {
+      "dtype": "float32",
+      "error_kind": null,
+      "implementation": "triton_flashattention2",
+      "is_causal": false,
+      "metrics": {
+        "dk": {
+          "atol": 0.01,
+          "max_abs_error": 3.5762786865234375e-07,
+          "max_rel_error": 0.0015227100811898708,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dq": {
+          "atol": 0.01,
+          "max_abs_error": 3.8743019104003906e-07,
+          "max_rel_error": 0.00527660408988595,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dv": {
+          "atol": 0.01,
+          "max_abs_error": 1.1920928955078125e-07,
+          "max_rel_error": 0.000495582411531359,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "lse": {
+          "atol": 0.01,
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 9.321131955175588e-08,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "output": {
+          "atol": 0.01,
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 0.4065049886703491,
+          "rtol": 0.01,
+          "status": "pass"
+        }
+      },
+      "peak_allocated_mib": 17.294,
+      "peak_reserved_mib": 24.0,
+      "seed": 1,
+      "shape": [
+        2,
+        128,
+        32
+      ],
+      "status": "pass",
+      "tf32_enabled": false
+    },
+    {
+      "dtype": "float32",
+      "error_kind": null,
+      "implementation": "triton_flashattention2",
+      "is_causal": true,
+      "metrics": {
+        "dk": {
+          "atol": 0.01,
+          "max_abs_error": 7.152557373046875e-07,
+          "max_rel_error": 0.0004748624924104661,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dq": {
+          "atol": 0.01,
+          "max_abs_error": 5.960464477539062e-07,
+          "max_rel_error": 0.0017161123687401414,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dv": {
+          "atol": 0.01,
+          "max_abs_error": 3.5762786865234375e-07,
+          "max_rel_error": 0.0014257990987971425,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "lse": {
+          "atol": 0.01,
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 1.166491045978546e-07,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "output": {
+          "atol": 0.01,
+          "max_abs_error": 4.172325134277344e-07,
+          "max_rel_error": 0.00023730182147119194,
+          "rtol": 0.01,
+          "status": "pass"
+        }
+      },
+      "peak_allocated_mib": 17.31,
+      "peak_reserved_mib": 22.0,
+      "seed": 1,
+      "shape": [
+        2,
+        128,
+        32
+      ],
+      "status": "pass",
+      "tf32_enabled": false
+    },
+    {
+      "dtype": "float32",
+      "error_kind": null,
+      "implementation": "triton_flashattention2",
+      "is_causal": false,
+      "metrics": {
+        "dk": {
+          "atol": 0.01,
+          "max_abs_error": 5.662441253662109e-07,
+          "max_rel_error": 0.010525650344789028,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dq": {
+          "atol": 0.01,
+          "max_abs_error": 3.8743019104003906e-07,
+          "max_rel_error": 0.00933025125414133,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dv": {
+          "atol": 0.01,
+          "max_abs_error": 1.1920928955078125e-07,
+          "max_rel_error": 0.002003490226343274,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "lse": {
+          "atol": 0.01,
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 9.2523094963326e-08,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "output": {
+          "atol": 0.01,
+          "max_abs_error": 3.5762786865234375e-07,
+          "max_rel_error": 0.011047863401472569,
+          "rtol": 0.01,
+          "status": "pass"
+        }
+      },
+      "peak_allocated_mib": 17.888,
+      "peak_reserved_mib": 22.0,
+      "seed": 1,
+      "shape": [
+        2,
+        128,
+        64
+      ],
+      "status": "pass",
+      "tf32_enabled": false
+    },
+    {
+      "dtype": "float32",
+      "error_kind": null,
+      "implementation": "triton_flashattention2",
+      "is_causal": true,
+      "metrics": {
+        "dk": {
+          "atol": 0.01,
+          "max_abs_error": 7.748603820800781e-07,
+          "max_rel_error": 0.0010379924206063151,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dq": {
+          "atol": 0.01,
+          "max_abs_error": 6.258487701416016e-07,
+          "max_rel_error": 0.0004885687958449125,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dv": {
+          "atol": 0.01,
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 0.0018991258693858981,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "lse": {
+          "atol": 0.01,
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 1.1673982669435645e-07,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "output": {
+          "atol": 0.01,
+          "max_abs_error": 5.364418029785156e-07,
+          "max_rel_error": 0.0009035115945152938,
+          "rtol": 0.01,
+          "status": "pass"
+        }
+      },
+      "peak_allocated_mib": 17.904,
+      "peak_reserved_mib": 22.0,
+      "seed": 1,
+      "shape": [
+        2,
+        128,
+        64
+      ],
+      "status": "pass",
+      "tf32_enabled": false
+    },
+    {
+      "dtype": "float32",
+      "error_kind": null,
+      "implementation": "triton_flashattention2",
+      "is_causal": false,
+      "metrics": {
+        "dk": {
+          "atol": 0.01,
+          "max_abs_error": 9.015202522277832e-07,
+          "max_rel_error": 0.0017408799612894654,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dq": {
+          "atol": 0.01,
+          "max_abs_error": 7.022172212600708e-07,
+          "max_rel_error": 0.010967817157506943,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dv": {
+          "atol": 0.01,
+          "max_abs_error": 1.7881393432617188e-07,
+          "max_rel_error": 0.06408953666687012,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "lse": {
+          "atol": 0.01,
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 9.418474178346514e-08,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "output": {
+          "atol": 0.01,
+          "max_abs_error": 3.8743019104003906e-07,
+          "max_rel_error": 0.011471401900053024,
+          "rtol": 0.01,
+          "status": "pass"
+        }
+      },
+      "peak_allocated_mib": 19.261,
+      "peak_reserved_mib": 24.0,
+      "seed": 1,
+      "shape": [
+        2,
+        128,
+        128
+      ],
+      "status": "pass",
+      "tf32_enabled": false
+    },
+    {
+      "dtype": "float32",
+      "error_kind": null,
+      "implementation": "triton_flashattention2",
+      "is_causal": true,
+      "metrics": {
+        "dk": {
+          "atol": 0.01,
+          "max_abs_error": 9.5367431640625e-07,
+          "max_rel_error": 0.006289223674684763,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dq": {
+          "atol": 0.01,
+          "max_abs_error": 1.3113021850585938e-06,
+          "max_rel_error": 0.06869973242282867,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dv": {
+          "atol": 0.01,
+          "max_abs_error": 7.152557373046875e-07,
+          "max_rel_error": 0.0009223258821293712,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "lse": {
+          "atol": 0.01,
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 1.3049732672243408e-07,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "output": {
+          "atol": 0.01,
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 0.004090690053999424,
+          "rtol": 0.01,
+          "status": "pass"
+        }
+      },
+      "peak_allocated_mib": 19.277,
+      "peak_reserved_mib": 24.0,
+      "seed": 1,
+      "shape": [
+        2,
+        128,
+        128
+      ],
+      "status": "pass",
+      "tf32_enabled": false
+    },
+    {
+      "dtype": "float32",
+      "error_kind": null,
+      "implementation": "triton_flashattention2",
+      "is_causal": false,
+      "metrics": {
+        "dk": {
+          "atol": 0.01,
+          "max_abs_error": 3.8743019104003906e-07,
+          "max_rel_error": 0.001528741093352437,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dq": {
+          "atol": 0.01,
+          "max_abs_error": 2.682209014892578e-07,
+          "max_rel_error": 0.007405990734696388,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dv": {
+          "atol": 0.01,
+          "max_abs_error": 1.2293457984924316e-07,
+          "max_rel_error": 0.0006707545835524797,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "lse": {
+          "atol": 0.01,
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 9.409590262521306e-08,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "output": {
+          "atol": 0.01,
+          "max_abs_error": 3.5762786865234375e-07,
+          "max_rel_error": 0.004502154421061277,
+          "rtol": 0.01,
+          "status": "pass"
+        }
+      },
+      "peak_allocated_mib": 17.294,
+      "peak_reserved_mib": 24.0,
+      "seed": 2,
+      "shape": [
+        2,
+        128,
+        32
+      ],
+      "status": "pass",
+      "tf32_enabled": false
+    },
+    {
+      "dtype": "float32",
+      "error_kind": null,
+      "implementation": "triton_flashattention2",
+      "is_causal": true,
+      "metrics": {
+        "dk": {
+          "atol": 0.01,
+          "max_abs_error": 5.960464477539062e-07,
+          "max_rel_error": 0.012391780503094196,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dq": {
+          "atol": 0.01,
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 0.002130119828507304,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dv": {
+          "atol": 0.01,
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 0.00043680626549758017,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "lse": {
+          "atol": 0.01,
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 1.1792088372430953e-07,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "output": {
+          "atol": 0.01,
+          "max_abs_error": 3.5762786865234375e-07,
+          "max_rel_error": 0.0003647607227321714,
+          "rtol": 0.01,
+          "status": "pass"
+        }
+      },
+      "peak_allocated_mib": 17.31,
+      "peak_reserved_mib": 22.0,
+      "seed": 2,
+      "shape": [
+        2,
+        128,
+        32
+      ],
+      "status": "pass",
+      "tf32_enabled": false
+    },
+    {
+      "dtype": "float32",
+      "error_kind": null,
+      "implementation": "triton_flashattention2",
+      "is_causal": false,
+      "metrics": {
+        "dk": {
+          "atol": 0.01,
+          "max_abs_error": 3.5762786865234375e-07,
+          "max_rel_error": 0.006625409238040447,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dq": {
+          "atol": 0.01,
+          "max_abs_error": 3.5762786865234375e-07,
+          "max_rel_error": 0.002355540869757533,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dv": {
+          "atol": 0.01,
+          "max_abs_error": 1.1920928955078125e-07,
+          "max_rel_error": 0.00041058313217945397,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "lse": {
+          "atol": 0.01,
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 9.365196973476486e-08,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "output": {
+          "atol": 0.01,
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 0.0012306608259677887,
+          "rtol": 0.01,
+          "status": "pass"
+        }
+      },
+      "peak_allocated_mib": 17.888,
+      "peak_reserved_mib": 22.0,
+      "seed": 2,
+      "shape": [
+        2,
+        128,
+        64
+      ],
+      "status": "pass",
+      "tf32_enabled": false
+    },
+    {
+      "dtype": "float32",
+      "error_kind": null,
+      "implementation": "triton_flashattention2",
+      "is_causal": true,
+      "metrics": {
+        "dk": {
+          "atol": 0.01,
+          "max_abs_error": 8.344650268554688e-07,
+          "max_rel_error": 0.0013390762032940984,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dq": {
+          "atol": 0.01,
+          "max_abs_error": 8.344650268554688e-07,
+          "max_rel_error": 0.0025831260718405247,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dv": {
+          "atol": 0.01,
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 0.0008413920295424759,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "lse": {
+          "atol": 0.01,
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 1.1030664381905808e-07,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "output": {
+          "atol": 0.01,
+          "max_abs_error": 3.5762786865234375e-07,
+          "max_rel_error": 0.0005313542205840349,
+          "rtol": 0.01,
+          "status": "pass"
+        }
+      },
+      "peak_allocated_mib": 17.904,
+      "peak_reserved_mib": 22.0,
+      "seed": 2,
+      "shape": [
+        2,
+        128,
+        64
+      ],
+      "status": "pass",
+      "tf32_enabled": false
+    },
+    {
+      "dtype": "float32",
+      "error_kind": null,
+      "implementation": "triton_flashattention2",
+      "is_causal": false,
+      "metrics": {
+        "dk": {
+          "atol": 0.01,
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 0.03396227955818176,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dq": {
+          "atol": 0.01,
+          "max_abs_error": 5.513429641723633e-07,
+          "max_rel_error": 0.1220703125,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dv": {
+          "atol": 0.01,
+          "max_abs_error": 1.1920928955078125e-07,
+          "max_rel_error": 0.0015472740633413196,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "lse": {
+          "atol": 0.01,
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 9.332423189789552e-08,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "output": {
+          "atol": 0.01,
+          "max_abs_error": 5.960464477539062e-07,
+          "max_rel_error": 0.004540607798844576,
+          "rtol": 0.01,
+          "status": "pass"
+        }
+      },
+      "peak_allocated_mib": 19.261,
+      "peak_reserved_mib": 24.0,
+      "seed": 2,
+      "shape": [
+        2,
+        128,
+        128
+      ],
+      "status": "pass",
+      "tf32_enabled": false
+    },
+    {
+      "dtype": "float32",
+      "error_kind": null,
+      "implementation": "triton_flashattention2",
+      "is_causal": true,
+      "metrics": {
+        "dk": {
+          "atol": 0.01,
+          "max_abs_error": 1.3113021850585938e-06,
+          "max_rel_error": 0.0064215329475700855,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dq": {
+          "atol": 0.01,
+          "max_abs_error": 7.450580596923828e-07,
+          "max_rel_error": 0.019793381914496422,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "dv": {
+          "atol": 0.01,
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 0.0007694699452258646,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "lse": {
+          "atol": 0.01,
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 1.7966792142942722e-07,
+          "rtol": 0.01,
+          "status": "pass"
+        },
+        "output": {
+          "atol": 0.01,
+          "max_abs_error": 4.76837158203125e-07,
+          "max_rel_error": 0.06966130435466766,
+          "rtol": 0.01,
+          "status": "pass"
+        }
+      },
+      "peak_allocated_mib": 19.277,
+      "peak_reserved_mib": 24.0,
+      "seed": 2,
+      "shape": [
+        2,
+        128,
+        128
+      ],
+      "status": "pass",
+      "tf32_enabled": false
+    }
+  ],
+  "schema_version": 1,
+  "status": "success"
+}
